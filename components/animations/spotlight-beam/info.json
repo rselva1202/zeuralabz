@@ -1,0 +1,20 @@
+{
+  "name": "Mouse Coordinate Radial Spotlight",
+  "slug": "spotlight-beam",
+  "componentName": "SpotlightBeam",
+  "category": "animations",
+  "description": "Radial gradient spotlight following exact cursor coordinates.",
+  "tags": [
+    "animation",
+    "spotlight",
+    "interactive"
+  ],
+  "bestFor": [
+    "cards",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight-beam",
+  "author": "R. Selva",
+  "license": "MIT"
+}

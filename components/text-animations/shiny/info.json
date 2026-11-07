@@ -1,0 +1,22 @@
+{
+  "name": "Continuous Shimmer Light Beam Text",
+  "slug": "shiny",
+  "componentName": "ShinyText",
+  "category": "text-animations",
+  "description": "Smooth reflective light beam that constantly travels across high-contrast typography.",
+  "tags": [
+    "text",
+    "shimmer",
+    "shiny",
+    "gradient"
+  ],
+  "bestFor": [
+    "hero",
+    "cta",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shiny",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Expanding Morphing Search Input",
+  "slug": "search",
+  "componentName": "ExpandingSearch",
+  "category": "forms",
+  "description": "Icon that expands into a full search bar upon click with smooth width transition.",
+  "tags": [
+    "form",
+    "search",
+    "morph",
+    "animated-search"
+  ],
+  "bestFor": [
+    "header",
+    "navbar",
+    "dashboard"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/search",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "E-Commerce Image Zoom Card",
+  "slug": "product",
+  "componentName": "ProductCard",
+  "category": "cards",
+  "description": "Product display card with smooth image scale on hover and stock badge.",
+  "tags": [
+    "card",
+    "product",
+    "ecommerce"
+  ],
+  "bestFor": [
+    "ecommerce",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/product",
+  "author": "R. Selva",
+  "license": "MIT"
+}

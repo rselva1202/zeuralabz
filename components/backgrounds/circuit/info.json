@@ -1,0 +1,22 @@
+{
+  "name": "Cyberpunk Motherboard Traces",
+  "slug": "circuit",
+  "componentName": "CircuitBackground",
+  "category": "backgrounds",
+  "description": "Micro-etched silicon wafer circuit lines with illuminated electron pulses.",
+  "tags": [
+    "background",
+    "circuit",
+    "cyberpunk",
+    "tech"
+  ],
+  "bestFor": [
+    "developer",
+    "crypto",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circuit",
+  "author": "R. Selva",
+  "license": "MIT"
+}

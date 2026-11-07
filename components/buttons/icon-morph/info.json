@@ -1,0 +1,22 @@
+{
+  "name": "Expanding Brand Social Icon Button",
+  "slug": "icon-morph",
+  "componentName": "IconMorphButton",
+  "category": "buttons",
+  "description": "Icon button that dynamically expands to reveal brand title on hover.",
+  "tags": [
+    "button",
+    "icon",
+    "social",
+    "expand"
+  ],
+  "bestFor": [
+    "portfolio",
+    "header",
+    "social"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/icon-morph",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Haptic Clipboard Verified Button",
+  "slug": "copy-snippet",
+  "componentName": "CopySnippetButton",
+  "category": "buttons",
+  "description": "Utility button that copies token/code to clipboard and transforms into verified checkmark.",
+  "tags": [
+    "button",
+    "copy",
+    "clipboard",
+    "utility"
+  ],
+  "bestFor": [
+    "developer",
+    "docs",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/copy-snippet",
+  "author": "R. Selva",
+  "license": "MIT"
+}

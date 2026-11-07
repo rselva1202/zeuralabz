@@ -1,0 +1,22 @@
+{
+  "name": "Interactive Arrow Slide CTA Button",
+  "slug": "swipe-arrow",
+  "componentName": "SwipeArrowButton",
+  "category": "buttons",
+  "description": "Action button where arrow icon slides across container on hover indicating progression.",
+  "tags": [
+    "button",
+    "arrow",
+    "slide",
+    "cta"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "checkout"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/swipe-arrow",
+  "author": "R. Selva",
+  "license": "MIT"
+}

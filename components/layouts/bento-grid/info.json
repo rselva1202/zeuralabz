@@ -1,0 +1,21 @@
+{
+  "name": "4-Column Asymmetric Bento Layout",
+  "slug": "bento-grid",
+  "componentName": "BentoGridLayout",
+  "category": "layouts",
+  "description": "Dynamic responsive 4-column Bento layout with asymmetric spans.",
+  "tags": [
+    "layout",
+    "bento",
+    "grid"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-grid",
+  "author": "R. Selva",
+  "license": "MIT"
+}

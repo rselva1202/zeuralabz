@@ -1,0 +1,20 @@
+{
+  "name": "Clean Single-Row Status Indicator Footer",
+  "slug": "minimal-footer",
+  "componentName": "MinimalFooter",
+  "category": "layouts",
+  "description": "Clean single-row developer footer with live system status indicator.",
+  "tags": [
+    "footer",
+    "minimalist",
+    "status"
+  ],
+  "bestFor": [
+    "portfolio",
+    "developer"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimal-footer",
+  "author": "R. Selva",
+  "license": "MIT"
+}

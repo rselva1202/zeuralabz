@@ -1,0 +1,20 @@
+{
+  "name": "Minimalist Desktop Icon Navigation",
+  "slug": "collapsible-sidebar",
+  "componentName": "CollapsibleSidebar",
+  "category": "layouts",
+  "description": "Application sidebar with icon tooltips that collapses down to compact slim width.",
+  "tags": [
+    "navbar",
+    "sidebar",
+    "collapsible"
+  ],
+  "bestFor": [
+    "dashboard",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/collapsible-sidebar",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Frosted Acrylic Glass Button",
+  "slug": "glass-btn",
+  "componentName": "GlassButton",
+  "category": "buttons",
+  "description": "Frosted acrylic glass button with specular light refraction and crisp semi-transparent border.",
+  "tags": [
+    "button",
+    "glassmorphism",
+    "blur",
+    "minimal"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "portfolio"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass-btn",
+  "author": "R. Selva",
+  "license": "MIT"
+}

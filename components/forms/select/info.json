@@ -1,0 +1,22 @@
+{
+  "name": "Animated Dropdown Select Menu",
+  "slug": "select",
+  "componentName": "CustomSelect",
+  "category": "forms",
+  "description": "Select menu that smoothly springs open with highlighted keyboard navigation options.",
+  "tags": [
+    "form",
+    "select",
+    "dropdown"
+  ],
+  "bestFor": [
+    "dashboard",
+    "forms"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/select",
+  "author": "R. Selva",
+  "license": "MIT"
+}

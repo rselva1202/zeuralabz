@@ -1,0 +1,20 @@
+{
+  "name": "Surface Light Glint Travelling Wave",
+  "slug": "shimmer-wave",
+  "componentName": "ShimmerWave",
+  "category": "animations",
+  "description": "Glint of light travelling across surface boundary.",
+  "tags": [
+    "animation",
+    "shimmer",
+    "glint"
+  ],
+  "bestFor": [
+    "cards",
+    "buttons"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shimmer-wave",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Atmospheric Pulse Glowing Headline",
+  "slug": "glow-headline",
+  "componentName": "GlowingHeadlineText",
+  "category": "text-animations",
+  "description": "Subtle atmospheric glow breathing effect pulsing behind high-tech header text.",
+  "tags": [
+    "text",
+    "glow",
+    "pulse",
+    "gradient"
+  ],
+  "bestFor": [
+    "hero",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glow-headline",
+  "author": "R. Selva",
+  "license": "MIT"
+}

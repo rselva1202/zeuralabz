@@ -1,0 +1,22 @@
+{
+  "name": "Verified Client Quote Star Card",
+  "slug": "testimonial-card",
+  "componentName": "TestimonialCard",
+  "category": "cards",
+  "description": "Social proof quote card with 5 gold stars, client portrait, and verified badge.",
+  "tags": [
+    "card",
+    "testimonial",
+    "review",
+    "social-proof"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "ecommerce"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/testimonial-card",
+  "author": "R. Selva",
+  "license": "MIT"
+}

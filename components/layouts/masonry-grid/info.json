@@ -1,0 +1,20 @@
+{
+  "name": "Dynamic Tile Masonry Wall",
+  "slug": "masonry-grid",
+  "componentName": "MasonryGridLayout",
+  "category": "layouts",
+  "description": "Pinterest-style masonry wall with staggered vertical card heights.",
+  "tags": [
+    "layout",
+    "masonry",
+    "gallery"
+  ],
+  "bestFor": [
+    "portfolio",
+    "gallery"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/masonry-grid",
+  "author": "R. Selva",
+  "license": "MIT"
+}

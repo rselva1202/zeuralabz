@@ -1,0 +1,21 @@
+{
+  "name": "Interactive Constellation Cosmic Hero",
+  "slug": "particle-hero",
+  "componentName": "ParticleHero",
+  "category": "heroes",
+  "description": "Deep cosmos hero with floating stars and reactive nebula luminescence.",
+  "tags": [
+    "hero",
+    "particles",
+    "constellation"
+  ],
+  "bestFor": [
+    "web3",
+    "portfolio",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particle-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

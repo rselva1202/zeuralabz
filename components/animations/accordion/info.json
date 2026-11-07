@@ -1,0 +1,21 @@
+{
+  "name": "Spring Physical FAQ Expansion",
+  "slug": "accordion",
+  "componentName": "SpringAccordion",
+  "category": "animations",
+  "description": "Spring animated accordion panel with rotational chevron indicator.",
+  "tags": [
+    "animation",
+    "accordion",
+    "faq"
+  ],
+  "bestFor": [
+    "pricing",
+    "faq",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/accordion",
+  "author": "R. Selva",
+  "license": "MIT"
+}

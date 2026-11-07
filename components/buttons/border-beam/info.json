@@ -1,0 +1,22 @@
+{
+  "name": "Infinite Conic Rotating Border Button",
+  "slug": "border-beam",
+  "componentName": "BorderBeamButton",
+  "category": "buttons",
+  "description": "An elegant dark button framed by a continuous rotating conic gradient border beam.",
+  "tags": [
+    "button",
+    "border-beam",
+    "rainbow",
+    "animated-border"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/border-beam",
+  "author": "R. Selva",
+  "license": "MIT"
+}

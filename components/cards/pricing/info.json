@@ -1,0 +1,22 @@
+{
+  "name": "SaaS High-Conversion Subscription Card",
+  "slug": "pricing",
+  "componentName": "PricingCard",
+  "category": "cards",
+  "description": "High-conversion SaaS subscription pricing card with popular badge and highlight borders.",
+  "tags": [
+    "card",
+    "pricing",
+    "saas",
+    "tier"
+  ],
+  "bestFor": [
+    "landing",
+    "pricing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pricing",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "vibe-ui",
+  "version": "1.0.0",
+  "description": "Make any website look pretty — install once, let AI suggest the best UI for your project.",
+  "main": "cli/index.js",
+  "bin": {
+    "vibe-ui": "./cli/bin/vibe-ui.js"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "vibe-coding",
+    "ai",
+    "design-system",
+    "tailwind",
+    "framer-motion",
+    "react",
+    "mcp",
+    "claude",
+    "cursor",
+    "antigravity"
+  ],
+  "author": "R. Selva <rselva1204@gmail.com> (https://github.com/rselva1202)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rselva1202/vibe-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rselva1202/vibe-ui/issues"
+  },
+  "homepage": "https://rselva1202.github.io/vibe-ui",
+  "type": "module",
+  "scripts": {
+    "cli": "node ./cli/bin/vibe-ui.js",
+    "mcp": "node ./mcp-server/index.js",
+    "generator": "node ./generator/generate.js",
+    "preview": "npm run dev --prefix preview-site",
+    "build:preview": "npm run build --prefix preview-site"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "chalk": "^5.4.1",
+    "commander": "^13.1.0",
+    "glob": "^11.0.1",
+    "inquirer": "^12.4.2",
+    "open": "^10.1.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "typescript": "^5.7.3"
+  }
+}

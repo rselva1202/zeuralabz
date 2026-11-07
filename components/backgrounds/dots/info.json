@@ -1,0 +1,22 @@
+{
+  "name": "Reactive Dot Matrix Grid",
+  "slug": "dots",
+  "componentName": "DotGridBackground",
+  "category": "backgrounds",
+  "description": "Clean architectural 16px micro-dot grid pattern on deep slate background.",
+  "tags": [
+    "background",
+    "dots",
+    "grid",
+    "minimal"
+  ],
+  "bestFor": [
+    "saas",
+    "dashboard",
+    "developer"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+  "author": "R. Selva",
+  "license": "MIT"
+}

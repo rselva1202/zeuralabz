@@ -1,0 +1,21 @@
+{
+  "name": "Edge Highlight Luminescent Glow Card",
+  "slug": "hover-glow",
+  "componentName": "HoverGlowCard",
+  "category": "cards",
+  "description": "Card with glowing perimeter gradient border illuminating dynamically on mouse hover.",
+  "tags": [
+    "card",
+    "glow",
+    "gradient-border"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/hover-glow",
+  "author": "R. Selva",
+  "license": "MIT"
+}

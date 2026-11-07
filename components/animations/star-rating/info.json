@@ -1,0 +1,20 @@
+{
+  "name": "Interactive 5-Star Feedback Review Bar",
+  "slug": "star-rating",
+  "componentName": "StarRating",
+  "category": "animations",
+  "description": "Gold star review rating component with hover preview feedback and instant score display.",
+  "tags": [
+    "animation",
+    "rating",
+    "stars"
+  ],
+  "bestFor": [
+    "ecommerce",
+    "social-proof"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/star-rating",
+  "author": "R. Selva",
+  "license": "MIT"
+}

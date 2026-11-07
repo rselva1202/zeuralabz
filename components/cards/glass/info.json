@@ -1,0 +1,22 @@
+{
+  "name": "Frosted Glassmorphism Card",
+  "slug": "glass",
+  "componentName": "GlassCard",
+  "category": "cards",
+  "description": "Ultra-refined backdrop blurred translucent glass card with glowing specular linear border highlight.",
+  "tags": [
+    "card",
+    "glassmorphism",
+    "blur",
+    "minimal"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass",
+  "author": "R. Selva",
+  "license": "MIT"
+}

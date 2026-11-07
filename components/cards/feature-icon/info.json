@@ -1,0 +1,20 @@
+{
+  "name": "Elevated Minimalist Feature Box Card",
+  "slug": "feature-icon",
+  "componentName": "FeatureIconCard",
+  "category": "cards",
+  "description": "Clean minimalist card with top accent icon and high-contrast typography.",
+  "tags": [
+    "card",
+    "feature",
+    "minimalist"
+  ],
+  "bestFor": [
+    "landing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/feature-icon",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Chromatic Aberration RGB Glitch Text",
+  "slug": "glitch-text",
+  "componentName": "GlitchText",
+  "category": "text-animations",
+  "description": "Split RGB neon layers twitching on hover to create a cyberpunk video distortion.",
+  "tags": [
+    "text",
+    "glitch",
+    "cyberpunk",
+    "chromatic"
+  ],
+  "bestFor": [
+    "gaming",
+    "developer",
+    "crypto"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glitch-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

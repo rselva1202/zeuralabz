@@ -1,0 +1,20 @@
+{
+  "name": "Range Slider with Dynamic Tooltip",
+  "slug": "range",
+  "componentName": "RangeSlider",
+  "category": "forms",
+  "description": "Smooth slider with floating value tooltip that tracks the thumb coordinate.",
+  "tags": [
+    "form",
+    "slider",
+    "range"
+  ],
+  "bestFor": [
+    "dashboard",
+    "settings"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/range",
+  "author": "R. Selva",
+  "license": "MIT"
+}

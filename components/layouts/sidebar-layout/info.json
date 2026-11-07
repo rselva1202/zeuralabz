@@ -1,0 +1,19 @@
+{
+  "name": "Collapsible Desktop Sidebar Shell",
+  "slug": "sidebar-layout",
+  "componentName": "SidebarLayout",
+  "category": "layouts",
+  "description": "Sidebar navigation frame with quick collapsing controls.",
+  "tags": [
+    "layout",
+    "sidebar"
+  ],
+  "bestFor": [
+    "dashboard",
+    "docs"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sidebar-layout",
+  "author": "R. Selva",
+  "license": "MIT"
+}

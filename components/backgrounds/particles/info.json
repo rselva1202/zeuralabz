@@ -1,0 +1,22 @@
+{
+  "name": "Floating Particle Network",
+  "slug": "particles",
+  "componentName": "ParticlesBackground",
+  "category": "backgrounds",
+  "description": "Interconnected floating particle filaments drifting organically in space.",
+  "tags": [
+    "background",
+    "particles",
+    "network",
+    "constellation"
+  ],
+  "bestFor": [
+    "saas",
+    "portfolio",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particles",
+  "author": "R. Selva",
+  "license": "MIT"
+}

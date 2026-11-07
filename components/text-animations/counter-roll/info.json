@@ -1,0 +1,22 @@
+{
+  "name": "Statistical Spring Counter Numbers",
+  "slug": "counter-roll",
+  "componentName": "CounterRollText",
+  "category": "text-animations",
+  "description": "Animated statistical counter that spins up from 0 to target metrics smoothly.",
+  "tags": [
+    "text",
+    "counter",
+    "numbers",
+    "metrics"
+  ],
+  "bestFor": [
+    "saas",
+    "dashboard",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/counter-roll",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Responsive Admin Analytics Shell",
+  "slug": "dashboard",
+  "componentName": "DashboardLayout",
+  "category": "layouts",
+  "description": "Full-featured dashboard layout with collapsible sidebar and top metric widgets.",
+  "tags": [
+    "layout",
+    "dashboard",
+    "admin"
+  ],
+  "bestFor": [
+    "dashboard",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dashboard",
+  "author": "R. Selva",
+  "license": "MIT"
+}

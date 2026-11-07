@@ -1,0 +1,21 @@
+{
+  "name": "Precision Radial SVG Percentage Ring",
+  "slug": "circular",
+  "componentName": "CircularRingLoader",
+  "category": "loaders",
+  "description": "Radial SVG stroke ring displaying calculated download percentage.",
+  "tags": [
+    "loader",
+    "circular",
+    "svg",
+    "ring"
+  ],
+  "bestFor": [
+    "dashboard",
+    "stats"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circular",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Glowing Linear Gradient Track Loader",
+  "slug": "progress",
+  "componentName": "LinearProgress",
+  "category": "loaders",
+  "description": "Linear loading bar with glowing tip advancing along track.",
+  "tags": [
+    "loader",
+    "progress",
+    "linear"
+  ],
+  "bestFor": [
+    "onboarding",
+    "upload"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/progress",
+  "author": "R. Selva",
+  "license": "MIT"
+}

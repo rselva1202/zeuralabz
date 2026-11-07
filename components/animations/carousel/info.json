@@ -1,0 +1,20 @@
+{
+  "name": "Touch Swiper Carousel",
+  "slug": "carousel",
+  "componentName": "SwiperCarousel",
+  "category": "animations",
+  "description": "Component preview reel with previous/next controls.",
+  "tags": [
+    "animation",
+    "carousel",
+    "swiper"
+  ],
+  "bestFor": [
+    "portfolio",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/carousel",
+  "author": "R. Selva",
+  "license": "MIT"
+}

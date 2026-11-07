@@ -1,0 +1,20 @@
+{
+  "name": "50/50 Dual Focus Brand Layout",
+  "slug": "split-screen",
+  "componentName": "SplitScreenLayout",
+  "category": "layouts",
+  "description": "Split 50/50 layout ideal for login, onboarding, or product stories.",
+  "tags": [
+    "layout",
+    "split",
+    "onboarding"
+  ],
+  "bestFor": [
+    "login",
+    "onboarding"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-screen",
+  "author": "R. Selva",
+  "license": "MIT"
+}

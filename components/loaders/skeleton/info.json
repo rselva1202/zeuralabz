@@ -1,0 +1,20 @@
+{
+  "name": "Asynchronous Content Shimmer Pulse Box",
+  "slug": "skeleton",
+  "componentName": "SkeletonCard",
+  "category": "loaders",
+  "description": "Asynchronous content loading skeleton mock with shimmering pulse wave.",
+  "tags": [
+    "loader",
+    "skeleton",
+    "placeholder"
+  ],
+  "bestFor": [
+    "dashboard",
+    "lists"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/skeleton",
+  "author": "R. Selva",
+  "license": "MIT"
+}

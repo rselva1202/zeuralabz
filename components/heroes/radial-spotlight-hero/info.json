@@ -1,0 +1,20 @@
+{
+  "name": "Subtle Atmospheric Flashlight Hero",
+  "slug": "radial-spotlight-hero",
+  "componentName": "RadialSpotlightHero",
+  "category": "heroes",
+  "description": "Silicon Valley style modern SaaS headline with dual gradient highlights.",
+  "tags": [
+    "hero",
+    "saas",
+    "spotlight"
+  ],
+  "bestFor": [
+    "saas",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/radial-spotlight-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

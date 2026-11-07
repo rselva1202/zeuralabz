@@ -1,0 +1,22 @@
+{
+  "name": "Hacker CLI Command Stream Hero",
+  "slug": "terminal-hero",
+  "componentName": "TerminalHero",
+  "category": "heroes",
+  "description": "Terminal hero with live typing command line animation simulation.",
+  "tags": [
+    "hero",
+    "terminal",
+    "cyberpunk",
+    "code"
+  ],
+  "bestFor": [
+    "developer",
+    "cli",
+    "docs"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/terminal-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

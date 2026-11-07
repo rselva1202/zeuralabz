@@ -1,0 +1,20 @@
+{
+  "name": "Bouncing Harmonic Liquid Dots Wave",
+  "slug": "dots",
+  "componentName": "BouncingDots",
+  "category": "loaders",
+  "description": "Three liquid dots bouncing in harmonic wave delay rhythm.",
+  "tags": [
+    "loader",
+    "dots",
+    "bounce"
+  ],
+  "bestFor": [
+    "chat",
+    "status"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+  "author": "R. Selva",
+  "license": "MIT"
+}

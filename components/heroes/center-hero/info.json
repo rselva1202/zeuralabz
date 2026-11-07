@@ -1,0 +1,22 @@
+{
+  "name": "High-Impact Centered SaaS Hero",
+  "slug": "center-hero",
+  "componentName": "CenterHero",
+  "category": "heroes",
+  "description": "Centered SaaS headline with ambient glow orbs, dual CTAs, and community pill badge.",
+  "tags": [
+    "hero",
+    "centered",
+    "saas",
+    "landing"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "startup"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/center-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

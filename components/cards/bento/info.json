@@ -1,0 +1,22 @@
+{
+  "name": "Bento Grid Asymmetric Tile Card",
+  "slug": "bento",
+  "componentName": "BentoCard",
+  "category": "cards",
+  "description": "Apple-inspired Bento Grid tile with integrated feature graphics and highlight border.",
+  "tags": [
+    "card",
+    "bento",
+    "grid",
+    "modern"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento",
+  "author": "R. Selva",
+  "license": "MIT"
+}

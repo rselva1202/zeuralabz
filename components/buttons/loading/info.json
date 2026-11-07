@@ -1,0 +1,22 @@
+{
+  "name": "Stateful Morphing Spinner Button",
+  "slug": "loading",
+  "componentName": "LoadingSpinnerButton",
+  "category": "buttons",
+  "description": "Button that smoothly transforms into a spinning loader on click.",
+  "tags": [
+    "button",
+    "loading",
+    "spinner",
+    "stateful"
+  ],
+  "bestFor": [
+    "forms",
+    "checkout",
+    "dashboard"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/loading",
+  "author": "R. Selva",
+  "license": "MIT"
+}

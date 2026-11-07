@@ -1,0 +1,20 @@
+{
+  "name": "Drag & Drop File Upload Zone",
+  "slug": "upload",
+  "componentName": "FileUpload",
+  "category": "forms",
+  "description": "Dotted upload area with pulse highlight on file dragover and file size validator.",
+  "tags": [
+    "form",
+    "upload",
+    "file"
+  ],
+  "bestFor": [
+    "dashboard",
+    "forms"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/upload",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Spiral Galaxy Cosmic Canvas",
+  "slug": "galaxy",
+  "componentName": "GalaxyBackground",
+  "category": "backgrounds",
+  "description": "Deep cosmic spiraling star dust and stellar nebula rotation canvas.",
+  "tags": [
+    "background",
+    "galaxy",
+    "cosmos",
+    "particles"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "web3"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/galaxy",
+  "author": "R. Selva",
+  "license": "MIT"
+}

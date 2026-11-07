@@ -1,0 +1,20 @@
+{
+  "name": "Edge-to-Edge Cinematic Screen Shell",
+  "slug": "fullscreen-hero-layout",
+  "componentName": "FullscreenHeroLayout",
+  "category": "layouts",
+  "description": "Full 100vh viewport immersive landing section shell.",
+  "tags": [
+    "layout",
+    "fullscreen",
+    "cinematic"
+  ],
+  "bestFor": [
+    "landing",
+    "agency"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/fullscreen-hero-layout",
+  "author": "R. Selva",
+  "license": "MIT"
+}

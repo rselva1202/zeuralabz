@@ -1,0 +1,23 @@
+{
+  "name": "Staggered Slide-Out Mobile Navigation",
+  "slug": "mobile-drawer",
+  "componentName": "MobileDrawer",
+  "category": "layouts",
+  "description": "Smooth sliding mobile navigation drawer with staggered link appearance animations.",
+  "tags": [
+    "navbar",
+    "mobile",
+    "drawer",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "mobile",
+    "landing"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mobile-drawer",
+  "author": "R. Selva",
+  "license": "MIT"
+}

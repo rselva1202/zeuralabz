@@ -1,0 +1,22 @@
+{
+  "name": "Ordered Child Element Sequential Entrance",
+  "slug": "stagger-fade",
+  "componentName": "StaggerFade",
+  "category": "animations",
+  "description": "Orchestrates child element animations with sequential timing delays.",
+  "tags": [
+    "animation",
+    "stagger",
+    "fade"
+  ],
+  "bestFor": [
+    "lists",
+    "cards"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stagger-fade",
+  "author": "R. Selva",
+  "license": "MIT"
+}

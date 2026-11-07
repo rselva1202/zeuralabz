@@ -1,0 +1,24 @@
+{
+  "name": "Spring Physics Magnetic Button",
+  "slug": "magnetic",
+  "componentName": "MagneticButton",
+  "category": "buttons",
+  "description": "Interactive button that pulls towards cursor coordinates on proximity with spring physics.",
+  "tags": [
+    "button",
+    "magnetic",
+    "physics",
+    "interactive"
+  ],
+  "bestFor": [
+    "portfolio",
+    "hero",
+    "landing"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+  "author": "R. Selva",
+  "license": "MIT"
+}

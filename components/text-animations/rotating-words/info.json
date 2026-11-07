@@ -1,0 +1,24 @@
+{
+  "name": "3D Flipping Word Carousel",
+  "slug": "rotating-words",
+  "componentName": "RotatingWordsText",
+  "category": "text-animations",
+  "description": "Vertical flipping words cycler that dynamically swaps key marketing adjectives.",
+  "tags": [
+    "text",
+    "flip",
+    "rotate",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "saas"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/rotating-words",
+  "author": "R. Selva",
+  "license": "MIT"
+}

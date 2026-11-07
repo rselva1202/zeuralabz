@@ -1,0 +1,20 @@
+{
+  "name": "Centered Floating Social Ribbon",
+  "slug": "social-pill-footer",
+  "componentName": "SocialPillFooter",
+  "category": "layouts",
+  "description": "Centered glass pill island footer with glowing social media links.",
+  "tags": [
+    "footer",
+    "social",
+    "pill"
+  ],
+  "bestFor": [
+    "portfolio",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/social-pill-footer",
+  "author": "R. Selva",
+  "license": "MIT"
+}

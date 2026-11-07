@@ -1,0 +1,22 @@
+{
+  "name": "Animated Mesh Gradient",
+  "slug": "gradient",
+  "componentName": "MeshGradientBackground",
+  "category": "backgrounds",
+  "description": "Chromatic organic gradient blobs softly blending and pulsing across screen.",
+  "tags": [
+    "background",
+    "gradient",
+    "mesh",
+    "blobs"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+  "author": "R. Selva",
+  "license": "MIT"
+}

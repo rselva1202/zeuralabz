@@ -1,0 +1,20 @@
+{
+  "name": "Magnetic Orbit Floating Cluster",
+  "slug": "magnetic",
+  "componentName": "MagneticOrbit",
+  "category": "animations",
+  "description": "Floating icon clusters that gravitate smoothly towards cursor pointer.",
+  "tags": [
+    "animation",
+    "magnetic",
+    "orbit"
+  ],
+  "bestFor": [
+    "portfolio",
+    "social"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+  "author": "R. Selva",
+  "license": "MIT"
+}

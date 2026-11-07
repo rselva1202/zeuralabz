@@ -1,0 +1,22 @@
+{
+  "name": "Analytics KPI Sparkline Trend Card",
+  "slug": "metric-trend",
+  "componentName": "MetricTrendCard",
+  "category": "cards",
+  "description": "Analytics dashboard metric widget displaying realtime growth percentage and glowing sparkline indicator.",
+  "tags": [
+    "card",
+    "metric",
+    "stat",
+    "dashboard"
+  ],
+  "bestFor": [
+    "dashboard",
+    "saas",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/metric-trend",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Floating Label Animated Input",
+  "slug": "floating-input",
+  "componentName": "FloatingInput",
+  "category": "forms",
+  "description": "Minimalist input field where the label floats upward and changes tint when focused.",
+  "tags": [
+    "form",
+    "input",
+    "floating-label"
+  ],
+  "bestFor": [
+    "login",
+    "forms",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-input",
+  "author": "R. Selva",
+  "license": "MIT"
+}

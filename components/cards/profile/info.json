@@ -1,0 +1,22 @@
+{
+  "name": "Team Member Avatar Badge Card",
+  "slug": "profile",
+  "componentName": "ProfileCard",
+  "category": "cards",
+  "description": "Team member profile card with circular avatar, role chip, and social action buttons.",
+  "tags": [
+    "card",
+    "profile",
+    "avatar",
+    "team"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "about"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/profile",
+  "author": "R. Selva",
+  "license": "MIT"
+}

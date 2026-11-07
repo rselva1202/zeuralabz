@@ -1,0 +1,22 @@
+{
+  "name": "Dual Column Value Prop & Live Canvas Hero",
+  "slug": "split-hero",
+  "componentName": "SplitHero",
+  "category": "heroes",
+  "description": "Split layout hero with compelling value proposition on left and live preview stage on right.",
+  "tags": [
+    "hero",
+    "split",
+    "conversion",
+    "cta"
+  ],
+  "bestFor": [
+    "saas",
+    "landing",
+    "product"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

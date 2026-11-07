@@ -1,0 +1,23 @@
+{
+  "name": "Viewport Intersection Spring Reveal",
+  "slug": "scroll-reveal",
+  "componentName": "ScrollReveal",
+  "category": "animations",
+  "description": "Element springs into view as soon as it enters the user viewport.",
+  "tags": [
+    "animation",
+    "scroll",
+    "reveal"
+  ],
+  "bestFor": [
+    "landing",
+    "cards",
+    "sections"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scroll-reveal",
+  "author": "R. Selva",
+  "license": "MIT"
+}

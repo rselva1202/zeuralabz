@@ -1,0 +1,21 @@
+{
+  "name": "Focused Reading & Onboarding Container",
+  "slug": "centered-container",
+  "componentName": "CenteredContainerLayout",
+  "category": "layouts",
+  "description": "Narrow centered maximum width container for focused reading or checkout flows.",
+  "tags": [
+    "layout",
+    "centered",
+    "reading"
+  ],
+  "bestFor": [
+    "blog",
+    "checkout",
+    "onboarding"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/centered-container",
+  "author": "R. Selva",
+  "license": "MIT"
+}

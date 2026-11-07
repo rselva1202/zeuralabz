@@ -1,0 +1,22 @@
+{
+  "name": "Cursor Flashlight Radial Card",
+  "slug": "spotlight",
+  "componentName": "SpotlightCard",
+  "category": "cards",
+  "description": "Card illuminating a dynamic radial light beam wherever the cursor hovers.",
+  "tags": [
+    "card",
+    "spotlight",
+    "radial",
+    "interactive"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight",
+  "author": "R. Selva",
+  "license": "MIT"
+}

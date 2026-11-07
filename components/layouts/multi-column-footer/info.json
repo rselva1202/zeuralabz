@@ -1,0 +1,20 @@
+{
+  "name": "Corporate Dark 4-Column Link Footer",
+  "slug": "multi-column-footer",
+  "componentName": "MultiColumnFooter",
+  "category": "layouts",
+  "description": "Corporate dark footer with link columns, brand badge, and copyright disclaimer.",
+  "tags": [
+    "footer",
+    "multi-column",
+    "links"
+  ],
+  "bestFor": [
+    "landing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column-footer",
+  "author": "R. Selva",
+  "license": "MIT"
+}

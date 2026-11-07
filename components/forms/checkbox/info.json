@@ -1,0 +1,22 @@
+{
+  "name": "Animated Spring Checkbox",
+  "slug": "checkbox",
+  "componentName": "AnimatedCheckbox",
+  "category": "forms",
+  "description": "Custom checkbox with smooth spring path drawing checkmark animation.",
+  "tags": [
+    "form",
+    "checkbox",
+    "checkmark"
+  ],
+  "bestFor": [
+    "forms",
+    "settings"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/checkbox",
+  "author": "R. Selva",
+  "license": "MIT"
+}

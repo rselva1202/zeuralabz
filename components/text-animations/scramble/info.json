@@ -1,0 +1,22 @@
+{
+  "name": "Matrix Code Scramble",
+  "slug": "scramble",
+  "componentName": "ScrambleText",
+  "category": "text-animations",
+  "description": "Text that rapidly decodes from random binary/hex digits into clear characters on hover.",
+  "tags": [
+    "text",
+    "matrix",
+    "scramble",
+    "decoder"
+  ],
+  "bestFor": [
+    "developer",
+    "cyberpunk",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scramble",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Deep Space Starfield",
+  "slug": "starfield",
+  "componentName": "StarfieldBackground",
+  "category": "backgrounds",
+  "description": "Dense field of twinkling celestial stars across deep midnight void.",
+  "tags": [
+    "background",
+    "starfield",
+    "cosmos",
+    "particles"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "web3"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/starfield",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Glassmorphism Newsletter Subscribe Box",
+  "slug": "newsletter",
+  "componentName": "NewsletterBox",
+  "category": "forms",
+  "description": "Inline email newsletter collector with frosted glass container and integrated CTA.",
+  "tags": [
+    "form",
+    "newsletter",
+    "subscribe",
+    "glass"
+  ],
+  "bestFor": [
+    "footer",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/newsletter",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Radiant Linear Gradient Button",
+  "slug": "gradient",
+  "componentName": "GradientButton",
+  "category": "buttons",
+  "description": "Smooth multi-color gradient button with soft bloom shadow.",
+  "tags": [
+    "button",
+    "gradient",
+    "modern"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+  "author": "R. Selva",
+  "license": "MIT"
+}

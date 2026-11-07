@@ -1,0 +1,20 @@
+{
+  "name": "Velocity Mouse Trail Follower",
+  "slug": "cursor-trail",
+  "componentName": "CursorTrail",
+  "category": "animations",
+  "description": "Trailing glowing cursor ring that stretches based on cursor movement velocity.",
+  "tags": [
+    "animation",
+    "cursor",
+    "mouse-trail"
+  ],
+  "bestFor": [
+    "portfolio",
+    "creative"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cursor-trail",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Dynamic Crossfade Word Morph",
+  "slug": "word-swap",
+  "componentName": "WordSwapText",
+  "category": "text-animations",
+  "description": "Interactive button swapping contrasting design philosophies.",
+  "tags": [
+    "text",
+    "morph",
+    "swap"
+  ],
+  "bestFor": [
+    "hero",
+    "creative"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/word-swap",
+  "author": "R. Selva",
+  "license": "MIT"
+}

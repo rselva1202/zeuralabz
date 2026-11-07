@@ -1,0 +1,21 @@
+{
+  "name": "Flowing Gradient Text",
+  "slug": "gradient-text",
+  "componentName": "GradientText",
+  "category": "text-animations",
+  "description": "High-visibility typography with continuous shifting multi-stop color gradient wave.",
+  "tags": [
+    "text",
+    "gradient",
+    "animated-text"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

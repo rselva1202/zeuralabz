@@ -1,0 +1,22 @@
+{
+  "name": "Ambient Drifting Mist",
+  "slug": "clouds",
+  "componentName": "DriftingMistBackground",
+  "category": "backgrounds",
+  "description": "Gentle atmospheric cloud smoke drifting softly across dark surfaces.",
+  "tags": [
+    "background",
+    "clouds",
+    "mist",
+    "ambient"
+  ],
+  "bestFor": [
+    "portfolio",
+    "wellness",
+    "creative"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/clouds",
+  "author": "R. Selva",
+  "license": "MIT"
+}

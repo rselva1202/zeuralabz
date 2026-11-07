@@ -1,0 +1,22 @@
+{
+  "name": "Expanding Liquid Wave Outline Button",
+  "slug": "outline-fill",
+  "componentName": "OutlineFillButton",
+  "category": "buttons",
+  "description": "Clean outline button that expands a full liquid color wave to fill interior on hover.",
+  "tags": [
+    "button",
+    "outline",
+    "hover",
+    "fill"
+  ],
+  "bestFor": [
+    "saas",
+    "portfolio",
+    "minimal"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/outline-fill",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Giant Typography Bold Magazine Hero",
+  "slug": "editorial-hero",
+  "componentName": "EditorialHero",
+  "category": "heroes",
+  "description": "Editorial magazine layout dominated by huge, crisp typography and subtle micro-details.",
+  "tags": [
+    "hero",
+    "typography",
+    "editorial"
+  ],
+  "bestFor": [
+    "portfolio",
+    "creative",
+    "agency"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/editorial-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

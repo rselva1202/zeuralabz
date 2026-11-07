@@ -1,0 +1,24 @@
+{
+  "name": "Cyberpunk Glowing Neon Button",
+  "slug": "neon",
+  "componentName": "NeonButton",
+  "category": "buttons",
+  "description": "High-voltage electric neon button with radiating aura and border illumination.",
+  "tags": [
+    "button",
+    "neon",
+    "glow",
+    "cyberpunk"
+  ],
+  "bestFor": [
+    "gaming",
+    "crypto",
+    "landing"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/neon",
+  "author": "R. Selva",
+  "license": "MIT"
+}

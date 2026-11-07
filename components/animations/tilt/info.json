@@ -1,0 +1,20 @@
+{
+  "name": "3D Gyroscope Perspective Angle",
+  "slug": "tilt",
+  "componentName": "GyroTilt",
+  "category": "animations",
+  "description": "Interactive container that tilts dynamically on mouse move.",
+  "tags": [
+    "animation",
+    "3d",
+    "tilt"
+  ],
+  "bestFor": [
+    "cards",
+    "heroes"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+  "author": "R. Selva",
+  "license": "MIT"
+}

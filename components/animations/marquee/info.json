@@ -1,0 +1,22 @@
+{
+  "name": "Infinite Seamless Marquee Logo Cloud",
+  "slug": "marquee",
+  "componentName": "MarqueeLogoCloud",
+  "category": "animations",
+  "description": "Endless smooth horizontal marquee loop showcasing tech partner logos.",
+  "tags": [
+    "animation",
+    "marquee",
+    "logos",
+    "infinite"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "social-proof"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Clean Monospace Single Headline Hero",
+  "slug": "minimalist-hero",
+  "componentName": "MinimalistHero",
+  "category": "heroes",
+  "description": "Clean single headline with monospace accent and minimalist CTA.",
+  "tags": [
+    "hero",
+    "minimal",
+    "mono"
+  ],
+  "bestFor": [
+    "portfolio",
+    "developer"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimalist-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

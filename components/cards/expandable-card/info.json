@@ -1,0 +1,24 @@
+{
+  "name": "Smooth Accordion Drawer Spec Card",
+  "slug": "expandable-card",
+  "componentName": "ExpandableCard",
+  "category": "cards",
+  "description": "A collapsed summary card that smoothly unfolds to reveal deep technical specs when tapped.",
+  "tags": [
+    "card",
+    "expandable",
+    "drawer",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "dashboard",
+    "docs",
+    "pricing"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/expandable-card",
+  "author": "R. Selva",
+  "license": "MIT"
+}

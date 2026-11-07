@@ -1,0 +1,20 @@
+{
+  "name": "Viewport Coordinate Shifting Box",
+  "slug": "parallax-box",
+  "componentName": "ParallaxBox",
+  "category": "animations",
+  "description": "Parallax layer container shifting coordinate axes on viewport movement.",
+  "tags": [
+    "animation",
+    "parallax",
+    "scroll"
+  ],
+  "bestFor": [
+    "hero",
+    "landing"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/parallax-box",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "3-Column Modern Grid Canvas",
+  "slug": "multi-column",
+  "componentName": "MultiColumnLayout",
+  "category": "layouts",
+  "description": "Standard 3-column responsive card canvas.",
+  "tags": [
+    "layout",
+    "grid",
+    "columns"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column",
+  "author": "R. Selva",
+  "license": "MIT"
+}

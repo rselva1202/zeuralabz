@@ -1,0 +1,21 @@
+{
+  "name": "Ambient Background Motion Loop Hero",
+  "slug": "video-hero",
+  "componentName": "VideoHero",
+  "category": "heroes",
+  "description": "Immersive dark hero container with video loop motion backdrop.",
+  "tags": [
+    "hero",
+    "video",
+    "cinematic"
+  ],
+  "bestFor": [
+    "landing",
+    "brand",
+    "agency"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/video-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

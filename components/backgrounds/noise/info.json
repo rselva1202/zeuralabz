@@ -1,0 +1,22 @@
+{
+  "name": "Film Grain Noise Texture",
+  "slug": "noise",
+  "componentName": "NoiseBackground",
+  "category": "backgrounds",
+  "description": "Analog grainy noise texture overlay giving tactility and depth to flat dark modes.",
+  "tags": [
+    "background",
+    "noise",
+    "grain",
+    "texture"
+  ],
+  "bestFor": [
+    "editorial",
+    "portfolio",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/noise",
+  "author": "R. Selva",
+  "license": "MIT"
+}

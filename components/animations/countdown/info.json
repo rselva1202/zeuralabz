@@ -1,0 +1,21 @@
+{
+  "name": "Realtime Digital Milestone Timer",
+  "slug": "countdown",
+  "componentName": "CountdownTimer",
+  "category": "animations",
+  "description": "Digital countdown display showing Days, Hours, Minutes, and Seconds with dark neon blocks.",
+  "tags": [
+    "animation",
+    "countdown",
+    "timer"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "ecommerce"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/countdown",
+  "author": "R. Selva",
+  "license": "MIT"
+}

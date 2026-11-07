@@ -1,0 +1,25 @@
+{
+  "name": "Aurora Background",
+  "slug": "aurora",
+  "componentName": "AuroraBackground",
+  "category": "backgrounds",
+  "description": "Living northern lights curtain simulation drifting with deep indigo, cyan, and magenta ambient waves.",
+  "tags": [
+    "background",
+    "aurora",
+    "ambient",
+    "gradient",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "hero"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/aurora",
+  "author": "R. Selva",
+  "license": "MIT"
+}

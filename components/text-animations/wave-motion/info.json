@@ -1,0 +1,24 @@
+{
+  "name": "Sinusoidal Stagger Wave Text",
+  "slug": "wave-motion",
+  "componentName": "WaveMotionText",
+  "category": "text-animations",
+  "description": "Letters bounce in a sinusoidal wave harmonic when mouse hovers over the sentence.",
+  "tags": [
+    "text",
+    "wave",
+    "bounce",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "portfolio",
+    "creative",
+    "header"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/wave-motion",
+  "author": "R. Selva",
+  "license": "MIT"
+}

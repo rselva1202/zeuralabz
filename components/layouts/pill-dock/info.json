@@ -1,0 +1,22 @@
+{
+  "name": "iOS Inspired Floating Segmented Dock",
+  "slug": "pill-dock",
+  "componentName": "PillDock",
+  "category": "layouts",
+  "description": "Compact dock-style bottom bar with iOS inspired glass segments.",
+  "tags": [
+    "navbar",
+    "dock",
+    "segmented",
+    "pill"
+  ],
+  "bestFor": [
+    "landing",
+    "mobile",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pill-dock",
+  "author": "R. Selva",
+  "license": "MIT"
+}

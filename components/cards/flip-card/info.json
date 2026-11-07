@@ -1,0 +1,22 @@
+{
+  "name": "3D Double-Sided Rotary Card",
+  "slug": "flip-card",
+  "componentName": "FlipCard",
+  "category": "cards",
+  "description": "Two-sided card that rotates 180 degrees on mouse hover revealing backside specifications.",
+  "tags": [
+    "card",
+    "flip",
+    "3d",
+    "interactive"
+  ],
+  "bestFor": [
+    "portfolio",
+    "gaming",
+    "ecommerce"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/flip-card",
+  "author": "R. Selva",
+  "license": "MIT"
+}

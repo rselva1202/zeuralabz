@@ -1,0 +1,20 @@
+{
+  "name": "Sticky Scrolling Narrative Side-by-Side",
+  "slug": "sticky-split",
+  "componentName": "StickySplitLayout",
+  "category": "layouts",
+  "description": "Side-by-side layout where one column sticks while the other scrolls narrative.",
+  "tags": [
+    "layout",
+    "sticky",
+    "narrative"
+  ],
+  "bestFor": [
+    "landing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-split",
+  "author": "R. Selva",
+  "license": "MIT"
+}

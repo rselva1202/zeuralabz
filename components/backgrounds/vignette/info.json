@@ -1,0 +1,22 @@
+{
+  "name": "Cinematic Dark Radial Vignette",
+  "slug": "vignette",
+  "componentName": "VignetteBackground",
+  "category": "backgrounds",
+  "description": "Classic cinematic vignette darkening the borders to focus attention on central content.",
+  "tags": [
+    "background",
+    "vignette",
+    "minimal",
+    "focus"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "reading"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/vignette",
+  "author": "R. Selva",
+  "license": "MIT"
+}

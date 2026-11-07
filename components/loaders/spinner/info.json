@@ -1,0 +1,21 @@
+{
+  "name": "Concentric Dual Orbit Luminous Ring",
+  "slug": "spinner",
+  "componentName": "DualRingSpinner",
+  "category": "loaders",
+  "description": "Two concentric luminous rings rotating in opposite directions with varied angular velocities.",
+  "tags": [
+    "loader",
+    "spinner",
+    "dual-ring"
+  ],
+  "bestFor": [
+    "saas",
+    "dashboard",
+    "actions"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spinner",
+  "author": "R. Selva",
+  "license": "MIT"
+}

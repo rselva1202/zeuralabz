@@ -1,0 +1,20 @@
+{
+  "name": "Rich Multi-Column Product Dropdown",
+  "slug": "mega-menu-nav",
+  "componentName": "MegaMenuNav",
+  "category": "layouts",
+  "description": "Rich multi-column product mega menu that drops down smoothly with card previews.",
+  "tags": [
+    "navbar",
+    "mega-menu",
+    "dropdown"
+  ],
+  "bestFor": [
+    "saas",
+    "ecommerce"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mega-menu-nav",
+  "author": "R. Selva",
+  "license": "MIT"
+}

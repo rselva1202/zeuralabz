@@ -1,0 +1,21 @@
+{
+  "name": "Keyboard Shortcut ⌘K Quicknav Bar",
+  "slug": "command-nav",
+  "componentName": "CommandNav",
+  "category": "layouts",
+  "description": "Keyboard centric navigation bar with ⌘K search bar trigger shortcut.",
+  "tags": [
+    "navbar",
+    "command-bar",
+    "shortcuts"
+  ],
+  "bestFor": [
+    "saas",
+    "docs",
+    "dashboard"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/command-nav",
+  "author": "R. Selva",
+  "license": "MIT"
+}

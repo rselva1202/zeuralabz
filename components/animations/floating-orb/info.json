@@ -1,0 +1,20 @@
+{
+  "name": "Ambient Drifting Weightless Orb",
+  "slug": "floating-orb",
+  "componentName": "FloatingOrb",
+  "category": "animations",
+  "description": "Weightless floating sphere drifting with slow sine curve physics.",
+  "tags": [
+    "animation",
+    "floating",
+    "orb"
+  ],
+  "bestFor": [
+    "background",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-orb",
+  "author": "R. Selva",
+  "license": "MIT"
+}

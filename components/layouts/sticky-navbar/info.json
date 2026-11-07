@@ -1,0 +1,20 @@
+{
+  "name": "Sticky Header with Scroll Progress",
+  "slug": "sticky-navbar",
+  "componentName": "StickyNavbar",
+  "category": "layouts",
+  "description": "Full-width top navigation header featuring integrated top progress line showing scroll percentage.",
+  "tags": [
+    "navbar",
+    "sticky",
+    "scroll-progress"
+  ],
+  "bestFor": [
+    "landing",
+    "docs"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-navbar",
+  "author": "R. Selva",
+  "license": "MIT"
+}

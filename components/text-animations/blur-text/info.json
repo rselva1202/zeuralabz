@@ -1,0 +1,24 @@
+{
+  "name": "Gaussian Blur-to-Clear Reveal",
+  "slug": "blur-text",
+  "componentName": "BlurText",
+  "category": "text-animations",
+  "description": "Words emerge from deep gaussian blur into crisp sharp focus sequentially.",
+  "tags": [
+    "text",
+    "blur",
+    "fade-in",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "editorial",
+    "portfolio"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/blur-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

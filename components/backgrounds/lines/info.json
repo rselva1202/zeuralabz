@@ -1,0 +1,22 @@
+{
+  "name": "Sinusoidal Neon Waves",
+  "slug": "lines",
+  "componentName": "NeonWavesBackground",
+  "category": "backgrounds",
+  "description": "Dynamic flowing bezier wave ribbons oscillating smoothly in background.",
+  "tags": [
+    "background",
+    "waves",
+    "neon",
+    "bezier"
+  ],
+  "bestFor": [
+    "landing",
+    "hero",
+    "music"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/lines",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Cascading Fanned Cards Deck",
+  "slug": "stacked-deck",
+  "componentName": "StackedDeckCard",
+  "category": "cards",
+  "description": "Cascading stacked cards deck that fans out slightly on hover mimicking physical playing cards.",
+  "tags": [
+    "card",
+    "stacked",
+    "deck",
+    "fan-out"
+  ],
+  "bestFor": [
+    "portfolio",
+    "landing",
+    "hero"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stacked-deck",
+  "author": "R. Selva",
+  "license": "MIT"
+}

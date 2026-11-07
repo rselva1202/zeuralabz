@@ -1,0 +1,23 @@
+{
+  "name": "Curtained Mask Slide Reveal",
+  "slug": "mask-reveal",
+  "componentName": "MaskRevealText",
+  "category": "text-animations",
+  "description": "Vertical curtain slide unmasking typography cleanly from top to bottom.",
+  "tags": [
+    "text",
+    "mask",
+    "slide",
+    "reveal"
+  ],
+  "bestFor": [
+    "hero",
+    "editorial"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mask-reveal",
+  "author": "R. Selva",
+  "license": "MIT"
+}

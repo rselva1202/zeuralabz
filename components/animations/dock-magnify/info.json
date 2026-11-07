@@ -1,0 +1,20 @@
+{
+  "name": "macOS Inspired Dock Magnification",
+  "slug": "dock-magnify",
+  "componentName": "DockMagnify",
+  "category": "animations",
+  "description": "Icon dock that magnifies proximity neighbors on mouse hover.",
+  "tags": [
+    "animation",
+    "dock",
+    "magnify"
+  ],
+  "bestFor": [
+    "navbar",
+    "dock"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dock-magnify",
+  "author": "R. Selva",
+  "license": "MIT"
+}

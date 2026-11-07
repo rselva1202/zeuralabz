@@ -1,0 +1,20 @@
+{
+  "name": "3D Perspective Isometric Canvas Hero",
+  "slug": "isometric-hero",
+  "componentName": "IsometricHero",
+  "category": "heroes",
+  "description": "Hero section with floating 3D isometric plane depth.",
+  "tags": [
+    "hero",
+    "3d",
+    "isometric"
+  ],
+  "bestFor": [
+    "tech",
+    "gaming"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/isometric-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Infinite Seamless Text Ribbon",
+  "slug": "marquee-text",
+  "componentName": "MarqueeTextRibbon",
+  "category": "text-animations",
+  "description": "Endless horizontal scrolling brand text ticker across dark background.",
+  "tags": [
+    "text",
+    "marquee",
+    "ribbon",
+    "infinite"
+  ],
+  "bestFor": [
+    "landing",
+    "footer",
+    "hero"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

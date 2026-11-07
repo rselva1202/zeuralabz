@@ -1,0 +1,24 @@
+{
+  "name": "Split Character Spring Reveal",
+  "slug": "split-text",
+  "componentName": "SplitText",
+  "category": "text-animations",
+  "description": "Cinematic typography reveal where individual letters spring smoothly upward into place.",
+  "tags": [
+    "text",
+    "split-text",
+    "reveal",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "portfolio"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

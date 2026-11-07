@@ -1,0 +1,22 @@
+{
+  "name": "Sci-Fi Telemetry Bracket HUD Card",
+  "slug": "cyber-hud",
+  "componentName": "CyberHudCard",
+  "category": "cards",
+  "description": "Futuristic sci-fi heads-up display card with corner crosshairs, telemetry stats, and cyber cyan accents.",
+  "tags": [
+    "card",
+    "cyberpunk",
+    "hud",
+    "futuristic"
+  ],
+  "bestFor": [
+    "gaming",
+    "crypto",
+    "developer"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-hud",
+  "author": "R. Selva",
+  "license": "MIT"
+}

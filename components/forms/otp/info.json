@@ -1,0 +1,21 @@
+{
+  "name": "Split 6-Digit OTP Verification Field",
+  "slug": "otp",
+  "componentName": "OtpInput",
+  "category": "forms",
+  "description": "Auto-advancing 6-character authentication code input fields for two-factor verification.",
+  "tags": [
+    "form",
+    "otp",
+    "verification",
+    "auth"
+  ],
+  "bestFor": [
+    "auth",
+    "login"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/otp",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Password Input with Reveal Toggle",
+  "slug": "password-reveal",
+  "componentName": "PasswordInput",
+  "category": "forms",
+  "description": "Secure password field featuring an interactive eye icon to toggle visibility.",
+  "tags": [
+    "form",
+    "password",
+    "toggle",
+    "security"
+  ],
+  "bestFor": [
+    "auth",
+    "login"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/password-reveal",
+  "author": "R. Selva",
+  "license": "MIT"
+}

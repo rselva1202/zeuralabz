@@ -1,0 +1,24 @@
+{
+  "name": "3D Gyroscopic Cursor Tilt Card",
+  "slug": "tilt",
+  "componentName": "TiltCard",
+  "category": "cards",
+  "description": "Dynamic card that tilts in three-dimensional space following cursor with specular lighting.",
+  "tags": [
+    "card",
+    "3d",
+    "tilt",
+    "interactive"
+  ],
+  "bestFor": [
+    "landing",
+    "saas",
+    "portfolio"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+  "author": "R. Selva",
+  "license": "MIT"
+}

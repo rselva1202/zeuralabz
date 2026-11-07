@@ -1,0 +1,3428 @@
+[
+  {
+    "id": "backgrounds/aurora",
+    "name": "Aurora Background",
+    "slug": "aurora",
+    "componentName": "AuroraBackground",
+    "category": "backgrounds",
+    "description": "Living northern lights curtain simulation drifting with deep indigo, cyan, and magenta ambient waves.",
+    "tags": [
+      "background",
+      "aurora",
+      "ambient",
+      "gradient",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/backgrounds/aurora/AuroraBackground.tsx",
+      "components/backgrounds/aurora/AuroraBackground.html",
+      "components/backgrounds/aurora/AuroraBackground.css",
+      "components/backgrounds/aurora/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/aurora",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "backgrounds/galaxy",
+    "name": "Spiral Galaxy Cosmic Canvas",
+    "slug": "galaxy",
+    "componentName": "GalaxyBackground",
+    "category": "backgrounds",
+    "description": "Deep cosmic spiraling star dust and stellar nebula rotation canvas.",
+    "tags": [
+      "background",
+      "galaxy",
+      "cosmos",
+      "particles"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/backgrounds/galaxy/GalaxyBackground.tsx",
+      "components/backgrounds/galaxy/GalaxyBackground.html",
+      "components/backgrounds/galaxy/GalaxyBackground.css",
+      "components/backgrounds/galaxy/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/galaxy",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "backgrounds/particles",
+    "name": "Floating Particle Network",
+    "slug": "particles",
+    "componentName": "ParticlesBackground",
+    "category": "backgrounds",
+    "description": "Interconnected floating particle filaments drifting organically in space.",
+    "tags": [
+      "background",
+      "particles",
+      "network",
+      "constellation"
+    ],
+    "bestFor": [
+      "saas",
+      "portfolio",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/particles/ParticlesBackground.tsx",
+      "components/backgrounds/particles/ParticlesBackground.html",
+      "components/backgrounds/particles/ParticlesBackground.css",
+      "components/backgrounds/particles/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particles",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/grid",
+    "name": "3D Perspective Retro Grid",
+    "slug": "grid",
+    "componentName": "RetroGridBackground",
+    "category": "backgrounds",
+    "description": "Synthwave 3D horizon grid with linear perspective vanishing into dark space.",
+    "tags": [
+      "background",
+      "grid",
+      "retro",
+      "synthwave"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "gaming"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/grid/RetroGridBackground.tsx",
+      "components/backgrounds/grid/RetroGridBackground.html",
+      "components/backgrounds/grid/RetroGridBackground.css",
+      "components/backgrounds/grid/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/grid",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/gradient",
+    "name": "Animated Mesh Gradient",
+    "slug": "gradient",
+    "componentName": "MeshGradientBackground",
+    "category": "backgrounds",
+    "description": "Chromatic organic gradient blobs softly blending and pulsing across screen.",
+    "tags": [
+      "background",
+      "gradient",
+      "mesh",
+      "blobs"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/gradient/MeshGradientBackground.tsx",
+      "components/backgrounds/gradient/MeshGradientBackground.html",
+      "components/backgrounds/gradient/MeshGradientBackground.css",
+      "components/backgrounds/gradient/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/noise",
+    "name": "Film Grain Noise Texture",
+    "slug": "noise",
+    "componentName": "NoiseBackground",
+    "category": "backgrounds",
+    "description": "Analog grainy noise texture overlay giving tactility and depth to flat dark modes.",
+    "tags": [
+      "background",
+      "noise",
+      "grain",
+      "texture"
+    ],
+    "bestFor": [
+      "editorial",
+      "portfolio",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/noise/NoiseBackground.tsx",
+      "components/backgrounds/noise/NoiseBackground.html",
+      "components/backgrounds/noise/NoiseBackground.css",
+      "components/backgrounds/noise/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/noise",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/dots",
+    "name": "Reactive Dot Matrix Grid",
+    "slug": "dots",
+    "componentName": "DotGridBackground",
+    "category": "backgrounds",
+    "description": "Clean architectural 16px micro-dot grid pattern on deep slate background.",
+    "tags": [
+      "background",
+      "dots",
+      "grid",
+      "minimal"
+    ],
+    "bestFor": [
+      "saas",
+      "dashboard",
+      "developer"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/dots/DotGridBackground.tsx",
+      "components/backgrounds/dots/DotGridBackground.html",
+      "components/backgrounds/dots/DotGridBackground.css",
+      "components/backgrounds/dots/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/starfield",
+    "name": "Deep Space Starfield",
+    "slug": "starfield",
+    "componentName": "StarfieldBackground",
+    "category": "backgrounds",
+    "description": "Dense field of twinkling celestial stars across deep midnight void.",
+    "tags": [
+      "background",
+      "starfield",
+      "cosmos",
+      "particles"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "web3"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/starfield/StarfieldBackground.tsx",
+      "components/backgrounds/starfield/StarfieldBackground.html",
+      "components/backgrounds/starfield/StarfieldBackground.css",
+      "components/backgrounds/starfield/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/starfield",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/liquid",
+    "name": "Liquid Lava Metaballs",
+    "slug": "liquid",
+    "componentName": "LiquidLavaBackground",
+    "category": "backgrounds",
+    "description": "Organic flowing metaball fluid shapes drifting weightlessly.",
+    "tags": [
+      "background",
+      "liquid",
+      "metaball",
+      "fluid"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "creative"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/backgrounds/liquid/LiquidLavaBackground.tsx",
+      "components/backgrounds/liquid/LiquidLavaBackground.html",
+      "components/backgrounds/liquid/LiquidLavaBackground.css",
+      "components/backgrounds/liquid/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/liquid",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "backgrounds/beam",
+    "name": "Conic Border Beam Spotlight",
+    "slug": "beam",
+    "componentName": "BorderBeamBackground",
+    "category": "backgrounds",
+    "description": "Conic spotlight rotating behind glass panels casting dynamic highlights.",
+    "tags": [
+      "background",
+      "beam",
+      "spotlight",
+      "conic"
+    ],
+    "bestFor": [
+      "saas",
+      "hero",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/beam/BorderBeamBackground.tsx",
+      "components/backgrounds/beam/BorderBeamBackground.html",
+      "components/backgrounds/beam/BorderBeamBackground.css",
+      "components/backgrounds/beam/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/beam",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/hex-mesh",
+    "name": "Cyber Hexagon Tessellation",
+    "slug": "hex-mesh",
+    "componentName": "HexMeshBackground",
+    "category": "backgrounds",
+    "description": "Interlocking hive honeycomb geometry pattern with subtle edge glow highlights.",
+    "tags": [
+      "background",
+      "hexagon",
+      "pattern",
+      "geometry"
+    ],
+    "bestFor": [
+      "gaming",
+      "crypto",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/hex-mesh/HexMeshBackground.tsx",
+      "components/backgrounds/hex-mesh/HexMeshBackground.html",
+      "components/backgrounds/hex-mesh/HexMeshBackground.css",
+      "components/backgrounds/hex-mesh/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/hex-mesh",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/lines",
+    "name": "Sinusoidal Neon Waves",
+    "slug": "lines",
+    "componentName": "NeonWavesBackground",
+    "category": "backgrounds",
+    "description": "Dynamic flowing bezier wave ribbons oscillating smoothly in background.",
+    "tags": [
+      "background",
+      "waves",
+      "neon",
+      "bezier"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "music"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/lines/NeonWavesBackground.tsx",
+      "components/backgrounds/lines/NeonWavesBackground.html",
+      "components/backgrounds/lines/NeonWavesBackground.css",
+      "components/backgrounds/lines/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/lines",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/clouds",
+    "name": "Ambient Drifting Mist",
+    "slug": "clouds",
+    "componentName": "DriftingMistBackground",
+    "category": "backgrounds",
+    "description": "Gentle atmospheric cloud smoke drifting softly across dark surfaces.",
+    "tags": [
+      "background",
+      "clouds",
+      "mist",
+      "ambient"
+    ],
+    "bestFor": [
+      "portfolio",
+      "wellness",
+      "creative"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/clouds/DriftingMistBackground.tsx",
+      "components/backgrounds/clouds/DriftingMistBackground.html",
+      "components/backgrounds/clouds/DriftingMistBackground.css",
+      "components/backgrounds/clouds/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/clouds",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/circuit",
+    "name": "Cyberpunk Motherboard Traces",
+    "slug": "circuit",
+    "componentName": "CircuitBackground",
+    "category": "backgrounds",
+    "description": "Micro-etched silicon wafer circuit lines with illuminated electron pulses.",
+    "tags": [
+      "background",
+      "circuit",
+      "cyberpunk",
+      "tech"
+    ],
+    "bestFor": [
+      "developer",
+      "crypto",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/circuit/CircuitBackground.tsx",
+      "components/backgrounds/circuit/CircuitBackground.html",
+      "components/backgrounds/circuit/CircuitBackground.css",
+      "components/backgrounds/circuit/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circuit",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "backgrounds/vignette",
+    "name": "Cinematic Dark Radial Vignette",
+    "slug": "vignette",
+    "componentName": "VignetteBackground",
+    "category": "backgrounds",
+    "description": "Classic cinematic vignette darkening the borders to focus attention on central content.",
+    "tags": [
+      "background",
+      "vignette",
+      "minimal",
+      "focus"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "reading"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/vignette/VignetteBackground.tsx",
+      "components/backgrounds/vignette/VignetteBackground.html",
+      "components/backgrounds/vignette/VignetteBackground.css",
+      "components/backgrounds/vignette/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/vignette",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/split-text",
+    "name": "Split Character Spring Reveal",
+    "slug": "split-text",
+    "componentName": "SplitText",
+    "category": "text-animations",
+    "description": "Cinematic typography reveal where individual letters spring smoothly upward into place.",
+    "tags": [
+      "text",
+      "split-text",
+      "reveal",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "portfolio"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/split-text/SplitText.tsx",
+      "components/text-animations/split-text/SplitText.html",
+      "components/text-animations/split-text/SplitText.css",
+      "components/text-animations/split-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-text",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/typewriter",
+    "name": "Typewriter Terminal Text",
+    "slug": "typewriter",
+    "componentName": "TypewriterText",
+    "category": "text-animations",
+    "description": "Mechanical keyboard typewriter animation with dynamic word swapping and blinking cursor.",
+    "tags": [
+      "text",
+      "typewriter",
+      "terminal"
+    ],
+    "bestFor": [
+      "hero",
+      "developer",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/typewriter/TypewriterText.tsx",
+      "components/text-animations/typewriter/TypewriterText.html",
+      "components/text-animations/typewriter/TypewriterText.css",
+      "components/text-animations/typewriter/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/typewriter",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/gradient-text",
+    "name": "Flowing Gradient Text",
+    "slug": "gradient-text",
+    "componentName": "GradientText",
+    "category": "text-animations",
+    "description": "High-visibility typography with continuous shifting multi-stop color gradient wave.",
+    "tags": [
+      "text",
+      "gradient",
+      "animated-text"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/gradient-text/GradientText.tsx",
+      "components/text-animations/gradient-text/GradientText.html",
+      "components/text-animations/gradient-text/GradientText.css",
+      "components/text-animations/gradient-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient-text",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/blur-text",
+    "name": "Gaussian Blur-to-Clear Reveal",
+    "slug": "blur-text",
+    "componentName": "BlurText",
+    "category": "text-animations",
+    "description": "Words emerge from deep gaussian blur into crisp sharp focus sequentially.",
+    "tags": [
+      "text",
+      "blur",
+      "fade-in",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "editorial",
+      "portfolio"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/blur-text/BlurText.tsx",
+      "components/text-animations/blur-text/BlurText.html",
+      "components/text-animations/blur-text/BlurText.css",
+      "components/text-animations/blur-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/blur-text",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/scramble",
+    "name": "Matrix Code Scramble",
+    "slug": "scramble",
+    "componentName": "ScrambleText",
+    "category": "text-animations",
+    "description": "Text that rapidly decodes from random binary/hex digits into clear characters on hover.",
+    "tags": [
+      "text",
+      "matrix",
+      "scramble",
+      "decoder"
+    ],
+    "bestFor": [
+      "developer",
+      "cyberpunk",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/scramble/ScrambleText.tsx",
+      "components/text-animations/scramble/ScrambleText.html",
+      "components/text-animations/scramble/ScrambleText.css",
+      "components/text-animations/scramble/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scramble",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/shiny",
+    "name": "Continuous Shimmer Light Beam Text",
+    "slug": "shiny",
+    "componentName": "ShinyText",
+    "category": "text-animations",
+    "description": "Smooth reflective light beam that constantly travels across high-contrast typography.",
+    "tags": [
+      "text",
+      "shimmer",
+      "shiny",
+      "gradient"
+    ],
+    "bestFor": [
+      "hero",
+      "cta",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/shiny/ShinyText.tsx",
+      "components/text-animations/shiny/ShinyText.html",
+      "components/text-animations/shiny/ShinyText.css",
+      "components/text-animations/shiny/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shiny",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/rotating-words",
+    "name": "3D Flipping Word Carousel",
+    "slug": "rotating-words",
+    "componentName": "RotatingWordsText",
+    "category": "text-animations",
+    "description": "Vertical flipping words cycler that dynamically swaps key marketing adjectives.",
+    "tags": [
+      "text",
+      "flip",
+      "rotate",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "saas"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/rotating-words/RotatingWordsText.tsx",
+      "components/text-animations/rotating-words/RotatingWordsText.html",
+      "components/text-animations/rotating-words/RotatingWordsText.css",
+      "components/text-animations/rotating-words/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/rotating-words",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/wave-motion",
+    "name": "Sinusoidal Stagger Wave Text",
+    "slug": "wave-motion",
+    "componentName": "WaveMotionText",
+    "category": "text-animations",
+    "description": "Letters bounce in a sinusoidal wave harmonic when mouse hovers over the sentence.",
+    "tags": [
+      "text",
+      "wave",
+      "bounce",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "portfolio",
+      "creative",
+      "header"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/wave-motion/WaveMotionText.tsx",
+      "components/text-animations/wave-motion/WaveMotionText.html",
+      "components/text-animations/wave-motion/WaveMotionText.css",
+      "components/text-animations/wave-motion/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/wave-motion",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/glitch-text",
+    "name": "Chromatic Aberration RGB Glitch Text",
+    "slug": "glitch-text",
+    "componentName": "GlitchText",
+    "category": "text-animations",
+    "description": "Split RGB neon layers twitching on hover to create a cyberpunk video distortion.",
+    "tags": [
+      "text",
+      "glitch",
+      "cyberpunk",
+      "chromatic"
+    ],
+    "bestFor": [
+      "gaming",
+      "developer",
+      "crypto"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/glitch-text/GlitchText.tsx",
+      "components/text-animations/glitch-text/GlitchText.html",
+      "components/text-animations/glitch-text/GlitchText.css",
+      "components/text-animations/glitch-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glitch-text",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/counter-roll",
+    "name": "Statistical Spring Counter Numbers",
+    "slug": "counter-roll",
+    "componentName": "CounterRollText",
+    "category": "text-animations",
+    "description": "Animated statistical counter that spins up from 0 to target metrics smoothly.",
+    "tags": [
+      "text",
+      "counter",
+      "numbers",
+      "metrics"
+    ],
+    "bestFor": [
+      "saas",
+      "dashboard",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/counter-roll/CounterRollText.tsx",
+      "components/text-animations/counter-roll/CounterRollText.html",
+      "components/text-animations/counter-roll/CounterRollText.css",
+      "components/text-animations/counter-roll/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/counter-roll",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/underline-draw",
+    "name": "Handcrafted SVG Underline Stroke",
+    "slug": "underline-draw",
+    "componentName": "UnderlineDrawText",
+    "category": "text-animations",
+    "description": "Hand-drawn SVG vector swoosh stroke that paints itself under emphasized words.",
+    "tags": [
+      "text",
+      "underline",
+      "svg",
+      "draw"
+    ],
+    "bestFor": [
+      "hero",
+      "editorial",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/underline-draw/UnderlineDrawText.tsx",
+      "components/text-animations/underline-draw/UnderlineDrawText.html",
+      "components/text-animations/underline-draw/UnderlineDrawText.css",
+      "components/text-animations/underline-draw/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/underline-draw",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/word-swap",
+    "name": "Dynamic Crossfade Word Morph",
+    "slug": "word-swap",
+    "componentName": "WordSwapText",
+    "category": "text-animations",
+    "description": "Interactive button swapping contrasting design philosophies.",
+    "tags": [
+      "text",
+      "morph",
+      "swap"
+    ],
+    "bestFor": [
+      "hero",
+      "creative"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/word-swap/WordSwapText.tsx",
+      "components/text-animations/word-swap/WordSwapText.html",
+      "components/text-animations/word-swap/WordSwapText.css",
+      "components/text-animations/word-swap/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/word-swap",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/marquee-text",
+    "name": "Infinite Seamless Text Ribbon",
+    "slug": "marquee-text",
+    "componentName": "MarqueeTextRibbon",
+    "category": "text-animations",
+    "description": "Endless horizontal scrolling brand text ticker across dark background.",
+    "tags": [
+      "text",
+      "marquee",
+      "ribbon",
+      "infinite"
+    ],
+    "bestFor": [
+      "landing",
+      "footer",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/marquee-text/MarqueeTextRibbon.tsx",
+      "components/text-animations/marquee-text/MarqueeTextRibbon.html",
+      "components/text-animations/marquee-text/MarqueeTextRibbon.css",
+      "components/text-animations/marquee-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee-text",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/glow-headline",
+    "name": "Atmospheric Pulse Glowing Headline",
+    "slug": "glow-headline",
+    "componentName": "GlowingHeadlineText",
+    "category": "text-animations",
+    "description": "Subtle atmospheric glow breathing effect pulsing behind high-tech header text.",
+    "tags": [
+      "text",
+      "glow",
+      "pulse",
+      "gradient"
+    ],
+    "bestFor": [
+      "hero",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/text-animations/glow-headline/GlowingHeadlineText.tsx",
+      "components/text-animations/glow-headline/GlowingHeadlineText.html",
+      "components/text-animations/glow-headline/GlowingHeadlineText.css",
+      "components/text-animations/glow-headline/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glow-headline",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "text-animations/mask-reveal",
+    "name": "Curtained Mask Slide Reveal",
+    "slug": "mask-reveal",
+    "componentName": "MaskRevealText",
+    "category": "text-animations",
+    "description": "Vertical curtain slide unmasking typography cleanly from top to bottom.",
+    "tags": [
+      "text",
+      "mask",
+      "slide",
+      "reveal"
+    ],
+    "bestFor": [
+      "hero",
+      "editorial"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/mask-reveal/MaskRevealText.tsx",
+      "components/text-animations/mask-reveal/MaskRevealText.html",
+      "components/text-animations/mask-reveal/MaskRevealText.css",
+      "components/text-animations/mask-reveal/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mask-reveal",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/shimmer",
+    "name": "Angled Metallic Shimmer Button",
+    "slug": "shimmer",
+    "componentName": "ShimmerButton",
+    "category": "buttons",
+    "description": "Luxurious button with an animated angled metallic shimmer gradient sweeping on hover.",
+    "tags": [
+      "button",
+      "shimmer",
+      "gradient",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/shimmer/ShimmerButton.tsx",
+      "components/buttons/shimmer/ShimmerButton.html",
+      "components/buttons/shimmer/ShimmerButton.css",
+      "components/buttons/shimmer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shimmer",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/neon",
+    "name": "Cyberpunk Glowing Neon Button",
+    "slug": "neon",
+    "componentName": "NeonButton",
+    "category": "buttons",
+    "description": "High-voltage electric neon button with radiating aura and border illumination.",
+    "tags": [
+      "button",
+      "neon",
+      "glow",
+      "cyberpunk"
+    ],
+    "bestFor": [
+      "gaming",
+      "crypto",
+      "landing"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/neon/NeonButton.tsx",
+      "components/buttons/neon/NeonButton.html",
+      "components/buttons/neon/NeonButton.css",
+      "components/buttons/neon/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/neon",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/magnetic",
+    "name": "Spring Physics Magnetic Button",
+    "slug": "magnetic",
+    "componentName": "MagneticButton",
+    "category": "buttons",
+    "description": "Interactive button that pulls towards cursor coordinates on proximity with spring physics.",
+    "tags": [
+      "button",
+      "magnetic",
+      "physics",
+      "interactive"
+    ],
+    "bestFor": [
+      "portfolio",
+      "hero",
+      "landing"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/magnetic/MagneticButton.tsx",
+      "components/buttons/magnetic/MagneticButton.html",
+      "components/buttons/magnetic/MagneticButton.css",
+      "components/buttons/magnetic/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/3d",
+    "name": "Tactile Depth 3D Mechanical Button",
+    "slug": "3d",
+    "componentName": "DepthButton",
+    "category": "buttons",
+    "description": "Satisfying mechanical tactile button with physical 3D elevation and realistic press depression.",
+    "tags": [
+      "button",
+      "3d",
+      "tactile",
+      "retro"
+    ],
+    "bestFor": [
+      "landing",
+      "gaming",
+      "dashboard"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/3d/DepthButton.tsx",
+      "components/buttons/3d/DepthButton.html",
+      "components/buttons/3d/DepthButton.css",
+      "components/buttons/3d/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/3d",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/gradient",
+    "name": "Radiant Linear Gradient Button",
+    "slug": "gradient",
+    "componentName": "GradientButton",
+    "category": "buttons",
+    "description": "Smooth multi-color gradient button with soft bloom shadow.",
+    "tags": [
+      "button",
+      "gradient",
+      "modern"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/gradient/GradientButton.tsx",
+      "components/buttons/gradient/GradientButton.html",
+      "components/buttons/gradient/GradientButton.css",
+      "components/buttons/gradient/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/outline-fill",
+    "name": "Expanding Liquid Wave Outline Button",
+    "slug": "outline-fill",
+    "componentName": "OutlineFillButton",
+    "category": "buttons",
+    "description": "Clean outline button that expands a full liquid color wave to fill interior on hover.",
+    "tags": [
+      "button",
+      "outline",
+      "hover",
+      "fill"
+    ],
+    "bestFor": [
+      "saas",
+      "portfolio",
+      "minimal"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/outline-fill/OutlineFillButton.tsx",
+      "components/buttons/outline-fill/OutlineFillButton.html",
+      "components/buttons/outline-fill/OutlineFillButton.css",
+      "components/buttons/outline-fill/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/outline-fill",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/loading",
+    "name": "Stateful Morphing Spinner Button",
+    "slug": "loading",
+    "componentName": "LoadingSpinnerButton",
+    "category": "buttons",
+    "description": "Button that smoothly transforms into a spinning loader on click.",
+    "tags": [
+      "button",
+      "loading",
+      "spinner",
+      "stateful"
+    ],
+    "bestFor": [
+      "forms",
+      "checkout",
+      "dashboard"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/loading/LoadingSpinnerButton.tsx",
+      "components/buttons/loading/LoadingSpinnerButton.html",
+      "components/buttons/loading/LoadingSpinnerButton.css",
+      "components/buttons/loading/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/loading",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/icon-morph",
+    "name": "Expanding Brand Social Icon Button",
+    "slug": "icon-morph",
+    "componentName": "IconMorphButton",
+    "category": "buttons",
+    "description": "Icon button that dynamically expands to reveal brand title on hover.",
+    "tags": [
+      "button",
+      "icon",
+      "social",
+      "expand"
+    ],
+    "bestFor": [
+      "portfolio",
+      "header",
+      "social"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/icon-morph/IconMorphButton.tsx",
+      "components/buttons/icon-morph/IconMorphButton.html",
+      "components/buttons/icon-morph/IconMorphButton.css",
+      "components/buttons/icon-morph/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/icon-morph",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/confetti",
+    "name": "Celebration Particle Confetti Button",
+    "slug": "confetti",
+    "componentName": "ConfettiButton",
+    "category": "buttons",
+    "description": "Milestone CTA button that shoots celebratory confetti particles on tap.",
+    "tags": [
+      "button",
+      "confetti",
+      "celebration",
+      "interactive"
+    ],
+    "bestFor": [
+      "landing",
+      "checkout",
+      "onboarding"
+    ],
+    "deps": [
+      "canvas-confetti"
+    ],
+    "files": [
+      "components/buttons/confetti/ConfettiButton.tsx",
+      "components/buttons/confetti/ConfettiButton.html",
+      "components/buttons/confetti/ConfettiButton.css",
+      "components/buttons/confetti/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/confetti",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/glass-btn",
+    "name": "Frosted Acrylic Glass Button",
+    "slug": "glass-btn",
+    "componentName": "GlassButton",
+    "category": "buttons",
+    "description": "Frosted acrylic glass button with specular light refraction and crisp semi-transparent border.",
+    "tags": [
+      "button",
+      "glassmorphism",
+      "blur",
+      "minimal"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "portfolio"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/glass-btn/GlassButton.tsx",
+      "components/buttons/glass-btn/GlassButton.html",
+      "components/buttons/glass-btn/GlassButton.css",
+      "components/buttons/glass-btn/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass-btn",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "buttons/border-beam",
+    "name": "Infinite Conic Rotating Border Button",
+    "slug": "border-beam",
+    "componentName": "BorderBeamButton",
+    "category": "buttons",
+    "description": "An elegant dark button framed by a continuous rotating conic gradient border beam.",
+    "tags": [
+      "button",
+      "border-beam",
+      "rainbow",
+      "animated-border"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/border-beam/BorderBeamButton.tsx",
+      "components/buttons/border-beam/BorderBeamButton.html",
+      "components/buttons/border-beam/BorderBeamButton.css",
+      "components/buttons/border-beam/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/border-beam",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/swipe-arrow",
+    "name": "Interactive Arrow Slide CTA Button",
+    "slug": "swipe-arrow",
+    "componentName": "SwipeArrowButton",
+    "category": "buttons",
+    "description": "Action button where arrow icon slides across container on hover indicating progression.",
+    "tags": [
+      "button",
+      "arrow",
+      "slide",
+      "cta"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "checkout"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/swipe-arrow/SwipeArrowButton.tsx",
+      "components/buttons/swipe-arrow/SwipeArrowButton.html",
+      "components/buttons/swipe-arrow/SwipeArrowButton.css",
+      "components/buttons/swipe-arrow/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/swipe-arrow",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/ripple",
+    "name": "Material Water Splash Ripple Button",
+    "slug": "ripple",
+    "componentName": "RippleButton",
+    "category": "buttons",
+    "description": "Material-inspired click button that sprouts a water ripple from the exact coordinate clicked.",
+    "tags": [
+      "button",
+      "ripple",
+      "material",
+      "interactive"
+    ],
+    "bestFor": [
+      "mobile",
+      "dashboard",
+      "actions"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/ripple/RippleButton.tsx",
+      "components/buttons/ripple/RippleButton.html",
+      "components/buttons/ripple/RippleButton.css",
+      "components/buttons/ripple/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/ripple",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/cyber-glitch",
+    "name": "RGB Offset Cyberpunk Glitch Button",
+    "slug": "cyber-glitch",
+    "componentName": "CyberGlitchButton",
+    "category": "buttons",
+    "description": "RGB channel split chromatic aberration glitch button for futuristic cyber aesthetics.",
+    "tags": [
+      "button",
+      "glitch",
+      "cyberpunk",
+      "chromatic"
+    ],
+    "bestFor": [
+      "gaming",
+      "crypto",
+      "developer"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/cyber-glitch/CyberGlitchButton.tsx",
+      "components/buttons/cyber-glitch/CyberGlitchButton.html",
+      "components/buttons/cyber-glitch/CyberGlitchButton.css",
+      "components/buttons/cyber-glitch/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-glitch",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "buttons/copy-snippet",
+    "name": "Haptic Clipboard Verified Button",
+    "slug": "copy-snippet",
+    "componentName": "CopySnippetButton",
+    "category": "buttons",
+    "description": "Utility button that copies token/code to clipboard and transforms into verified checkmark.",
+    "tags": [
+      "button",
+      "copy",
+      "clipboard",
+      "utility"
+    ],
+    "bestFor": [
+      "developer",
+      "docs",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/buttons/copy-snippet/CopySnippetButton.tsx",
+      "components/buttons/copy-snippet/CopySnippetButton.html",
+      "components/buttons/copy-snippet/CopySnippetButton.css",
+      "components/buttons/copy-snippet/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/copy-snippet",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/glass",
+    "name": "Frosted Glassmorphism Card",
+    "slug": "glass",
+    "componentName": "GlassCard",
+    "category": "cards",
+    "description": "Ultra-refined backdrop blurred translucent glass card with glowing specular linear border highlight.",
+    "tags": [
+      "card",
+      "glassmorphism",
+      "blur",
+      "minimal"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/glass/GlassCard.tsx",
+      "components/cards/glass/GlassCard.html",
+      "components/cards/glass/GlassCard.css",
+      "components/cards/glass/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/tilt",
+    "name": "3D Gyroscopic Cursor Tilt Card",
+    "slug": "tilt",
+    "componentName": "TiltCard",
+    "category": "cards",
+    "description": "Dynamic card that tilts in three-dimensional space following cursor with specular lighting.",
+    "tags": [
+      "card",
+      "3d",
+      "tilt",
+      "interactive"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/cards/tilt/TiltCard.tsx",
+      "components/cards/tilt/TiltCard.html",
+      "components/cards/tilt/TiltCard.css",
+      "components/cards/tilt/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "cards/bento",
+    "name": "Bento Grid Asymmetric Tile Card",
+    "slug": "bento",
+    "componentName": "BentoCard",
+    "category": "cards",
+    "description": "Apple-inspired Bento Grid tile with integrated feature graphics and highlight border.",
+    "tags": [
+      "card",
+      "bento",
+      "grid",
+      "modern"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/bento/BentoCard.tsx",
+      "components/cards/bento/BentoCard.html",
+      "components/cards/bento/BentoCard.css",
+      "components/cards/bento/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/profile",
+    "name": "Team Member Avatar Badge Card",
+    "slug": "profile",
+    "componentName": "ProfileCard",
+    "category": "cards",
+    "description": "Team member profile card with circular avatar, role chip, and social action buttons.",
+    "tags": [
+      "card",
+      "profile",
+      "avatar",
+      "team"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "about"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/profile/ProfileCard.tsx",
+      "components/cards/profile/ProfileCard.html",
+      "components/cards/profile/ProfileCard.css",
+      "components/cards/profile/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/profile",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/pricing",
+    "name": "SaaS High-Conversion Subscription Card",
+    "slug": "pricing",
+    "componentName": "PricingCard",
+    "category": "cards",
+    "description": "High-conversion SaaS subscription pricing card with popular badge and highlight borders.",
+    "tags": [
+      "card",
+      "pricing",
+      "saas",
+      "tier"
+    ],
+    "bestFor": [
+      "landing",
+      "pricing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/pricing/PricingCard.tsx",
+      "components/cards/pricing/PricingCard.html",
+      "components/cards/pricing/PricingCard.css",
+      "components/cards/pricing/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pricing",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/product",
+    "name": "E-Commerce Image Zoom Card",
+    "slug": "product",
+    "componentName": "ProductCard",
+    "category": "cards",
+    "description": "Product display card with smooth image scale on hover and stock badge.",
+    "tags": [
+      "card",
+      "product",
+      "ecommerce"
+    ],
+    "bestFor": [
+      "ecommerce",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/product/ProductCard.tsx",
+      "components/cards/product/ProductCard.html",
+      "components/cards/product/ProductCard.css",
+      "components/cards/product/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/product",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/hover-glow",
+    "name": "Edge Highlight Luminescent Glow Card",
+    "slug": "hover-glow",
+    "componentName": "HoverGlowCard",
+    "category": "cards",
+    "description": "Card with glowing perimeter gradient border illuminating dynamically on mouse hover.",
+    "tags": [
+      "card",
+      "glow",
+      "gradient-border"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/hover-glow/HoverGlowCard.tsx",
+      "components/cards/hover-glow/HoverGlowCard.html",
+      "components/cards/hover-glow/HoverGlowCard.css",
+      "components/cards/hover-glow/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/hover-glow",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/spotlight",
+    "name": "Cursor Flashlight Radial Card",
+    "slug": "spotlight",
+    "componentName": "SpotlightCard",
+    "category": "cards",
+    "description": "Card illuminating a dynamic radial light beam wherever the cursor hovers.",
+    "tags": [
+      "card",
+      "spotlight",
+      "radial",
+      "interactive"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/spotlight/SpotlightCard.tsx",
+      "components/cards/spotlight/SpotlightCard.html",
+      "components/cards/spotlight/SpotlightCard.css",
+      "components/cards/spotlight/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/cyber-hud",
+    "name": "Sci-Fi Telemetry Bracket HUD Card",
+    "slug": "cyber-hud",
+    "componentName": "CyberHudCard",
+    "category": "cards",
+    "description": "Futuristic sci-fi heads-up display card with corner crosshairs, telemetry stats, and cyber cyan accents.",
+    "tags": [
+      "card",
+      "cyberpunk",
+      "hud",
+      "futuristic"
+    ],
+    "bestFor": [
+      "gaming",
+      "crypto",
+      "developer"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/cyber-hud/CyberHudCard.tsx",
+      "components/cards/cyber-hud/CyberHudCard.html",
+      "components/cards/cyber-hud/CyberHudCard.css",
+      "components/cards/cyber-hud/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-hud",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/metric-trend",
+    "name": "Analytics KPI Sparkline Trend Card",
+    "slug": "metric-trend",
+    "componentName": "MetricTrendCard",
+    "category": "cards",
+    "description": "Analytics dashboard metric widget displaying realtime growth percentage and glowing sparkline indicator.",
+    "tags": [
+      "card",
+      "metric",
+      "stat",
+      "dashboard"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/metric-trend/MetricTrendCard.tsx",
+      "components/cards/metric-trend/MetricTrendCard.html",
+      "components/cards/metric-trend/MetricTrendCard.css",
+      "components/cards/metric-trend/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/metric-trend",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/stacked-deck",
+    "name": "Cascading Fanned Cards Deck",
+    "slug": "stacked-deck",
+    "componentName": "StackedDeckCard",
+    "category": "cards",
+    "description": "Cascading stacked cards deck that fans out slightly on hover mimicking physical playing cards.",
+    "tags": [
+      "card",
+      "stacked",
+      "deck",
+      "fan-out"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing",
+      "hero"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/cards/stacked-deck/StackedDeckCard.tsx",
+      "components/cards/stacked-deck/StackedDeckCard.html",
+      "components/cards/stacked-deck/StackedDeckCard.css",
+      "components/cards/stacked-deck/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stacked-deck",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "cards/expandable-card",
+    "name": "Smooth Accordion Drawer Spec Card",
+    "slug": "expandable-card",
+    "componentName": "ExpandableCard",
+    "category": "cards",
+    "description": "A collapsed summary card that smoothly unfolds to reveal deep technical specs when tapped.",
+    "tags": [
+      "card",
+      "expandable",
+      "drawer",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "dashboard",
+      "docs",
+      "pricing"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/cards/expandable-card/ExpandableCard.tsx",
+      "components/cards/expandable-card/ExpandableCard.html",
+      "components/cards/expandable-card/ExpandableCard.css",
+      "components/cards/expandable-card/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/expandable-card",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "cards/flip-card",
+    "name": "3D Double-Sided Rotary Card",
+    "slug": "flip-card",
+    "componentName": "FlipCard",
+    "category": "cards",
+    "description": "Two-sided card that rotates 180 degrees on mouse hover revealing backside specifications.",
+    "tags": [
+      "card",
+      "flip",
+      "3d",
+      "interactive"
+    ],
+    "bestFor": [
+      "portfolio",
+      "gaming",
+      "ecommerce"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/flip-card/FlipCard.tsx",
+      "components/cards/flip-card/FlipCard.html",
+      "components/cards/flip-card/FlipCard.css",
+      "components/cards/flip-card/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/flip-card",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/testimonial-card",
+    "name": "Verified Client Quote Star Card",
+    "slug": "testimonial-card",
+    "componentName": "TestimonialCard",
+    "category": "cards",
+    "description": "Social proof quote card with 5 gold stars, client portrait, and verified badge.",
+    "tags": [
+      "card",
+      "testimonial",
+      "review",
+      "social-proof"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "ecommerce"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/testimonial-card/TestimonialCard.tsx",
+      "components/cards/testimonial-card/TestimonialCard.html",
+      "components/cards/testimonial-card/TestimonialCard.css",
+      "components/cards/testimonial-card/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/testimonial-card",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "cards/feature-icon",
+    "name": "Elevated Minimalist Feature Box Card",
+    "slug": "feature-icon",
+    "componentName": "FeatureIconCard",
+    "category": "cards",
+    "description": "Clean minimalist card with top accent icon and high-contrast typography.",
+    "tags": [
+      "card",
+      "feature",
+      "minimalist"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/cards/feature-icon/FeatureIconCard.tsx",
+      "components/cards/feature-icon/FeatureIconCard.html",
+      "components/cards/feature-icon/FeatureIconCard.css",
+      "components/cards/feature-icon/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/feature-icon",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/center-hero",
+    "name": "High-Impact Centered SaaS Hero",
+    "slug": "center-hero",
+    "componentName": "CenterHero",
+    "category": "heroes",
+    "description": "Centered SaaS headline with ambient glow orbs, dual CTAs, and community pill badge.",
+    "tags": [
+      "hero",
+      "centered",
+      "saas",
+      "landing"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "startup"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/center-hero/CenterHero.tsx",
+      "components/heroes/center-hero/CenterHero.html",
+      "components/heroes/center-hero/CenterHero.css",
+      "components/heroes/center-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/center-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/split-hero",
+    "name": "Dual Column Value Prop & Live Canvas Hero",
+    "slug": "split-hero",
+    "componentName": "SplitHero",
+    "category": "heroes",
+    "description": "Split layout hero with compelling value proposition on left and live preview stage on right.",
+    "tags": [
+      "hero",
+      "split",
+      "conversion",
+      "cta"
+    ],
+    "bestFor": [
+      "saas",
+      "landing",
+      "product"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/split-hero/SplitHero.tsx",
+      "components/heroes/split-hero/SplitHero.html",
+      "components/heroes/split-hero/SplitHero.css",
+      "components/heroes/split-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/video-hero",
+    "name": "Ambient Background Motion Loop Hero",
+    "slug": "video-hero",
+    "componentName": "VideoHero",
+    "category": "heroes",
+    "description": "Immersive dark hero container with video loop motion backdrop.",
+    "tags": [
+      "hero",
+      "video",
+      "cinematic"
+    ],
+    "bestFor": [
+      "landing",
+      "brand",
+      "agency"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/video-hero/VideoHero.tsx",
+      "components/heroes/video-hero/VideoHero.html",
+      "components/heroes/video-hero/VideoHero.css",
+      "components/heroes/video-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/video-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/particle-hero",
+    "name": "Interactive Constellation Cosmic Hero",
+    "slug": "particle-hero",
+    "componentName": "ParticleHero",
+    "category": "heroes",
+    "description": "Deep cosmos hero with floating stars and reactive nebula luminescence.",
+    "tags": [
+      "hero",
+      "particles",
+      "constellation"
+    ],
+    "bestFor": [
+      "web3",
+      "portfolio",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/particle-hero/ParticleHero.tsx",
+      "components/heroes/particle-hero/ParticleHero.html",
+      "components/heroes/particle-hero/ParticleHero.css",
+      "components/heroes/particle-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particle-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/terminal-hero",
+    "name": "Hacker CLI Command Stream Hero",
+    "slug": "terminal-hero",
+    "componentName": "TerminalHero",
+    "category": "heroes",
+    "description": "Terminal hero with live typing command line animation simulation.",
+    "tags": [
+      "hero",
+      "terminal",
+      "cyberpunk",
+      "code"
+    ],
+    "bestFor": [
+      "developer",
+      "cli",
+      "docs"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/terminal-hero/TerminalHero.tsx",
+      "components/heroes/terminal-hero/TerminalHero.html",
+      "components/heroes/terminal-hero/TerminalHero.css",
+      "components/heroes/terminal-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/terminal-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/editorial-hero",
+    "name": "Giant Typography Bold Magazine Hero",
+    "slug": "editorial-hero",
+    "componentName": "EditorialHero",
+    "category": "heroes",
+    "description": "Editorial magazine layout dominated by huge, crisp typography and subtle micro-details.",
+    "tags": [
+      "hero",
+      "typography",
+      "editorial"
+    ],
+    "bestFor": [
+      "portfolio",
+      "creative",
+      "agency"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/editorial-hero/EditorialHero.tsx",
+      "components/heroes/editorial-hero/EditorialHero.html",
+      "components/heroes/editorial-hero/EditorialHero.css",
+      "components/heroes/editorial-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/editorial-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/radial-spotlight-hero",
+    "name": "Subtle Atmospheric Flashlight Hero",
+    "slug": "radial-spotlight-hero",
+    "componentName": "RadialSpotlightHero",
+    "category": "heroes",
+    "description": "Silicon Valley style modern SaaS headline with dual gradient highlights.",
+    "tags": [
+      "hero",
+      "saas",
+      "spotlight"
+    ],
+    "bestFor": [
+      "saas",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/radial-spotlight-hero/RadialSpotlightHero.tsx",
+      "components/heroes/radial-spotlight-hero/RadialSpotlightHero.html",
+      "components/heroes/radial-spotlight-hero/RadialSpotlightHero.css",
+      "components/heroes/radial-spotlight-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/radial-spotlight-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/bento-hero",
+    "name": "Multi-Tile Product Dashboard Hero",
+    "slug": "bento-hero",
+    "componentName": "BentoHero",
+    "category": "heroes",
+    "description": "Bento tile layout showcasing multiple product pillars inside hero section.",
+    "tags": [
+      "hero",
+      "bento",
+      "dashboard"
+    ],
+    "bestFor": [
+      "saas",
+      "product"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/bento-hero/BentoHero.tsx",
+      "components/heroes/bento-hero/BentoHero.html",
+      "components/heroes/bento-hero/BentoHero.css",
+      "components/heroes/bento-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/isometric-hero",
+    "name": "3D Perspective Isometric Canvas Hero",
+    "slug": "isometric-hero",
+    "componentName": "IsometricHero",
+    "category": "heroes",
+    "description": "Hero section with floating 3D isometric plane depth.",
+    "tags": [
+      "hero",
+      "3d",
+      "isometric"
+    ],
+    "bestFor": [
+      "tech",
+      "gaming"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/isometric-hero/IsometricHero.tsx",
+      "components/heroes/isometric-hero/IsometricHero.html",
+      "components/heroes/isometric-hero/IsometricHero.css",
+      "components/heroes/isometric-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/isometric-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "heroes/minimalist-hero",
+    "name": "Clean Monospace Single Headline Hero",
+    "slug": "minimalist-hero",
+    "componentName": "MinimalistHero",
+    "category": "heroes",
+    "description": "Clean single headline with monospace accent and minimalist CTA.",
+    "tags": [
+      "hero",
+      "minimal",
+      "mono"
+    ],
+    "bestFor": [
+      "portfolio",
+      "developer"
+    ],
+    "deps": [],
+    "files": [
+      "components/heroes/minimalist-hero/MinimalistHero.tsx",
+      "components/heroes/minimalist-hero/MinimalistHero.html",
+      "components/heroes/minimalist-hero/MinimalistHero.css",
+      "components/heroes/minimalist-hero/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimalist-hero",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/landing",
+    "name": "High-Converting SaaS Landing Structure",
+    "slug": "landing",
+    "componentName": "LandingLayout",
+    "category": "layouts",
+    "description": "Complete high-converting SaaS landing page skeleton with header, hero, cards, and footer.",
+    "tags": [
+      "layout",
+      "landing",
+      "saas"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/landing/LandingLayout.tsx",
+      "components/layouts/landing/LandingLayout.html",
+      "components/layouts/landing/LandingLayout.css",
+      "components/layouts/landing/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/landing",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/dashboard",
+    "name": "Responsive Admin Analytics Shell",
+    "slug": "dashboard",
+    "componentName": "DashboardLayout",
+    "category": "layouts",
+    "description": "Full-featured dashboard layout with collapsible sidebar and top metric widgets.",
+    "tags": [
+      "layout",
+      "dashboard",
+      "admin"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/dashboard/DashboardLayout.tsx",
+      "components/layouts/dashboard/DashboardLayout.html",
+      "components/layouts/dashboard/DashboardLayout.css",
+      "components/layouts/dashboard/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dashboard",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/bento-grid",
+    "name": "4-Column Asymmetric Bento Layout",
+    "slug": "bento-grid",
+    "componentName": "BentoGridLayout",
+    "category": "layouts",
+    "description": "Dynamic responsive 4-column Bento layout with asymmetric spans.",
+    "tags": [
+      "layout",
+      "bento",
+      "grid"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/bento-grid/BentoGridLayout.tsx",
+      "components/layouts/bento-grid/BentoGridLayout.html",
+      "components/layouts/bento-grid/BentoGridLayout.css",
+      "components/layouts/bento-grid/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-grid",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/sidebar-layout",
+    "name": "Collapsible Desktop Sidebar Shell",
+    "slug": "sidebar-layout",
+    "componentName": "SidebarLayout",
+    "category": "layouts",
+    "description": "Sidebar navigation frame with quick collapsing controls.",
+    "tags": [
+      "layout",
+      "sidebar"
+    ],
+    "bestFor": [
+      "dashboard",
+      "docs"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/sidebar-layout/SidebarLayout.tsx",
+      "components/layouts/sidebar-layout/SidebarLayout.html",
+      "components/layouts/sidebar-layout/SidebarLayout.css",
+      "components/layouts/sidebar-layout/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sidebar-layout",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/split-screen",
+    "name": "50/50 Dual Focus Brand Layout",
+    "slug": "split-screen",
+    "componentName": "SplitScreenLayout",
+    "category": "layouts",
+    "description": "Split 50/50 layout ideal for login, onboarding, or product stories.",
+    "tags": [
+      "layout",
+      "split",
+      "onboarding"
+    ],
+    "bestFor": [
+      "login",
+      "onboarding"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/split-screen/SplitScreenLayout.tsx",
+      "components/layouts/split-screen/SplitScreenLayout.html",
+      "components/layouts/split-screen/SplitScreenLayout.css",
+      "components/layouts/split-screen/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-screen",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/centered-container",
+    "name": "Focused Reading & Onboarding Container",
+    "slug": "centered-container",
+    "componentName": "CenteredContainerLayout",
+    "category": "layouts",
+    "description": "Narrow centered maximum width container for focused reading or checkout flows.",
+    "tags": [
+      "layout",
+      "centered",
+      "reading"
+    ],
+    "bestFor": [
+      "blog",
+      "checkout",
+      "onboarding"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/centered-container/CenteredContainerLayout.tsx",
+      "components/layouts/centered-container/CenteredContainerLayout.html",
+      "components/layouts/centered-container/CenteredContainerLayout.css",
+      "components/layouts/centered-container/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/centered-container",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/multi-column",
+    "name": "3-Column Modern Grid Canvas",
+    "slug": "multi-column",
+    "componentName": "MultiColumnLayout",
+    "category": "layouts",
+    "description": "Standard 3-column responsive card canvas.",
+    "tags": [
+      "layout",
+      "grid",
+      "columns"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/multi-column/MultiColumnLayout.tsx",
+      "components/layouts/multi-column/MultiColumnLayout.html",
+      "components/layouts/multi-column/MultiColumnLayout.css",
+      "components/layouts/multi-column/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/sticky-split",
+    "name": "Sticky Scrolling Narrative Side-by-Side",
+    "slug": "sticky-split",
+    "componentName": "StickySplitLayout",
+    "category": "layouts",
+    "description": "Side-by-side layout where one column sticks while the other scrolls narrative.",
+    "tags": [
+      "layout",
+      "sticky",
+      "narrative"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/sticky-split/StickySplitLayout.tsx",
+      "components/layouts/sticky-split/StickySplitLayout.html",
+      "components/layouts/sticky-split/StickySplitLayout.css",
+      "components/layouts/sticky-split/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-split",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/masonry-grid",
+    "name": "Dynamic Tile Masonry Wall",
+    "slug": "masonry-grid",
+    "componentName": "MasonryGridLayout",
+    "category": "layouts",
+    "description": "Pinterest-style masonry wall with staggered vertical card heights.",
+    "tags": [
+      "layout",
+      "masonry",
+      "gallery"
+    ],
+    "bestFor": [
+      "portfolio",
+      "gallery"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/masonry-grid/MasonryGridLayout.tsx",
+      "components/layouts/masonry-grid/MasonryGridLayout.html",
+      "components/layouts/masonry-grid/MasonryGridLayout.css",
+      "components/layouts/masonry-grid/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/masonry-grid",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/fullscreen-hero-layout",
+    "name": "Edge-to-Edge Cinematic Screen Shell",
+    "slug": "fullscreen-hero-layout",
+    "componentName": "FullscreenHeroLayout",
+    "category": "layouts",
+    "description": "Full 100vh viewport immersive landing section shell.",
+    "tags": [
+      "layout",
+      "fullscreen",
+      "cinematic"
+    ],
+    "bestFor": [
+      "landing",
+      "agency"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/fullscreen-hero-layout/FullscreenHeroLayout.tsx",
+      "components/layouts/fullscreen-hero-layout/FullscreenHeroLayout.html",
+      "components/layouts/fullscreen-hero-layout/FullscreenHeroLayout.css",
+      "components/layouts/fullscreen-hero-layout/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/fullscreen-hero-layout",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/floating-input",
+    "name": "Floating Label Animated Input",
+    "slug": "floating-input",
+    "componentName": "FloatingInput",
+    "category": "forms",
+    "description": "Minimalist input field where the label floats upward and changes tint when focused.",
+    "tags": [
+      "form",
+      "input",
+      "floating-label"
+    ],
+    "bestFor": [
+      "login",
+      "forms",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/floating-input/FloatingInput.tsx",
+      "components/forms/floating-input/FloatingInput.html",
+      "components/forms/floating-input/FloatingInput.css",
+      "components/forms/floating-input/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-input",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/search",
+    "name": "Expanding Morphing Search Input",
+    "slug": "search",
+    "componentName": "ExpandingSearch",
+    "category": "forms",
+    "description": "Icon that expands into a full search bar upon click with smooth width transition.",
+    "tags": [
+      "form",
+      "search",
+      "morph",
+      "animated-search"
+    ],
+    "bestFor": [
+      "header",
+      "navbar",
+      "dashboard"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/search/ExpandingSearch.tsx",
+      "components/forms/search/ExpandingSearch.html",
+      "components/forms/search/ExpandingSearch.css",
+      "components/forms/search/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/search",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/toggle",
+    "name": "Cyberpunk Glow Toggle Switch",
+    "slug": "toggle",
+    "componentName": "GlowToggle",
+    "category": "forms",
+    "description": "Mechanical switch that illuminates an emerald neon glow when activated.",
+    "tags": [
+      "form",
+      "switch",
+      "toggle",
+      "neon"
+    ],
+    "bestFor": [
+      "settings",
+      "dashboard"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/forms/toggle/GlowToggle.tsx",
+      "components/forms/toggle/GlowToggle.html",
+      "components/forms/toggle/GlowToggle.css",
+      "components/forms/toggle/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/toggle",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "forms/otp",
+    "name": "Split 6-Digit OTP Verification Field",
+    "slug": "otp",
+    "componentName": "OtpInput",
+    "category": "forms",
+    "description": "Auto-advancing 6-character authentication code input fields for two-factor verification.",
+    "tags": [
+      "form",
+      "otp",
+      "verification",
+      "auth"
+    ],
+    "bestFor": [
+      "auth",
+      "login"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/otp/OtpInput.tsx",
+      "components/forms/otp/OtpInput.html",
+      "components/forms/otp/OtpInput.css",
+      "components/forms/otp/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/otp",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/newsletter",
+    "name": "Glassmorphism Newsletter Subscribe Box",
+    "slug": "newsletter",
+    "componentName": "NewsletterBox",
+    "category": "forms",
+    "description": "Inline email newsletter collector with frosted glass container and integrated CTA.",
+    "tags": [
+      "form",
+      "newsletter",
+      "subscribe",
+      "glass"
+    ],
+    "bestFor": [
+      "footer",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/newsletter/NewsletterBox.tsx",
+      "components/forms/newsletter/NewsletterBox.html",
+      "components/forms/newsletter/NewsletterBox.css",
+      "components/forms/newsletter/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/newsletter",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/password-reveal",
+    "name": "Password Input with Reveal Toggle",
+    "slug": "password-reveal",
+    "componentName": "PasswordInput",
+    "category": "forms",
+    "description": "Secure password field featuring an interactive eye icon to toggle visibility.",
+    "tags": [
+      "form",
+      "password",
+      "toggle",
+      "security"
+    ],
+    "bestFor": [
+      "auth",
+      "login"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/password-reveal/PasswordInput.tsx",
+      "components/forms/password-reveal/PasswordInput.html",
+      "components/forms/password-reveal/PasswordInput.css",
+      "components/forms/password-reveal/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/password-reveal",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/checkbox",
+    "name": "Animated Spring Checkbox",
+    "slug": "checkbox",
+    "componentName": "AnimatedCheckbox",
+    "category": "forms",
+    "description": "Custom checkbox with smooth spring path drawing checkmark animation.",
+    "tags": [
+      "form",
+      "checkbox",
+      "checkmark"
+    ],
+    "bestFor": [
+      "forms",
+      "settings"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/forms/checkbox/AnimatedCheckbox.tsx",
+      "components/forms/checkbox/AnimatedCheckbox.html",
+      "components/forms/checkbox/AnimatedCheckbox.css",
+      "components/forms/checkbox/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/checkbox",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "forms/select",
+    "name": "Animated Dropdown Select Menu",
+    "slug": "select",
+    "componentName": "CustomSelect",
+    "category": "forms",
+    "description": "Select menu that smoothly springs open with highlighted keyboard navigation options.",
+    "tags": [
+      "form",
+      "select",
+      "dropdown"
+    ],
+    "bestFor": [
+      "dashboard",
+      "forms"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/forms/select/CustomSelect.tsx",
+      "components/forms/select/CustomSelect.html",
+      "components/forms/select/CustomSelect.css",
+      "components/forms/select/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/select",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "forms/upload",
+    "name": "Drag & Drop File Upload Zone",
+    "slug": "upload",
+    "componentName": "FileUpload",
+    "category": "forms",
+    "description": "Dotted upload area with pulse highlight on file dragover and file size validator.",
+    "tags": [
+      "form",
+      "upload",
+      "file"
+    ],
+    "bestFor": [
+      "dashboard",
+      "forms"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/upload/FileUpload.tsx",
+      "components/forms/upload/FileUpload.html",
+      "components/forms/upload/FileUpload.css",
+      "components/forms/upload/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/upload",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "forms/range",
+    "name": "Range Slider with Dynamic Tooltip",
+    "slug": "range",
+    "componentName": "RangeSlider",
+    "category": "forms",
+    "description": "Smooth slider with floating value tooltip that tracks the thumb coordinate.",
+    "tags": [
+      "form",
+      "slider",
+      "range"
+    ],
+    "bestFor": [
+      "dashboard",
+      "settings"
+    ],
+    "deps": [],
+    "files": [
+      "components/forms/range/RangeSlider.tsx",
+      "components/forms/range/RangeSlider.html",
+      "components/forms/range/RangeSlider.css",
+      "components/forms/range/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/range",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/scroll-reveal",
+    "name": "Viewport Intersection Spring Reveal",
+    "slug": "scroll-reveal",
+    "componentName": "ScrollReveal",
+    "category": "animations",
+    "description": "Element springs into view as soon as it enters the user viewport.",
+    "tags": [
+      "animation",
+      "scroll",
+      "reveal"
+    ],
+    "bestFor": [
+      "landing",
+      "cards",
+      "sections"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/animations/scroll-reveal/ScrollReveal.tsx",
+      "components/animations/scroll-reveal/ScrollReveal.html",
+      "components/animations/scroll-reveal/ScrollReveal.css",
+      "components/animations/scroll-reveal/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scroll-reveal",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "animations/marquee",
+    "name": "Infinite Seamless Marquee Logo Cloud",
+    "slug": "marquee",
+    "componentName": "MarqueeLogoCloud",
+    "category": "animations",
+    "description": "Endless smooth horizontal marquee loop showcasing tech partner logos.",
+    "tags": [
+      "animation",
+      "marquee",
+      "logos",
+      "infinite"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "social-proof"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/marquee/MarqueeLogoCloud.tsx",
+      "components/animations/marquee/MarqueeLogoCloud.html",
+      "components/animations/marquee/MarqueeLogoCloud.css",
+      "components/animations/marquee/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/cursor-trail",
+    "name": "Velocity Mouse Trail Follower",
+    "slug": "cursor-trail",
+    "componentName": "CursorTrail",
+    "category": "animations",
+    "description": "Trailing glowing cursor ring that stretches based on cursor movement velocity.",
+    "tags": [
+      "animation",
+      "cursor",
+      "mouse-trail"
+    ],
+    "bestFor": [
+      "portfolio",
+      "creative"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/cursor-trail/CursorTrail.tsx",
+      "components/animations/cursor-trail/CursorTrail.html",
+      "components/animations/cursor-trail/CursorTrail.css",
+      "components/animations/cursor-trail/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cursor-trail",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/magnetic",
+    "name": "Magnetic Orbit Floating Cluster",
+    "slug": "magnetic",
+    "componentName": "MagneticOrbit",
+    "category": "animations",
+    "description": "Floating icon clusters that gravitate smoothly towards cursor pointer.",
+    "tags": [
+      "animation",
+      "magnetic",
+      "orbit"
+    ],
+    "bestFor": [
+      "portfolio",
+      "social"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/magnetic/MagneticOrbit.tsx",
+      "components/animations/magnetic/MagneticOrbit.html",
+      "components/animations/magnetic/MagneticOrbit.css",
+      "components/animations/magnetic/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/tilt",
+    "name": "3D Gyroscope Perspective Angle",
+    "slug": "tilt",
+    "componentName": "GyroTilt",
+    "category": "animations",
+    "description": "Interactive container that tilts dynamically on mouse move.",
+    "tags": [
+      "animation",
+      "3d",
+      "tilt"
+    ],
+    "bestFor": [
+      "cards",
+      "heroes"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/tilt/GyroTilt.tsx",
+      "components/animations/tilt/GyroTilt.html",
+      "components/animations/tilt/GyroTilt.css",
+      "components/animations/tilt/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/accordion",
+    "name": "Spring Physical FAQ Expansion",
+    "slug": "accordion",
+    "componentName": "SpringAccordion",
+    "category": "animations",
+    "description": "Spring animated accordion panel with rotational chevron indicator.",
+    "tags": [
+      "animation",
+      "accordion",
+      "faq"
+    ],
+    "bestFor": [
+      "pricing",
+      "faq",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/accordion/SpringAccordion.tsx",
+      "components/animations/accordion/SpringAccordion.html",
+      "components/animations/accordion/SpringAccordion.css",
+      "components/animations/accordion/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/accordion",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/carousel",
+    "name": "Touch Swiper Carousel",
+    "slug": "carousel",
+    "componentName": "SwiperCarousel",
+    "category": "animations",
+    "description": "Component preview reel with previous/next controls.",
+    "tags": [
+      "animation",
+      "carousel",
+      "swiper"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/carousel/SwiperCarousel.tsx",
+      "components/animations/carousel/SwiperCarousel.html",
+      "components/animations/carousel/SwiperCarousel.css",
+      "components/animations/carousel/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/carousel",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/countdown",
+    "name": "Realtime Digital Milestone Timer",
+    "slug": "countdown",
+    "componentName": "CountdownTimer",
+    "category": "animations",
+    "description": "Digital countdown display showing Days, Hours, Minutes, and Seconds with dark neon blocks.",
+    "tags": [
+      "animation",
+      "countdown",
+      "timer"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "ecommerce"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/countdown/CountdownTimer.tsx",
+      "components/animations/countdown/CountdownTimer.html",
+      "components/animations/countdown/CountdownTimer.css",
+      "components/animations/countdown/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/countdown",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/star-rating",
+    "name": "Interactive 5-Star Feedback Review Bar",
+    "slug": "star-rating",
+    "componentName": "StarRating",
+    "category": "animations",
+    "description": "Gold star review rating component with hover preview feedback and instant score display.",
+    "tags": [
+      "animation",
+      "rating",
+      "stars"
+    ],
+    "bestFor": [
+      "ecommerce",
+      "social-proof"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/star-rating/StarRating.tsx",
+      "components/animations/star-rating/StarRating.html",
+      "components/animations/star-rating/StarRating.css",
+      "components/animations/star-rating/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/star-rating",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/parallax-box",
+    "name": "Viewport Coordinate Shifting Box",
+    "slug": "parallax-box",
+    "componentName": "ParallaxBox",
+    "category": "animations",
+    "description": "Parallax layer container shifting coordinate axes on viewport movement.",
+    "tags": [
+      "animation",
+      "parallax",
+      "scroll"
+    ],
+    "bestFor": [
+      "hero",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/parallax-box/ParallaxBox.tsx",
+      "components/animations/parallax-box/ParallaxBox.html",
+      "components/animations/parallax-box/ParallaxBox.css",
+      "components/animations/parallax-box/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/parallax-box",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/stagger-fade",
+    "name": "Ordered Child Element Sequential Entrance",
+    "slug": "stagger-fade",
+    "componentName": "StaggerFade",
+    "category": "animations",
+    "description": "Orchestrates child element animations with sequential timing delays.",
+    "tags": [
+      "animation",
+      "stagger",
+      "fade"
+    ],
+    "bestFor": [
+      "lists",
+      "cards"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/animations/stagger-fade/StaggerFade.tsx",
+      "components/animations/stagger-fade/StaggerFade.html",
+      "components/animations/stagger-fade/StaggerFade.css",
+      "components/animations/stagger-fade/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stagger-fade",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "animations/floating-orb",
+    "name": "Ambient Drifting Weightless Orb",
+    "slug": "floating-orb",
+    "componentName": "FloatingOrb",
+    "category": "animations",
+    "description": "Weightless floating sphere drifting with slow sine curve physics.",
+    "tags": [
+      "animation",
+      "floating",
+      "orb"
+    ],
+    "bestFor": [
+      "background",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/floating-orb/FloatingOrb.tsx",
+      "components/animations/floating-orb/FloatingOrb.html",
+      "components/animations/floating-orb/FloatingOrb.css",
+      "components/animations/floating-orb/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-orb",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/spotlight-beam",
+    "name": "Mouse Coordinate Radial Spotlight",
+    "slug": "spotlight-beam",
+    "componentName": "SpotlightBeam",
+    "category": "animations",
+    "description": "Radial gradient spotlight following exact cursor coordinates.",
+    "tags": [
+      "animation",
+      "spotlight",
+      "interactive"
+    ],
+    "bestFor": [
+      "cards",
+      "hero"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/spotlight-beam/SpotlightBeam.tsx",
+      "components/animations/spotlight-beam/SpotlightBeam.html",
+      "components/animations/spotlight-beam/SpotlightBeam.css",
+      "components/animations/spotlight-beam/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight-beam",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/dock-magnify",
+    "name": "macOS Inspired Dock Magnification",
+    "slug": "dock-magnify",
+    "componentName": "DockMagnify",
+    "category": "animations",
+    "description": "Icon dock that magnifies proximity neighbors on mouse hover.",
+    "tags": [
+      "animation",
+      "dock",
+      "magnify"
+    ],
+    "bestFor": [
+      "navbar",
+      "dock"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/dock-magnify/DockMagnify.tsx",
+      "components/animations/dock-magnify/DockMagnify.html",
+      "components/animations/dock-magnify/DockMagnify.css",
+      "components/animations/dock-magnify/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dock-magnify",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "animations/shimmer-wave",
+    "name": "Surface Light Glint Travelling Wave",
+    "slug": "shimmer-wave",
+    "componentName": "ShimmerWave",
+    "category": "animations",
+    "description": "Glint of light travelling across surface boundary.",
+    "tags": [
+      "animation",
+      "shimmer",
+      "glint"
+    ],
+    "bestFor": [
+      "cards",
+      "buttons"
+    ],
+    "deps": [],
+    "files": [
+      "components/animations/shimmer-wave/ShimmerWave.tsx",
+      "components/animations/shimmer-wave/ShimmerWave.html",
+      "components/animations/shimmer-wave/ShimmerWave.css",
+      "components/animations/shimmer-wave/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shimmer-wave",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "loaders/spinner",
+    "name": "Concentric Dual Orbit Luminous Ring",
+    "slug": "spinner",
+    "componentName": "DualRingSpinner",
+    "category": "loaders",
+    "description": "Two concentric luminous rings rotating in opposite directions with varied angular velocities.",
+    "tags": [
+      "loader",
+      "spinner",
+      "dual-ring"
+    ],
+    "bestFor": [
+      "saas",
+      "dashboard",
+      "actions"
+    ],
+    "deps": [],
+    "files": [
+      "components/loaders/spinner/DualRingSpinner.tsx",
+      "components/loaders/spinner/DualRingSpinner.html",
+      "components/loaders/spinner/DualRingSpinner.css",
+      "components/loaders/spinner/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spinner",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "loaders/skeleton",
+    "name": "Asynchronous Content Shimmer Pulse Box",
+    "slug": "skeleton",
+    "componentName": "SkeletonCard",
+    "category": "loaders",
+    "description": "Asynchronous content loading skeleton mock with shimmering pulse wave.",
+    "tags": [
+      "loader",
+      "skeleton",
+      "placeholder"
+    ],
+    "bestFor": [
+      "dashboard",
+      "lists"
+    ],
+    "deps": [],
+    "files": [
+      "components/loaders/skeleton/SkeletonCard.tsx",
+      "components/loaders/skeleton/SkeletonCard.html",
+      "components/loaders/skeleton/SkeletonCard.css",
+      "components/loaders/skeleton/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/skeleton",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "loaders/progress",
+    "name": "Glowing Linear Gradient Track Loader",
+    "slug": "progress",
+    "componentName": "LinearProgress",
+    "category": "loaders",
+    "description": "Linear loading bar with glowing tip advancing along track.",
+    "tags": [
+      "loader",
+      "progress",
+      "linear"
+    ],
+    "bestFor": [
+      "onboarding",
+      "upload"
+    ],
+    "deps": [],
+    "files": [
+      "components/loaders/progress/LinearProgress.tsx",
+      "components/loaders/progress/LinearProgress.html",
+      "components/loaders/progress/LinearProgress.css",
+      "components/loaders/progress/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/progress",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "loaders/dots",
+    "name": "Bouncing Harmonic Liquid Dots Wave",
+    "slug": "dots",
+    "componentName": "BouncingDots",
+    "category": "loaders",
+    "description": "Three liquid dots bouncing in harmonic wave delay rhythm.",
+    "tags": [
+      "loader",
+      "dots",
+      "bounce"
+    ],
+    "bestFor": [
+      "chat",
+      "status"
+    ],
+    "deps": [],
+    "files": [
+      "components/loaders/dots/BouncingDots.tsx",
+      "components/loaders/dots/BouncingDots.html",
+      "components/loaders/dots/BouncingDots.css",
+      "components/loaders/dots/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "loaders/circular",
+    "name": "Precision Radial SVG Percentage Ring",
+    "slug": "circular",
+    "componentName": "CircularRingLoader",
+    "category": "loaders",
+    "description": "Radial SVG stroke ring displaying calculated download percentage.",
+    "tags": [
+      "loader",
+      "circular",
+      "svg",
+      "ring"
+    ],
+    "bestFor": [
+      "dashboard",
+      "stats"
+    ],
+    "deps": [],
+    "files": [
+      "components/loaders/circular/CircularRingLoader.tsx",
+      "components/loaders/circular/CircularRingLoader.html",
+      "components/loaders/circular/CircularRingLoader.css",
+      "components/loaders/circular/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circular",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/floating-navbar",
+    "name": "Elevated Glass Pill Island Header",
+    "slug": "floating-navbar",
+    "componentName": "FloatingNavbar",
+    "category": "layouts",
+    "description": "Elevated detached pill navbar with backdrop blur and fluid hover indicator.",
+    "tags": [
+      "navbar",
+      "glass",
+      "floating",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "landing",
+      "hero"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/layouts/floating-navbar/FloatingNavbar.tsx",
+      "components/layouts/floating-navbar/FloatingNavbar.html",
+      "components/layouts/floating-navbar/FloatingNavbar.css",
+      "components/layouts/floating-navbar/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-navbar",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "layouts/sticky-navbar",
+    "name": "Sticky Header with Scroll Progress",
+    "slug": "sticky-navbar",
+    "componentName": "StickyNavbar",
+    "category": "layouts",
+    "description": "Full-width top navigation header featuring integrated top progress line showing scroll percentage.",
+    "tags": [
+      "navbar",
+      "sticky",
+      "scroll-progress"
+    ],
+    "bestFor": [
+      "landing",
+      "docs"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/sticky-navbar/StickyNavbar.tsx",
+      "components/layouts/sticky-navbar/StickyNavbar.html",
+      "components/layouts/sticky-navbar/StickyNavbar.css",
+      "components/layouts/sticky-navbar/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-navbar",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/mobile-drawer",
+    "name": "Staggered Slide-Out Mobile Navigation",
+    "slug": "mobile-drawer",
+    "componentName": "MobileDrawer",
+    "category": "layouts",
+    "description": "Smooth sliding mobile navigation drawer with staggered link appearance animations.",
+    "tags": [
+      "navbar",
+      "mobile",
+      "drawer",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "mobile",
+      "landing"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/layouts/mobile-drawer/MobileDrawer.tsx",
+      "components/layouts/mobile-drawer/MobileDrawer.html",
+      "components/layouts/mobile-drawer/MobileDrawer.css",
+      "components/layouts/mobile-drawer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mobile-drawer",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "layouts/collapsible-sidebar",
+    "name": "Minimalist Desktop Icon Navigation",
+    "slug": "collapsible-sidebar",
+    "componentName": "CollapsibleSidebar",
+    "category": "layouts",
+    "description": "Application sidebar with icon tooltips that collapses down to compact slim width.",
+    "tags": [
+      "navbar",
+      "sidebar",
+      "collapsible"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/collapsible-sidebar/CollapsibleSidebar.tsx",
+      "components/layouts/collapsible-sidebar/CollapsibleSidebar.html",
+      "components/layouts/collapsible-sidebar/CollapsibleSidebar.css",
+      "components/layouts/collapsible-sidebar/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/collapsible-sidebar",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/pill-dock",
+    "name": "iOS Inspired Floating Segmented Dock",
+    "slug": "pill-dock",
+    "componentName": "PillDock",
+    "category": "layouts",
+    "description": "Compact dock-style bottom bar with iOS inspired glass segments.",
+    "tags": [
+      "navbar",
+      "dock",
+      "segmented",
+      "pill"
+    ],
+    "bestFor": [
+      "landing",
+      "mobile",
+      "portfolio"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/pill-dock/PillDock.tsx",
+      "components/layouts/pill-dock/PillDock.html",
+      "components/layouts/pill-dock/PillDock.css",
+      "components/layouts/pill-dock/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pill-dock",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/command-nav",
+    "name": "Keyboard Shortcut ⌘K Quicknav Bar",
+    "slug": "command-nav",
+    "componentName": "CommandNav",
+    "category": "layouts",
+    "description": "Keyboard centric navigation bar with ⌘K search bar trigger shortcut.",
+    "tags": [
+      "navbar",
+      "command-bar",
+      "shortcuts"
+    ],
+    "bestFor": [
+      "saas",
+      "docs",
+      "dashboard"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/command-nav/CommandNav.tsx",
+      "components/layouts/command-nav/CommandNav.html",
+      "components/layouts/command-nav/CommandNav.css",
+      "components/layouts/command-nav/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/command-nav",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/multi-column-footer",
+    "name": "Corporate Dark 4-Column Link Footer",
+    "slug": "multi-column-footer",
+    "componentName": "MultiColumnFooter",
+    "category": "layouts",
+    "description": "Corporate dark footer with link columns, brand badge, and copyright disclaimer.",
+    "tags": [
+      "footer",
+      "multi-column",
+      "links"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/multi-column-footer/MultiColumnFooter.tsx",
+      "components/layouts/multi-column-footer/MultiColumnFooter.html",
+      "components/layouts/multi-column-footer/MultiColumnFooter.css",
+      "components/layouts/multi-column-footer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column-footer",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/minimal-footer",
+    "name": "Clean Single-Row Status Indicator Footer",
+    "slug": "minimal-footer",
+    "componentName": "MinimalFooter",
+    "category": "layouts",
+    "description": "Clean single-row developer footer with live system status indicator.",
+    "tags": [
+      "footer",
+      "minimalist",
+      "status"
+    ],
+    "bestFor": [
+      "portfolio",
+      "developer"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/minimal-footer/MinimalFooter.tsx",
+      "components/layouts/minimal-footer/MinimalFooter.html",
+      "components/layouts/minimal-footer/MinimalFooter.css",
+      "components/layouts/minimal-footer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimal-footer",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/social-pill-footer",
+    "name": "Centered Floating Social Ribbon",
+    "slug": "social-pill-footer",
+    "componentName": "SocialPillFooter",
+    "category": "layouts",
+    "description": "Centered glass pill island footer with glowing social media links.",
+    "tags": [
+      "footer",
+      "social",
+      "pill"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/social-pill-footer/SocialPillFooter.tsx",
+      "components/layouts/social-pill-footer/SocialPillFooter.html",
+      "components/layouts/social-pill-footer/SocialPillFooter.css",
+      "components/layouts/social-pill-footer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/social-pill-footer",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  },
+  {
+    "id": "layouts/mega-menu-nav",
+    "name": "Rich Multi-Column Product Dropdown",
+    "slug": "mega-menu-nav",
+    "componentName": "MegaMenuNav",
+    "category": "layouts",
+    "description": "Rich multi-column product mega menu that drops down smoothly with card previews.",
+    "tags": [
+      "navbar",
+      "mega-menu",
+      "dropdown"
+    ],
+    "bestFor": [
+      "saas",
+      "ecommerce"
+    ],
+    "deps": [],
+    "files": [
+      "components/layouts/mega-menu-nav/MegaMenuNav.tsx",
+      "components/layouts/mega-menu-nav/MegaMenuNav.html",
+      "components/layouts/mega-menu-nav/MegaMenuNav.css",
+      "components/layouts/mega-menu-nav/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mega-menu-nav",
+    "theme": "dark-neon",
+    "animation": "css-native"
+  }
+]

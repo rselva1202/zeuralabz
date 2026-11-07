@@ -1,0 +1,21 @@
+{
+  "name": "Typewriter Terminal Text",
+  "slug": "typewriter",
+  "componentName": "TypewriterText",
+  "category": "text-animations",
+  "description": "Mechanical keyboard typewriter animation with dynamic word swapping and blinking cursor.",
+  "tags": [
+    "text",
+    "typewriter",
+    "terminal"
+  ],
+  "bestFor": [
+    "hero",
+    "developer",
+    "portfolio"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/typewriter",
+  "author": "R. Selva",
+  "license": "MIT"
+}

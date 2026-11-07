@@ -1,0 +1,20 @@
+{
+  "name": "Multi-Tile Product Dashboard Hero",
+  "slug": "bento-hero",
+  "componentName": "BentoHero",
+  "category": "heroes",
+  "description": "Bento tile layout showcasing multiple product pillars inside hero section.",
+  "tags": [
+    "hero",
+    "bento",
+    "dashboard"
+  ],
+  "bestFor": [
+    "saas",
+    "product"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-hero",
+  "author": "R. Selva",
+  "license": "MIT"
+}

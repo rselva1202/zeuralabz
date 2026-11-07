@@ -1,0 +1,20 @@
+{
+  "name": "High-Converting SaaS Landing Structure",
+  "slug": "landing",
+  "componentName": "LandingLayout",
+  "category": "layouts",
+  "description": "Complete high-converting SaaS landing page skeleton with header, hero, cards, and footer.",
+  "tags": [
+    "layout",
+    "landing",
+    "saas"
+  ],
+  "bestFor": [
+    "landing",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/landing",
+  "author": "R. Selva",
+  "license": "MIT"
+}

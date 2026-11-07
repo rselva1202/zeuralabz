@@ -1,0 +1,462 @@
+[
+  {
+    "id": "dark-neon",
+    "name": "Dark Neon",
+    "description": "High-contrast midnight black with hyper-saturated emerald & cyan neon glows.",
+    "colors": {
+      "primary": "#10b981",
+      "secondary": "#06b6d4",
+      "accent": "#3b82f6",
+      "background": "#09090b",
+      "foreground": "#fafafa",
+      "card": "#121215",
+      "border": "#27272a",
+      "muted": "#71717a"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 0 25px rgba(16, 185, 129, 0.25)",
+    "mood": "Electric, High-Tech, Cyber"
+  },
+  {
+    "id": "minimal-white",
+    "name": "Minimalist Studio",
+    "description": "Ultra-clean Scandinavian editorial white with deep charcoal typography.",
+    "colors": {
+      "primary": "#18181b",
+      "secondary": "#27272a",
+      "accent": "#0ea5e9",
+      "background": "#ffffff",
+      "foreground": "#09090b",
+      "card": "#fafafa",
+      "border": "#e4e4e7",
+      "muted": "#a1a1aa"
+    },
+    "fonts": {
+      "heading": "Geist, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "Geist Mono, monospace"
+    },
+    "radius": { "default": "8px", "button": "6px", "card": "12px" },
+    "shadow": "0 4px 20px rgba(0, 0, 0, 0.05)",
+    "mood": "Clean, Architectural, Editorial"
+  },
+  {
+    "id": "glass",
+    "name": "Frosted Acrylic Glass",
+    "description": "Translucent frosted layers with specular light refractions and delicate borders.",
+    "colors": {
+      "primary": "rgba(255, 255, 255, 0.95)",
+      "secondary": "#38bdf8",
+      "accent": "#818cf8",
+      "background": "#030712",
+      "foreground": "#f9fafb",
+      "card": "rgba(255, 255, 255, 0.05)",
+      "border": "rgba(255, 255, 255, 0.12)",
+      "muted": "rgba(255, 255, 255, 0.6)"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "16px", "button": "9999px", "card": "24px" },
+    "shadow": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+    "mood": "Ethereal, Translucent, Sophisticated"
+  },
+  {
+    "id": "aurora",
+    "name": "Boreal Aurora",
+    "description": "Inspired by the Northern Lights: cosmic indigo, emerald curtains, and magenta bursts.",
+    "colors": {
+      "primary": "#34d399",
+      "secondary": "#22d3ee",
+      "accent": "#c084fc",
+      "background": "#020617",
+      "foreground": "#f8fafc",
+      "card": "#0f172a",
+      "border": "#1e293b",
+      "muted": "#64748b"
+    },
+    "fonts": {
+      "heading": "Cabinet Grotesk, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "Fira Code, monospace"
+    },
+    "radius": { "default": "14px", "button": "12px", "card": "20px" },
+    "shadow": "0 10px 30px rgba(52, 211, 153, 0.2)",
+    "mood": "Cosmic, Luminescent, Natural"
+  },
+  {
+    "id": "sunset",
+    "name": "Solar Sunset",
+    "description": "Warm dusk gradient palette of electric coral, amber flare, and dusk violet.",
+    "colors": {
+      "primary": "#f97316",
+      "secondary": "#ec4899",
+      "accent": "#8b5cf6",
+      "background": "#0c0a09",
+      "foreground": "#fafaf9",
+      "card": "#1c1917",
+      "border": "#292524",
+      "muted": "#78716c"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 8px 25px rgba(249, 115, 22, 0.2)",
+    "mood": "Warm, Energetic, Vibrant"
+  },
+  {
+    "id": "ocean",
+    "name": "Abyssal Ocean",
+    "description": "Deep maritime navy with bioluminescent cyan and aqua highlights.",
+    "colors": {
+      "primary": "#06b6d4",
+      "secondary": "#3b82f6",
+      "accent": "#67e8f9",
+      "background": "#020b14",
+      "foreground": "#f0f9ff",
+      "card": "#071726",
+      "border": "#0f2e4a",
+      "muted": "#38bdf8"
+    },
+    "fonts": {
+      "heading": "Inter, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "8px", "card": "16px" },
+    "shadow": "0 8px 25px rgba(6, 182, 212, 0.25)",
+    "mood": "Deep, Subaquatic, Serene"
+  },
+  {
+    "id": "forest",
+    "name": "Emerald Forest",
+    "description": "Rich botanical foliage dark greens paired with moss gold and earthy charcoal.",
+    "colors": {
+      "primary": "#059669",
+      "secondary": "#84cc16",
+      "accent": "#10b981",
+      "background": "#051008",
+      "foreground": "#ecfdf5",
+      "card": "#0b1f12",
+      "border": "#133820",
+      "muted": "#34d399"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 8px 25px rgba(16, 185, 129, 0.2)",
+    "mood": "Organic, Grounded, Refreshing"
+  },
+  {
+    "id": "candy",
+    "name": "Cotton Candy",
+    "description": "Playful sweet pastel lavender, bubblegum pink, and bright baby blue.",
+    "colors": {
+      "primary": "#f472b6",
+      "secondary": "#a78bfa",
+      "accent": "#38bdf8",
+      "background": "#0f0714",
+      "foreground": "#fdf4ff",
+      "card": "#1b0d24",
+      "border": "#2f173e",
+      "muted": "#d8b4fe"
+    },
+    "fonts": {
+      "heading": "Poppins, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "18px", "button": "9999px", "card": "24px" },
+    "shadow": "0 10px 30px rgba(244, 114, 182, 0.3)",
+    "mood": "Playful, Delightful, Friendly"
+  },
+  {
+    "id": "cyberpunk",
+    "name": "Night City Cyberpunk",
+    "description": "High-voltage neon yellow, acid teal, and razor-sharp glitch aesthetic borders.",
+    "colors": {
+      "primary": "#facc15",
+      "secondary": "#22d3ee",
+      "accent": "#f43f5e",
+      "background": "#000000",
+      "foreground": "#fef08a",
+      "card": "#0d0d0d",
+      "border": "#262626",
+      "muted": "#a3a3a3"
+    },
+    "fonts": {
+      "heading": "Chakra Petch, monospace",
+      "body": "Rajdhani, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "0px", "button": "2px", "card": "0px" },
+    "shadow": "4px 4px 0px #facc15",
+    "mood": "Raw, Hardcore, Rebellious"
+  },
+  {
+    "id": "luxury-gold",
+    "name": "Gilded Luxury",
+    "description": "Opulent champagne gold, brushed brass accents, and velvet obsidian black.",
+    "colors": {
+      "primary": "#fbbf24",
+      "secondary": "#d97706",
+      "accent": "#fef3c7",
+      "background": "#0a0a0a",
+      "foreground": "#fdfbf7",
+      "card": "#141414",
+      "border": "#2a2415",
+      "muted": "#927b4e"
+    },
+    "fonts": {
+      "heading": "Cinzel, serif",
+      "body": "Plus Jakarta Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "8px", "button": "4px", "card": "12px" },
+    "shadow": "0 12px 30px rgba(251, 191, 36, 0.15)",
+    "mood": "Prestigious, Exclusive, Premium"
+  },
+  {
+    "id": "retro-synth",
+    "name": "80s Retro Synthwave",
+    "description": "Magenta sunsets, electric purple horizon grids, and cyan chrome highlights.",
+    "colors": {
+      "primary": "#ec4899",
+      "secondary": "#8b5cf6",
+      "accent": "#06b6d4",
+      "background": "#110726",
+      "foreground": "#fdf2f8",
+      "card": "#1d0c40",
+      "border": "#3b1882",
+      "muted": "#c084fc"
+    },
+    "fonts": {
+      "heading": "Orbitron, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "8px", "button": "6px", "card": "12px" },
+    "shadow": "0 0 20px rgba(236, 72, 153, 0.4)",
+    "mood": "Nostalgic, Arcade, Synth"
+  },
+  {
+    "id": "pastel-dream",
+    "name": "Pastel Dreamscape",
+    "description": "Soothing mint green, soft peach, and lavender cloud tones with low eye strain.",
+    "colors": {
+      "primary": "#6ee7b7",
+      "secondary": "#fbcfe8",
+      "accent": "#fed7aa",
+      "background": "#0f1715",
+      "foreground": "#f0fdf4",
+      "card": "#162521",
+      "border": "#213832",
+      "muted": "#a7f3d0"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "16px", "button": "12px", "card": "20px" },
+    "shadow": "0 6px 20px rgba(110, 231, 183, 0.15)",
+    "mood": "Gentle, Calming, Mindful"
+  },
+  {
+    "id": "brutalist",
+    "name": "Neo Brutalist",
+    "description": "Unapologetic thick solid black borders, drop shadows, and punchy primary colors.",
+    "colors": {
+      "primary": "#ffff00",
+      "secondary": "#ff0055",
+      "accent": "#00ffff",
+      "background": "#f4f4f0",
+      "foreground": "#000000",
+      "card": "#ffffff",
+      "border": "#000000",
+      "muted": "#555555"
+    },
+    "fonts": {
+      "heading": "Space Grotesk, sans-serif",
+      "body": "Space Mono, monospace",
+      "mono": "Space Mono, monospace"
+    },
+    "radius": { "default": "0px", "button": "0px", "card": "0px" },
+    "shadow": "5px 5px 0px #000000",
+    "mood": "Bold, Tactile, Anti-Design"
+  },
+  {
+    "id": "monochrome",
+    "name": "Pure Monochrome",
+    "description": "Timeless grayscale composition relying purely on typographic hierarchy and light.",
+    "colors": {
+      "primary": "#ffffff",
+      "secondary": "#e4e4e7",
+      "accent": "#71717a",
+      "background": "#000000",
+      "foreground": "#ffffff",
+      "card": "#09090b",
+      "border": "#27272a",
+      "muted": "#71717a"
+    },
+    "fonts": {
+      "heading": "Geist, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "Geist Mono, monospace"
+    },
+    "radius": { "default": "10px", "button": "8px", "card": "14px" },
+    "shadow": "0 4px 15px rgba(255, 255, 255, 0.05)",
+    "mood": "Timeless, Minimal, Precise"
+  },
+  {
+    "id": "emerald-vault",
+    "name": "Emerald Vault (Fintech)",
+    "description": "Trusted bank-grade deep emerald, titanium slate, and secure dark surfaces.",
+    "colors": {
+      "primary": "#10b981",
+      "secondary": "#047857",
+      "accent": "#6ee7b7",
+      "background": "#040d08",
+      "foreground": "#f2fbf6",
+      "card": "#091910",
+      "border": "#133120",
+      "muted": "#34d399"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 8px 25px rgba(16, 185, 129, 0.2)",
+    "mood": "Trustworthy, Financial, Secure"
+  },
+  {
+    "id": "midnight-violet",
+    "name": "Midnight Violet",
+    "description": "Deep interstellar purple with soft glowing lilac mist and velvet undertones.",
+    "colors": {
+      "primary": "#a855f7",
+      "secondary": "#7c3aed",
+      "accent": "#e9d5ff",
+      "background": "#090214",
+      "foreground": "#faf5ff",
+      "card": "#130526",
+      "border": "#2a0b52",
+      "muted": "#c084fc"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "14px", "button": "10px", "card": "18px" },
+    "shadow": "0 8px 30px rgba(168, 85, 247, 0.25)",
+    "mood": "Mystic, Regal, Deep"
+  },
+  {
+    "id": "solar-amber",
+    "name": "Solar Amber",
+    "description": "Radiant solar flare gold with honey amber warmth against obsidian plates.",
+    "colors": {
+      "primary": "#f59e0b",
+      "secondary": "#d97706",
+      "accent": "#fde68a",
+      "background": "#0b0702",
+      "foreground": "#fffbeb",
+      "card": "#170f05",
+      "border": "#31200b",
+      "muted": "#fbbf24"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 8px 25px rgba(245, 158, 11, 0.2)",
+    "mood": "Radiant, Focused, Warm"
+  },
+  {
+    "id": "crimson-tide",
+    "name": "Crimson Tide",
+    "description": "Aggressive gaming & sport red with deep carbon weave and burning ruby highlights.",
+    "colors": {
+      "primary": "#ef4444",
+      "secondary": "#b91c1c",
+      "accent": "#fca5a5",
+      "background": "#0a0202",
+      "foreground": "#fef2f2",
+      "card": "#180606",
+      "border": "#360c0c",
+      "muted": "#f87171"
+    },
+    "fonts": {
+      "heading": "Teko, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "8px", "button": "6px", "card": "12px" },
+    "shadow": "0 8px 25px rgba(239, 68, 68, 0.3)",
+    "mood": "Intense, High-Adrenaline, Powerful"
+  },
+  {
+    "id": "arctic-ice",
+    "name": "Arctic Glacier",
+    "description": "Crisp sub-zero ice blues, crystalline frosted whites, and clean glacial glass.",
+    "colors": {
+      "primary": "#38bdf8",
+      "secondary": "#0284c7",
+      "accent": "#bae6fd",
+      "background": "#030a12",
+      "foreground": "#f0f9ff",
+      "card": "#081624",
+      "border": "#102c48",
+      "muted": "#7dd3fc"
+    },
+    "fonts": {
+      "heading": "Inter, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "14px", "button": "10px", "card": "18px" },
+    "shadow": "0 8px 25px rgba(56, 189, 248, 0.25)",
+    "mood": "Pristine, Pure, Crystalline"
+  },
+  {
+    "id": "deep-space",
+    "name": "Deep Cosmos Void",
+    "description": "Vast infinite dark vacuum with subtle stellar nebula dust and pinprick star glow.",
+    "colors": {
+      "primary": "#6366f1",
+      "secondary": "#4338ca",
+      "accent": "#a5b4fc",
+      "background": "#030206",
+      "foreground": "#f5f3ff",
+      "card": "#0a0712",
+      "border": "#1b142c",
+      "muted": "#818cf8"
+    },
+    "fonts": {
+      "heading": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "radius": { "default": "12px", "button": "10px", "card": "16px" },
+    "shadow": "0 8px 30px rgba(99, 102, 241, 0.2)",
+    "mood": "Deep, Expansive, Futuristic"
+  }
+]

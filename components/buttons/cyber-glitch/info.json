@@ -1,0 +1,22 @@
+{
+  "name": "RGB Offset Cyberpunk Glitch Button",
+  "slug": "cyber-glitch",
+  "componentName": "CyberGlitchButton",
+  "category": "buttons",
+  "description": "RGB channel split chromatic aberration glitch button for futuristic cyber aesthetics.",
+  "tags": [
+    "button",
+    "glitch",
+    "cyberpunk",
+    "chromatic"
+  ],
+  "bestFor": [
+    "gaming",
+    "crypto",
+    "developer"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-glitch",
+  "author": "R. Selva",
+  "license": "MIT"
+}
