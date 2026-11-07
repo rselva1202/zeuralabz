@@ -112,7 +112,8 @@ program
 program
   .command('init')
   .description('Initialize VibeUI configuration in your project')
-  .action(async () => {
+  .option('-y, --yes', 'Skip prompts and use sensible defaults')
+  .action(async (options) => {
     console.log(chalk.bold.magenta('\n✨ Initializing VibeUI in your project...\n'));
     const analysis = analyzeProject(process.cwd());
 
@@ -121,39 +122,46 @@ program
     console.log(`  ${chalk.cyan('• Styling:')}   ${chalk.bold(analysis.tailwind)}`);
     console.log(`  ${chalk.cyan('• Language:')}  ${chalk.bold(analysis.typescript ? 'TypeScript' : 'JavaScript')}`);
 
-    const answers = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'componentsDir',
-        message: 'Where would you like to install VibeUI components?',
-        default: 'src/components/vibe-ui'
-      },
-      {
-        type: 'list',
-        name: 'defaultTheme',
-        message: 'Choose your default aesthetic theme:',
-        choices: [
-          'dark-neon',
-          'minimal-white',
-          'glass',
-          'aurora',
-          'retro-synth',
-          'cyberpunk',
-          'luxury-gold',
-          'emerald-vault',
-          'midnight-violet'
-        ],
-        default: 'dark-neon'
-      }
-    ]);
+    let componentsDir = 'src/components/vibe-ui';
+    let defaultTheme = 'dark-neon';
+
+    if (!options.yes && process.stdin.isTTY) {
+      const answers = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'componentsDir',
+          message: 'Where would you like to install VibeUI components?',
+          default: 'src/components/vibe-ui'
+        },
+        {
+          type: 'list',
+          name: 'defaultTheme',
+          message: 'Choose your default aesthetic theme:',
+          choices: [
+            'dark-neon',
+            'minimal-white',
+            'glass',
+            'aurora',
+            'retro-synth',
+            'cyberpunk',
+            'luxury-gold',
+            'emerald-vault',
+            'midnight-violet'
+          ],
+          default: 'dark-neon'
+        }
+      ]);
+      componentsDir = answers.componentsDir;
+      defaultTheme = answers.defaultTheme;
+    }
 
     const config = {
       $schema: 'https://rselva1202.github.io/vibe-ui/schema.json',
       framework: analysis.framework,
       tailwind: analysis.tailwind,
       typescript: analysis.typescript,
-      componentsDir: answers.componentsDir,
-      defaultTheme: answers.defaultTheme,
+      componentsDir: componentsDir,
+      defaultTheme: defaultTheme,
       createdAt: new Date().toISOString()
     };
 
@@ -166,7 +174,9 @@ program
 program
   .command('suggest')
   .description('Scan current project and suggest the best UI components for every section')
-  .action(async () => {
+  .option('-p, --pick <numbers>', 'Comma-separated recommendation numbers to install (e.g. 1,3)')
+  .option('-a, --all', 'Install all suggested components')
+  .action(async (options) => {
     const spinner = ora('Scanning your project with VibeUI Analyzer...').start();
     await new Promise(r => setTimeout(r, 600));
     const analysis = analyzeProject(process.cwd());
@@ -187,13 +197,18 @@ program
 
     console.log(chalk.gray('═══════════════════════════════════════════════════════════════════'));
 
-    const { selection } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'selection',
-        message: 'Pick numbers to install (e.g. 1, 3 or "all" or press Enter to skip):',
-      }
-    ]);
+    let selection = options.all ? 'all' : options.pick;
+
+    if (!selection && process.stdin.isTTY) {
+      const promptRes = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'selection',
+          message: 'Pick numbers to install (e.g. 1, 3 or "all" or press Enter to skip):',
+        }
+      ]);
+      selection = promptRes.selection;
+    }
 
     if (!selection || selection.trim() === '') {
       console.log(chalk.gray('\nNo components selected. You can install anytime with: npx vibe-ui add <slug>\n'));
