@@ -15,3 +15,4 @@ npx vibe-ui add glass
 npx vibe-ui add floating-input
 npx vibe-ui add social-pill-footer
 ```
+

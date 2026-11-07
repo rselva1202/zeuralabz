@@ -17,3 +17,4 @@ npx vibe-ui add tilt
 npx vibe-ui add magnetic
 npx vibe-ui add minimal-footer
 ```
+

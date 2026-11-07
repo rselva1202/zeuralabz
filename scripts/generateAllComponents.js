@@ -175,3 +175,4 @@ const componentsJsonPath = path.join(rootDir, 'components.json');
 fs.writeFileSync(componentsJsonPath, JSON.stringify(registry, null, 2) + '\n', 'utf8');
 
 console.log(`Successfully generated ${registry.length} component directories and components.json!`);
+

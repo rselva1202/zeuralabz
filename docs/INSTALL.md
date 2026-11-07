@@ -97,3 +97,4 @@ When you run `npx vibe-ui init`, a `vibe-ui.json` file is placed in your project
 ```
 
 All installed components will automatically be placed into `componentsDir`.
+

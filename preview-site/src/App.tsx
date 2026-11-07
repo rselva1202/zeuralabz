@@ -93,7 +93,7 @@ export default function App() {
               </span>
             </button>
             <a
-              href="https://github.com/rselva1202/vibe-ui"
+              href="https://github.com/rselva1202/ZEURALABZ"
               target="_blank"
               rel="noreferrer"
               className="px-3 py-1.5 rounded-lg bg-white text-black font-semibold text-xs hover:bg-zinc-200 transition"
@@ -374,12 +374,13 @@ export default function MyPage() {
             <div className="mt-1">Crafted with care by <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-indigo-400 hover:underline">R. Selva</a>. MIT License.</div>
           </div>
           <div className="flex gap-6">
-            <a href="https://github.com/rselva1202/vibe-ui" className="hover:text-zinc-300">GitHub</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/docs/INSTALL.md" className="hover:text-zinc-300">Docs</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/SKILL.md" className="hover:text-zinc-300">AI Skill</a>
+            <a href="https://github.com/rselva1202/ZEURALABZ" className="hover:text-zinc-300">GitHub</a>
+            <a href="https://github.com/rselva1202/ZEURALABZ/blob/main/docs/INSTALL.md" className="hover:text-zinc-300">Docs</a>
+            <a href="https://github.com/rselva1202/ZEURALABZ/blob/main/SKILL.md" className="hover:text-zinc-300">AI Skill</a>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+

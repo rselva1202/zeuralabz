@@ -428,3 +428,4 @@ export const VignetteBackground: React.FC<{ children?: React.ReactNode }> = ({ c
 ];
 
 console.log(`Configured \${componentsSpec.length} initial components. Expanding to 120...`);
+

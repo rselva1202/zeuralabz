@@ -222,3 +222,4 @@ export function analyzeProject(targetDir = process.cwd()) {
 }
 
 export default analyzeProject;
+

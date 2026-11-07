@@ -46,3 +46,4 @@ We welcome contributions from designers, creative coders, and front-end engineer
 - Create a feature branch: `git checkout -b feat/my-new-component`
 - Commit your changes: `git commit -m "feat(components): add glowing radial cards"`
 - Push and open a PR on `https://github.com/rselva1202/vibe-ui`!
+

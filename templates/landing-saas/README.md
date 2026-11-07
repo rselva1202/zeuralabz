@@ -20,3 +20,4 @@ npx vibe-ui add floating-pill-nav
 npx vibe-ui add marquee
 ```
 Then import and render `SaasLandingPage` in your application!
+

@@ -83,3 +83,4 @@ If the VibeUI MCP server is connected in your workspace, call:
 - `search_components({ query: "keyword", category: "cards" })` to search.
 - `install_component({ slug: "aurora" })` to install directly.
 - `list_themes({})` to inspect theme color palettes.
+

@@ -88,3 +88,4 @@ components/<category>/<slug>/
 
 - **Zero Global State Pollution**: Every component is self-contained.
 - **Copy-Paste Simplicity**: Installing a component simply copies its source code directly into your `src/components/vibe-ui/<slug>` folder. You own the code completely.
+

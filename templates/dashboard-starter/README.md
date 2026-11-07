@@ -13,3 +13,4 @@ npx vibe-ui add sidebar
 npx vibe-ui add search
 npx vibe-ui add skeleton
 ```
+
