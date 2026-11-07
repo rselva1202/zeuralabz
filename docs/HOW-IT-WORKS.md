@@ -1,6 +1,6 @@
-# How VibeUI Works — Architecture & The 1M+ Combinations System
+# How ZEURALABZ Works — Architecture & The 1M+ Combinations System
 
-VibeUI was built to eliminate generic, boring websites without requiring developers to hand-write thousands of boilerplate files or lock themselves into heavy component frameworks.
+ZEURALABZ was built to eliminate generic, boring websites without requiring developers to hand-write thousands of boilerplate files or lock themselves into heavy component frameworks.
 
 ---
 
@@ -8,7 +8,7 @@ VibeUI was built to eliminate generic, boring websites without requiring develop
 
 > **Core Principle**: Do not store 1,000,000 physical files on disk. Instead, store high-leverage atomic primitives and combine them parametrically.
 
-VibeUI achieves over 1,000,000 distinct visual outcomes through combinatorial permutations:
+ZEURALABZ achieves over 1,000,000 distinct visual outcomes through combinatorial permutations:
 
 $$\text{Styles} = 150 \text{ Base Components} \times 20 \text{ Themes} \times 20 \text{ Animation Presets} \times 15 \text{ Layout Archetypes} = 900,000+$$
 
@@ -32,7 +32,7 @@ With parametric adjustments for corner radiuses (`sm`, `md`, `lg`, `xl`, `full`)
 
 ## 2. Project Analyzer Heuristics (`analyzer/index.js`)
 
-When you run `npx vibe-ui suggest`, the Analyzer executes five deterministic heuristic checks:
+When you run `npx zeuralabz suggest`, the Analyzer executes five deterministic heuristic checks:
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -67,13 +67,13 @@ When you run `npx vibe-ui suggest`, the Analyzer executes five deterministic heu
 ```
 
 ### The "One-Best-Pick" Principle:
-Developers and vibe-coders suffer from decision fatigue. VibeUI intentionally recommends **only 1 best component per section**, accompanied by an actionable explanation of *why* it fits the project's persona.
+Developers and zeura-coders suffer from decision fatigue. ZEURALABZ intentionally recommends **only 1 best component per section**, accompanied by an actionable explanation of *why* it fits the project's persona.
 
 ---
 
 ## 3. Component Architecture & Isolation
 
-Every component in VibeUI adheres to a strict contract:
+Every component in ZEURALABZ adheres to a strict contract:
 
 ```
 components/<category>/<slug>/
@@ -87,5 +87,5 @@ components/<category>/<slug>/
 ```
 
 - **Zero Global State Pollution**: Every component is self-contained.
-- **Copy-Paste Simplicity**: Installing a component simply copies its source code directly into your `src/components/vibe-ui/<slug>` folder. You own the code completely.
+- **Copy-Paste Simplicity**: Installing a component simply copies its source code directly into your `src/components/zeuralabz/<slug>` folder. You own the code completely.
 

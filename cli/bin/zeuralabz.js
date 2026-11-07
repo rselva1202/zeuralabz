@@ -42,13 +42,13 @@ function findComponent(slug) {
 export async function installComponent(slug, targetDir = process.cwd(), options = {}) {
   const comp = findComponent(slug);
   if (!comp) {
-    console.log(chalk.red(`\n✖ Component "${slug}" not found in VibeUI registry.`));
+    console.log(chalk.red(`\n✖ Component "${slug}" not found in ZEURALABZ registry.`));
     return false;
   }
 
-  // Load vibe-ui.json config if present
-  let destDir = path.join(targetDir, 'src', 'components', 'vibe-ui', comp.slug);
-  const configPath = path.join(targetDir, 'vibe-ui.json');
+  // Load zeuralabz.json config if present
+  let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
+  const configPath = path.join(targetDir, 'zeuralabz.json');
   if (fs.existsSync(configPath)) {
     try {
       const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
@@ -104,17 +104,17 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
 const program = new Command();
 
 program
-  .name('vibe-ui')
-  .description(chalk.cyan('✨ VibeUI — Make any website look pretty with AI-curated UI components'))
-  .version('1.0.0');
+  .name('zeuralabz')
+  .description(chalk.cyan('✨ ZEURALABZ — Make any website look pretty with AI-curated UI components'))
+  .version('1.1.0');
 
 // 1. INIT
 program
   .command('init')
-  .description('Initialize VibeUI configuration in your project')
+  .description('Initialize ZEURALABZ configuration in your project')
   .option('-y, --yes', 'Skip prompts and use sensible defaults')
   .action(async (options) => {
-    console.log(chalk.bold.magenta('\n✨ Initializing VibeUI in your project...\n'));
+    console.log(chalk.bold.magenta('\n✨ Initializing ZEURALABZ in your project...\n'));
     const analysis = analyzeProject(process.cwd());
 
     console.log(chalk.gray(`Detected environment:`));
@@ -122,7 +122,7 @@ program
     console.log(`  ${chalk.cyan('• Styling:')}   ${chalk.bold(analysis.tailwind)}`);
     console.log(`  ${chalk.cyan('• Language:')}  ${chalk.bold(analysis.typescript ? 'TypeScript' : 'JavaScript')}`);
 
-    let componentsDir = 'src/components/vibe-ui';
+    let componentsDir = 'src/components/zeuralabz';
     let defaultTheme = 'dark-neon';
 
     if (!options.yes && process.stdin.isTTY) {
@@ -130,8 +130,8 @@ program
         {
           type: 'input',
           name: 'componentsDir',
-          message: 'Where would you like to install VibeUI components?',
-          default: 'src/components/vibe-ui'
+          message: 'Where would you like to install ZEURALABZ components?',
+          default: 'src/components/zeuralabz'
         },
         {
           type: 'list',
@@ -156,7 +156,7 @@ program
     }
 
     const config = {
-      $schema: 'https://rselva1202.github.io/vibe-ui/schema.json',
+      $schema: 'https://rselva1202.github.io/zeuralabz/schema.json',
       framework: analysis.framework,
       tailwind: analysis.tailwind,
       typescript: analysis.typescript,
@@ -165,9 +165,9 @@ program
       createdAt: new Date().toISOString()
     };
 
-    fs.writeFileSync(path.join(process.cwd(), 'vibe-ui.json'), JSON.stringify(config, null, 2), 'utf8');
-    console.log(chalk.green(`\n✔ Created ${chalk.bold('vibe-ui.json')} successfully!`));
-    console.log(chalk.gray(`Run ${chalk.cyan('npx vibe-ui suggest')} to get AI suggestions for your site.\n`));
+    fs.writeFileSync(path.join(process.cwd(), 'zeuralabz.json'), JSON.stringify(config, null, 2), 'utf8');
+    console.log(chalk.green(`\n✔ Created ${chalk.bold('zeuralabz.json')} successfully!`));
+    console.log(chalk.gray(`Run ${chalk.cyan('npx zeuralabz suggest')} to get AI suggestions for your site.\n`));
   });
 
 // 2. SUGGEST
@@ -177,7 +177,7 @@ program
   .option('-p, --pick <numbers>', 'Comma-separated recommendation numbers to install (e.g. 1,3)')
   .option('-a, --all', 'Install all suggested components')
   .action(async (options) => {
-    const spinner = ora('Scanning your project with VibeUI Analyzer...').start();
+    const spinner = ora('Scanning your project with ZEURALABZ Analyzer...').start();
     await new Promise(r => setTimeout(r, 600));
     const analysis = analyzeProject(process.cwd());
     spinner.succeed(chalk.green('Project scanned successfully!\n'));
@@ -211,7 +211,7 @@ program
     }
 
     if (!selection || selection.trim() === '') {
-      console.log(chalk.gray('\nNo components selected. You can install anytime with: npx vibe-ui add <slug>\n'));
+      console.log(chalk.gray('\nNo components selected. You can install anytime with: npx zeuralabz add <slug>\n'));
       return;
     }
 
@@ -246,7 +246,7 @@ program
 // 4. SEARCH
 program
   .command('search <query>')
-  .description('Search VibeUI components by keyword or tag')
+  .description('Search ZEURALABZ components by keyword or tag')
   .action((query) => {
     const registry = getRegistry();
     const q = query.toLowerCase();
@@ -278,7 +278,7 @@ program
   .description('Open the live web preview of a component in your browser')
   .action(async (slug) => {
     const comp = findComponent(slug);
-    const url = comp ? comp.previewUrl : `https://rselva1202.github.io/vibe-ui/preview/${slug}`;
+    const url = comp ? comp.previewUrl : `https://rselva1202.github.io/zeuralabz/preview/${slug}`;
     console.log(chalk.cyan(`\nOpening preview in browser: ${chalk.underline(url)}\n`));
     try {
       await open(url);
@@ -296,15 +296,15 @@ program
     let items = registry;
     if (category) {
       items = registry.filter(c => c.category.toLowerCase() === category.toLowerCase());
-      console.log(chalk.bold.magenta(`\nVibeUI Components in category "${category}" (${items.length}):\n`));
+      console.log(chalk.bold.magenta(`\nZEURALABZ Components in category "${category}" (${items.length}):\n`));
     } else {
-      console.log(chalk.bold.magenta(`\nAll VibeUI Components (${items.length}):\n`));
+      console.log(chalk.bold.magenta(`\nAll ZEURALABZ Components (${items.length}):\n`));
     }
 
     items.forEach(c => {
       console.log(`• ${chalk.bold.cyan(c.slug.padEnd(24))} ${chalk.gray('—')} ${chalk.white(c.name)} [${chalk.green(c.category)}]`);
     });
-    console.log(chalk.gray(`\nTo install any component: npx vibe-ui add <slug>\n`));
+    console.log(chalk.gray(`\nTo install any component: npx zeuralabz add <slug>\n`));
   });
 
 // 7. THEMES
@@ -313,7 +313,7 @@ program
   .description('List all 20 built-in aesthetic themes')
   .action(() => {
     const themes = getThemes();
-    console.log(chalk.bold.magenta(`\nVibeUI Themes (${themes.length} available):\n`));
+    console.log(chalk.bold.magenta(`\nZEURALABZ Themes (${themes.length} available):\n`));
     themes.forEach(t => {
       console.log(`• ${chalk.bold.cyan(t.name.padEnd(18))} ${chalk.yellow(t.mood.padEnd(20))} ${chalk.gray(t.description)}`);
     });

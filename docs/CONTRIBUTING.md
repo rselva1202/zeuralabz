@@ -1,4 +1,4 @@
-# Contributing to VibeUI
+# Contributing to ZEURALABZ
 
 We welcome contributions from designers, creative coders, and front-end engineers!
 
@@ -35,7 +35,7 @@ We welcome contributions from designers, creative coders, and front-end engineer
    ```
 3. Test CLI functionality:
    ```bash
-   node ./cli/bin/vibe-ui.js search <your-slug>
+   node ./cli/bin/zeuralabz.js search <your-slug>
    ```
 4. Test the preview site build:
    ```bash
@@ -45,5 +45,5 @@ We welcome contributions from designers, creative coders, and front-end engineer
 ### 3. Submitting a Pull Request
 - Create a feature branch: `git checkout -b feat/my-new-component`
 - Commit your changes: `git commit -m "feat(components): add glowing radial cards"`
-- Push and open a PR on `https://github.com/rselva1202/vibe-ui`!
+- Push and open a PR on `https://github.com/rselva1202/zeuralabz`!
 

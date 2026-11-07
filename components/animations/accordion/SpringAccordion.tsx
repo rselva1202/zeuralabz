@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 export const SpringAccordion: React.FC<{ q?: string; a?: string }> = ({
-  q = "How do I install VibeUI?",
-  a = "Run npx vibe-ui add <slug> in your project terminal."
+  q = "How do I install ZEURALABZ?",
+  a = "Run npx zeuralabz add <slug> in your project terminal."
 }) => {
   const [open, setOpen] = useState(false);
   return (

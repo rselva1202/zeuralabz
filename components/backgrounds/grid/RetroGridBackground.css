@@ -1,2 +1,2 @@
-.vibe-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }
+.zeura-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }

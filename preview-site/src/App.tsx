@@ -44,7 +44,7 @@ export default function App() {
 
   // Fetch real GitHub star count
   useEffect(() => {
-    fetch('https://api.github.com/repos/rselva1202/vibe-ui')
+    fetch('https://api.github.com/repos/rselva1202/zeuralabz')
       .then((r) => r.json())
       .then((data) => {
         if (data.stargazers_count !== undefined) {
@@ -72,9 +72,9 @@ export default function App() {
     setTimeout(() => setCopiedSlug(null), 2000);
   };
 
-  const sampleHeroCode = `import { AuroraBackground } from '@vibe-ui/aurora';
-import { SplitText } from '@vibe-ui/split-text';
-import { ShimmerButton } from '@vibe-ui/shimmer';
+  const sampleHeroCode = `import { AuroraBackground } from '@zeuralabz/aurora';
+import { SplitText } from '@zeuralabz/split-text';
+import { ShimmerButton } from '@zeuralabz/shimmer';
 
 export default function Hero() {
   return (
@@ -98,7 +98,7 @@ export default function Hero() {
                 ✨
               </span>
               <span className="text-xl font-black tracking-tight text-white">
-                Vibe<span className="text-indigo-400">UI</span>
+                ZEURA<span className="text-indigo-400">LABZ</span>
               </span>
             </a>
             <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-zinc-900 text-zinc-400 border border-zinc-800">
@@ -112,14 +112,14 @@ export default function Hero() {
             <a href="#components" className="hover:text-white transition">Components</a>
             <a href="#how-it-works" className="hover:text-white transition">How it Works</a>
             <a href="#mcp" className="hover:text-white transition">MCP & Skill</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/docs/INSTALL.md" target="_blank" rel="noreferrer" className="hover:text-white transition">Docs</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" target="_blank" rel="noreferrer" className="hover:text-white transition">Docs</a>
           </nav>
 
           {/* Right Actions */}
           <div className="flex items-center gap-3">
             {/* GitHub Stars Button */}
             <a
-              href="https://github.com/rselva1202/vibe-ui"
+              href="https://github.com/rselva1202/zeuralabz"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-200 transition"
@@ -131,13 +131,13 @@ export default function Hero() {
 
             {/* CLI Suggest CTA */}
             <button
-              onClick={() => copyCommand('npx vibe-ui suggest')}
+              onClick={() => copyCommand('npx zeuralabz suggest')}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-md shadow-indigo-600/30"
               title="Click to copy suggestion command"
             >
-              <span>$ npx vibe-ui suggest</span>
+              <span>$ npx zeuralabz suggest</span>
               <span className="text-[10px] bg-indigo-700/80 px-1.5 py-0.5 rounded font-sans uppercase">
-                {copiedSlug === 'npx vibe-ui suggest' ? 'Copied!' : 'Copy'}
+                {copiedSlug === 'npx zeuralabz suggest' ? 'Copied!' : 'Copy'}
               </span>
             </button>
           </div>
@@ -181,7 +181,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-800/60 text-indigo-300 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              New • VibeUI 1.0 — 120 components, 1M+ combinations
+              New • ZEURALABZ 1.0 — 120 components, 1M+ combinations
             </div>
 
             {/* Live background switcher */}
@@ -223,7 +223,7 @@ export default function Hero() {
                   Browse components <span className="text-indigo-600">➔</span>
                 </a>
                 <a
-                  href="https://github.com/rselva1202/vibe-ui"
+                  href="https://github.com/rselva1202/zeuralabz"
                   target="_blank"
                   rel="noreferrer"
                   className="px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 font-semibold text-sm transition flex items-center gap-2"
@@ -265,7 +265,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="text-xs font-mono text-zinc-400 ml-2">vibe-ui-showcase-matrix</span>
+                <span className="text-xs font-mono text-zinc-400 ml-2">zeuralabz-showcase-matrix</span>
               </div>
               <div className="text-[11px] font-mono text-zinc-500">Live Preview & Code Synthesizer</div>
             </div>
@@ -311,14 +311,14 @@ export default function Hero() {
                     <span className="text-emerald-400">❯</span> Terminal
                   </div>
                   <div className="space-y-1.5 text-zinc-300 bg-black/70 p-3.5 rounded-xl border border-zinc-800">
-                    <div className="text-indigo-400">$ npx vibe-ui suggest</div>
+                    <div className="text-indigo-400">$ npx zeuralabz suggest</div>
                     <div className="text-zinc-400 text-[11px]">✓ Scanning project structure...</div>
                     <div className="text-emerald-400 text-[11px]">✓ Found 3 best components for your landing page:</div>
                     <div className="text-zinc-400 pl-3 text-[11px]">• Aurora Background</div>
                     <div className="text-zinc-400 pl-3 text-[11px]">• Split Character Hero</div>
                     <div className="text-zinc-400 pl-3 text-[11px]">• Frosted Glass Card</div>
-                    <div className="text-cyan-400 mt-2 text-[11px]">$ npx vibe-ui add aurora</div>
-                    <div className="text-zinc-500 text-[10px]">✔ Installed into src/components/vibe-ui/aurora</div>
+                    <div className="text-cyan-400 mt-2 text-[11px]">$ npx zeuralabz add aurora</div>
+                    <div className="text-zinc-500 text-[10px]">✔ Installed into src/components/zeuralabz/aurora</div>
                   </div>
                 </div>
 
@@ -511,7 +511,7 @@ export default function Hero() {
                     {/* Bottom Action Bar */}
                     <div className="mt-5 pt-3 border-t border-zinc-800/80 flex items-center justify-between gap-2">
                       <button
-                        onClick={() => copyCommand(`npx vibe-ui add ${comp.slug}`)}
+                        onClick={() => copyCommand(`npx zeuralabz add ${comp.slug}`)}
                         className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 ${
                           isCopied
                             ? 'bg-emerald-500 text-black font-bold'
@@ -522,7 +522,7 @@ export default function Hero() {
                           '✔ Copied to clipboard!'
                         ) : (
                           <>
-                            <span className="text-zinc-500">$</span> npx vibe-ui add {comp.slug}
+                            <span className="text-zinc-500">$</span> npx zeuralabz add {comp.slug}
                           </>
                         )}
                       </button>
@@ -548,7 +548,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Autonomous Workflow</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">How VibeUI Suggest Works</h2>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">How ZEURALABZ Suggest Works</h2>
             <p className="text-zinc-400 text-sm mt-3">
               No manual hunting. Let the heuristic analyzer inspect your repo and recommend the 1 best match per section.
             </p>
@@ -561,7 +561,7 @@ export default function Hero() {
               </div>
               <h3 className="text-base font-bold text-white mb-2">Scan Your Project</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Run <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">npx vibe-ui suggest</code> in any React, Next.js, or Vite workspace.
+                Run <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
               </p>
             </div>
 
@@ -571,7 +571,7 @@ export default function Hero() {
               </div>
               <h3 className="text-base font-bold text-white mb-2">Curated 1-Best-Pick</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                VibeUI determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component for each part with why explanations.
+                ZEURALABZ determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component for each part with why explanations.
               </p>
             </div>
 
@@ -581,7 +581,7 @@ export default function Hero() {
               </div>
               <h3 className="text-base font-bold text-white mb-2">Direct Local Code</h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Source files copy straight into your <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">src/components/vibe-ui/</code> folder. Zero npm dependency lock-in.
+                Source files copy straight into your <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">src/components/zeuralabz/</code> folder. Zero npm dependency lock-in.
               </p>
             </div>
           </div>
@@ -602,11 +602,11 @@ export default function Hero() {
               <div>
                 <span className="text-xs font-bold text-indigo-400">Claude Code / Desktop</span>
                 <p className="text-xs text-zinc-400 mt-2">
-                  Add the VibeUI MCP server to enable autonomous design reviews and component installations.
+                  Add the ZEURALABZ MCP server to enable autonomous design reviews and component installations.
                 </p>
               </div>
               <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
-{`"vibe-ui": {
+{`"zeuralabz": {
   "command": "node",
   "args": ["mcp-server/index.js"]
 }`}
@@ -622,7 +622,7 @@ export default function Hero() {
               </div>
               <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
 {`// Tell Antigravity:
-"Use VibeUI to analyze my site
+"Use ZEURALABZ to analyze my site
 and install the best hero"`}
               </pre>
             </div>
@@ -631,12 +631,12 @@ and install the best hero"`}
               <div>
                 <span className="text-xs font-bold text-emerald-400">Cursor & Windsurf</span>
                 <p className="text-xs text-zinc-400 mt-2">
-                  Connect via MCP server settings and query components straight from chat with <code className="text-white">@vibe-ui</code>.
+                  Connect via MCP server settings and query components straight from chat with <code className="text-white">@zeuralabz</code>.
                 </p>
               </div>
               <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
-{`@vibe-ui suggest
-@vibe-ui install aurora`}
+{`@zeuralabz suggest
+@zeuralabz install aurora`}
               </pre>
             </div>
           </div>
@@ -692,12 +692,12 @@ and install the best hero"`}
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono">
               <div className="flex items-center justify-between p-3 rounded-xl bg-black border border-zinc-800 text-indigo-400">
-                <span>npx vibe-ui add {selectedComponent.slug}</span>
+                <span>npx zeuralabz add {selectedComponent.slug}</span>
                 <button
-                  onClick={() => copyCommand(`npx vibe-ui add ${selectedComponent.slug}`)}
+                  onClick={() => copyCommand(`npx zeuralabz add ${selectedComponent.slug}`)}
                   className="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-white text-[11px]"
                 >
-                  {copiedSlug === `npx vibe-ui add ${selectedComponent.slug}` ? 'Copied!' : 'Copy'}
+                  {copiedSlug === `npx zeuralabz add ${selectedComponent.slug}` ? 'Copied!' : 'Copy'}
                 </button>
               </div>
 
@@ -705,7 +705,7 @@ and install the best hero"`}
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">React Usage:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
-{`import { ${selectedComponent.componentName} } from './components/vibe-ui/${selectedComponent.slug}/${selectedComponent.componentName}';
+{`import { ${selectedComponent.componentName} } from './components/zeuralabz/${selectedComponent.slug}/${selectedComponent.componentName}';
 
 export default function Example() {
   return <${selectedComponent.componentName} />;
@@ -718,7 +718,7 @@ export default function Example() {
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">Semantic HTML Structure:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
-{`<div class="vibe-${selectedComponent.slug}">
+{`<div class="zeura-${selectedComponent.slug}">
   <h2>${selectedComponent.name}</h2>
 </div>`}
                   </pre>
@@ -729,7 +729,7 @@ export default function Example() {
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">Standalone CSS Rules:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
-{`.vibe-${selectedComponent.slug} {
+{`.zeura-${selectedComponent.slug} {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
@@ -759,7 +759,7 @@ export default function Example() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <span className="font-bold text-white text-sm">VibeUI</span>
+              <span className="font-bold text-white text-sm">ZEURALABZ</span>
               <span className="text-zinc-600">•</span>
               <span>120 animated components for React</span>
             </div>
@@ -773,10 +773,10 @@ export default function Example() {
           </div>
 
           <div className="flex gap-6 font-medium">
-            <a href="https://github.com/rselva1202/vibe-ui" className="hover:text-white transition">GitHub</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/docs/INSTALL.md" className="hover:text-white transition">Installation</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/docs/HOW-IT-WORKS.md" className="hover:text-white transition">Architecture</a>
-            <a href="https://github.com/rselva1202/vibe-ui/blob/main/SKILL.md" className="hover:text-white transition">AI Skill</a>
+            <a href="https://github.com/rselva1202/zeuralabz" className="hover:text-white transition">GitHub</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" className="hover:text-white transition">Installation</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/HOW-IT-WORKS.md" className="hover:text-white transition">Architecture</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" className="hover:text-white transition">AI Skill</a>
           </div>
         </div>
       </footer>

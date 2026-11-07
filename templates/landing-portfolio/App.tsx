@@ -28,7 +28,7 @@ export default function PortfolioLandingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <TiltCard
-            title="VibeUI Design Engine"
+            title="ZEURALABZ Design Engine"
             category="Open Source CLI"
             description="Autonomous UI recommendation tool and 120-component design matrix with MCP protocol support."
           />

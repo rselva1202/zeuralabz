@@ -1,4 +1,4 @@
-# Dashboard Starter Template — VibeUI
+# Dashboard Starter Template — ZEURALABZ
 
 An analytics and administration dashboard shell featuring a collapsible sidebar, search input with keyboard shortcut styling, and skeleton loading state placeholders.
 
@@ -9,8 +9,8 @@ An analytics and administration dashboard shell featuring a collapsible sidebar,
 
 ## Install Components:
 ```bash
-npx vibe-ui add sidebar
-npx vibe-ui add search
-npx vibe-ui add skeleton
+npx zeuralabz add sidebar
+npx zeuralabz add search
+npx zeuralabz add skeleton
 ```
 

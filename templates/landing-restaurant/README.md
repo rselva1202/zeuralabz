@@ -1,4 +1,4 @@
-# Restaurant Landing Page Template — VibeUI
+# Restaurant Landing Page Template — ZEURALABZ
 
 An opulent, warm-toned dining experience landing page using amber/gold themes and frosted glass card menus.
 
@@ -10,9 +10,9 @@ An opulent, warm-toned dining experience landing page using amber/gold themes an
 
 ## Install Components:
 ```bash
-npx vibe-ui add gradient
-npx vibe-ui add glass
-npx vibe-ui add floating-input
-npx vibe-ui add social-pill-footer
+npx zeuralabz add gradient
+npx zeuralabz add glass
+npx zeuralabz add floating-input
+npx zeuralabz add social-pill-footer
 ```
 

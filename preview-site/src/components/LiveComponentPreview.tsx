@@ -126,7 +126,7 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
       return (
         <div className="w-full h-full bg-black flex items-center justify-center p-4">
           <div className="flex gap-1">
-            {"VIBEUI".split('').map((char, i) => (
+            {"ZEURALABZ".split('').map((char, i) => (
               <span
                 key={i}
                 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 inline-block animate-bounce"
@@ -429,3 +429,4 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
     </div>
   );
 };
+

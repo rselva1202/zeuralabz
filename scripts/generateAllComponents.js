@@ -77,7 +77,7 @@ function generatePreviewSvg(comp) {
   <!-- CLI Command Pill -->
   <rect x="290" y="380" width="380" height="50" rx="12" fill="#09090b" stroke="#3f3f46" stroke-width="1"/>
   <text x="320" y="412" font-family="monospace, Consolas, sans-serif" font-size="15" fill="#38bdf8">
-    npx vibe-ui add ${comp.slug}
+    npx zeuralabz add ${comp.slug}
   </text>
 
   <!-- Tags Pill Group -->
@@ -90,10 +90,10 @@ function generatePreviewSvg(comp) {
 
   <!-- Logo in top-left -->
   <text x="60" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
-    Vibe<tspan fill="#6366f1">UI</tspan>
+    ZEURA<tspan fill="#6366f1">LABZ</tspan>
   </text>
   <text x="1140" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#71717a" text-anchor="end">
-    rselva1202.github.io/vibe-ui
+    rselva1202.github.io/zeuralabz
   </text>
 </svg>`;
 }
@@ -111,7 +111,7 @@ for (const comp of allComponents) {
   const compDir = path.join(rootDir, 'components', comp.category, comp.slug);
   ensureDir(compDir);
 
-  const previewUrl = `https://rselva1202.github.io/vibe-ui/preview/${comp.slug}`;
+  const previewUrl = `https://rselva1202.github.io/zeuralabz/preview/${comp.slug}`;
 
   // 1. React component: <ComponentName>.tsx
   const tsxPath = path.join(compDir, `${comp.componentName}.tsx`);

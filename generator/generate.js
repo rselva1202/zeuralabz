@@ -45,7 +45,7 @@ export function generateVariant(options = {}) {
 
   // Customize based on theme colors and parameters
   const variantHeader = `/**
- * VibeUI Custom Generated Variant
+ * ZEURALABZ Custom Generated Variant
  * Component: ${comp.name} (${comp.slug})
  * Theme: ${theme.name} (${theme.id})
  * Animation: ${animation} | Radius: ${radius} | Font: ${font}

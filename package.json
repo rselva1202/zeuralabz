@@ -1,15 +1,15 @@
 {
-  "name": "vibe-ui",
-  "version": "1.0.0",
+  "name": "zeuralabz",
+  "version": "1.1.0",
   "description": "Make any website look pretty — install once, let AI suggest the best UI for your project.",
   "main": "cli/index.js",
   "bin": {
-    "vibe-ui": "./cli/bin/vibe-ui.js"
+    "zeuralabz": "./cli/bin/zeuralabz.js"
   },
   "keywords": [
     "ui",
     "components",
-    "vibe-coding",
+    "zeura-coding",
     "ai",
     "design-system",
     "tailwind",
@@ -24,12 +24,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rselva1202/vibe-ui.git"
+    "url": "https://github.com/rselva1202/zeuralabz.git"
   },
   "bugs": {
-    "url": "https://github.com/rselva1202/vibe-ui/issues"
+    "url": "https://github.com/rselva1202/zeuralabz/issues"
   },
-  "homepage": "https://rselva1202.github.io/vibe-ui",
+  "homepage": "https://rselva1202.github.io/zeuralabz",
   "files": [
     "cli",
     "analyzer",
@@ -43,7 +43,7 @@
   ],
   "type": "module",
   "scripts": {
-    "cli": "node ./cli/bin/vibe-ui.js",
+    "cli": "node ./cli/bin/zeuralabz.js",
     "mcp": "node ./mcp-server/index.js",
     "generator": "node ./generator/generate.js",
     "preview": "npm run dev --prefix preview-site",

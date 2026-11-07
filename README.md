@@ -1,28 +1,30 @@
-# ✨ VibeUI
+# ✨ ZEURALABZ
 
 > **"Make any website look pretty — install once, let AI suggest the best UI for your project."**
+> 
+> *Note: Formerly developed under the draft name VibeUI. Officially published and maintained as **`zeuralabz`** (`npx zeuralabz`).*
 
-[![npm version](https://img.shields.io/npm/v/vibe-ui.svg)](https://www.npmjs.com/package/vibe-ui)
+[![npm version](https://img.shields.io/npm/v/zeuralabz.svg)](https://www.npmjs.com/package/zeuralabz)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Components](https://img.shields.io/badge/Components-120%2B-indigo.svg)](components.json)
 [![Combinations](https://img.shields.io/badge/Combinations-1M%2B_Styles-cyan.svg)](docs/HOW-IT-WORKS.md)
-[![Live Preview](https://img.shields.io/badge/Showcase-GitHub_Pages-emerald.svg)](https://rselva1202.github.io/vibe-ui)
+[![Live Preview](https://img.shields.io/badge/Showcase-GitHub_Pages-emerald.svg)](https://rselva1202.github.io/zeuralabz)
 [![MCP Protocol](https://img.shields.io/badge/Protocol-Model_Context_Protocol-purple.svg)](mcp-server/)
 
-**VibeUI** is a public, open-source UI design system, AI project analyzer, and CLI tool designed specifically for developers and vibe-coders working in AI workspaces like **Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**.
+**ZEURALABZ** is a public, open-source UI design system, AI project analyzer, and CLI tool designed specifically for developers and zeura-coders working in AI workspaces like **Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**.
 
-Instead of browsing endless component directories or wrestling with heavy UI libraries, VibeUI scans your project structure and **suggests the single best UI component for every part** of your site — background, hero, typography animations, cards, buttons, and micro-interactions — and installs the chosen code directly into your repository.
+Instead of browsing endless component directories or wrestling with heavy UI libraries, ZEURALABZ scans your project structure and **suggests the single best UI component for every part** of your site — background, hero, typography animations, cards, buttons, and micro-interactions — and installs the chosen code directly into your repository.
 
 ---
 
 ## ⚡ Live Preview Website
-👉 **Explore the full interactive catalog:** **[rselva1202.github.io/vibe-ui](https://rselva1202.github.io/vibe-ui)**
+👉 **Explore the full interactive catalog:** **[rselva1202.github.io/zeuralabz](https://rselva1202.github.io/zeuralabz)**
 
 ---
 
 ## 💡 The 1,000,000+ Combinations Architecture
 
-> **Transparency Note**: We do not claim 1,000,000 hand-written files on disk. Instead, VibeUI uses a **combinatorial design matrix** powered by an on-demand generator.
+> **Transparency Note**: We do not claim 1,000,000 hand-written files on disk. Instead, ZEURALABZ uses a **combinatorial design matrix** powered by an on-demand generator.
 
 ```
 ┌─────────────────┐      ┌───────────────┐      ┌──────────────────┐      ┌─────────────────┐
@@ -46,30 +48,30 @@ Instead of browsing endless component directories or wrestling with heavy UI lib
 
 ## 🚀 Quickstart (CLI)
 
-Run VibeUI directly in any React, Next.js, or Vite project via `npx`:
+Run ZEURALABZ directly in any React, Next.js, or Vite project via `npx`:
 
 ```bash
-# 1. Initialize VibeUI configuration in your workspace
-npx vibe-ui init
+# 1. Initialize ZEURALABZ configuration in your workspace
+npx zeuralabz init
 
 # 2. Analyze your project and get tailored 1-best-pick suggestions
-npx vibe-ui suggest
+npx zeuralabz suggest
 
 # 3. Add an individual component
-npx vibe-ui add aurora
+npx zeuralabz add aurora
 
 # 4. Search components by keyword
-npx vibe-ui search cards
+npx zeuralabz search cards
 
 # 5. Open live browser demo
-npx vibe-ui preview aurora
+npx zeuralabz preview aurora
 ```
 
 ---
 
-## 🤖 The AI Analyzer (`vibe-ui suggest`)
+## 🤖 The AI Analyzer (`zeuralabz suggest`)
 
-When you run `npx vibe-ui suggest`, VibeUI scans your local project:
+When you run `npx zeuralabz suggest`, ZEURALABZ scans your local project:
 - Detects framework (`Next.js`, `Vite`, `React`), styling (`Tailwind v3` or `Tailwind v4`), and language (`TypeScript`).
 - Classifies project persona (`SaaS`, `Portfolio`, `Dashboard`, `E-Commerce`, `Restaurant`).
 - Identifies missing visual polish and prints **exactly 1 best pick per section**:
@@ -83,37 +85,37 @@ Best UI components for you (1 per section):
 ═══════════════════════════════════════════════════════════════════
 1. Background — Aurora Background
    Slug: aurora
-   Preview: https://rselva1202.github.io/vibe-ui/preview/aurora
+   Preview: https://rselva1202.github.io/zeuralabz/preview/aurora
    Why: Living ambient waves elevate SaaS software aesthetics and create depth
 
 2. Layout & Navigation — High-Converting SaaS Landing Structure
    Slug: landing
-   Preview: https://rselva1202.github.io/vibe-ui/preview/landing
+   Preview: https://rselva1202.github.io/zeuralabz/preview/landing
    Why: Balanced header and responsive layout structured for conversion
 
 3. Hero Section — High-Impact Centered SaaS Hero
    Slug: center-hero
-   Preview: https://rselva1202.github.io/vibe-ui/preview/center-hero
+   Preview: https://rselva1202.github.io/zeuralabz/preview/center-hero
    Why: High-conversion hero layout with dynamic headline hierarchy tailored for landing projects
 
 4. Cards & Features — Frosted Glassmorphism Card
    Slug: glass
-   Preview: https://rselva1202.github.io/vibe-ui/preview/glass
+   Preview: https://rselva1202.github.io/zeuralabz/preview/glass
    Why: Multi-tiered glass pricing cards build trust and drive subscriptions
 
 5. Text Styles & Headlines — Split Character Spring Reveal
    Slug: split-text
-   Preview: https://rselva1202.github.io/vibe-ui/preview/split-text
+   Preview: https://rselva1202.github.io/zeuralabz/preview/split-text
    Why: Smooth staggered reveal gives hero headline a cinematic first impression
 
 6. Buttons & CTAs — Angled Metallic Shimmer Button
    Slug: shimmer
-   Preview: https://rselva1202.github.io/vibe-ui/preview/shimmer
+   Preview: https://rselva1202.github.io/zeuralabz/preview/shimmer
    Why: Subtle luminous light sweep draws the eye directly to your primary conversion action
 
 7. Extra Animations & Polish — Viewport Intersection Spring Reveal
    Slug: scroll-reveal
-   Preview: https://rselva1202.github.io/vibe-ui/preview/scroll-reveal
+   Preview: https://rselva1202.github.io/zeuralabz/preview/scroll-reveal
    Why: Infinite logo ribbon displays partner logos and social proof seamlessly
 ═══════════════════════════════════════════════════════════════════
 ? Pick numbers to install (e.g. 1, 3 or "all"): 
@@ -123,13 +125,13 @@ Best UI components for you (1 per section):
 
 ## 🔌 Model Context Protocol (MCP) Server
 
-VibeUI exposes a full native MCP server allowing AI coding assistants to autonomously analyze, search, and install components.
+ZEURALABZ exposes a full native MCP server allowing AI coding assistants to autonomously analyze, search, and install components.
 
 ### Available MCP Tools:
 | Tool | Description |
 | :--- | :--- |
 | `suggest_ui_for_project` | Analyzes workspace stack and returns tailored 1-best-pick recommendations with preview links. |
-| `search_components` | Queries VibeUI registry by keyword, category, or tag. |
+| `search_components` | Queries ZEURALABZ registry by keyword, category, or tag. |
 | `install_component` | Installs component code and usage snippets directly into the project. |
 | `list_themes` | Lists all 20 aesthetic themes with color palettes and styling rules. |
 
@@ -138,7 +140,7 @@ Add to your `claude_desktop_config.json`, Cursor MCP settings, or Windsurf confi
 ```json
 {
   "mcpServers": {
-    "vibe-ui": {
+    "zeuralabz": {
       "command": "node",
       "args": ["d:/MY PROJECTS/ZEURALABZ/mcp-server/index.js"]
     }
@@ -151,7 +153,7 @@ Add to your `claude_desktop_config.json`, Cursor MCP settings, or Windsurf confi
 ## 📁 Repository Structure
 
 ```text
-vibe-ui/
+zeuralabz/
 ├── components/                  # 120+ Self-contained components
 │   ├── backgrounds/             # Aurora, Galaxy, Particles, Grid, Gradient, Noise, Mesh...
 │   ├── text-animations/         # Split-text, Typewriter, Gradient-text, Scramble...
@@ -169,7 +171,7 @@ vibe-ui/
 │   ├── landing-restaurant/      # Fine dining & atmosphere landing page
 │   └── dashboard-starter/       # Analytics & admin dashboard shell
 ├── analyzer/                    # Project detection and recommendation heuristics
-├── cli/                         # vibe-ui CLI binary and commands
+├── cli/                         # zeuralabz CLI binary and commands
 ├── generator/                   # On-demand variant generator
 ├── mcp-server/                  # Model Context Protocol server for AI agents
 ├── preview-site/                # Showcase web app (GitHub Pages)

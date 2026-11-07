@@ -1,4 +1,4 @@
-# Portfolio Landing Page Template — VibeUI
+# Portfolio Landing Page Template — ZEURALABZ
 
 An expressive, dark cosmic developer and creator portfolio page featuring interactive 3D cards and magnetic buttons.
 
@@ -11,10 +11,10 @@ An expressive, dark cosmic developer and creator portfolio page featuring intera
 
 ## How to Install:
 ```bash
-npx vibe-ui add galaxy
-npx vibe-ui add split-hero
-npx vibe-ui add tilt
-npx vibe-ui add magnetic
-npx vibe-ui add minimal-footer
+npx zeuralabz add galaxy
+npx zeuralabz add split-hero
+npx zeuralabz add tilt
+npx zeuralabz add magnetic
+npx zeuralabz add minimal-footer
 ```
 

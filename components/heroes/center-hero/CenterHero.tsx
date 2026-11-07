@@ -8,7 +8,7 @@ export const CenterHero: React.FC<{ title?: string; subtitle?: string }> = ({
     <section className="relative py-24 px-6 text-center bg-black overflow-hidden">
       <div className="max-w-4xl mx-auto space-y-6">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-          ✦ VibeUI 1.0 • 1M+ Design Combinations
+          ✦ ZEURALABZ 1.0 • 1M+ Design Combinations
         </span>
         <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
           {title}

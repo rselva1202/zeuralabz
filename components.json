@@ -27,7 +27,7 @@
       "components/backgrounds/aurora/AuroraBackground.css",
       "components/backgrounds/aurora/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/aurora",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/aurora",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -58,7 +58,7 @@
       "components/backgrounds/galaxy/GalaxyBackground.css",
       "components/backgrounds/galaxy/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/galaxy",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/galaxy",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -87,7 +87,7 @@
       "components/backgrounds/particles/ParticlesBackground.css",
       "components/backgrounds/particles/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particles",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/particles",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -116,7 +116,7 @@
       "components/backgrounds/grid/RetroGridBackground.css",
       "components/backgrounds/grid/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/grid",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -145,7 +145,7 @@
       "components/backgrounds/gradient/MeshGradientBackground.css",
       "components/backgrounds/gradient/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -174,7 +174,7 @@
       "components/backgrounds/noise/NoiseBackground.css",
       "components/backgrounds/noise/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/noise",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/noise",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -203,7 +203,7 @@
       "components/backgrounds/dots/DotGridBackground.css",
       "components/backgrounds/dots/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dots",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -232,7 +232,7 @@
       "components/backgrounds/starfield/StarfieldBackground.css",
       "components/backgrounds/starfield/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/starfield",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/starfield",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -263,7 +263,7 @@
       "components/backgrounds/liquid/LiquidLavaBackground.css",
       "components/backgrounds/liquid/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/liquid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/liquid",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -292,7 +292,7 @@
       "components/backgrounds/beam/BorderBeamBackground.css",
       "components/backgrounds/beam/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/beam",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/beam",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -321,7 +321,7 @@
       "components/backgrounds/hex-mesh/HexMeshBackground.css",
       "components/backgrounds/hex-mesh/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/hex-mesh",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hex-mesh",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -350,7 +350,7 @@
       "components/backgrounds/lines/NeonWavesBackground.css",
       "components/backgrounds/lines/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/lines",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/lines",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -379,7 +379,7 @@
       "components/backgrounds/clouds/DriftingMistBackground.css",
       "components/backgrounds/clouds/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/clouds",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/clouds",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -408,7 +408,7 @@
       "components/backgrounds/circuit/CircuitBackground.css",
       "components/backgrounds/circuit/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circuit",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/circuit",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -437,7 +437,7 @@
       "components/backgrounds/vignette/VignetteBackground.css",
       "components/backgrounds/vignette/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/vignette",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/vignette",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -468,7 +468,7 @@
       "components/text-animations/split-text/SplitText.css",
       "components/text-animations/split-text/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/split-text",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -496,7 +496,7 @@
       "components/text-animations/typewriter/TypewriterText.css",
       "components/text-animations/typewriter/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/typewriter",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/typewriter",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -524,7 +524,7 @@
       "components/text-animations/gradient-text/GradientText.css",
       "components/text-animations/gradient-text/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient-text",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -555,7 +555,7 @@
       "components/text-animations/blur-text/BlurText.css",
       "components/text-animations/blur-text/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/blur-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/blur-text",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -584,7 +584,7 @@
       "components/text-animations/scramble/ScrambleText.css",
       "components/text-animations/scramble/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scramble",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/scramble",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -613,7 +613,7 @@
       "components/text-animations/shiny/ShinyText.css",
       "components/text-animations/shiny/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shiny",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shiny",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -644,7 +644,7 @@
       "components/text-animations/rotating-words/RotatingWordsText.css",
       "components/text-animations/rotating-words/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/rotating-words",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/rotating-words",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -675,7 +675,7 @@
       "components/text-animations/wave-motion/WaveMotionText.css",
       "components/text-animations/wave-motion/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/wave-motion",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-motion",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -704,7 +704,7 @@
       "components/text-animations/glitch-text/GlitchText.css",
       "components/text-animations/glitch-text/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glitch-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glitch-text",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -733,7 +733,7 @@
       "components/text-animations/counter-roll/CounterRollText.css",
       "components/text-animations/counter-roll/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/counter-roll",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/counter-roll",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -762,7 +762,7 @@
       "components/text-animations/underline-draw/UnderlineDrawText.css",
       "components/text-animations/underline-draw/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/underline-draw",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/underline-draw",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -789,7 +789,7 @@
       "components/text-animations/word-swap/WordSwapText.css",
       "components/text-animations/word-swap/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/word-swap",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/word-swap",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -818,7 +818,7 @@
       "components/text-animations/marquee-text/MarqueeTextRibbon.css",
       "components/text-animations/marquee-text/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/marquee-text",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -846,7 +846,7 @@
       "components/text-animations/glow-headline/GlowingHeadlineText.css",
       "components/text-animations/glow-headline/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glow-headline",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow-headline",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -876,7 +876,7 @@
       "components/text-animations/mask-reveal/MaskRevealText.css",
       "components/text-animations/mask-reveal/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mask-reveal",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mask-reveal",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -907,7 +907,7 @@
       "components/buttons/shimmer/ShimmerButton.css",
       "components/buttons/shimmer/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shimmer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shimmer",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -938,7 +938,7 @@
       "components/buttons/neon/NeonButton.css",
       "components/buttons/neon/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/neon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -969,7 +969,7 @@
       "components/buttons/magnetic/MagneticButton.css",
       "components/buttons/magnetic/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/magnetic",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1000,7 +1000,7 @@
       "components/buttons/3d/DepthButton.css",
       "components/buttons/3d/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/3d",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/3d",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1028,7 +1028,7 @@
       "components/buttons/gradient/GradientButton.css",
       "components/buttons/gradient/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/gradient",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1057,7 +1057,7 @@
       "components/buttons/outline-fill/OutlineFillButton.css",
       "components/buttons/outline-fill/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/outline-fill",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/outline-fill",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1086,7 +1086,7 @@
       "components/buttons/loading/LoadingSpinnerButton.css",
       "components/buttons/loading/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/loading",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/loading",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1115,7 +1115,7 @@
       "components/buttons/icon-morph/IconMorphButton.css",
       "components/buttons/icon-morph/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/icon-morph",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon-morph",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1146,7 +1146,7 @@
       "components/buttons/confetti/ConfettiButton.css",
       "components/buttons/confetti/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/confetti",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/confetti",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1177,7 +1177,7 @@
       "components/buttons/glass-btn/GlassButton.css",
       "components/buttons/glass-btn/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass-btn",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glass-btn",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1206,7 +1206,7 @@
       "components/buttons/border-beam/BorderBeamButton.css",
       "components/buttons/border-beam/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/border-beam",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/border-beam",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1235,7 +1235,7 @@
       "components/buttons/swipe-arrow/SwipeArrowButton.css",
       "components/buttons/swipe-arrow/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/swipe-arrow",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/swipe-arrow",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1264,7 +1264,7 @@
       "components/buttons/ripple/RippleButton.css",
       "components/buttons/ripple/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/ripple",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/ripple",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1293,7 +1293,7 @@
       "components/buttons/cyber-glitch/CyberGlitchButton.css",
       "components/buttons/cyber-glitch/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-glitch",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/cyber-glitch",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1322,7 +1322,7 @@
       "components/buttons/copy-snippet/CopySnippetButton.css",
       "components/buttons/copy-snippet/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/copy-snippet",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/copy-snippet",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1351,7 +1351,7 @@
       "components/cards/glass/GlassCard.css",
       "components/cards/glass/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/glass",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glass",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1382,7 +1382,7 @@
       "components/cards/tilt/TiltCard.css",
       "components/cards/tilt/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/tilt",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1411,7 +1411,7 @@
       "components/cards/bento/BentoCard.css",
       "components/cards/bento/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bento",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1440,7 +1440,7 @@
       "components/cards/profile/ProfileCard.css",
       "components/cards/profile/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/profile",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/profile",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1469,7 +1469,7 @@
       "components/cards/pricing/PricingCard.css",
       "components/cards/pricing/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pricing",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/pricing",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1496,7 +1496,7 @@
       "components/cards/product/ProductCard.css",
       "components/cards/product/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/product",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/product",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1524,7 +1524,7 @@
       "components/cards/hover-glow/HoverGlowCard.css",
       "components/cards/hover-glow/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/hover-glow",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hover-glow",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1553,7 +1553,7 @@
       "components/cards/spotlight/SpotlightCard.css",
       "components/cards/spotlight/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/spotlight",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1582,7 +1582,7 @@
       "components/cards/cyber-hud/CyberHudCard.css",
       "components/cards/cyber-hud/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cyber-hud",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/cyber-hud",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1611,7 +1611,7 @@
       "components/cards/metric-trend/MetricTrendCard.css",
       "components/cards/metric-trend/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/metric-trend",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/metric-trend",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1642,7 +1642,7 @@
       "components/cards/stacked-deck/StackedDeckCard.css",
       "components/cards/stacked-deck/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stacked-deck",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/stacked-deck",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1673,7 +1673,7 @@
       "components/cards/expandable-card/ExpandableCard.css",
       "components/cards/expandable-card/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/expandable-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/expandable-card",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -1702,7 +1702,7 @@
       "components/cards/flip-card/FlipCard.css",
       "components/cards/flip-card/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/flip-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/flip-card",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1731,7 +1731,7 @@
       "components/cards/testimonial-card/TestimonialCard.css",
       "components/cards/testimonial-card/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/testimonial-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/testimonial-card",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1758,7 +1758,7 @@
       "components/cards/feature-icon/FeatureIconCard.css",
       "components/cards/feature-icon/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/feature-icon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/feature-icon",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1787,7 +1787,7 @@
       "components/heroes/center-hero/CenterHero.css",
       "components/heroes/center-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/center-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/center-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1816,7 +1816,7 @@
       "components/heroes/split-hero/SplitHero.css",
       "components/heroes/split-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/split-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1844,7 +1844,7 @@
       "components/heroes/video-hero/VideoHero.css",
       "components/heroes/video-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/video-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/video-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1872,7 +1872,7 @@
       "components/heroes/particle-hero/ParticleHero.css",
       "components/heroes/particle-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/particle-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/particle-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1901,7 +1901,7 @@
       "components/heroes/terminal-hero/TerminalHero.css",
       "components/heroes/terminal-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/terminal-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/terminal-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1929,7 +1929,7 @@
       "components/heroes/editorial-hero/EditorialHero.css",
       "components/heroes/editorial-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/editorial-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/editorial-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1956,7 +1956,7 @@
       "components/heroes/radial-spotlight-hero/RadialSpotlightHero.css",
       "components/heroes/radial-spotlight-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/radial-spotlight-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/radial-spotlight-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -1983,7 +1983,7 @@
       "components/heroes/bento-hero/BentoHero.css",
       "components/heroes/bento-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bento-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2010,7 +2010,7 @@
       "components/heroes/isometric-hero/IsometricHero.css",
       "components/heroes/isometric-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/isometric-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/isometric-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2037,7 +2037,7 @@
       "components/heroes/minimalist-hero/MinimalistHero.css",
       "components/heroes/minimalist-hero/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimalist-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/minimalist-hero",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2064,7 +2064,7 @@
       "components/layouts/landing/LandingLayout.css",
       "components/layouts/landing/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/landing",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/landing",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2091,7 +2091,7 @@
       "components/layouts/dashboard/DashboardLayout.css",
       "components/layouts/dashboard/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dashboard",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dashboard",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2119,7 +2119,7 @@
       "components/layouts/bento-grid/BentoGridLayout.css",
       "components/layouts/bento-grid/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/bento-grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bento-grid",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2145,7 +2145,7 @@
       "components/layouts/sidebar-layout/SidebarLayout.css",
       "components/layouts/sidebar-layout/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sidebar-layout",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/sidebar-layout",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2172,7 +2172,7 @@
       "components/layouts/split-screen/SplitScreenLayout.css",
       "components/layouts/split-screen/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/split-screen",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/split-screen",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2200,7 +2200,7 @@
       "components/layouts/centered-container/CenteredContainerLayout.css",
       "components/layouts/centered-container/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/centered-container",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/centered-container",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2227,7 +2227,7 @@
       "components/layouts/multi-column/MultiColumnLayout.css",
       "components/layouts/multi-column/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/multi-column",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2254,7 +2254,7 @@
       "components/layouts/sticky-split/StickySplitLayout.css",
       "components/layouts/sticky-split/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-split",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/sticky-split",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2281,7 +2281,7 @@
       "components/layouts/masonry-grid/MasonryGridLayout.css",
       "components/layouts/masonry-grid/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/masonry-grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/masonry-grid",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2308,7 +2308,7 @@
       "components/layouts/fullscreen-hero-layout/FullscreenHeroLayout.css",
       "components/layouts/fullscreen-hero-layout/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/fullscreen-hero-layout",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fullscreen-hero-layout",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2336,7 +2336,7 @@
       "components/forms/floating-input/FloatingInput.css",
       "components/forms/floating-input/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-input",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/floating-input",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2365,7 +2365,7 @@
       "components/forms/search/ExpandingSearch.css",
       "components/forms/search/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/search",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/search",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2395,7 +2395,7 @@
       "components/forms/toggle/GlowToggle.css",
       "components/forms/toggle/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/toggle",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/toggle",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -2423,7 +2423,7 @@
       "components/forms/otp/OtpInput.css",
       "components/forms/otp/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/otp",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/otp",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2451,7 +2451,7 @@
       "components/forms/newsletter/NewsletterBox.css",
       "components/forms/newsletter/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/newsletter",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/newsletter",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2479,7 +2479,7 @@
       "components/forms/password-reveal/PasswordInput.css",
       "components/forms/password-reveal/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/password-reveal",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/password-reveal",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2508,7 +2508,7 @@
       "components/forms/checkbox/AnimatedCheckbox.css",
       "components/forms/checkbox/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/checkbox",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/checkbox",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -2537,7 +2537,7 @@
       "components/forms/select/CustomSelect.css",
       "components/forms/select/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/select",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/select",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -2564,7 +2564,7 @@
       "components/forms/upload/FileUpload.css",
       "components/forms/upload/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/upload",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/upload",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2591,7 +2591,7 @@
       "components/forms/range/RangeSlider.css",
       "components/forms/range/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/range",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/range",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2621,7 +2621,7 @@
       "components/animations/scroll-reveal/ScrollReveal.css",
       "components/animations/scroll-reveal/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/scroll-reveal",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/scroll-reveal",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -2650,7 +2650,7 @@
       "components/animations/marquee/MarqueeLogoCloud.css",
       "components/animations/marquee/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/marquee",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/marquee",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2677,7 +2677,7 @@
       "components/animations/cursor-trail/CursorTrail.css",
       "components/animations/cursor-trail/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/cursor-trail",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/cursor-trail",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2704,7 +2704,7 @@
       "components/animations/magnetic/MagneticOrbit.css",
       "components/animations/magnetic/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/magnetic",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/magnetic",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2731,7 +2731,7 @@
       "components/animations/tilt/GyroTilt.css",
       "components/animations/tilt/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/tilt",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/tilt",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2759,7 +2759,7 @@
       "components/animations/accordion/SpringAccordion.css",
       "components/animations/accordion/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/accordion",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/accordion",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2786,7 +2786,7 @@
       "components/animations/carousel/SwiperCarousel.css",
       "components/animations/carousel/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/carousel",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/carousel",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2814,7 +2814,7 @@
       "components/animations/countdown/CountdownTimer.css",
       "components/animations/countdown/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/countdown",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/countdown",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2841,7 +2841,7 @@
       "components/animations/star-rating/StarRating.css",
       "components/animations/star-rating/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/star-rating",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/star-rating",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2868,7 +2868,7 @@
       "components/animations/parallax-box/ParallaxBox.css",
       "components/animations/parallax-box/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/parallax-box",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/parallax-box",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2897,7 +2897,7 @@
       "components/animations/stagger-fade/StaggerFade.css",
       "components/animations/stagger-fade/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/stagger-fade",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/stagger-fade",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -2924,7 +2924,7 @@
       "components/animations/floating-orb/FloatingOrb.css",
       "components/animations/floating-orb/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-orb",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/floating-orb",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2951,7 +2951,7 @@
       "components/animations/spotlight-beam/SpotlightBeam.css",
       "components/animations/spotlight-beam/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spotlight-beam",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/spotlight-beam",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -2978,7 +2978,7 @@
       "components/animations/dock-magnify/DockMagnify.css",
       "components/animations/dock-magnify/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dock-magnify",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dock-magnify",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3005,7 +3005,7 @@
       "components/animations/shimmer-wave/ShimmerWave.css",
       "components/animations/shimmer-wave/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/shimmer-wave",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shimmer-wave",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3033,7 +3033,7 @@
       "components/loaders/spinner/DualRingSpinner.css",
       "components/loaders/spinner/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/spinner",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/spinner",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3060,7 +3060,7 @@
       "components/loaders/skeleton/SkeletonCard.css",
       "components/loaders/skeleton/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/skeleton",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/skeleton",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3087,7 +3087,7 @@
       "components/loaders/progress/LinearProgress.css",
       "components/loaders/progress/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/progress",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/progress",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3114,7 +3114,7 @@
       "components/loaders/dots/BouncingDots.css",
       "components/loaders/dots/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/dots",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dots",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3142,7 +3142,7 @@
       "components/loaders/circular/CircularRingLoader.css",
       "components/loaders/circular/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/circular",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/circular",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3172,7 +3172,7 @@
       "components/layouts/floating-navbar/FloatingNavbar.css",
       "components/layouts/floating-navbar/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/floating-navbar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/floating-navbar",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -3199,7 +3199,7 @@
       "components/layouts/sticky-navbar/StickyNavbar.css",
       "components/layouts/sticky-navbar/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/sticky-navbar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/sticky-navbar",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3229,7 +3229,7 @@
       "components/layouts/mobile-drawer/MobileDrawer.css",
       "components/layouts/mobile-drawer/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mobile-drawer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mobile-drawer",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },
@@ -3256,7 +3256,7 @@
       "components/layouts/collapsible-sidebar/CollapsibleSidebar.css",
       "components/layouts/collapsible-sidebar/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/collapsible-sidebar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/collapsible-sidebar",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3285,7 +3285,7 @@
       "components/layouts/pill-dock/PillDock.css",
       "components/layouts/pill-dock/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/pill-dock",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/pill-dock",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3313,7 +3313,7 @@
       "components/layouts/command-nav/CommandNav.css",
       "components/layouts/command-nav/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/command-nav",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/command-nav",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3340,7 +3340,7 @@
       "components/layouts/multi-column-footer/MultiColumnFooter.css",
       "components/layouts/multi-column-footer/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/multi-column-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/multi-column-footer",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3367,7 +3367,7 @@
       "components/layouts/minimal-footer/MinimalFooter.css",
       "components/layouts/minimal-footer/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/minimal-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/minimal-footer",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3394,7 +3394,7 @@
       "components/layouts/social-pill-footer/SocialPillFooter.css",
       "components/layouts/social-pill-footer/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/social-pill-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/social-pill-footer",
     "theme": "dark-neon",
     "animation": "css-native"
   },
@@ -3421,7 +3421,7 @@
       "components/layouts/mega-menu-nav/MegaMenuNav.css",
       "components/layouts/mega-menu-nav/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/vibe-ui/preview/mega-menu-nav",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mega-menu-nav",
     "theme": "dark-neon",
     "animation": "css-native"
   }

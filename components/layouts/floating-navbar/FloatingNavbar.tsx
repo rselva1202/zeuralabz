@@ -9,7 +9,7 @@ export const FloatingNavbar: React.FC = () => {
     <nav className="flex items-center gap-1 px-4 py-2 rounded-full bg-zinc-950/70 backdrop-blur-md border border-white/10 shadow-2xl">
       <div className="flex items-center gap-2 font-bold text-white pr-4 border-r border-white/10">
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-        VibeUI
+        ZEURALABZ
       </div>
       <div className="flex items-center gap-1">
         {links.map((link) => (

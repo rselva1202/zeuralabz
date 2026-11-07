@@ -61,7 +61,7 @@ export default function SaasLandingPage() {
 
       {/* 5. Minimalist Footer */}
       <footer className="py-12 border-t border-zinc-900 text-center text-xs text-zinc-600">
-        <p>© 2026 VibeUI. Built with craft by R. Selva. Distributed under MIT License.</p>
+        <p>© 2026 ZEURALABZ. Built with craft by R. Selva. Distributed under MIT License.</p>
       </footer>
     </div>
   );

@@ -1,6 +1,6 @@
-# SaaS Landing Page Template — VibeUI
+# SaaS Landing Page Template — ZEURALABZ
 
-A high-converting, dark-mode SaaS landing page assembled completely with VibeUI components.
+A high-converting, dark-mode SaaS landing page assembled completely with ZEURALABZ components.
 
 ## Components Used:
 - `AuroraBackground` (`components/backgrounds/aurora`)
@@ -12,12 +12,12 @@ A high-converting, dark-mode SaaS landing page assembled completely with VibeUI 
 
 ## How to Run:
 ```bash
-npx vibe-ui add aurora
-npx vibe-ui add center-hero
-npx vibe-ui add shimmer
-npx vibe-ui add glass
-npx vibe-ui add floating-pill-nav
-npx vibe-ui add marquee
+npx zeuralabz add aurora
+npx zeuralabz add center-hero
+npx zeuralabz add shimmer
+npx zeuralabz add glass
+npx zeuralabz add floating-pill-nav
+npx zeuralabz add marquee
 ```
 Then import and render `SaasLandingPage` in your application!
 

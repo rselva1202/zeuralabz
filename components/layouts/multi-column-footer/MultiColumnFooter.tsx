@@ -5,8 +5,8 @@ export const MultiColumnFooter: React.FC = () => {
     <footer className="w-full bg-zinc-950 border-t border-zinc-900 py-12 px-6 text-zinc-400 text-xs">
       <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div>
-          <span className="font-extrabold text-white text-base">VibeUI</span>
-          <p className="text-[11px] text-zinc-500 mt-2">Next-gen UI design system for vibe-coders.</p>
+          <span className="font-extrabold text-white text-base">ZEURALABZ</span>
+          <p className="text-[11px] text-zinc-500 mt-2">Next-gen UI design system for zeura-coders.</p>
         </div>
         <div>
           <h5 className="font-bold text-white uppercase mb-2">Components</h5>

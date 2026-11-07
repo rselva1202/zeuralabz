@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const TestimonialCard: React.FC<{ quote?: string; author?: string; role?: string }> = ({
-  quote = "VibeUI cut our landing page development time by 80%. Every component feels alive.",
+  quote = "ZEURALABZ cut our landing page development time by 80%. Every component feels alive.",
   author = "Alex Rivera",
   role = "Head of Product @ HyperScale"
 }) => {

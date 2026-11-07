@@ -31,14 +31,14 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({ className = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-aurora">
-  <div class="vibe-aurora-glow"></div>
-  <div class="vibe-aurora-content">
+    htmlCode: `<div class="zeura-aurora">
+  <div class="zeura-aurora-glow"></div>
+  <div class="zeura-aurora-content">
     <h2>Living Aurora</h2>
   </div>
 </div>`,
-    cssCode: `.vibe-aurora { position: relative; overflow: hidden; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; color: #fff; }
-.vibe-aurora-glow { position: absolute; top: -50%; left: -25%; width: 150%; height: 200%; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); filter: blur(90px); opacity: 0.5; animation: auroraFloat 18s ease-in-out infinite; pointer-events-none; }
+    cssCode: `.zeura-aurora { position: relative; overflow: hidden; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; color: #fff; }
+.zeura-aurora-glow { position: absolute; top: -50%; left: -25%; width: 150%; height: 200%; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); filter: blur(90px); opacity: 0.5; animation: auroraFloat 18s ease-in-out infinite; pointer-events-none; }
 @keyframes auroraFloat { 0%, 100% { transform: rotate(12deg) scale(1); } 50% { transform: rotate(-12deg) scale(1.1); } }`
   },
   {
@@ -65,9 +65,9 @@ export const GalaxyBackground: React.FC<{ children?: React.ReactNode }> = ({ chi
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-galaxy"><div class="vibe-galaxy-spiral"></div><span>Spiral Galaxy</span></div>`,
-    cssCode: `.vibe-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
+    htmlCode: `<div class="zeura-galaxy"><div class="zeura-galaxy-spiral"></div><span>Spiral Galaxy</span></div>`,
+    cssCode: `.zeura-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }`
   },
   {
@@ -92,8 +92,8 @@ export const ParticlesBackground: React.FC<{ count?: number; children?: React.Re
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-particles"><span>Particle Network</span></div>`,
-    cssCode: `.vibe-particles { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-particles"><span>Particle Network</span></div>`,
+    cssCode: `.zeura-particles { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -114,9 +114,9 @@ export const RetroGridBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-retro-grid"><div class="vibe-grid-plane"></div><span>Horizon Perspective</span></div>`,
-    cssCode: `.vibe-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }`
+    htmlCode: `<div class="zeura-retro-grid"><div class="zeura-grid-plane"></div><span>Horizon Perspective</span></div>`,
+    cssCode: `.zeura-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }`
   },
   {
     category: 'backgrounds',
@@ -138,8 +138,8 @@ export const MeshGradientBackground: React.FC<{ children?: React.ReactNode }> = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mesh"><span>Fluid Mesh</span></div>`,
-    cssCode: `.vibe-mesh { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-mesh"><span>Fluid Mesh</span></div>`,
+    cssCode: `.zeura-mesh { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -160,8 +160,8 @@ export const NoiseBackground: React.FC<{ children?: React.ReactNode }> = ({ chil
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-noise"><span>Film Grain Noise</span></div>`,
-    cssCode: `.vibe-noise { position: relative; background: #09090b; min-height: 280px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-noise"><span>Film Grain Noise</span></div>`,
+    cssCode: `.zeura-noise { position: relative; background: #09090b; min-height: 280px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -182,8 +182,8 @@ export const DotGridBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dotgrid"><span>16px Dot Matrix</span></div>`,
-    cssCode: `.vibe-dotgrid { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-dotgrid"><span>16px Dot Matrix</span></div>`,
+    cssCode: `.zeura-dotgrid { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -207,8 +207,8 @@ export const StarfieldBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-stars"><span>Deep Space Starfield</span></div>`,
-    cssCode: `.vibe-stars { position: relative; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-stars"><span>Deep Space Starfield</span></div>`,
+    cssCode: `.zeura-stars { position: relative; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -234,8 +234,8 @@ export const LiquidLavaBackground: React.FC<{ children?: React.ReactNode }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-lava"><span>Liquid Lava</span></div>`,
-    cssCode: `.vibe-lava { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-lava"><span>Liquid Lava</span></div>`,
+    cssCode: `.zeura-lava { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -256,8 +256,8 @@ export const BorderBeamBackground: React.FC<{ children?: React.ReactNode }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-beam"><span>Border Beam Spotlight</span></div>`,
-    cssCode: `.vibe-beam { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-beam"><span>Border Beam Spotlight</span></div>`,
+    cssCode: `.zeura-beam { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -277,8 +277,8 @@ export const HexMeshBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-hex"><span>Hexagon Tessellation</span></div>`,
-    cssCode: `.vibe-hex { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-hex"><span>Hexagon Tessellation</span></div>`,
+    cssCode: `.zeura-hex { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -298,8 +298,8 @@ export const NeonWavesBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-waves"><span>Neon Waves</span></div>`,
-    cssCode: `.vibe-waves { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-waves"><span>Neon Waves</span></div>`,
+    cssCode: `.zeura-waves { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -319,8 +319,8 @@ export const DriftingMistBackground: React.FC<{ children?: React.ReactNode }> = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mist"><span>Drifting Mist</span></div>`,
-    cssCode: `.vibe-mist { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-mist"><span>Drifting Mist</span></div>`,
+    cssCode: `.zeura-mist { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -340,8 +340,8 @@ export const CircuitBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-circuit"><span>Circuit Traces</span></div>`,
-    cssCode: `.vibe-circuit { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-circuit"><span>Circuit Traces</span></div>`,
+    cssCode: `.zeura-circuit { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
   {
     category: 'backgrounds',
@@ -362,8 +362,8 @@ export const VignetteBackground: React.FC<{ children?: React.ReactNode }> = ({ c
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-vignette"><span>Radial Vignette</span></div>`,
-    cssCode: `.vibe-vignette { position: relative; background: #18181b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-vignette"><span>Radial Vignette</span></div>`,
+    cssCode: `.zeura-vignette { position: relative; background: #18181b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`
   },
 
   // ==================== TEXT ANIMATIONS (15) ====================
@@ -400,8 +400,8 @@ export const SplitText: React.FC<{ text?: string }> = ({ text = "Make Any Websit
     </h1>
   );
 };`,
-    htmlCode: `<h1 class="vibe-split-text">Make Any Website Look Pretty</h1>`,
-    cssCode: `.vibe-split-text { font-size: 48px; font-weight: 900; color: #fff; }`
+    htmlCode: `<h1 class="zeura-split-text">Make Any Website Look Pretty</h1>`,
+    cssCode: `.zeura-split-text { font-size: 48px; font-weight: 900; color: #fff; }`
   },
   {
     category: 'text-animations',
@@ -443,8 +443,8 @@ export const TypewriterText: React.FC<{ words?: string[] }> = ({ words = ["Beaut
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-typewriter">Built for <span class="typed">Modern Design</span><span class="cursor">|</span></div>`,
-    cssCode: `.vibe-typewriter { font-family: monospace; font-size: 32px; color: #fff; } .cursor { animation: blink 1s infinite; color: #10b981; } @keyframes blink { 50% { opacity: 0; } }`
+    htmlCode: `<div class="zeura-typewriter">Built for <span class="typed">Modern Design</span><span class="cursor">|</span></div>`,
+    cssCode: `.zeura-typewriter { font-family: monospace; font-size: 32px; color: #fff; } .cursor { animation: blink 1s infinite; color: #10b981; } @keyframes blink { 50% { opacity: 0; } }`
   },
   {
     category: 'text-animations',
@@ -464,8 +464,8 @@ export const GradientText: React.FC<{ text?: string }> = ({ text = "Supercharged
     </h2>
   );
 };`,
-    htmlCode: `<h2 class="vibe-gradient-text">Supercharged by AI</h2>`,
-    cssCode: `.vibe-gradient-text { font-size: 44px; font-weight: 900; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }`
+    htmlCode: `<h2 class="zeura-gradient-text">Supercharged by AI</h2>`,
+    cssCode: `.zeura-gradient-text { font-size: 44px; font-weight: 900; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }`
   },
   {
     category: 'text-animations',
@@ -495,8 +495,8 @@ export const BlurText: React.FC<{ text?: string }> = ({ text = "Focus on craft a
     </p>
   );
 };`,
-    htmlCode: `<p class="vibe-blur-text">Focus on craft and velocity</p>`,
-    cssCode: `.vibe-blur-text { font-size: 28px; font-weight: 600; color: #fff; }`
+    htmlCode: `<p class="zeura-blur-text">Focus on craft and velocity</p>`,
+    cssCode: `.zeura-blur-text { font-size: 28px; font-weight: 600; color: #fff; }`
   },
   {
     category: 'text-animations',
@@ -533,8 +533,8 @@ export const ScrambleText: React.FC<{ text?: string }> = ({ text = "INITIALIZE_S
     </h3>
   );
 };`,
-    htmlCode: `<h3 class="vibe-scramble">INITIALIZE_SYSTEM</h3>`,
-    cssCode: `.vibe-scramble { font-family: monospace; font-size: 28px; color: #10b981; font-weight: bold; cursor: pointer; }`
+    htmlCode: `<h3 class="zeura-scramble">INITIALIZE_SYSTEM</h3>`,
+    cssCode: `.zeura-scramble { font-family: monospace; font-size: 28px; color: #10b981; font-weight: bold; cursor: pointer; }`
   },
   {
     category: 'text-animations',
@@ -554,8 +554,8 @@ export const ShinyText: React.FC<{ text?: string }> = ({ text = "Ultra High Perf
     </h2>
   );
 };`,
-    htmlCode: `<h2 class="vibe-shiny">Ultra High Performance</h2>`,
-    cssCode: `.vibe-shiny { font-size: 36px; font-weight: 900; background: linear-gradient(110deg, #666 40%, #fff 50%, #666 60%); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }`
+    htmlCode: `<h2 class="zeura-shiny">Ultra High Performance</h2>`,
+    cssCode: `.zeura-shiny { font-size: 36px; font-weight: 900; background: linear-gradient(110deg, #666 40%, #fff 50%, #666 60%); background-size: 200% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }`
   },
   {
     category: 'text-animations',
@@ -598,8 +598,8 @@ export const RotatingWordsText: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-rotating">Design that is <span class="vibe-word">Intelligent</span></div>`,
-    cssCode: `.vibe-rotating { font-size: 32px; font-weight: 800; color: #fff; } .vibe-word { color: #06b6d4; }`
+    htmlCode: `<div class="zeura-rotating">Design that is <span class="zeura-word">Intelligent</span></div>`,
+    cssCode: `.zeura-rotating { font-size: 32px; font-weight: 800; color: #fff; } .zeura-word { color: #06b6d4; }`
   },
   {
     category: 'text-animations',
@@ -628,8 +628,8 @@ export const WaveMotionText: React.FC<{ text?: string }> = ({ text = "Interactiv
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-wave">Interactive Waves</div>`,
-    cssCode: `.vibe-wave { font-size: 30px; font-weight: 900; color: #fff; }`
+    htmlCode: `<div class="zeura-wave">Interactive Waves</div>`,
+    cssCode: `.zeura-wave { font-size: 30px; font-weight: 900; color: #fff; }`
   },
   {
     category: 'text-animations',
@@ -655,8 +655,8 @@ export const GlitchText: React.FC<{ text?: string }> = ({ text = "SYSTEM_OVERRID
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-glitch">SYSTEM_OVERRIDE</div>`,
-    cssCode: `.vibe-glitch { font-family: monospace; font-size: 32px; font-weight: 900; color: #fff; text-shadow: 2px 0 #ef4444, -2px 0 #06b6d4; }`
+    htmlCode: `<div class="zeura-glitch">SYSTEM_OVERRIDE</div>`,
+    cssCode: `.zeura-glitch { font-family: monospace; font-size: 32px; font-weight: 900; color: #fff; text-shadow: 2px 0 #ef4444, -2px 0 #06b6d4; }`
   },
   {
     category: 'text-animations',
@@ -693,8 +693,8 @@ export const CounterRollText: React.FC<{ target?: number; suffix?: string }> = (
 
   return <div className="font-mono text-5xl font-black text-emerald-400">{count}{suffix}</div>;
 };`,
-    htmlCode: `<div class="vibe-counter">99.9%</div>`,
-    cssCode: `.vibe-counter { font-family: monospace; font-size: 48px; font-weight: 900; color: #10b981; }`
+    htmlCode: `<div class="zeura-counter">99.9%</div>`,
+    cssCode: `.zeura-counter { font-family: monospace; font-size: 48px; font-weight: 900; color: #10b981; }`
   },
   {
     category: 'text-animations',
@@ -717,8 +717,8 @@ export const UnderlineDrawText: React.FC<{ text?: string }> = ({ text = "Game Ch
     </span>
   );
 };`,
-    htmlCode: `<span class="vibe-draw-underline">Game Changer</span>`,
-    cssCode: `.vibe-draw-underline { position: relative; font-size: 28px; font-weight: 800; color: #fff; text-decoration: underline wavy #10b981; }`
+    htmlCode: `<span class="zeura-draw-underline">Game Changer</span>`,
+    cssCode: `.zeura-draw-underline { position: relative; font-size: 28px; font-weight: 800; color: #fff; text-decoration: underline wavy #10b981; }`
   },
   {
     category: 'text-animations',
@@ -739,8 +739,8 @@ export const WordSwapText: React.FC = () => {
     </button>
   );
 };`,
-    htmlCode: `<div class="vibe-swap">Ship with <span>Velocity</span></div>`,
-    cssCode: `.vibe-swap { font-size: 30px; font-weight: 800; color: #fff; }`
+    htmlCode: `<div class="zeura-swap">Ship with <span>Velocity</span></div>`,
+    cssCode: `.zeura-swap { font-size: 30px; font-weight: 800; color: #fff; }`
   },
   {
     category: 'text-animations',
@@ -753,7 +753,7 @@ export const WordSwapText: React.FC = () => {
     deps: [],
     reactCode: `import React from 'react';
 
-export const MarqueeTextRibbon: React.FC<{ words?: string[] }> = ({ words = ["VIBE", "TAILWIND", "REACT", "FRAMER", "GSAP"] }) => {
+export const MarqueeTextRibbon: React.FC<{ words?: string[] }> = ({ words = ["ZEURA", "TAILWIND", "REACT", "FRAMER", "GSAP"] }) => {
   return (
     <div className="w-full overflow-hidden bg-zinc-950 py-3 border-y border-zinc-900">
       <div className="flex gap-8 whitespace-nowrap animate-marquee font-mono text-sm font-bold text-zinc-400 tracking-widest">
@@ -767,8 +767,8 @@ export const MarqueeTextRibbon: React.FC<{ words?: string[] }> = ({ words = ["VI
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-marquee-ribbon"><span>VIBE ✦ TAILWIND ✦ REACT</span></div>`,
-    cssCode: `.vibe-marquee-ribbon { overflow: hidden; white-space: nowrap; font-family: monospace; color: #a1a1aa; padding: 12px; }`
+    htmlCode: `<div class="zeura-marquee-ribbon"><span>ZEURA ✦ TAILWIND ✦ REACT</span></div>`,
+    cssCode: `.zeura-marquee-ribbon { overflow: hidden; white-space: nowrap; font-family: monospace; color: #a1a1aa; padding: 12px; }`
   },
   {
     category: 'text-animations',
@@ -789,8 +789,8 @@ export const GlowingHeadlineText: React.FC<{ text?: string }> = ({ text = "FORGE
     </div>
   );
 };`,
-    htmlCode: `<h1 class="vibe-glow-head">FORGE THE FUTURE</h1>`,
-    cssCode: `.vibe-glow-head { font-size: 40px; font-weight: 900; color: #fff; text-shadow: 0 0 20px rgba(16,185,129,0.5); }`
+    htmlCode: `<h1 class="zeura-glow-head">FORGE THE FUTURE</h1>`,
+    cssCode: `.zeura-glow-head { font-size: 40px; font-weight: 900; color: #fff; text-shadow: 0 0 20px rgba(16,185,129,0.5); }`
   },
   {
     category: 'text-animations',
@@ -818,8 +818,8 @@ export const MaskRevealText: React.FC<{ text?: string }> = ({ text = "Architectu
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mask-box"><h2>Architectural Precision</h2></div>`,
-    cssCode: `.vibe-mask-box { overflow: hidden; } h2 { font-size: 36px; color: #fff; }`
+    htmlCode: `<div class="zeura-mask-box"><h2>Architectural Precision</h2></div>`,
+    cssCode: `.zeura-mask-box { overflow: hidden; } h2 { font-size: 36px; color: #fff; }`
   },
 
   // ==================== BUTTONS (15) ====================
@@ -852,8 +852,8 @@ export const ShimmerButton: React.FC<{ text?: string; onClick?: () => void }> = 
     </motion.button>
   );
 };`,
-    htmlCode: `<button class="vibe-shimmer-btn"><span>Get Started</span><div class="overlay"></div></button>`,
-    cssCode: `.vibe-shimmer-btn { position: relative; overflow: hidden; padding: 12px 28px; border-radius: 12px; font-weight: 600; color: #fff; background: #059669; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-shimmer-btn"><span>Get Started</span><div class="overlay"></div></button>`,
+    cssCode: `.zeura-shimmer-btn { position: relative; overflow: hidden; padding: 12px 28px; border-radius: 12px; font-weight: 600; color: #fff; background: #059669; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -878,8 +878,8 @@ export const NeonButton: React.FC<{ text?: string }> = ({ text = "Explore Cyber"
     </motion.button>
   );
 };`,
-    htmlCode: `<button class="vibe-neon-btn">Explore Cyber</button>`,
-    cssCode: `.vibe-neon-btn { padding: 14px 32px; border-radius: 8px; font-family: monospace; font-weight: bold; background: #06b6d4; color: #000; border: none; box-shadow: 0 0 20px #06b6d4; cursor: pointer; }`
+    htmlCode: `<button class="zeura-neon-btn">Explore Cyber</button>`,
+    cssCode: `.zeura-neon-btn { padding: 14px 32px; border-radius: 8px; font-family: monospace; font-weight: bold; background: #06b6d4; color: #000; border: none; box-shadow: 0 0 20px #06b6d4; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -920,8 +920,8 @@ export const MagneticButton: React.FC<{ text?: string }> = ({ text = "Magnetic P
     </motion.button>
   );
 };`,
-    htmlCode: `<button class="vibe-mag-btn">Magnetic Pull</button>`,
-    cssCode: `.vibe-mag-btn { padding: 16px 32px; border-radius: 9999px; background: #18181b; border: 1px solid #3f3f46; color: #fff; cursor: pointer; }`
+    htmlCode: `<button class="zeura-mag-btn">Magnetic Pull</button>`,
+    cssCode: `.zeura-mag-btn { padding: 16px 32px; border-radius: 9999px; background: #18181b; border: 1px solid #3f3f46; color: #fff; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -945,8 +945,8 @@ export const DepthButton: React.FC<{ text?: string }> = ({ text = "Press Me" }) 
     </motion.button>
   );
 };`,
-    htmlCode: `<button class="vibe-depth-btn">Press Me</button>`,
-    cssCode: `.vibe-depth-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: #9333ea; color: #fff; border: none; box-shadow: 0 6px 0 #581c87; cursor: pointer; }`
+    htmlCode: `<button class="zeura-depth-btn">Press Me</button>`,
+    cssCode: `.zeura-depth-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: #9333ea; color: #fff; border: none; box-shadow: 0 6px 0 #581c87; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -966,8 +966,8 @@ export const GradientButton: React.FC<{ text?: string }> = ({ text = "Get Starte
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-grad-btn">Get Started</button>`,
-    cssCode: `.vibe-grad-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); color: #fff; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-grad-btn">Get Started</button>`,
+    cssCode: `.zeura-grad-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1); color: #fff; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -988,8 +988,8 @@ export const OutlineFillButton: React.FC<{ text?: string }> = ({ text = "Discove
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-outline-fill"><span>Discover More</span></button>`,
-    cssCode: `.vibe-outline-fill { padding: 12px 28px; border: 2px solid #10b981; color: #10b981; border-radius: 12px; background: transparent; cursor: pointer; }`
+    htmlCode: `<button class="zeura-outline-fill"><span>Discover More</span></button>`,
+    cssCode: `.zeura-outline-fill { padding: 12px 28px; border: 2px solid #10b981; color: #10b981; border-radius: 12px; background: transparent; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1018,8 +1018,8 @@ export const LoadingSpinnerButton: React.FC<{ text?: string }> = ({ text = "Save
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-loading-btn">Save Changes</button>`,
-    cssCode: `.vibe-loading-btn { padding: 12px 24px; min-width: 140px; border-radius: 12px; background: #059669; color: #fff; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-loading-btn">Save Changes</button>`,
+    cssCode: `.zeura-loading-btn { padding: 12px 24px; min-width: 140px; border-radius: 12px; background: #059669; color: #fff; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1042,8 +1042,8 @@ export const IconMorphButton: React.FC<{ label?: string }> = ({ label = "Star on
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-icon-morph">★ <span>Star on GitHub</span></button>`,
-    cssCode: `.vibe-icon-morph { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; background: #18181b; color: #fff; border: 1px solid #27272a; cursor: pointer; }`
+    htmlCode: `<button class="zeura-icon-morph">★ <span>Star on GitHub</span></button>`,
+    cssCode: `.zeura-icon-morph { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; background: #18181b; color: #fff; border: 1px solid #27272a; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1065,8 +1065,8 @@ export const ConfettiButton: React.FC<{ text?: string }> = ({ text = "Celebrate 
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-confetti-btn">Celebrate 🎉</button>`,
-    cssCode: `.vibe-confetti-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: linear-gradient(90deg, #f59e0b, #f43f5e, #8b5cf6); color: #fff; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-confetti-btn">Celebrate 🎉</button>`,
+    cssCode: `.zeura-confetti-btn { padding: 14px 32px; border-radius: 12px; font-weight: bold; background: linear-gradient(90deg, #f59e0b, #f43f5e, #8b5cf6); color: #fff; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1091,8 +1091,8 @@ export const GlassButton: React.FC<{ text?: string }> = ({ text = "Frosted Glass
     </motion.button>
   );
 };`,
-    htmlCode: `<button class="vibe-glass-btn">Frosted Glass</button>`,
-    cssCode: `.vibe-glass-btn { padding: 12px 28px; border-radius: 12px; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); color: #fff; cursor: pointer; }`
+    htmlCode: `<button class="zeura-glass-btn">Frosted Glass</button>`,
+    cssCode: `.zeura-glass-btn { padding: 12px 28px; border-radius: 12px; background: rgba(255,255,255,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); color: #fff; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1105,7 +1105,7 @@ export const GlassButton: React.FC<{ text?: string }> = ({ text = "Frosted Glass
     deps: [],
     reactCode: `import React from 'react';
 
-export const BorderBeamButton: React.FC<{ text?: string }> = ({ text = "Join VibeUI" }) => {
+export const BorderBeamButton: React.FC<{ text?: string }> = ({ text = "Join ZEURALABZ" }) => {
   return (
     <div className="relative inline-flex overflow-hidden rounded-xl p-[2px]">
       <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ec4899_0%,#3b82f6_50%,#10b981_100%)]" />
@@ -1115,9 +1115,9 @@ export const BorderBeamButton: React.FC<{ text?: string }> = ({ text = "Join Vib
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-border-beam"><button>Join VibeUI</button></div>`,
-    cssCode: `.vibe-border-beam { display: inline-block; padding: 2px; border-radius: 12px; background: linear-gradient(90deg, #ec4899, #3b82f6, #10b981); }
-.vibe-border-beam button { background: #09090b; border: none; padding: 12px 28px; border-radius: 10px; color: #fff; font-weight: 600; cursor: pointer; }`
+    htmlCode: `<div class="zeura-border-beam"><button>Join ZEURALABZ</button></div>`,
+    cssCode: `.zeura-border-beam { display: inline-block; padding: 2px; border-radius: 12px; background: linear-gradient(90deg, #ec4899, #3b82f6, #10b981); }
+.zeura-border-beam button { background: #09090b; border: none; padding: 12px 28px; border-radius: 10px; color: #fff; font-weight: 600; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1138,8 +1138,8 @@ export const SwipeArrowButton: React.FC<{ text?: string }> = ({ text = "Continue
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-swipe-arrow"><span>Continue</span> →</button>`,
-    cssCode: `.vibe-swipe-arrow { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; background: #2563eb; color: #fff; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-swipe-arrow"><span>Continue</span> →</button>`,
+    cssCode: `.zeura-swipe-arrow { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; background: #2563eb; color: #fff; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1173,8 +1173,8 @@ export const RippleButton: React.FC<{ text?: string }> = ({ text = "Click to Rip
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-ripple">Click to Ripple</button>`,
-    cssCode: `.vibe-ripple { padding: 14px 32px; border-radius: 12px; background: #4f46e5; color: #fff; border: none; cursor: pointer; }`
+    htmlCode: `<button class="zeura-ripple">Click to Ripple</button>`,
+    cssCode: `.zeura-ripple { padding: 14px 32px; border-radius: 12px; background: #4f46e5; color: #fff; border: none; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1194,8 +1194,8 @@ export const CyberGlitchButton: React.FC<{ text?: string }> = ({ text = "INIT_SY
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-cyber-btn">INIT_SYSTEM</button>`,
-    cssCode: `.vibe-cyber-btn { padding: 14px 32px; font-family: monospace; font-weight: bold; background: #000; color: #10b981; border: 2px solid #10b981; cursor: pointer; }`
+    htmlCode: `<button class="zeura-cyber-btn">INIT_SYSTEM</button>`,
+    cssCode: `.zeura-cyber-btn { padding: 14px 32px; font-family: monospace; font-weight: bold; background: #000; color: #10b981; border: 2px solid #10b981; cursor: pointer; }`
   },
   {
     category: 'buttons',
@@ -1208,7 +1208,7 @@ export const CyberGlitchButton: React.FC<{ text?: string }> = ({ text = "INIT_SY
     deps: [],
     reactCode: `import React, { useState } from 'react';
 
-export const CopySnippetButton: React.FC<{ code?: string }> = ({ code = "npx vibe-ui add aurora" }) => {
+export const CopySnippetButton: React.FC<{ code?: string }> = ({ code = "npx zeuralabz add aurora" }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
@@ -1222,8 +1222,8 @@ export const CopySnippetButton: React.FC<{ code?: string }> = ({ code = "npx vib
     </button>
   );
 };`,
-    htmlCode: `<button class="vibe-copy-snippet"><code>npx vibe-ui add aurora</code><span>📋</span></button>`,
-    cssCode: `.vibe-copy-snippet { display: inline-flex; gap: 8px; padding: 8px 16px; border-radius: 8px; background: #18181b; color: #d4d4d8; border: 1px solid #27272a; cursor: pointer; }`
+    htmlCode: `<button class="zeura-copy-snippet"><code>npx zeuralabz add aurora</code><span>📋</span></button>`,
+    cssCode: `.zeura-copy-snippet { display: inline-flex; gap: 8px; padding: 8px 16px; border-radius: 8px; background: #18181b; color: #d4d4d8; border: 1px solid #27272a; cursor: pointer; }`
   },
 
   // ==================== CARDS (15) ====================
@@ -1250,8 +1250,8 @@ export const GlassCard: React.FC<{ title?: string; description?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-glass-card"><h4>Cloud Sync</h4><p>Instant realtime updates.</p></div>`,
-    cssCode: `.vibe-glass-card { width: 320px; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); color: #fff; }`
+    htmlCode: `<div class="zeura-glass-card"><h4>Cloud Sync</h4><p>Instant realtime updates.</p></div>`,
+    cssCode: `.zeura-glass-card { width: 320px; padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); color: #fff; }`
   },
   {
     category: 'cards',
@@ -1301,8 +1301,8 @@ export const TiltCard: React.FC<{ title?: string; subtitle?: string }> = ({
     </motion.div>
   );
 };`,
-    htmlCode: `<div class="vibe-tilt-card"><h3>Neural Accelerator</h3></div>`,
-    cssCode: `.vibe-tilt-card { width: 320px; height: 360px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-tilt-card"><h3>Neural Accelerator</h3></div>`,
+    cssCode: `.zeura-tilt-card { width: 320px; height: 360px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1333,8 +1333,8 @@ export const BentoCard: React.FC<{ title?: string; description?: string; badge?:
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-bento-card"><h3>Universal Sync</h3></div>`,
-    cssCode: `.vibe-bento-card { padding: 24px; border-radius: 20px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-bento-card"><h3>Universal Sync</h3></div>`,
+    cssCode: `.zeura-bento-card { padding: 24px; border-radius: 20px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1365,8 +1365,8 @@ export const ProfileCard: React.FC<{ name?: string; role?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-profile-card"><h4>Elena Rostova</h4><p>Principal Frontend Architect</p></div>`,
-    cssCode: `.vibe-profile-card { width: 300px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-profile-card"><h4>Elena Rostova</h4><p>Principal Frontend Architect</p></div>`,
+    cssCode: `.zeura-profile-card { width: 300px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; text-align: center; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1406,8 +1406,8 @@ export const PricingCard: React.FC<{ tier?: string; price?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-pricing-card"><h4>Pro Developer</h4><div class="price">$29/mo</div></div>`,
-    cssCode: `.vibe-pricing-card { width: 320px; padding: 24px; border-radius: 16px; background: #18181b; border: 2px solid #10b981; color: #fff; }`
+    htmlCode: `<div class="zeura-pricing-card"><h4>Pro Developer</h4><div class="price">$29/mo</div></div>`,
+    cssCode: `.zeura-pricing-card { width: 320px; padding: 24px; border-radius: 16px; background: #18181b; border: 2px solid #10b981; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1439,8 +1439,8 @@ export const ProductCard: React.FC<{ title?: string; price?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-product-card"><h4>Studio Headphones</h4><span>$249</span></div>`,
-    cssCode: `.vibe-product-card { width: 300px; border-radius: 16px; background: #18181b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-product-card"><h4>Studio Headphones</h4><span>$249</span></div>`,
+    cssCode: `.zeura-product-card { width: 300px; border-radius: 16px; background: #18181b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1464,8 +1464,8 @@ export const HoverGlowCard: React.FC<{ title?: string }> = ({ title = "Accelerat
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-glow-card"><h4>Accelerated Analytics</h4></div>`,
-    cssCode: `.vibe-glow-card { padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #10b981; color: #fff; }`
+    htmlCode: `<div class="zeura-glow-card"><h4>Accelerated Analytics</h4></div>`,
+    cssCode: `.zeura-glow-card { padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #10b981; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1512,8 +1512,8 @@ export const SpotlightCard: React.FC<{ title?: string; description?: string }> =
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-spotlight-card"><h4>Zero-Knowledge Enclave</h4></div>`,
-    cssCode: `.vibe-spotlight-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-spotlight-card"><h4>Zero-Knowledge Enclave</h4></div>`,
+    cssCode: `.zeura-spotlight-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1539,8 +1539,8 @@ export const CyberHudCard: React.FC<{ title?: string }> = ({ title = "CORE_TELEM
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-hud-card"><h4>CORE_TELEMETRY</h4></div>`,
-    cssCode: `.vibe-hud-card { width: 320px; padding: 24px; background: #000; border: 1px solid #06b6d4; color: #06b6d4; font-family: monospace; }`
+    htmlCode: `<div class="zeura-hud-card"><h4>CORE_TELEMETRY</h4></div>`,
+    cssCode: `.zeura-hud-card { width: 320px; padding: 24px; background: #000; border: 1px solid #06b6d4; color: #06b6d4; font-family: monospace; }`
   },
   {
     category: 'cards',
@@ -1573,8 +1573,8 @@ export const MetricTrendCard: React.FC<{ label?: string; value?: string; change?
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-metric-card"><div>Monthly Active Users</div><h3>482,910</h3></div>`,
-    cssCode: `.vibe-metric-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-metric-card"><div>Monthly Active Users</div><h3>482,910</h3></div>`,
+    cssCode: `.zeura-metric-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1600,8 +1600,8 @@ export const StackedDeckCard: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-deck-card"><h4>Stacked Dimension</h4></div>`,
-    cssCode: `.vibe-deck-card { width: 280px; height: 160px; border-radius: 16px; background: #064e3b; border: 1px solid #10b981; color: #fff; padding: 20px; }`
+    htmlCode: `<div class="zeura-deck-card"><h4>Stacked Dimension</h4></div>`,
+    cssCode: `.zeura-deck-card { width: 280px; height: 160px; border-radius: 16px; background: #064e3b; border: 1px solid #10b981; color: #fff; padding: 20px; }`
   },
   {
     category: 'cards',
@@ -1633,8 +1633,8 @@ export const ExpandableCard: React.FC<{ title?: string }> = ({ title = "Security
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-expandable-card"><h4>Security Audit</h4></div>`,
-    cssCode: `.vibe-expandable-card { width: 300px; padding: 20px; border-radius: 16px; background: #18181b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-expandable-card"><h4>Security Audit</h4></div>`,
+    cssCode: `.zeura-expandable-card { width: 300px; padding: 20px; border-radius: 16px; background: #18181b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1663,8 +1663,8 @@ export const FlipCard: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-flip-card">Hover to Flip</div>`,
-    cssCode: `.vibe-flip-card { width: 280px; height: 320px; border-radius: 16px; background: #18181b; color: #fff; padding: 24px; }`
+    htmlCode: `<div class="zeura-flip-card">Hover to Flip</div>`,
+    cssCode: `.zeura-flip-card { width: 280px; height: 320px; border-radius: 16px; background: #18181b; color: #fff; padding: 24px; }`
   },
   {
     category: 'cards',
@@ -1678,7 +1678,7 @@ export const FlipCard: React.FC = () => {
     reactCode: `import React from 'react';
 
 export const TestimonialCard: React.FC<{ quote?: string; author?: string; role?: string }> = ({
-  quote = "VibeUI cut our landing page development time by 80%. Every component feels alive.",
+  quote = "ZEURALABZ cut our landing page development time by 80%. Every component feels alive.",
   author = "Alex Rivera",
   role = "Head of Product @ HyperScale"
 }) => {
@@ -1696,8 +1696,8 @@ export const TestimonialCard: React.FC<{ quote?: string; author?: string; role?:
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-testi-card"><p>"VibeUI cut our time by 80%."</p><span>Alex Rivera</span></div>`,
-    cssCode: `.vibe-testi-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-testi-card"><p>"ZEURALABZ cut our time by 80%."</p><span>Alex Rivera</span></div>`,
+    cssCode: `.zeura-testi-card { width: 320px; padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'cards',
@@ -1722,8 +1722,8 @@ export const FeatureIconCard: React.FC<{ icon?: string; title?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-feature-box"><h4>Instant Code Injection</h4></div>`,
-    cssCode: `.vibe-feature-box { padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<div class="zeura-feature-box"><h4>Instant Code Injection</h4></div>`,
+    cssCode: `.zeura-feature-box { padding: 24px; border-radius: 16px; background: #09090b; border: 1px solid #27272a; color: #fff; }`
   },
 
   // ==================== HEROES (10) ====================
@@ -1746,7 +1746,7 @@ export const CenterHero: React.FC<{ title?: string; subtitle?: string }> = ({
     <section className="relative py-24 px-6 text-center bg-black overflow-hidden">
       <div className="max-w-4xl mx-auto space-y-6">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-          ✦ VibeUI 1.0 • 1M+ Design Combinations
+          ✦ ZEURALABZ 1.0 • 1M+ Design Combinations
         </span>
         <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight">
           {title}
@@ -1764,8 +1764,8 @@ export const CenterHero: React.FC<{ title?: string; subtitle?: string }> = ({
     </section>
   );
 };`,
-    htmlCode: `<section class="vibe-center-hero"><h1>Make Any Website Look Pretty</h1></section>`,
-    cssCode: `.vibe-center-hero { padding: 80px 20px; text-align: center; background: #000; color: #fff; }`
+    htmlCode: `<section class="zeura-center-hero"><h1>Make Any Website Look Pretty</h1></section>`,
+    cssCode: `.zeura-center-hero { padding: 80px 20px; text-align: center; background: #000; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1783,7 +1783,7 @@ export const SplitHero: React.FC = () => {
     <div className="max-w-6xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-12 items-center">
       <div className="space-y-6">
         <h1 className="text-5xl font-bold text-white leading-tight">Build interfaces that your users remember.</h1>
-        <p className="text-zinc-400">Production-ready, accessible, and customizable components for vibe-coders.</p>
+        <p className="text-zinc-400">Production-ready, accessible, and customizable components for zeura-coders.</p>
         <button className="px-7 py-3.5 rounded-xl bg-emerald-500 text-black font-bold text-sm">Explore Library</button>
       </div>
       <div className="h-72 rounded-3xl bg-zinc-950 border border-zinc-800 flex items-center justify-center font-mono text-xs text-zinc-500">
@@ -1792,8 +1792,8 @@ export const SplitHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-split-hero"><h1>Build interfaces</h1></div>`,
-    cssCode: `.vibe-split-hero { display: flex; gap: 32px; padding: 60px 20px; color: #fff; }`
+    htmlCode: `<div class="zeura-split-hero"><h1>Build interfaces</h1></div>`,
+    cssCode: `.zeura-split-hero { display: flex; gap: 32px; padding: 60px 20px; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1816,8 +1816,8 @@ export const VideoHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-video-hero"><h1>Cinematic Motion</h1></div>`,
-    cssCode: `.vibe-video-hero { padding: 90px 20px; text-align: center; background: #000; color: #fff; }`
+    htmlCode: `<div class="zeura-video-hero"><h1>Cinematic Motion</h1></div>`,
+    cssCode: `.zeura-video-hero { padding: 90px 20px; text-align: center; background: #000; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1840,8 +1840,8 @@ export const ParticleHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-particle-hero"><h2>Infinite Possibilities</h2></div>`,
-    cssCode: `.vibe-particle-hero { padding: 90px 20px; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-particle-hero"><h2>Infinite Possibilities</h2></div>`,
+    cssCode: `.zeura-particle-hero { padding: 90px 20px; text-align: center; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1862,10 +1862,10 @@ export const TerminalHero: React.FC = () => {
           <span className="w-3 h-3 rounded-full bg-rose-500 inline-block" />
           <span className="w-3 h-3 rounded-full bg-amber-500 inline-block" />
           <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
-          <span className="text-xs text-zinc-400 ml-2">bash ~ npx vibe-ui suggest</span>
+          <span className="text-xs text-zinc-400 ml-2">bash ~ npx zeuralabz suggest</span>
         </div>
         <div className="p-6 text-sm space-y-2 text-zinc-300">
-          <p className="text-emerald-400">$ npx vibe-ui suggest</p>
+          <p className="text-emerald-400">$ npx zeuralabz suggest</p>
           <p className="text-zinc-500">Scanning your project...</p>
           <p className="text-cyan-400 font-bold">✔ React + Vite + Tailwind detected. 5 UI upgrades suggested.</p>
         </div>
@@ -1873,8 +1873,8 @@ export const TerminalHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-term-hero"><div class="bar"></div><div class="body">$ npx vibe-ui suggest</div></div>`,
-    cssCode: `.vibe-term-hero { max-width: 600px; margin: 40px auto; background: #09090b; border: 1px solid #27272a; border-radius: 8px; font-family: monospace; color: #fff; }`
+    htmlCode: `<div class="zeura-term-hero"><div class="bar"></div><div class="body">$ npx zeuralabz suggest</div></div>`,
+    cssCode: `.zeura-term-hero { max-width: 600px; margin: 40px auto; background: #09090b; border: 1px solid #27272a; border-radius: 8px; font-family: monospace; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1891,13 +1891,13 @@ export const EditorialHero: React.FC = () => {
   return (
     <div className="py-28 px-6 text-center bg-black">
       <p className="text-xs font-mono uppercase tracking-widest text-emerald-400 mb-4">Edition 2026 // Vol. 01</p>
-      <h1 className="text-7xl sm:text-9xl font-black text-white tracking-tighter">VIBE.</h1>
+      <h1 className="text-7xl sm:text-9xl font-black text-white tracking-tighter">ZEURA.</h1>
       <p className="text-zinc-500 text-sm mt-6">Engineered for perfectionists.</p>
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-edit-hero"><h1>VIBE.</h1></div>`,
-    cssCode: `.vibe-edit-hero { padding: 90px 20px; text-align: center; background: #000; color: #fff; }`
+    htmlCode: `<div class="zeura-edit-hero"><h1>ZEURA.</h1></div>`,
+    cssCode: `.zeura-edit-hero { padding: 90px 20px; text-align: center; background: #000; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1914,7 +1914,7 @@ export const RadialSpotlightHero: React.FC = () => {
   return (
     <div className="py-24 px-6 text-center bg-zinc-950">
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 mb-6">
-        ★★★★★ Installed by 14,000+ vibe-coders
+        ★★★★★ Installed by 14,000+ zeura-coders
       </div>
       <h1 className="text-5xl font-bold text-white max-w-3xl mx-auto leading-tight">
         Ship 10x faster with AI-suggested UI components
@@ -1922,8 +1922,8 @@ export const RadialSpotlightHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-rad-hero"><h1>Ship 10x faster with AI UI</h1></div>`,
-    cssCode: `.vibe-rad-hero { padding: 70px 20px; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-rad-hero"><h1>Ship 10x faster with AI UI</h1></div>`,
+    cssCode: `.zeura-rad-hero { padding: 70px 20px; text-align: center; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1946,8 +1946,8 @@ export const BentoHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-bento-hero"><h1>The Complete Foundry</h1></div>`,
-    cssCode: `.vibe-bento-hero { padding: 60px 20px; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-bento-hero"><h1>The Complete Foundry</h1></div>`,
+    cssCode: `.zeura-bento-hero { padding: 60px 20px; text-align: center; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1967,8 +1967,8 @@ export const IsometricHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-iso-hero"><h1>Isometric Dimension</h1></div>`,
-    cssCode: `.vibe-iso-hero { padding: 80px 20px; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-iso-hero"><h1>Isometric Dimension</h1></div>`,
+    cssCode: `.zeura-iso-hero { padding: 80px 20px; text-align: center; color: #fff; }`
   },
   {
     category: 'heroes',
@@ -1988,8 +1988,8 @@ export const MinimalistHero: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mini-hero"><h1>Less is more.</h1></div>`,
-    cssCode: `.vibe-mini-hero { padding: 80px 20px; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-mini-hero"><h1>Less is more.</h1></div>`,
+    cssCode: `.zeura-mini-hero { padding: 80px 20px; text-align: center; color: #fff; }`
   },
 
   // ==================== LAYOUTS (10) ====================
@@ -2011,8 +2011,8 @@ export const LandingLayout: React.FC<{ children?: React.ReactNode }> = ({ childr
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-landing-layout"><main>Landing Page Layout</main></div>`,
-    cssCode: `.vibe-landing-layout { min-height: 100vh; background: #000; color: #fff; }`
+    htmlCode: `<div class="zeura-landing-layout"><main>Landing Page Layout</main></div>`,
+    cssCode: `.zeura-landing-layout { min-height: 100vh; background: #000; color: #fff; }`
   },
   {
     category: 'layouts',
@@ -2033,8 +2033,8 @@ export const DashboardLayout: React.FC<{ children?: React.ReactNode }> = ({ chil
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dash-layout"><aside>Sidebar</aside><main>Dashboard</main></div>`,
-    cssCode: `.vibe-dash-layout { display: flex; min-height: 100vh; background: #09090b; color: #fff; }`
+    htmlCode: `<div class="zeura-dash-layout"><aside>Sidebar</aside><main>Dashboard</main></div>`,
+    cssCode: `.zeura-dash-layout { display: flex; min-height: 100vh; background: #09090b; color: #fff; }`
   },
   {
     category: 'layouts',
@@ -2050,8 +2050,8 @@ export const DashboardLayout: React.FC<{ children?: React.ReactNode }> = ({ chil
 export const BentoGridLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto p-6">{children}</div>;
 };`,
-    htmlCode: `<div class="vibe-bento-grid"><div>Tile 1</div><div>Tile 2</div></div>`,
-    cssCode: `.vibe-bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }`
+    htmlCode: `<div class="zeura-bento-grid"><div>Tile 1</div><div>Tile 2</div></div>`,
+    cssCode: `.zeura-bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }`
   },
   {
     category: 'layouts',
@@ -2067,8 +2067,8 @@ export const BentoGridLayout: React.FC<{ children?: React.ReactNode }> = ({ chil
 export const SidebarLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <div className="flex min-h-screen bg-black text-white">{children}</div>;
 };`,
-    htmlCode: `<div class="vibe-sidebar-layout"><div>Content</div></div>`,
-    cssCode: `.vibe-sidebar-layout { display: flex; color: #fff; }`
+    htmlCode: `<div class="zeura-sidebar-layout"><div>Content</div></div>`,
+    cssCode: `.zeura-sidebar-layout { display: flex; color: #fff; }`
   },
   {
     category: 'layouts',
@@ -2089,8 +2089,8 @@ export const SplitScreenLayout: React.FC<{ left?: React.ReactNode; right?: React
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-split-screen"><div>Left</div><div>Right</div></div>`,
-    cssCode: `.vibe-split-screen { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }`
+    htmlCode: `<div class="zeura-split-screen"><div>Left</div><div>Right</div></div>`,
+    cssCode: `.zeura-split-screen { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }`
   },
   {
     category: 'layouts',
@@ -2106,8 +2106,8 @@ export const SplitScreenLayout: React.FC<{ left?: React.ReactNode; right?: React
 export const CenteredContainerLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <div className="max-w-2xl mx-auto px-6 py-16 text-white">{children}</div>;
 };`,
-    htmlCode: `<div class="vibe-center-container">Content</div>`,
-    cssCode: `.vibe-center-container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }`
+    htmlCode: `<div class="zeura-center-container">Content</div>`,
+    cssCode: `.zeura-center-container { max-width: 680px; margin: 0 auto; padding: 40px 20px; }`
   },
   {
     category: 'layouts',
@@ -2123,8 +2123,8 @@ export const CenteredContainerLayout: React.FC<{ children?: React.ReactNode }> =
 export const MultiColumnLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto p-6">{children}</div>;
 };`,
-    htmlCode: `<div class="vibe-multi-col"><div>Col 1</div></div>`,
-    cssCode: `.vibe-multi-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }`
+    htmlCode: `<div class="zeura-multi-col"><div>Col 1</div></div>`,
+    cssCode: `.zeura-multi-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }`
   },
   {
     category: 'layouts',
@@ -2145,8 +2145,8 @@ export const StickySplitLayout: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-sticky-split"><div>Sticky</div><div>Scroll</div></div>`,
-    cssCode: `.vibe-sticky-split { display: grid; grid-template-columns: 1fr 1fr; }`
+    htmlCode: `<div class="zeura-sticky-split"><div>Sticky</div><div>Scroll</div></div>`,
+    cssCode: `.zeura-sticky-split { display: grid; grid-template-columns: 1fr 1fr; }`
   },
   {
     category: 'layouts',
@@ -2162,8 +2162,8 @@ export const StickySplitLayout: React.FC = () => {
 export const MasonryGridLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 max-w-6xl mx-auto p-6">{children}</div>;
 };`,
-    htmlCode: `<div class="vibe-masonry"><div>Card 1</div></div>`,
-    cssCode: `.vibe-masonry { columns: 3; column-gap: 16px; }`
+    htmlCode: `<div class="zeura-masonry"><div>Card 1</div></div>`,
+    cssCode: `.zeura-masonry { columns: 3; column-gap: 16px; }`
   },
   {
     category: 'layouts',
@@ -2179,8 +2179,8 @@ export const MasonryGridLayout: React.FC<{ children?: React.ReactNode }> = ({ ch
 export const FullscreenHeroLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return <section className="h-screen w-full flex items-center justify-center bg-black text-white p-6">{children}</section>;
 };`,
-    htmlCode: `<section class="vibe-full-hero"><h1>Full Viewport</h1></section>`,
-    cssCode: `.vibe-full-hero { height: 100vh; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<section class="zeura-full-hero"><h1>Full Viewport</h1></section>`,
+    cssCode: `.zeura-full-hero { height: 100vh; display: flex; align-items: center; justify-content: center; }`
   },
 
   // ==================== FORMS (10) ====================
@@ -2212,8 +2212,8 @@ export const FloatingInput: React.FC<{ label?: string }> = ({ label = "Email Add
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-float-input"><input placeholder=" "/><label>Email Address</label></div>`,
-    cssCode: `.vibe-float-input { position: relative; width: 300px; } input { width: 100%; padding: 20px 12px 6px; background: #18181b; color: #fff; border: 1px solid #27272a; border-radius: 8px; }`
+    htmlCode: `<div class="zeura-float-input"><input placeholder=" "/><label>Email Address</label></div>`,
+    cssCode: `.zeura-float-input { position: relative; width: 300px; } input { width: 100%; padding: 20px 12px 6px; background: #18181b; color: #fff; border: 1px solid #27272a; border-radius: 8px; }`
   },
   {
     category: 'forms',
@@ -2244,8 +2244,8 @@ export const ExpandingSearch: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-expand-search"><button>🔍</button></div>`,
-    cssCode: `.vibe-expand-search { display: inline-flex; background: #18181b; padding: 4px; border-radius: 9999px; }`
+    htmlCode: `<div class="zeura-expand-search"><button>🔍</button></div>`,
+    cssCode: `.zeura-expand-search { display: inline-flex; background: #18181b; padding: 4px; border-radius: 9999px; }`
   },
   {
     category: 'forms',
@@ -2276,8 +2276,8 @@ export const GlowToggle: React.FC = () => {
     </button>
   );
 };`,
-    htmlCode: `<div class="vibe-glow-toggle"><div class="knob"></div></div>`,
-    cssCode: `.vibe-glow-toggle { width: 64px; height: 32px; border-radius: 9999px; background: #27272a; padding: 4px; cursor: pointer; }`
+    htmlCode: `<div class="zeura-glow-toggle"><div class="knob"></div></div>`,
+    cssCode: `.zeura-glow-toggle { width: 64px; height: 32px; border-radius: 9999px; background: #27272a; padding: 4px; cursor: pointer; }`
   },
   {
     category: 'forms',
@@ -2313,8 +2313,8 @@ export const OtpInput: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-otp-row"><input maxlength="1"/><input maxlength="1"/></div>`,
-    cssCode: `.vibe-otp-row { display: flex; gap: 8px; } input { width: 44px; height: 48px; text-align: center; background: #18181b; color: #fff; border-radius: 8px; }`
+    htmlCode: `<div class="zeura-otp-row"><input maxlength="1"/><input maxlength="1"/></div>`,
+    cssCode: `.zeura-otp-row { display: flex; gap: 8px; } input { width: 44px; height: 48px; text-align: center; background: #18181b; color: #fff; border-radius: 8px; }`
   },
   {
     category: 'forms',
@@ -2341,8 +2341,8 @@ export const NewsletterBox: React.FC = () => {
     </form>
   );
 };`,
-    htmlCode: `<form class="vibe-newsletter"><input placeholder="Enter email..."/><button>Subscribe</button></form>`,
-    cssCode: `.vibe-newsletter { display: flex; width: 360px; padding: 6px; background: #18181b; border-radius: 12px; }`
+    htmlCode: `<form class="zeura-newsletter"><input placeholder="Enter email..."/><button>Subscribe</button></form>`,
+    cssCode: `.zeura-newsletter { display: flex; width: 360px; padding: 6px; background: #18181b; border-radius: 12px; }`
   },
   {
     category: 'forms',
@@ -2370,8 +2370,8 @@ export const PasswordInput: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-pwd"><input type="password"/><button>👁️</button></div>`,
-    cssCode: `.vibe-pwd { position: relative; width: 300px; } input { width: 100%; padding: 12px; background: #18181b; color: #fff; }`
+    htmlCode: `<div class="zeura-pwd"><input type="password"/><button>👁️</button></div>`,
+    cssCode: `.zeura-pwd { position: relative; width: 300px; } input { width: 100%; padding: 12px; background: #18181b; color: #fff; }`
   },
   {
     category: 'forms',
@@ -2405,8 +2405,8 @@ export const AnimatedCheckbox: React.FC<{ label?: string }> = ({ label = "I agre
     </label>
   );
 };`,
-    htmlCode: `<label class="vibe-chk"><input type="checkbox"/><span>I agree to terms</span></label>`,
-    cssCode: `.vibe-chk { display: flex; align-items: center; gap: 8px; color: #fff; cursor: pointer; }`
+    htmlCode: `<label class="zeura-chk"><input type="checkbox"/><span>I agree to terms</span></label>`,
+    cssCode: `.zeura-chk { display: flex; align-items: center; gap: 8px; color: #fff; cursor: pointer; }`
   },
   {
     category: 'forms',
@@ -2445,8 +2445,8 @@ export const CustomSelect: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-select"><button>Select Option ▾</button></div>`,
-    cssCode: `.vibe-select { position: relative; width: 280px; }`
+    htmlCode: `<div class="zeura-select"><button>Select Option ▾</button></div>`,
+    cssCode: `.zeura-select { position: relative; width: 280px; }`
   },
   {
     category: 'forms',
@@ -2475,8 +2475,8 @@ export const FileUpload: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-upload"><p>Drag & drop files</p></div>`,
-    cssCode: `.vibe-upload { width: 300px; padding: 32px; border: 2px dashed #3f3f46; text-align: center; color: #fff; }`
+    htmlCode: `<div class="zeura-upload"><p>Drag & drop files</p></div>`,
+    cssCode: `.zeura-upload { width: 300px; padding: 32px; border: 2px dashed #3f3f46; text-align: center; color: #fff; }`
   },
   {
     category: 'forms',
@@ -2501,8 +2501,8 @@ export const RangeSlider: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<input type="range" min="0" max="100" class="vibe-range"/>`,
-    cssCode: `.vibe-range { width: 100%; accent-color: #10b981; }`
+    htmlCode: `<input type="range" min="0" max="100" class="zeura-range"/>`,
+    cssCode: `.zeura-range { width: 100%; accent-color: #10b981; }`
   },
 
   // ==================== ANIMATIONS (15) ====================
@@ -2530,8 +2530,8 @@ export const ScrollReveal: React.FC<{ children?: React.ReactNode }> = ({ childre
     </motion.div>
   );
 };`,
-    htmlCode: `<div class="vibe-scroll-rev">Scroll Revealed Card</div>`,
-    cssCode: `.vibe-scroll-rev { padding: 24px; background: #18181b; color: #fff; border-radius: 12px; }`
+    htmlCode: `<div class="zeura-scroll-rev">Scroll Revealed Card</div>`,
+    cssCode: `.zeura-scroll-rev { padding: 24px; background: #18181b; color: #fff; border-radius: 12px; }`
   },
   {
     category: 'animations',
@@ -2556,8 +2556,8 @@ export const MarqueeLogoCloud: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-marquee"><span>VERCEL ✦ TAILWIND ✦ REACT</span></div>`,
-    cssCode: `.vibe-marquee { overflow: hidden; white-space: nowrap; color: #a1a1aa; }`
+    htmlCode: `<div class="zeura-marquee"><span>VERCEL ✦ TAILWIND ✦ REACT</span></div>`,
+    cssCode: `.zeura-marquee { overflow: hidden; white-space: nowrap; color: #a1a1aa; }`
   },
   {
     category: 'animations',
@@ -2585,8 +2585,8 @@ export const CursorTrail: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-trail-zone"><div class="cursor"></div></div>`,
-    cssCode: `.vibe-trail-zone { width: 320px; height: 190px; background: #09090b; border-radius: 16px; cursor: none; }`
+    htmlCode: `<div class="zeura-trail-zone"><div class="cursor"></div></div>`,
+    cssCode: `.zeura-trail-zone { width: 320px; height: 190px; background: #09090b; border-radius: 16px; cursor: none; }`
   },
   {
     category: 'animations',
@@ -2610,8 +2610,8 @@ export const MagneticOrbit: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-orbit"><button>G</button><button>D</button></div>`,
-    cssCode: `.vibe-orbit { display: flex; gap: 12px; } button { width: 44px; height: 44px; border-radius: 50%; background: #18181b; color: #fff; }`
+    htmlCode: `<div class="zeura-orbit"><button>G</button><button>D</button></div>`,
+    cssCode: `.zeura-orbit { display: flex; gap: 12px; } button { width: 44px; height: 44px; border-radius: 50%; background: #18181b; color: #fff; }`
   },
   {
     category: 'animations',
@@ -2643,8 +2643,8 @@ export const GyroTilt: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-gyro"><h4>3D Gyro Tilt</h4></div>`,
-    cssCode: `.vibe-gyro { width: 280px; height: 160px; background: #18181b; border-radius: 16px; color: #fff; padding: 20px; }`
+    htmlCode: `<div class="zeura-gyro"><h4>3D Gyro Tilt</h4></div>`,
+    cssCode: `.zeura-gyro { width: 280px; height: 160px; background: #18181b; border-radius: 16px; color: #fff; padding: 20px; }`
   },
   {
     category: 'animations',
@@ -2658,8 +2658,8 @@ export const GyroTilt: React.FC = () => {
     reactCode: `import React, { useState } from 'react';
 
 export const SpringAccordion: React.FC<{ q?: string; a?: string }> = ({
-  q = "How do I install VibeUI?",
-  a = "Run npx vibe-ui add <slug> in your project terminal."
+  q = "How do I install ZEURALABZ?",
+  a = "Run npx zeuralabz add <slug> in your project terminal."
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -2672,8 +2672,8 @@ export const SpringAccordion: React.FC<{ q?: string; a?: string }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-acc"><span>FAQ Question</span></div>`,
-    cssCode: `.vibe-acc { width: 300px; padding: 16px; background: #18181b; border-radius: 12px; color: #fff; }`
+    htmlCode: `<div class="zeura-acc"><span>FAQ Question</span></div>`,
+    cssCode: `.zeura-acc { width: 300px; padding: 16px; background: #18181b; border-radius: 12px; color: #fff; }`
   },
   {
     category: 'animations',
@@ -2700,8 +2700,8 @@ export const SwiperCarousel: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-carousel">Slide</div>`,
-    cssCode: `.vibe-carousel { width: 300px; padding: 20px; background: #09090b; border-radius: 16px; color: #fff; }`
+    htmlCode: `<div class="zeura-carousel">Slide</div>`,
+    cssCode: `.zeura-carousel { width: 300px; padding: 20px; background: #09090b; border-radius: 16px; color: #fff; }`
   },
   {
     category: 'animations',
@@ -2731,8 +2731,8 @@ export const CountdownTimer: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-countdown"><span>14d 08h</span></div>`,
-    cssCode: `.vibe-countdown { display: flex; gap: 8px; font-family: monospace; color: #10b981; }`
+    htmlCode: `<div class="zeura-countdown"><span>14d 08h</span></div>`,
+    cssCode: `.zeura-countdown { display: flex; gap: 8px; font-family: monospace; color: #10b981; }`
   },
   {
     category: 'animations',
@@ -2759,8 +2759,8 @@ export const StarRating: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-stars">★★★★★</div>`,
-    cssCode: `.vibe-stars { color: #f59e0b; font-size: 24px; }`
+    htmlCode: `<div class="zeura-stars">★★★★★</div>`,
+    cssCode: `.zeura-stars { color: #f59e0b; font-size: 24px; }`
   },
   {
     category: 'animations',
@@ -2781,8 +2781,8 @@ export const ParallaxBox: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-parallax"><h4>Parallax Layer</h4></div>`,
-    cssCode: `.vibe-parallax { width: 300px; height: 160px; background: #09090b; border-radius: 14px; padding: 20px; color: #fff; }`
+    htmlCode: `<div class="zeura-parallax"><h4>Parallax Layer</h4></div>`,
+    cssCode: `.zeura-parallax { width: 300px; height: 160px; background: #09090b; border-radius: 14px; padding: 20px; color: #fff; }`
   },
   {
     category: 'animations',
@@ -2807,8 +2807,8 @@ export const StaggerFade: React.FC<{ items?: string[] }> = ({ items = ['Speed', 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-stagger"><div>Item 1</div></div>`,
-    cssCode: `.vibe-stagger { display: flex; flex-direction: column; gap: 8px; }`
+    htmlCode: `<div class="zeura-stagger"><div>Item 1</div></div>`,
+    cssCode: `.zeura-stagger { display: flex; flex-direction: column; gap: 8px; }`
   },
   {
     category: 'animations',
@@ -2824,8 +2824,8 @@ export const StaggerFade: React.FC<{ items?: string[] }> = ({ items = ['Speed', 
 export const FloatingOrb: React.FC = () => {
   return <div className="w-24 h-24 rounded-full bg-emerald-500/30 blur-xl animate-bounce" />;
 };`,
-    htmlCode: `<div class="vibe-orb"></div>`,
-    cssCode: `.vibe-orb { width: 80px; height: 80px; border-radius: 50%; background: rgba(16,185,129,0.3); filter: blur(20px); }`
+    htmlCode: `<div class="zeura-orb"></div>`,
+    cssCode: `.zeura-orb { width: 80px; height: 80px; border-radius: 50%; background: rgba(16,185,129,0.3); filter: blur(20px); }`
   },
   {
     category: 'animations',
@@ -2853,8 +2853,8 @@ export const SpotlightBeam: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-beam-box">Spotlight</div>`,
-    cssCode: `.vibe-beam-box { width: 300px; height: 160px; background: #09090b; border-radius: 16px; color: #fff; }`
+    htmlCode: `<div class="zeura-beam-box">Spotlight</div>`,
+    cssCode: `.zeura-beam-box { width: 300px; height: 160px; background: #09090b; border-radius: 16px; color: #fff; }`
   },
   {
     category: 'animations',
@@ -2878,8 +2878,8 @@ export const DockMagnify: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dock"><button>🏠</button><button>🎨</button></div>`,
-    cssCode: `.vibe-dock { display: inline-flex; gap: 8px; padding: 8px; background: #18181b; border-radius: 14px; }`
+    htmlCode: `<div class="zeura-dock"><button>🏠</button><button>🎨</button></div>`,
+    cssCode: `.zeura-dock { display: inline-flex; gap: 8px; padding: 8px; background: #18181b; border-radius: 14px; }`
   },
   {
     category: 'animations',
@@ -2900,8 +2900,8 @@ export const ShimmerWave: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-shimmer-wave">Shimmering Glint</div>`,
-    cssCode: `.vibe-shimmer-wave { width: 280px; height: 80px; background: #18181b; border-radius: 12px; color: #fff; display: flex; align-items: center; justify-content: center; }`
+    htmlCode: `<div class="zeura-shimmer-wave">Shimmering Glint</div>`,
+    cssCode: `.zeura-shimmer-wave { width: 280px; height: 80px; background: #18181b; border-radius: 12px; color: #fff; display: flex; align-items: center; justify-content: center; }`
   },
 
   // ==================== LOADERS (5) ====================
@@ -2924,8 +2924,8 @@ export const DualRingSpinner: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dual-spin"><div class="outer"></div><div class="inner"></div></div>`,
-    cssCode: `.vibe-dual-spin { position: relative; width: 56px; height: 56px; } .outer { width: 100%; height: 100%; border: 4px solid rgba(16,185,129,0.2); border-top-color: #10b981; border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } }`
+    htmlCode: `<div class="zeura-dual-spin"><div class="outer"></div><div class="inner"></div></div>`,
+    cssCode: `.zeura-dual-spin { position: relative; width: 56px; height: 56px; } .outer { width: 100%; height: 100%; border: 4px solid rgba(16,185,129,0.2); border-top-color: #10b981; border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } }`
   },
   {
     category: 'loaders',
@@ -2947,8 +2947,8 @@ export const SkeletonCard: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-skeleton"><div class="img"></div><div class="line"></div></div>`,
-    cssCode: `.vibe-skeleton { width: 300px; padding: 20px; background: #18181b; border-radius: 16px; } .img { height: 120px; background: #27272a; border-radius: 8px; margin-bottom: 12px; } .line { height: 12px; background: #27272a; border-radius: 4px; }`
+    htmlCode: `<div class="zeura-skeleton"><div class="img"></div><div class="line"></div></div>`,
+    cssCode: `.zeura-skeleton { width: 300px; padding: 20px; background: #18181b; border-radius: 16px; } .img { height: 120px; background: #27272a; border-radius: 8px; margin-bottom: 12px; } .line { height: 12px; background: #27272a; border-radius: 4px; }`
   },
   {
     category: 'loaders',
@@ -2974,8 +2974,8 @@ export const LinearProgress: React.FC<{ percent?: number }> = ({ percent = 78 })
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-progress"><div class="track"><div class="fill"></div></div></div>`,
-    cssCode: `.vibe-progress { width: 300px; } .track { height: 8px; background: #27272a; border-radius: 9999px; overflow: hidden; } .fill { width: 75%; height: 100%; background: #10b981; }`
+    htmlCode: `<div class="zeura-progress"><div class="track"><div class="fill"></div></div></div>`,
+    cssCode: `.zeura-progress { width: 300px; } .track { height: 8px; background: #27272a; border-radius: 9999px; overflow: hidden; } .fill { width: 75%; height: 100%; background: #10b981; }`
   },
   {
     category: 'loaders',
@@ -2997,8 +2997,8 @@ export const BouncingDots: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dots"><span></span><span></span><span></span></div>`,
-    cssCode: `.vibe-dots { display: flex; gap: 8px; } span { width: 12px; height: 12px; border-radius: 50%; background: #10b981; }`
+    htmlCode: `<div class="zeura-dots"><span></span><span></span><span></span></div>`,
+    cssCode: `.zeura-dots { display: flex; gap: 8px; } span { width: 12px; height: 12px; border-radius: 50%; background: #10b981; }`
   },
   {
     category: 'loaders',
@@ -3026,8 +3026,8 @@ export const CircularRingLoader: React.FC<{ percent?: number }> = ({ percent = 8
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-ring-loader"><span>84%</span></div>`,
-    cssCode: `.vibe-ring-loader { width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; color: #fff; }`
+    htmlCode: `<div class="zeura-ring-loader"><span>84%</span></div>`,
+    cssCode: `.zeura-ring-loader { width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; color: #fff; }`
   },
 
   // ==================== NAVBARS & FOOTERS (10) ====================
@@ -3051,7 +3051,7 @@ export const FloatingNavbar: React.FC = () => {
     <nav className="flex items-center gap-1 px-4 py-2 rounded-full bg-zinc-950/70 backdrop-blur-md border border-white/10 shadow-2xl">
       <div className="flex items-center gap-2 font-bold text-white pr-4 border-r border-white/10">
         <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-        VibeUI
+        ZEURALABZ
       </div>
       <div className="flex items-center gap-1">
         {links.map((link) => (
@@ -3068,8 +3068,8 @@ export const FloatingNavbar: React.FC = () => {
     </nav>
   );
 };`,
-    htmlCode: `<nav class="vibe-island-nav"><span>VibeUI</span><a href="#">Home</a><a href="#">Components</a></nav>`,
-    cssCode: `.vibe-island-nav { display: inline-flex; gap: 16px; padding: 8px 16px; border-radius: 9999px; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); color: #fff; }`
+    htmlCode: `<nav class="zeura-island-nav"><span>ZEURALABZ</span><a href="#">Home</a><a href="#">Components</a></nav>`,
+    cssCode: `.zeura-island-nav { display: inline-flex; gap: 16px; padding: 8px 16px; border-radius: 9999px; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); color: #fff; }`
   },
   {
     category: 'layouts',
@@ -3097,15 +3097,15 @@ export const StickyNavbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-lg bg-zinc-950/80 border-b border-zinc-800">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <span className="font-extrabold text-lg text-white">VibeUI</span>
+        <span className="font-extrabold text-lg text-white">ZEURALABZ</span>
         <button className="px-4 py-1.5 rounded-lg bg-emerald-500 text-black font-bold text-xs">Get Started</button>
       </div>
       <div className="h-[2px] bg-emerald-500 transition-all duration-75" style={{ width: \`\${progress}%\` }} />
     </header>
   );
 };`,
-    htmlCode: `<header class="vibe-sticky-nav"><span>VibeUI</span><div class="progress"></div></header>`,
-    cssCode: `.vibe-sticky-nav { position: sticky; top: 0; width: 100%; background: #09090b; border-bottom: 1px solid #27272a; color: #fff; }`
+    htmlCode: `<header class="zeura-sticky-nav"><span>ZEURALABZ</span><div class="progress"></div></header>`,
+    cssCode: `.zeura-sticky-nav { position: sticky; top: 0; width: 100%; background: #09090b; border-bottom: 1px solid #27272a; color: #fff; }`
   },
   {
     category: 'layouts',
@@ -3145,8 +3145,8 @@ export const MobileDrawer: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-drawer"><button>☰ Menu</button></div>`,
-    cssCode: `.vibe-drawer { position: relative; }`
+    htmlCode: `<div class="zeura-drawer"><button>☰ Menu</button></div>`,
+    cssCode: `.zeura-drawer { position: relative; }`
   },
   {
     category: 'layouts',
@@ -3174,8 +3174,8 @@ export const CollapsibleSidebar: React.FC = () => {
     </aside>
   );
 };`,
-    htmlCode: `<aside class="vibe-side">Sidebar</aside>`,
-    cssCode: `.vibe-side { width: 220px; background: #09090b; border: 1px solid #27272a; padding: 16px; border-radius: 12px; }`
+    htmlCode: `<aside class="zeura-side">Sidebar</aside>`,
+    cssCode: `.zeura-side { width: 220px; background: #09090b; border: 1px solid #27272a; padding: 16px; border-radius: 12px; }`
   },
   {
     category: 'layouts',
@@ -3207,8 +3207,8 @@ export const PillDock: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-pill-dock"><button>All</button><button>React</button></div>`,
-    cssCode: `.vibe-pill-dock { display: inline-flex; padding: 4px; background: #18181b; border-radius: 9999px; }`
+    htmlCode: `<div class="zeura-pill-dock"><button>All</button><button>React</button></div>`,
+    cssCode: `.zeura-pill-dock { display: inline-flex; padding: 4px; background: #18181b; border-radius: 9999px; }`
   },
   {
     category: 'layouts',
@@ -3224,7 +3224,7 @@ export const PillDock: React.FC = () => {
 export const CommandNav: React.FC = () => {
   return (
     <div className="flex items-center justify-between px-5 py-2.5 rounded-2xl bg-zinc-900/90 border border-zinc-800 text-xs">
-      <span className="font-bold text-white">VibeUI Studio</span>
+      <span className="font-bold text-white">ZEURALABZ Studio</span>
       <button className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-400 hover:text-white">
         <span>Search components...</span>
         <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] font-mono text-zinc-300">⌘K</kbd>
@@ -3232,8 +3232,8 @@ export const CommandNav: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-cmd"><span>VibeUI</span><kbd>⌘K</kbd></div>`,
-    cssCode: `.vibe-cmd { display: flex; justify-content: space-between; padding: 10px; background: #18181b; }`
+    htmlCode: `<div class="zeura-cmd"><span>ZEURALABZ</span><kbd>⌘K</kbd></div>`,
+    cssCode: `.zeura-cmd { display: flex; justify-content: space-between; padding: 10px; background: #18181b; }`
   },
   {
     category: 'layouts',
@@ -3251,8 +3251,8 @@ export const MultiColumnFooter: React.FC = () => {
     <footer className="w-full bg-zinc-950 border-t border-zinc-900 py-12 px-6 text-zinc-400 text-xs">
       <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div>
-          <span className="font-extrabold text-white text-base">VibeUI</span>
-          <p className="text-[11px] text-zinc-500 mt-2">Next-gen UI design system for vibe-coders.</p>
+          <span className="font-extrabold text-white text-base">ZEURALABZ</span>
+          <p className="text-[11px] text-zinc-500 mt-2">Next-gen UI design system for zeura-coders.</p>
         </div>
         <div>
           <h5 className="font-bold text-white uppercase mb-2">Components</h5>
@@ -3278,8 +3278,8 @@ export const MultiColumnFooter: React.FC = () => {
     </footer>
   );
 };`,
-    htmlCode: `<footer class="vibe-footer"><p>© 2026 VibeUI</p></footer>`,
-    cssCode: `.vibe-footer { padding: 40px 20px; background: #09090b; border-top: 1px solid #27272a; color: #a1a1aa; }`
+    htmlCode: `<footer class="zeura-footer"><p>© 2026 ZEURALABZ</p></footer>`,
+    cssCode: `.zeura-footer { padding: 40px 20px; background: #09090b; border-top: 1px solid #27272a; color: #a1a1aa; }`
   },
   {
     category: 'layouts',
@@ -3303,8 +3303,8 @@ export const MinimalFooter: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mini-foot"><span>Status: OK</span></div>`,
-    cssCode: `.vibe-mini-foot { padding: 16px; background: #000; color: #71717a; display: flex; justify-content: space-between; }`
+    htmlCode: `<div class="zeura-mini-foot"><span>Status: OK</span></div>`,
+    cssCode: `.zeura-mini-foot { padding: 16px; background: #000; color: #71717a; display: flex; justify-content: space-between; }`
   },
   {
     category: 'layouts',
@@ -3327,8 +3327,8 @@ export const SocialPillFooter: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-social-pill"><a href="#">GitHub</a></div>`,
-    cssCode: `.vibe-social-pill { display: inline-flex; gap: 16px; padding: 10px 20px; background: #18181b; border-radius: 9999px; }`
+    htmlCode: `<div class="zeura-social-pill"><a href="#">GitHub</a></div>`,
+    cssCode: `.zeura-social-pill { display: inline-flex; gap: 16px; padding: 10px 20px; background: #18181b; border-radius: 9999px; }`
   },
   {
     category: 'layouts',
@@ -3363,8 +3363,8 @@ export const MegaMenuNav: React.FC = () => {
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mega-menu"><button>Products ▾</button></div>`,
-    cssCode: `.vibe-mega-menu { position: relative; }`
+    htmlCode: `<div class="zeura-mega-menu"><button>Products ▾</button></div>`,
+    cssCode: `.zeura-mega-menu { position: relative; }`
   }
 ];
 

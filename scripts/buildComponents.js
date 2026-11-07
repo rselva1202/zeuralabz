@@ -50,13 +50,13 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({ className = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-aurora">
-  <div class="vibe-aurora-glow"></div>
-  <div class="vibe-aurora-content">
+    htmlCode: `<div class="zeura-aurora">
+  <div class="zeura-aurora-glow"></div>
+  <div class="zeura-aurora-content">
     <h2>Living Aurora</h2>
   </div>
 </div>`,
-    cssCode: `.vibe-aurora {
+    cssCode: `.zeura-aurora {
   position: relative;
   overflow: hidden;
   background-color: #000;
@@ -66,7 +66,7 @@ export const AuroraBackground: React.FC<AuroraBackgroundProps> = ({ className = 
   align-items: center;
   justify-content: center;
 }
-.vibe-aurora-glow {
+.zeura-aurora-glow {
   position: absolute;
   top: -50%;
   left: -25%;
@@ -107,9 +107,9 @@ export const GalaxyBackground: React.FC<{ children?: React.ReactNode }> = ({ chi
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-galaxy"><div class="vibe-galaxy-spiral"></div><span>Spiral Galaxy</span></div>`,
-    cssCode: `.vibe-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
+    htmlCode: `<div class="zeura-galaxy"><div class="zeura-galaxy-spiral"></div><span>Spiral Galaxy</span></div>`,
+    cssCode: `.zeura-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }`,
   },
   {
@@ -141,8 +141,8 @@ export const ParticlesBackground: React.FC<{ count?: number; children?: React.Re
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-particles"><span>Particle Network</span></div>`,
-    cssCode: `.vibe-particles { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-particles"><span>Particle Network</span></div>`,
+    cssCode: `.zeura-particles { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -163,9 +163,9 @@ export const RetroGridBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-retro-grid"><div class="vibe-grid-plane"></div><span>Horizon Perspective</span></div>`,
-    cssCode: `.vibe-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }`,
+    htmlCode: `<div class="zeura-retro-grid"><div class="zeura-grid-plane"></div><span>Horizon Perspective</span></div>`,
+    cssCode: `.zeura-retro-grid { position: relative; background: #09090b; min-height: 320px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-grid-plane { position: absolute; inset: 0; background: linear-gradient(90deg, #27272a 1px, transparent 1px), linear-gradient(180deg, #27272a 1px, transparent 1px); background-size: 30px 30px; transform: perspective(500px) rotateX(60deg); transform-origin: bottom; opacity: 0.7; }`,
   },
   {
     category: 'backgrounds',
@@ -187,10 +187,10 @@ export const MeshGradientBackground: React.FC<{ children?: React.ReactNode }> = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mesh"><div class="vibe-blob1"></div><div class="vibe-blob2"></div><span>Fluid Mesh</span></div>`,
-    cssCode: `.vibe-mesh { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.vibe-blob1 { position: absolute; width: 300px; height: 300px; background: rgba(124, 58, 237, 0.3); filter: blur(80px); top: 10%; left: 10%; }
-.vibe-blob2 { position: absolute; width: 250px; height: 250px; background: rgba(6, 182, 212, 0.25); filter: blur(80px); bottom: 10%; right: 10%; }`,
+    htmlCode: `<div class="zeura-mesh"><div class="zeura-blob1"></div><div class="zeura-blob2"></div><span>Fluid Mesh</span></div>`,
+    cssCode: `.zeura-mesh { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.zeura-blob1 { position: absolute; width: 300px; height: 300px; background: rgba(124, 58, 237, 0.3); filter: blur(80px); top: 10%; left: 10%; }
+.zeura-blob2 { position: absolute; width: 250px; height: 250px; background: rgba(6, 182, 212, 0.25); filter: blur(80px); bottom: 10%; right: 10%; }`,
   },
   {
     category: 'backgrounds',
@@ -211,9 +211,9 @@ export const NoiseBackground: React.FC<{ children?: React.ReactNode }> = ({ chil
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-noise"><div class="vibe-grain"></div><span>Film Grain Noise</span></div>`,
-    cssCode: `.vibe-noise { position: relative; background: #09090b; min-height: 280px; display: flex; align-items: center; justify-content: center; }
-.vibe-grain { position: absolute; inset: 0; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 3px 3px; opacity: 0.15; pointer-events-none; }`,
+    htmlCode: `<div class="zeura-noise"><div class="zeura-grain"></div><span>Film Grain Noise</span></div>`,
+    cssCode: `.zeura-noise { position: relative; background: #09090b; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+.zeura-grain { position: absolute; inset: 0; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 3px 3px; opacity: 0.15; pointer-events-none; }`,
   },
   {
     category: 'backgrounds',
@@ -234,8 +234,8 @@ export const DotGridBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-dotgrid"><span>16px Dot Matrix</span></div>`,
-    cssCode: `.vibe-dotgrid { position: relative; background: #09090b; background-image: radial-gradient(#27272a 1px, transparent 1px); background-size: 16px 16px; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-dotgrid"><span>16px Dot Matrix</span></div>`,
+    cssCode: `.zeura-dotgrid { position: relative; background: #09090b; background-image: radial-gradient(#27272a 1px, transparent 1px); background-size: 16px 16px; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -266,8 +266,8 @@ export const StarfieldBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-stars"><span>Deep Space Starfield</span></div>`,
-    cssCode: `.vibe-stars { position: relative; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-stars"><span>Deep Space Starfield</span></div>`,
+    cssCode: `.zeura-stars { position: relative; background: #000; min-height: 320px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -293,8 +293,8 @@ export const LiquidLavaBackground: React.FC<{ children?: React.ReactNode }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-lava"><span>Liquid Lava</span></div>`,
-    cssCode: `.vibe-lava { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-lava"><span>Liquid Lava</span></div>`,
+    cssCode: `.zeura-lava { position: relative; background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -315,8 +315,8 @@ export const BorderBeamBackground: React.FC<{ children?: React.ReactNode }> = ({
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-beam"><span>Border Beam Spotlight</span></div>`,
-    cssCode: `.vibe-beam { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-beam"><span>Border Beam Spotlight</span></div>`,
+    cssCode: `.zeura-beam { position: relative; background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -336,8 +336,8 @@ export const HexMeshBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-hex"><span>Hexagon Tessellation</span></div>`,
-    cssCode: `.vibe-hex { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-hex"><span>Hexagon Tessellation</span></div>`,
+    cssCode: `.zeura-hex { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -357,8 +357,8 @@ export const NeonWavesBackground: React.FC<{ children?: React.ReactNode }> = ({ 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-waves"><span>Neon Waves</span></div>`,
-    cssCode: `.vibe-waves { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-waves"><span>Neon Waves</span></div>`,
+    cssCode: `.zeura-waves { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -378,8 +378,8 @@ export const DriftingMistBackground: React.FC<{ children?: React.ReactNode }> = 
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-mist"><span>Drifting Mist</span></div>`,
-    cssCode: `.vibe-mist { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-mist"><span>Drifting Mist</span></div>`,
+    cssCode: `.zeura-mist { background: #09090b; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -399,8 +399,8 @@ export const CircuitBackground: React.FC<{ children?: React.ReactNode }> = ({ ch
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-circuit"><span>Circuit Traces</span></div>`,
-    cssCode: `.vibe-circuit { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
+    htmlCode: `<div class="zeura-circuit"><span>Circuit Traces</span></div>`,
+    cssCode: `.zeura-circuit { background: #000; min-height: 300px; display: flex; align-items: center; justify-content: center; }`,
   },
   {
     category: 'backgrounds',
@@ -421,9 +421,9 @@ export const VignetteBackground: React.FC<{ children?: React.ReactNode }> = ({ c
     </div>
   );
 };`,
-    htmlCode: `<div class="vibe-vignette"><span>Radial Vignette</span></div>`,
-    cssCode: `.vibe-vignette { position: relative; background: #18181b; min-height: 300px; display: flex; align-items: center; justify-content: center; }
-.vibe-vignette::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.85) 100%); pointer-events-none; }`,
+    htmlCode: `<div class="zeura-vignette"><span>Radial Vignette</span></div>`,
+    cssCode: `.zeura-vignette { position: relative; background: #18181b; min-height: 300px; display: flex; align-items: center; justify-content: center; }
+.zeura-vignette::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.85) 100%); pointer-events-none; }`,
   },
 ];
 

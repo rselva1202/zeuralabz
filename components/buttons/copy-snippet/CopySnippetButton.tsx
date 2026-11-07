@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const CopySnippetButton: React.FC<{ code?: string }> = ({ code = "npx vibe-ui add aurora" }) => {
+export const CopySnippetButton: React.FC<{ code?: string }> = ({ code = "npx zeuralabz add aurora" }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(code);

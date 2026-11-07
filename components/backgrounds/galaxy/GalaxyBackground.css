@@ -1,3 +1,3 @@
-.vibe-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.vibe-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
+.zeura-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.zeura-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }

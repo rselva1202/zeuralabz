@@ -30,3 +30,4 @@ for (const comp of registry) {
 }
 
 console.log(`Successfully copied previews for ${count} components to preview-site/public/previews/`);
+

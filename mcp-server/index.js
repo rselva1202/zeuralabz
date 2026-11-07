@@ -33,7 +33,7 @@ function loadThemes() {
 
 const server = new Server(
   {
-    name: 'vibe-ui-mcp',
+    name: 'zeuralabz-mcp',
     version: '1.0.0',
   },
   {
@@ -50,7 +50,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: 'suggest_ui_for_project',
         description:
-          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best VibeUI component for every section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) with live preview URLs and reasons.',
+          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best ZEURALABZ component for every section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) with live preview URLs and reasons.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -63,7 +63,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'search_components',
-        description: 'Search VibeUI component library by keyword, tag, or category to find animated backgrounds, cards, buttons, etc.',
+        description: 'Search ZEURALABZ component library by keyword, tag, or category to find animated backgrounds, cards, buttons, etc.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -80,7 +80,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'install_component',
-        description: 'Installs a VibeUI component into the target project (writes React .tsx, HTML, CSS files, and provides usage code).',
+        description: 'Installs a ZEURALABZ component into the target project (writes React .tsx, HTML, CSS files, and provides usage code).',
         inputSchema: {
           type: 'object',
           properties: {
@@ -98,7 +98,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'list_themes',
-        description: 'Lists all 20 built-in aesthetic themes (colors, mood, styling rules) from VibeUI design system.',
+        description: 'Lists all 20 built-in aesthetic themes (colors, mood, styling rules) from ZEURALABZ design system.',
         inputSchema: {
           type: 'object',
           properties: {},
@@ -180,14 +180,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         content: [
           {
             type: 'text',
-            text: `Component "${slug}" not found in VibeUI registry.`,
+            text: `Component "${slug}" not found in ZEURALABZ registry.`,
           },
         ],
       };
     }
 
     const sourceDir = path.join(rootDir, 'components', comp.category, comp.slug);
-    let destDir = path.join(targetDir, 'src', 'components', 'vibe-ui', comp.slug);
+    let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
 
     if (!fs.existsSync(destDir)) {
       fs.mkdirSync(destDir, { recursive: true });
@@ -214,7 +214,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     const componentName = tsxFileName.replace('.tsx', '');
-    const usageSnippet = `import { ${componentName} } from './components/vibe-ui/${comp.slug}/${componentName}';\n\nexport default function Example() {\n  return <${componentName} />;\n}`;
+    const usageSnippet = `import { ${componentName} } from './components/zeuralabz/${comp.slug}/${componentName}';\n\nexport default function Example() {\n  return <${componentName} />;\n}`;
 
     return {
       content: [
@@ -263,7 +263,7 @@ async function run() {
 }
 
 run().catch((error) => {
-  console.error('Fatal error in VibeUI MCP server:', error);
+  console.error('Fatal error in ZEURALABZ MCP server:', error);
   process.exit(1);
 });
 

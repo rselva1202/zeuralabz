@@ -1,48 +1,48 @@
-# VibeUI Installation & Workspace Setup Guide
+# ZEURALABZ Installation & Workspace Setup Guide
 
-VibeUI is designed to be installed once and used seamlessly across modern AI coding agents and development environments.
+ZEURALABZ is designed to be installed once and used seamlessly across modern AI coding agents and development environments.
 
 ---
 
 ## 1. Quickstart (CLI)
 
-You can run VibeUI in any React or Next.js project directly via `npx` without global installation:
+You can run ZEURALABZ in any React or Next.js project directly via `npx` without global installation:
 
 ```bash
 # 1. Initialize configuration (detects React/Next.js and Tailwind)
-npx vibe-ui init
+npx zeuralabz init
 
 # 2. Get AI-driven recommendations tailored to your project
-npx vibe-ui suggest
+npx zeuralabz suggest
 
 # 3. Add an individual component
-npx vibe-ui add aurora
+npx zeuralabz add aurora
 
 # 4. Search components
-npx vibe-ui search cards
+npx zeuralabz search cards
 
 # 5. Open live browser preview
-npx vibe-ui preview aurora
+npx zeuralabz preview aurora
 ```
 
 ---
 
-## 2. Setting up VibeUI in AI Workspaces
+## 2. Setting up ZEURALABZ in AI Workspaces
 
 ### A. Antigravity Setup
 
-1. Copy `SKILL.md` into your local `.gemini/antigravity/skills/vibe-ui/SKILL.md` or keep it at the root of your project.
+1. Copy `SKILL.md` into your local `.gemini/antigravity/skills/zeuralabz/SKILL.md` or keep it at the root of your project.
 2. In your Antigravity chat, simply ask:
-   > "Scan my project and suggest the best VibeUI components for my landing page."
+   > "Scan my project and suggest the best ZEURALABZ components for my landing page."
 
 ### B. Claude Desktop & Claude Code (MCP Server)
 
-Add VibeUI MCP server to your `claude_desktop_config.json`:
+Add ZEURALABZ MCP server to your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
-    "vibe-ui": {
+    "zeuralabz": {
       "command": "node",
       "args": ["d:/MY PROJECTS/ZEURALABZ/mcp-server/index.js"]
     }
@@ -54,9 +54,9 @@ Or when published to npm:
 ```json
 {
   "mcpServers": {
-    "vibe-ui": {
+    "zeuralabz": {
       "command": "npx",
-      "args": ["-y", "vibe-ui", "mcp"]
+      "args": ["-y", "zeuralabz", "mcp"]
     }
   }
 }
@@ -67,31 +67,31 @@ Or when published to npm:
 In Cursor or Windsurf:
 1. Open **Settings > Features > MCP Servers** (or `.cursorrules` / `.windsurfrules`).
 2. Add a new MCP server:
-   - **Name**: `vibe-ui`
+   - **Name**: `zeuralabz`
    - **Type**: `command`
    - **Command**: `node ./mcp-server/index.js`
 3. In Agent chat, prompt:
-   > "@vibe-ui analyze my project and install the best hero and background."
+   > "@zeuralabz analyze my project and install the best hero and background."
 
 ### D. VS Code Copilot
 
 1. Reference `SKILL.md` in `.github/copilot-instructions.md`.
 2. Use Copilot Chat:
-   > "Using VibeUI guidelines, recommend and install an animated card and button for my portfolio."
+   > "Using ZEURALABZ guidelines, recommend and install an animated card and button for my portfolio."
 
 ---
 
-## 3. Project Configuration (`vibe-ui.json`)
+## 3. Project Configuration (`zeuralabz.json`)
 
-When you run `npx vibe-ui init`, a `vibe-ui.json` file is placed in your project root:
+When you run `npx zeuralabz init`, a `zeuralabz.json` file is placed in your project root:
 
 ```json
 {
-  "$schema": "https://rselva1202.github.io/vibe-ui/schema.json",
+  "$schema": "https://rselva1202.github.io/zeuralabz/schema.json",
   "framework": "React + Vite",
   "tailwind": "Tailwind CSS v4",
   "typescript": true,
-  "componentsDir": "src/components/vibe-ui",
+  "componentsDir": "src/components/zeuralabz",
   "defaultTheme": "dark-neon"
 }
 ```

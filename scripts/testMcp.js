@@ -49,7 +49,7 @@ function handleResponse(res) {
   } else if (res.id === 3) {
     const data = JSON.parse(res.result.content[0].text);
     console.log(`✔ search_components found ${data.totalMatches} match:`, data.components[0].name);
-    sendRpc('tools/call', { name: 'suggest_ui_for_project', arguments: { targetDir: 'D:/MY PROJECTS/test-vibe-site' } });
+    sendRpc('tools/call', { name: 'suggest_ui_for_project', arguments: { targetDir: 'D:/MY PROJECTS/test-zeura-site' } });
   } else if (res.id === 4) {
     const data = JSON.parse(res.result.content[0].text);
     console.log(`✔ suggest_ui_for_project recommendations (${data.recommendations.length}):`);
