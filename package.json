@@ -24,12 +24,23 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rselva1202/ZEURALABZ.git"
+    "url": "https://github.com/rselva1202/vibe-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/rselva1202/ZEURALABZ/issues"
+    "url": "https://github.com/rselva1202/vibe-ui/issues"
   },
-  "homepage": "https://rselva1202.github.io/ZEURALABZ",
+  "homepage": "https://rselva1202.github.io/vibe-ui",
+  "files": [
+    "cli",
+    "analyzer",
+    "components.json",
+    "components",
+    "themes",
+    "generator",
+    "README.md",
+    "LICENSE",
+    "SKILL.md"
+  ],
   "type": "module",
   "scripts": {
     "cli": "node ./cli/bin/vibe-ui.js",

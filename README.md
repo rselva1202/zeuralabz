@@ -1,21 +1,22 @@
-# ✨ ZEURALABZ (VibeUI)
+# ✨ VibeUI
 
 > **"Make any website look pretty — install once, let AI suggest the best UI for your project."**
 
+[![npm version](https://img.shields.io/npm/v/vibe-ui.svg)](https://www.npmjs.com/package/vibe-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Components](https://img.shields.io/badge/Components-120%2B-indigo.svg)](components.json)
 [![Combinations](https://img.shields.io/badge/Combinations-1M%2B_Styles-cyan.svg)](docs/HOW-IT-WORKS.md)
-[![Live Preview](https://img.shields.io/badge/Showcase-GitHub_Pages-emerald.svg)](https://rselva1202.github.io/ZEURALABZ)
+[![Live Preview](https://img.shields.io/badge/Showcase-GitHub_Pages-emerald.svg)](https://rselva1202.github.io/vibe-ui)
 [![MCP Protocol](https://img.shields.io/badge/Protocol-Model_Context_Protocol-purple.svg)](mcp-server/)
 
-**ZEURALABZ** is a public, open-source UI design system, AI project analyzer, and CLI tool designed specifically for developers and vibe-coders working in AI workspaces like **Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**.
+**VibeUI** is a public, open-source UI design system, AI project analyzer, and CLI tool designed specifically for developers and vibe-coders working in AI workspaces like **Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**.
 
-Instead of browsing endless component directories or wrestling with heavy UI libraries, ZEURALABZ scans your project structure and **suggests the single best UI component for every part** of your site — background, hero, typography animations, cards, buttons, and micro-interactions — and installs the chosen code directly into your repository.
+Instead of browsing endless component directories or wrestling with heavy UI libraries, VibeUI scans your project structure and **suggests the single best UI component for every part** of your site — background, hero, typography animations, cards, buttons, and micro-interactions — and installs the chosen code directly into your repository.
 
 ---
 
 ## ⚡ Live Preview Website
-👉 **Explore the full interactive catalog:** **[rselva1202.github.io/ZEURALABZ](https://rselva1202.github.io/ZEURALABZ)**
+👉 **Explore the full interactive catalog:** **[rselva1202.github.io/vibe-ui](https://rselva1202.github.io/vibe-ui)**
 
 ---
 
