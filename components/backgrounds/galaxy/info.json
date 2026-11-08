@@ -3,21 +3,25 @@
   "slug": "galaxy",
   "componentName": "GalaxyBackground",
   "category": "backgrounds",
-  "description": "Deep cosmic spiraling star dust and stellar nebula rotation canvas.",
+  "description": "Deep cosmic spiral galaxy simulation with 800+ stars, 3 logarithmic spiral arms, radiant stellar core, and chromatic volumetric nebula dust clouds.",
   "tags": [
     "background",
     "galaxy",
     "cosmos",
-    "particles"
+    "particles",
+    "spiral",
+    "canvas",
+    "space",
+    "stars"
   ],
   "bestFor": [
     "landing",
     "portfolio",
-    "web3"
+    "web3",
+    "hero",
+    "saas"
   ],
-  "deps": [
-    "framer-motion"
-  ],
+  "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/galaxy",
   "author": "R. Selva",
   "license": "MIT"

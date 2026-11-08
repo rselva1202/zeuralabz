@@ -1,0 +1,28 @@
+.zeura-galaxy-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #111742 0%, #0a0e27 70%, #060817 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zeura-galaxy-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.zeura-galaxy-content {
+  position: relative;
+  z-index: 10;
+  color: #ffffff;
+  text-align: center;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

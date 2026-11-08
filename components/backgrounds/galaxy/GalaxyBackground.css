@@ -1,3 +1,28 @@
-.zeura-galaxy { position: relative; background: #09090b; min-height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.zeura-galaxy-spiral { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: conic-gradient(#6366f1, #a855f7, #ec4899, #6366f1); filter: blur(80px); opacity: 0.25; animation: spin 40s linear infinite; }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+.zeura-galaxy-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #111742 0%, #0a0e27 70%, #060817 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zeura-galaxy-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.zeura-galaxy-content {
+  position: relative;
+  z-index: 10;
+  color: #ffffff;
+  text-align: center;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

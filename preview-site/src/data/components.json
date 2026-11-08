@@ -37,21 +37,23 @@
     "slug": "galaxy",
     "componentName": "GalaxyBackground",
     "category": "backgrounds",
-    "description": "Deep cosmic spiraling star dust and stellar nebula rotation canvas.",
+    "description": "Deep cosmic spiral galaxy simulation with 800+ stars, 3 logarithmic spiral arms, radiant stellar core, and chromatic volumetric nebula dust clouds.",
     "tags": [
       "background",
       "galaxy",
       "cosmos",
-      "particles"
+      "particles",
+      "spiral",
+      "canvas",
+      "space",
+      "stars"
     ],
     "bestFor": [
       "landing",
       "portfolio",
       "web3"
     ],
-    "deps": [
-      "framer-motion"
-    ],
+    "deps": [],
     "files": [
       "components/backgrounds/galaxy/GalaxyBackground.tsx",
       "components/backgrounds/galaxy/GalaxyBackground.html",

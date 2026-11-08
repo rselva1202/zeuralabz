@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { GalaxyBackground } from './GalaxyBackground';
 
 interface LiveComponentPreviewProps {
   slug: string;
@@ -58,11 +59,8 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
     }
     if (slug === 'galaxy') {
       return (
-        <div className="relative w-full h-full overflow-hidden bg-zinc-950 flex items-center justify-center">
-          <div className="absolute w-32 h-32 rounded-full bg-indigo-500/30 blur-2xl animate-spin duration-1000" />
-          <div className="absolute w-24 h-24 rounded-full border border-cyan-400/40 animate-ping" />
-          <div className="relative z-10 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_20px_#22d3ee]" />
-          <span className="absolute bottom-2 right-3 text-[10px] font-mono text-indigo-400">Cosmic Orbit</span>
+        <div className="relative w-full h-full overflow-hidden">
+          <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
         </div>
       );
     }

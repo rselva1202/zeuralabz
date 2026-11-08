@@ -37,3 +37,4 @@ function scan(dir) {
 scan(rootDir);
 console.log('Remaining matches for "vibe":', remaining.length);
 remaining.forEach(m => console.log('•', m.file + ':' + m.line, '->', m.text));
+

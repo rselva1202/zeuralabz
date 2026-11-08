@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import componentsData from './data/components.json';
 import themesData from './data/themes.json';
 import { LiveComponentPreview } from './components/LiveComponentPreview';
+import { GalaxyBackground } from './components/GalaxyBackground';
 
 interface ComponentItem {
   id: string;
@@ -33,7 +34,13 @@ const CATEGORIES = [
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('q') || params.get('search') || '';
+    }
+    return '';
+  });
   const [selectedFormat, setSelectedFormat] = useState<string>('typescript');
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [selectedComponent, setSelectedComponent] = useState<ComponentItem | null>(null);
@@ -41,6 +48,85 @@ export default function App() {
   const [heroBg, setHeroBg] = useState<'aurora' | 'galaxy' | 'particles' | 'gradient'>('aurora');
   const [activePreset, setActivePreset] = useState<'dark-neon' | 'ocean' | 'dune'>('dark-neon');
   const [starCount, setStarCount] = useState<number>(48);
+
+  const standalone = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('standalone') : null;
+  if (standalone === 'galaxy-before') {
+    return (
+      <div className="w-screen h-screen bg-black flex items-center justify-center p-8">
+        <div className="w-[420px] rounded-2xl bg-[#141414] border border-zinc-800 flex flex-col overflow-hidden shadow-2xl">
+          <div className="h-56 bg-zinc-950 relative overflow-hidden border-b border-zinc-800 flex items-center justify-center">
+            <div className="absolute w-32 h-32 rounded-full bg-indigo-500/30 blur-2xl animate-spin duration-1000" />
+            <div className="absolute w-24 h-24 rounded-full border border-cyan-400/40 animate-ping" />
+            <div className="relative z-10 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_20px_#22d3ee]" />
+            <span className="absolute bottom-2 right-3 text-[10px] font-mono text-indigo-400">Cosmic Orbit</span>
+            <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
+              backgrounds
+            </span>
+          </div>
+          <div className="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-sm text-white">Spiral Galaxy Cosmic Canvas</h3>
+                <span className="text-[11px] text-zinc-500 font-mono">galaxy</span>
+              </div>
+              <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed font-light">
+                Deep cosmic spiraling star dust and stellar nebula rotation canvas.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+              <span className="text-[11px] font-mono text-zinc-400">npx zeuralabz add galaxy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (standalone === 'galaxy') {
+    return (
+      <div className="w-screen h-screen bg-black flex items-center justify-center p-8">
+        <div className="w-[420px] rounded-2xl bg-[#141414] border border-zinc-800 flex flex-col overflow-hidden shadow-2xl">
+          <div className="h-56 bg-[#0a0e27] relative overflow-hidden border-b border-zinc-800">
+            <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
+            <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
+              backgrounds
+            </span>
+            <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Live Preview
+            </span>
+          </div>
+          <div className="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-sm text-white">Spiral Galaxy Cosmic Canvas</h3>
+                <span className="text-[11px] text-zinc-500 font-mono">galaxy</span>
+              </div>
+              <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed font-light">
+                Deep cosmic spiral galaxy simulation with 800+ stars, 3 logarithmic spiral arms, radiant stellar core, and chromatic volumetric nebula dust clouds.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+              <span className="text-[11px] font-mono text-zinc-400">npx zeuralabz add galaxy</span>
+              <span className="text-xs text-indigo-400 font-medium">Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (standalone === 'galaxy-fullscreen') {
+    return (
+      <div className="w-screen h-screen overflow-hidden">
+        <GalaxyBackground starCount={1200} speed={0.6} armCount={3} glowIntensity={1.2}>
+          <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-transparent">
+            <h1 className="text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]">ZEURALABZ</h1>
+            <p className="text-indigo-200 text-lg font-medium drop-shadow-md">Spiral Galaxy Cosmic Canvas (800+ Stars)</p>
+          </div>
+        </GalaxyBackground>
+      </div>
+    );
+  }
 
   // Fetch real GitHub star count
   useEffect(() => {
@@ -158,8 +244,8 @@ export default function Hero() {
             </div>
           )}
           {heroBg === 'galaxy' && (
-            <div className="absolute inset-0 opacity-40 flex items-center justify-center">
-              <div className="w-[500px] h-[500px] rounded-full bg-indigo-600/20 blur-3xl animate-spin duration-1000" />
+            <div className="absolute inset-0 opacity-80 pointer-events-none">
+              <GalaxyBackground starCount={900} speed={0.5} armCount={3} glowIntensity={1.1} />
             </div>
           )}
           {heroBg === 'particles' && (
