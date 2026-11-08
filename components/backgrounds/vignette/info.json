@@ -1,22 +1,26 @@
 {
-  "name": "Cinematic Dark Radial Vignette",
-  "slug": "vignette",
-  "componentName": "VignetteBackground",
+  "name": "Bioluminescent Fireflies",
+  "slug": "fireflies",
+  "componentName": "FirefliesBackground",
   "category": "backgrounds",
-  "description": "Classic cinematic vignette darkening the borders to focus attention on central content.",
+  "description": "Organic glowing bioluminescent motes drifting with soft Brownian motion, gentle light pulsation, and radiant emerald/cyan glow trails.",
   "tags": [
     "background",
+    "fireflies",
+    "particles",
+    "bioluminescence",
     "vignette",
-    "minimal",
-    "focus"
+    "canvas"
   ],
   "bestFor": [
     "landing",
     "portfolio",
-    "reading"
+    "web3",
+    "hero",
+    "saas"
   ],
   "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/vignette",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fireflies",
   "author": "R. Selva",
   "license": "MIT"
 }

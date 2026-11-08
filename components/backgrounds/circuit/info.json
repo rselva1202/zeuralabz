@@ -1,22 +1,25 @@
 {
-  "name": "Cyberpunk Motherboard Traces",
-  "slug": "circuit",
-  "componentName": "CircuitBackground",
+  "name": "Geometric Mesh Constellation",
+  "slug": "mesh",
+  "componentName": "MeshBackground",
   "category": "backgrounds",
-  "description": "Micro-etched silicon wafer circuit lines with illuminated electron pulses.",
+  "description": "Dynamic kinetic wireframe polygon mesh with shifting geometric tension, glowing vertices, and interconnected nodes.",
   "tags": [
     "background",
-    "circuit",
-    "cyberpunk",
-    "tech"
+    "mesh",
+    "geometry",
+    "network",
+    "canvas"
   ],
   "bestFor": [
-    "developer",
-    "crypto",
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
     "saas"
   ],
   "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/circuit",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mesh",
   "author": "R. Selva",
   "license": "MIT"
 }

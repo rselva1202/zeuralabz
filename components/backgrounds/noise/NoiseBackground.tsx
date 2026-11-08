@@ -1,10 +1,20 @@
 import React from 'react';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const NoiseBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export interface NoiseBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const NoiseBackground: React.FC<NoiseBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-zinc-950 text-white min-h-[280px] flex items-center justify-center">
-      <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:3px_3px] pointer-events-none" />
-      <div className="relative z-10">{children || <span className="font-mono text-sm text-zinc-300">Film Grain Noise</span>}</div>
-    </div>
+    <CanvasEngine
+      type="noise"
+      speed={1}
+      glow={1.1}
+      particleCount={800}
+      colors={["#6366f1","#8b5cf6","#ec4899","#06b6d4"]}
+      {...props}
+    />
   );
 };
+
+export const Noise = NoiseBackground;
+export default NoiseBackground;

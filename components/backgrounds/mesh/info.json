@@ -1,0 +1,25 @@
+{
+  "name": "Geometric Mesh Constellation",
+  "slug": "mesh",
+  "componentName": "MeshBackground",
+  "category": "backgrounds",
+  "description": "Dynamic kinetic wireframe polygon mesh with shifting geometric tension, glowing vertices, and interconnected nodes.",
+  "tags": [
+    "background",
+    "mesh",
+    "geometry",
+    "network",
+    "canvas"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mesh",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,26 +1,26 @@
 [
   {
     "id": "backgrounds/aurora",
-    "name": "Aurora Background",
+    "name": "Aurora Flowing Waves Canvas",
     "slug": "aurora",
     "componentName": "AuroraBackground",
     "category": "backgrounds",
-    "description": "Living northern lights curtain simulation drifting with deep indigo, cyan, and magenta ambient waves.",
+    "description": "Volumetric luminous aurora ribbons with dynamic flowing sinusoidal light waves and shimmering curtain folds.",
     "tags": [
       "background",
       "aurora",
-      "ambient",
-      "gradient",
-      "framer-motion"
+      "waves",
+      "glow",
+      "canvas"
     ],
     "bestFor": [
       "landing",
-      "saas",
-      "hero"
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
     ],
-    "deps": [
-      "framer-motion"
-    ],
+    "deps": [],
     "files": [
       "components/backgrounds/aurora/AuroraBackground.tsx",
       "components/backgrounds/aurora/AuroraBackground.html",
@@ -29,7 +29,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/aurora",
     "theme": "dark-neon",
-    "animation": "framer-motion"
+    "animation": "canvas"
   },
   {
     "id": "backgrounds/galaxy",
@@ -51,7 +51,9 @@
     "bestFor": [
       "landing",
       "portfolio",
-      "web3"
+      "web3",
+      "hero",
+      "saas"
     ],
     "deps": [],
     "files": [
@@ -62,7 +64,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/galaxy",
     "theme": "dark-neon",
-    "animation": "framer-motion"
+    "animation": "canvas"
   },
   {
     "id": "backgrounds/particles",
@@ -70,17 +72,20 @@
     "slug": "particles",
     "componentName": "ParticlesBackground",
     "category": "backgrounds",
-    "description": "Interconnected floating particle filaments drifting organically in space.",
+    "description": "Interactive connected particle constellation with dynamic proximity links, pulsing nodes, and glowing momentum physics.",
     "tags": [
       "background",
       "particles",
       "network",
-      "constellation"
+      "constellation",
+      "canvas"
     ],
     "bestFor": [
-      "saas",
+      "landing",
       "portfolio",
-      "landing"
+      "web3",
+      "hero",
+      "saas"
     ],
     "deps": [],
     "files": [
@@ -91,7 +96,105 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/particles",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
+  },
+  {
+    "id": "backgrounds/dots",
+    "name": "Reactive Dot Matrix Grid",
+    "slug": "dots",
+    "componentName": "DotGridBackground",
+    "category": "backgrounds",
+    "description": "Pulsing 2D dot matrix grid with undulating radial energy ripples, luminous amplitude waves, and deep navy backdrop.",
+    "tags": [
+      "background",
+      "dots",
+      "matrix",
+      "grid",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/dots/DotGridBackground.tsx",
+      "components/backgrounds/dots/DotGridBackground.html",
+      "components/backgrounds/dots/DotGridBackground.css",
+      "components/backgrounds/dots/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dots",
+    "theme": "dark-neon",
+    "animation": "canvas"
+  },
+  {
+    "id": "backgrounds/starfield",
+    "name": "Deep Space Starfield",
+    "slug": "starfield",
+    "componentName": "StarfieldBackground",
+    "category": "backgrounds",
+    "description": "Infinite deep space starfield with 700+ twinkling stars, multi-tier parallax Z-depth projection, and subtle cosmic drift on deep navy #0a0e27.",
+    "tags": [
+      "background",
+      "starfield",
+      "stars",
+      "cosmos",
+      "canvas",
+      "space"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/starfield/StarfieldBackground.tsx",
+      "components/backgrounds/starfield/StarfieldBackground.html",
+      "components/backgrounds/starfield/StarfieldBackground.css",
+      "components/backgrounds/starfield/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/starfield",
+    "theme": "dark-neon",
+    "animation": "canvas"
+  },
+  {
+    "id": "backgrounds/liquid",
+    "name": "Liquid Lava Metaballs",
+    "slug": "liquid",
+    "componentName": "LiquidLavaBackground",
+    "category": "backgrounds",
+    "description": "Fluid organic lava metaballs drifting with smooth orbital harmonic blending, radiant core diffusion, and vibrant chromatic gradients.",
+    "tags": [
+      "background",
+      "liquid",
+      "lava",
+      "metaballs",
+      "fluid",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/liquid/LiquidLavaBackground.tsx",
+      "components/backgrounds/liquid/LiquidLavaBackground.html",
+      "components/backgrounds/liquid/LiquidLavaBackground.css",
+      "components/backgrounds/liquid/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/liquid",
+    "theme": "dark-neon",
+    "animation": "canvas"
   },
   {
     "id": "backgrounds/grid",
@@ -99,17 +202,21 @@
     "slug": "grid",
     "componentName": "RetroGridBackground",
     "category": "backgrounds",
-    "description": "Synthwave 3D horizon grid with linear perspective vanishing into dark space.",
+    "description": "Synthwave 3D perspective receding grid plane with radiant horizon neon glow, animated depth displacement, and electric cyan/indigo lines.",
     "tags": [
       "background",
       "grid",
       "retro",
-      "synthwave"
+      "3d",
+      "synthwave",
+      "perspective"
     ],
     "bestFor": [
       "landing",
+      "portfolio",
+      "web3",
       "hero",
-      "gaming"
+      "saas"
     ],
     "deps": [],
     "files": [
@@ -120,53 +227,59 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/grid",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
   },
   {
-    "id": "backgrounds/gradient",
-    "name": "Animated Mesh Gradient",
-    "slug": "gradient",
-    "componentName": "MeshGradientBackground",
+    "id": "backgrounds/mesh",
+    "name": "Geometric Mesh Constellation",
+    "slug": "mesh",
+    "componentName": "MeshBackground",
     "category": "backgrounds",
-    "description": "Chromatic organic gradient blobs softly blending and pulsing across screen.",
+    "description": "Dynamic kinetic wireframe polygon mesh with shifting geometric tension, glowing vertices, and interconnected nodes.",
     "tags": [
       "background",
-      "gradient",
       "mesh",
-      "blobs"
+      "geometry",
+      "network",
+      "canvas"
     ],
     "bestFor": [
       "landing",
-      "saas",
-      "hero"
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
     ],
     "deps": [],
     "files": [
-      "components/backgrounds/gradient/MeshGradientBackground.tsx",
-      "components/backgrounds/gradient/MeshGradientBackground.html",
-      "components/backgrounds/gradient/MeshGradientBackground.css",
-      "components/backgrounds/gradient/info.json"
+      "components/backgrounds/mesh/MeshBackground.tsx",
+      "components/backgrounds/mesh/MeshBackground.html",
+      "components/backgrounds/mesh/MeshBackground.css",
+      "components/backgrounds/mesh/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mesh",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
   },
   {
     "id": "backgrounds/noise",
-    "name": "Film Grain Noise Texture",
+    "name": "Chromatic Ambient Noise",
     "slug": "noise",
     "componentName": "NoiseBackground",
     "category": "backgrounds",
-    "description": "Analog grainy noise texture overlay giving tactility and depth to flat dark modes.",
+    "description": "Film grain perceptual micro-noise texture animated over deep iridescent cosmic violet and indigo gradients.",
     "tags": [
       "background",
       "noise",
-      "grain",
-      "texture"
+      "texture",
+      "film-grain",
+      "canvas"
     ],
     "bestFor": [
-      "editorial",
+      "landing",
       "portfolio",
+      "web3",
+      "hero",
       "saas"
     ],
     "deps": [],
@@ -178,96 +291,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/noise",
     "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "backgrounds/dots",
-    "name": "Reactive Dot Matrix Grid",
-    "slug": "dots",
-    "componentName": "DotGridBackground",
-    "category": "backgrounds",
-    "description": "Clean architectural 16px micro-dot grid pattern on deep slate background.",
-    "tags": [
-      "background",
-      "dots",
-      "grid",
-      "minimal"
-    ],
-    "bestFor": [
-      "saas",
-      "dashboard",
-      "developer"
-    ],
-    "deps": [],
-    "files": [
-      "components/backgrounds/dots/DotGridBackground.tsx",
-      "components/backgrounds/dots/DotGridBackground.html",
-      "components/backgrounds/dots/DotGridBackground.css",
-      "components/backgrounds/dots/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dots",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "backgrounds/starfield",
-    "name": "Deep Space Starfield",
-    "slug": "starfield",
-    "componentName": "StarfieldBackground",
-    "category": "backgrounds",
-    "description": "Dense field of twinkling celestial stars across deep midnight void.",
-    "tags": [
-      "background",
-      "starfield",
-      "cosmos",
-      "particles"
-    ],
-    "bestFor": [
-      "landing",
-      "hero",
-      "web3"
-    ],
-    "deps": [],
-    "files": [
-      "components/backgrounds/starfield/StarfieldBackground.tsx",
-      "components/backgrounds/starfield/StarfieldBackground.html",
-      "components/backgrounds/starfield/StarfieldBackground.css",
-      "components/backgrounds/starfield/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/starfield",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "backgrounds/liquid",
-    "name": "Liquid Lava Metaballs",
-    "slug": "liquid",
-    "componentName": "LiquidLavaBackground",
-    "category": "backgrounds",
-    "description": "Organic flowing metaball fluid shapes drifting weightlessly.",
-    "tags": [
-      "background",
-      "liquid",
-      "metaball",
-      "fluid"
-    ],
-    "bestFor": [
-      "landing",
-      "portfolio",
-      "creative"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/backgrounds/liquid/LiquidLavaBackground.tsx",
-      "components/backgrounds/liquid/LiquidLavaBackground.html",
-      "components/backgrounds/liquid/LiquidLavaBackground.css",
-      "components/backgrounds/liquid/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/liquid",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
+    "animation": "canvas"
   },
   {
     "id": "backgrounds/beam",
@@ -275,17 +299,20 @@
     "slug": "beam",
     "componentName": "BorderBeamBackground",
     "category": "backgrounds",
-    "description": "Conic spotlight rotating behind glass panels casting dynamic highlights.",
+    "description": "Rotating perimeter border beam with continuous conic spotlight sweep, radiant corner blooms, and luminous chromatic edge glow.",
     "tags": [
       "background",
       "beam",
-      "spotlight",
-      "conic"
+      "border-beam",
+      "glow",
+      "spotlight"
     ],
     "bestFor": [
-      "saas",
+      "landing",
+      "portfolio",
+      "web3",
       "hero",
-      "landing"
+      "saas"
     ],
     "deps": [],
     "files": [
@@ -296,152 +323,171 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/beam",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
   },
   {
-    "id": "backgrounds/hex-mesh",
-    "name": "Cyber Hexagon Tessellation",
-    "slug": "hex-mesh",
-    "componentName": "HexMeshBackground",
+    "id": "backgrounds/hexagon",
+    "name": "Cyber Hexagon Honeycomb",
+    "slug": "hexagon",
+    "componentName": "HexagonBackground",
     "category": "backgrounds",
-    "description": "Interlocking hive honeycomb geometry pattern with subtle edge glow highlights.",
+    "description": "Futuristic geometric hexagonal tessellation grid with rhythmic wave pulses, glowing outlines, and energy dispersion nodes.",
     "tags": [
       "background",
       "hexagon",
-      "pattern",
-      "geometry"
+      "honeycomb",
+      "cyber",
+      "grid",
+      "canvas"
     ],
     "bestFor": [
-      "gaming",
-      "crypto",
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
       "saas"
     ],
     "deps": [],
     "files": [
-      "components/backgrounds/hex-mesh/HexMeshBackground.tsx",
-      "components/backgrounds/hex-mesh/HexMeshBackground.html",
-      "components/backgrounds/hex-mesh/HexMeshBackground.css",
-      "components/backgrounds/hex-mesh/info.json"
+      "components/backgrounds/hexagon/HexagonBackground.tsx",
+      "components/backgrounds/hexagon/HexagonBackground.html",
+      "components/backgrounds/hexagon/HexagonBackground.css",
+      "components/backgrounds/hexagon/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hex-mesh",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hexagon",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
   },
   {
-    "id": "backgrounds/lines",
+    "id": "backgrounds/waves",
     "name": "Sinusoidal Neon Waves",
-    "slug": "lines",
-    "componentName": "NeonWavesBackground",
+    "slug": "waves",
+    "componentName": "WavesBackground",
     "category": "backgrounds",
-    "description": "Dynamic flowing bezier wave ribbons oscillating smoothly in background.",
+    "description": "Multi-layered neon sine waves with undulating harmonic phase shifts, vibrant luminous strokes, and translucent intersecting ribbons.",
     "tags": [
       "background",
       "waves",
       "neon",
-      "bezier"
+      "sinusoidal",
+      "lines",
+      "canvas"
     ],
     "bestFor": [
       "landing",
-      "hero",
-      "music"
-    ],
-    "deps": [],
-    "files": [
-      "components/backgrounds/lines/NeonWavesBackground.tsx",
-      "components/backgrounds/lines/NeonWavesBackground.html",
-      "components/backgrounds/lines/NeonWavesBackground.css",
-      "components/backgrounds/lines/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/lines",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "backgrounds/clouds",
-    "name": "Ambient Drifting Mist",
-    "slug": "clouds",
-    "componentName": "DriftingMistBackground",
-    "category": "backgrounds",
-    "description": "Gentle atmospheric cloud smoke drifting softly across dark surfaces.",
-    "tags": [
-      "background",
-      "clouds",
-      "mist",
-      "ambient"
-    ],
-    "bestFor": [
       "portfolio",
-      "wellness",
-      "creative"
-    ],
-    "deps": [],
-    "files": [
-      "components/backgrounds/clouds/DriftingMistBackground.tsx",
-      "components/backgrounds/clouds/DriftingMistBackground.html",
-      "components/backgrounds/clouds/DriftingMistBackground.css",
-      "components/backgrounds/clouds/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/clouds",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "backgrounds/circuit",
-    "name": "Cyberpunk Motherboard Traces",
-    "slug": "circuit",
-    "componentName": "CircuitBackground",
-    "category": "backgrounds",
-    "description": "Micro-etched silicon wafer circuit lines with illuminated electron pulses.",
-    "tags": [
-      "background",
-      "circuit",
-      "cyberpunk",
-      "tech"
-    ],
-    "bestFor": [
-      "developer",
-      "crypto",
+      "web3",
+      "hero",
       "saas"
     ],
     "deps": [],
     "files": [
-      "components/backgrounds/circuit/CircuitBackground.tsx",
-      "components/backgrounds/circuit/CircuitBackground.html",
-      "components/backgrounds/circuit/CircuitBackground.css",
-      "components/backgrounds/circuit/info.json"
+      "components/backgrounds/waves/WavesBackground.tsx",
+      "components/backgrounds/waves/WavesBackground.html",
+      "components/backgrounds/waves/WavesBackground.css",
+      "components/backgrounds/waves/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/circuit",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/waves",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
   },
   {
-    "id": "backgrounds/vignette",
-    "name": "Cinematic Dark Radial Vignette",
-    "slug": "vignette",
-    "componentName": "VignetteBackground",
+    "id": "backgrounds/gradient",
+    "name": "Animated Mesh Gradient",
+    "slug": "gradient",
+    "componentName": "MeshGradientBackground",
     "category": "backgrounds",
-    "description": "Classic cinematic vignette darkening the borders to focus attention on central content.",
+    "description": "Ultra-smooth multi-focal fluid gradient mesh drifting across orbital paths with vivid color bleeding on deep navy #0a0e27.",
     "tags": [
       "background",
-      "vignette",
-      "minimal",
-      "focus"
+      "gradient",
+      "mesh-gradient",
+      "colors",
+      "canvas"
     ],
     "bestFor": [
       "landing",
       "portfolio",
-      "reading"
+      "web3",
+      "hero",
+      "saas"
     ],
     "deps": [],
     "files": [
-      "components/backgrounds/vignette/VignetteBackground.tsx",
-      "components/backgrounds/vignette/VignetteBackground.html",
-      "components/backgrounds/vignette/VignetteBackground.css",
-      "components/backgrounds/vignette/info.json"
+      "components/backgrounds/gradient/MeshGradientBackground.tsx",
+      "components/backgrounds/gradient/MeshGradientBackground.html",
+      "components/backgrounds/gradient/MeshGradientBackground.css",
+      "components/backgrounds/gradient/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/vignette",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "canvas"
+  },
+  {
+    "id": "backgrounds/nebula",
+    "name": "Volumetric Cosmic Nebula",
+    "slug": "nebula",
+    "componentName": "NebulaBackground",
+    "category": "backgrounds",
+    "description": "Drifting interstellar nebula dust cloud with chromatic magenta and cyan gas tendrils, stellar core radiance, and twinkling micro-stars.",
+    "tags": [
+      "background",
+      "nebula",
+      "clouds",
+      "cosmos",
+      "space",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/nebula/NebulaBackground.tsx",
+      "components/backgrounds/nebula/NebulaBackground.html",
+      "components/backgrounds/nebula/NebulaBackground.css",
+      "components/backgrounds/nebula/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/nebula",
+    "theme": "dark-neon",
+    "animation": "canvas"
+  },
+  {
+    "id": "backgrounds/fireflies",
+    "name": "Bioluminescent Fireflies",
+    "slug": "fireflies",
+    "componentName": "FirefliesBackground",
+    "category": "backgrounds",
+    "description": "Organic glowing bioluminescent motes drifting with soft Brownian motion, gentle light pulsation, and radiant emerald/cyan glow trails.",
+    "tags": [
+      "background",
+      "fireflies",
+      "particles",
+      "bioluminescence",
+      "vignette",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "deps": [],
+    "files": [
+      "components/backgrounds/fireflies/FirefliesBackground.tsx",
+      "components/backgrounds/fireflies/FirefliesBackground.html",
+      "components/backgrounds/fireflies/FirefliesBackground.css",
+      "components/backgrounds/fireflies/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fireflies",
+    "theme": "dark-neon",
+    "animation": "canvas"
   },
   {
     "id": "text-animations/split-text",

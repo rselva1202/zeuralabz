@@ -1,0 +1,26 @@
+{
+  "name": "Volumetric Cosmic Nebula",
+  "slug": "nebula",
+  "componentName": "NebulaBackground",
+  "category": "backgrounds",
+  "description": "Drifting interstellar nebula dust cloud with chromatic magenta and cyan gas tendrils, stellar core radiance, and twinkling micro-stars.",
+  "tags": [
+    "background",
+    "nebula",
+    "clouds",
+    "cosmos",
+    "space",
+    "canvas"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/nebula",
+  "author": "R. Selva",
+  "license": "MIT"
+}

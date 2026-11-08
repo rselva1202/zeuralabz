@@ -1,13 +1,20 @@
 import React from 'react';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const StarfieldBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export interface StarfieldBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const StarfieldBackground: React.FC<StarfieldBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-black text-white min-h-[320px] flex items-center justify-center">
-      {[...Array(30)].map((_, i) => (
-        <span key={i} className="absolute w-1 h-1 bg-white rounded-full animate-ping pointer-events-none"
-          style={{ top: `${(i * 13) % 95}%`, left: `${(i * 19) % 95}%`, animationDuration: `${2 + (i % 4)}s` }} />
-      ))}
-      <div className="relative z-10">{children || <span className="text-sm font-semibold tracking-wide">Deep Space Starfield</span>}</div>
-    </div>
+    <CanvasEngine
+      type="starfield"
+      speed={0.7}
+      glow={1.2}
+      particleCount={750}
+      colors={["#ffffff","#fef08a","#a5f3fc","#e0e7ff","#c7d2fe"]}
+      {...props}
+    />
   );
 };
+
+export const Starfield = StarfieldBackground;
+export default StarfieldBackground;

@@ -1,24 +1,24 @@
 {
-  "name": "Aurora Background",
+  "name": "Aurora Flowing Waves Canvas",
   "slug": "aurora",
   "componentName": "AuroraBackground",
   "category": "backgrounds",
-  "description": "Living northern lights curtain simulation drifting with deep indigo, cyan, and magenta ambient waves.",
+  "description": "Volumetric luminous aurora ribbons with dynamic flowing sinusoidal light waves and shimmering curtain folds.",
   "tags": [
     "background",
     "aurora",
-    "ambient",
-    "gradient",
-    "framer-motion"
+    "waves",
+    "glow",
+    "canvas"
   ],
   "bestFor": [
     "landing",
-    "saas",
-    "hero"
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
   ],
-  "deps": [
-    "framer-motion"
-  ],
+  "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/aurora",
   "author": "R. Selva",
   "license": "MIT"

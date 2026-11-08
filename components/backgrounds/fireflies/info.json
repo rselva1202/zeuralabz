@@ -1,0 +1,26 @@
+{
+  "name": "Bioluminescent Fireflies",
+  "slug": "fireflies",
+  "componentName": "FirefliesBackground",
+  "category": "backgrounds",
+  "description": "Organic glowing bioluminescent motes drifting with soft Brownian motion, gentle light pulsation, and radiant emerald/cyan glow trails.",
+  "tags": [
+    "background",
+    "fireflies",
+    "particles",
+    "bioluminescence",
+    "vignette",
+    "canvas"
+  ],
+  "bestFor": [
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
+  ],
+  "deps": [],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fireflies",
+  "author": "R. Selva",
+  "license": "MIT"
+}

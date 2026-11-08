@@ -3,17 +3,20 @@
   "slug": "beam",
   "componentName": "BorderBeamBackground",
   "category": "backgrounds",
-  "description": "Conic spotlight rotating behind glass panels casting dynamic highlights.",
+  "description": "Rotating perimeter border beam with continuous conic spotlight sweep, radiant corner blooms, and luminous chromatic edge glow.",
   "tags": [
     "background",
     "beam",
-    "spotlight",
-    "conic"
+    "border-beam",
+    "glow",
+    "spotlight"
   ],
   "bestFor": [
-    "saas",
+    "landing",
+    "portfolio",
+    "web3",
     "hero",
-    "landing"
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/beam",

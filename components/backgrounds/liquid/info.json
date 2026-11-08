@@ -3,21 +3,23 @@
   "slug": "liquid",
   "componentName": "LiquidLavaBackground",
   "category": "backgrounds",
-  "description": "Organic flowing metaball fluid shapes drifting weightlessly.",
+  "description": "Fluid organic lava metaballs drifting with smooth orbital harmonic blending, radiant core diffusion, and vibrant chromatic gradients.",
   "tags": [
     "background",
     "liquid",
-    "metaball",
-    "fluid"
+    "lava",
+    "metaballs",
+    "fluid",
+    "canvas"
   ],
   "bestFor": [
     "landing",
     "portfolio",
-    "creative"
+    "web3",
+    "hero",
+    "saas"
   ],
-  "deps": [
-    "framer-motion"
-  ],
+  "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/liquid",
   "author": "R. Selva",
   "license": "MIT"

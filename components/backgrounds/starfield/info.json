@@ -3,17 +3,21 @@
   "slug": "starfield",
   "componentName": "StarfieldBackground",
   "category": "backgrounds",
-  "description": "Dense field of twinkling celestial stars across deep midnight void.",
+  "description": "Infinite deep space starfield with 700+ twinkling stars, multi-tier parallax Z-depth projection, and subtle cosmic drift on deep navy #0a0e27.",
   "tags": [
     "background",
     "starfield",
+    "stars",
     "cosmos",
-    "particles"
+    "canvas",
+    "space"
   ],
   "bestFor": [
     "landing",
+    "portfolio",
+    "web3",
     "hero",
-    "web3"
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/starfield",

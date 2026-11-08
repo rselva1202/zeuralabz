@@ -3,17 +3,21 @@
   "slug": "grid",
   "componentName": "RetroGridBackground",
   "category": "backgrounds",
-  "description": "Synthwave 3D horizon grid with linear perspective vanishing into dark space.",
+  "description": "Synthwave 3D perspective receding grid plane with radiant horizon neon glow, animated depth displacement, and electric cyan/indigo lines.",
   "tags": [
     "background",
     "grid",
     "retro",
-    "synthwave"
+    "3d",
+    "synthwave",
+    "perspective"
   ],
   "bestFor": [
     "landing",
+    "portfolio",
+    "web3",
     "hero",
-    "gaming"
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/grid",

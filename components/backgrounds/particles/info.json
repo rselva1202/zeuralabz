@@ -3,17 +3,20 @@
   "slug": "particles",
   "componentName": "ParticlesBackground",
   "category": "backgrounds",
-  "description": "Interconnected floating particle filaments drifting organically in space.",
+  "description": "Interactive connected particle constellation with dynamic proximity links, pulsing nodes, and glowing momentum physics.",
   "tags": [
     "background",
     "particles",
     "network",
-    "constellation"
+    "constellation",
+    "canvas"
   ],
   "bestFor": [
-    "saas",
+    "landing",
     "portfolio",
-    "landing"
+    "web3",
+    "hero",
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/particles",

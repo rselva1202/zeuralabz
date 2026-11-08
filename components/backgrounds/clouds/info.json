@@ -1,22 +1,26 @@
 {
-  "name": "Ambient Drifting Mist",
-  "slug": "clouds",
-  "componentName": "DriftingMistBackground",
+  "name": "Volumetric Cosmic Nebula",
+  "slug": "nebula",
+  "componentName": "NebulaBackground",
   "category": "backgrounds",
-  "description": "Gentle atmospheric cloud smoke drifting softly across dark surfaces.",
+  "description": "Drifting interstellar nebula dust cloud with chromatic magenta and cyan gas tendrils, stellar core radiance, and twinkling micro-stars.",
   "tags": [
     "background",
+    "nebula",
     "clouds",
-    "mist",
-    "ambient"
+    "cosmos",
+    "space",
+    "canvas"
   ],
   "bestFor": [
+    "landing",
     "portfolio",
-    "wellness",
-    "creative"
+    "web3",
+    "hero",
+    "saas"
   ],
   "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/clouds",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/nebula",
   "author": "R. Selva",
   "license": "MIT"
 }

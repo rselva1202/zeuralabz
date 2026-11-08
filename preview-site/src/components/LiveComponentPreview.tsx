@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GalaxyBackground } from './GalaxyBackground';
+import { CanvasEngine, BackgroundType } from './engine/CanvasEngine';
 
 interface LiveComponentPreviewProps {
   slug: string;
@@ -43,77 +43,35 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
     }
   }, [slug]);
 
-  // ==================== BACKGROUNDS ====================
+  // ==================== BACKGROUNDS (Canvas Engine) ====================
   if (category === 'backgrounds') {
-    if (slug === 'aurora') {
-      return (
-        <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center">
-          <div className="absolute -inset-10 opacity-60 blur-3xl animate-pulse">
-            <div className="w-full h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-indigo-600 rounded-full transform rotate-12 scale-125" />
-          </div>
-          <span className="relative z-10 text-xs font-mono text-cyan-300 font-semibold px-3 py-1 rounded-full bg-black/40 border border-cyan-500/30 backdrop-blur-md">
-            Aurora Wave Canvas
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'galaxy') {
-      return (
-        <div className="relative w-full h-full overflow-hidden">
-          <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
-        </div>
-      );
-    }
-    if (slug === 'particles') {
-      return (
-        <div className="relative w-full h-full overflow-hidden bg-zinc-950 flex items-center justify-center">
-          {[
-            { top: '20%', left: '30%', delay: '0s' },
-            { top: '60%', left: '20%', delay: '1s' },
-            { top: '30%', left: '70%', delay: '2s' },
-            { top: '75%', left: '80%', delay: '0.5s' },
-            { top: '50%', left: '50%', delay: '1.5s' },
-          ].map((pt, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 rounded-full bg-indigo-400 shadow-[0_0_10px_#818cf8] animate-bounce"
-              style={{ top: pt.top, left: pt.left, animationDuration: '3s', animationDelay: pt.delay }}
-            />
-          ))}
-          <span className="text-[11px] font-mono text-zinc-400 bg-zinc-900/80 px-2.5 py-1 rounded-md border border-zinc-800">
-            Floating Network
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'grid') {
-      return (
-        <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center [perspective:400px]">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:24px_24px] [transform:rotateX(60deg)] origin-bottom opacity-50" />
-          <span className="relative z-10 text-xs font-mono text-cyan-400 font-bold bg-black/80 px-3 py-1 rounded-lg border border-cyan-500/40">
-            3D Perspective Grid
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'beam') {
-      return (
-        <div className="relative w-full h-full bg-black flex items-center justify-center p-6">
-          <div className="relative w-44 h-24 rounded-2xl p-[2px] overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,#6366f1,#06b6d4,#ec4899,#6366f1)] animate-spin" style={{ animationDuration: '4s' }} />
-            <div className="relative w-full h-full bg-zinc-950 rounded-[14px] flex items-center justify-center text-xs font-mono text-white">
-              Border Beam
-            </div>
-          </div>
-        </div>
-      );
-    }
+    const validMap: Record<string, BackgroundType> = {
+      aurora: 'aurora',
+      galaxy: 'galaxy',
+      particles: 'particles',
+      dots: 'dots',
+      starfield: 'starfield',
+      liquid: 'liquid',
+      grid: 'grid',
+      mesh: 'mesh',
+      circuit: 'mesh',
+      noise: 'noise',
+      beam: 'beam',
+      hexagon: 'hexagon',
+      'hex-mesh': 'hexagon',
+      waves: 'waves',
+      lines: 'waves',
+      gradient: 'gradient',
+      nebula: 'nebula',
+      clouds: 'nebula',
+      fireflies: 'fireflies',
+      vignette: 'fireflies',
+    };
+    const bgType = validMap[slug] || 'galaxy';
+
     return (
-      <div className="relative w-full h-full overflow-hidden bg-zinc-950 flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/30 via-purple-900/20 to-cyan-900/30" />
-        <div className="relative z-10 text-xs font-mono text-zinc-300 font-medium px-3 py-1 rounded-full bg-zinc-900/80 border border-zinc-800">
-          {name}
-        </div>
+      <div className="relative w-full h-full overflow-hidden">
+        <CanvasEngine type={bgType} speed={0.8} glow={1.25} />
       </div>
     );
   }

@@ -1,22 +1,26 @@
 {
   "name": "Sinusoidal Neon Waves",
-  "slug": "lines",
-  "componentName": "NeonWavesBackground",
+  "slug": "waves",
+  "componentName": "WavesBackground",
   "category": "backgrounds",
-  "description": "Dynamic flowing bezier wave ribbons oscillating smoothly in background.",
+  "description": "Multi-layered neon sine waves with undulating harmonic phase shifts, vibrant luminous strokes, and translucent intersecting ribbons.",
   "tags": [
     "background",
     "waves",
     "neon",
-    "bezier"
+    "sinusoidal",
+    "lines",
+    "canvas"
   ],
   "bestFor": [
     "landing",
+    "portfolio",
+    "web3",
     "hero",
-    "music"
+    "saas"
   ],
   "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/lines",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/waves",
   "author": "R. Selva",
   "license": "MIT"
 }

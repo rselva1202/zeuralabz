@@ -1,18 +1,21 @@
 {
-  "name": "Film Grain Noise Texture",
+  "name": "Chromatic Ambient Noise",
   "slug": "noise",
   "componentName": "NoiseBackground",
   "category": "backgrounds",
-  "description": "Analog grainy noise texture overlay giving tactility and depth to flat dark modes.",
+  "description": "Film grain perceptual micro-noise texture animated over deep iridescent cosmic violet and indigo gradients.",
   "tags": [
     "background",
     "noise",
-    "grain",
-    "texture"
+    "texture",
+    "film-grain",
+    "canvas"
   ],
   "bestFor": [
-    "editorial",
+    "landing",
     "portfolio",
+    "web3",
+    "hero",
     "saas"
   ],
   "deps": [],

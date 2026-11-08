@@ -88,7 +88,7 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
   }
 
   // Print import instruction
-  const tsxFile = files.find(f => f.endsWith('.tsx'));
+  const tsxFile = files.find(f => f.endsWith('.tsx') && (f === `${comp.componentName}.tsx` || f.toLowerCase().includes(comp.slug.toLowerCase()))) || files.find(f => f.endsWith('.tsx'));
   if (tsxFile) {
     const componentName = path.basename(tsxFile, '.tsx');
     const relImport = `./${path.relative(path.join(targetDir, 'src'), destDir).replace(/\\/g, '/')}/${componentName}`;

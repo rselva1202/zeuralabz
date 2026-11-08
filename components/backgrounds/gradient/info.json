@@ -3,17 +3,20 @@
   "slug": "gradient",
   "componentName": "MeshGradientBackground",
   "category": "backgrounds",
-  "description": "Chromatic organic gradient blobs softly blending and pulsing across screen.",
+  "description": "Ultra-smooth multi-focal fluid gradient mesh drifting across orbital paths with vivid color bleeding on deep navy #0a0e27.",
   "tags": [
     "background",
     "gradient",
-    "mesh",
-    "blobs"
+    "mesh-gradient",
+    "colors",
+    "canvas"
   ],
   "bestFor": [
     "landing",
-    "saas",
-    "hero"
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",

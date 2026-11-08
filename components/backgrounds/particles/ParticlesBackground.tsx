@@ -1,13 +1,20 @@
 import React from 'react';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const ParticlesBackground: React.FC<{ count?: number; children?: React.ReactNode }> = ({ count = 25, children }) => {
+export interface ParticlesBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const ParticlesBackground: React.FC<ParticlesBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-black text-white min-h-[300px] flex items-center justify-center">
-      {[...Array(count)].map((_, i) => (
-        <span key={i} className="absolute w-1 h-1 rounded-full bg-cyan-400/60 animate-ping pointer-events-none"
-          style={{ top: `${(i * 17) % 90}%`, left: `${(i * 23) % 90}%`, animationDuration: `${3 + (i % 5)}s` }} />
-      ))}
-      <div className="relative z-10">{children || <span className="font-mono text-sm text-zinc-400">Particle Network</span>}</div>
-    </div>
+    <CanvasEngine
+      type="particles"
+      speed={0.8}
+      glow={1.2}
+      particleCount={140}
+      colors={["#38bdf8","#818cf8","#c084fc","#ffffff"]}
+      {...props}
+    />
   );
 };
+
+export const Particles = ParticlesBackground;
+export default ParticlesBackground;

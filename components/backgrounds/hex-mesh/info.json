@@ -1,22 +1,26 @@
 {
-  "name": "Cyber Hexagon Tessellation",
-  "slug": "hex-mesh",
-  "componentName": "HexMeshBackground",
+  "name": "Cyber Hexagon Honeycomb",
+  "slug": "hexagon",
+  "componentName": "HexagonBackground",
   "category": "backgrounds",
-  "description": "Interlocking hive honeycomb geometry pattern with subtle edge glow highlights.",
+  "description": "Futuristic geometric hexagonal tessellation grid with rhythmic wave pulses, glowing outlines, and energy dispersion nodes.",
   "tags": [
     "background",
     "hexagon",
-    "pattern",
-    "geometry"
+    "honeycomb",
+    "cyber",
+    "grid",
+    "canvas"
   ],
   "bestFor": [
-    "gaming",
-    "crypto",
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
     "saas"
   ],
   "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hex-mesh",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/hexagon",
   "author": "R. Selva",
   "license": "MIT"
 }

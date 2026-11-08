@@ -3,17 +3,20 @@
   "slug": "dots",
   "componentName": "DotGridBackground",
   "category": "backgrounds",
-  "description": "Clean architectural 16px micro-dot grid pattern on deep slate background.",
+  "description": "Pulsing 2D dot matrix grid with undulating radial energy ripples, luminous amplitude waves, and deep navy backdrop.",
   "tags": [
     "background",
     "dots",
+    "matrix",
     "grid",
-    "minimal"
+    "canvas"
   ],
   "bestFor": [
-    "saas",
-    "dashboard",
-    "developer"
+    "landing",
+    "portfolio",
+    "web3",
+    "hero",
+    "saas"
   ],
   "deps": [],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/dots",

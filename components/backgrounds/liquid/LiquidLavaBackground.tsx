@@ -1,15 +1,20 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const LiquidLavaBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export interface LiquidLavaBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const LiquidLavaBackground: React.FC<LiquidLavaBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-zinc-950 text-white min-h-[300px] flex items-center justify-center">
-      <motion.div
-        animate={{ y: [0, -30, 0], scale: [1, 1.15, 1] }}
-        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute w-64 h-64 rounded-full bg-emerald-500/20 blur-3xl pointer-events-none"
-      />
-      <div className="relative z-10">{children || <span className="font-bold text-lg">Liquid Lava Shapes</span>}</div>
-    </div>
+    <CanvasEngine
+      type="liquid"
+      speed={0.8}
+      glow={1.3}
+      particleCount={800}
+      colors={["#ec4899","#f43f5e","#8b5cf6","#6366f1","#fb923c"]}
+      {...props}
+    />
   );
 };
+
+export const Liquid = LiquidLavaBackground;
+export default LiquidLavaBackground;

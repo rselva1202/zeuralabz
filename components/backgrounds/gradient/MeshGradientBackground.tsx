@@ -1,11 +1,20 @@
 import React from 'react';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const MeshGradientBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export interface MeshGradientBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const MeshGradientBackground: React.FC<MeshGradientBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-black text-white min-h-[300px] flex items-center justify-center">
-      <div className="absolute w-96 h-96 rounded-full bg-violet-600/30 blur-[100px] top-10 left-10 animate-pulse" />
-      <div className="absolute w-80 h-80 rounded-full bg-cyan-500/25 blur-[90px] bottom-10 right-10 animate-pulse" style={{ animationDelay: '2s' }} />
-      <div className="relative z-10">{children || <span className="font-bold text-xl">Fluid Mesh Gradient</span>}</div>
-    </div>
+    <CanvasEngine
+      type="gradient"
+      speed={0.7}
+      glow={1.3}
+      particleCount={800}
+      colors={["#312e81","#4c1d95","#0c4a6e","#701a75","#1e1b4b"]}
+      {...props}
+    />
   );
 };
+
+export const Gradient = MeshGradientBackground;
+export default MeshGradientBackground;

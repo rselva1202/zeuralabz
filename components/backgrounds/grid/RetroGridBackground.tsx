@@ -1,10 +1,20 @@
 import React from 'react';
+import { CanvasEngine, type CanvasEngineProps } from './CanvasEngine';
 
-export const RetroGridBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+export interface RetroGridBackgroundProps extends Partial<CanvasEngineProps> {}
+
+export const RetroGridBackground: React.FC<RetroGridBackgroundProps> = (props) => {
   return (
-    <div className="relative overflow-hidden bg-zinc-950 text-white min-h-[340px] flex items-center justify-center">
-      <div className="absolute inset-0 [background:linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] [background-size:32px_32px] [transform:perspective(500px)_rotateX(60deg)] origin-bottom opacity-70" />
-      <div className="relative z-10">{children || <span className="font-bold text-xl uppercase tracking-widest text-emerald-400">Horizon Perspective</span>}</div>
-    </div>
+    <CanvasEngine
+      type="grid"
+      speed={0.9}
+      glow={1.3}
+      particleCount={800}
+      colors={["#06b6d4","#6366f1","#a855f7"]}
+      {...props}
+    />
   );
 };
+
+export const Grid = RetroGridBackground;
+export default RetroGridBackground;
