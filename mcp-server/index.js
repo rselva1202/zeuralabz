@@ -50,7 +50,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: 'suggest_ui_for_project',
         description:
-          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best component per section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) prioritizing rich React Bits components and ZEURALABZ originals.',
+          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best component per section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) prioritizing rich linked libraries (React Bits, Magic UI, Aceternity UI) and ZEURALABZ originals.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -63,7 +63,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'search_components',
-        description: 'Search ZEURALABZ component library across React Bits and ZEURALABZ Originals by keyword, tag, source, or category.',
+        description: 'Search ZEURALABZ component library across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals by keyword, tag, source, or category.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -77,24 +77,24 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits", "magic-ui", or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
             },
           },
         },
       },
       {
         name: 'install_component',
-        description: 'Installs or generates installation code for a component from React Bits, Magic UI, or ZEURALABZ Original.',
+        description: 'Installs or generates installation code for a component from React Bits, Magic UI, Aceternity UI, or ZEURALABZ Original.',
         inputSchema: {
           type: 'object',
           properties: {
             slug: {
               type: 'string',
-              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, glass)',
+              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, 3d-card-effect)',
             },
             source: {
               type: 'string',
-              description: 'Source filter: "react-bits", "magic-ui", or "zeuralabz-original"',
+              description: 'Source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
             },
             targetDir: {
               type: 'string',
@@ -213,8 +213,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       };
     }
 
-    // Default to React Bits if multiple matches and no source specified
-    const comp = matches.find((m) => m.source === 'react-bits') || matches[0];
+    // Default priority: React Bits -> Magic UI -> Aceternity -> ZEURALABZ Original
+    const comp =
+      matches.find((m) => m.source === 'react-bits') ||
+      matches.find((m) => m.source === 'magic-ui') ||
+      matches.find((m) => m.source === 'aceternity') ||
+      matches[0];
 
     if (comp.source === 'react-bits') {
       const installCmd = comp.installCommand || `npx shadcn@latest add @react-bits/${comp.componentName}-TS-TW`;
@@ -233,6 +237,58 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 originalUrl: comp.originalUrl,
                 usage: usageSnippet,
                 instructions: `Run "${installCmd}" inside your project to install directly from the official React Bits shadcn registry.`,
+              },
+              null,
+              2
+            ),
+          },
+        ],
+      };
+    }
+
+    if (comp.source === 'magic-ui') {
+      const installCmd = comp.installCommand || `npx shadcn@latest add https://magicui.design/r/${comp.slug}.json`;
+      const usageSnippet = `import { ${comp.componentName || comp.name.replace(/[^a-zA-Z0-9]/g, '')} } from '@/components/magicui/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName || comp.name.replace(/[^a-zA-Z0-9]/g, '')} />;\n}`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                component: comp.name,
+                source: 'magic-ui',
+                sourceLabel: 'Magic UI • MIT',
+                installCommand: installCmd,
+                originalUrl: comp.originalUrl,
+                usage: usageSnippet,
+                instructions: `Run "${installCmd}" inside your project to install directly from the official Magic UI shadcn registry.`,
+              },
+              null,
+              2
+            ),
+          },
+        ],
+      };
+    }
+
+    if (comp.source === 'aceternity') {
+      const installCmd = comp.installCommand || `npx shadcn@latest add @aceternity/${comp.slug}`;
+      const usageSnippet = `import { ${comp.componentName || 'Component'} } from '@/components/ui/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName || 'Component'} />;\n}`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                component: comp.name,
+                source: 'aceternity',
+                sourceLabel: 'Aceternity UI • MIT',
+                installCommand: installCmd,
+                originalUrl: comp.originalUrl,
+                usage: usageSnippet,
+                instructions: `Run "${installCmd}" inside your project or visit ${comp.originalUrl} to install from the official Aceternity registry.`,
               },
               null,
               2

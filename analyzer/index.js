@@ -162,9 +162,9 @@ export function analyzeProject(targetDir = process.cwd()) {
     // Filter components by category and matching bestFor
     const candidates = registry.filter(c => c.category === category);
 
-    // Prioritize React Bits first, Magic UI second, ZEURALABZ Original third
+    // Prioritize React Bits first, Magic UI second, Aceternity third, ZEURALABZ Original fourth
     candidates.sort((a, b) => {
-      const getPriority = (src) => (src === 'react-bits' ? 1 : src === 'magic-ui' ? 2 : 3);
+      const getPriority = (src) => (src === 'react-bits' ? 1 : src === 'magic-ui' ? 2 : src === 'aceternity' ? 3 : 4);
       return getPriority(a.source) - getPriority(b.source);
     });
 
@@ -182,7 +182,7 @@ export function analyzeProject(targetDir = process.cwd()) {
         slug: matched.slug,
         name: matched.name,
         source: matched.source || 'zeuralabz-original',
-        sourceLabel: matched.sourceLabel || (matched.source === 'react-bits' ? 'React Bits • MIT + Commons Clause' : 'ZEURALABZ Original'),
+        sourceLabel: matched.sourceLabel || (matched.source === 'react-bits' ? 'React Bits • MIT + Commons Clause' : matched.source === 'magic-ui' ? 'Magic UI • MIT' : matched.source === 'aceternity' ? 'Aceternity UI • MIT' : 'ZEURALABZ Original • MIT'),
         installCommand: matched.installCommand || matched.zeuralabzCommand || `npx zeuralabz add ${matched.slug}`,
         zeuralabzCommand: matched.zeuralabzCommand || `npx zeuralabz add ${matched.slug} --source ${matched.source || 'react-bits'}`,
         originalUrl: matched.originalUrl || matched.previewUrl,

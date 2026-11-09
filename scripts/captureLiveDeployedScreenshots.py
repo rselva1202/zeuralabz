@@ -35,6 +35,15 @@ async def main():
         await page.screenshot(path=catalog_shot)
         print(f"Captured: {catalog_shot}")
 
+        # Screenshot 4: Aceternity Filter View on LIVE GITHUB PAGES
+        aceternity_btn = page.locator("button:has-text('Aceternity UI • MIT')").first
+        if await aceternity_btn.count() > 0:
+            await aceternity_btn.click()
+            await page.wait_for_timeout(1200)
+            live_aceternity_shot = f"{artifact_dir}/dark-live-aceternity-catalog.png"
+            await page.screenshot(path=live_aceternity_shot)
+            print(f"Captured: {live_aceternity_shot}")
+
         # 2. Mobile Viewport (iPhone 14 / 390x844) on LIVE GITHUB PAGES
         mobile_page = await browser.new_page(viewport={"width": 390, "height": 844})
         await mobile_page.goto("https://rselva1202.github.io/zeuralabz/", wait_until="networkidle")
@@ -48,3 +57,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+

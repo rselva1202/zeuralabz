@@ -15,32 +15,36 @@ npx zeuralabz init
 # 2. Get AI-driven recommendations tailored to your project
 npx zeuralabz suggest
 
-# 3. Add an individual component (defaults by priority: React Bits -> Magic UI -> ZEURALABZ Original)
+# 3. Add an individual component (defaults by priority: React Bits -> Magic UI -> Aceternity UI -> ZEURALABZ Original)
 npx zeuralabz add aurora
 
-# 4. Explicitly choose source: React Bits, Magic UI, or ZEURALABZ Original
+# 4. Explicitly choose source: React Bits, Magic UI, Aceternity UI, or ZEURALABZ Original
 npx zeuralabz add aurora --source react-bits
 npx zeuralabz add magic-card --source magic-ui
+npx zeuralabz add 3d-card-effect --source aceternity
 npx zeuralabz add aurora --source zeuralabz-original
 
 # 5. Search components across all sources or filtered by source
 npx zeuralabz search aurora
 npx zeuralabz search aurora --source react-bits
 npx zeuralabz search magic-card --source magic-ui
+npx zeuralabz search 3d-card-effect --source aceternity
 
-# 6. Open live browser preview (opens reactbits.dev / magicui.design)
+# 6. Open live browser preview (opens reactbits.dev / magicui.design / ui.aceternity.com)
 npx zeuralabz preview aurora --source react-bits
 npx zeuralabz preview magic-card --source magic-ui
+npx zeuralabz preview 3d-card-effect --source aceternity
 ```
 
 ---
 
-## 2. Multi-Source Architecture (React Bits & Magic UI Linked Sources)
+## 2. Multi-Source Architecture (React Bits, Magic UI & Aceternity UI Linked Sources)
 
-ZEURALABZ indexes 417 components across three verified sources:
+ZEURALABZ indexes 531 components across four verified sources:
 
 - **React Bits (218 components)**: Installed directly from David Haz's official `@react-bits` shadcn registry (`npx shadcn@latest add @react-bits/<Component>-TS-TW`). Free to use under MIT + Commons Clause.
 - **Magic UI (79 components)**: Installed directly from Dillion Verma's official Magic UI registry (`npx shadcn@latest add https://magicui.design/r/<slug>.json`). Free to use under MIT License.
+- **Aceternity UI (114 components)**: Installed directly from Manu Arora's official Aceternity registry (`npx shadcn@latest add @aceternity/<slug>`). Free to use under MIT / Aceternity License Terms.
 - **ZEURALABZ Originals (120 components)**: Native MIT components bundled directly within ZEURALABZ for custom tailored aesthetics.
 
 Zero third-party code is copied into `components/` in this repository. All external components link directly to official upstream registries.

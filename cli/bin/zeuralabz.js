@@ -50,6 +50,8 @@ function findComponents(slug, sourceFilter = null) {
       matches = matches.filter((c) => c.source === 'react-bits');
     } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
       matches = matches.filter((c) => c.source === 'magic-ui');
+    } else if (sf === 'aceternity' || sf === 'ac' || sf === 'aceternity-ui') {
+      matches = matches.filter((c) => c.source === 'aceternity');
     } else if (sf === 'zeuralabz-original' || sf === 'original' || sf === 'zeura') {
       matches = matches.filter((c) => c.source === 'zeuralabz-original');
     }
@@ -86,6 +88,8 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
                 ? 'React Bits • MIT + Commons'
                 : m.source === 'magic-ui'
                 ? 'Magic UI • MIT'
+                : m.source === 'aceternity'
+                ? 'Aceternity UI • MIT'
                 : 'ZEURALABZ Original • MIT'
             }]`,
             value: m,
@@ -94,15 +98,19 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
       ]);
       comp = answers.selected;
     } else {
-      // Priority default: 1. React Bits, 2. Magic UI, 3. ZEURALABZ Original
+      // Priority default: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. ZEURALABZ Original
       const rb = matches.find((m) => m.source === 'react-bits');
       const mg = matches.find((m) => m.source === 'magic-ui');
+      const ac = matches.find((m) => m.source === 'aceternity');
       if (rb) {
         comp = rb;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui, --source aceternity, or --source zeuralabz-original).`));
       } else if (mg) {
         comp = mg;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source aceternity or --source zeuralabz-original).`));
+      } else if (ac) {
+        comp = ac;
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Aceternity UI (use --source zeuralabz-original).`));
       }
     }
   }
@@ -232,7 +240,69 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
     return false;
   }
 
-  // 2. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
+  // 3. ACETERNITY UI INSTALLATION (via official shadcn registry or direct official fetch)
+  if (comp.source === 'aceternity') {
+    const shadcnConfigExists =
+      fs.existsSync(path.join(targetDir, 'components.json')) &&
+      fs.readFileSync(path.join(targetDir, 'components.json'), 'utf8').includes('ui.shadcn.com');
+
+    const cmd = comp.installCommand || `npx shadcn@latest add @aceternity/${comp.slug}`;
+
+    if (shadcnConfigExists) {
+      console.log(chalk.cyan(`\n📦 Installing official Aceternity UI component via shadcn:`));
+      console.log(chalk.bold.white(`   ${cmd}\n`));
+      try {
+        execSync(cmd, { stdio: 'inherit', cwd: targetDir });
+        console.log(chalk.bold.green(`\n✔ Installed ${chalk.bold(comp.name)} from Aceternity UI`));
+        console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.white(`import { ${comp.componentName || 'Component'} } from '@/components/ui/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName || 'Component'} />;\n}`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.blue(`🔗 Official Documentation & Live Demos: ${comp.originalUrl}\n`));
+        return true;
+      } catch (err) {
+        console.log(chalk.yellow(`\n⚠️  shadcn install command encountered an issue.`));
+      }
+    }
+
+    // Direct registry download fallback if endpoint exists
+    const registryUrl = comp.registryUrl || `https://ui.aceternity.com/r/${comp.slug}.json`;
+    try {
+      const fetchRes = await fetch(registryUrl);
+      if (fetchRes.ok) {
+        const itemData = await fetchRes.json();
+        const acDir = path.join(targetDir, 'src', 'components', 'ui', comp.slug);
+        fs.mkdirSync(acDir, { recursive: true });
+
+        if (itemData.files && itemData.files.length > 0) {
+          for (const file of itemData.files) {
+            const filename = path.basename(file.path || file.name || `${comp.slug}.tsx`);
+            const header = `/**\n * Aceternity UI — ${comp.name}\n * Source: ${comp.originalUrl}\n * Author: Manu Arora (https://ui.aceternity.com)\n * License: MIT\n */\n\n`;
+            fs.writeFileSync(path.join(acDir, filename), header + (file.content || ''), 'utf8');
+          }
+          console.log(chalk.bold.green(`✔ Downloaded official ${chalk.bold(comp.name)} directly into src/components/ui/${comp.slug}/`));
+          console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+          console.log(chalk.gray(`--------------------------------------------------`));
+          console.log(chalk.white(`import { ${comp.componentName || 'Component'} } from './components/ui/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName || 'Component'} />;\n}`));
+          console.log(chalk.gray(`--------------------------------------------------`));
+          console.log(chalk.blue(`🔗 Official Documentation & Live Demos: ${comp.originalUrl}\n`));
+          return true;
+        }
+      }
+    } catch {}
+
+    // Fallback: Aceternity installation instructions
+    console.log(chalk.bold.cyan(`\n💎 Official Aceternity UI Component:`));
+    console.log(chalk.gray(`Aceternity UI components are distributed via the official Aceternity registry / shadcn:`));
+    console.log(chalk.bold.white(`\n   ${comp.installCommand || `npx shadcn@latest add @aceternity/${comp.slug}`}\n`));
+    console.log(chalk.yellow(`Or view documentation, dependencies, and code directly on the official site:`));
+    console.log(chalk.bold.blue(`   ${comp.originalUrl}\n`));
+    console.log(chalk.gray(`Author: Manu Arora (https://twitter.com/mannupaaji) • License: MIT`));
+    console.log(chalk.gray(`Note: ZEURALABZ links directly to official Aceternity UI source and does not redistribute proprietary code.\n`));
+    return true;
+  }
+
+  // 4. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
   let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
   const configPath = path.join(targetDir, 'zeuralabz.json');
   if (fs.existsSync(configPath)) {
@@ -348,6 +418,8 @@ program
           ? chalk.bgBlue.white.bold(' React Bits • MIT ')
           : rec.source === 'magic-ui'
           ? chalk.bgCyan.black.bold(' Magic UI • MIT ')
+          : rec.source === 'aceternity'
+          ? chalk.bgBlue.black.bold(' Aceternity UI • MIT ')
           : chalk.bgMagenta.white.bold(' ZEURALABZ Original ');
 
       console.log(`${chalk.bold.yellow(`[${idx + 1}]`)} ${chalk.bold.white(rec.section.toUpperCase())}: ${chalk.bold.cyan(rec.name)} ${sourceBadge}`);
@@ -402,8 +474,8 @@ program
 // 3. ADD
 program
   .command('add <slug>')
-  .description('Install a component into your project by its slug (e.g. aurora, magic-card, split-text)')
-  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", or "zeuralabz-original"')
+  .description('Install a component into your project by its slug (e.g. aurora, magic-card, split-text, 3d-card-effect)')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
   .action(async (slug, options) => {
     await installComponent(slug, process.cwd(), options);
   });
@@ -412,7 +484,7 @@ program
 program
   .command('search <query>')
   .description('Search ZEURALABZ components by keyword or tag')
-  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
   .action((query, options) => {
     let registry = getRegistry();
     if (options.source) {
@@ -421,6 +493,8 @@ program
         registry = registry.filter((c) => c.source === 'react-bits');
       } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
         registry = registry.filter((c) => c.source === 'magic-ui');
+      } else if (sf === 'aceternity' || sf === 'ac' || sf === 'aceternity-ui') {
+        registry = registry.filter((c) => c.source === 'aceternity');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         registry = registry.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -449,6 +523,8 @@ program
           ? chalk.blue('[React Bits • MIT + Commons]')
           : c.source === 'magic-ui'
           ? chalk.cyan('[Magic UI • MIT]')
+          : c.source === 'aceternity'
+          ? chalk.blueBright('[Aceternity UI • MIT]')
           : chalk.magenta('[ZEURALABZ Original • MIT]');
       console.log(`• ${chalk.bold.cyan(c.name)} (${chalk.yellow(c.slug)}) [${chalk.green(c.category)}] ${sourceBadge}`);
       console.log(`  ${chalk.gray(c.description)}`);
@@ -461,7 +537,7 @@ program
 program
   .command('preview <slug>')
   .description('Open the live web preview of a component in your browser')
-  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
   .action(async (slug, options) => {
     const matches = findComponents(slug, options.source);
     const comp = matches[0];
@@ -478,7 +554,7 @@ program
 program
   .command('list [category]')
   .description('List all available components (optionally filter by category)')
-  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
   .action((category, options) => {
     let items = getRegistry();
 
@@ -488,6 +564,8 @@ program
         items = items.filter((c) => c.source === 'react-bits');
       } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
         items = items.filter((c) => c.source === 'magic-ui');
+      } else if (sf === 'aceternity' || sf === 'ac' || sf === 'aceternity-ui') {
+        items = items.filter((c) => c.source === 'aceternity');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         items = items.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -506,6 +584,8 @@ program
           ? chalk.blue('[React Bits]')
           : c.source === 'magic-ui'
           ? chalk.cyan('[Magic UI]')
+          : c.source === 'aceternity'
+          ? chalk.blueBright('[Aceternity UI]')
           : chalk.magenta('[ZEURALABZ]');
       console.log(`• ${chalk.bold.cyan(c.slug.padEnd(24))} ${sourceBadge} ${chalk.gray('—')} ${chalk.white(c.name)} [${chalk.green(c.category)}]`);
     });

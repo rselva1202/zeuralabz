@@ -38,4 +38,17 @@ This repository features both **ZEURALABZ Originals** and **Linked External Sour
 
 ---
 
+## 4. Linked Source: Aceternity UI
+* **Author**: Manu Arora (https://github.com/manuarora700 / https://x.com/mannupaaji)
+* **Official Website**: https://ui.aceternity.com
+* **Repository**: https://github.com/aceternity-labs/aceternity-ui
+* **License**: MIT License / Aceternity License Terms
+* **Terms of Use**:
+  Aceternity UI components are free to use in your personal or commercial websites, web apps, and commercial client projects.
+  Source files and components may NOT be redistributed as a competing standalone component library, stock asset pack, or resold on template marketplaces.
+* **ZEURALABZ Integration**:
+  Aceternity UI components are installed / copied directly from their official site (`https://ui.aceternity.com/components/<slug>`) or via their official shadcn registry (`@aceternity/<slug>`), NOT hosted in this repo. ZEURALABZ provides discovery, heuristic suggestions, and direct install workflows with full attribution.
+
+---
+
 *Last updated: November 2026 • ZEURALABZ Ecosystem*

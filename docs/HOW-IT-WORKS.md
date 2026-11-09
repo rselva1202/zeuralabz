@@ -91,9 +91,9 @@ components/<category>/<slug>/
 
 ---
 
-## 4. Multi-Source Architecture — React Bits & Magic UI Linked Sources
+## 4. Multi-Source Architecture — React Bits, Magic UI & Aceternity UI Linked Sources
 
-ZEURALABZ combines three distinct component origins under one cohesive interface:
+ZEURALABZ combines four distinct component origins under one cohesive interface:
 
 1. **Official React Bits Integration (`source: "react-bits"`, 218 components)**:
    - React Bits (created by David Haz) contains 218 premier visual components.
@@ -115,8 +115,19 @@ ZEURALABZ combines three distinct component origins under one cohesive interface
      ```
    - Previews link directly to official demos on [magicui.design](https://magicui.design).
 
-3. **ZEURALABZ Originals (`source: "zeuralabz-original"`, 120 components)**:
+3. **Official Aceternity UI Integration (`source: "aceternity"`, 114 components)**:
+   - Aceternity UI (created by Manu Arora) contains 114 standout modern components and animated canvases.
+   - Licensed under MIT / Aceternity License Terms. Free to use in personal and commercial web projects.
+   - ZEURALABZ links directly to official components with zero local copy redistribution:
+     ```bash
+     npx zeuralabz add 3d-card-effect --source aceternity
+     # Runs: npx shadcn@latest add @aceternity/3d-card-effect
+     ```
+   - Previews link directly to official demos on [ui.aceternity.com](https://ui.aceternity.com).
+
+4. **ZEURALABZ Originals (`source: "zeuralabz-original"`, 120 components)**:
    - 120 custom base primitives authored under the MIT License and bundled locally within `components/`.
    - Installed via `npx zeuralabz add <slug> --source zeuralabz-original`.
+
 
 

@@ -12,7 +12,7 @@ interface ComponentItem {
   tags: string[];
   bestFor: string[];
   theme: string;
-  source?: 'zeuralabz-original' | 'react-bits' | 'magic-ui';
+  source?: 'zeuralabz-original' | 'react-bits' | 'magic-ui' | 'aceternity';
   componentName?: string;
   originalUrl?: string;
   previewUrl?: string;
@@ -64,7 +64,15 @@ const ComponentCard = React.memo<ComponentCardProps>(({
   const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#FFFFFF' };
 
   return (
-    <div className="group rounded-lg bg-[#1A1A1A] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#FFDC58] transition-all duration-150 flex flex-col overflow-hidden">
+    <div
+      className={`group rounded-lg bg-[#1A1A1A] border-[3px] border-white ${
+        comp.source === 'aceternity'
+          ? 'shadow-[6px_6px_0px_#7FBCFF] hover:shadow-[8px_8px_0px_#7FBCFF]'
+          : comp.source === 'magic-ui'
+          ? 'shadow-[6px_6px_0px_#67E8F9] hover:shadow-[8px_8px_0px_#67E8F9]'
+          : 'shadow-[6px_6px_0px_#FFDC58] hover:shadow-[8px_8px_0px_#FFDC58]'
+      } hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150 flex flex-col overflow-hidden`}
+    >
       {/* Top Preview Area (Framed Box with 3px white bottom border) */}
       <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-white">
         <div className="w-full h-full relative overflow-hidden border-[2px] border-white/60">
@@ -116,6 +124,30 @@ const ComponentCard = React.memo<ComponentCardProps>(({
                 </a>
               </div>
             </div>
+          ) : comp.source === 'aceternity' ? (
+            <div className="w-full h-full bg-[#0D1B2A] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] flex items-center justify-center text-lg text-black">
+                  💎
+                </span>
+                <div>
+                  <div className="font-heading text-xs font-black text-white uppercase tracking-wide">
+                    Official Aceternity Demo
+                  </div>
+                  <div className="text-[10px] text-zinc-300 font-mono font-bold">
+                    @aceternity/{comp.slug}
+                  </div>
+                </div>
+                <a
+                  href={comp.originalUrl || comp.previewUrl || `https://ui.aceternity.com/components/${comp.slug}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="neo-btn bg-[#7FBCFF] text-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] px-3 py-1.5 text-xs font-heading font-black mt-1"
+                >
+                  VIEW LIVE DEMO ➔
+                </a>
+              </div>
+            </div>
           ) : (
             <LiveComponentPreview
               slug={comp.slug}
@@ -134,6 +166,8 @@ const ComponentCard = React.memo<ComponentCardProps>(({
               ? 'bg-[#7FBCFF] text-black'
               : comp.source === 'magic-ui'
               ? 'bg-[#67E8F9] text-black'
+              : comp.source === 'aceternity'
+              ? 'bg-[#7FBCFF] text-black'
               : 'bg-[#FFDC58] text-black'
           }`}
         >
@@ -141,14 +175,16 @@ const ComponentCard = React.memo<ComponentCardProps>(({
             ? 'React Bits • MIT'
             : comp.source === 'magic-ui'
             ? 'Magic UI • MIT'
+            : comp.source === 'aceternity'
+            ? 'Aceternity UI • MIT'
             : 'ZEURALABZ Original'}
         </span>
 
         {/* Live Preview Indicator Badge (Top-Right) */}
         <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-white shadow-[2px_2px_0px_#FFDC58]">
-          {comp.source === 'react-bits' || comp.source === 'magic-ui' ? (
+          {comp.source === 'react-bits' || comp.source === 'magic-ui' || comp.source === 'aceternity' ? (
             <>
-              <span className="w-1.5 h-1.5 bg-[#67E8F9]" />
+              <span className={`w-1.5 h-1.5 ${comp.source === 'aceternity' ? 'bg-[#7FBCFF]' : 'bg-[#67E8F9]'}`} />
               OFFICIAL
             </>
           ) : (
@@ -203,6 +239,8 @@ const ComponentCard = React.memo<ComponentCardProps>(({
                   ? `npx zeuralabz add ${comp.slug} --source react-bits`
                   : comp.source === 'magic-ui'
                   ? `npx zeuralabz add ${comp.slug} --source magic-ui`
+                  : comp.source === 'aceternity'
+                  ? `npx zeuralabz add ${comp.slug} --source aceternity`
                   : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
               )
             }
@@ -221,6 +259,8 @@ const ComponentCard = React.memo<ComponentCardProps>(({
                   ? '--source react-bits'
                   : comp.source === 'magic-ui'
                   ? '--source magic-ui'
+                  : comp.source === 'aceternity'
+                  ? '--source aceternity'
                   : ''}
               </>
             )}
@@ -288,6 +328,7 @@ export default function App() {
         selectedSource === 'all' ||
         (selectedSource === 'react-bits' && c.source === 'react-bits') ||
         (selectedSource === 'magic-ui' && c.source === 'magic-ui') ||
+        (selectedSource === 'aceternity' && c.source === 'aceternity') ||
         (selectedSource === 'zeuralabz-original' && (c.source === 'zeuralabz-original' || !c.source));
       const matchesCategory = selectedCategory === 'all' || c.category === selectedCategory;
       const matchesSearch =
@@ -333,11 +374,15 @@ export default function App() {
     () => (componentsData as ComponentItem[]).filter((c) => c.source === 'magic-ui').length,
     []
   );
+  const totalAceternity = useMemo(
+    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'aceternity').length,
+    []
+  );
   const totalZeura = useMemo(
     () => (componentsData as ComponentItem[]).filter((c) => c.source === 'zeuralabz-original' || !c.source).length,
     []
   );
-  const totalAll = totalReactBits + totalMagicUI + totalZeura;
+  const totalAll = totalReactBits + totalMagicUI + totalAceternity + totalZeura;
 
   const copyCommand = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -493,19 +538,19 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#181818] text-white border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] text-xs font-bold uppercase tracking-wider">
               <span className="w-2.5 h-2.5 bg-[#A3E635] border border-black animate-pulse" />
-              NEW • ZEURALABZ 1.1 — {totalAll} COMPONENTS ({totalReactBits} REACT BITS + {totalMagicUI} MAGIC UI + {totalZeura} ORIGINALS)
+              NEW • ZEURALABZ 1.2 — {totalAll} COMPONENTS ({totalReactBits} REACT BITS + {totalMagicUI} MAGIC UI + {totalAceternity} ACETERNITY + {totalZeura} ORIGINALS)
             </div>
 
             {/* Sticker Badges */}
             <div className="hidden sm:flex items-center gap-3">
-              <span className="bg-[#FF90E8] text-black border-[3px] border-white shadow-[4px_4px_0px_#FFDC58] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-3deg]">
-                120+ ORIGINALS!
+              <span className="bg-[#7FBCFF] text-black border-[3px] border-white shadow-[4px_4px_0px_#FFDC58] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-3deg]">
+                114 ACETERNITY!
               </span>
               <span className="bg-[#FFDC58] text-black border-[3px] border-white shadow-[4px_4px_0px_#FF90E8] px-3 py-1 font-heading text-xs font-black uppercase rotate-[2deg]">
-                417 COMPONENTS!
+                {totalAll} COMPONENTS!
               </span>
-              <span className="bg-[#A3E635] text-black border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-2deg]">
-                100% FREE!
+              <span className="bg-[#FF90E8] text-black border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-2deg]">
+                120+ ORIGINALS!
               </span>
             </div>
           </div>
@@ -522,7 +567,7 @@ export default function Hero() {
                 .
               </h1>
               <p className="mt-5 text-lg text-[#E5E5E5] font-semibold max-w-xl leading-relaxed">
-                {totalAll} animated components and backgrounds for React across React Bits, Magic UI, and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
+                {totalAll} animated components and backgrounds for React across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
               </p>
 
               {/* CTAs */}
@@ -554,21 +599,30 @@ export default function Hero() {
                   <span className="text-[#A3E635]">● ACTIVE</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3.5 bg-[#111111] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
-                    <div className="font-heading text-3xl font-black text-white">{totalAll}</div>
-                    <div className="text-[11px] font-black uppercase text-zinc-300 mt-1">Total Components</div>
+                  <div className="col-span-2 p-3.5 bg-[#111111] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] flex items-center justify-between">
+                    <div>
+                      <div className="font-heading text-3xl font-black text-white">{totalAll}</div>
+                      <div className="text-[11px] font-black uppercase text-zinc-300 mt-0.5">Total Components Curated</div>
+                    </div>
+                    <span className="bg-[#A3E635] text-black text-[10px] font-heading font-black px-2 py-1 border border-white">
+                      4 SOURCES
+                    </span>
                   </div>
-                  <div className="p-3.5 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
-                    <div className="font-heading text-3xl font-black text-black">{totalReactBits}</div>
-                    <div className="text-[11px] font-black uppercase text-black mt-1">React Bits (Linked)</div>
+                  <div className="p-3 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
+                    <div className="font-heading text-2xl font-black text-black">{totalReactBits}</div>
+                    <div className="text-[10px] font-black uppercase text-black mt-0.5">React Bits (Linked)</div>
                   </div>
-                  <div className="p-3.5 bg-[#67E8F9] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
-                    <div className="font-heading text-3xl font-black text-black">{totalMagicUI}</div>
-                    <div className="text-[11px] font-black uppercase text-black mt-1">Magic UI (Linked)</div>
+                  <div className="p-3 bg-[#67E8F9] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
+                    <div className="font-heading text-2xl font-black text-black">{totalMagicUI}</div>
+                    <div className="text-[10px] font-black uppercase text-black mt-0.5">Magic UI (Linked)</div>
                   </div>
-                  <div className="p-3.5 bg-[#FF90E8] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
-                    <div className="font-heading text-3xl font-black text-black">{totalZeura}</div>
-                    <div className="text-[11px] font-black uppercase text-black mt-1">ZEURALABZ Original</div>
+                  <div className="p-3 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
+                    <div className="font-heading text-2xl font-black text-black">{totalAceternity}</div>
+                    <div className="text-[10px] font-black uppercase text-black mt-0.5">Aceternity UI (Linked)</div>
+                  </div>
+                  <div className="p-3 bg-[#FF90E8] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
+                    <div className="font-heading text-2xl font-black text-black">{totalZeura}</div>
+                    <div className="text-[10px] font-black uppercase text-black mt-0.5">ZEURALABZ Original</div>
                   </div>
                 </div>
               </div>
@@ -855,27 +909,24 @@ export default function Hero() {
             { id: 'all', label: `All Sources (${totalAll})` },
             { id: 'react-bits', label: `React Bits • MIT (${totalReactBits})` },
             { id: 'magic-ui', label: `Magic UI • MIT (${totalMagicUI})` },
+            { id: 'aceternity', label: `Aceternity UI • MIT (${totalAceternity})` },
             { id: 'zeuralabz-original', label: `ZEURALABZ Original (${totalZeura})` },
-            { id: 'aceternity', label: 'Coming Soon: Aceternity', disabled: true },
           ].map((src) => (
             <button
               key={src.id}
-              disabled={src.disabled}
               onClick={() => {
-                if (!src.disabled) {
-                  setSelectedSource(src.id);
-                  setCurrentPage(1);
-                  setIsAppendMode(false);
-                }
+                setSelectedSource(src.id);
+                setCurrentPage(1);
+                setIsAppendMode(false);
               }}
               className={`px-3.5 py-1.5 text-xs font-heading font-black uppercase transition border-[3px] border-white ${
-                src.disabled
-                  ? 'opacity-40 cursor-not-allowed bg-zinc-800 text-zinc-500'
-                  : selectedSource === src.id
+                selectedSource === src.id
                   ? src.id === 'react-bits'
                     ? 'bg-[#7FBCFF] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'magic-ui'
                     ? 'bg-[#67E8F9] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
+                    : src.id === 'aceternity'
+                    ? 'bg-[#7FBCFF] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'zeuralabz-original'
                     ? 'bg-[#FF90E8] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
                     : 'bg-[#FFDC58] text-black shadow-[4px_4px_0px_#FF90E8] -translate-x-0.5 -translate-y-0.5'
@@ -1245,6 +1296,8 @@ and install the best hero"`}
                         ? 'bg-[#7FBCFF] text-black'
                         : selectedComponent.source === 'magic-ui'
                         ? 'bg-[#67E8F9] text-black'
+                        : selectedComponent.source === 'aceternity'
+                        ? 'bg-[#7FBCFF] text-black'
                         : 'bg-white text-black'
                     }`}
                   >
@@ -1252,6 +1305,8 @@ and install the best hero"`}
                       ? 'React Bits • MIT + Commons'
                       : selectedComponent.source === 'magic-ui'
                       ? 'Magic UI • MIT'
+                      : selectedComponent.source === 'aceternity'
+                      ? 'Aceternity UI • MIT'
                       : 'ZEURALABZ Original'}
                   </span>
                 </div>
@@ -1260,6 +1315,8 @@ and install the best hero"`}
                     ? `Official React Bits Registry • ${selectedComponent.componentName}-TS-TW`
                     : selectedComponent.source === 'magic-ui'
                     ? `Official Magic UI Registry • https://magicui.design/r/${selectedComponent.slug}.json`
+                    : selectedComponent.source === 'aceternity'
+                    ? `Official Aceternity Registry • @aceternity/${selectedComponent.slug}`
                     : `components/${selectedComponent.category}/${selectedComponent.slug}`}
                 </p>
               </div>
@@ -1281,9 +1338,9 @@ and install the best hero"`}
                     : 'bg-[#1A1A1A] text-white hover:bg-zinc-800'
                 }`}
               >
-                React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' ? 'TS + Tailwind' : 'TypeScript'})
+                React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' || selectedComponent.source === 'aceternity' ? 'TS + Tailwind' : 'TypeScript'})
               </button>
-              {selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
+              {selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && selectedComponent.source !== 'aceternity' && (
                 <>
                   <button
                     onClick={() => setActiveTab('html')}
@@ -1319,6 +1376,8 @@ and install the best hero"`}
                     ? ' --source react-bits'
                     : selectedComponent.source === 'magic-ui'
                     ? ' --source magic-ui'
+                    : selectedComponent.source === 'aceternity'
+                    ? ' --source aceternity'
                     : ''}
                 </span>
                 <button
@@ -1329,6 +1388,8 @@ and install the best hero"`}
                           ? ' --source react-bits'
                           : selectedComponent.source === 'magic-ui'
                           ? ' --source magic-ui'
+                          : selectedComponent.source === 'aceternity'
+                          ? ' --source aceternity'
                           : ''
                       }`
                     )
@@ -1341,6 +1402,8 @@ and install the best hero"`}
                       ? ' --source react-bits'
                       : selectedComponent.source === 'magic-ui'
                       ? ' --source magic-ui'
+                      : selectedComponent.source === 'aceternity'
+                      ? ' --source aceternity'
                       : ''
                   }`
                     ? 'COPIED!'
@@ -1420,6 +1483,42 @@ and install the best hero"`}
                 </div>
               )}
 
+              {/* Official Aceternity UI direct command */}
+              {selectedComponent.source === 'aceternity' && (
+                <div className="p-4 bg-[#0D1B2A] border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF] space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-heading text-xs font-black uppercase text-white">
+                      Official Aceternity Registry Command:
+                    </span>
+                    <a
+                      href={selectedComponent.originalUrl || `https://ui.aceternity.com/components/${selectedComponent.slug}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-[#7FBCFF] hover:underline flex items-center gap-1 font-heading font-black"
+                    >
+                      VISIT UI.ACETERNITY.COM ↗
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-white/60 font-mono text-xs">
+                    <code>{selectedComponent.installCommand || `npx shadcn@latest add @aceternity/${selectedComponent.slug}`}</code>
+                    <button
+                      onClick={() =>
+                        copyCommand(
+                          selectedComponent.installCommand ||
+                            `npx shadcn@latest add @aceternity/${selectedComponent.slug}`
+                        )
+                      }
+                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-white"
+                    >
+                      COPY
+                    </button>
+                  </div>
+                  <p className="text-[11px] text-zinc-300 font-sans font-medium pt-1">
+                    Attribution: Created by Manu Arora (ui.aceternity.com). Free to use under MIT / Aceternity terms.
+                  </p>
+                </div>
+              )}
+
               {activeTab === 'react' && (
                 <div>
                   <span className="font-heading text-xs font-black uppercase text-white block mb-1">React Usage:</span>
@@ -1444,6 +1543,16 @@ export default function Example() {
     </div>
   );
 }`
+  : selectedComponent.source === 'aceternity'
+  ? `import { ${selectedComponent.componentName || 'Component'} } from "@/components/ui/${selectedComponent.slug}";
+
+export default function Example() {
+  return (
+    <div className="relative flex items-center justify-center p-8">
+      <${selectedComponent.componentName || 'Component'} />
+    </div>
+  );
+}`
   : `import { ${selectedComponent.componentName} } from './components/zeuralabz/${selectedComponent.slug}/${selectedComponent.componentName}';
 
 export default function Example() {
@@ -1453,7 +1562,7 @@ export default function Example() {
                 </div>
               )}
 
-              {activeTab === 'html' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
+              {activeTab === 'html' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && selectedComponent.source !== 'aceternity' && (
                 <div>
                   <span className="font-heading text-xs font-black uppercase text-white block mb-1">Semantic HTML Structure:</span>
                   <pre className="p-4 bg-[#0A0A0A] text-white border-[3px] border-white/60 overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#FFDC58]">
@@ -1464,7 +1573,7 @@ export default function Example() {
                 </div>
               )}
 
-              {activeTab === 'css' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
+              {activeTab === 'css' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && selectedComponent.source !== 'aceternity' && (
                 <div>
                   <span className="font-heading text-xs font-black uppercase text-white block mb-1">Standalone CSS Rules:</span>
                   <pre className="p-4 bg-[#0A0A0A] text-white border-[3px] border-white/60 overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#FFDC58]">
@@ -1503,14 +1612,14 @@ export default function Example() {
             <div className="flex items-center gap-2 justify-center sm:justify-start">
               <span className="font-heading font-black text-[#FFDC58] text-base">ZEURALABZ</span>
               <span className="text-zinc-500">•</span>
-              <span className="font-bold">{totalAll} animated components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalZeura} Originals)</span>
+              <span className="font-bold">{totalAll} animated components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalAceternity} Aceternity + {totalZeura} Originals)</span>
             </div>
             <div className="mt-1.5 text-zinc-400 font-medium">
               Crafted with care by{' '}
               <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-[#FFDC58] font-bold hover:underline">
                 R. Selva
               </a>
-              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons) & Magic UI (Dillion Verma, MIT).
+              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons), Magic UI (Dillion Verma, MIT), & Aceternity UI (Manu Arora, MIT).
             </div>
           </div>
 

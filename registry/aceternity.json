@@ -1,0 +1,3798 @@
+[
+  {
+    "id": "aceternity-webcam-pixel-grid",
+    "name": "Webcam Pixel Grid",
+    "slug": "webcam-pixel-grid",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A real-time webcam pixel grid effect, perfect for pixel art and retro aesthetics.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/webcam-pixel-grid",
+    "previewUrl": "https://ui.aceternity.com/components/webcam-pixel-grid",
+    "installCommand": "npx shadcn@latest add @aceternity/webcam-pixel-grid-demo",
+    "zeuralabzCommand": "npx zeuralabz add webcam-pixel-grid --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-images-badge",
+    "name": "Images Badge",
+    "slug": "images-badge",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A badge with images that can be hovered to reveal more images.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/images-badge",
+    "previewUrl": "https://ui.aceternity.com/components/images-badge",
+    "installCommand": "npx shadcn@latest add @aceternity/images-badge-demo",
+    "zeuralabzCommand": "npx zeuralabz add images-badge --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-parallax-hero-images",
+    "name": "Parallax Hero Images",
+    "slug": "parallax-hero-images",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "Mouse-driven parallax effect, perfect for hero sections. Images blur fade in and move at different depths.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/parallax-hero-images",
+    "previewUrl": "https://ui.aceternity.com/components/parallax-hero-images",
+    "installCommand": "npx shadcn@latest add @aceternity/parallax-hero-images-demo",
+    "zeuralabzCommand": "npx zeuralabz add parallax-hero-images --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-scales",
+    "name": "Scales",
+    "slug": "scales",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A repeating diagonal, horizontal, or vertical line pattern background effect.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/scales",
+    "previewUrl": "https://ui.aceternity.com/components/scales",
+    "installCommand": "npx shadcn@latest add @aceternity/scales-with-image-demo",
+    "zeuralabzCommand": "npx zeuralabz add scales --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-dotted-glow-background",
+    "name": "Dotted Glow Background",
+    "slug": "dotted-glow-background",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A background effect with opacity animation, glow effect and more.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/dotted-glow-background",
+    "previewUrl": "https://ui.aceternity.com/components/dotted-glow-background",
+    "installCommand": "npx shadcn@latest add @aceternity/dotted-glow-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add dotted-glow-background --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-ripple-effect",
+    "name": "Background Ripple Effect",
+    "slug": "background-ripple-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A grid of cells that ripple when clicked.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-ripple-effect",
+    "previewUrl": "https://ui.aceternity.com/components/background-ripple-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/background-ripple-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-ripple-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-sparkles",
+    "name": "Sparkles",
+    "slug": "sparkles",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A configurable sparkle and particle background for React. Control density, speed and colour, and layer it behind headings or hero sections.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/sparkles",
+    "previewUrl": "https://ui.aceternity.com/components/sparkles",
+    "installCommand": "npx shadcn@latest add @aceternity/sparkles-demo",
+    "zeuralabzCommand": "npx zeuralabz add sparkles --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-gradient",
+    "name": "Background Gradient",
+    "slug": "background-gradient",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "An animated gradient that sits at the background of a card, button or anything.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-gradient",
+    "previewUrl": "https://ui.aceternity.com/components/background-gradient",
+    "installCommand": "npx shadcn@latest add @aceternity/background-gradient-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-gradient --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-gradient-animation",
+    "name": "Background Gradient Animation",
+    "slug": "background-gradient-animation",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Add a smooth animated gradient background to any React or Next.js page. Pure CSS keyframes, no canvas, and a dark mode variant. Copy and paste the component.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-gradient-animation",
+    "previewUrl": "https://ui.aceternity.com/components/background-gradient-animation",
+    "installCommand": "npx shadcn@latest add @aceternity/background-gradient-animation-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-gradient-animation --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-wavy-background",
+    "name": "Wavy Background",
+    "slug": "wavy-background",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A cool background effect with waves that move.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/wavy-background",
+    "previewUrl": "https://ui.aceternity.com/components/wavy-background",
+    "installCommand": "npx shadcn@latest add @aceternity/wavy-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add wavy-background --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-boxes",
+    "name": "Background Boxes",
+    "slug": "background-boxes",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A full width background box container that highlights on hover",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-boxes",
+    "previewUrl": "https://ui.aceternity.com/components/background-boxes",
+    "installCommand": "npx shadcn@latest add @aceternity/background-boxes-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-boxes --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-beams",
+    "name": "Background Beams",
+    "slug": "background-beams",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Multiple background beams that follow a path of SVG, makes a good hero section background.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-beams",
+    "previewUrl": "https://ui.aceternity.com/components/background-beams",
+    "installCommand": "npx shadcn@latest add @aceternity/background-beams-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-beams --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-beams-with-collision",
+    "name": "Background Beams With Collision",
+    "slug": "background-beams-with-collision",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Exploding beams in the background",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-beams-with-collision",
+    "previewUrl": "https://ui.aceternity.com/components/background-beams-with-collision",
+    "installCommand": "npx shadcn@latest add @aceternity/background-beams-with-collision-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-beams-with-collision --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-lines",
+    "name": "Background Lines",
+    "slug": "background-lines",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A set of svg paths that animate in a wave pattern. Good for hero sections background, as seen on height.app",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-lines",
+    "previewUrl": "https://ui.aceternity.com/components/background-lines",
+    "installCommand": "npx shadcn@latest add @aceternity/background-lines-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-lines --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-aurora-background",
+    "name": "Aurora Background",
+    "slug": "aurora-background",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A soft animated aurora gradient background for React and Next.js. Pure CSS, respects prefers-reduced-motion, and works in light and dark mode.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/aurora-background",
+    "previewUrl": "https://ui.aceternity.com/components/aurora-background",
+    "installCommand": "npx shadcn@latest add @aceternity/aurora-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add aurora-background --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-meteors",
+    "name": "Meteor Effect",
+    "slug": "meteors",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A group of beams in the background of a container, sort of like meteors.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/meteors",
+    "previewUrl": "https://ui.aceternity.com/components/meteors",
+    "installCommand": "npx shadcn@latest add @aceternity/meteors-demo",
+    "zeuralabzCommand": "npx zeuralabz add meteors --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-glowing-stars-effect",
+    "name": "Glowing Background Stars Card",
+    "slug": "glowing-stars-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Card background stars that animate on hover and animate anyway",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/glowing-stars-effect",
+    "previewUrl": "https://ui.aceternity.com/components/glowing-stars-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/glowing-stars-demo",
+    "zeuralabzCommand": "npx zeuralabz add glowing-stars-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-shooting-stars-and-stars-background",
+    "name": "Shooting Stars and Stars Background",
+    "slug": "shooting-stars-and-stars-background",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A shooting star animation on top of a starry background, as seen on figmaplug.in",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/shooting-stars-and-stars-background",
+    "previewUrl": "https://ui.aceternity.com/components/shooting-stars-and-stars-background",
+    "installCommand": "npx shadcn@latest add @aceternity/shooting-stars-and-stars-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add shooting-stars-and-stars-background --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-vortex",
+    "name": "Vortex Background",
+    "slug": "vortex",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A wavy, swirly, vortex background ideal for CTAs and backgrounds.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/vortex",
+    "previewUrl": "https://ui.aceternity.com/components/vortex",
+    "installCommand": "npx shadcn@latest add @aceternity/vortex-demo",
+    "zeuralabzCommand": "npx zeuralabz add vortex --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-background-cubes-grid",
+    "name": "Background Cubes Grid",
+    "slug": "background-cubes-grid",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A grid of 3D cubes that ripples under the cursor. Use the flat isometric field or a tilted perspective grid with glowing crests.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/background-cubes-grid",
+    "previewUrl": "https://ui.aceternity.com/components/background-cubes-grid",
+    "installCommand": "npx shadcn@latest add @aceternity/background-cubes-grid-demo",
+    "zeuralabzCommand": "npx zeuralabz add background-cubes-grid --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-liquid-glass",
+    "name": "Liquid Glass",
+    "slug": "liquid-glass",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A glass surface that refracts the content behind it, with a curved rim, color fringing and a frosted fallback for every browser.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/liquid-glass",
+    "previewUrl": "https://ui.aceternity.com/components/liquid-glass",
+    "installCommand": "npx shadcn@latest add @aceternity/liquid-glass-demo",
+    "zeuralabzCommand": "npx zeuralabz add liquid-glass --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-cloud-shader",
+    "name": "Cloud Shader",
+    "slug": "cloud-shader",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "Soft procedural clouds that drift across the sky. Tune speed, count, and colors with props.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/cloud-shader",
+    "previewUrl": "https://ui.aceternity.com/components/cloud-shader",
+    "installCommand": "npx shadcn@latest add @aceternity/cloud-shader-demo",
+    "zeuralabzCommand": "npx zeuralabz add cloud-shader --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-chromatic-image",
+    "name": "Chromatic Image",
+    "slug": "chromatic-image",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "An interactive image with responsive color separation, displacement, and tilt.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/chromatic-image",
+    "previewUrl": "https://ui.aceternity.com/components/chromatic-image",
+    "installCommand": "npx shadcn@latest add @aceternity/chromatic-image-demo",
+    "zeuralabzCommand": "npx zeuralabz add chromatic-image --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-spotlight",
+    "name": "Spotlight",
+    "slug": "spotlight",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "Add a spotlight beam that follows the cursor or sits behind your hero copy. SVG based, GPU friendly, and drop-in for React and Next.js.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/spotlight",
+    "previewUrl": "https://ui.aceternity.com/components/spotlight",
+    "installCommand": "npx shadcn@latest add @aceternity/spotlight-demo",
+    "zeuralabzCommand": "npx zeuralabz add spotlight --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-spotlight-new",
+    "name": "Spotlight New",
+    "slug": "spotlight-new",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A new spotlight component with left and right spotlight, configurable and customizable.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/spotlight-new",
+    "previewUrl": "https://ui.aceternity.com/components/spotlight-new",
+    "installCommand": "npx shadcn@latest add @aceternity/spotlight-new-demo",
+    "zeuralabzCommand": "npx zeuralabz add spotlight-new --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-canvas-reveal-effect",
+    "name": "Canvas Reveal Effect",
+    "slug": "canvas-reveal-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A dot background that expands on hover, as seen on Clerk's website",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/canvas-reveal-effect",
+    "previewUrl": "https://ui.aceternity.com/components/canvas-reveal-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/canvas-reveal-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add canvas-reveal-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-svg-mask-effect",
+    "name": "SVG Mask Effect",
+    "slug": "svg-mask-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A mask reveal effect, hover the cursor over a container to reveal what's underneath.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/svg-mask-effect",
+    "previewUrl": "https://ui.aceternity.com/components/svg-mask-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/svg-mask-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add svg-mask-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-tracing-beam",
+    "name": "Tracing Beam",
+    "slug": "tracing-beam",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A Beam that follows the path of an SVG as the user scrolls. Adjusts beam length with scroll speed.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/tracing-beam",
+    "previewUrl": "https://ui.aceternity.com/components/tracing-beam",
+    "installCommand": "npx shadcn@latest add @aceternity/tracing-beam-demo",
+    "zeuralabzCommand": "npx zeuralabz add tracing-beam --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-lamp-effect",
+    "name": "Lamp Section Header",
+    "slug": "lamp-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "A lamp effect as seen on linear, great for section headers.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/lamp-effect",
+    "previewUrl": "https://ui.aceternity.com/components/lamp-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/lamp-demo",
+    "zeuralabzCommand": "npx zeuralabz add lamp-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-grid-and-dot-backgrounds",
+    "name": "Grid and Dot Backgrounds",
+    "slug": "grid-and-dot-backgrounds",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Grid, dot and dotted background patterns for React and Tailwind CSS. Includes radial fade masks so the pattern never fights your text. Copy and paste.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/grid-and-dot-backgrounds",
+    "previewUrl": "https://ui.aceternity.com/components/grid-and-dot-backgrounds",
+    "installCommand": "npx shadcn@latest add @aceternity/grid-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add grid-and-dot-backgrounds --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-glowing-effect",
+    "name": "Glowing Effect",
+    "slug": "glowing-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A border glow that tracks the cursor around a card or panel. Useful for feature grids and pricing tables. Built with React and Tailwind CSS.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/glowing-effect",
+    "previewUrl": "https://ui.aceternity.com/components/glowing-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/glowing-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add glowing-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-google-gemini-effect",
+    "name": "Google Gemini Effect",
+    "slug": "google-gemini-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "An effect of SVGs as seen on the Google Gemini Website",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/google-gemini-effect",
+    "previewUrl": "https://ui.aceternity.com/components/google-gemini-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/google-gemini-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add google-gemini-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-keyboard",
+    "name": "Keyboard",
+    "slug": "keyboard",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A mac style keyboard component with mechanical keys sound effects.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/keyboard",
+    "previewUrl": "https://ui.aceternity.com/components/keyboard",
+    "installCommand": "npx shadcn@latest add @aceternity/keyboard-demo",
+    "zeuralabzCommand": "npx zeuralabz add keyboard --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-terminal",
+    "name": "Terminal",
+    "slug": "terminal",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A mac style terminal component with bash syntax highlighting and typewriter effect.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/terminal",
+    "previewUrl": "https://ui.aceternity.com/components/terminal",
+    "installCommand": "npx shadcn@latest add @aceternity/terminal-demo",
+    "zeuralabzCommand": "npx zeuralabz add terminal --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-tooltip-card",
+    "name": "Tooltip Card",
+    "slug": "tooltip-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A tooltip card container that follows mouse pointer when hovered over",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/tooltip-card",
+    "previewUrl": "https://ui.aceternity.com/components/tooltip-card",
+    "installCommand": "npx shadcn@latest add @aceternity/tooltip-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add tooltip-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-ascii-art",
+    "name": "ASCII Art",
+    "slug": "ascii-art",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "Convert any image to ASCII art with customizable charsets, colors, and animations.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/ascii-art",
+    "previewUrl": "https://ui.aceternity.com/components/ascii-art",
+    "installCommand": "npx shadcn@latest add @aceternity/ascii-art-demo",
+    "zeuralabzCommand": "npx zeuralabz add ascii-art --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-pixelated-canvas",
+    "name": "Pixelated Canvas",
+    "slug": "pixelated-canvas",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "Convert any image to a pixelated canvas mouse distortion effects, as seen on Tailwind CSS Website.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/pixelated-canvas",
+    "previewUrl": "https://ui.aceternity.com/components/pixelated-canvas",
+    "installCommand": "npx shadcn@latest add @aceternity/pixelated-canvas-demo",
+    "zeuralabzCommand": "npx zeuralabz add pixelated-canvas --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-3d-card-effect",
+    "name": "3D Card Effect",
+    "slug": "3d-card-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A card that tilts in 3D as the cursor moves, with layered depth on each child element. Built with React, Tailwind CSS and CSS perspective.",
+    "tags": [
+      "cards",
+      "3d",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/3d-card-effect",
+    "previewUrl": "https://ui.aceternity.com/components/3d-card-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/3d-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add 3d-card-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-evervault-card",
+    "name": "Evervault Card",
+    "slug": "evervault-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A cool card with amazing hover effect, reveals encrypted text and a mixed gradient.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/evervault-card",
+    "previewUrl": "https://ui.aceternity.com/components/evervault-card",
+    "installCommand": "npx shadcn@latest add @aceternity/evervault-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add evervault-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-card-stack",
+    "name": "Card Stack",
+    "slug": "card-stack",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Cards stack on top of each other after some interval. Perfect for showing testimonials.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/card-stack",
+    "previewUrl": "https://ui.aceternity.com/components/card-stack",
+    "installCommand": "npx shadcn@latest add @aceternity/card-stack-demo",
+    "zeuralabzCommand": "npx zeuralabz add card-stack --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-card-hover-effect",
+    "name": "Hover Effect",
+    "slug": "card-hover-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Hover over the cards and the effect slides to the currently hovered card.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/card-hover-effect",
+    "previewUrl": "https://ui.aceternity.com/components/card-hover-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/card-hover-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add card-hover-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-wobble-card",
+    "name": "Wobble Card",
+    "slug": "wobble-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A card effect that translates and scales on mousemove, perfect for feature cards.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/wobble-card",
+    "previewUrl": "https://ui.aceternity.com/components/wobble-card",
+    "installCommand": "npx shadcn@latest add @aceternity/wobble-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add wobble-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-expandable-card",
+    "name": "Expandable Cards",
+    "slug": "expandable-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Click cards to expand them and show additional information",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/expandable-card",
+    "previewUrl": "https://ui.aceternity.com/components/expandable-card",
+    "installCommand": "npx shadcn@latest add @aceternity/expandable-card-demo-standard",
+    "zeuralabzCommand": "npx zeuralabz add expandable-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-card-spotlight",
+    "name": "Card Spotlight",
+    "slug": "card-spotlight",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A card component with a spotlight effect revealing a radial gradient background",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/card-spotlight",
+    "previewUrl": "https://ui.aceternity.com/components/card-spotlight",
+    "installCommand": "npx shadcn@latest add @aceternity/card-spotlight-demo",
+    "zeuralabzCommand": "npx zeuralabz add card-spotlight --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-focus-cards",
+    "name": "Focus Cards",
+    "slug": "focus-cards",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Hover over the card to focus on it, blurring the rest of the cards.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/focus-cards",
+    "previewUrl": "https://ui.aceternity.com/components/focus-cards",
+    "installCommand": "npx shadcn@latest add @aceternity/focus-cards-demo",
+    "zeuralabzCommand": "npx zeuralabz add focus-cards --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-infinite-moving-cards",
+    "name": "Infinite Moving Cards",
+    "slug": "infinite-moving-cards",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "An infinite scrolling marquee of cards for testimonials and logos. Pauses on hover, supports both directions, and is built with Tailwind CSS.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/infinite-moving-cards",
+    "previewUrl": "https://ui.aceternity.com/components/infinite-moving-cards",
+    "installCommand": "npx shadcn@latest add @aceternity/infinite-moving-cards-demo",
+    "zeuralabzCommand": "npx zeuralabz add infinite-moving-cards --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-draggable-card",
+    "name": "Draggable Card",
+    "slug": "draggable-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A tiltable, draggable card component that jumps on bounds.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/draggable-card",
+    "previewUrl": "https://ui.aceternity.com/components/draggable-card",
+    "installCommand": "npx shadcn@latest add @aceternity/draggable-card-demo-2",
+    "zeuralabzCommand": "npx zeuralabz add draggable-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-comet-card",
+    "name": "Comet Card",
+    "slug": "comet-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A perspective, 3D, Tilt card as seen on Perplexity Comet's website.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/comet-card",
+    "previewUrl": "https://ui.aceternity.com/components/comet-card",
+    "installCommand": "npx shadcn@latest add @aceternity/comet-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add comet-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-glare-card",
+    "name": "Glare Card",
+    "slug": "glare-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A glare effect that happens on hover, as seen on Linear's website",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/glare-card",
+    "previewUrl": "https://ui.aceternity.com/components/glare-card",
+    "installCommand": "npx shadcn@latest add @aceternity/glare-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add glare-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-direction-aware-hover",
+    "name": "Direction Aware Hover",
+    "slug": "direction-aware-hover",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A direction aware hover effect using Framer Motion, Tailwindcss and good old javascript.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/direction-aware-hover",
+    "previewUrl": "https://ui.aceternity.com/components/direction-aware-hover",
+    "installCommand": "npx shadcn@latest add @aceternity/direction-aware-hover-demo",
+    "zeuralabzCommand": "npx zeuralabz add direction-aware-hover --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-parallax-scroll",
+    "name": "Parallax Grid Scroll",
+    "slug": "parallax-scroll",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A multi-column parallax scrolling image grid for React. Columns move at different speeds as the page scrolls. Built with Tailwind CSS and Motion.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/parallax-scroll",
+    "previewUrl": "https://ui.aceternity.com/components/parallax-scroll",
+    "installCommand": "npx shadcn@latest add @aceternity/parallax-scroll-demo",
+    "zeuralabzCommand": "npx zeuralabz add parallax-scroll --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-sticky-scroll-reveal",
+    "name": "Sticky Scroll Reveal",
+    "slug": "sticky-scroll-reveal",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A sticky container that sticks while scrolling, text reveals on scroll",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/sticky-scroll-reveal",
+    "previewUrl": "https://ui.aceternity.com/components/sticky-scroll-reveal",
+    "installCommand": "npx shadcn@latest add @aceternity/sticky-scroll-reveal-demo",
+    "zeuralabzCommand": "npx zeuralabz add sticky-scroll-reveal --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-macbook-scroll",
+    "name": "Fey.com Macbook Scroll",
+    "slug": "macbook-scroll",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "Scroll through the page and see the image come out of the screen, as seen on Fey.com website.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/macbook-scroll",
+    "previewUrl": "https://ui.aceternity.com/components/macbook-scroll",
+    "installCommand": "npx shadcn@latest add @aceternity/macbook-scroll-demo",
+    "zeuralabzCommand": "npx zeuralabz add macbook-scroll --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-container-scroll-animation",
+    "name": "Container Scroll Animation",
+    "slug": "container-scroll-animation",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "A scroll animation that rotates in 3d on scroll. Perfect for hero or marketing sections.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/container-scroll-animation",
+    "previewUrl": "https://ui.aceternity.com/components/container-scroll-animation",
+    "installCommand": "npx shadcn@latest add @aceternity/container-scroll-animation-demo",
+    "zeuralabzCommand": "npx zeuralabz add container-scroll-animation --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-hero-parallax",
+    "name": "Hero Parallax",
+    "slug": "hero-parallax",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "A scroll effect with rotation, translation and opacity animations.",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/hero-parallax",
+    "previewUrl": "https://ui.aceternity.com/components/hero-parallax",
+    "installCommand": "npx shadcn@latest add @aceternity/hero-parallax-demo",
+    "zeuralabzCommand": "npx zeuralabz add hero-parallax --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-canvas-text",
+    "name": "Canvas Text",
+    "slug": "canvas-text",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "Animated text component with colorful curved lines rendered on canvas, clipped to the text shape.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/canvas-text",
+    "previewUrl": "https://ui.aceternity.com/components/canvas-text",
+    "installCommand": "npx shadcn@latest add @aceternity/canvas-text-demo",
+    "zeuralabzCommand": "npx zeuralabz add canvas-text --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-encrypted-text",
+    "name": "Encrypted Text",
+    "slug": "encrypted-text",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A text component that reveals the text gradually, gibberish effect.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/encrypted-text",
+    "previewUrl": "https://ui.aceternity.com/components/encrypted-text",
+    "installCommand": "npx shadcn@latest add @aceternity/encrypted-text-demo-2",
+    "zeuralabzCommand": "npx zeuralabz add encrypted-text --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-layout-text-flip",
+    "name": "Layout Text Flip",
+    "slug": "layout-text-flip",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A text flip effect that changes the layout of surrounding text",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/layout-text-flip",
+    "previewUrl": "https://ui.aceternity.com/components/layout-text-flip",
+    "installCommand": "npx shadcn@latest add @aceternity/layout-text-flip-demo",
+    "zeuralabzCommand": "npx zeuralabz add layout-text-flip --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-colourful-text",
+    "name": "Colourful Text",
+    "slug": "colourful-text",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A text component with various colours, filter and scale effects.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/colourful-text",
+    "previewUrl": "https://ui.aceternity.com/components/colourful-text",
+    "installCommand": "npx shadcn@latest add @aceternity/colourful-text-demo",
+    "zeuralabzCommand": "npx zeuralabz add colourful-text --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-squiggly-text",
+    "name": "Squiggly Text",
+    "slug": "squiggly-text",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A squiggly text effect using SVG turbulence and displacement filters, animated with Motion.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/squiggly-text",
+    "previewUrl": "https://ui.aceternity.com/components/squiggly-text",
+    "installCommand": "npx shadcn@latest add @aceternity/squiggly-text-demo",
+    "zeuralabzCommand": "npx zeuralabz add squiggly-text --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-text-generate-effect",
+    "name": "Text Generate Effect",
+    "slug": "text-generate-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A cool text effect that fades in text on page load, one by one.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/text-generate-effect",
+    "previewUrl": "https://ui.aceternity.com/components/text-generate-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/text-generate-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add text-generate-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-typewriter-effect",
+    "name": "Typewriter Effect",
+    "slug": "typewriter-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A typewriter text animation for React and Next.js with a blinking cursor, configurable speed and per-word styling. Built with Tailwind CSS and Motion.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/typewriter-effect",
+    "previewUrl": "https://ui.aceternity.com/components/typewriter-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/typewriter-effect-demo-1",
+    "zeuralabzCommand": "npx zeuralabz add typewriter-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-flip-words",
+    "name": "Flip Words",
+    "slug": "flip-words",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A component that flips through a list of words",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/flip-words",
+    "previewUrl": "https://ui.aceternity.com/components/flip-words",
+    "installCommand": "npx shadcn@latest add @aceternity/flip-words-demo",
+    "zeuralabzCommand": "npx zeuralabz add flip-words --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-text-hover-effect",
+    "name": "Text Hover Effect",
+    "slug": "text-hover-effect",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A text hover effect that animates and outlines gradient on hover, as seen on x.ai",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/text-hover-effect",
+    "previewUrl": "https://ui.aceternity.com/components/text-hover-effect",
+    "installCommand": "npx shadcn@latest add @aceternity/text-hover-effect-demo",
+    "zeuralabzCommand": "npx zeuralabz add text-hover-effect --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-container-text-flip",
+    "name": "Container Text Flip",
+    "slug": "container-text-flip",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A container that flips through words, animating the width.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/container-text-flip",
+    "previewUrl": "https://ui.aceternity.com/components/container-text-flip",
+    "installCommand": "npx shadcn@latest add @aceternity/container-text-flip-demo",
+    "zeuralabzCommand": "npx zeuralabz add container-text-flip --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-hero-highlight",
+    "name": "Hero Highlight",
+    "slug": "hero-highlight",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A background effect with a text highlight component, perfect for hero sections.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/hero-highlight",
+    "previewUrl": "https://ui.aceternity.com/components/hero-highlight",
+    "installCommand": "npx shadcn@latest add @aceternity/hero-highlight-demo",
+    "zeuralabzCommand": "npx zeuralabz add hero-highlight --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-text-reveal-card",
+    "name": "Text Reveal Card",
+    "slug": "text-reveal-card",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Mousemove effect to reveal text content at the bottom of the card.",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/text-reveal-card",
+    "previewUrl": "https://ui.aceternity.com/components/text-reveal-card",
+    "installCommand": "npx shadcn@latest add @aceternity/text-reveal-card-demo",
+    "zeuralabzCommand": "npx zeuralabz add text-reveal-card --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-text-flipping-board",
+    "name": "Text Flipping Board",
+    "slug": "text-flipping-board",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A split-flap display component that animates characters with flip transitions, inspired by Vestaboard.",
+    "tags": [
+      "cards",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/text-flipping-board",
+    "previewUrl": "https://ui.aceternity.com/components/text-flipping-board",
+    "installCommand": "npx shadcn@latest add @aceternity/text-flipping-board-demo",
+    "zeuralabzCommand": "npx zeuralabz add text-flipping-board --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-magnetic-button",
+    "name": "Magnetic Button",
+    "slug": "magnetic-button",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "buttons",
+    "description": "A button that subtly drifts toward the cursor as you hover, with a spring-based return when you leave.",
+    "tags": [
+      "buttons",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Buttons",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/magnetic-button",
+    "previewUrl": "https://ui.aceternity.com/components/magnetic-button",
+    "installCommand": "npx shadcn@latest add @aceternity/magnetic-button-demo",
+    "zeuralabzCommand": "npx zeuralabz add magnetic-button --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-noise-background",
+    "name": "Noise Background",
+    "slug": "noise-background",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A dynamic background effect with animated gradients, noise texture, and smooth motion.",
+    "tags": [
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion",
+      "background"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/noise-background",
+    "previewUrl": "https://ui.aceternity.com/components/noise-background",
+    "installCommand": "npx shadcn@latest add @aceternity/noise-background-demo",
+    "zeuralabzCommand": "npx zeuralabz add noise-background --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-tailwindcss-buttons",
+    "name": "Tailwind CSS buttons",
+    "slug": "tailwindcss-buttons",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A set of Tailwind CSS button styles with gradients, borders, shadows and hover animations. Copy the class list straight into your markup.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/tailwindcss-buttons",
+    "previewUrl": "https://ui.aceternity.com/components/tailwindcss-buttons",
+    "installCommand": "npx shadcn@latest add @aceternity/tailwindcss-buttons-demo",
+    "zeuralabzCommand": "npx zeuralabz add tailwindcss-buttons --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-hover-border-gradient",
+    "name": "Hover Border Gradient",
+    "slug": "hover-border-gradient",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A hover effect that expands to the entire container with a gradient border.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/hover-border-gradient",
+    "previewUrl": "https://ui.aceternity.com/components/hover-border-gradient",
+    "installCommand": "npx shadcn@latest add @aceternity/hover-border-gradient-demo",
+    "zeuralabzCommand": "npx zeuralabz add hover-border-gradient --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-moving-border",
+    "name": "Moving Border",
+    "slug": "moving-border",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "buttons",
+    "description": "A button and card border that animates a light around the perimeter. SVG path based, works at any border radius, styled with Tailwind CSS.",
+    "tags": [
+      "buttons",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Buttons",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/moving-border",
+    "previewUrl": "https://ui.aceternity.com/components/moving-border",
+    "installCommand": "npx shadcn@latest add @aceternity/moving-border-demo",
+    "zeuralabzCommand": "npx zeuralabz add moving-border --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-stateful-button",
+    "name": "Stateful Button",
+    "slug": "stateful-button",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "buttons",
+    "description": "A button that shows a loading state when clicked, and a success state when the action is completed.",
+    "tags": [
+      "buttons",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Buttons",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/stateful-button",
+    "previewUrl": "https://ui.aceternity.com/components/stateful-button",
+    "installCommand": "npx shadcn@latest add @aceternity/stateful-button-demo",
+    "zeuralabzCommand": "npx zeuralabz add stateful-button --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-image-generation-loader",
+    "name": "Image Generation Loader",
+    "slug": "image-generation-loader",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A canvas loader that scans across an image with animated pixel grids, text masks, and progress overlays.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/image-generation-loader",
+    "previewUrl": "https://ui.aceternity.com/components/image-generation-loader",
+    "installCommand": "npx shadcn@latest add @aceternity/image-generation-loader-demo",
+    "zeuralabzCommand": "npx zeuralabz add image-generation-loader --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-multi-step-loader",
+    "name": "Multi Step Loader",
+    "slug": "multi-step-loader",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "loaders",
+    "description": "A step loader for screens that take a lot of time to load.",
+    "tags": [
+      "framer-motion",
+      "loaders",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Loaders",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/multi-step-loader",
+    "previewUrl": "https://ui.aceternity.com/components/multi-step-loader",
+    "installCommand": "npx shadcn@latest add @aceternity/multi-step-loader-demo",
+    "zeuralabzCommand": "npx zeuralabz add multi-step-loader --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-loader",
+    "name": "Loaders",
+    "slug": "loader",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "loaders",
+    "description": "A set of simple and minimal loaders for your loading screens and components.",
+    "tags": [
+      "framer-motion",
+      "loaders",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Loaders",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/loader",
+    "previewUrl": "https://ui.aceternity.com/components/loader",
+    "installCommand": "npx shadcn@latest add @aceternity/loader-one-demo",
+    "zeuralabzCommand": "npx zeuralabz add loader --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-notch",
+    "name": "Notch",
+    "slug": "notch",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A floating, configurable notch that pins to the top or bottom of the screen. Pass an array of items with links and it animates the active state as you switch between them.",
+    "tags": [
+      "cards",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/notch",
+    "previewUrl": "https://ui.aceternity.com/components/notch",
+    "installCommand": "npx shadcn@latest add @aceternity/notch-demo",
+    "zeuralabzCommand": "npx zeuralabz add notch --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-floating-navbar",
+    "name": "Floating Navbar",
+    "slug": "floating-navbar",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A sticky Navbar that hides on scroll, reveals when scrolled up.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/floating-navbar",
+    "previewUrl": "https://ui.aceternity.com/components/floating-navbar",
+    "installCommand": "npx shadcn@latest add @aceternity/floating-navbar-demo",
+    "zeuralabzCommand": "npx zeuralabz add floating-navbar --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-navbar-menu",
+    "name": "Navbar Menu",
+    "slug": "navbar-menu",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "An animated navbar with a hover-reveal dropdown menu for React and Next.js. Spring transitions, mobile fallback and Tailwind CSS styling.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/navbar-menu",
+    "previewUrl": "https://ui.aceternity.com/components/navbar-menu",
+    "installCommand": "npx shadcn@latest add @aceternity/navbar-menu-demo",
+    "zeuralabzCommand": "npx zeuralabz add navbar-menu --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-sidebar",
+    "name": "Sidebar",
+    "slug": "sidebar",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "layouts",
+    "description": "Expandable sidebar that expands on hover, mobile responsive and dark mode support",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "layouts",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Layouts",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/sidebar",
+    "previewUrl": "https://ui.aceternity.com/components/sidebar",
+    "installCommand": "npx shadcn@latest add @aceternity/sidebar-demo",
+    "zeuralabzCommand": "npx zeuralabz add sidebar --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-floating-dock",
+    "name": "Floating Dock",
+    "slug": "floating-dock",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "layouts",
+    "description": "A floating dock mac os style component, acts as a navigation bar.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "layouts",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Layouts",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/floating-dock",
+    "previewUrl": "https://ui.aceternity.com/components/floating-dock",
+    "installCommand": "npx shadcn@latest add @aceternity/floating-dock-demo",
+    "zeuralabzCommand": "npx zeuralabz add floating-dock --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-tabs",
+    "name": "Animated Tabs",
+    "slug": "tabs",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Tabs to switch content, click on a tab to check background animation.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/tabs",
+    "previewUrl": "https://ui.aceternity.com/components/tabs",
+    "installCommand": "npx shadcn@latest add @aceternity/tabs-demo",
+    "zeuralabzCommand": "npx zeuralabz add tabs --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-resizable-navbar",
+    "name": "Resizable Navbar",
+    "slug": "resizable-navbar",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A navbar that shrinks and blurs once the page scrolls, with a mobile drawer. Built for React and Next.js with Tailwind CSS and Motion.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/resizable-navbar",
+    "previewUrl": "https://ui.aceternity.com/components/resizable-navbar",
+    "installCommand": "npx shadcn@latest add @aceternity/resizable-navbar-demo",
+    "zeuralabzCommand": "npx zeuralabz add resizable-navbar --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-sticky-banner",
+    "name": "Sticky Banner",
+    "slug": "sticky-banner",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "A banner component that sticks to top, hides when user scrolls down",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/sticky-banner",
+    "previewUrl": "https://ui.aceternity.com/components/sticky-banner",
+    "installCommand": "npx shadcn@latest add @aceternity/sticky-banner-demo",
+    "zeuralabzCommand": "npx zeuralabz add sticky-banner --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-signup-form",
+    "name": "Signup Form",
+    "slug": "signup-form",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "forms",
+    "description": "A customizable form built on top of shadcn's input and label, with a touch of framer motion",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "forms",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Forms",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/signup-form",
+    "previewUrl": "https://ui.aceternity.com/components/signup-form",
+    "installCommand": "npx shadcn@latest add @aceternity/signup-form-demo",
+    "zeuralabzCommand": "npx zeuralabz add signup-form --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-placeholders-and-vanish-input",
+    "name": "Placeholders And Vanish Input",
+    "slug": "placeholders-and-vanish-input",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "forms",
+    "description": "Sliding in placeholders and vanish effect of input on submit",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "forms",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Forms",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/placeholders-and-vanish-input",
+    "previewUrl": "https://ui.aceternity.com/components/placeholders-and-vanish-input",
+    "installCommand": "npx shadcn@latest add @aceternity/placeholders-and-vanish-input-demo",
+    "zeuralabzCommand": "npx zeuralabz add placeholders-and-vanish-input --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-file-upload",
+    "name": "File Upload",
+    "slug": "file-upload",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A minimal file upload form with background grid, drag and drop, and micro interactions.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/file-upload",
+    "previewUrl": "https://ui.aceternity.com/components/file-upload",
+    "installCommand": "npx shadcn@latest add @aceternity/file-upload-demo",
+    "zeuralabzCommand": "npx zeuralabz add file-upload --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-gooey-input",
+    "name": "Gooey Input",
+    "slug": "gooey-input",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "layouts",
+    "description": "A search-style input that expands with a gooey SVG filter and shared layout animation",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "layouts",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Layouts",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/gooey-input",
+    "previewUrl": "https://ui.aceternity.com/components/gooey-input",
+    "installCommand": "npx shadcn@latest add @aceternity/gooey-input-demo",
+    "zeuralabzCommand": "npx zeuralabz add gooey-input --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-dither-shader",
+    "name": "Dither Shader",
+    "slug": "dither-shader",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A real-time ordered dithering effect for images, perfect for pixel art and retro aesthetics.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/dither-shader",
+    "previewUrl": "https://ui.aceternity.com/components/dither-shader",
+    "installCommand": "npx shadcn@latest add @aceternity/dither-shader-demo",
+    "zeuralabzCommand": "npx zeuralabz add dither-shader --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-animated-modal",
+    "name": "Animated Modal",
+    "slug": "animated-modal",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A customizable, compound modal component with animated transitions",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/animated-modal",
+    "previewUrl": "https://ui.aceternity.com/components/animated-modal",
+    "installCommand": "npx shadcn@latest add @aceternity/animated-modal-demo",
+    "zeuralabzCommand": "npx zeuralabz add animated-modal --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-animated-tooltip",
+    "name": "Animated Tooltip",
+    "slug": "animated-tooltip",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A cool tooltip that reveals on hover, follows mouse pointer",
+    "tags": [
+      "cards",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/animated-tooltip",
+    "previewUrl": "https://ui.aceternity.com/components/animated-tooltip",
+    "installCommand": "npx shadcn@latest add @aceternity/animated-tooltip-demo",
+    "zeuralabzCommand": "npx zeuralabz add animated-tooltip --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-link-preview",
+    "name": "Link Preview",
+    "slug": "link-preview",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "Dynamic link previews for your anchor tags",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/link-preview",
+    "previewUrl": "https://ui.aceternity.com/components/link-preview",
+    "installCommand": "npx shadcn@latest add @aceternity/link-preview-demo",
+    "zeuralabzCommand": "npx zeuralabz add link-preview --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-images-slider",
+    "name": "Images Slider",
+    "slug": "images-slider",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A full page slider with images that can be navigated with the keyboard.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/images-slider",
+    "previewUrl": "https://ui.aceternity.com/components/images-slider",
+    "installCommand": "npx shadcn@latest add @aceternity/images-slider-demo",
+    "zeuralabzCommand": "npx zeuralabz add images-slider --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-carousel",
+    "name": "Carousel",
+    "slug": "carousel",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "layouts",
+    "description": "A customizable carousel with microinteractions and slider.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "layouts",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Layouts",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/carousel",
+    "previewUrl": "https://ui.aceternity.com/components/carousel",
+    "installCommand": "npx shadcn@latest add @aceternity/carousel-demo",
+    "zeuralabzCommand": "npx zeuralabz add carousel --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-apple-cards-carousel",
+    "name": "Apple Cards Carousel",
+    "slug": "apple-cards-carousel",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A sleek and minimal carousel implementation, as seen on apple.com",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/apple-cards-carousel",
+    "previewUrl": "https://ui.aceternity.com/components/apple-cards-carousel",
+    "installCommand": "npx shadcn@latest add @aceternity/apple-cards-carousel-demo",
+    "zeuralabzCommand": "npx zeuralabz add apple-cards-carousel --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-animated-testimonials",
+    "name": "Animated Testimonials",
+    "slug": "animated-testimonials",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "Minimal testimonials sections with image and quote.",
+    "tags": [
+      "cards",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/animated-testimonials",
+    "previewUrl": "https://ui.aceternity.com/components/animated-testimonials",
+    "installCommand": "npx shadcn@latest add @aceternity/animated-testimonials-demo",
+    "zeuralabzCommand": "npx zeuralabz add animated-testimonials --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-layout-grid",
+    "name": "Layout Grid",
+    "slug": "layout-grid",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A layout effect that animates the grid item on click, powered by framer motion layout",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/layout-grid",
+    "previewUrl": "https://ui.aceternity.com/components/layout-grid",
+    "installCommand": "npx shadcn@latest add @aceternity/layout-grid-demo",
+    "zeuralabzCommand": "npx zeuralabz add layout-grid --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-bento-grid",
+    "name": "Bento Grid",
+    "slug": "bento-grid",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "Build an Apple-style bento grid in React with asymmetric tiles, hover states and a responsive collapse to one column. Works alongside shadcn/ui.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/bento-grid",
+    "previewUrl": "https://ui.aceternity.com/components/bento-grid",
+    "installCommand": "npx shadcn@latest add @aceternity/bento-grid-demo",
+    "zeuralabzCommand": "npx zeuralabz add bento-grid --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-container-cover",
+    "name": "Cover",
+    "slug": "container-cover",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A Cover component that wraps any children, providing beams and space effect, hover to reveal speed.",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/container-cover",
+    "previewUrl": "https://ui.aceternity.com/components/container-cover",
+    "installCommand": "npx shadcn@latest add @aceternity/cover-demo",
+    "zeuralabzCommand": "npx zeuralabz add container-cover --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-github-globe",
+    "name": "GitHub Globe",
+    "slug": "github-globe",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "Recreate the GitHub homepage globe in React with three.js and react-globe.gl. Animated arcs, custom markers and auto-rotation. Copy and paste.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/github-globe",
+    "previewUrl": "https://ui.aceternity.com/components/github-globe",
+    "installCommand": "npx shadcn@latest add @aceternity/globe-demo",
+    "zeuralabzCommand": "npx zeuralabz add github-globe --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-world-map",
+    "name": "World Map",
+    "slug": "world-map",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A world map with animated lines and dots, programatically generated.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/world-map",
+    "previewUrl": "https://ui.aceternity.com/components/world-map",
+    "installCommand": "npx shadcn@latest add @aceternity/world-map-demo",
+    "zeuralabzCommand": "npx zeuralabz add world-map --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-timeline",
+    "name": "Timeline",
+    "slug": "timeline",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "layouts",
+    "description": "A scroll-animated vertical timeline for React and Next.js. Sticky headings, a progress beam and responsive layout. Built with Tailwind CSS and Motion.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "layouts",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Layouts",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/timeline",
+    "previewUrl": "https://ui.aceternity.com/components/timeline",
+    "installCommand": "npx shadcn@latest add @aceternity/timeline-demo",
+    "zeuralabzCommand": "npx zeuralabz add timeline --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-compare",
+    "name": "Compare",
+    "slug": "compare",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A comparison component between two images, slide or drag to compare",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/compare",
+    "previewUrl": "https://ui.aceternity.com/components/compare",
+    "installCommand": "npx shadcn@latest add @aceternity/compare-demo",
+    "zeuralabzCommand": "npx zeuralabz add compare --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-code-block",
+    "name": "Code Block",
+    "slug": "code-block",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A configurable code block component built on top of react-syntax-highlighter.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/code-block",
+    "previewUrl": "https://ui.aceternity.com/components/code-block",
+    "installCommand": "npx shadcn@latest add @aceternity/code-block-demo",
+    "zeuralabzCommand": "npx zeuralabz add code-block --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-following-pointer",
+    "name": "Following Pointer",
+    "slug": "following-pointer",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A custom pointer that follows mouse arrow and animates in pointer and content.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/following-pointer",
+    "previewUrl": "https://ui.aceternity.com/components/following-pointer",
+    "installCommand": "npx shadcn@latest add @aceternity/following-pointer-demo",
+    "zeuralabzCommand": "npx zeuralabz add following-pointer --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-pointer-highlight",
+    "name": "Pointer Highlight",
+    "slug": "pointer-highlight",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "text-animations",
+    "description": "A component that highlights text when it's in view, with a pointer and border.",
+    "tags": [
+      "framer-motion",
+      "text-animations",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Text Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/pointer-highlight",
+    "previewUrl": "https://ui.aceternity.com/components/pointer-highlight",
+    "installCommand": "npx shadcn@latest add @aceternity/pointer-highlight-demo",
+    "zeuralabzCommand": "npx zeuralabz add pointer-highlight --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-lens",
+    "name": "Lens",
+    "slug": "lens",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "animations",
+    "description": "A lens component to zoom into images, videos, or practically anything.",
+    "tags": [
+      "framer-motion",
+      "aceternity",
+      "animations",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Animations",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/lens",
+    "previewUrl": "https://ui.aceternity.com/components/lens",
+    "installCommand": "npx shadcn@latest add @aceternity/lens-demo",
+    "zeuralabzCommand": "npx zeuralabz add lens --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-3d-globe",
+    "name": "3D Globe",
+    "slug": "3d-globe",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A realistic globe component with tooltips and avatar tips",
+    "tags": [
+      "cards",
+      "3d",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/3d-globe",
+    "previewUrl": "https://ui.aceternity.com/components/3d-globe",
+    "installCommand": "npx shadcn@latest add @aceternity/3d-globe-demo",
+    "zeuralabzCommand": "npx zeuralabz add 3d-globe --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-3d-pin",
+    "name": "3D Animated Pin",
+    "slug": "3d-pin",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A gradient pin that animates on hover, perfect for product links.",
+    "tags": [
+      "3d",
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/3d-pin",
+    "previewUrl": "https://ui.aceternity.com/components/3d-pin",
+    "installCommand": "npx shadcn@latest add @aceternity/3d-pin-demo",
+    "zeuralabzCommand": "npx zeuralabz add 3d-pin --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-3d-marquee",
+    "name": "3D Marquee",
+    "slug": "3d-marquee",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A 3D Marquee effect with grid, good for showcasing testimonials and hero sections",
+    "tags": [
+      "3d",
+      "tailwind",
+      "aceternity",
+      "backgrounds",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/3d-marquee",
+    "previewUrl": "https://ui.aceternity.com/components/3d-marquee",
+    "installCommand": "npx shadcn@latest add @aceternity/3d-marquee-demo",
+    "zeuralabzCommand": "npx zeuralabz add 3d-marquee --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-feature-sections-free",
+    "name": "Feature Sections",
+    "slug": "feature-sections-free",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "backgrounds",
+    "description": "A set of feature sections ranging from bento grids to simple layouts",
+    "tags": [
+      "backgrounds",
+      "framer-motion",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Backgrounds",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/feature-sections-free",
+    "previewUrl": "https://ui.aceternity.com/components/feature-sections-free",
+    "installCommand": "npx shadcn@latest add @aceternity/features-section-demo-3",
+    "zeuralabzCommand": "npx zeuralabz add feature-sections-free --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-cards-free",
+    "name": "Cards",
+    "slug": "cards-free",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "cards",
+    "description": "A set of cards that can be used for different use cases",
+    "tags": [
+      "cards",
+      "card",
+      "tailwind",
+      "aceternity",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/cards-free",
+    "previewUrl": "https://ui.aceternity.com/components/cards-free",
+    "installCommand": "npx shadcn@latest add @aceternity/cards-demo-3",
+    "zeuralabzCommand": "npx zeuralabz add cards-free --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  },
+  {
+    "id": "aceternity-hero-sections-free",
+    "name": "Hero Sections",
+    "slug": "hero-sections-free",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI \u2022 MIT",
+    "author": "Aceternity UI (Manu Arora)",
+    "category": "heroes",
+    "description": "A set of hero sections ranging from simple to complex layouts",
+    "tags": [
+      "framer-motion",
+      "heroes",
+      "aceternity",
+      "tailwind"
+    ],
+    "bestFor": [
+      "Heroes",
+      "Landing pages",
+      "Modern SaaS"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/components/hero-sections-free",
+    "previewUrl": "https://ui.aceternity.com/components/hero-sections-free",
+    "installCommand": "npx shadcn@latest add @aceternity/hero-section-demo-1",
+    "zeuralabzCommand": "npx zeuralabz add hero-sections-free --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
+  }
+]

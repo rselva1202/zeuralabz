@@ -71,3 +71,4 @@ def render_browser_tab_screenshot():
 
 if __name__ == "__main__":
     render_browser_tab_screenshot()
+

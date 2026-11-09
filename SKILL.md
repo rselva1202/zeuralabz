@@ -15,15 +15,16 @@ Use this skill whenever the user is building or improving a web application, lan
 
 ## 1. How ZEURALABZ Works in AI Workspaces
 
-ZEURALABZ provides an autonomous design matrix of **417 components** across three verified sources:
+ZEURALABZ provides an autonomous design matrix of **531 components** across four verified sources:
 - **React Bits (218 components)**: Linked official registry (`@react-bits/...-TS-TW`)
 - **Magic UI (79 components)**: Linked official registry (`https://magicui.design/r/<slug>.json`)
+- **Aceternity UI (114 components)**: Linked official registry (`@aceternity/<slug>`)
 - **ZEURALABZ Originals (120 components)**: Direct copy (`src/components/zeuralabz/<slug>/`)
 Combined with **20 aesthetic themes** and **20 animation presets** equaling **1,000,000+ combinations**.
 
 When analyzing a user's project, do **not** overwhelm the user with dozens of options. Instead, follow the **One-Best-Pick Rule**:
 - Select **exactly 1 best component** per section (Background, Layout, Hero, Cards, Text Styles, Buttons, Extra Polish).
-- Prioritize high-quality linked sources: 1. React Bits, 2. Magic UI, 3. ZEURALABZ Original.
+- Prioritize high-quality linked sources: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. ZEURALABZ Original.
 - Provide the official preview/docs link.
 - Explain *why* that specific component fits their product type (e.g., SaaS, Portfolio, Dashboard).
 - Provide the exact install command: `npx zeuralabz add <slug> --source <source>`
@@ -81,12 +82,12 @@ If the user approves:
 
 ---
 
-## 5. Linked Sources — React Bits & Magic UI
+## 5. Linked Sources — React Bits, Magic UI & Aceternity UI
 
 ZEURALABZ indexes verified third-party component libraries alongside native originals.
 
-- **Recommendation Hierarchy**: For backgrounds, text animations, cards, and complex micro-interactions, ZEURALABZ prioritizes official linked components (React Bits first, Magic UI second, Originals third) because they are visually rich, production-tested, and performance-tuned.
-- **Zero Local Redistribution**: React Bits and Magic UI source codes are **never** copied into `components/` in this repo.
+- **Recommendation Hierarchy**: For backgrounds, text animations, cards, and complex micro-interactions, ZEURALABZ prioritizes official linked components (React Bits first, Magic UI second, Aceternity third, Originals fourth) because they are visually rich, production-tested, and performance-tuned.
+- **Zero Local Redistribution**: React Bits, Magic UI, and Aceternity UI source codes are **never** copied into `components/` in this repo.
 - **Official Registry Installation**:
   - React Bits:
     ```bash
@@ -98,7 +99,12 @@ ZEURALABZ indexes verified third-party component libraries alongside native orig
     npx zeuralabz add magic-card --source magic-ui
     # Installs via: npx shadcn@latest add https://magicui.design/r/magic-card.json
     ```
-- **Attribution & Licencing**: Every recommendation displays the source label (`React Bits • MIT + Commons Clause` or `Magic UI • MIT`) and links to official documentation ([reactbits.dev](https://reactbits.dev) / [magicui.design](https://magicui.design)).
+  - Aceternity UI:
+    ```bash
+    npx zeuralabz add 3d-card-effect --source aceternity
+    # Installs via: npx shadcn@latest add @aceternity/3d-card-effect
+    ```
+- **Attribution & Licencing**: Every recommendation displays the source label (`React Bits • MIT + Commons Clause`, `Magic UI • MIT`, or `Aceternity UI • MIT`) and links to official documentation ([reactbits.dev](https://reactbits.dev) / [magicui.design](https://magicui.design) / [ui.aceternity.com](https://ui.aceternity.com)).
 - **User Confirmation**: The CLI and AI assistant always present the source label and ask user confirmation before running the install.
 
 ---
