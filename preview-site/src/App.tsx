@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import componentsData from './data/components.json';
-import themesData from './data/themes.json';
 import { LiveComponentPreview } from './components/LiveComponentPreview';
 import { GalaxyBackground } from './components/GalaxyBackground';
 
@@ -8,23 +7,16 @@ interface ComponentItem {
   id: string;
   name: string;
   slug: string;
-  componentName: string;
   category: string;
   description: string;
   tags: string[];
   bestFor: string[];
-  deps: string[];
-  files?: string[];
-  previewUrl: string;
-  theme?: string;
-  source?: string;
-  sourceLabel?: string;
-  isOriginal?: boolean;
-  license?: string;
+  theme: string;
+  source?: 'zeuralabz-original' | 'react-bits' | 'magic-ui';
+  componentName?: string;
   originalUrl?: string;
+  previewUrl?: string;
   installCommand?: string;
-  zeuralabzCommand?: string;
-  author?: string;
 }
 
 const CATEGORIES = [
@@ -38,36 +30,32 @@ const CATEGORIES = [
   'forms',
   'animations',
   'loaders',
-];
+] as const;
+
+const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+  'backgrounds': { bg: '#FFDC58', text: '#000000', border: '#000000' },
+  'text-animations': { bg: '#FF90E8', text: '#000000', border: '#000000' },
+  'buttons': { bg: '#7FBCFF', text: '#000000', border: '#000000' },
+  'cards': { bg: '#A3E635', text: '#000000', border: '#000000' },
+  'heroes': { bg: '#FF6B35', text: '#000000', border: '#000000' },
+  'layouts': { bg: '#B388FF', text: '#000000', border: '#000000' },
+  'forms': { bg: '#67E8F9', text: '#000000', border: '#000000' },
+  'animations': { bg: '#FF4911', text: '#FFFFFF', border: '#000000' },
+  'loaders': { bg: '#BEF264', text: '#000000', border: '#000000' },
+};
+
+const ITEMS_PER_PAGE = 12;
 
 export default function App() {
-  const [selectedSource, setSelectedSource] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('source') || params.get('src') || 'all';
-    }
-    return 'all';
-  });
-  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('category') || params.get('cat') || 'all';
-    }
-    return 'all';
-  });
-  const [rawSearchQuery, setRawSearchQuery] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('q') || params.get('search') || '';
-    }
-    return '';
-  });
-  const [debouncedQuery, setDebouncedQuery] = useState<string>(rawSearchQuery);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedSource, setSelectedSource] = useState<string>('all');
+  const [selectedFormat, setSelectedFormat] = useState<string>('typescript');
+  const [rawSearchQuery, setRawSearchQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [animationMode, setAnimationMode] = useState<'lite' | 'full' | 'off'>('lite');
-  const ITEMS_PER_PAGE = 12;
+  const [animationMode, setAnimationMode] = useState<'full' | 'lite' | 'off'>('lite');
 
-  // Debounce search query by 250ms to keep keystrokes instant
+  // Debounce search input to avoid lag during typing
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedQuery(rawSearchQuery);
@@ -76,7 +64,6 @@ export default function App() {
     return () => clearTimeout(handler);
   }, [rawSearchQuery]);
 
-  const [selectedFormat, setSelectedFormat] = useState<string>('typescript');
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [selectedComponent, setSelectedComponent] = useState<ComponentItem | null>(null);
   const [activeTab, setActiveTab] = useState<'react' | 'html' | 'css'>('react');
@@ -85,240 +72,6 @@ export default function App() {
   const [starCount, setStarCount] = useState<number>(48);
 
   const standalone = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('standalone') : null;
-  if (standalone === 'galaxy-before') {
-    return (
-      <div className="w-screen h-screen bg-black flex items-center justify-center p-8">
-        <div className="w-[420px] rounded-2xl bg-[#141414] border border-zinc-800 flex flex-col overflow-hidden shadow-2xl">
-          <div className="h-56 bg-zinc-950 relative overflow-hidden border-b border-zinc-800 flex items-center justify-center">
-            <div className="absolute w-32 h-32 rounded-full bg-indigo-500/30 blur-2xl animate-spin duration-1000" />
-            <div className="absolute w-24 h-24 rounded-full border border-cyan-400/40 animate-ping" />
-            <div className="relative z-10 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_20px_#22d3ee]" />
-            <span className="absolute bottom-2 right-3 text-[10px] font-mono text-indigo-400">Cosmic Orbit</span>
-            <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-              backgrounds
-            </span>
-          </div>
-          <div className="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between">
-                <h3 className="font-bold text-sm text-white">Spiral Galaxy Cosmic Canvas</h3>
-                <span className="text-[11px] text-zinc-500 font-mono">galaxy</span>
-              </div>
-              <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed font-light">
-                Deep cosmic spiraling star dust and stellar nebula rotation canvas.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-zinc-400">npx zeuralabz add galaxy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  if (standalone === 'galaxy') {
-    return (
-      <div className="w-screen h-screen bg-black flex items-center justify-center p-8">
-        <div className="w-[420px] rounded-2xl bg-[#141414] border border-zinc-800 flex flex-col overflow-hidden shadow-2xl">
-          <div className="h-56 bg-[#0a0e27] relative overflow-hidden border-b border-zinc-800">
-            <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
-            <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-              backgrounds
-            </span>
-            <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Live Preview
-            </span>
-          </div>
-          <div className="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between">
-                <h3 className="font-bold text-sm text-white">Spiral Galaxy Cosmic Canvas</h3>
-                <span className="text-[11px] text-zinc-500 font-mono">galaxy</span>
-              </div>
-              <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed font-light">
-                Deep cosmic spiral galaxy simulation with 800+ stars, 3 logarithmic spiral arms, radiant stellar core, and chromatic volumetric nebula dust clouds.
-              </p>
-            </div>
-            <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-              <span className="text-[11px] font-mono text-zinc-400">npx zeuralabz add galaxy</span>
-              <span className="text-xs text-indigo-400 font-medium">Ready</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (standalone === 'galaxy-fullscreen') {
-    return (
-      <div className="w-screen h-screen overflow-hidden">
-        <GalaxyBackground starCount={1200} speed={0.6} armCount={3} glowIntensity={1.2}>
-          <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-transparent">
-            <h1 className="text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]">ZEURALABZ</h1>
-            <p className="text-indigo-200 text-lg font-medium drop-shadow-md">Spiral Galaxy Cosmic Canvas (800+ Stars)</p>
-          </div>
-        </GalaxyBackground>
-      </div>
-    );
-  }
-
-  if (standalone === 'backgrounds-grid') {
-    const bgList = (componentsData as ComponentItem[]).filter(c => c.category === 'backgrounds');
-    return (
-      <div className="min-h-screen bg-[#070919] text-white p-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8 border-b border-zinc-800 pb-5">
-            <h1 className="text-3xl font-black text-white flex items-center gap-3">
-              <span className="text-indigo-400">ZEURALABZ</span> — Backgrounds Engine Matrix
-            </h1>
-            <p className="text-sm text-zinc-400 mt-1">
-              All 15 background archetypes powered by unified CanvasEngine (60 FPS, responsive, deep navy #0a0e27, 800+ particles)
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {bgList.map((comp) => (
-              <div
-                key={comp.id}
-                className="rounded-2xl bg-[#121424] border border-zinc-800/80 flex flex-col overflow-hidden shadow-xl"
-              >
-                <div className="h-48 relative overflow-hidden border-b border-zinc-800/80">
-                  <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-                    {comp.category}
-                  </span>
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Live Canvas
-                  </span>
-                </div>
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-sm text-white">{comp.name}</h3>
-                      <span className="text-[11px] text-zinc-400 font-mono">{comp.slug}</span>
-                    </div>
-                    <p className="text-xs text-zinc-400 mt-1.5 line-clamp-2 leading-relaxed">
-                      {comp.description}
-                    </p>
-                  </div>
-                  <div className="mt-3 pt-2.5 border-t border-zinc-800/70 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-                    <span>npx zeuralabz add {comp.slug}</span>
-                    <span className="text-indigo-400 font-sans text-xs">Ready</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (standalone === 'text-grid') {
-    const textList = (componentsData as ComponentItem[]).filter(c => c.category === 'text-animations');
-    return (
-      <div className="min-h-screen bg-[#070919] text-white p-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8 border-b border-zinc-800 pb-5">
-            <h1 className="text-3xl font-black text-white flex items-center gap-3">
-              <span className="text-indigo-400">ZEURALABZ</span> — Text Animations Engine Matrix
-            </h1>
-            <p className="text-sm text-zinc-400 mt-1">
-              All 15 text animation archetypes powered by unified TextEngine (Framer Motion, 60 FPS, responsive, big & bold typography)
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {textList.map((comp) => (
-              <div
-                key={comp.id}
-                className="rounded-2xl bg-[#121424] border border-zinc-800/80 flex flex-col overflow-hidden shadow-xl"
-              >
-                <div className="h-48 relative overflow-hidden border-b border-zinc-800/80">
-                  <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-                    {comp.category}
-                  </span>
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Live Motion
-                  </span>
-                </div>
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-sm text-white">{comp.name}</h3>
-                      <span className="text-[11px] text-zinc-400 font-mono">{comp.slug}</span>
-                    </div>
-                    <p className="text-xs text-zinc-400 mt-1.5 line-clamp-2 leading-relaxed">
-                      {comp.description}
-                    </p>
-                  </div>
-                  <div className="mt-3 pt-2.5 border-t border-zinc-800/70 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-                    <span>npx zeuralabz add {comp.slug}</span>
-                    <span className="text-indigo-400 font-sans text-xs">Ready</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (standalone === 'buttons-grid') {
-    const buttonsList = (componentsData as ComponentItem[]).filter(c => c.category === 'buttons');
-    return (
-      <div className="min-h-screen bg-[#070919] text-white p-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8 border-b border-zinc-800 pb-5">
-            <h1 className="text-3xl font-black text-white flex items-center gap-3">
-              <span className="text-indigo-400">ZEURALABZ</span> — Buttons Engine Matrix
-            </h1>
-            <p className="text-sm text-zinc-400 mt-1">
-              All 15 button archetypes powered by unified BaseButton (Framer Motion, tactile click physics, live interactive cards)
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {buttonsList.map((comp) => (
-              <div
-                key={comp.slug}
-                className="rounded-2xl bg-[#0d1024] border border-zinc-800/80 overflow-hidden flex flex-col shadow-2xl hover:border-indigo-500/50 transition-all duration-300"
-              >
-                <div className="h-56 relative border-b border-zinc-800/70 overflow-hidden flex items-center justify-center bg-[#0a0e27]">
-                  <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-                    {comp.category}
-                  </span>
-                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Interactive Click
-                  </span>
-                </div>
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-sm text-white">{comp.name}</h3>
-                      <span className="text-[11px] text-zinc-400 font-mono">{comp.slug}</span>
-                    </div>
-                    <p className="text-xs text-zinc-400 mt-1.5 line-clamp-2 leading-relaxed">
-                      {comp.description}
-                    </p>
-                  </div>
-                  <div className="mt-3 pt-2.5 border-t border-zinc-800/70 flex items-center justify-between text-[11px] font-mono text-zinc-400">
-                    <span>npx zeuralabz add {comp.slug}</span>
-                    <span className="text-emerald-400 font-sans text-xs">Live</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   // Fetch real GitHub star count
   useEffect(() => {
@@ -376,68 +129,110 @@ export default function App() {
     setTimeout(() => setCopiedSlug(null), 2000);
   };
 
-  const sampleHeroCode = `import { AuroraBackground } from '@zeuralabz/aurora';
-import { SplitText } from '@zeuralabz/split-text';
-import { ShimmerButton } from '@zeuralabz/shimmer';
+  const sampleHeroCode = `import { AuroraBackground } from '@/components/zeuralabz/aurora';
+import { SplitText } from '@/components/zeuralabz/split-text';
+import { ShimmerButton } from '@/components/zeuralabz/shimmer';
 
 export default function Hero() {
   return (
     <AuroraBackground className="min-h-screen flex flex-col items-center justify-center">
-      <SplitText text="Websites that feel alive" className="text-6xl font-bold" />
-      <p className="mt-4 text-zinc-400">120 components. 1M+ combinations.</p>
-      <ShimmerButton text="Explore Catalog ➔" className="mt-8" />
+      <SplitText text="Websites that feel alive" className="text-6xl font-black" />
+      <p className="mt-4 text-black font-bold">417 components. 1M+ combinations.</p>
+      <ShimmerButton text="Explore Catalog ➔" className="mt-8 font-black uppercase" />
     </AuroraBackground>
   );
 }`;
 
+  // Standalone preview route handler for testing
+  if (standalone === 'galaxy' || standalone === 'galaxy-fullscreen' || standalone === 'galaxy-before') {
+    return (
+      <div className="w-screen h-screen bg-[#FFFDF5] flex items-center justify-center p-8 neo-dots">
+        <div className="w-[460px] bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] rounded-none overflow-hidden flex flex-col">
+          <div className="bg-[#FFDC58] border-b-[3px] border-black px-4 py-2 flex items-center justify-between font-heading text-xs font-black">
+            <span>ZEURALABZ • STANDALONE</span>
+            <span className="bg-black text-white px-2 py-0.5 text-[10px]">LIVE</span>
+          </div>
+          <div className="h-64 bg-[#0a0e27] relative border-b-[3px] border-black overflow-hidden">
+            <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
+          </div>
+          <div className="p-5 space-y-3 bg-white">
+            <h3 className="font-heading text-lg font-black text-black">Spiral Galaxy Cosmic Canvas</h3>
+            <p className="text-xs text-black font-medium">800+ stars, 3 logarithmic spiral arms, radiant stellar core.</p>
+            <div className="pt-2 border-t-[2px] border-black flex justify-between items-center text-xs font-mono font-bold">
+              <span>npx zeuralabz add galaxy</span>
+              <span className="bg-[#A3E635] px-2 py-0.5 border border-black">READY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
-      {/* 1. TOP NAVBAR (Sticky, dark, blur) */}
-      <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-black/70 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Left Logo */}
+    <div className="min-h-screen bg-[#FFFDF5] text-black flex flex-col font-sans selection:bg-[#FFDC58] selection:text-black">
+      {/* ============================================================== */}
+      {/* 1. TOP NAVBAR (Sticky, Cream bg, 3px solid black border) */}
+      {/* ============================================================== */}
+      <header className="sticky top-0 z-50 w-full border-b-[3px] border-black bg-[#FFFDF5] shadow-[0px_4px_0px_#000]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+          {/* Left Brand */}
           <div className="flex items-center gap-3">
-            <a href="#" className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center text-sm shadow-lg shadow-indigo-500/25">
-                ✨
+            <a href="#" className="flex items-center gap-2 group">
+              <span className="w-10 h-10 bg-[#FFDC58] border-[3px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg font-black transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-[5px_5px_0px_#000]">
+                ⚡
               </span>
-              <span className="text-xl font-black tracking-tight text-white">
-                ZEURA<span className="text-indigo-400">LABZ</span>
+              <span className="font-heading text-2xl font-black tracking-tight text-black">
+                ZEURA<span className="bg-[#FFDC58] px-1 py-0.5 border-[2px] border-black ml-0.5">LABZ</span>
               </span>
             </a>
-            <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-zinc-900 text-zinc-400 border border-zinc-800">
-              v1.0.0 • Open Source
+            <span className="hidden sm:inline-block px-2.5 py-1 text-[10px] font-black tracking-wider uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#FFDC58]">
+              v1.1.0 • OPEN SOURCE
             </span>
           </div>
 
-          {/* Center Links */}
-          <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-zinc-400">
-            <a href="#hero" className="hover:text-white transition">Showcase</a>
-            <a href="#components" className="hover:text-white transition">Components</a>
-            <a href="#how-it-works" className="hover:text-white transition">How it Works</a>
-            <a href="#mcp" className="hover:text-white transition">MCP & Skill</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" target="_blank" rel="noreferrer" className="hover:text-white transition">Docs</a>
+          {/* Center Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 text-xs font-heading font-black uppercase text-black">
+            <a href="#showcase" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+              Showcase
+            </a>
+            <a href="#components" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+              Components
+            </a>
+            <a href="#how-it-works" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+              How it Works
+            </a>
+            <a href="#mcp" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+              MCP & Skill
+            </a>
+            <a
+              href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md"
+              target="_blank"
+              rel="noreferrer"
+              className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition"
+            >
+              Docs
+            </a>
           </nav>
 
-          {/* Right Actions */}
+          {/* Right Action Controls */}
           <div className="flex items-center gap-3">
-            {/* Motion Mode Controller (Lite / ON / OFF) */}
-            <div className="flex items-center gap-1 bg-zinc-900 border border-zinc-800 p-1 rounded-xl text-xs">
-              <span className="text-[11px] text-zinc-500 font-medium px-1.5 hidden lg:inline">⚡ Motion:</span>
+            {/* Chunky Neo-Brutalist Motion Mode Switcher */}
+            <div className="hidden lg:flex items-center gap-1 bg-white border-[2px] border-black p-1 shadow-[3px_3px_0px_#000]">
+              <span className="text-[10px] font-black uppercase px-1 text-black font-heading">⚡ MOTION:</span>
               {(['lite', 'full', 'off'] as const).map((m) => (
                 <button
                   key={m}
                   onClick={() => setAnimationMode(m)}
-                  className={`px-2 py-0.5 rounded-lg text-xs font-semibold transition ${
+                  className={`px-2 py-0.5 text-[10px] font-black uppercase transition border-[2px] ${
                     animationMode === m
                       ? m === 'lite'
-                        ? 'bg-indigo-600 text-white shadow-sm'
+                        ? 'bg-[#FFDC58] text-black border-black shadow-[2px_2px_0px_#000]'
                         : m === 'full'
-                        ? 'bg-emerald-600 text-white shadow-sm'
-                        : 'bg-zinc-700 text-white shadow-sm'
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
+                        ? 'bg-[#A3E635] text-black border-black shadow-[2px_2px_0px_#000]'
+                        : 'bg-black text-white border-black shadow-[2px_2px_0px_#000]'
+                      : 'bg-transparent text-black border-transparent hover:border-black hover:bg-zinc-100'
                   }`}
-                  title={`Animation mode: ${m}`}
+                  title={`Motion mode: ${m}`}
                 >
                   {m === 'lite' ? 'Lite' : m === 'full' ? 'ON' : 'OFF'}
                 </button>
@@ -449,84 +244,53 @@ export default function Hero() {
               href="https://github.com/rselva1202/zeuralabz"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-200 transition"
+              className="neo-btn bg-white px-3 py-1.5 text-xs flex items-center gap-1.5"
             >
-              <span>GitHub</span>
-              <span className="text-amber-400">★</span>
-              <span className="text-zinc-500 text-[11px]">{starCount}</span>
+              <span className="font-heading font-black">GITHUB</span>
+              <span className="text-amber-500 font-bold">★</span>
+              <span className="bg-black text-white px-1.5 py-0.2 rounded-none text-[10px] font-mono font-bold">
+                {starCount}
+              </span>
             </a>
 
-            {/* CLI Suggest CTA */}
+            {/* Main CLI Suggest CTA */}
             <button
               onClick={() => copyCommand('npx zeuralabz suggest')}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-md shadow-indigo-600/30"
+              className="neo-btn bg-[#FFDC58] px-3.5 py-1.5 text-xs flex items-center gap-2"
               title="Click to copy suggestion command"
             >
-              <span>$ npx zeuralabz suggest</span>
-              <span className="text-[10px] bg-indigo-700/80 px-1.5 py-0.5 rounded font-sans uppercase">
-                {copiedSlug === 'npx zeuralabz suggest' ? 'Copied!' : 'Copy'}
+              <span className="font-mono font-black">$ npx zeuralabz suggest</span>
+              <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-heading uppercase">
+                {copiedSlug === 'npx zeuralabz suggest' ? 'COPIED!' : 'COPY'}
               </span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* 2. HERO SECTION (Full width, LIVE background) */}
-      <section id="hero" className="relative pt-16 pb-20 overflow-hidden border-b border-zinc-800/80">
-        {/* Dynamic LIVE Background Canvas */}
-        <div className="absolute inset-0 pointer-events-none">
-          {heroBg === 'aurora' && (
-            <div className="absolute inset-0 opacity-40 blur-3xl overflow-hidden">
-              <div className={`w-[140%] h-[150%] -top-1/4 -left-1/4 absolute rounded-full ${
-                activePreset === 'ocean' ? 'bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-800' :
-                activePreset === 'dune' ? 'bg-gradient-to-r from-amber-500 via-orange-600 to-rose-700' :
-                'bg-gradient-to-r from-emerald-500 via-cyan-500 to-indigo-600'
-              } animate-pulse transform rotate-6 scale-110`} />
-            </div>
-          )}
-          {heroBg === 'galaxy' && (
-            <div className="absolute inset-0 opacity-80 pointer-events-none">
-              <GalaxyBackground starCount={900} speed={0.5} armCount={3} glowIntensity={1.1} />
-            </div>
-          )}
-          {heroBg === 'particles' && (
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-cyan-400 blur-[2px] animate-bounce" />
-              <div className="absolute top-1/2 left-2/3 w-4 h-4 rounded-full bg-indigo-400 blur-[2px] animate-pulse" />
-              <div className="absolute top-3/4 left-1/4 w-3 h-3 rounded-full bg-purple-400 blur-[2px] animate-ping" />
-            </div>
-          )}
-          {heroBg === 'gradient' && (
-            <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-indigo-900/40 via-purple-900/30 to-black" />
-          )}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0a0a0a_80%)]" />
-        </div>
-
-        {/* Hero Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Top Pill & Background Switcher */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-800/60 text-indigo-300 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              New • ZEURALABZ 1.0 — {totalAll} components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalZeura} Originals)
+      {/* ============================================================== */}
+      {/* 2. HERO SECTION (Cream bg, Neo-Dots, Rotated Stickers, Framed Preview) */}
+      {/* ============================================================== */}
+      <section id="hero" className="relative pt-12 pb-20 border-b-[3px] border-black neo-dots overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Top Pill & Rotated Sticker Badges */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white border-[2px] border-black shadow-[3px_3px_0px_#FFDC58] text-xs font-bold uppercase tracking-wider">
+              <span className="w-2.5 h-2.5 bg-[#A3E635] border border-black animate-pulse" />
+              NEW • ZEURALABZ 1.1 — {totalAll} COMPONENTS ({totalReactBits} REACT BITS + {totalMagicUI} MAGIC UI + {totalZeura} ORIGINALS)
             </div>
 
-            {/* Live background switcher */}
-            <div className="flex items-center gap-1.5 bg-black/80 border border-zinc-800 p-1 rounded-xl text-xs backdrop-blur-md">
-              <span className="text-zinc-500 px-2 text-[11px] font-medium">Try background:</span>
-              {(['aurora', 'galaxy', 'particles', 'gradient'] as const).map((bg) => (
-                <button
-                  key={bg}
-                  onClick={() => setHeroBg(bg)}
-                  className={`px-2.5 py-1 rounded-lg capitalize transition text-xs font-medium ${
-                    heroBg === bg
-                      ? 'bg-indigo-600 text-white shadow-sm'
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
-                  }`}
-                >
-                  {bg}
-                </button>
-              ))}
+            {/* Sticker Badges */}
+            <div className="hidden sm:flex items-center gap-3">
+              <span className="bg-[#FF90E8] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-3deg]">
+                120+ ORIGINALS!
+              </span>
+              <span className="bg-[#FFDC58] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[2deg]">
+                417 COMPONENTS!
+              </span>
+              <span className="bg-[#A3E635] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-2deg]">
+                100% FREE!
+              </span>
             </div>
           </div>
 
@@ -534,10 +298,14 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Column (60% / 7 cols) */}
             <div className="lg:col-span-7">
-              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.1] max-w-2xl">
-                Beautiful animated UI for websites that <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">feel alive</span>.
+              <h1 className="font-heading text-4xl sm:text-6xl font-black text-black leading-[1.05] tracking-tight">
+                BEAUTIFUL ANIMATED UI FOR WEBSITES THAT{' '}
+                <span className="bg-[#FFDC58] px-2 py-0.5 border-[3px] border-black shadow-[4px_4px_0px_#000] inline-block mt-1">
+                  FEEL ALIVE
+                </span>
+                .
               </h1>
-              <p className="mt-5 text-lg text-zinc-400 max-w-xl font-light leading-relaxed">
+              <p className="mt-5 text-lg text-black font-semibold max-w-xl leading-relaxed">
                 {totalAll} animated components and backgrounds for React across React Bits, Magic UI, and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
               </p>
 
@@ -545,83 +313,210 @@ export default function Hero() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
                   href="#components"
-                  className="px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-white/10"
+                  className="neo-btn bg-[#FFDC58] text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2"
                 >
-                  Browse components <span className="text-indigo-600">➔</span>
+                  <span>BROWSE COMPONENTS</span>
+                  <span className="text-base font-black">➔</span>
                 </a>
                 <a
                   href="https://github.com/rselva1202/zeuralabz"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-6 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-700 font-semibold text-sm transition flex items-center gap-2"
+                  className="neo-btn bg-white text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2"
                 >
-                  <span>Star on GitHub</span>
-                  <span className="text-amber-400">★</span>
+                  <span>STAR ON GITHUB</span>
+                  <span className="text-amber-500 font-bold">★</span>
                 </a>
               </div>
             </div>
 
             {/* Right Column Stats Box (40% / 5 cols) */}
             <div className="lg:col-span-5">
-              <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 backdrop-blur-xl shadow-2xl grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-white">{totalAll}</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">Total Components</div>
+              <div className="bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] p-5">
+                <div className="bg-black text-white px-3 py-1 font-heading text-xs font-black uppercase mb-4 flex justify-between items-center">
+                  <span>LIBRARY TELEMETRY</span>
+                  <span className="text-[#A3E635]">● ACTIVE</span>
                 </div>
-                <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-blue-400">{totalReactBits}</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">React Bits (Linked)</div>
-                </div>
-                <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-cyan-400">{totalMagicUI}</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">Magic UI (Linked)</div>
-                </div>
-                <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-purple-400">{totalZeura}</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">ZEURALABZ Original</div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="p-3.5 bg-[#FFFDF5] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                    <div className="font-heading text-3xl font-black text-black">{totalAll}</div>
+                    <div className="text-[11px] font-black uppercase text-black mt-1">Total Components</div>
+                  </div>
+                  <div className="p-3.5 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                    <div className="font-heading text-3xl font-black text-black">{totalReactBits}</div>
+                    <div className="text-[11px] font-black uppercase text-black mt-1">React Bits (Linked)</div>
+                  </div>
+                  <div className="p-3.5 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                    <div className="font-heading text-3xl font-black text-black">{totalMagicUI}</div>
+                    <div className="text-[11px] font-black uppercase text-black mt-1">Magic UI (Linked)</div>
+                  </div>
+                  <div className="p-3.5 bg-[#FF90E8] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                    <div className="font-heading text-3xl font-black text-black">{totalZeura}</div>
+                    <div className="text-[11px] font-black uppercase text-black mt-1">ZEURALABZ Original</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* 3. SHOWCASE PANEL (Hero.jsx + Terminal + Presets) */}
-          <div className="mt-14 rounded-2xl bg-[#111111] border border-zinc-800 shadow-2xl overflow-hidden">
-            {/* Window Topbar */}
-            <div className="h-11 px-4 bg-zinc-900/80 border-b border-zinc-800 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="text-xs font-mono text-zinc-400 ml-2">zeuralabz-showcase-matrix</span>
+          {/* FRAMED LIVE BACKGROUND CANVAS BOX (Chunky neo-brutalist border + shadow) */}
+          <div className="mt-12 bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] overflow-hidden">
+            {/* Window bar */}
+            <div className="bg-[#FFDC58] border-b-[3px] border-black px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-2 font-heading text-xs font-black uppercase text-black">
+                <span className="w-3 h-3 bg-red-500 border-[1.5px] border-black inline-block" />
+                <span className="w-3 h-3 bg-yellow-400 border-[1.5px] border-black inline-block" />
+                <span className="w-3 h-3 bg-green-500 border-[1.5px] border-black inline-block" />
+                <span className="ml-2">LIVE CANVAS ENGINE PREVIEW: {heroBg.toUpperCase()}</span>
               </div>
-              <div className="text-[11px] font-mono text-zinc-500">Live Preview & Code Synthesizer</div>
+
+              {/* Background switcher chunky buttons */}
+              <div className="flex items-center gap-1.5 bg-white border-[2px] border-black p-1 shadow-[2px_2px_0px_#000]">
+                <span className="text-[10px] font-black uppercase px-1.5 text-black">TRY ENGINE:</span>
+                {(['aurora', 'galaxy', 'particles', 'gradient'] as const).map((bg) => (
+                  <button
+                    key={bg}
+                    onClick={() => setHeroBg(bg)}
+                    className={`px-2.5 py-1 text-xs font-heading font-black uppercase transition border-[2px] ${
+                      heroBg === bg
+                        ? 'bg-black text-[#FFDC58] border-black shadow-[2px_2px_0px_#000]'
+                        : 'bg-white text-black border-transparent hover:border-black hover:bg-zinc-100'
+                    }`}
+                  >
+                    {bg}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Framed Canvas Stage */}
+            <div className="h-64 sm:h-80 w-full relative bg-[#0a0e27] overflow-hidden flex items-center justify-center">
+              {heroBg === 'aurora' && (
+                <div className="absolute inset-0 opacity-80 overflow-hidden">
+                  <div
+                    className={`w-[140%] h-[150%] -top-1/4 -left-1/4 absolute rounded-full ${
+                      activePreset === 'ocean'
+                        ? 'bg-gradient-to-r from-cyan-400 via-blue-600 to-indigo-800'
+                        : activePreset === 'dune'
+                        ? 'bg-gradient-to-r from-amber-400 via-orange-600 to-rose-700'
+                        : 'bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-600'
+                    } animate-pulse transform rotate-6 scale-110`}
+                  />
+                </div>
+              )}
+              {heroBg === 'galaxy' && (
+                <div className="absolute inset-0">
+                  <GalaxyBackground starCount={900} speed={0.5} armCount={3} glowIntensity={1.1} />
+                </div>
+              )}
+              {heroBg === 'particles' && (
+                <div className="absolute inset-0 opacity-60">
+                  <div className="absolute top-1/4 left-1/3 w-4 h-4 rounded-full bg-cyan-400 border border-white animate-bounce" />
+                  <div className="absolute top-1/2 left-2/3 w-5 h-5 rounded-full bg-yellow-400 border border-white animate-pulse" />
+                  <div className="absolute top-3/4 left-1/4 w-4 h-4 rounded-full bg-pink-400 border border-white animate-ping" />
+                </div>
+              )}
+              {heroBg === 'gradient' && (
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900 via-purple-900 to-black opacity-80" />
+              )}
+
+              {/* Framed overlay badge */}
+              <div className="relative z-10 bg-white/95 border-[3px] border-black shadow-[6px_6px_0px_#000] p-6 text-center max-w-md mx-4">
+                <span className="bg-[#A3E635] text-black border-[2px] border-black px-2 py-0.5 text-[10px] font-heading font-black uppercase">
+                  ACTIVE PREVIEW
+                </span>
+                <h3 className="font-heading text-2xl font-black uppercase text-black mt-2">
+                  {heroBg === 'aurora'
+                    ? 'Northern Aurora Wave'
+                    : heroBg === 'galaxy'
+                    ? 'Spiral Cosmic Galaxy'
+                    : heroBg === 'particles'
+                    ? 'Interactive Particle Web'
+                    : 'Mesh Gradient Drift'}
+                </h3>
+                <p className="text-xs font-bold text-black mt-1">
+                  Framed responsive canvas running at 30/60 FPS with zero scroll lag.
+                </p>
+                <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between text-xs font-mono font-bold">
+                  <span>$ npx zeuralabz add {heroBg}</span>
+                  <button
+                    onClick={() => copyCommand(`npx zeuralabz add ${heroBg}`)}
+                    className="bg-[#FFDC58] text-black border-[2px] border-black px-2 py-0.5 hover:bg-yellow-400 font-heading"
+                  >
+                    {copiedSlug === `npx zeuralabz add ${heroBg}` ? 'COPIED' : 'COPY'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* 3. SHOWCASE PANEL (Hero.jsx + Terminal + Presets) */}
+      {/* ============================================================== */}
+      <section id="showcase" className="py-20 border-b-[3px] border-black bg-[#FFF4E0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="bg-[#FF90E8] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+              LIVE CODE SYNTHESIS
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3">
+              ZERO BOILERPLATE. COPY & SHIP.
+            </h2>
+            <p className="text-black font-semibold text-sm mt-2">
+              Every component works independently in standard React, Vite, or Next.js apps.
+            </p>
+          </div>
+
+          {/* Chunky Multi-Window Container */}
+          <div className="bg-white border-[3px] border-black shadow-[10px_10px_0px_#000] overflow-hidden">
+            {/* Window Topbar */}
+            <div className="h-12 px-4 bg-[#FFDC58] border-b-[3px] border-black flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-3.5 h-3.5 rounded-full bg-rose-500 border border-black" />
+                <div className="w-3.5 h-3.5 rounded-full bg-amber-400 border border-black" />
+                <div className="w-3.5 h-3.5 rounded-full bg-emerald-500 border border-black" />
+                <span className="font-heading text-xs font-black text-black ml-3">
+                  ZEURALABZ-SHOWCASE-MATRIX.JSX
+                </span>
+              </div>
+              <div className="text-[11px] font-mono font-bold text-black uppercase bg-white border border-black px-2 py-0.5 shadow-[2px_2px_0px_#000]">
+                REACT 19 + TAILWIND V4
+              </div>
             </div>
 
             {/* Window Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Left Code Editor (Hero.jsx) - 7 cols */}
-              <div className="lg:col-span-7 p-6 border-b lg:border-b-0 lg:border-r border-zinc-800 font-mono text-xs flex flex-col justify-between">
+              <div className="lg:col-span-7 p-6 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black font-mono text-xs flex flex-col justify-between bg-white">
                 <div>
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/60">
-                    <span className="text-zinc-400 font-semibold flex items-center gap-1.5">
-                      <span className="text-cyan-400">⚛</span> Hero.jsx
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b-[2px] border-black">
+                    <span className="font-heading text-black font-black flex items-center gap-1.5 text-xs">
+                      <span className="text-[#00C853]">⚛</span> Hero.jsx
                     </span>
                     <button
                       onClick={() => copyCommand(sampleHeroCode)}
-                      className="px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-[11px] transition"
+                      className="neo-btn bg-[#FFDC58] text-black px-3 py-1 text-xs"
                     >
-                      {copiedSlug === sampleHeroCode ? '✔ Copied Code' : 'Copy'}
+                      {copiedSlug === sampleHeroCode ? '✔ COPIED' : 'COPY CODE'}
                     </button>
                   </div>
-                  <pre className="text-zinc-300 overflow-x-auto leading-relaxed space-y-1">
+                  <pre className="text-black overflow-x-auto leading-relaxed space-y-1 font-mono text-xs bg-[#FFFDF5] p-4 border-[2px] border-black">
                     {sampleHeroCode.split('\n').map((line, idx) => (
                       <div key={idx} className="flex">
-                        <span className="text-zinc-600 select-none w-7 shrink-0 text-right pr-3">{idx + 1}</span>
-                        <span className={
-                          line.startsWith('import') ? 'text-indigo-400' :
-                          line.includes('<AuroraBackground') || line.includes('<SplitText') || line.includes('<ShimmerButton') ? 'text-cyan-300 font-bold' :
-                          line.includes('return') || line.includes('export') ? 'text-purple-400' : 'text-zinc-300'
-                        }>
+                        <span className="text-zinc-400 select-none w-7 shrink-0 text-right pr-3 font-bold">{idx + 1}</span>
+                        <span
+                          className={
+                            line.startsWith('import')
+                              ? 'text-indigo-600 font-bold'
+                              : line.includes('<AuroraBackground') || line.includes('<SplitText') || line.includes('<ShimmerButton')
+                              ? 'text-rose-600 font-black'
+                              : line.includes('return') || line.includes('export')
+                              ? 'text-purple-700 font-bold'
+                              : 'text-black font-semibold'
+                          }
+                        >
                           {line}
                         </span>
                       </div>
@@ -631,61 +526,65 @@ export default function Hero() {
               </div>
 
               {/* Right Side: Terminal (top) + Presets (bottom) - 5 cols */}
-              <div className="lg:col-span-5 flex flex-col divide-y divide-zinc-800 bg-[#0d0d0d]">
+              <div className="lg:col-span-5 flex flex-col divide-y-[3px] divide-black bg-[#FFFDF5]">
                 {/* Right Top: Terminal Window */}
-                <div className="p-5 font-mono text-xs">
-                  <div className="text-zinc-400 font-semibold mb-3 flex items-center gap-2">
-                    <span className="text-emerald-400">❯</span> Terminal
+                <div className="p-5 font-mono text-xs bg-black text-white">
+                  <div className="font-heading text-[#FFDC58] font-black mb-3 flex items-center gap-2 text-xs">
+                    <span className="text-[#A3E635]">❯</span> TERMINAL WORKFLOW
                   </div>
-                  <div className="space-y-1.5 text-zinc-300 bg-black/70 p-3.5 rounded-xl border border-zinc-800">
-                    <div className="text-indigo-400">$ npx zeuralabz suggest</div>
-                    <div className="text-zinc-400 text-[11px]">✓ Scanning project structure...</div>
-                    <div className="text-emerald-400 text-[11px]">✓ Found 3 best components for your landing page:</div>
-                    <div className="text-zinc-400 pl-3 text-[11px]">• Aurora Background</div>
-                    <div className="text-zinc-400 pl-3 text-[11px]">• Split Character Hero</div>
-                    <div className="text-zinc-400 pl-3 text-[11px]">• Frosted Glass Card</div>
-                    <div className="text-cyan-400 mt-2 text-[11px]">$ npx zeuralabz add aurora</div>
-                    <div className="text-zinc-500 text-[10px]">✔ Installed into src/components/zeuralabz/aurora</div>
+                  <div className="space-y-1.5 bg-[#121212] p-3.5 border-[2px] border-zinc-800 text-[11px] font-mono">
+                    <div className="text-[#FFDC58] font-bold">$ npx zeuralabz suggest</div>
+                    <div className="text-zinc-400">✓ Scanning project structure...</div>
+                    <div className="text-[#A3E635] font-bold">✓ Recommended 3 UI picks for your landing page:</div>
+                    <div className="text-white pl-2">• Aurora Background [Yellow Accent]</div>
+                    <div className="text-white pl-2">• Split Text Stagger [Pink Accent]</div>
+                    <div className="text-white pl-2">• Shimmer Button [Blue Accent]</div>
+                    <div className="text-[#67E8F9] mt-2 font-bold">$ npx zeuralabz add aurora</div>
+                    <div className="text-zinc-400">✔ Installed into src/components/zeuralabz/aurora</div>
                   </div>
                 </div>
 
                 {/* Right Bottom: Presets Window */}
-                <div className="p-5">
-                  <div className="text-xs font-semibold text-zinc-400 mb-3 flex items-center justify-between">
-                    <span>Aesthetic Presets:</span>
-                    <span className="text-[11px] text-zinc-500 font-mono">Live Tune</span>
+                <div className="p-5 bg-white">
+                  <div className="font-heading text-xs font-black text-black mb-3 flex items-center justify-between uppercase">
+                    <span>Aesthetic Tuning:</span>
+                    <span className="bg-[#A3E635] text-black px-1.5 py-0.5 border border-black text-[10px]">LIVE TUNE</span>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { id: 'dark-neon', name: 'Dark Neon', colors: 'Emerald + Cyan' },
-                      { id: 'ocean', name: 'Ocean', colors: 'Bioluminescent Aqua' },
-                      { id: 'dune', name: 'Dune Sunset', colors: 'Solar Amber Flare' },
+                      { id: 'ocean', name: 'Ocean', colors: 'Aqua Wave' },
+                      { id: 'dune', name: 'Dune', colors: 'Solar Amber' },
                     ].map((preset) => (
                       <button
                         key={preset.id}
                         onClick={() => setActivePreset(preset.id as any)}
-                        className={`p-2.5 rounded-xl text-left border transition ${
+                        className={`p-2.5 text-left border-[2px] transition ${
                           activePreset === preset.id
-                            ? 'bg-indigo-950/80 border-indigo-500 shadow-md'
-                            : 'bg-zinc-900/60 border-zinc-800 hover:bg-zinc-800'
+                            ? 'bg-[#FFDC58] border-black shadow-[3px_3px_0px_#000] font-black'
+                            : 'bg-white border-black hover:bg-zinc-100 font-bold'
                         }`}
                       >
-                        <div className="text-xs font-bold text-white">{preset.name}</div>
-                        <div className="text-[10px] text-zinc-400 mt-1">{preset.colors}</div>
+                        <div className="text-xs font-heading font-black text-black uppercase">{preset.name}</div>
+                        <div className="text-[10px] text-zinc-700 mt-1">{preset.colors}</div>
                       </button>
                     ))}
                   </div>
 
                   {/* Preset Values Panel */}
-                  <div className="mt-3 p-3 rounded-xl bg-black/50 border border-zinc-800/80 text-[11px] font-mono text-zinc-400 space-y-1">
+                  <div className="mt-3 p-3 bg-[#FFFDF5] border-[2px] border-black text-[11px] font-mono text-black font-bold space-y-1 shadow-[2px_2px_0px_#000]">
                     <div className="flex justify-between">
                       <span>Amplitude:</span>
-                      <span className="text-cyan-400">{activePreset === 'ocean' ? '0.82 (Deep Surge)' : activePreset === 'dune' ? '0.64 (Warm Drift)' : '0.95 (High Energy)'}</span>
+                      <span className="text-indigo-600">
+                        {activePreset === 'ocean' ? '0.82 (Deep Surge)' : activePreset === 'dune' ? '0.64 (Warm Drift)' : '0.95 (High Energy)'}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>Cycle Speed:</span>
-                      <span className="text-indigo-400">{activePreset === 'ocean' ? '12s smooth' : activePreset === 'dune' ? '18s relaxed' : '15s kinetic'}</span>
+                      <span className="text-rose-600">
+                        {activePreset === 'ocean' ? '12s smooth' : activePreset === 'dune' ? '18s relaxed' : '15s kinetic'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -695,24 +594,26 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* 4. EXPLORE THE LIBRARY SECTION */}
-      <section id="components" className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row items-center gap-4 justify-between border-b border-zinc-800 pb-6">
+      {/* ============================================================== */}
+      {/* 4. EXPLORE THE LIBRARY (Catalog, Filters, Search) */}
+      {/* ============================================================== */}
+      <section id="components" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="flex flex-col md:flex-row items-center gap-4 justify-between border-b-[3px] border-black pb-6">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-white">Component Catalog</h2>
-            <p className="text-xs text-zinc-400 mt-1">
+            <h2 className="font-heading text-3xl font-black uppercase text-black">Component Catalog</h2>
+            <p className="text-xs text-black font-semibold mt-1">
               Every component rendered live with responsive code tabs and single-command installation.
             </p>
           </div>
 
-          {/* Search bar */}
-          <div className="relative w-full md:w-80">
+          {/* Neo Search bar */}
+          <div className="relative w-full md:w-96">
             <input
               type="text"
-              placeholder="Search components (e.g. aurora, shimmer, tilt)..."
+              placeholder="Search components (e.g. aurora, bento, tilt, button)..."
               value={rawSearchQuery}
               onChange={(e) => setRawSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-indigo-500 transition"
+              className="w-full px-4 py-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#000] text-xs font-bold text-black placeholder:text-zinc-500 focus:outline-none focus:shadow-[6px_6px_0px_#000] focus:bg-[#FFFDF5] transition"
             />
             {rawSearchQuery && (
               <button
@@ -720,18 +621,18 @@ export default function Hero() {
                   setRawSearchQuery('');
                   setCurrentPage(1);
                 }}
-                className="absolute right-3 top-2 text-zinc-400 hover:text-white text-xs"
+                className="absolute right-3 top-3 text-black font-heading font-black text-xs hover:text-red-600"
               >
-                Clear
+                ✕ CLEAR
               </button>
             )}
           </div>
         </div>
 
-        {/* Source Filter Row */}
-        <div className="flex flex-wrap items-center gap-2 pt-6 pb-2 border-t border-zinc-800/80">
-          <span className="text-[11px] font-mono text-zinc-400 mr-2 uppercase tracking-wider font-semibold">
-            Source:
+        {/* Source Filter Row (Chunky Neo-Brutalist buttons) */}
+        <div className="flex flex-wrap items-center gap-2 pt-6 pb-2 border-t-[3px] border-black/10">
+          <span className="font-heading text-xs font-black text-black mr-2 uppercase tracking-wider">
+            SOURCE:
           </span>
           {[
             { id: 'all', label: `All Sources (${totalAll})` },
@@ -749,18 +650,18 @@ export default function Hero() {
                   setCurrentPage(1);
                 }
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 text-xs font-heading font-black uppercase transition border-[3px] border-black ${
                 src.disabled
-                  ? 'opacity-40 cursor-not-allowed bg-zinc-900/40 text-zinc-600 border border-zinc-800/40'
+                  ? 'opacity-40 cursor-not-allowed bg-zinc-200 text-zinc-500'
                   : selectedSource === src.id
                   ? src.id === 'react-bits'
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400'
+                    ? 'bg-[#7FBCFF] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'magic-ui'
-                    ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-600/30 border border-cyan-400'
+                    ? 'bg-[#67E8F9] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'zeuralabz-original'
-                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30 border border-purple-400'
-                    : 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border border-indigo-400'
-                  : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-800'
+                    ? 'bg-[#FF90E8] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
+                    : 'bg-[#FFDC58] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
+                  : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
               }`}
             >
               {src.label}
@@ -768,7 +669,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Category Filter Pills */}
+        {/* Category Filter Pills (Chunky Square Buttons) */}
         <div className="flex items-center gap-2 overflow-x-auto py-4 text-xs no-scrollbar">
           {CATEGORIES.map((cat) => (
             <button
@@ -777,23 +678,23 @@ export default function Hero() {
                 setSelectedCategory(cat);
                 setCurrentPage(1);
               }}
-              className={`px-3 py-1.5 rounded-full capitalize shrink-0 font-medium transition ${
+              className={`px-3 py-1.5 capitalize shrink-0 font-heading font-black text-xs transition border-[2px] border-black ${
                 selectedCategory === cat
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                  : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-800'
+                  ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
+                  : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
               }`}
             >
               {cat.replace('-', ' ')}
             </button>
           ))}
-          <span className="text-zinc-500 ml-auto shrink-0 text-xs font-mono font-medium">
-            Showing {filteredComponents.length} components — {totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalZeura} ZEURALABZ Original
+          <span className="ml-auto shrink-0 font-heading text-xs font-black uppercase bg-black text-white px-2.5 py-1 border-[2px] border-black shadow-[2px_2px_0px_#FFDC58]">
+            SHOWING {filteredComponents.length} OF {totalAll}
           </span>
         </div>
 
         {/* Second Row: "Install the source you need" */}
-        <div className="mt-2 mb-8 p-3 rounded-xl bg-zinc-900/40 border border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <span className="text-zinc-400 font-medium">Install the source you need:</span>
+        <div className="mt-2 mb-8 p-3.5 bg-white border-[3px] border-black shadow-[4px_4px_0px_#000] flex flex-wrap items-center justify-between gap-3 text-xs">
+          <span className="font-heading font-black text-black uppercase">Install format you need:</span>
           <div className="flex flex-wrap gap-2">
             {[
               { id: 'typescript', label: 'TypeScript', ext: '.tsx' },
@@ -804,31 +705,35 @@ export default function Hero() {
               <button
                 key={fmt.id}
                 onClick={() => setSelectedFormat(fmt.id)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium border transition ${
+                className={`px-3 py-1 text-xs font-bold border-[2px] border-black transition ${
                   selectedFormat === fmt.id
-                    ? 'bg-zinc-800 border-indigo-500 text-white shadow-sm'
-                    : 'bg-black/60 border-zinc-800 text-zinc-400 hover:bg-zinc-800'
+                    ? 'bg-[#FFDC58] text-black shadow-[2px_2px_0px_#000] font-black'
+                    : 'bg-[#FFFDF5] text-black hover:bg-zinc-100'
                 }`}
               >
-                {fmt.label} <span className="text-zinc-500 text-[10px]">({fmt.ext})</span>
+                {fmt.label} <span className="text-zinc-600 text-[10px]">({fmt.ext})</span>
               </button>
             ))}
           </div>
         </div>
 
+        {/* ============================================================== */}
         {/* 5. COMPONENT GRID WITH LIVE PREVIEWS & PAGINATION */}
+        {/* ============================================================== */}
         {filteredComponents.length === 0 ? (
-          <div className="text-center py-24 text-zinc-500">
-            <p className="text-base">No components matched "{rawSearchQuery}".</p>
+          <div className="text-center py-24 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] p-8">
+            <p className="font-heading text-xl font-black text-black">NO COMPONENTS MATCHED "{rawSearchQuery}"</p>
+            <p className="text-xs text-black font-medium mt-1">Try searching for keywords like aurora, bento, card, or button.</p>
             <button
               onClick={() => {
                 setRawSearchQuery('');
                 setSelectedCategory('all');
+                setSelectedSource('all');
                 setCurrentPage(1);
               }}
-              className="mt-4 px-4 py-2 rounded-lg bg-zinc-800 text-xs text-zinc-300 hover:bg-zinc-700"
+              className="mt-4 neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs"
             >
-              Reset Filters
+              RESET FILTERS
             </button>
           </div>
         ) : (
@@ -836,52 +741,60 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {visibleComponents.map((comp) => {
                 const isCopied = copiedSlug === comp.slug;
+                const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#000' };
+
                 return (
                   <div
                     key={comp.id}
-                    className="group rounded-2xl bg-[#141414] border border-zinc-800 hover:border-zinc-600 transition duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1"
+                    className="group rounded-lg bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000] transition-all duration-150 flex flex-col overflow-hidden"
                   >
-                    {/* Top 45%: LIVE COMPONENT RENDER OR LINKED PORTAL */}
-                    <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b border-zinc-800/80">
+                    {/* Top Preview Area (Framed Box with 3px black bottom border) */}
+                    <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-black">
                       {comp.source === 'react-bits' ? (
-                        <div className="w-full h-full bg-gradient-to-br from-[#0b1129] via-[#080d20] to-[#050814] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/rb">
-                          <div className="absolute inset-0 bg-blue-500/5 group-hover/rb:bg-blue-500/10 transition-colors" />
+                        <div className="w-full h-full bg-[#E0F2FF] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
                           <div className="relative z-10 flex flex-col items-center gap-2">
-                            <span className="w-9 h-9 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-lg shadow-lg">
+                            <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
                               ✨
                             </span>
                             <div>
-                              <div className="text-xs font-bold text-white tracking-wide">Official React Bits Demo</div>
-                              <div className="text-[10px] text-blue-300/80 font-mono">@react-bits/{comp.componentName || comp.name}-TS-TW</div>
+                              <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
+                                Official React Bits Demo
+                              </div>
+                              <div className="text-[10px] text-zinc-700 font-mono font-bold">
+                                @react-bits/{comp.componentName || comp.name}-TS-TW
+                              </div>
                             </div>
                             <a
                               href={comp.originalUrl || comp.previewUrl}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition transform hover:scale-105 cursor-pointer mt-1"
+                              className="neo-btn bg-[#7FBCFF] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
                             >
-                              View Live Demo on React Bits ➔
+                              VIEW LIVE DEMO ➔
                             </a>
                           </div>
                         </div>
                       ) : comp.source === 'magic-ui' ? (
-                        <div className="w-full h-full bg-gradient-to-br from-[#061d24] via-[#041318] to-[#02090c] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/mu">
-                          <div className="absolute inset-0 bg-cyan-500/5 group-hover/mu:bg-cyan-500/10 transition-colors" />
+                        <div className="w-full h-full bg-[#E6FFFA] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
                           <div className="relative z-10 flex flex-col items-center gap-2">
-                            <span className="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-lg shadow-lg">
+                            <span className="w-10 h-10 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
                               🪄
                             </span>
                             <div>
-                              <div className="text-xs font-bold text-white tracking-wide">Official Magic UI Demo</div>
-                              <div className="text-[10px] text-cyan-300/80 font-mono">@magic-ui/{comp.slug}</div>
+                              <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
+                                Official Magic UI Demo
+                              </div>
+                              <div className="text-[10px] text-zinc-700 font-mono font-bold">
+                                @magic-ui/{comp.slug}
+                              </div>
                             </div>
                             <a
                               href={comp.originalUrl || comp.previewUrl || `https://magicui.design/docs/components/${comp.slug}`}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-cyan-600 hover:bg-cyan-500 text-white shadow-md shadow-cyan-600/30 transition transform hover:scale-105 cursor-pointer mt-1"
+                              className="neo-btn bg-[#67E8F9] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
                             >
-                              View Live Demo on Magic UI ➔
+                              VIEW LIVE DEMO ➔
                             </a>
                           </div>
                         </div>
@@ -895,14 +808,14 @@ export default function Hero() {
                         />
                       )}
 
-                      {/* Source badge */}
+                      {/* Source badge (Top-Left) */}
                       <span
-                        className={`absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase border backdrop-blur-md ${
+                        className={`absolute top-3 left-3 px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
                           comp.source === 'react-bits'
-                            ? 'bg-blue-950/90 text-blue-300 border-blue-800/80'
+                            ? 'bg-[#7FBCFF] text-black'
                             : comp.source === 'magic-ui'
-                            ? 'bg-cyan-950/90 text-cyan-300 border-cyan-800/80'
-                            : 'bg-purple-950/90 text-purple-300 border-purple-800/80'
+                            ? 'bg-[#67E8F9] text-black'
+                            : 'bg-[#FFDC58] text-black'
                         }`}
                       >
                         {comp.source === 'react-bits'
@@ -912,46 +825,49 @@ export default function Hero() {
                           : 'ZEURALABZ Original'}
                       </span>
 
-                      {/* Category / Indicator */}
-                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-black/80 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-                        {comp.source === 'react-bits' ? (
+                      {/* Live Preview Indicator Badge (Top-Right) */}
+                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#000]">
+                        {comp.source === 'react-bits' || comp.source === 'magic-ui' ? (
                           <>
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                            Official
-                          </>
-                        ) : comp.source === 'magic-ui' ? (
-                          <>
-                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                            Official
+                            <span className="w-1.5 h-1.5 bg-[#67E8F9]" />
+                            OFFICIAL
                           </>
                         ) : (
                           <>
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                            {animationMode === 'off' ? 'Static' : animationMode === 'lite' ? 'Lite 30fps' : 'Full 60fps'}
+                            <span className="w-1.5 h-1.5 bg-[#A3E635] animate-pulse" />
+                            {animationMode === 'off' ? 'STATIC' : animationMode === 'lite' ? 'LITE' : '60 FPS'}
                           </>
                         )}
                       </span>
                     </div>
 
                     {/* Middle: Details */}
-                    <div className="p-5 flex-1 flex flex-col justify-between">
+                    <div className="p-5 flex-1 flex flex-col justify-between bg-white">
                       <div>
                         <div className="flex items-center justify-between">
-                          <h3 className="font-bold text-sm text-white group-hover:text-indigo-300 transition">
+                          <h3 className="font-heading text-sm font-black text-black group-hover:text-indigo-700 transition">
                             {comp.name}
                           </h3>
-                          <span className="text-[11px] text-zinc-500 font-mono">{comp.slug}</span>
+                          <span className="text-[11px] text-zinc-600 font-mono font-bold bg-[#FFFDF5] border border-black px-1.5 py-0.5">
+                            {comp.slug}
+                          </span>
                         </div>
-                        <p className="text-xs text-zinc-400 mt-2 line-clamp-2 leading-relaxed font-light">
+                        <p className="text-xs text-black font-medium mt-2 line-clamp-2 leading-relaxed">
                           {comp.description}
                         </p>
 
                         {/* Best for tags */}
                         <div className="mt-3 flex flex-wrap gap-1.5">
-                          {comp.bestFor?.slice(0, 3).map((b) => (
+                          <span
+                            className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[1.5px] border-black shadow-[1.5px_1.5px_0px_#000]"
+                            style={{ backgroundColor: catTheme.bg, color: catTheme.text }}
+                          >
+                            {comp.category}
+                          </span>
+                          {comp.bestFor?.slice(0, 2).map((b) => (
                             <span
                               key={b}
-                              className="px-2 py-0.5 rounded-full text-[10px] bg-zinc-900 text-zinc-400 border border-zinc-800"
+                              className="px-2 py-0.5 text-[10px] font-bold bg-[#FFFDF5] text-black border border-black"
                             >
                               ✓ {b}
                             </span>
@@ -960,7 +876,7 @@ export default function Hero() {
                       </div>
 
                       {/* Bottom Action Bar */}
-                      <div className="mt-5 pt-3 border-t border-zinc-800/80 flex items-center justify-between gap-2">
+                      <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between gap-2">
                         <button
                           onClick={() =>
                             copyCommand(
@@ -971,21 +887,17 @@ export default function Hero() {
                                 : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
                             )
                           }
-                          className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 ${
+                          className={`flex-1 py-2 px-3 text-xs font-mono font-black border-[2px] border-black shadow-[3px_3px_0px_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-1.5 ${
                             isCopied
-                              ? 'bg-emerald-500 text-black font-bold'
-                              : comp.source === 'react-bits'
-                              ? 'bg-blue-950/60 hover:bg-blue-900/60 text-blue-200 border border-blue-800/80'
-                              : comp.source === 'magic-ui'
-                              ? 'bg-cyan-950/60 hover:bg-cyan-900/60 text-cyan-200 border border-cyan-800/80'
-                              : 'bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800'
+                              ? 'bg-[#A3E635] text-black font-black'
+                              : 'bg-black text-[#FFDC58] hover:bg-zinc-900'
                           }`}
                         >
                           {isCopied ? (
-                            '✔ Copied to clipboard!'
+                            '✔ COPIED TO CLIPBOARD!'
                           ) : (
                             <>
-                              <span className="text-zinc-500">$</span> npx zeuralabz add {comp.slug}{' '}
+                              <span>$</span> npx zeuralabz add {comp.slug}{' '}
                               {comp.source === 'react-bits'
                                 ? '--source react-bits'
                                 : comp.source === 'magic-ui'
@@ -997,10 +909,10 @@ export default function Hero() {
 
                         <button
                           onClick={() => setSelectedComponent(comp)}
-                          className="px-3 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-medium transition"
+                          className="neo-btn bg-[#FF90E8] text-black px-3 py-2 text-xs font-heading font-black"
                           title="View code & usage"
                         >
-                          Code ➔
+                          CODE ➔
                         </button>
                       </div>
                     </div>
@@ -1010,21 +922,21 @@ export default function Hero() {
             </div>
 
             {/* Pagination Controls */}
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800">
-              <div className="text-xs text-zinc-400 font-medium">
-                Showing <span className="text-white font-bold">{visibleComponents.length}</span> of{' '}
-                <span className="text-white font-bold">{filteredComponents.length}</span> components
-                <span className="text-zinc-600 ml-2">• Page {currentPage} of {totalPages}</span>
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000]">
+              <div className="text-xs text-black font-heading font-black uppercase">
+                SHOWING <span className="bg-[#FFDC58] px-1 border border-black">{visibleComponents.length}</span> OF{' '}
+                <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span> COMPONENTS
+                <span className="ml-2 text-zinc-600 font-sans">• PAGE {currentPage} OF {totalPages}</span>
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
                 {visibleComponents.length < filteredComponents.length && (
                   <button
                     onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-                    className="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-md shadow-indigo-600/30 flex items-center gap-1.5"
+                    className="neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5"
                   >
-                    <span>Load More (12 more)</span>
-                    <span className="text-[10px] bg-indigo-700/80 px-1.5 py-0.5 rounded font-mono">
+                    <span>LOAD MORE (12 MORE)</span>
+                    <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-mono">
                       +{Math.min(ITEMS_PER_PAGE, filteredComponents.length - visibleComponents.length)}
                     </span>
                   </button>
@@ -1033,9 +945,9 @@ export default function Hero() {
                 {visibleComponents.length < filteredComponents.length && (
                   <button
                     onClick={() => setCurrentPage(totalPages)}
-                    className="px-3 py-2 rounded-xl text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition border border-zinc-700"
+                    className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
                   >
-                    Load All ({filteredComponents.length})
+                    LOAD ALL ({filteredComponents.length})
                   </button>
                 )}
 
@@ -1045,9 +957,9 @@ export default function Hero() {
                       setCurrentPage(1);
                       document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="px-3 py-2 rounded-xl text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition border border-zinc-700"
+                    className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
                   >
-                    Back to First 12
+                    BACK TO FIRST 12
                   </button>
                 )}
               </div>
@@ -1056,45 +968,51 @@ export default function Hero() {
         )}
       </section>
 
+      {/* ============================================================== */}
       {/* 6. BOTTOM SECTIONS: HOW IT WORKS & AI INTEGRATION */}
-      <section id="how-it-works" className="py-20 border-t border-zinc-800/80 bg-zinc-950/60">
+      {/* ============================================================== */}
+      <section id="how-it-works" className="py-20 border-t-[3px] border-b-[3px] border-black bg-[#FFE9F3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Autonomous Workflow</span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white mt-2">How ZEURALABZ Suggest Works</h2>
-            <p className="text-zinc-400 text-sm mt-3">
+            <span className="bg-[#FFDC58] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+              AUTONOMOUS WORKFLOW
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3">
+              HOW ZEURALABZ SUGGEST WORKS
+            </h2>
+            <p className="text-black font-semibold text-sm mt-2">
               No manual hunting. Let the heuristic analyzer inspect your repo and recommend the 1 best match per section.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-2xl bg-black border border-zinc-800 text-left">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm mb-4">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
+              <div className="w-12 h-12 bg-[#FFDC58] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 01
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Scan Your Project</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Run <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
+              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Scan Your Project</h3>
+              <p className="text-xs text-black font-semibold leading-relaxed">
+                Run <code className="bg-[#FFFDF5] border border-black px-1 py-0.5 font-mono text-black">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-black border border-zinc-800 text-left">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
+              <div className="w-12 h-12 bg-[#FF90E8] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 02
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Curated 1-Best-Pick</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                ZEURALABZ determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component for each part with why explanations.
+              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Curated 1-Best-Pick</h3>
+              <p className="text-xs text-black font-semibold leading-relaxed">
+                ZEURALABZ determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component per section with reasoning.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-black border border-zinc-800 text-left">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
+              <div className="w-12 h-12 bg-[#7FBCFF] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 03
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Direct Local Code</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Source files copy straight into your <code className="text-indigo-300 bg-zinc-900 px-1 py-0.5 rounded font-mono">src/components/zeuralabz/</code> folder. Zero npm dependency lock-in.
+              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Direct Local Code</h3>
+              <p className="text-xs text-black font-semibold leading-relaxed">
+                Components install straight into your <code className="bg-[#FFFDF5] border border-black px-1 py-0.5 font-mono text-black">src/components/</code> directory. Zero lock-in.
               </p>
             </div>
           </div>
@@ -1102,23 +1020,29 @@ export default function Hero() {
       </section>
 
       {/* AI Tool Integration Cards */}
-      <section id="mcp" className="py-20 border-t border-zinc-800/80 bg-black">
+      <section id="mcp" className="py-20 border-b-[3px] border-black bg-[#E0F2FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs uppercase tracking-widest text-cyan-400 font-bold">Model Context Protocol</span>
-          <h2 className="text-3xl font-black text-white mt-2 mb-4">Install in your AI Workspace</h2>
-          <p className="text-zinc-400 text-sm max-w-xl mx-auto mb-12">
+          <span className="bg-[#A3E635] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+            MODEL CONTEXT PROTOCOL & SKILLS
+          </span>
+          <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3 mb-4">
+            INSTALL IN YOUR AI WORKSPACE
+          </h2>
+          <p className="text-black font-semibold text-sm max-w-xl mx-auto mb-12">
             Native MCP tools and skills for Claude Code, Cursor, Windsurf, and Google Antigravity.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex flex-col justify-between">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold text-indigo-400">Claude Code / Desktop</span>
-                <p className="text-xs text-zinc-400 mt-2">
+                <span className="bg-[#FFDC58] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                  Claude Code / Desktop
+                </span>
+                <p className="text-xs text-black font-semibold mt-3">
                   Add the ZEURALABZ MCP server to enable autonomous design reviews and component installations.
                 </p>
               </div>
-              <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#FFDC58] overflow-x-auto shadow-[3px_3px_0px_#000]">
 {`"zeuralabz": {
   "command": "node",
   "args": ["mcp-server/index.js"]
@@ -1126,28 +1050,32 @@ export default function Hero() {
               </pre>
             </div>
 
-            <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex flex-col justify-between">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold text-cyan-400">Antigravity / Gemini</span>
-                <p className="text-xs text-zinc-400 mt-2">
-                  Drop <code className="text-white">SKILL.md</code> into your skills folder to activate intelligent UI recommendations.
+                <span className="bg-[#67E8F9] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                  Antigravity / Gemini
+                </span>
+                <p className="text-xs text-black font-semibold mt-3">
+                  Drop <code className="bg-[#FFFDF5] border border-black px-1">SKILL.md</code> into your skills folder to activate intelligent UI recommendations.
                 </p>
               </div>
-              <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#A3E635] overflow-x-auto shadow-[3px_3px_0px_#000]">
 {`// Tell Antigravity:
 "Use ZEURALABZ to analyze my site
 and install the best hero"`}
               </pre>
             </div>
 
-            <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 flex flex-col justify-between">
+            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold text-emerald-400">Cursor & Windsurf</span>
-                <p className="text-xs text-zinc-400 mt-2">
-                  Connect via MCP server settings and query components straight from chat with <code className="text-white">@zeuralabz</code>.
+                <span className="bg-[#FF90E8] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                  Cursor & Windsurf
+                </span>
+                <p className="text-xs text-black font-semibold mt-3">
+                  Connect via MCP server settings and query components straight from chat with <code className="bg-[#FFFDF5] border border-black px-1">@zeuralabz</code>.
                 </p>
               </div>
-              <pre className="mt-4 p-3 rounded-xl bg-black border border-zinc-800 text-[11px] font-mono text-zinc-300 overflow-x-auto">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#7FBCFF] overflow-x-auto shadow-[3px_3px_0px_#000]">
 {`@zeuralabz suggest
 @zeuralabz install aurora`}
               </pre>
@@ -1156,22 +1084,24 @@ and install the best hero"`}
         </div>
       </section>
 
-      {/* Code Modal with Preview / React / HTML+CSS Tabs */}
+      {/* ============================================================== */}
+      {/* 7. CODE MODAL (Chunky white dialog with 4px black border + 12px shadow) */}
+      {/* ============================================================== */}
       {selectedComponent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="w-full max-w-3xl bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+          <div className="w-full max-w-3xl bg-white border-[4px] border-black shadow-[12px_12px_0px_#000] overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="p-5 border-b border-zinc-800 flex items-center justify-between">
+            <div className="p-5 bg-[#FFDC58] border-b-[3px] border-black flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-bold text-white">{selectedComponent.name}</h3>
+                  <h3 className="font-heading text-xl font-black text-black uppercase">{selectedComponent.name}</h3>
                   <span
-                    className={`px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase border backdrop-blur-md ${
+                    className={`px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
                       selectedComponent.source === 'react-bits'
-                        ? 'bg-blue-950/90 text-blue-300 border-blue-800/80'
+                        ? 'bg-[#7FBCFF] text-black'
                         : selectedComponent.source === 'magic-ui'
-                        ? 'bg-cyan-950/90 text-cyan-300 border-cyan-800/80'
-                        : 'bg-purple-950/90 text-purple-300 border-purple-800/80'
+                        ? 'bg-[#67E8F9] text-black'
+                        : 'bg-white text-black'
                     }`}
                   >
                     {selectedComponent.source === 'react-bits'
@@ -1181,7 +1111,7 @@ and install the best hero"`}
                       : 'ZEURALABZ Original'}
                   </span>
                 </div>
-                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                <p className="text-xs text-black font-mono font-bold mt-1">
                   {selectedComponent.source === 'react-bits'
                     ? `Official React Bits Registry • ${selectedComponent.componentName}-TS-TW`
                     : selectedComponent.source === 'magic-ui'
@@ -1191,36 +1121,42 @@ and install the best hero"`}
               </div>
               <button
                 onClick={() => setSelectedComponent(null)}
-                className="w-8 h-8 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center"
+                className="w-9 h-9 bg-black text-white hover:bg-red-600 font-heading font-black text-sm flex items-center justify-center border-[2px] border-black shadow-[2px_2px_0px_#000] transition"
               >
                 ✕
               </button>
             </div>
 
             {/* Code Tabs */}
-            <div className="flex border-b border-zinc-800 px-6 pt-2 bg-zinc-900/50 gap-4 text-xs font-medium">
+            <div className="flex border-b-[3px] border-black px-6 pt-3 bg-[#FFFDF5] gap-3 text-xs font-bold">
               <button
                 onClick={() => setActiveTab('react')}
-                className={`pb-2.5 transition border-b-2 ${
-                  activeTab === 'react' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
+                className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                  activeTab === 'react'
+                    ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
+                    : 'bg-white text-black hover:bg-zinc-100'
                 }`}
               >
-                React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' ? 'TypeScript + Tailwind' : 'TypeScript'})
+                React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' ? 'TS + Tailwind' : 'TypeScript'})
               </button>
               {selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
                 <>
                   <button
                     onClick={() => setActiveTab('html')}
-                    className={`pb-2.5 transition border-b-2 ${
-                      activeTab === 'html' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
+                    className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                      activeTab === 'html'
+                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
+                        : 'bg-white text-black hover:bg-zinc-100'
                     }`}
                   >
                     Pure HTML
                   </button>
                   <button
                     onClick={() => setActiveTab('css')}
-                    className={`pb-2.5 transition border-b-2 ${
-                      activeTab === 'css' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
+                    className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                      activeTab === 'css'
+                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
+                        : 'bg-white text-black hover:bg-zinc-100'
                     }`}
                   >
                     Pure CSS
@@ -1230,11 +1166,11 @@ and install the best hero"`}
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono">
+            <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono bg-white">
               {/* Primary ZEURALABZ CLI Command */}
-              <div className="flex items-center justify-between p-3 rounded-xl bg-black border border-zinc-800 text-indigo-400">
-                <span>
-                  npx zeuralabz add {selectedComponent.slug}
+              <div className="flex items-center justify-between p-3.5 bg-black text-[#FFDC58] border-[3px] border-black shadow-[4px_4px_0px_#000]">
+                <span className="font-bold">
+                  $ npx zeuralabz add {selectedComponent.slug}
                   {selectedComponent.source === 'react-bits'
                     ? ' --source react-bits'
                     : selectedComponent.source === 'magic-ui'
@@ -1253,7 +1189,7 @@ and install the best hero"`}
                       }`
                     )
                   }
-                  className="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-white text-[11px]"
+                  className="px-3 py-1 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs border border-black shadow-[2px_2px_0px_#FFF]"
                 >
                   {copiedSlug ===
                   `npx zeuralabz add ${selectedComponent.slug}${
@@ -1263,28 +1199,28 @@ and install the best hero"`}
                       ? ' --source magic-ui'
                       : ''
                   }`
-                    ? 'Copied!'
-                    : 'Copy'}
+                    ? 'COPIED!'
+                    : 'COPY'}
                 </button>
               </div>
 
               {/* Official React Bits direct shadcn command + documentation link */}
               {selectedComponent.source === 'react-bits' && (
-                <div className="p-3.5 rounded-xl bg-blue-950/30 border border-blue-900/60 space-y-2">
+                <div className="p-4 bg-[#E0F2FF] border-[3px] border-black shadow-[4px_4px_0px_#000] space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-sans font-semibold text-blue-300">
+                    <span className="font-heading text-xs font-black uppercase text-black">
                       Official React Bits Registry Command:
                     </span>
                     <a
                       href={selectedComponent.originalUrl || 'https://reactbits.dev'}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[11px] text-blue-400 hover:underline flex items-center gap-1 font-sans font-semibold"
+                      className="text-xs text-blue-700 hover:underline flex items-center gap-1 font-heading font-black"
                     >
-                      Visit reactbits.dev ↗
+                      VISIT REACTBITS.DEV ↗
                     </a>
                   </div>
-                  <div className="flex items-center justify-between text-zinc-300 bg-black/60 p-2 rounded-lg font-mono text-[11px]">
+                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-black font-mono text-xs">
                     <code>{selectedComponent.installCommand || `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`}</code>
                     <button
                       onClick={() =>
@@ -1293,12 +1229,12 @@ and install the best hero"`}
                             `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`
                         )
                       }
-                      className="px-2 py-0.5 rounded bg-zinc-800 text-xs text-zinc-300 hover:text-white shrink-0 ml-2"
+                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-black"
                     >
-                      Copy
+                      COPY
                     </button>
                   </div>
-                  <p className="text-[10px] text-zinc-400 font-sans leading-relaxed pt-1">
+                  <p className="text-[11px] text-black font-sans font-medium pt-1">
                     Attribution: Created by David Haz (github.com/DavidHDev/react-bits). Free to use under MIT + Commons Clause.
                   </p>
                 </div>
@@ -1306,21 +1242,21 @@ and install the best hero"`}
 
               {/* Official Magic UI direct shadcn command + documentation link */}
               {selectedComponent.source === 'magic-ui' && (
-                <div className="p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-900/60 space-y-2">
+                <div className="p-4 bg-[#E6FFFA] border-[3px] border-black shadow-[4px_4px_0px_#000] space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-sans font-semibold text-cyan-300">
+                    <span className="font-heading text-xs font-black uppercase text-black">
                       Official Magic UI Registry Command:
                     </span>
                     <a
                       href={selectedComponent.originalUrl || `https://magicui.design/docs/components/${selectedComponent.slug}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[11px] text-cyan-400 hover:underline flex items-center gap-1 font-sans font-semibold"
+                      className="text-xs text-cyan-800 hover:underline flex items-center gap-1 font-heading font-black"
                     >
-                      Visit magicui.design ↗
+                      VISIT MAGICUI.DESIGN ↗
                     </a>
                   </div>
-                  <div className="flex items-center justify-between text-zinc-300 bg-black/60 p-2 rounded-lg font-mono text-[11px]">
+                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-black font-mono text-xs">
                     <code>{selectedComponent.installCommand || `npx shadcn@latest add https://magicui.design/r/${selectedComponent.slug}.json`}</code>
                     <button
                       onClick={() =>
@@ -1329,12 +1265,12 @@ and install the best hero"`}
                             `npx shadcn@latest add https://magicui.design/r/${selectedComponent.slug}.json`
                         )
                       }
-                      className="px-2 py-0.5 rounded bg-zinc-800 text-xs text-zinc-300 hover:text-white shrink-0 ml-2"
+                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-black"
                     >
-                      Copy
+                      COPY
                     </button>
                   </div>
-                  <p className="text-[10px] text-zinc-400 font-sans leading-relaxed pt-1">
+                  <p className="text-[11px] text-black font-sans font-medium pt-1">
                     Attribution: Created by Dillion Verma (github.com/magicuidesign/magicui). Free to use under MIT License.
                   </p>
                 </div>
@@ -1342,8 +1278,8 @@ and install the best hero"`}
 
               {activeTab === 'react' && (
                 <div>
-                  <span className="text-zinc-500 block mb-1 font-sans">React Usage:</span>
-                  <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
+                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">React Usage:</span>
+                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
 {selectedComponent.source === 'react-bits'
   ? `import ${selectedComponent.componentName} from '@/components/${selectedComponent.componentName}';
 
@@ -1375,8 +1311,8 @@ export default function Example() {
 
               {activeTab === 'html' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
                 <div>
-                  <span className="text-zinc-500 block mb-1 font-sans">Semantic HTML Structure:</span>
-                  <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
+                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">Semantic HTML Structure:</span>
+                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
 {`<div class="zeura-${selectedComponent.slug}">
   <h2>${selectedComponent.name}</h2>
 </div>`}
@@ -1386,14 +1322,15 @@ export default function Example() {
 
               {activeTab === 'css' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
                 <div>
-                  <span className="text-zinc-500 block mb-1 font-sans">Standalone CSS Rules:</span>
-                  <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
+                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">Standalone CSS Rules:</span>
+                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
 {`.zeura-${selectedComponent.slug} {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  background-color: #09090b;
-  color: #f4f4f5;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000;
+  background-color: #FFFDF5;
+  color: #000;
 }`}
                   </pre>
                 </div>
@@ -1401,42 +1338,44 @@ export default function Example() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 border-t border-zinc-800 bg-zinc-900/50 flex justify-end">
+            <div className="p-4 border-t-[3px] border-black bg-[#FFFDF5] flex justify-end">
               <button
                 onClick={() => setSelectedComponent(null)}
-                className="px-4 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-medium text-xs transition"
+                className="neo-btn bg-black text-white px-5 py-2 text-xs font-heading font-black hover:bg-zinc-800"
               >
-                Close
+                CLOSE
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* 7. FOOTER */}
-      <footer className="border-t border-zinc-900 bg-black py-12 px-4 sm:px-6 lg:px-8 text-xs text-zinc-500">
+      {/* ============================================================== */}
+      {/* 8. FOOTER (Black bg, 5px yellow top border, MIT attribution) */}
+      {/* ============================================================== */}
+      <footer className="border-t-[5px] border-[#FFDC58] bg-black text-white py-14 px-4 sm:px-6 lg:px-8 text-xs">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <div className="flex items-center gap-2 justify-center sm:justify-start">
-              <span className="font-bold text-white text-sm">ZEURALABZ</span>
-              <span className="text-zinc-600">•</span>
-              <span>{totalAll} animated components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalZeura} ZEURALABZ Original)</span>
+              <span className="font-heading font-black text-[#FFDC58] text-base">ZEURALABZ</span>
+              <span className="text-zinc-500">•</span>
+              <span className="font-bold">{totalAll} animated components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalZeura} Originals)</span>
             </div>
-            <div className="mt-1">
+            <div className="mt-1.5 text-zinc-400 font-medium">
               Crafted with care by{' '}
-              <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-indigo-400 hover:underline">
+              <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-[#FFDC58] font-bold hover:underline">
                 R. Selva
               </a>
-              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons Clause) & Magic UI (Dillion Verma, MIT) — components installed directly from official registries.
+              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons) & Magic UI (Dillion Verma, MIT).
             </div>
           </div>
 
-          <div className="flex gap-6 font-medium">
-            <a href="https://github.com/rselva1202/zeuralabz" className="hover:text-white transition">GitHub</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/ATTRIBUTION.md" className="hover:text-white transition">Attribution</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" className="hover:text-white transition">Installation</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/HOW-IT-WORKS.md" className="hover:text-white transition">Architecture</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" className="hover:text-white transition">AI Skill</a>
+          <div className="flex flex-wrap gap-4 font-heading font-black uppercase text-xs">
+            <a href="https://github.com/rselva1202/zeuralabz" className="text-white hover:text-[#FFDC58] transition">GitHub</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/ATTRIBUTION.md" className="text-white hover:text-[#FFDC58] transition">Attribution</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" className="text-white hover:text-[#FFDC58] transition">Installation</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/HOW-IT-WORKS.md" className="text-white hover:text-[#FFDC58] transition">Architecture</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" className="text-white hover:text-[#FFDC58] transition">AI Skill</a>
           </div>
         </div>
       </footer>
