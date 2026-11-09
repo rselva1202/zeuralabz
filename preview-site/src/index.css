@@ -5,7 +5,9 @@
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  --color-neo-cream: #FFFDF5;
+  --color-neo-bg: #0E0E0E;
+  --color-neo-surface: #1A1A1A;
+  --color-neo-dark: #111111;
   --color-neo-yellow: #FFDC58;
   --color-neo-pink: #FF90E8;
   --color-neo-blue: #7FBCFF;
@@ -19,8 +21,8 @@
 
 @layer base {
   body {
-    background-color: #FFFDF5;
-    color: #000000;
+    background-color: #0E0E0E;
+    color: #FFFFFF;
     font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.01em;
   }
@@ -29,57 +31,78 @@
     font-family: 'Archivo Black', sans-serif;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+    color: #FFFFFF;
   }
 }
 
-/* Neo-Brutalist Dots & Grid Patterns */
+/* Dark Neo-Brutalist Dots & Grid Patterns */
 .neo-dots {
-  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
   background-size: 20px 20px;
 }
 
 .neo-grid-pattern {
   background-size: 32px 32px;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 }
 
 .neo-stripes {
   background: repeating-linear-gradient(
     45deg,
-    rgba(0, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.05) 10px,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 10px,
     transparent 10px,
     transparent 20px
   );
 }
 
-/* Hard Neo Shadows */
+/* Coloured Hard Neo Shadows (Visible on Dark Background) */
 .neo-shadow-sm {
-  box-shadow: 3px 3px 0px #000000;
+  box-shadow: 3px 3px 0px #FFDC58;
 }
 
 .neo-shadow {
-  box-shadow: 4px 4px 0px #000000;
+  box-shadow: 4px 4px 0px #FFDC58;
 }
 
 .neo-shadow-md {
-  box-shadow: 6px 6px 0px #000000;
+  box-shadow: 6px 6px 0px #FFDC58;
 }
 
 .neo-shadow-lg {
-  box-shadow: 8px 8px 0px #000000;
+  box-shadow: 8px 8px 0px #FF90E8;
 }
 
 .neo-shadow-xl {
-  box-shadow: 12px 12px 0px #000000;
+  box-shadow: 12px 12px 0px #FFDC58;
 }
 
-/* Neo Button Physics */
+.neo-shadow-pink {
+  box-shadow: 4px 4px 0px #FF90E8;
+}
+
+.neo-shadow-pink-md {
+  box-shadow: 6px 6px 0px #FF90E8;
+}
+
+.neo-shadow-pink-lg {
+  box-shadow: 8px 8px 0px #FF90E8;
+}
+
+.neo-shadow-blue {
+  box-shadow: 4px 4px 0px #7FBCFF;
+}
+
+.neo-shadow-blue-md {
+  box-shadow: 6px 6px 0px #7FBCFF;
+}
+
+/* Neo Button Physics with 3px White Border & Yellow Hard Shadow */
 .neo-btn {
-  border: 3px solid #000000;
-  box-shadow: 4px 4px 0px #000000;
+  border: 3px solid #FFFFFF;
+  box-shadow: 4px 4px 0px #FFDC58;
   font-weight: 700;
   text-transform: uppercase;
   transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
@@ -87,36 +110,36 @@
 
 .neo-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #000000;
+  box-shadow: 6px 6px 0px #FFDC58;
 }
 
 .neo-btn:active {
   transform: translate(3px, 3px);
-  box-shadow: 0px 0px 0px #000000;
+  box-shadow: 0px 0px 0px transparent;
 }
 
-/* Neo Card Physics */
+/* Neo Card Physics with 3px White Border & 6px Yellow Hard Shadow */
 .neo-card {
-  border: 3px solid #000000;
-  box-shadow: 6px 6px 0px #000000;
-  background-color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: 6px 6px 0px #FFDC58;
+  background-color: #1A1A1A;
   border-radius: 8px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .neo-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px #000000;
+  box-shadow: 8px 8px 0px #FFDC58;
 }
 
-/* Custom scrollbars */
+/* Custom dark scrollbars */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFFDF5;
-  border-left: 3px solid #000000;
+  background: #111111;
+  border-left: 3px solid #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
   background: #FFDC58;

@@ -33,15 +33,15 @@ const CATEGORIES = [
 ] as const;
 
 const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  'backgrounds': { bg: '#FFDC58', text: '#000000', border: '#000000' },
-  'text-animations': { bg: '#FF90E8', text: '#000000', border: '#000000' },
-  'buttons': { bg: '#7FBCFF', text: '#000000', border: '#000000' },
-  'cards': { bg: '#A3E635', text: '#000000', border: '#000000' },
-  'heroes': { bg: '#FF6B35', text: '#000000', border: '#000000' },
-  'layouts': { bg: '#B388FF', text: '#000000', border: '#000000' },
-  'forms': { bg: '#67E8F9', text: '#000000', border: '#000000' },
-  'animations': { bg: '#FF4911', text: '#FFFFFF', border: '#000000' },
-  'loaders': { bg: '#BEF264', text: '#000000', border: '#000000' },
+  'backgrounds': { bg: '#FFDC58', text: '#000000', border: '#FFFFFF' },
+  'text-animations': { bg: '#FF90E8', text: '#000000', border: '#FFFFFF' },
+  'buttons': { bg: '#7FBCFF', text: '#000000', border: '#FFFFFF' },
+  'cards': { bg: '#A3E635', text: '#000000', border: '#FFFFFF' },
+  'heroes': { bg: '#FF6B35', text: '#000000', border: '#FFFFFF' },
+  'layouts': { bg: '#B388FF', text: '#000000', border: '#FFFFFF' },
+  'forms': { bg: '#67E8F9', text: '#000000', border: '#FFFFFF' },
+  'animations': { bg: '#FF4911', text: '#FFFFFF', border: '#FFFFFF' },
+  'loaders': { bg: '#BEF264', text: '#000000', border: '#FFFFFF' },
 };
 
 const ITEMS_PER_PAGE = 12;
@@ -61,73 +61,75 @@ const ComponentCard = React.memo<ComponentCardProps>(({
   onCopy,
   onOpenCode,
 }) => {
-  const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#000' };
+  const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#FFFFFF' };
 
   return (
-    <div className="group rounded-lg bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000] transition-all duration-150 flex flex-col overflow-hidden">
-      {/* Top Preview Area (Framed Box with 3px black bottom border) */}
-      <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-black">
-        {comp.source === 'react-bits' ? (
-          <div className="w-full h-full bg-[#E0F2FF] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-            <div className="relative z-10 flex flex-col items-center gap-2">
-              <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
-                ✨
-              </span>
-              <div>
-                <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
-                  Official React Bits Demo
+    <div className="group rounded-lg bg-[#1A1A1A] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#FFDC58] transition-all duration-150 flex flex-col overflow-hidden">
+      {/* Top Preview Area (Framed Box with 3px white bottom border) */}
+      <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-white">
+        <div className="w-full h-full relative overflow-hidden border-[2px] border-white/60">
+          {comp.source === 'react-bits' ? (
+            <div className="w-full h-full bg-[#111A24] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] flex items-center justify-center text-lg text-black">
+                  ✨
+                </span>
+                <div>
+                  <div className="font-heading text-xs font-black text-white uppercase tracking-wide">
+                    Official React Bits Demo
+                  </div>
+                  <div className="text-[10px] text-zinc-300 font-mono font-bold">
+                    @react-bits/{comp.componentName || comp.name}-TS-TW
+                  </div>
                 </div>
-                <div className="text-[10px] text-zinc-700 font-mono font-bold">
-                  @react-bits/{comp.componentName || comp.name}-TS-TW
-                </div>
+                <a
+                  href={comp.originalUrl || comp.previewUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="neo-btn bg-[#7FBCFF] text-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] px-3 py-1.5 text-xs font-heading font-black mt-1"
+                >
+                  VIEW LIVE DEMO ➔
+                </a>
               </div>
-              <a
-                href={comp.originalUrl || comp.previewUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="neo-btn bg-[#7FBCFF] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
-              >
-                VIEW LIVE DEMO ➔
-              </a>
             </div>
-          </div>
-        ) : comp.source === 'magic-ui' ? (
-          <div className="w-full h-full bg-[#E6FFFA] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-            <div className="relative z-10 flex flex-col items-center gap-2">
-              <span className="w-10 h-10 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
-                🪄
-              </span>
-              <div>
-                <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
-                  Official Magic UI Demo
+          ) : comp.source === 'magic-ui' ? (
+            <div className="w-full h-full bg-[#0D2024] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <span className="w-10 h-10 bg-[#67E8F9] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] flex items-center justify-center text-lg text-black">
+                  🪄
+                </span>
+                <div>
+                  <div className="font-heading text-xs font-black text-white uppercase tracking-wide">
+                    Official Magic UI Demo
+                  </div>
+                  <div className="text-[10px] text-zinc-300 font-mono font-bold">
+                    @magic-ui/{comp.slug}
+                  </div>
                 </div>
-                <div className="text-[10px] text-zinc-700 font-mono font-bold">
-                  @magic-ui/{comp.slug}
-                </div>
+                <a
+                  href={comp.originalUrl || comp.previewUrl || `https://magicui.design/docs/components/${comp.slug}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="neo-btn bg-[#67E8F9] text-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] px-3 py-1.5 text-xs font-heading font-black mt-1"
+                >
+                  VIEW LIVE DEMO ➔
+                </a>
               </div>
-              <a
-                href={comp.originalUrl || comp.previewUrl || `https://magicui.design/docs/components/${comp.slug}`}
-                target="_blank"
-                rel="noreferrer"
-                className="neo-btn bg-[#67E8F9] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
-              >
-                VIEW LIVE DEMO ➔
-              </a>
             </div>
-          </div>
-        ) : (
-          <LiveComponentPreview
-            slug={comp.slug}
-            category={comp.category}
-            name={comp.name}
-            lite={animationMode !== 'full'}
-            animationMode={animationMode}
-          />
-        )}
+          ) : (
+            <LiveComponentPreview
+              slug={comp.slug}
+              category={comp.category}
+              name={comp.name}
+              lite={animationMode !== 'full'}
+              animationMode={animationMode}
+            />
+          )}
+        </div>
 
         {/* Source badge (Top-Left) */}
         <span
-          className={`absolute top-3 left-3 px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
+          className={`absolute top-3 left-3 px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-white shadow-[2px_2px_0px_#FFDC58] ${
             comp.source === 'react-bits'
               ? 'bg-[#7FBCFF] text-black'
               : comp.source === 'magic-ui'
@@ -143,7 +145,7 @@ const ComponentCard = React.memo<ComponentCardProps>(({
         </span>
 
         {/* Live Preview Indicator Badge (Top-Right) */}
-        <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#000]">
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-white shadow-[2px_2px_0px_#FFDC58]">
           {comp.source === 'react-bits' || comp.source === 'magic-ui' ? (
             <>
               <span className="w-1.5 h-1.5 bg-[#67E8F9]" />
@@ -159,24 +161,24 @@ const ComponentCard = React.memo<ComponentCardProps>(({
       </div>
 
       {/* Middle: Details */}
-      <div className="p-5 flex-1 flex flex-col justify-between bg-white">
+      <div className="p-5 flex-1 flex flex-col justify-between bg-[#1A1A1A]">
         <div>
           <div className="flex items-center justify-between">
-            <h3 className="font-heading text-sm font-black text-black group-hover:text-indigo-700 transition">
+            <h3 className="font-heading text-sm font-black text-white group-hover:text-[#FFDC58] transition">
               {comp.name}
             </h3>
-            <span className="text-[11px] text-zinc-600 font-mono font-bold bg-[#FFFDF5] border border-black px-1.5 py-0.5">
+            <span className="text-[11px] text-[#FFDC58] font-mono font-bold bg-[#111111] border border-white/40 px-1.5 py-0.5">
               {comp.slug}
             </span>
           </div>
-          <p className="text-xs text-black font-medium mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-[#E5E5E5] font-medium mt-2 line-clamp-2 leading-relaxed">
             {comp.description}
           </p>
 
           {/* Best for tags */}
           <div className="mt-3 flex flex-wrap gap-1.5">
             <span
-              className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[1.5px] border-black shadow-[1.5px_1.5px_0px_#000]"
+              className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[1.5px] border-white shadow-[1.5px_1.5px_0px_#FFDC58]"
               style={{ backgroundColor: catTheme.bg, color: catTheme.text }}
             >
               {comp.category}
@@ -184,7 +186,7 @@ const ComponentCard = React.memo<ComponentCardProps>(({
             {comp.bestFor?.slice(0, 2).map((b) => (
               <span
                 key={b}
-                className="px-2 py-0.5 text-[10px] font-bold bg-[#FFFDF5] text-black border border-black"
+                className="px-2 py-0.5 text-[10px] font-bold bg-[#111111] text-white border border-white/40"
               >
                 ✓ {b}
               </span>
@@ -193,7 +195,7 @@ const ComponentCard = React.memo<ComponentCardProps>(({
         </div>
 
         {/* Bottom Action Bar */}
-        <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between gap-2">
+        <div className="mt-4 pt-3 border-t-[2px] border-white/30 flex items-center justify-between gap-2">
           <button
             onClick={() =>
               onCopy(
@@ -204,7 +206,7 @@ const ComponentCard = React.memo<ComponentCardProps>(({
                   : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
               )
             }
-            className={`flex-1 py-2 px-3 text-xs font-mono font-black border-[2px] border-black shadow-[3px_3px_0px_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-1.5 ${
+            className={`flex-1 py-2 px-3 text-xs font-mono font-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-1.5 ${
               isCopied
                 ? 'bg-[#A3E635] text-black font-black'
                 : 'bg-black text-[#FFDC58] hover:bg-zinc-900'
@@ -226,7 +228,7 @@ const ComponentCard = React.memo<ComponentCardProps>(({
 
           <button
             onClick={() => onOpenCode(comp)}
-            className="neo-btn bg-[#FF90E8] text-black px-3 py-2 text-xs font-heading font-black"
+            className="neo-btn bg-[#FFDC58] text-black border-[2px] border-white shadow-[3px_3px_0px_#FF90E8] px-3 py-2 text-xs font-heading font-black"
             title="View code & usage"
           >
             CODE ➔
@@ -351,7 +353,7 @@ export default function Hero() {
   return (
     <AuroraBackground className="min-h-screen flex flex-col items-center justify-center">
       <SplitText text="Websites that feel alive" className="text-6xl font-black" />
-      <p className="mt-4 text-black font-bold">417 components. 1M+ combinations.</p>
+      <p className="mt-4 text-[#E5E5E5] font-bold">417 components. 1M+ combinations.</p>
       <ShimmerButton text="Explore Catalog ➔" className="mt-8 font-black uppercase" />
     </AuroraBackground>
   );
@@ -360,21 +362,21 @@ export default function Hero() {
   // Standalone preview route handler for testing
   if (standalone === 'galaxy' || standalone === 'galaxy-fullscreen' || standalone === 'galaxy-before') {
     return (
-      <div className="w-screen h-screen bg-[#FFFDF5] flex items-center justify-center p-8 neo-dots">
-        <div className="w-[460px] bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] rounded-none overflow-hidden flex flex-col">
-          <div className="bg-[#FFDC58] border-b-[3px] border-black px-4 py-2 flex items-center justify-between font-heading text-xs font-black">
+      <div className="w-screen h-screen bg-[#0E0E0E] flex items-center justify-center p-8 neo-dots">
+        <div className="w-[460px] bg-[#1A1A1A] border-[3px] border-white shadow-[8px_8px_0px_#FFDC58] rounded-none overflow-hidden flex flex-col">
+          <div className="bg-[#FFDC58] border-b-[3px] border-white px-4 py-2 flex items-center justify-between font-heading text-xs font-black text-black">
             <span>ZEURALABZ • STANDALONE</span>
             <span className="bg-black text-white px-2 py-0.5 text-[10px]">LIVE</span>
           </div>
-          <div className="h-64 bg-[#0a0e27] relative border-b-[3px] border-black overflow-hidden">
+          <div className="h-64 bg-[#0a0e27] relative border-b-[3px] border-white overflow-hidden">
             <GalaxyBackground starCount={900} speed={0.7} armCount={3} glowIntensity={1.2} />
           </div>
-          <div className="p-5 space-y-3 bg-white">
-            <h3 className="font-heading text-lg font-black text-black">Spiral Galaxy Cosmic Canvas</h3>
-            <p className="text-xs text-black font-medium">800+ stars, 3 logarithmic spiral arms, radiant stellar core.</p>
-            <div className="pt-2 border-t-[2px] border-black flex justify-between items-center text-xs font-mono font-bold">
-              <span>npx zeuralabz add galaxy</span>
-              <span className="bg-[#A3E635] px-2 py-0.5 border border-black">READY</span>
+          <div className="p-5 space-y-3 bg-[#1A1A1A] text-white">
+            <h3 className="font-heading text-lg font-black text-white">Spiral Galaxy Cosmic Canvas</h3>
+            <p className="text-xs text-[#E5E5E5] font-medium">800+ stars, 3 logarithmic spiral arms, radiant stellar core.</p>
+            <div className="pt-2 border-t-[2px] border-white/40 flex justify-between items-center text-xs font-mono font-bold">
+              <span className="text-[#FFDC58]">npx zeuralabz add galaxy</span>
+              <span className="bg-[#A3E635] text-black px-2 py-0.5 border border-white">READY</span>
             </div>
           </div>
         </div>
@@ -383,46 +385,46 @@ export default function Hero() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFFDF5] text-black flex flex-col font-sans selection:bg-[#FFDC58] selection:text-black">
+    <div className="min-h-screen bg-[#0E0E0E] text-white flex flex-col font-sans selection:bg-[#FFDC58] selection:text-black">
       {/* ============================================================== */}
-      {/* 1. TOP NAVBAR (Sticky, Cream bg, 3px solid black border) */}
+      {/* 1. TOP NAVBAR (Sticky, Dark bg #111111, 3px solid white border) */}
       {/* ============================================================== */}
-      <header className="sticky top-0 z-50 w-full border-b-[3px] border-black bg-[#FFFDF5] shadow-[0px_4px_0px_#000]">
+      <header className="sticky top-0 z-50 w-full border-b-[3px] border-white bg-[#111111] shadow-[0px_4px_0px_#FFDC58]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           {/* Left Brand */}
           <div className="flex items-center gap-3">
             <a href="#" className="flex items-center gap-2 group">
-              <span className="w-10 h-10 bg-[#FFDC58] border-[3px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg font-black transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-[5px_5px_0px_#000]">
+              <span className="w-10 h-10 bg-[#FFDC58] border-[3px] border-white shadow-[3px_3px_0px_#FFDC58] flex items-center justify-center text-lg font-black text-black transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-[5px_5px_0px_#FF90E8]">
                 ⚡
               </span>
-              <span className="font-heading text-2xl font-black tracking-tight text-black">
-                ZEURA<span className="bg-[#FFDC58] px-1 py-0.5 border-[2px] border-black ml-0.5">LABZ</span>
+              <span className="font-heading text-2xl font-black tracking-tight text-white">
+                ZEURA<span className="bg-[#FFDC58] text-black px-1 py-0.5 border-[2px] border-white ml-0.5">LABZ</span>
               </span>
             </a>
-            <span className="hidden sm:inline-block px-2.5 py-1 text-[10px] font-black tracking-wider uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#FFDC58]">
+            <span className="hidden sm:inline-block px-2.5 py-1 text-[10px] font-black tracking-wider uppercase bg-black text-white border-[2px] border-white shadow-[2px_2px_0px_#FFDC58]">
               v1.1.0 • OPEN SOURCE
             </span>
           </div>
 
           {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 text-xs font-heading font-black uppercase text-black">
-            <a href="#showcase" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+          <nav className="hidden md:flex items-center gap-6 text-xs font-heading font-black uppercase text-white">
+            <a href="#showcase" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#FFDC58] hover:text-black hover:shadow-[3px_3px_0px_#FFDC58] transition">
               Showcase
             </a>
-            <a href="#components" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+            <a href="#components" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#FFDC58] hover:text-black hover:shadow-[3px_3px_0px_#FFDC58] transition">
               Components
             </a>
-            <a href="#how-it-works" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+            <a href="#how-it-works" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#FFDC58] hover:text-black hover:shadow-[3px_3px_0px_#FFDC58] transition">
               How it Works
             </a>
-            <a href="#mcp" className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition">
+            <a href="#mcp" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#FFDC58] hover:text-black hover:shadow-[3px_3px_0px_#FFDC58] transition">
               MCP & Skill
             </a>
             <a
               href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md"
               target="_blank"
               rel="noreferrer"
-              className="px-2 py-1 border-[2px] border-transparent hover:border-black hover:bg-[#FFDC58] hover:shadow-[3px_3px_0px_#000] transition"
+              className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#FFDC58] hover:text-black hover:shadow-[3px_3px_0px_#FFDC58] transition"
             >
               Docs
             </a>
@@ -431,8 +433,8 @@ export default function Hero() {
           {/* Right Action Controls */}
           <div className="flex items-center gap-3">
             {/* Chunky Neo-Brutalist Animations Mode Switcher */}
-            <div className="hidden lg:flex items-center gap-1 bg-white border-[2px] border-black p-1 shadow-[3px_3px_0px_#000]">
-              <span className="text-[10px] font-black uppercase px-1 text-black font-heading">⚡ ANIMATIONS:</span>
+            <div className="hidden lg:flex items-center gap-1 bg-[#1A1A1A] border-[2px] border-white p-1 shadow-[3px_3px_0px_#FFDC58]">
+              <span className="text-[10px] font-black uppercase px-1 text-white font-heading">⚡ ANIMATIONS:</span>
               {(['lite', 'full', 'off'] as const).map((m) => (
                 <button
                   key={m}
@@ -440,11 +442,11 @@ export default function Hero() {
                   className={`px-2 py-0.5 text-[10px] font-black uppercase transition border-[2px] ${
                     animationMode === m
                       ? m === 'lite'
-                        ? 'bg-[#FFDC58] text-black border-black shadow-[2px_2px_0px_#000]'
+                        ? 'bg-[#FFDC58] text-black border-white shadow-[2px_2px_0px_#FF90E8]'
                         : m === 'full'
-                        ? 'bg-[#A3E635] text-black border-black shadow-[2px_2px_0px_#000]'
-                        : 'bg-black text-white border-black shadow-[2px_2px_0px_#000]'
-                      : 'bg-transparent text-black border-transparent hover:border-black hover:bg-zinc-100'
+                        ? 'bg-[#A3E635] text-black border-white shadow-[2px_2px_0px_#FF90E8]'
+                        : 'bg-black text-white border-white shadow-[2px_2px_0px_#FFDC58]'
+                      : 'bg-transparent text-white border-transparent hover:border-white hover:bg-zinc-800'
                   }`}
                   title={`Motion mode: ${m}`}
                 >
@@ -458,7 +460,7 @@ export default function Hero() {
               href="https://github.com/rselva1202/zeuralabz"
               target="_blank"
               rel="noreferrer"
-              className="neo-btn bg-white px-3 py-1.5 text-xs flex items-center gap-1.5"
+              className="neo-btn bg-white text-black px-3 py-1.5 text-xs flex items-center gap-1.5 border-[3px] border-white shadow-[4px_4px_0px_#FF90E8]"
             >
               <span className="font-heading font-black">GITHUB</span>
               <span className="text-amber-500 font-bold">★</span>
@@ -470,7 +472,7 @@ export default function Hero() {
             {/* Main CLI Suggest CTA */}
             <button
               onClick={() => copyCommand('npx zeuralabz suggest')}
-              className="neo-btn bg-[#FFDC58] px-3.5 py-1.5 text-xs flex items-center gap-2"
+              className="neo-btn bg-[#FFDC58] text-black px-3.5 py-1.5 text-xs flex items-center gap-2 border-[3px] border-white shadow-[4px_4px_0px_#FFDC58]"
               title="Click to copy suggestion command"
             >
               <span className="font-mono font-black">$ npx zeuralabz suggest</span>
@@ -483,26 +485,26 @@ export default function Hero() {
       </header>
 
       {/* ============================================================== */}
-      {/* 2. HERO SECTION (Cream bg, Neo-Dots, Rotated Stickers, Framed Preview) */}
+      {/* 2. HERO SECTION (Dark bg #0E0E0E, Neo-Dots, Rotated Stickers) */}
       {/* ============================================================== */}
-      <section id="hero" className="relative pt-12 pb-20 border-b-[3px] border-black neo-dots overflow-hidden">
+      <section id="hero" className="relative pt-12 pb-20 border-b-[3px] border-white bg-[#0E0E0E] neo-dots overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Top Pill & Rotated Sticker Badges */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white border-[2px] border-black shadow-[3px_3px_0px_#FFDC58] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#181818] text-white border-[2px] border-white shadow-[3px_3px_0px_#FFDC58] text-xs font-bold uppercase tracking-wider">
               <span className="w-2.5 h-2.5 bg-[#A3E635] border border-black animate-pulse" />
               NEW • ZEURALABZ 1.1 — {totalAll} COMPONENTS ({totalReactBits} REACT BITS + {totalMagicUI} MAGIC UI + {totalZeura} ORIGINALS)
             </div>
 
             {/* Sticker Badges */}
             <div className="hidden sm:flex items-center gap-3">
-              <span className="bg-[#FF90E8] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-3deg]">
+              <span className="bg-[#FF90E8] text-black border-[3px] border-white shadow-[4px_4px_0px_#FFDC58] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-3deg]">
                 120+ ORIGINALS!
               </span>
-              <span className="bg-[#FFDC58] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[2deg]">
+              <span className="bg-[#FFDC58] text-black border-[3px] border-white shadow-[4px_4px_0px_#FF90E8] px-3 py-1 font-heading text-xs font-black uppercase rotate-[2deg]">
                 417 COMPONENTS!
               </span>
-              <span className="bg-[#A3E635] text-black border-[3px] border-black shadow-[4px_4px_0px_#000] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-2deg]">
+              <span className="bg-[#A3E635] text-black border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF] px-3 py-1 font-heading text-xs font-black uppercase rotate-[-2deg]">
                 100% FREE!
               </span>
             </div>
@@ -512,14 +514,14 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Column (60% / 7 cols) */}
             <div className="lg:col-span-7">
-              <h1 className="font-heading text-4xl sm:text-6xl font-black text-black leading-[1.05] tracking-tight">
+              <h1 className="font-heading text-4xl sm:text-6xl font-black text-white leading-[1.05] tracking-tight">
                 BEAUTIFUL ANIMATED UI FOR WEBSITES THAT{' '}
-                <span className="bg-[#FFDC58] px-2 py-0.5 border-[3px] border-black shadow-[4px_4px_0px_#000] inline-block mt-1">
+                <span className="bg-[#FFDC58] text-black px-2 py-0.5 border-[3px] border-white shadow-[4px_4px_0px_#FF90E8] inline-block mt-1">
                   FEEL ALIVE
                 </span>
                 .
               </h1>
-              <p className="mt-5 text-lg text-black font-semibold max-w-xl leading-relaxed">
+              <p className="mt-5 text-lg text-[#E5E5E5] font-semibold max-w-xl leading-relaxed">
                 {totalAll} animated components and backgrounds for React across React Bits, Magic UI, and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
               </p>
 
@@ -527,7 +529,7 @@ export default function Hero() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
                   href="#components"
-                  className="neo-btn bg-[#FFDC58] text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2"
+                  className="neo-btn bg-[#FFDC58] text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2 border-[3px] border-white shadow-[4px_4px_0px_#FF90E8]"
                 >
                   <span>BROWSE COMPONENTS</span>
                   <span className="text-base font-black">➔</span>
@@ -536,7 +538,7 @@ export default function Hero() {
                   href="https://github.com/rselva1202/zeuralabz"
                   target="_blank"
                   rel="noreferrer"
-                  className="neo-btn bg-white text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2"
+                  className="neo-btn bg-white text-black font-heading text-sm px-6 py-3.5 flex items-center gap-2 border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF]"
                 >
                   <span>STAR ON GITHUB</span>
                   <span className="text-amber-500 font-bold">★</span>
@@ -546,25 +548,25 @@ export default function Hero() {
 
             {/* Right Column Stats Box (40% / 5 cols) */}
             <div className="lg:col-span-5">
-              <div className="bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] p-5">
-                <div className="bg-black text-white px-3 py-1 font-heading text-xs font-black uppercase mb-4 flex justify-between items-center">
+              <div className="bg-[#1A1A1A] border-[3px] border-white shadow-[8px_8px_0px_#FFDC58] p-5">
+                <div className="bg-black text-white px-3 py-1 font-heading text-xs font-black uppercase mb-4 flex justify-between items-center border-[2px] border-white/40">
                   <span>LIBRARY TELEMETRY</span>
                   <span className="text-[#A3E635]">● ACTIVE</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="p-3.5 bg-[#FFFDF5] border-[2px] border-black shadow-[3px_3px_0px_#000]">
-                    <div className="font-heading text-3xl font-black text-black">{totalAll}</div>
-                    <div className="text-[11px] font-black uppercase text-black mt-1">Total Components</div>
+                  <div className="p-3.5 bg-[#111111] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
+                    <div className="font-heading text-3xl font-black text-white">{totalAll}</div>
+                    <div className="text-[11px] font-black uppercase text-zinc-300 mt-1">Total Components</div>
                   </div>
-                  <div className="p-3.5 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                  <div className="p-3.5 bg-[#7FBCFF] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
                     <div className="font-heading text-3xl font-black text-black">{totalReactBits}</div>
                     <div className="text-[11px] font-black uppercase text-black mt-1">React Bits (Linked)</div>
                   </div>
-                  <div className="p-3.5 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                  <div className="p-3.5 bg-[#67E8F9] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
                     <div className="font-heading text-3xl font-black text-black">{totalMagicUI}</div>
                     <div className="text-[11px] font-black uppercase text-black mt-1">Magic UI (Linked)</div>
                   </div>
-                  <div className="p-3.5 bg-[#FF90E8] border-[2px] border-black shadow-[3px_3px_0px_#000]">
+                  <div className="p-3.5 bg-[#FF90E8] border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]">
                     <div className="font-heading text-3xl font-black text-black">{totalZeura}</div>
                     <div className="text-[11px] font-black uppercase text-black mt-1">ZEURALABZ Original</div>
                   </div>
@@ -573,10 +575,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* FRAMED LIVE BACKGROUND CANVAS BOX (Chunky neo-brutalist border + shadow) */}
-          <div className="mt-12 bg-white border-[3px] border-black shadow-[8px_8px_0px_#000] overflow-hidden">
+          {/* FRAMED LIVE BACKGROUND CANVAS BOX */}
+          <div className="mt-12 bg-[#1A1A1A] border-[3px] border-white shadow-[8px_8px_0px_#FF90E8] overflow-hidden">
             {/* Window bar */}
-            <div className="bg-[#FFDC58] border-b-[3px] border-black px-4 py-2.5 flex flex-wrap items-center justify-between gap-3">
+            <div className="bg-[#FFDC58] border-b-[3px] border-white px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-black">
               <div className="flex items-center gap-2 font-heading text-xs font-black uppercase text-black">
                 <span className="w-3 h-3 bg-red-500 border-[1.5px] border-black inline-block" />
                 <span className="w-3 h-3 bg-yellow-400 border-[1.5px] border-black inline-block" />
@@ -585,16 +587,16 @@ export default function Hero() {
               </div>
 
               {/* Background switcher chunky buttons */}
-              <div className="flex items-center gap-1.5 bg-white border-[2px] border-black p-1 shadow-[2px_2px_0px_#000]">
-                <span className="text-[10px] font-black uppercase px-1.5 text-black">TRY ENGINE:</span>
+              <div className="flex items-center gap-1.5 bg-black border-[2px] border-white p-1 shadow-[2px_2px_0px_#FFDC58]">
+                <span className="text-[10px] font-black uppercase px-1.5 text-white">TRY ENGINE:</span>
                 {(['aurora', 'galaxy', 'particles', 'gradient'] as const).map((bg) => (
                   <button
                     key={bg}
                     onClick={() => setHeroBg(bg)}
                     className={`px-2.5 py-1 text-xs font-heading font-black uppercase transition border-[2px] ${
                       heroBg === bg
-                        ? 'bg-black text-[#FFDC58] border-black shadow-[2px_2px_0px_#000]'
-                        : 'bg-white text-black border-transparent hover:border-black hover:bg-zinc-100'
+                        ? 'bg-[#FFDC58] text-black border-white shadow-[2px_2px_0px_#FF90E8]'
+                        : 'bg-transparent text-white border-transparent hover:border-white hover:bg-zinc-800'
                     }`}
                   >
                     {bg}
@@ -635,11 +637,11 @@ export default function Hero() {
               )}
 
               {/* Framed overlay badge */}
-              <div className="relative z-10 bg-white/95 border-[3px] border-black shadow-[6px_6px_0px_#000] p-6 text-center max-w-md mx-4">
-                <span className="bg-[#A3E635] text-black border-[2px] border-black px-2 py-0.5 text-[10px] font-heading font-black uppercase">
+              <div className="relative z-10 bg-[#181818]/95 border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] p-6 text-center max-w-md mx-4">
+                <span className="bg-[#A3E635] text-black border-[2px] border-white px-2 py-0.5 text-[10px] font-heading font-black uppercase">
                   ACTIVE PREVIEW
                 </span>
-                <h3 className="font-heading text-2xl font-black uppercase text-black mt-2">
+                <h3 className="font-heading text-2xl font-black uppercase text-white mt-2">
                   {heroBg === 'aurora'
                     ? 'Northern Aurora Wave'
                     : heroBg === 'galaxy'
@@ -648,14 +650,14 @@ export default function Hero() {
                     ? 'Interactive Particle Web'
                     : 'Mesh Gradient Drift'}
                 </h3>
-                <p className="text-xs font-bold text-black mt-1">
+                <p className="text-xs font-bold text-[#E5E5E5] mt-1">
                   Framed responsive canvas running at 30/60 FPS with zero scroll lag.
                 </p>
-                <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between text-xs font-mono font-bold">
-                  <span>$ npx zeuralabz add {heroBg}</span>
+                <div className="mt-4 pt-3 border-t-[2px] border-white/40 flex items-center justify-between text-xs font-mono font-bold">
+                  <span className="text-[#FFDC58]">$ npx zeuralabz add {heroBg}</span>
                   <button
                     onClick={() => copyCommand(`npx zeuralabz add ${heroBg}`)}
-                    className="bg-[#FFDC58] text-black border-[2px] border-black px-2 py-0.5 hover:bg-yellow-400 font-heading"
+                    className="bg-[#FFDC58] text-black border-[2px] border-white px-2 py-0.5 hover:bg-yellow-400 font-heading font-black"
                   >
                     {copiedSlug === `npx zeuralabz add ${heroBg}` ? 'COPIED' : 'COPY'}
                   </button>
@@ -669,24 +671,24 @@ export default function Hero() {
       {/* ============================================================== */}
       {/* 3. SHOWCASE PANEL (Hero.jsx + Terminal + Presets) */}
       {/* ============================================================== */}
-      <section id="showcase" className="py-20 border-b-[3px] border-black bg-[#FFF4E0]">
+      <section id="showcase" className="py-20 border-b-[3px] border-white bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="bg-[#FF90E8] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+            <span className="bg-[#FF90E8] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#FFDC58]">
               LIVE CODE SYNTHESIS
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3">
+            <h2 className="font-heading text-3xl sm:text-4xl font-black text-white mt-3">
               ZERO BOILERPLATE. COPY & SHIP.
             </h2>
-            <p className="text-black font-semibold text-sm mt-2">
+            <p className="text-[#E5E5E5] font-semibold text-sm mt-2">
               Every component works independently in standard React, Vite, or Next.js apps.
             </p>
           </div>
 
           {/* Chunky Multi-Window Container */}
-          <div className="bg-white border-[3px] border-black shadow-[10px_10px_0px_#000] overflow-hidden">
+          <div className="bg-[#1A1A1A] border-[3px] border-white shadow-[10px_10px_0px_#FFDC58] overflow-hidden">
             {/* Window Topbar */}
-            <div className="h-12 px-4 bg-[#FFDC58] border-b-[3px] border-black flex items-center justify-between">
+            <div className="h-12 px-4 bg-[#FFDC58] border-b-[3px] border-white flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-3.5 h-3.5 rounded-full bg-rose-500 border border-black" />
                 <div className="w-3.5 h-3.5 rounded-full bg-amber-400 border border-black" />
@@ -703,32 +705,32 @@ export default function Hero() {
             {/* Window Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Left Code Editor (Hero.jsx) - 7 cols */}
-              <div className="lg:col-span-7 p-6 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black font-mono text-xs flex flex-col justify-between bg-white">
+              <div className="lg:col-span-7 p-6 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-white font-mono text-xs flex flex-col justify-between bg-[#141414]">
                 <div>
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b-[2px] border-black">
-                    <span className="font-heading text-black font-black flex items-center gap-1.5 text-xs">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b-[2px] border-white/40">
+                    <span className="font-heading text-white font-black flex items-center gap-1.5 text-xs">
                       <span className="text-[#00C853]">⚛</span> Hero.jsx
                     </span>
                     <button
                       onClick={() => copyCommand(sampleHeroCode)}
-                      className="neo-btn bg-[#FFDC58] text-black px-3 py-1 text-xs"
+                      className="neo-btn bg-[#FFDC58] text-black border-[2px] border-white shadow-[3px_3px_0px_#FF90E8] px-3 py-1 text-xs"
                     >
                       {copiedSlug === sampleHeroCode ? '✔ COPIED' : 'COPY CODE'}
                     </button>
                   </div>
-                  <pre className="text-black overflow-x-auto leading-relaxed space-y-1 font-mono text-xs bg-[#FFFDF5] p-4 border-[2px] border-black">
+                  <pre className="text-white overflow-x-auto leading-relaxed space-y-1 font-mono text-xs bg-[#0A0A0A] p-4 border-[2px] border-white/40">
                     {sampleHeroCode.split('\n').map((line, idx) => (
                       <div key={idx} className="flex">
-                        <span className="text-zinc-400 select-none w-7 shrink-0 text-right pr-3 font-bold">{idx + 1}</span>
+                        <span className="text-zinc-500 select-none w-7 shrink-0 text-right pr-3 font-bold">{idx + 1}</span>
                         <span
                           className={
                             line.startsWith('import')
-                              ? 'text-indigo-600 font-bold'
+                              ? 'text-[#7FBCFF] font-bold'
                               : line.includes('<AuroraBackground') || line.includes('<SplitText') || line.includes('<ShimmerButton')
-                              ? 'text-rose-600 font-black'
+                              ? 'text-[#FF90E8] font-black'
                               : line.includes('return') || line.includes('export')
-                              ? 'text-purple-700 font-bold'
-                              : 'text-black font-semibold'
+                              ? 'text-[#A3E635] font-bold'
+                              : 'text-white font-semibold'
                           }
                         >
                           {line}
@@ -740,13 +742,13 @@ export default function Hero() {
               </div>
 
               {/* Right Side: Terminal (top) + Presets (bottom) - 5 cols */}
-              <div className="lg:col-span-5 flex flex-col divide-y-[3px] divide-black bg-[#FFFDF5]">
+              <div className="lg:col-span-5 flex flex-col divide-y-[3px] divide-white bg-[#181818]">
                 {/* Right Top: Terminal Window */}
                 <div className="p-5 font-mono text-xs bg-black text-white">
                   <div className="font-heading text-[#FFDC58] font-black mb-3 flex items-center gap-2 text-xs">
                     <span className="text-[#A3E635]">❯</span> TERMINAL WORKFLOW
                   </div>
-                  <div className="space-y-1.5 bg-[#121212] p-3.5 border-[2px] border-zinc-800 text-[11px] font-mono">
+                  <div className="space-y-1.5 bg-[#0D0D0D] p-3.5 border-[2px] border-zinc-700 text-[11px] font-mono">
                     <div className="text-[#FFDC58] font-bold">$ npx zeuralabz suggest</div>
                     <div className="text-zinc-400">✓ Scanning project structure...</div>
                     <div className="text-[#A3E635] font-bold">✓ Recommended 3 UI picks for your landing page:</div>
@@ -759,10 +761,10 @@ export default function Hero() {
                 </div>
 
                 {/* Right Bottom: Presets Window */}
-                <div className="p-5 bg-white">
-                  <div className="font-heading text-xs font-black text-black mb-3 flex items-center justify-between uppercase">
+                <div className="p-5 bg-[#141414]">
+                  <div className="font-heading text-xs font-black text-white mb-3 flex items-center justify-between uppercase">
                     <span>Aesthetic Tuning:</span>
-                    <span className="bg-[#A3E635] text-black px-1.5 py-0.5 border border-black text-[10px]">LIVE TUNE</span>
+                    <span className="bg-[#A3E635] text-black px-1.5 py-0.5 border border-white text-[10px]">LIVE TUNE</span>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2">
@@ -776,27 +778,27 @@ export default function Hero() {
                         onClick={() => setActivePreset(preset.id as any)}
                         className={`p-2.5 text-left border-[2px] transition ${
                           activePreset === preset.id
-                            ? 'bg-[#FFDC58] border-black shadow-[3px_3px_0px_#000] font-black'
-                            : 'bg-white border-black hover:bg-zinc-100 font-bold'
+                            ? 'bg-[#FFDC58] text-black border-white shadow-[3px_3px_0px_#FF90E8] font-black'
+                            : 'bg-[#1A1A1A] text-white border-white/60 hover:bg-zinc-800 font-bold'
                         }`}
                       >
-                        <div className="text-xs font-heading font-black text-black uppercase">{preset.name}</div>
-                        <div className="text-[10px] text-zinc-700 mt-1">{preset.colors}</div>
+                        <div className="text-xs font-heading font-black uppercase">{preset.name}</div>
+                        <div className="text-[10px] text-zinc-300 mt-1">{preset.colors}</div>
                       </button>
                     ))}
                   </div>
 
                   {/* Preset Values Panel */}
-                  <div className="mt-3 p-3 bg-[#FFFDF5] border-[2px] border-black text-[11px] font-mono text-black font-bold space-y-1 shadow-[2px_2px_0px_#000]">
+                  <div className="mt-3 p-3 bg-[#0A0A0A] border-[2px] border-white/40 text-[11px] font-mono text-white font-bold space-y-1 shadow-[2px_2px_0px_#FFDC58]">
                     <div className="flex justify-between">
-                      <span>Amplitude:</span>
-                      <span className="text-indigo-600">
+                      <span className="text-zinc-400">Amplitude:</span>
+                      <span className="text-[#7FBCFF]">
                         {activePreset === 'ocean' ? '0.82 (Deep Surge)' : activePreset === 'dune' ? '0.64 (Warm Drift)' : '0.95 (High Energy)'}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Cycle Speed:</span>
-                      <span className="text-rose-600">
+                      <span className="text-zinc-400">Cycle Speed:</span>
+                      <span className="text-[#FF90E8]">
                         {activePreset === 'ocean' ? '12s smooth' : activePreset === 'dune' ? '18s relaxed' : '15s kinetic'}
                       </span>
                     </div>
@@ -812,10 +814,10 @@ export default function Hero() {
       {/* 4. EXPLORE THE LIBRARY (Catalog, Filters, Search) */}
       {/* ============================================================== */}
       <section id="components" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="flex flex-col md:flex-row items-center gap-4 justify-between border-b-[3px] border-black pb-6">
+        <div className="flex flex-col md:flex-row items-center gap-4 justify-between border-b-[3px] border-white pb-6">
           <div>
-            <h2 className="font-heading text-3xl font-black uppercase text-black">Component Catalog</h2>
-            <p className="text-xs text-black font-semibold mt-1">
+            <h2 className="font-heading text-3xl font-black uppercase text-white">Component Catalog</h2>
+            <p className="text-xs text-[#E5E5E5] font-semibold mt-1">
               Every component rendered live with responsive code tabs and single-command installation.
             </p>
           </div>
@@ -827,7 +829,7 @@ export default function Hero() {
               placeholder="Search components (e.g. aurora, bento, tilt, button)..."
               value={rawSearchQuery}
               onChange={(e) => setRawSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 bg-white border-[3px] border-black shadow-[4px_4px_0px_#000] text-xs font-bold text-black placeholder:text-zinc-500 focus:outline-none focus:shadow-[6px_6px_0px_#000] focus:bg-[#FFFDF5] transition"
+              className="w-full px-4 py-3 bg-[#1A1A1A] border-[3px] border-white shadow-[4px_4px_0px_#FFDC58] text-xs font-bold text-white placeholder:text-zinc-400 focus:outline-none focus:shadow-[6px_6px_0px_#FFDC58] focus:border-[#FFDC58] transition"
             />
             {rawSearchQuery && (
               <button
@@ -836,7 +838,7 @@ export default function Hero() {
                   setCurrentPage(1);
                   setIsAppendMode(false);
                 }}
-                className="absolute right-3 top-3 text-black font-heading font-black text-xs hover:text-red-600"
+                className="absolute right-3 top-3 text-[#FFDC58] font-heading font-black text-xs hover:text-red-400"
               >
                 ✕ CLEAR
               </button>
@@ -844,9 +846,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Source Filter Row (Chunky Neo-Brutalist buttons) */}
-        <div className="flex flex-wrap items-center gap-2 pt-6 pb-2 border-t-[3px] border-black/10">
-          <span className="font-heading text-xs font-black text-black mr-2 uppercase tracking-wider">
+        {/* Source Filter Row */}
+        <div className="flex flex-wrap items-center gap-2 pt-6 pb-2 border-t-[3px] border-white/20">
+          <span className="font-heading text-xs font-black text-white mr-2 uppercase tracking-wider">
             SOURCE:
           </span>
           {[
@@ -866,18 +868,18 @@ export default function Hero() {
                   setIsAppendMode(false);
                 }
               }}
-              className={`px-3.5 py-1.5 text-xs font-heading font-black uppercase transition border-[3px] border-black ${
+              className={`px-3.5 py-1.5 text-xs font-heading font-black uppercase transition border-[3px] border-white ${
                 src.disabled
-                  ? 'opacity-40 cursor-not-allowed bg-zinc-200 text-zinc-500'
+                  ? 'opacity-40 cursor-not-allowed bg-zinc-800 text-zinc-500'
                   : selectedSource === src.id
                   ? src.id === 'react-bits'
-                    ? 'bg-[#7FBCFF] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
+                    ? 'bg-[#7FBCFF] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'magic-ui'
-                    ? 'bg-[#67E8F9] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
+                    ? 'bg-[#67E8F9] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
                     : src.id === 'zeuralabz-original'
-                    ? 'bg-[#FF90E8] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
-                    : 'bg-[#FFDC58] text-black shadow-[4px_4px_0px_#000] -translate-x-0.5 -translate-y-0.5'
-                  : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
+                    ? 'bg-[#FF90E8] text-black shadow-[4px_4px_0px_#FFDC58] -translate-x-0.5 -translate-y-0.5'
+                    : 'bg-[#FFDC58] text-black shadow-[4px_4px_0px_#FF90E8] -translate-x-0.5 -translate-y-0.5'
+                  : 'bg-[#1A1A1A] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#FFDC58]'
               }`}
             >
               {src.label}
@@ -885,7 +887,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Category Filter Pills (Chunky Square Buttons) */}
+        {/* Category Filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto py-4 text-xs no-scrollbar">
           {CATEGORIES.map((cat) => (
             <button
@@ -895,23 +897,23 @@ export default function Hero() {
                 setCurrentPage(1);
                 setIsAppendMode(false);
               }}
-              className={`px-3 py-1.5 capitalize shrink-0 font-heading font-black text-xs transition border-[2px] border-black ${
+              className={`px-3 py-1.5 capitalize shrink-0 font-heading font-black text-xs transition border-[2px] border-white ${
                 selectedCategory === cat
-                  ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
-                  : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
+                  ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#FF90E8]'
+                  : 'bg-[#1A1A1A] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#FFDC58]'
               }`}
             >
               {cat.replace('-', ' ')}
             </button>
           ))}
-          <span className="ml-auto shrink-0 font-heading text-xs font-black uppercase bg-black text-white px-2.5 py-1 border-[2px] border-black shadow-[2px_2px_0px_#FFDC58]">
+          <span className="ml-auto shrink-0 font-heading text-xs font-black uppercase bg-black text-[#FFDC58] px-2.5 py-1 border-[2px] border-white shadow-[2px_2px_0px_#FFDC58]">
             SHOWING {filteredComponents.length} OF {totalAll}
           </span>
         </div>
 
-        {/* Second Row: "Install the source you need" */}
-        <div className="mt-2 mb-8 p-3.5 bg-white border-[3px] border-black shadow-[4px_4px_0px_#000] flex flex-wrap items-center justify-between gap-3 text-xs">
-          <span className="font-heading font-black text-black uppercase">Install format you need:</span>
+        {/* Second Row: Format selector */}
+        <div className="mt-2 mb-8 p-3.5 bg-[#181818] border-[3px] border-white shadow-[4px_4px_0px_#FFDC58] flex flex-wrap items-center justify-between gap-3 text-xs">
+          <span className="font-heading font-black text-white uppercase">Install format you need:</span>
           <div className="flex flex-wrap gap-2">
             {[
               { id: 'typescript', label: 'TypeScript', ext: '.tsx' },
@@ -922,13 +924,13 @@ export default function Hero() {
               <button
                 key={fmt.id}
                 onClick={() => setSelectedFormat(fmt.id)}
-                className={`px-3 py-1 text-xs font-bold border-[2px] border-black transition ${
+                className={`px-3 py-1 text-xs font-bold border-[2px] border-white transition ${
                   selectedFormat === fmt.id
-                    ? 'bg-[#FFDC58] text-black shadow-[2px_2px_0px_#000] font-black'
-                    : 'bg-[#FFFDF5] text-black hover:bg-zinc-100'
+                    ? 'bg-[#FFDC58] text-black shadow-[2px_2px_0px_#FF90E8] font-black'
+                    : 'bg-[#141414] text-white hover:bg-zinc-800'
                 }`}
               >
-                {fmt.label} <span className="text-zinc-600 text-[10px]">({fmt.ext})</span>
+                {fmt.label} <span className="text-zinc-400 text-[10px]">({fmt.ext})</span>
               </button>
             ))}
           </div>
@@ -938,9 +940,9 @@ export default function Hero() {
         {/* 5. COMPONENT GRID WITH LIVE PREVIEWS & PAGINATION */}
         {/* ============================================================== */}
         {filteredComponents.length === 0 ? (
-          <div className="text-center py-24 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] p-8">
-            <p className="font-heading text-xl font-black text-black">NO COMPONENTS MATCHED "{rawSearchQuery}"</p>
-            <p className="text-xs text-black font-medium mt-1">Try searching for keywords like aurora, bento, card, or button.</p>
+          <div className="text-center py-24 bg-[#1A1A1A] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] p-8">
+            <p className="font-heading text-xl font-black text-white">NO COMPONENTS MATCHED "{rawSearchQuery}"</p>
+            <p className="text-xs text-[#E5E5E5] font-medium mt-1">Try searching for keywords like aurora, bento, card, or button.</p>
             <button
               onClick={() => {
                 setRawSearchQuery('');
@@ -949,7 +951,7 @@ export default function Hero() {
                 setCurrentPage(1);
                 setIsAppendMode(false);
               }}
-              className="mt-4 neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs"
+              className="mt-4 neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs border-[2px] border-white shadow-[3px_3px_0px_#FF90E8]"
             >
               RESET FILTERS
             </button>
@@ -970,31 +972,31 @@ export default function Hero() {
             </div>
 
             {/* Pagination Controls */}
-            <div className="mt-12 p-5 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col gap-4">
+            <div className="mt-12 p-5 bg-[#1A1A1A] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] flex flex-col gap-4 text-white">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="text-xs text-black font-heading font-black uppercase">
+                <div className="text-xs text-white font-heading font-black uppercase">
                   {isAppendMode ? (
                     <>
                       SHOWING 1–
-                      <span className="bg-[#FFDC58] px-1 border border-black">
+                      <span className="bg-[#FFDC58] text-black px-1 border border-black">
                         {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
                       </span>{' '}
                       OF{' '}
-                      <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span>{' '}
+                      <span className="bg-[#FFDC58] text-black px-1 border border-black">{filteredComponents.length}</span>{' '}
                       COMPONENTS (PAGES 1–{currentPage} OF {totalPages})
                     </>
                   ) : (
                     <>
                       SHOWING{' '}
-                      <span className="bg-[#FFDC58] px-1 border border-black">
+                      <span className="bg-[#FFDC58] text-black px-1 border border-black">
                         {filteredComponents.length === 0 ? 0 : (currentPage - 1) * ITEMS_PER_PAGE + 1}
                       </span>
                       –
-                      <span className="bg-[#FFDC58] px-1 border border-black">
+                      <span className="bg-[#FFDC58] text-black px-1 border border-black">
                         {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
                       </span>{' '}
                       OF{' '}
-                      <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span>{' '}
+                      <span className="bg-[#FFDC58] text-black px-1 border border-black">{filteredComponents.length}</span>{' '}
                       COMPONENTS (PAGE {currentPage} OF {totalPages})
                     </>
                   )}
@@ -1008,7 +1010,7 @@ export default function Hero() {
                         setIsAppendMode(true);
                         setCurrentPage((p) => Math.min(p + 1, totalPages));
                       }}
-                      className="neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5"
+                      className="neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5 border-[2px] border-white shadow-[3px_3px_0px_#FF90E8]"
                     >
                       <span>LOAD MORE (12 MORE)</span>
                       <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-mono">
@@ -1024,7 +1026,7 @@ export default function Hero() {
                         setCurrentPage(totalPages);
                       }}
                       title="May lag on older devices"
-                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
+                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]"
                     >
                       LOAD ALL ({filteredComponents.length})
                     </button>
@@ -1037,7 +1039,7 @@ export default function Hero() {
                         setCurrentPage(1);
                         document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
+                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black border-[2px] border-white shadow-[3px_3px_0px_#FFDC58]"
                     >
                       BACK TO FIRST 12
                     </button>
@@ -1047,7 +1049,7 @@ export default function Hero() {
 
               {/* Numeric Page Buttons [PREV] [1] [2] [3] ... [NEXT] */}
               {totalPages > 1 && (
-                <div className="pt-4 border-t-[2px] border-black flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
+                <div className="pt-4 border-t-[2px] border-white/30 flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
                   <button
                     disabled={currentPage <= 1}
                     onClick={() => {
@@ -1055,10 +1057,10 @@ export default function Hero() {
                       setCurrentPage((p) => Math.max(1, p - 1));
                       document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-black transition ${
+                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-white transition ${
                       currentPage <= 1
-                        ? 'opacity-30 cursor-not-allowed bg-zinc-200 text-zinc-500'
-                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5'
+                        ? 'opacity-30 cursor-not-allowed bg-zinc-800 text-zinc-500'
+                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#FFDC58] active:translate-x-0.5 active:translate-y-0.5'
                     }`}
                   >
                     ◀ PREV
@@ -1066,7 +1068,7 @@ export default function Hero() {
 
                   {pageNumbers.map((p, idx) =>
                     p === '...' ? (
-                      <span key={`ellipsis-${idx}`} className="px-2 py-1 font-mono font-bold text-zinc-600">
+                      <span key={`ellipsis-${idx}`} className="px-2 py-1 font-mono font-bold text-zinc-400">
                         ...
                       </span>
                     ) : (
@@ -1077,10 +1079,10 @@ export default function Hero() {
                           setCurrentPage(Number(p));
                           document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className={`w-9 h-9 text-xs font-heading font-black border-[2px] border-black flex items-center justify-center transition ${
+                        className={`w-9 h-9 text-xs font-heading font-black border-[2px] border-white flex items-center justify-center transition ${
                           !isAppendMode && currentPage === p
-                            ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000] -translate-x-0.5 -translate-y-0.5'
-                            : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
+                            ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#FF90E8] -translate-x-0.5 -translate-y-0.5'
+                            : 'bg-[#141414] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#FFDC58]'
                         }`}
                       >
                         {p}
@@ -1095,10 +1097,10 @@ export default function Hero() {
                       setCurrentPage((p) => Math.min(totalPages, p + 1));
                       document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-black transition ${
+                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-white transition ${
                       currentPage >= totalPages
-                        ? 'opacity-30 cursor-not-allowed bg-zinc-200 text-zinc-500'
-                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5'
+                        ? 'opacity-30 cursor-not-allowed bg-zinc-800 text-zinc-500'
+                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#FFDC58] active:translate-x-0.5 active:translate-y-0.5'
                     }`}
                   >
                     NEXT ▶
@@ -1113,48 +1115,48 @@ export default function Hero() {
       {/* ============================================================== */}
       {/* 6. BOTTOM SECTIONS: HOW IT WORKS & AI INTEGRATION */}
       {/* ============================================================== */}
-      <section id="how-it-works" className="py-20 border-t-[3px] border-b-[3px] border-black bg-[#FFE9F3]">
+      <section id="how-it-works" className="py-20 border-t-[3px] border-b-[3px] border-white bg-[#181818]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="bg-[#FFDC58] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+            <span className="bg-[#FFDC58] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#FF90E8]">
               AUTONOMOUS WORKFLOW
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3">
+            <h2 className="font-heading text-3xl sm:text-4xl font-black text-white mt-3">
               HOW ZEURALABZ SUGGEST WORKS
             </h2>
-            <p className="text-black font-semibold text-sm mt-2">
+            <p className="text-[#E5E5E5] font-semibold text-sm mt-2">
               No manual hunting. Let the heuristic analyzer inspect your repo and recommend the 1 best match per section.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
-              <div className="w-12 h-12 bg-[#FFDC58] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
+            <div className="p-6 bg-[#141414] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] text-left">
+              <div className="w-12 h-12 bg-[#FFDC58] border-[3px] border-white shadow-[3px_3px_0px_#FF90E8] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 01
               </div>
-              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Scan Your Project</h3>
-              <p className="text-xs text-black font-semibold leading-relaxed">
-                Run <code className="bg-[#FFFDF5] border border-black px-1 py-0.5 font-mono text-black">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
+              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Scan Your Project</h3>
+              <p className="text-xs text-[#E5E5E5] font-semibold leading-relaxed">
+                Run <code className="bg-[#0A0A0A] border border-white/40 px-1 py-0.5 font-mono text-[#FFDC58]">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
               </p>
             </div>
 
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
-              <div className="w-12 h-12 bg-[#FF90E8] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
+            <div className="p-6 bg-[#141414] border-[3px] border-white shadow-[6px_6px_0px_#FF90E8] text-left">
+              <div className="w-12 h-12 bg-[#FF90E8] border-[3px] border-white shadow-[3px_3px_0px_#FFDC58] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 02
               </div>
-              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Curated 1-Best-Pick</h3>
-              <p className="text-xs text-black font-semibold leading-relaxed">
+              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Curated 1-Best-Pick</h3>
+              <p className="text-xs text-[#E5E5E5] font-semibold leading-relaxed">
                 ZEURALABZ determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component per section with reasoning.
               </p>
             </div>
 
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] text-left">
-              <div className="w-12 h-12 bg-[#7FBCFF] border-[3px] border-black shadow-[3px_3px_0px_#000] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
+            <div className="p-6 bg-[#141414] border-[3px] border-white shadow-[6px_6px_0px_#7FBCFF] text-left">
+              <div className="w-12 h-12 bg-[#7FBCFF] border-[3px] border-white shadow-[3px_3px_0px_#FFDC58] text-black flex items-center justify-center font-heading font-black text-lg mb-4">
                 03
               </div>
-              <h3 className="font-heading text-base font-black text-black mb-2 uppercase">Direct Local Code</h3>
-              <p className="text-xs text-black font-semibold leading-relaxed">
-                Components install straight into your <code className="bg-[#FFFDF5] border border-black px-1 py-0.5 font-mono text-black">src/components/</code> directory. Zero lock-in.
+              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Direct Local Code</h3>
+              <p className="text-xs text-[#E5E5E5] font-semibold leading-relaxed">
+                Components install straight into your <code className="bg-[#0A0A0A] border border-white/40 px-1 py-0.5 font-mono text-[#7FBCFF]">src/components/</code> directory. Zero lock-in.
               </p>
             </div>
           </div>
@@ -1162,29 +1164,29 @@ export default function Hero() {
       </section>
 
       {/* AI Tool Integration Cards */}
-      <section id="mcp" className="py-20 border-b-[3px] border-black bg-[#E0F2FF]">
+      <section id="mcp" className="py-20 border-b-[3px] border-white bg-[#111111]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="bg-[#A3E635] text-black border-[2px] border-black px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#000]">
+          <span className="bg-[#A3E635] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[3px_3px_0px_#FFDC58]">
             MODEL CONTEXT PROTOCOL & SKILLS
           </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-black text-black mt-3 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl font-black text-white mt-3 mb-4">
             INSTALL IN YOUR AI WORKSPACE
           </h2>
-          <p className="text-black font-semibold text-sm max-w-xl mx-auto mb-12">
+          <p className="text-[#E5E5E5] font-semibold text-sm max-w-xl mx-auto mb-12">
             Native MCP tools and skills for Claude Code, Cursor, Windsurf, and Google Antigravity.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
+            <div className="p-6 bg-[#181818] border-[3px] border-white shadow-[6px_6px_0px_#FFDC58] flex flex-col justify-between">
               <div>
-                <span className="bg-[#FFDC58] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                <span className="bg-[#FFDC58] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
                   Claude Code / Desktop
                 </span>
-                <p className="text-xs text-black font-semibold mt-3">
+                <p className="text-xs text-[#E5E5E5] font-semibold mt-3">
                   Add the ZEURALABZ MCP server to enable autonomous design reviews and component installations.
                 </p>
               </div>
-              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#FFDC58] overflow-x-auto shadow-[3px_3px_0px_#000]">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-white/60 text-[11px] font-mono text-[#FFDC58] overflow-x-auto shadow-[3px_3px_0px_#FFDC58]">
 {`"zeuralabz": {
   "command": "node",
   "args": ["mcp-server/index.js"]
@@ -1192,32 +1194,32 @@ export default function Hero() {
               </pre>
             </div>
 
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
+            <div className="p-6 bg-[#181818] border-[3px] border-white shadow-[6px_6px_0px_#67E8F9] flex flex-col justify-between">
               <div>
-                <span className="bg-[#67E8F9] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                <span className="bg-[#67E8F9] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
                   Antigravity / Gemini
                 </span>
-                <p className="text-xs text-black font-semibold mt-3">
-                  Drop <code className="bg-[#FFFDF5] border border-black px-1">SKILL.md</code> into your skills folder to activate intelligent UI recommendations.
+                <p className="text-xs text-[#E5E5E5] font-semibold mt-3">
+                  Drop <code className="bg-[#0A0A0A] border border-white/40 px-1 text-[#67E8F9]">SKILL.md</code> into your skills folder to activate intelligent UI recommendations.
                 </p>
               </div>
-              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#A3E635] overflow-x-auto shadow-[3px_3px_0px_#000]">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-white/60 text-[11px] font-mono text-[#A3E635] overflow-x-auto shadow-[3px_3px_0px_#67E8F9]">
 {`// Tell Antigravity:
 "Use ZEURALABZ to analyze my site
 and install the best hero"`}
               </pre>
             </div>
 
-            <div className="p-6 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col justify-between">
+            <div className="p-6 bg-[#181818] border-[3px] border-white shadow-[6px_6px_0px_#FF90E8] flex flex-col justify-between">
               <div>
-                <span className="bg-[#FF90E8] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-black">
+                <span className="bg-[#FF90E8] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
                   Cursor & Windsurf
                 </span>
-                <p className="text-xs text-black font-semibold mt-3">
-                  Connect via MCP server settings and query components straight from chat with <code className="bg-[#FFFDF5] border border-black px-1">@zeuralabz</code>.
+                <p className="text-xs text-[#E5E5E5] font-semibold mt-3">
+                  Connect via MCP server settings and query components straight from chat with <code className="bg-[#0A0A0A] border border-white/40 px-1 text-[#FF90E8]">@zeuralabz</code>.
                 </p>
               </div>
-              <pre className="mt-4 p-3 bg-black border-[2px] border-black text-[11px] font-mono text-[#7FBCFF] overflow-x-auto shadow-[3px_3px_0px_#000]">
+              <pre className="mt-4 p-3 bg-black border-[2px] border-white/60 text-[11px] font-mono text-[#7FBCFF] overflow-x-auto shadow-[3px_3px_0px_#FF90E8]">
 {`@zeuralabz suggest
 @zeuralabz install aurora`}
               </pre>
@@ -1227,18 +1229,18 @@ and install the best hero"`}
       </section>
 
       {/* ============================================================== */}
-      {/* 7. CODE MODAL (Chunky white dialog with 4px black border + 12px shadow) */}
+      {/* 7. CODE MODAL */}
       {/* ============================================================== */}
       {selectedComponent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="w-full max-w-3xl bg-white border-[4px] border-black shadow-[12px_12px_0px_#000] overflow-hidden flex flex-col max-h-[90vh]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+          <div className="w-full max-w-3xl bg-[#1A1A1A] border-[4px] border-white shadow-[12px_12px_0px_#FFDC58] overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="p-5 bg-[#FFDC58] border-b-[3px] border-black flex items-center justify-between">
+            <div className="p-5 bg-[#FFDC58] border-b-[3px] border-white flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="font-heading text-xl font-black text-black uppercase">{selectedComponent.name}</h3>
                   <span
-                    className={`px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
+                    className={`px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-white shadow-[2px_2px_0px_#000] ${
                       selectedComponent.source === 'react-bits'
                         ? 'bg-[#7FBCFF] text-black'
                         : selectedComponent.source === 'magic-ui'
@@ -1263,20 +1265,20 @@ and install the best hero"`}
               </div>
               <button
                 onClick={() => setSelectedComponent(null)}
-                className="w-9 h-9 bg-black text-white hover:bg-red-600 font-heading font-black text-sm flex items-center justify-center border-[2px] border-black shadow-[2px_2px_0px_#000] transition"
+                className="w-9 h-9 bg-black text-white hover:bg-red-600 font-heading font-black text-sm flex items-center justify-center border-[2px] border-white shadow-[2px_2px_0px_#000] transition"
               >
                 ✕
               </button>
             </div>
 
             {/* Code Tabs */}
-            <div className="flex border-b-[3px] border-black px-6 pt-3 bg-[#FFFDF5] gap-3 text-xs font-bold">
+            <div className="flex border-b-[3px] border-white px-6 pt-3 bg-[#111111] gap-3 text-xs font-bold">
               <button
                 onClick={() => setActiveTab('react')}
-                className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                className={`pb-2 px-4 transition border-[2px] border-white font-heading font-black uppercase ${
                   activeTab === 'react'
-                    ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
-                    : 'bg-white text-black hover:bg-zinc-100'
+                    ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#FF90E8]'
+                    : 'bg-[#1A1A1A] text-white hover:bg-zinc-800'
                 }`}
               >
                 React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' ? 'TS + Tailwind' : 'TypeScript'})
@@ -1285,20 +1287,20 @@ and install the best hero"`}
                 <>
                   <button
                     onClick={() => setActiveTab('html')}
-                    className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                    className={`pb-2 px-4 transition border-[2px] border-white font-heading font-black uppercase ${
                       activeTab === 'html'
-                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
-                        : 'bg-white text-black hover:bg-zinc-100'
+                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#FF90E8]'
+                        : 'bg-[#1A1A1A] text-white hover:bg-zinc-800'
                     }`}
                   >
                     Pure HTML
                   </button>
                   <button
                     onClick={() => setActiveTab('css')}
-                    className={`pb-2 px-4 transition border-[2px] border-black font-heading font-black uppercase ${
+                    className={`pb-2 px-4 transition border-[2px] border-white font-heading font-black uppercase ${
                       activeTab === 'css'
-                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000]'
-                        : 'bg-white text-black hover:bg-zinc-100'
+                        ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#FF90E8]'
+                        : 'bg-[#1A1A1A] text-white hover:bg-zinc-800'
                     }`}
                   >
                     Pure CSS
@@ -1308,9 +1310,9 @@ and install the best hero"`}
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono bg-white">
+            <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono bg-[#141414]">
               {/* Primary ZEURALABZ CLI Command */}
-              <div className="flex items-center justify-between p-3.5 bg-black text-[#FFDC58] border-[3px] border-black shadow-[4px_4px_0px_#000]">
+              <div className="flex items-center justify-between p-3.5 bg-black text-[#FFDC58] border-[3px] border-white shadow-[4px_4px_0px_#FFDC58]">
                 <span className="font-bold">
                   $ npx zeuralabz add {selectedComponent.slug}
                   {selectedComponent.source === 'react-bits'
@@ -1331,7 +1333,7 @@ and install the best hero"`}
                       }`
                     )
                   }
-                  className="px-3 py-1 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs border border-black shadow-[2px_2px_0px_#FFF]"
+                  className="px-3 py-1 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs border border-white shadow-[2px_2px_0px_#FF90E8]"
                 >
                   {copiedSlug ===
                   `npx zeuralabz add ${selectedComponent.slug}${
@@ -1346,23 +1348,23 @@ and install the best hero"`}
                 </button>
               </div>
 
-              {/* Official React Bits direct shadcn command + documentation link */}
+              {/* Official React Bits direct command */}
               {selectedComponent.source === 'react-bits' && (
-                <div className="p-4 bg-[#E0F2FF] border-[3px] border-black shadow-[4px_4px_0px_#000] space-y-2">
+                <div className="p-4 bg-[#0E1F2F] border-[3px] border-white shadow-[4px_4px_0px_#7FBCFF] space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-heading text-xs font-black uppercase text-black">
+                    <span className="font-heading text-xs font-black uppercase text-white">
                       Official React Bits Registry Command:
                     </span>
                     <a
                       href={selectedComponent.originalUrl || 'https://reactbits.dev'}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xs text-blue-700 hover:underline flex items-center gap-1 font-heading font-black"
+                      className="text-xs text-[#7FBCFF] hover:underline flex items-center gap-1 font-heading font-black"
                     >
                       VISIT REACTBITS.DEV ↗
                     </a>
                   </div>
-                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-black font-mono text-xs">
+                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-white/60 font-mono text-xs">
                     <code>{selectedComponent.installCommand || `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`}</code>
                     <button
                       onClick={() =>
@@ -1371,34 +1373,34 @@ and install the best hero"`}
                             `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`
                         )
                       }
-                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-black"
+                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-white"
                     >
                       COPY
                     </button>
                   </div>
-                  <p className="text-[11px] text-black font-sans font-medium pt-1">
+                  <p className="text-[11px] text-zinc-300 font-sans font-medium pt-1">
                     Attribution: Created by David Haz (github.com/DavidHDev/react-bits). Free to use under MIT + Commons Clause.
                   </p>
                 </div>
               )}
 
-              {/* Official Magic UI direct shadcn command + documentation link */}
+              {/* Official Magic UI direct command */}
               {selectedComponent.source === 'magic-ui' && (
-                <div className="p-4 bg-[#E6FFFA] border-[3px] border-black shadow-[4px_4px_0px_#000] space-y-2">
+                <div className="p-4 bg-[#0D2424] border-[3px] border-white shadow-[4px_4px_0px_#67E8F9] space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-heading text-xs font-black uppercase text-black">
+                    <span className="font-heading text-xs font-black uppercase text-white">
                       Official Magic UI Registry Command:
                     </span>
                     <a
                       href={selectedComponent.originalUrl || `https://magicui.design/docs/components/${selectedComponent.slug}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xs text-cyan-800 hover:underline flex items-center gap-1 font-heading font-black"
+                      className="text-xs text-[#67E8F9] hover:underline flex items-center gap-1 font-heading font-black"
                     >
                       VISIT MAGICUI.DESIGN ↗
                     </a>
                   </div>
-                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-black font-mono text-xs">
+                  <div className="flex items-center justify-between text-white bg-black p-2.5 border-[2px] border-white/60 font-mono text-xs">
                     <code>{selectedComponent.installCommand || `npx shadcn@latest add https://magicui.design/r/${selectedComponent.slug}.json`}</code>
                     <button
                       onClick={() =>
@@ -1407,12 +1409,12 @@ and install the best hero"`}
                             `npx shadcn@latest add https://magicui.design/r/${selectedComponent.slug}.json`
                         )
                       }
-                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-black"
+                      className="px-2 py-0.5 bg-[#FFDC58] text-black hover:bg-yellow-400 font-heading font-black text-xs shrink-0 ml-2 border border-white"
                     >
                       COPY
                     </button>
                   </div>
-                  <p className="text-[11px] text-black font-sans font-medium pt-1">
+                  <p className="text-[11px] text-zinc-300 font-sans font-medium pt-1">
                     Attribution: Created by Dillion Verma (github.com/magicuidesign/magicui). Free to use under MIT License.
                   </p>
                 </div>
@@ -1420,8 +1422,8 @@ and install the best hero"`}
 
               {activeTab === 'react' && (
                 <div>
-                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">React Usage:</span>
-                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
+                  <span className="font-heading text-xs font-black uppercase text-white block mb-1">React Usage:</span>
+                  <pre className="p-4 bg-[#0A0A0A] text-white border-[3px] border-white/60 overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#FFDC58]">
 {selectedComponent.source === 'react-bits'
   ? `import ${selectedComponent.componentName} from '@/components/${selectedComponent.componentName}';
 
@@ -1453,8 +1455,8 @@ export default function Example() {
 
               {activeTab === 'html' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
                 <div>
-                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">Semantic HTML Structure:</span>
-                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
+                  <span className="font-heading text-xs font-black uppercase text-white block mb-1">Semantic HTML Structure:</span>
+                  <pre className="p-4 bg-[#0A0A0A] text-white border-[3px] border-white/60 overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#FFDC58]">
 {`<div class="zeura-${selectedComponent.slug}">
   <h2>${selectedComponent.name}</h2>
 </div>`}
@@ -1464,15 +1466,15 @@ export default function Example() {
 
               {activeTab === 'css' && selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && (
                 <div>
-                  <span className="font-heading text-xs font-black uppercase text-black block mb-1">Standalone CSS Rules:</span>
-                  <pre className="p-4 bg-[#141414] text-white border-[3px] border-black overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#000]">
+                  <span className="font-heading text-xs font-black uppercase text-white block mb-1">Standalone CSS Rules:</span>
+                  <pre className="p-4 bg-[#0A0A0A] text-white border-[3px] border-white/60 overflow-x-auto leading-relaxed shadow-[4px_4px_0px_#FFDC58]">
 {`.zeura-${selectedComponent.slug} {
   position: relative;
   overflow: hidden;
-  border: 3px solid #000;
-  box-shadow: 6px 6px 0px #000;
-  background-color: #FFFDF5;
-  color: #000;
+  border: 3px solid #FFF;
+  box-shadow: 6px 6px 0px #FFDC58;
+  background-color: #1A1A1A;
+  color: #FFF;
 }`}
                   </pre>
                 </div>
@@ -1480,10 +1482,10 @@ export default function Example() {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 border-t-[3px] border-black bg-[#FFFDF5] flex justify-end">
+            <div className="p-4 border-t-[3px] border-white bg-[#111111] flex justify-end">
               <button
                 onClick={() => setSelectedComponent(null)}
-                className="neo-btn bg-black text-white px-5 py-2 text-xs font-heading font-black hover:bg-zinc-800"
+                className="neo-btn bg-[#FFDC58] text-black px-5 py-2 text-xs font-heading font-black hover:bg-yellow-400 border-[2px] border-white shadow-[3px_3px_0px_#FF90E8]"
               >
                 CLOSE
               </button>

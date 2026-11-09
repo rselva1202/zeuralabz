@@ -23,3 +23,7 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local deployment scripts
+scripts/*.bat
+scripts/deployGhPages.py
+
