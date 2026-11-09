@@ -162,13 +162,10 @@ export function analyzeProject(targetDir = process.cwd()) {
     // Filter components by category and matching bestFor
     const candidates = registry.filter(c => c.category === category);
 
-    // Prioritize React Bits first for rich visual motion (backgrounds, text, animations)
+    // Prioritize React Bits first, Magic UI second, ZEURALABZ Original third
     candidates.sort((a, b) => {
-      if (['backgrounds', 'text-animations', 'animations'].includes(category)) {
-        if (a.source === 'react-bits' && b.source !== 'react-bits') return -1;
-        if (a.source !== 'react-bits' && b.source === 'react-bits') return 1;
-      }
-      return 0;
+      const getPriority = (src) => (src === 'react-bits' ? 1 : src === 'magic-ui' ? 2 : 3);
+      return getPriority(a.source) - getPriority(b.source);
     });
 
     let matched = candidates.find(c => c.bestFor && c.bestFor.includes(result.projectType));

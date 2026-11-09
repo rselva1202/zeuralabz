@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export type BackgroundType =
   | 'aurora'
@@ -75,6 +75,18 @@ export interface CanvasEngineProps {
    * Optional custom render callback for 'custom' type.
    */
   onRender?: (ctx: CanvasRenderingContext2D, width: number, height: number, time: number) => void;
+  /**
+   * Lite preview mode for high-performance grid rendering (20% particles, 30fps max, 0 shadowBlur).
+   */
+  lite?: boolean;
+  /**
+   * Whether the component is visible in viewport. If false, pauses animation completely.
+   */
+  isVisible?: boolean;
+  /**
+   * Maximum FPS to render (default: lite ? 30 : 60).
+   */
+  maxFps?: number;
 }
 
 export const CanvasEngine: React.FC<CanvasEngineProps> = ({
@@ -92,14 +104,38 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
   style,
   children,
   onRender,
+  lite = false,
+  isVisible = true,
+  maxFps,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isInViewport, setIsInViewport] = useState<boolean>(true);
 
-  const effectiveGlow = glowIntensity ?? glow;
+  // IntersectionObserver to pause when scrolled out of view
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewport(entry.isIntersecting);
+      },
+      { rootMargin: '120px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const effectiveGlow = lite ? 0.3 : (glowIntensity ?? glow);
   const effectiveCount = starCount ?? particleCount;
 
   useEffect(() => {
+    if (!isInViewport || isVisible === false) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
@@ -110,22 +146,31 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
     let animId: number;
     let width = 0;
     let height = 0;
-    let dpr = 1;
+    const dpr = lite ? 1 : Math.min(window.devicePixelRatio || 1, 2);
 
-    // Determine actual particle count based on type
-    const defaultCount =
-      type === 'galaxy' || type === 'starfield'
-        ? 850
-        : type === 'particles' || type === 'mesh'
-        ? 130
-        : type === 'dots'
-        ? 600
-        : type === 'fireflies'
-        ? 120
-        : 800;
+    // Determine actual particle count based on type (20% in lite mode)
+    const defaultCount = lite
+      ? (type === 'galaxy' || type === 'starfield'
+          ? 150
+          : type === 'particles' || type === 'mesh'
+          ? 30
+          : type === 'dots'
+          ? 120
+          : type === 'fireflies'
+          ? 25
+          : 120)
+      : (type === 'galaxy' || type === 'starfield'
+          ? 850
+          : type === 'particles' || type === 'mesh'
+          ? 130
+          : type === 'dots'
+          ? 600
+          : type === 'fireflies'
+          ? 120
+          : 800);
 
     const count = Math.max(
-      type === 'particles' ? 60 : 200,
+      lite ? 15 : (type === 'particles' ? 60 : 200),
       Math.floor((effectiveCount ?? defaultCount) * density)
     );
 
@@ -278,10 +323,10 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
       const rect = container.getBoundingClientRect();
       width = Math.max(1, Math.floor(rect.width));
       height = Math.max(1, Math.floor(rect.height));
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const actualDpr = lite ? 1 : Math.min(window.devicePixelRatio || 1, 2);
 
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
+      canvas.width = Math.floor(width * actualDpr);
+      canvas.height = Math.floor(height * actualDpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
     };
@@ -291,10 +336,20 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
     const resizeObserver = new ResizeObserver(() => resize());
     resizeObserver.observe(container);
 
+    const targetFps = lite ? 30 : (maxFps ?? 60);
+    const frameInterval = 1000 / targetFps;
+    let lastRenderTime = performance.now();
     let lastTime = performance.now();
     let globalAngle = 0;
 
     const render = (currentTime: number) => {
+      const elapsedSinceLastRender = currentTime - lastRenderTime;
+      if (elapsedSinceLastRender < frameInterval) {
+        animId = requestAnimationFrame(render);
+        return;
+      }
+      lastRenderTime = currentTime - (elapsedSinceLastRender % frameInterval);
+
       const delta = Math.min(currentTime - lastTime, 64) * 0.001;
       lastTime = currentTime;
       globalAngle += delta * speed * 0.15;
@@ -798,7 +853,7 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
       cancelAnimationFrame(animId);
       resizeObserver.disconnect();
     };
-  }, [type, effectiveCount, speed, colors, density, effectiveGlow, armCount, backgroundColor, onRender]);
+  }, [type, effectiveCount, speed, colors, density, effectiveGlow, armCount, backgroundColor, onRender, isInViewport, isVisible, lite, maxFps]);
 
   return (
     <div

@@ -91,12 +91,12 @@ components/<category>/<slug>/
 
 ---
 
-## 4. Multi-Source Architecture & React Bits Integration
+## 4. Multi-Source Architecture — React Bits & Magic UI Linked Sources
 
-ZEURALABZ combines two distinct component origins under one cohesive interface:
+ZEURALABZ combines three distinct component origins under one cohesive interface:
 
-1. **Official React Bits Integration (`source: "react-bits"`)**:
-   - React Bits (created by David Haz) contains 218+ premier visual components.
+1. **Official React Bits Integration (`source: "react-bits"`, 218 components)**:
+   - React Bits (created by David Haz) contains 218 premier visual components.
    - To respect the MIT + Commons Clause license, ZEURALABZ does **not** copy or re-host React Bits code files.
    - Instead, ZEURALABZ connects to React Bits' official shadcn registry:
      ```bash
@@ -105,7 +105,17 @@ ZEURALABZ combines two distinct component origins under one cohesive interface:
      ```
    - Previews link directly to the official [reactbits.dev](https://reactbits.dev) catalog.
 
-2. **ZEURALABZ Originals (`source: "zeuralabz-original"`)**:
+2. **Official Magic UI Integration (`source: "magic-ui"`, 79 components)**:
+   - Magic UI (created by Dillion Verma) contains 79 cutting-edge animated UI components for landing pages.
+   - Licensed under MIT. ZEURALABZ links directly to official remote registry endpoints (`https://magicui.design/r/<slug>.json`) with zero redistribution.
+   - Installed via:
+     ```bash
+     npx zeuralabz add magic-card --source magic-ui
+     # Runs: npx shadcn@latest add https://magicui.design/r/magic-card.json
+     ```
+   - Previews link directly to official demos on [magicui.design](https://magicui.design).
+
+3. **ZEURALABZ Originals (`source: "zeuralabz-original"`, 120 components)**:
    - 120 custom base primitives authored under the MIT License and bundled locally within `components/`.
    - Installed via `npx zeuralabz add <slug> --source zeuralabz-original`.
 

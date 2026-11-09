@@ -48,6 +48,8 @@ function findComponents(slug, sourceFilter = null) {
     const sf = sourceFilter.toLowerCase();
     if (sf === 'react-bits' || sf === 'rb') {
       matches = matches.filter((c) => c.source === 'react-bits');
+    } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
+      matches = matches.filter((c) => c.source === 'magic-ui');
     } else if (sf === 'zeuralabz-original' || sf === 'original' || sf === 'zeura') {
       matches = matches.filter((c) => c.source === 'zeuralabz-original');
     }
@@ -79,18 +81,28 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
           name: 'selected',
           message: `Multiple sources available for "${slug}". Choose one:`,
           choices: matches.map((m, idx) => ({
-            name: `${idx + 1}. ${m.name} [${m.source === 'react-bits' ? 'React Bits • MIT + Commons' : 'ZEURALABZ Original • MIT'}]`,
-            value: m
-          }))
-        }
+            name: `${idx + 1}. ${m.name} [${
+              m.source === 'react-bits'
+                ? 'React Bits • MIT + Commons'
+                : m.source === 'magic-ui'
+                ? 'Magic UI • MIT'
+                : 'ZEURALABZ Original • MIT'
+            }]`,
+            value: m,
+          })),
+        },
       ]);
       comp = answers.selected;
     } else {
-      // Default to React Bits per specification
+      // Priority default: 1. React Bits, 2. Magic UI, 3. ZEURALABZ Original
       const rb = matches.find((m) => m.source === 'react-bits');
+      const mg = matches.find((m) => m.source === 'magic-ui');
       if (rb) {
         comp = rb;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source zeuralabz-original to install original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui or --source zeuralabz-original).`));
+      } else if (mg) {
+        comp = mg;
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source zeuralabz-original).`));
       }
     }
   }
@@ -154,6 +166,69 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
     console.log(chalk.yellow(`💡 If you want to use the official shadcn command:`));
     console.log(chalk.cyan(`   npx shadcn@latest init`));
     console.log(chalk.gray(`   Then re-run: npx zeuralabz add ${comp.slug} --source react-bits\n`));
+    return false;
+  }
+
+  // 2. MAGIC UI INSTALLATION (via official shadcn registry or direct official fetch)
+  if (comp.source === 'magic-ui') {
+    const shadcnConfigExists =
+      fs.existsSync(path.join(targetDir, 'components.json')) &&
+      fs.readFileSync(path.join(targetDir, 'components.json'), 'utf8').includes('ui.shadcn.com');
+
+    const cmd = comp.installCommand || `npx shadcn@latest add https://magicui.design/r/${comp.slug}.json`;
+
+    if (shadcnConfigExists) {
+      console.log(chalk.cyan(`\n📦 Installing official Magic UI component via shadcn:`));
+      console.log(chalk.bold.white(`   ${cmd}\n`));
+      try {
+        execSync(cmd, { stdio: 'inherit', cwd: targetDir });
+        console.log(chalk.bold.green(`\n✔ Installed ${chalk.bold(comp.name)} from Magic UI`));
+        console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.white(`import { ${comp.componentName} } from '@/components/magicui/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName} />;\n}`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.blue(`🔗 Official Documentation & Live Demos: ${comp.originalUrl}\n`));
+        return true;
+      } catch (err) {
+        console.log(chalk.yellow(`\n⚠️  shadcn install command encountered an issue. Falling back to official registry direct download.`));
+      }
+    }
+
+    // Direct download from official Magic UI registry fallback
+    const registryUrl = comp.registryUrl || `https://magicui.design/r/${comp.slug}.json`;
+    console.log(chalk.cyan(`\n📦 Fetching official Magic UI component from:`));
+    console.log(chalk.bold.white(`   ${registryUrl}\n`));
+
+    try {
+      const fetchRes = await fetch(registryUrl);
+      if (fetchRes.ok) {
+        const itemData = await fetchRes.json();
+        const magicDir = path.join(targetDir, 'src', 'components', 'magic-ui', comp.slug);
+        fs.mkdirSync(magicDir, { recursive: true });
+
+        if (itemData.files && itemData.files.length > 0) {
+          for (const file of itemData.files) {
+            const filename = path.basename(file.path);
+            const header = `/**\n * Magic UI — ${comp.name}\n * Source: ${comp.originalUrl}\n * Author: Magic UI (https://magicui.design)\n * License: MIT\n */\n\n`;
+            fs.writeFileSync(path.join(magicDir, filename), header + file.content, 'utf8');
+          }
+        }
+
+        console.log(chalk.bold.green(`✔ Downloaded official ${chalk.bold(comp.name)} directly into src/components/magic-ui/${comp.slug}/`));
+        console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.white(`import { ${comp.componentName} } from './components/magic-ui/${comp.slug}/${comp.componentName}';\n\nexport default function Example() {\n  return <${comp.componentName} />;\n}`));
+        console.log(chalk.gray(`--------------------------------------------------`));
+        console.log(chalk.blue(`🔗 Official Documentation & Live Demos: ${comp.originalUrl}\n`));
+        return true;
+      }
+    } catch (fetchErr) {
+      console.log(chalk.red(`Direct download failed: ${fetchErr.message}`));
+    }
+
+    console.log(chalk.yellow(`💡 If you want to use the official shadcn command:`));
+    console.log(chalk.cyan(`   npx shadcn@latest init`));
+    console.log(chalk.gray(`   Then re-run: npx zeuralabz add ${comp.slug} --source magic-ui\n`));
     return false;
   }
 
@@ -271,6 +346,8 @@ program
       const sourceBadge =
         rec.source === 'react-bits'
           ? chalk.bgBlue.white.bold(' React Bits • MIT ')
+          : rec.source === 'magic-ui'
+          ? chalk.bgCyan.black.bold(' Magic UI • MIT ')
           : chalk.bgMagenta.white.bold(' ZEURALABZ Original ');
 
       console.log(`${chalk.bold.yellow(`[${idx + 1}]`)} ${chalk.bold.white(rec.section.toUpperCase())}: ${chalk.bold.cyan(rec.name)} ${sourceBadge}`);
@@ -325,8 +402,8 @@ program
 // 3. ADD
 program
   .command('add <slug>')
-  .description('Install a component into your project by its slug (e.g. aurora, split-text)')
-  .option('-s, --source <source>', 'Source library: "react-bits" or "zeuralabz-original"')
+  .description('Install a component into your project by its slug (e.g. aurora, magic-card, split-text)')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", or "zeuralabz-original"')
   .action(async (slug, options) => {
     await installComponent(slug, process.cwd(), options);
   });
@@ -335,13 +412,15 @@ program
 program
   .command('search <query>')
   .description('Search ZEURALABZ components by keyword or tag')
-  .option('-s, --source <source>', 'Filter by source: "react-bits" or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", or "zeuralabz-original"')
   .action((query, options) => {
     let registry = getRegistry();
     if (options.source) {
       const sf = options.source.toLowerCase();
       if (sf === 'react-bits' || sf === 'rb') {
         registry = registry.filter((c) => c.source === 'react-bits');
+      } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
+        registry = registry.filter((c) => c.source === 'magic-ui');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         registry = registry.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -368,6 +447,8 @@ program
       const sourceBadge =
         c.source === 'react-bits'
           ? chalk.blue('[React Bits • MIT + Commons]')
+          : c.source === 'magic-ui'
+          ? chalk.cyan('[Magic UI • MIT]')
           : chalk.magenta('[ZEURALABZ Original • MIT]');
       console.log(`• ${chalk.bold.cyan(c.name)} (${chalk.yellow(c.slug)}) [${chalk.green(c.category)}] ${sourceBadge}`);
       console.log(`  ${chalk.gray(c.description)}`);
@@ -380,11 +461,11 @@ program
 program
   .command('preview <slug>')
   .description('Open the live web preview of a component in your browser')
-  .option('-s, --source <source>', 'Source library: "react-bits" or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", or "zeuralabz-original"')
   .action(async (slug, options) => {
     const matches = findComponents(slug, options.source);
     const comp = matches[0];
-    const url = comp ? comp.originalUrl || comp.previewUrl : `https://reactbits.dev/search?q=${slug}`;
+    const url = comp ? comp.originalUrl || comp.previewUrl : `https://magicui.design/docs/components/${slug}`;
     console.log(chalk.cyan(`\nOpening preview in browser: ${chalk.underline(url)}\n`));
     try {
       await open(url);
@@ -397,7 +478,7 @@ program
 program
   .command('list [category]')
   .description('List all available components (optionally filter by category)')
-  .option('-s, --source <source>', 'Filter by source: "react-bits" or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", or "zeuralabz-original"')
   .action((category, options) => {
     let items = getRegistry();
 
@@ -405,6 +486,8 @@ program
       const sf = options.source.toLowerCase();
       if (sf === 'react-bits' || sf === 'rb') {
         items = items.filter((c) => c.source === 'react-bits');
+      } else if (sf === 'magic-ui' || sf === 'magic' || sf === 'magicui') {
+        items = items.filter((c) => c.source === 'magic-ui');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         items = items.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -418,7 +501,12 @@ program
     }
 
     items.forEach((c) => {
-      const sourceBadge = c.source === 'react-bits' ? chalk.blue('[React Bits]') : chalk.magenta('[ZEURALABZ]');
+      const sourceBadge =
+        c.source === 'react-bits'
+          ? chalk.blue('[React Bits]')
+          : c.source === 'magic-ui'
+          ? chalk.cyan('[Magic UI]')
+          : chalk.magenta('[ZEURALABZ]');
       console.log(`• ${chalk.bold.cyan(c.slug.padEnd(24))} ${sourceBadge} ${chalk.gray('—')} ${chalk.white(c.name)} [${chalk.green(c.category)}]`);
     });
     console.log(chalk.gray(`\nTo install any component: npx zeuralabz add <slug> --source <source>\n`));

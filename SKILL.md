@@ -15,13 +15,18 @@ Use this skill whenever the user is building or improving a web application, lan
 
 ## 1. How ZEURALABZ Works in AI Workspaces
 
-ZEURALABZ provides an autonomous design matrix of **120+ base components**, **20 aesthetic themes**, and **20 animation presets** equaling **1,000,000+ combinations**.
+ZEURALABZ provides an autonomous design matrix of **417 components** across three verified sources:
+- **React Bits (218 components)**: Linked official registry (`@react-bits/...-TS-TW`)
+- **Magic UI (79 components)**: Linked official registry (`https://magicui.design/r/<slug>.json`)
+- **ZEURALABZ Originals (120 components)**: Direct copy (`src/components/zeuralabz/<slug>/`)
+Combined with **20 aesthetic themes** and **20 animation presets** equaling **1,000,000+ combinations**.
 
 When analyzing a user's project, do **not** overwhelm the user with dozens of options. Instead, follow the **One-Best-Pick Rule**:
 - Select **exactly 1 best component** per section (Background, Layout, Hero, Cards, Text Styles, Buttons, Extra Polish).
-- Provide the live preview link: `https://rselva1202.github.io/zeuralabz/preview/<slug>`
+- Prioritize high-quality linked sources: 1. React Bits, 2. Magic UI, 3. ZEURALABZ Original.
+- Provide the official preview/docs link.
 - Explain *why* that specific component fits their product type (e.g., SaaS, Portfolio, Dashboard).
-- Provide the exact install command: `npx zeuralabz add <slug>`
+- Provide the exact install command: `npx zeuralabz add <slug> --source <source>`
 
 ---
 
@@ -76,18 +81,24 @@ If the user approves:
 
 ---
 
-## 5. Sources — React Bits First
+## 5. Linked Sources — React Bits & Magic UI
 
 ZEURALABZ indexes verified third-party component libraries alongside native originals.
 
-- **React Bits First**: For backgrounds, text animations, and complex micro-interactions, ZEURALABZ prioritizes official React Bits components because they are visually rich, production-tested, and performance-tuned.
-- **Zero Local Redistribution**: React Bits source code is **never** copied or redistributed inside ZEURALABZ.
-- **Official Registry Installation**: When a user selects a React Bits component, the CLI installs it directly from the official registry:
-  ```bash
-  npx zeuralabz add aurora --source react-bits
-  # Executes: npx shadcn@latest add @react-bits/Aurora-TS-TW
-  ```
-- **Attribution & Licencing**: Every recommendation displays the source label (`React Bits • MIT + Commons Clause`) and links to [reactbits.dev](https://reactbits.dev).
+- **Recommendation Hierarchy**: For backgrounds, text animations, cards, and complex micro-interactions, ZEURALABZ prioritizes official linked components (React Bits first, Magic UI second, Originals third) because they are visually rich, production-tested, and performance-tuned.
+- **Zero Local Redistribution**: React Bits and Magic UI source codes are **never** copied into `components/` in this repo.
+- **Official Registry Installation**:
+  - React Bits:
+    ```bash
+    npx zeuralabz add aurora --source react-bits
+    # Installs via: npx shadcn@latest add @react-bits/Aurora-TS-TW
+    ```
+  - Magic UI:
+    ```bash
+    npx zeuralabz add magic-card --source magic-ui
+    # Installs via: npx shadcn@latest add https://magicui.design/r/magic-card.json
+    ```
+- **Attribution & Licencing**: Every recommendation displays the source label (`React Bits • MIT + Commons Clause` or `Magic UI • MIT`) and links to official documentation ([reactbits.dev](https://reactbits.dev) / [magicui.design](https://magicui.design)).
 - **User Confirmation**: The CLI and AI assistant always present the source label and ask user confirmation before running the install.
 
 ---

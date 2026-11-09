@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export interface GalaxyProps {
   /**
@@ -76,8 +76,27 @@ export const GalaxyBackground: React.FC<GalaxyProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isInViewport, setIsInViewport] = useState<boolean>(true);
+
+  // Pause galaxy simulation when hero is scrolled past
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewport(entry.isIntersecting);
+      },
+      { rootMargin: '100px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!isInViewport) return;
+
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
@@ -181,8 +200,17 @@ export const GalaxyBackground: React.FC<GalaxyProps> = ({
 
     let globalRotation = 0;
     let lastTime = performance.now();
+    let lastRenderTime = performance.now();
+    const frameInterval = 1000 / 30; // 30fps target to preserve battery and frame budget
 
     const render = (currentTime: number) => {
+      const elapsedSinceRender = currentTime - lastRenderTime;
+      if (elapsedSinceRender < frameInterval) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
+      lastRenderTime = currentTime - (elapsedSinceRender % frameInterval);
+
       const deltaTime = Math.min(currentTime - lastTime, 64) * 0.001;
       lastTime = currentTime;
 
@@ -296,7 +324,7 @@ export const GalaxyBackground: React.FC<GalaxyProps> = ({
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [starCount, speed, density, colors, glowIntensity, armCount, twinkleSpeed]);
+  }, [starCount, speed, density, colors, glowIntensity, armCount, twinkleSpeed, isInViewport]);
 
   return (
     <div

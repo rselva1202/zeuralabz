@@ -15,29 +15,35 @@ npx zeuralabz init
 # 2. Get AI-driven recommendations tailored to your project
 npx zeuralabz suggest
 
-# 3. Add an individual component (defaults to React Bits if multiple sources exist)
+# 3. Add an individual component (defaults by priority: React Bits -> Magic UI -> ZEURALABZ Original)
 npx zeuralabz add aurora
 
-# 4. Explicitly choose source: React Bits or ZEURALABZ Original
+# 4. Explicitly choose source: React Bits, Magic UI, or ZEURALABZ Original
 npx zeuralabz add aurora --source react-bits
+npx zeuralabz add magic-card --source magic-ui
 npx zeuralabz add aurora --source zeuralabz-original
 
 # 5. Search components across all sources or filtered by source
 npx zeuralabz search aurora
 npx zeuralabz search aurora --source react-bits
+npx zeuralabz search magic-card --source magic-ui
 
-# 6. Open live browser preview (opens reactbits.dev for React Bits)
+# 6. Open live browser preview (opens reactbits.dev / magicui.design)
 npx zeuralabz preview aurora --source react-bits
+npx zeuralabz preview magic-card --source magic-ui
 ```
 
 ---
 
-## 2. Multi-Source Architecture (React Bits First)
+## 2. Multi-Source Architecture (React Bits & Magic UI Linked Sources)
 
-ZEURALABZ supports both **React Bits (official)** and **ZEURALABZ Originals**:
+ZEURALABZ indexes 417 components across three verified sources:
 
-- **React Bits Components**: Installed directly from David Haz's official `@react-bits` shadcn registry (`npx shadcn@latest add @react-bits/<Component>-TS-TW`). They are never copied or hosted in this repo, preserving full MIT + Commons Clause compliance.
-- **ZEURALABZ Originals**: Native MIT components bundled directly within ZEURALABZ for custom tailored aesthetics.
+- **React Bits (218 components)**: Installed directly from David Haz's official `@react-bits` shadcn registry (`npx shadcn@latest add @react-bits/<Component>-TS-TW`). Free to use under MIT + Commons Clause.
+- **Magic UI (79 components)**: Installed directly from Dillion Verma's official Magic UI registry (`npx shadcn@latest add https://magicui.design/r/<slug>.json`). Free to use under MIT License.
+- **ZEURALABZ Originals (120 components)**: Native MIT components bundled directly within ZEURALABZ for custom tailored aesthetics.
+
+Zero third-party code is copied into `components/` in this repository. All external components link directly to official upstream registries.
 
 ---
 

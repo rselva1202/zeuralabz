@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CanvasEngine, BackgroundType } from './engine/CanvasEngine';
 import { TextEngine, TextAnimationType } from './engine/TextEngine';
 import { BaseButton, type ButtonVariant } from './engine/BaseButton';
@@ -7,6 +7,8 @@ interface LiveComponentPreviewProps {
   slug: string;
   category: string;
   name: string;
+  lite?: boolean;
+  animationMode?: 'full' | 'lite' | 'off';
 }
 
 const buttonSlugToVariant: Record<string, ButtonVariant> = {
@@ -34,41 +36,94 @@ const buttonSlugToVariant: Record<string, ButtonVariant> = {
   'copy-snippet': 'download',
 };
 
-export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug, category, name }) => {
+export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({
+  slug,
+  category,
+  name,
+  lite = true,
+  animationMode = 'lite',
+}) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isInViewport, setIsInViewport] = useState<boolean>(false);
   const [toggleState, setToggleState] = useState(false);
   const [typedIndex, setTypedIndex] = useState(0);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [rating, setRating] = useState(4);
   const [counter, setCounter] = useState(1280);
 
+  // IntersectionObserver to pause rendering when card is scrolled off-screen
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsInViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewport(entry.isIntersecting);
+      },
+      { rootMargin: '150px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const fullText = "Build faster with AI.";
   useEffect(() => {
+    if (!isInViewport || animationMode === 'off') return;
     if (slug === 'typewriter') {
       const interval = setInterval(() => {
         setTypedIndex((prev) => (prev >= fullText.length ? 0 : prev + 1));
       }, 150);
       return () => clearInterval(interval);
     }
-  }, [slug]);
+  }, [slug, isInViewport, animationMode]);
 
   const words = ['Adaptive', 'Performant', 'Sensory', 'Next-Gen'];
   useEffect(() => {
+    if (!isInViewport || animationMode === 'off') return;
     if (slug === 'rotating-words' || slug === 'word-swap') {
       const interval = setInterval(() => {
         setActiveWordIndex((prev) => (prev + 1) % words.length);
       }, 2000);
       return () => clearInterval(interval);
     }
-  }, [slug]);
+  }, [slug, isInViewport, animationMode]);
 
   useEffect(() => {
+    if (!isInViewport || animationMode === 'off') return;
     if (slug === 'counter-roll') {
       const interval = setInterval(() => {
         setCounter((prev) => (prev > 1400 ? 1280 : prev + 17));
       }, 1500);
       return () => clearInterval(interval);
     }
-  }, [slug]);
+  }, [slug, isInViewport, animationMode]);
+
+  // OFF Mode: Render sleek static preview card without any canvas or animation loop
+  if (animationMode === 'off') {
+    return (
+      <div ref={containerRef} className="w-full h-full bg-[#0a0e27] flex flex-col items-center justify-center p-4 select-none relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.15)_0%,transparent_75%)]" />
+        <span className="text-2xl mb-1.5 opacity-90">
+          {category === 'backgrounds' ? '🌌' : category === 'buttons' ? '🔘' : category === 'cards' ? '🗂️' : category === 'text-animations' ? '✍️' : '✨'}
+        </span>
+        <span className="text-xs font-semibold text-zinc-300 relative z-10">{name}</span>
+        <span className="text-[10px] text-zinc-500 font-mono mt-0.5 relative z-10">{slug}</span>
+      </div>
+    );
+  }
+
+  // Not in viewport: Render lightweight placeholder with zero GPU/CPU cost
+  if (!isInViewport) {
+    return (
+      <div ref={containerRef} className="w-full h-full bg-[#0a0e27] flex items-center justify-center p-4">
+        <div className="w-6 h-6 rounded-full border border-indigo-500/20 bg-indigo-500/5 animate-pulse" />
+      </div>
+    );
+  }
 
   // ==================== BACKGROUNDS (Canvas Engine) ====================
   if (category === 'backgrounds') {
@@ -97,8 +152,14 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
     const bgType = validMap[slug] || 'galaxy';
 
     return (
-      <div className="relative w-full h-full overflow-hidden">
-        <CanvasEngine type={bgType} speed={0.8} glow={1.25} />
+      <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+        <CanvasEngine
+          type={bgType}
+          speed={0.8}
+          glow={1.25}
+          lite={lite && animationMode !== 'full'}
+          isVisible={isInViewport}
+        />
       </div>
     );
   }

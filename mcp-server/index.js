@@ -77,24 +77,24 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits" or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", or "zeuralabz-original"',
             },
           },
         },
       },
       {
         name: 'install_component',
-        description: 'Installs or generates installation code for a component from React Bits (official shadcn registry) or ZEURALABZ Original.',
+        description: 'Installs or generates installation code for a component from React Bits, Magic UI, or ZEURALABZ Original.',
         inputSchema: {
           type: 'object',
           properties: {
             slug: {
               type: 'string',
-              description: 'Slug of the component to install (e.g. aurora, split-text, shimmer, glass)',
+              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, glass)',
             },
             source: {
               type: 'string',
-              description: 'Source filter: "react-bits" or "zeuralabz-original"',
+              description: 'Source filter: "react-bits", "magic-ui", or "zeuralabz-original"',
             },
             targetDir: {
               type: 'string',

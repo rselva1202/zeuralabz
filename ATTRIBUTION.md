@@ -1,30 +1,41 @@
-# Attribution & Third-Party Licences
+# ZEURALABZ — Open Source & Linked Catalog Attribution
 
-ZEURALABZ indexes and links to exceptional open-source component libraries, providing streamlined search, AI recommendation, and one-command installation directly from their official registries.
+ZEURALABZ is an intelligent component indexer, CLI suggester, and design matrix that unifies modern UI engineering for developers and autonomous AI coding agents.
 
----
-
-## 1. React Bits
-
-- **Author**: David Haz ([@DavidHDev](https://github.com/DavidHDev))
-- **Official Website**: [https://reactbits.dev](https://reactbits.dev)
-- **Official GitHub Repository**: [https://github.com/DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)
-- **Licence**: MIT + Commons Clause
-- **Install Channel**: Official shadcn registry (`@react-bits/<Component>-TS-TW`)
-
-### Licence Notice & Terms
-React Bits is open source and free to use in your own websites, client work, commercial applications, and software products. Under the Commons Clause condition, components themselves may not be resold, sublicensed, or redistributed as a standalone or competing component library.
-
-**ZEURALABZ Compliance**:
-- ZEURALABZ does **NOT** host or redistribute React Bits source files in this repository.
-- ZEURALABZ acts strictly as an installer and catalog indexer.
-- When running `npx zeuralabz add <slug> --source react-bits`, the component is installed directly from the official React Bits registry via `npx shadcn@latest add @react-bits/<ComponentName>-TS-TW`.
-- All React Bits entries in ZEURALABZ maintain full original attribution, author links, and direct URLs to [reactbits.dev](https://reactbits.dev).
+This repository features both **ZEURALABZ Originals** and **Linked External Sources** that are installed directly from their respective official registries.
 
 ---
 
-## 2. ZEURALABZ Originals
+## 1. ZEURALABZ Originals
+* **Author**: R. Selva (https://github.com/rselva1202)
+* **License**: MIT License
+* **Description**: Original canvas backgrounds, motion primitives, and interactive UI components hosted directly in `components/`.
 
-- **Author**: R. Selva ([@rselva1202](https://github.com/rselva1202))
-- **Licence**: MIT License
-- **Source**: Native original components packaged within ZEURALABZ (`components/`).
+---
+
+## 2. Linked Source: React Bits
+* **Author**: David Haz (https://github.com/DavidHDev)
+* **Repository**: https://github.com/DavidHDev/react-bits
+* **Official Website**: https://reactbits.dev
+* **License**: MIT + Commons Clause
+* **Terms of Use**:
+  React Bits components are free to use in your personal or commercial websites and web applications.
+  Under the Commons Clause condition, components may NOT be resold, sublicensed, or redistributed as a competing standalone component library.
+* **ZEURALABZ Integration**:
+  ZEURALABZ does NOT host or redistribute React Bits source code. Instead, ZEURALABZ provides discovery, heuristic suggestions, and direct installation commands linking to the official React Bits registry (`@react-bits/*`) with full attribution.
+
+---
+
+## 3. Linked Source: Magic UI
+* **Author**: Dillion Verma / Magic UI (https://github.com/magicuidesign)
+* **Repository**: https://github.com/magicuidesign/magicui
+* **Official Website**: https://magicui.design
+* **License**: MIT License
+* **Terms of Use**:
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+* **ZEURALABZ Integration**:
+  Magic UI components are indexed as a linked source and installed directly from their official shadcn registry endpoint (`https://magicui.design/r/<slug>.json`). ZEURALABZ does not claim ownership or host local copies in `components/`.
+
+---
+
+*Last updated: November 2026 • ZEURALABZ Ecosystem*
