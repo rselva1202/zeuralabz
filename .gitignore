@@ -26,4 +26,5 @@ Thumbs.db
 # Local deployment scripts
 scripts/*.bat
 scripts/deployGhPages.py
+scripts/pushMain.py
 
