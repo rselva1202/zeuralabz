@@ -159,3 +159,4 @@ function updateRegistry(filePath) {
 
 updateRegistry('components.json');
 updateRegistry('preview-site/src/data/components.json');
+

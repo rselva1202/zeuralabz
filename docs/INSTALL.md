@@ -15,15 +15,29 @@ npx zeuralabz init
 # 2. Get AI-driven recommendations tailored to your project
 npx zeuralabz suggest
 
-# 3. Add an individual component
+# 3. Add an individual component (defaults to React Bits if multiple sources exist)
 npx zeuralabz add aurora
 
-# 4. Search components
-npx zeuralabz search cards
+# 4. Explicitly choose source: React Bits or ZEURALABZ Original
+npx zeuralabz add aurora --source react-bits
+npx zeuralabz add aurora --source zeuralabz-original
 
-# 5. Open live browser preview
-npx zeuralabz preview aurora
+# 5. Search components across all sources or filtered by source
+npx zeuralabz search aurora
+npx zeuralabz search aurora --source react-bits
+
+# 6. Open live browser preview (opens reactbits.dev for React Bits)
+npx zeuralabz preview aurora --source react-bits
 ```
+
+---
+
+## 2. Multi-Source Architecture (React Bits First)
+
+ZEURALABZ supports both **React Bits (official)** and **ZEURALABZ Originals**:
+
+- **React Bits Components**: Installed directly from David Haz's official `@react-bits` shadcn registry (`npx shadcn@latest add @react-bits/<Component>-TS-TW`). They are never copied or hosted in this repo, preserving full MIT + Commons Clause compliance.
+- **ZEURALABZ Originals**: Native MIT components bundled directly within ZEURALABZ for custom tailored aesthetics.
 
 ---
 

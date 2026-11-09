@@ -76,11 +76,27 @@ If the user approves:
 
 ---
 
-## 5. MCP Tool Integration
+## 5. Sources — React Bits First
+
+ZEURALABZ indexes verified third-party component libraries alongside native originals.
+
+- **React Bits First**: For backgrounds, text animations, and complex micro-interactions, ZEURALABZ prioritizes official React Bits components because they are visually rich, production-tested, and performance-tuned.
+- **Zero Local Redistribution**: React Bits source code is **never** copied or redistributed inside ZEURALABZ.
+- **Official Registry Installation**: When a user selects a React Bits component, the CLI installs it directly from the official registry:
+  ```bash
+  npx zeuralabz add aurora --source react-bits
+  # Executes: npx shadcn@latest add @react-bits/Aurora-TS-TW
+  ```
+- **Attribution & Licencing**: Every recommendation displays the source label (`React Bits • MIT + Commons Clause`) and links to [reactbits.dev](https://reactbits.dev).
+- **User Confirmation**: The CLI and AI assistant always present the source label and ask user confirmation before running the install.
+
+---
+
+## 6. MCP Tool Integration
 
 If the ZEURALABZ MCP server is connected in your workspace, call:
 - `suggest_ui_for_project({ targetDir: "." })` to obtain instant programmatic recommendations.
-- `search_components({ query: "keyword", category: "cards" })` to search.
-- `install_component({ slug: "aurora" })` to install directly.
+- `search_components({ query: "keyword", category: "cards", source: "react-bits" })` to search.
+- `install_component({ slug: "aurora", source: "react-bits" })` to install directly.
 - `list_themes({})` to inspect theme color palettes.
 

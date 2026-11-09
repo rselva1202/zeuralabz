@@ -89,3 +89,24 @@ components/<category>/<slug>/
 - **Zero Global State Pollution**: Every component is self-contained.
 - **Copy-Paste Simplicity**: Installing a component simply copies its source code directly into your `src/components/zeuralabz/<slug>` folder. You own the code completely.
 
+---
+
+## 4. Multi-Source Architecture & React Bits Integration
+
+ZEURALABZ combines two distinct component origins under one cohesive interface:
+
+1. **Official React Bits Integration (`source: "react-bits"`)**:
+   - React Bits (created by David Haz) contains 218+ premier visual components.
+   - To respect the MIT + Commons Clause license, ZEURALABZ does **not** copy or re-host React Bits code files.
+   - Instead, ZEURALABZ connects to React Bits' official shadcn registry:
+     ```bash
+     npx zeuralabz add aurora --source react-bits
+     # Runs: npx shadcn@latest add @react-bits/Aurora-TS-TW
+     ```
+   - Previews link directly to the official [reactbits.dev](https://reactbits.dev) catalog.
+
+2. **ZEURALABZ Originals (`source: "zeuralabz-original"`)**:
+   - 120 custom base primitives authored under the MIT License and bundled locally within `components/`.
+   - Installed via `npx zeuralabz add <slug> --source zeuralabz-original`.
+
+

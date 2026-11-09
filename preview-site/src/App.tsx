@@ -14,9 +14,17 @@ interface ComponentItem {
   tags: string[];
   bestFor: string[];
   deps: string[];
-  files: string[];
+  files?: string[];
   previewUrl: string;
-  theme: string;
+  theme?: string;
+  source?: string;
+  sourceLabel?: string;
+  isOriginal?: boolean;
+  license?: string;
+  originalUrl?: string;
+  installCommand?: string;
+  zeuralabzCommand?: string;
+  author?: string;
 }
 
 const CATEGORIES = [
@@ -33,6 +41,13 @@ const CATEGORIES = [
 ];
 
 export default function App() {
+  const [selectedSource, setSelectedSource] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('source') || params.get('src') || 'all';
+    }
+    return 'all';
+  });
   const [selectedCategory, setSelectedCategory] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
@@ -305,15 +320,28 @@ export default function App() {
 
   const filteredComponents = useMemo(() => {
     return (componentsData as ComponentItem[]).filter((c) => {
+      const matchesSource =
+        selectedSource === 'all' ||
+        (selectedSource === 'react-bits' && c.source === 'react-bits') ||
+        (selectedSource === 'zeuralabz-original' && (c.source === 'zeuralabz-original' || !c.source));
       const matchesCategory = selectedCategory === 'all' || c.category === selectedCategory;
       const matchesSearch =
         c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.slug.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         c.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesCategory && matchesSearch;
+      return matchesSource && matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedSource, selectedCategory, searchQuery]);
+
+  const totalReactBits = useMemo(
+    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'react-bits').length,
+    []
+  );
+  const totalZeura = useMemo(
+    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'zeuralabz-original' || !c.source).length,
+    []
+  );
 
   const copyCommand = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -430,7 +458,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-800/60 text-indigo-300 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              New • ZEURALABZ 1.0 — 120 components, 1M+ combinations
+              New • ZEURALABZ 1.0 — 338 components (218 React Bits + 120 Originals)
             </div>
 
             {/* Live background switcher */}
@@ -460,7 +488,7 @@ export default function Hero() {
                 Beautiful animated UI for websites that <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">feel alive</span>.
               </h1>
               <p className="mt-5 text-lg text-zinc-400 max-w-xl font-light leading-relaxed">
-                120 animated components and backgrounds for React. Tune them yourself, or hand them to your AI agent.
+                338 animated components and backgrounds for React across React Bits and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
               </p>
 
               {/* CTAs */}
@@ -487,16 +515,16 @@ export default function Hero() {
             <div className="lg:col-span-5">
               <div className="p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800 backdrop-blur-xl shadow-2xl grid grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-white">120+</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">Base Components</div>
+                  <div className="text-3xl font-black text-white">338</div>
+                  <div className="text-xs text-zinc-400 mt-1 font-medium">Total Components</div>
                 </div>
                 <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-indigo-400">20</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">Aesthetic Themes</div>
+                  <div className="text-3xl font-black text-blue-400">218</div>
+                  <div className="text-xs text-zinc-400 mt-1 font-medium">React Bits (Linked)</div>
                 </div>
                 <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
-                  <div className="text-3xl font-black text-cyan-400">1M+</div>
-                  <div className="text-xs text-zinc-400 mt-1 font-medium">Combinations</div>
+                  <div className="text-3xl font-black text-purple-400">120</div>
+                  <div className="text-xs text-zinc-400 mt-1 font-medium">ZEURALABZ Original</div>
                 </div>
                 <div className="p-4 rounded-xl bg-black/40 border border-zinc-800">
                   <div className="text-3xl font-black text-emerald-400">100%</div>
@@ -647,6 +675,38 @@ export default function Hero() {
           </div>
         </div>
 
+        {/* Source Filter Row */}
+        <div className="flex flex-wrap items-center gap-2 pt-6 pb-2 border-t border-zinc-800/80">
+          <span className="text-[11px] font-mono text-zinc-400 mr-2 uppercase tracking-wider font-semibold">
+            Source:
+          </span>
+          {[
+            { id: 'all', label: `All Sources (${totalReactBits + totalZeura})` },
+            { id: 'react-bits', label: `React Bits • MIT (${totalReactBits})` },
+            { id: 'zeuralabz-original', label: `ZEURALABZ Original (${totalZeura})` },
+            { id: 'magic-ui', label: 'Coming Soon: Magic UI', disabled: true },
+          ].map((src) => (
+            <button
+              key={src.id}
+              disabled={src.disabled}
+              onClick={() => !src.disabled && setSelectedSource(src.id)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition flex items-center gap-1.5 ${
+                src.disabled
+                  ? 'opacity-40 cursor-not-allowed bg-zinc-900/40 text-zinc-600 border border-zinc-800/40'
+                  : selectedSource === src.id
+                  ? src.id === 'react-bits'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400'
+                    : src.id === 'zeuralabz-original'
+                    ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30 border border-purple-400'
+                    : 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border border-indigo-400'
+                  : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-800'
+              }`}
+            >
+              {src.label}
+            </button>
+          ))}
+        </div>
+
         {/* Category Filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto py-4 text-xs no-scrollbar">
           {CATEGORIES.map((cat) => (
@@ -663,7 +723,7 @@ export default function Hero() {
             </button>
           ))}
           <span className="text-zinc-500 ml-auto shrink-0 text-xs font-mono font-medium">
-            Showing {filteredComponents.length} components
+            Showing {filteredComponents.length} components — {totalReactBits} React Bits + {totalZeura} ZEURALABZ Original
           </span>
         </div>
 
@@ -715,19 +775,57 @@ export default function Hero() {
                   key={comp.id}
                   className="group rounded-2xl bg-[#141414] border border-zinc-800 hover:border-zinc-600 transition duration-300 flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-indigo-500/10 hover:-translate-y-1"
                 >
-                  {/* Top 45%: LIVE COMPONENT RENDER */}
+                  {/* Top 45%: LIVE COMPONENT RENDER OR REACT BITS PORTAL */}
                   <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b border-zinc-800/80">
-                    <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
+                    {comp.source === 'react-bits' ? (
+                      <div className="w-full h-full bg-gradient-to-br from-[#0b1129] via-[#080d20] to-[#050814] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/rb">
+                        <div className="absolute inset-0 bg-blue-500/5 group-hover/rb:bg-blue-500/10 transition-colors" />
+                        <div className="relative z-10 flex flex-col items-center gap-2">
+                          <span className="w-9 h-9 rounded-xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-lg shadow-lg">
+                            ✨
+                          </span>
+                          <div>
+                            <div className="text-xs font-bold text-white tracking-wide">Official React Bits Demo</div>
+                            <div className="text-[10px] text-blue-300/80 font-mono">@react-bits/{comp.componentName || comp.name}-TS-TW</div>
+                          </div>
+                          <a
+                            href={comp.originalUrl || comp.previewUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition transform hover:scale-105 cursor-pointer mt-1"
+                          >
+                            View Live Demo on React Bits ➔
+                          </a>
+                        </div>
+                      </div>
+                    ) : (
+                      <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
+                    )}
 
-                    {/* Category pill */}
-                    <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
-                      {comp.category}
+                    {/* Source badge */}
+                    <span
+                      className={`absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase border backdrop-blur-md ${
+                        comp.source === 'react-bits'
+                          ? 'bg-blue-950/90 text-blue-300 border-blue-800/80'
+                          : 'bg-purple-950/90 text-purple-300 border-purple-800/80'
+                      }`}
+                    >
+                      {comp.source === 'react-bits' ? 'React Bits • MIT' : 'ZEURALABZ Original'}
                     </span>
 
-                    {/* Live Preview indicator */}
-                    <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      Live Preview
+                    {/* Category / Indicator */}
+                    <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-black/80 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
+                      {comp.source === 'react-bits' ? (
+                        <>
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                          Official
+                        </>
+                      ) : (
+                        <>
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          Live Motion
+                        </>
+                      )}
                     </span>
                   </div>
 
@@ -760,10 +858,18 @@ export default function Hero() {
                     {/* Bottom Action Bar */}
                     <div className="mt-5 pt-3 border-t border-zinc-800/80 flex items-center justify-between gap-2">
                       <button
-                        onClick={() => copyCommand(`npx zeuralabz add ${comp.slug}`)}
+                        onClick={() =>
+                          copyCommand(
+                            comp.source === 'react-bits'
+                              ? `npx zeuralabz add ${comp.slug} --source react-bits`
+                              : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
+                          )
+                        }
                         className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono font-medium transition flex items-center justify-center gap-1.5 ${
                           isCopied
                             ? 'bg-emerald-500 text-black font-bold'
+                            : comp.source === 'react-bits'
+                            ? 'bg-blue-950/60 hover:bg-blue-900/60 text-blue-200 border border-blue-800/80'
                             : 'bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800'
                         }`}
                       >
@@ -771,7 +877,8 @@ export default function Hero() {
                           '✔ Copied to clipboard!'
                         ) : (
                           <>
-                            <span className="text-zinc-500">$</span> npx zeuralabz add {comp.slug}
+                            <span className="text-zinc-500">$</span> npx zeuralabz add {comp.slug}{' '}
+                            {comp.source === 'react-bits' ? '--source react-bits' : ''}
                           </>
                         )}
                       </button>
@@ -899,8 +1006,23 @@ and install the best hero"`}
             {/* Modal Header */}
             <div className="p-5 border-b border-zinc-800 flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-bold text-white">{selectedComponent.name}</h3>
-                <p className="text-xs text-zinc-400 font-mono mt-0.5">components/{selectedComponent.category}/{selectedComponent.slug}</p>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-white">{selectedComponent.name}</h3>
+                  <span
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase border backdrop-blur-md ${
+                      selectedComponent.source === 'react-bits'
+                        ? 'bg-blue-950/90 text-blue-300 border-blue-800/80'
+                        : 'bg-purple-950/90 text-purple-300 border-purple-800/80'
+                    }`}
+                  >
+                    {selectedComponent.source === 'react-bits' ? 'React Bits • MIT + Commons' : 'ZEURALABZ Original'}
+                  </span>
+                </div>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  {selectedComponent.source === 'react-bits'
+                    ? `Official React Bits Registry • ${selectedComponent.componentName}-TS-TW`
+                    : `components/${selectedComponent.category}/${selectedComponent.slug}`}
+                </p>
               </div>
               <button
                 onClick={() => setSelectedComponent(null)}
@@ -918,43 +1040,108 @@ and install the best hero"`}
                   activeTab === 'react' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                React (TypeScript)
+                React ({selectedComponent.source === 'react-bits' ? 'TypeScript + Tailwind' : 'TypeScript'})
               </button>
-              <button
-                onClick={() => setActiveTab('html')}
-                className={`pb-2.5 transition border-b-2 ${
-                  activeTab === 'html' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
-                }`}
-              >
-                Pure HTML
-              </button>
-              <button
-                onClick={() => setActiveTab('css')}
-                className={`pb-2.5 transition border-b-2 ${
-                  activeTab === 'css' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
-                }`}
-              >
-                Pure CSS
-              </button>
+              {selectedComponent.source !== 'react-bits' && (
+                <>
+                  <button
+                    onClick={() => setActiveTab('html')}
+                    className={`pb-2.5 transition border-b-2 ${
+                      activeTab === 'html' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    Pure HTML
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('css')}
+                    className={`pb-2.5 transition border-b-2 ${
+                      activeTab === 'css' ? 'border-indigo-500 text-white font-bold' : 'border-transparent text-zinc-400 hover:text-zinc-200'
+                    }`}
+                  >
+                    Pure CSS
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto space-y-4 text-xs font-mono">
+              {/* Primary ZEURALABZ CLI Command */}
               <div className="flex items-center justify-between p-3 rounded-xl bg-black border border-zinc-800 text-indigo-400">
-                <span>npx zeuralabz add {selectedComponent.slug}</span>
+                <span>
+                  npx zeuralabz add {selectedComponent.slug}
+                  {selectedComponent.source === 'react-bits' ? ' --source react-bits' : ''}
+                </span>
                 <button
-                  onClick={() => copyCommand(`npx zeuralabz add ${selectedComponent.slug}`)}
+                  onClick={() =>
+                    copyCommand(
+                      `npx zeuralabz add ${selectedComponent.slug}${
+                        selectedComponent.source === 'react-bits' ? ' --source react-bits' : ''
+                      }`
+                    )
+                  }
                   className="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 text-white text-[11px]"
                 >
-                  {copiedSlug === `npx zeuralabz add ${selectedComponent.slug}` ? 'Copied!' : 'Copy'}
+                  {copiedSlug ===
+                  `npx zeuralabz add ${selectedComponent.slug}${
+                    selectedComponent.source === 'react-bits' ? ' --source react-bits' : ''
+                  }`
+                    ? 'Copied!'
+                    : 'Copy'}
                 </button>
               </div>
+
+              {/* Official React Bits direct shadcn command + documentation link */}
+              {selectedComponent.source === 'react-bits' && (
+                <div className="p-3.5 rounded-xl bg-blue-950/30 border border-blue-900/60 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-sans font-semibold text-blue-300">
+                      Official React Bits Registry Command:
+                    </span>
+                    <a
+                      href={selectedComponent.originalUrl || 'https://reactbits.dev'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[11px] text-blue-400 hover:underline flex items-center gap-1 font-sans font-semibold"
+                    >
+                      Visit reactbits.dev ↗
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-between text-zinc-300 bg-black/60 p-2 rounded-lg font-mono text-[11px]">
+                    <code>{selectedComponent.installCommand || `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`}</code>
+                    <button
+                      onClick={() =>
+                        copyCommand(
+                          selectedComponent.installCommand ||
+                            `npx shadcn@latest add @react-bits/${selectedComponent.componentName}-TS-TW`
+                        )
+                      }
+                      className="px-2 py-0.5 rounded bg-zinc-800 text-xs text-zinc-300 hover:text-white shrink-0 ml-2"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                  <p className="text-[10px] text-zinc-400 font-sans leading-relaxed pt-1">
+                    Attribution: Created by David Haz (github.com/DavidHDev/react-bits). Free to use under MIT + Commons Clause.
+                  </p>
+                </div>
+              )}
 
               {activeTab === 'react' && (
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">React Usage:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
-{`import { ${selectedComponent.componentName} } from './components/zeuralabz/${selectedComponent.slug}/${selectedComponent.componentName}';
+{selectedComponent.source === 'react-bits'
+  ? `import ${selectedComponent.componentName} from '@/components/${selectedComponent.componentName}';
+
+export default function Example() {
+  return (
+    <div className="relative w-full h-[400px]">
+      <${selectedComponent.componentName} />
+    </div>
+  );
+}`
+  : `import { ${selectedComponent.componentName} } from './components/zeuralabz/${selectedComponent.slug}/${selectedComponent.componentName}';
 
 export default function Example() {
   return <${selectedComponent.componentName} />;
@@ -963,7 +1150,7 @@ export default function Example() {
                 </div>
               )}
 
-              {activeTab === 'html' && (
+              {activeTab === 'html' && selectedComponent.source !== 'react-bits' && (
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">Semantic HTML Structure:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
@@ -974,7 +1161,7 @@ export default function Example() {
                 </div>
               )}
 
-              {activeTab === 'css' && (
+              {activeTab === 'css' && selectedComponent.source !== 'react-bits' && (
                 <div>
                   <span className="text-zinc-500 block mb-1 font-sans">Standalone CSS Rules:</span>
                   <pre className="p-4 rounded-xl bg-black border border-zinc-800 text-zinc-300 overflow-x-auto leading-relaxed">
@@ -1010,19 +1197,20 @@ export default function Example() {
             <div className="flex items-center gap-2 justify-center sm:justify-start">
               <span className="font-bold text-white text-sm">ZEURALABZ</span>
               <span className="text-zinc-600">•</span>
-              <span>120 animated components for React</span>
+              <span>338 animated components (218 React Bits + 120 ZEURALABZ Original)</span>
             </div>
             <div className="mt-1">
               Crafted with care by{' '}
               <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-indigo-400 hover:underline">
                 R. Selva
               </a>
-              . Distributed under the MIT License.
+              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons Clause) — components installed directly from official registry.
             </div>
           </div>
 
           <div className="flex gap-6 font-medium">
             <a href="https://github.com/rselva1202/zeuralabz" className="hover:text-white transition">GitHub</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/ATTRIBUTION.md" className="hover:text-white transition">Attribution</a>
             <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" className="hover:text-white transition">Installation</a>
             <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/HOW-IT-WORKS.md" className="hover:text-white transition">Architecture</a>
             <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" className="hover:text-white transition">AI Skill</a>

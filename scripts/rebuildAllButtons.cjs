@@ -262,3 +262,4 @@ ${comp.alias !== comp.componentName ? `export const ${comp.alias} = ${comp.compo
 }
 
 console.log('Successfully generated all 15 button component files and configs!');
+

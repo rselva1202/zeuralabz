@@ -34,7 +34,7 @@ function loadThemes() {
 const server = new Server(
   {
     name: 'zeuralabz-mcp',
-    version: '1.0.0',
+    version: '1.2.0',
   },
   {
     capabilities: {
@@ -50,7 +50,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: 'suggest_ui_for_project',
         description:
-          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best ZEURALABZ component for every section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) with live preview URLs and reasons.',
+          'Analyzes a project directory structure, dependencies, and styling to suggest the 1 best component per section (Background, Layout, Hero, Cards, Text, Buttons, Extra Polish) prioritizing rich React Bits components and ZEURALABZ originals.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -63,7 +63,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'search_components',
-        description: 'Search ZEURALABZ component library by keyword, tag, or category to find animated backgrounds, cards, buttons, etc.',
+        description: 'Search ZEURALABZ component library across React Bits and ZEURALABZ Originals by keyword, tag, source, or category.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -75,18 +75,26 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
               type: 'string',
               description: 'Optional category filter: backgrounds, text-animations, buttons, cards, heroes, layouts, forms, animations, loaders',
             },
+            source: {
+              type: 'string',
+              description: 'Optional source filter: "react-bits" or "zeuralabz-original"',
+            },
           },
         },
       },
       {
         name: 'install_component',
-        description: 'Installs a ZEURALABZ component into the target project (writes React .tsx, HTML, CSS files, and provides usage code).',
+        description: 'Installs or generates installation code for a component from React Bits (official shadcn registry) or ZEURALABZ Original.',
         inputSchema: {
           type: 'object',
           properties: {
             slug: {
               type: 'string',
               description: 'Slug of the component to install (e.g. aurora, split-text, shimmer, glass)',
+            },
+            source: {
+              type: 'string',
+              description: 'Source filter: "react-bits" or "zeuralabz-original"',
             },
             targetDir: {
               type: 'string',
@@ -129,18 +137,22 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   if (name === 'search_components') {
     const query = (args?.query || '').toLowerCase();
     const category = (args?.category || '').toLowerCase();
+    const source = (args?.source || '').toLowerCase();
     let results = registry;
 
+    if (source) {
+      results = results.filter((c) => c.source && c.source.toLowerCase() === source);
+    }
     if (category) {
-      results = results.filter((c) => c.category.toLowerCase() === category);
+      results = results.filter((c) => c.category && c.category.toLowerCase() === category);
     }
     if (query) {
       results = results.filter(
         (c) =>
-          c.name.toLowerCase().includes(query) ||
-          c.slug.toLowerCase().includes(query) ||
-          c.description.toLowerCase().includes(query) ||
-          c.tags.some((t) => t.toLowerCase().includes(query))
+          (c.name && c.name.toLowerCase().includes(query)) ||
+          (c.slug && c.slug.toLowerCase().includes(query)) ||
+          (c.description && c.description.toLowerCase().includes(query)) ||
+          (c.tags && c.tags.some((t) => t.toLowerCase().includes(query)))
       );
     }
 
@@ -152,12 +164,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             {
               totalMatches: results.length,
               components: results.map((c) => ({
+                id: c.id,
                 name: c.name,
                 slug: c.slug,
+                source: c.source,
+                sourceLabel: c.sourceLabel,
                 category: c.category,
                 description: c.description,
                 bestFor: c.bestFor,
                 deps: c.deps,
+                installCommand: c.installCommand || c.zeuralabzCommand,
+                originalUrl: c.originalUrl || c.previewUrl,
                 previewUrl: c.previewUrl,
               })),
             },
@@ -171,10 +188,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   if (name === 'install_component') {
     const slug = (args?.slug || '').trim().toLowerCase();
+    const source = (args?.source || '').trim().toLowerCase();
     const targetDir = args?.targetDir ? path.resolve(args.targetDir) : process.cwd();
 
-    const comp = registry.find((c) => c.slug.toLowerCase() === slug || c.id.toLowerCase() === slug);
-    if (!comp) {
+    let matches = registry.filter(
+      (c) =>
+        (c.slug && c.slug.toLowerCase() === slug) ||
+        (c.id && c.id.toLowerCase() === slug)
+    );
+
+    if (source) {
+      matches = matches.filter((c) => c.source && c.source.toLowerCase() === source);
+    }
+
+    if (matches.length === 0) {
       return {
         isError: true,
         content: [
@@ -186,6 +213,36 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       };
     }
 
+    // Default to React Bits if multiple matches and no source specified
+    const comp = matches.find((m) => m.source === 'react-bits') || matches[0];
+
+    if (comp.source === 'react-bits') {
+      const installCmd = comp.installCommand || `npx shadcn@latest add @react-bits/${comp.componentName}-TS-TW`;
+      const usageSnippet = `import ${comp.componentName} from '@/components/${comp.componentName}';\n\nexport default function Example() {\n  return <${comp.componentName} />;\n}`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                component: comp.name,
+                source: 'react-bits',
+                sourceLabel: 'React Bits • MIT + Commons Clause',
+                installCommand: installCmd,
+                originalUrl: comp.originalUrl,
+                usage: usageSnippet,
+                instructions: `Run "${installCmd}" inside your project to install directly from the official React Bits shadcn registry.`,
+              },
+              null,
+              2
+            ),
+          },
+        ],
+      };
+    }
+
+    // ZEURALABZ Original local copy
     const sourceDir = path.join(rootDir, 'components', comp.category, comp.slug);
     let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
 
@@ -195,7 +252,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     const files = fs.readdirSync(sourceDir);
     const copiedFiles = [];
-    let tsxContent = '';
     let tsxFileName = '';
 
     for (const file of files) {
@@ -207,7 +263,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         copiedFiles.push(file);
 
         if (file.endsWith('.tsx')) {
-          tsxContent = content;
           tsxFileName = file;
         }
       }
@@ -223,13 +278,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           text: JSON.stringify(
             {
               success: true,
-              message: `Installed ${comp.name} into ${destDir}`,
-              slug: comp.slug,
+              component: comp.name,
+              source: 'zeuralabz-original',
+              installedTo: path.relative(targetDir, destDir),
               files: copiedFiles,
               dependencies: comp.deps,
-              npmInstallCommand: comp.deps.length > 0 ? `npm install ${comp.deps.join(' ')}` : null,
-              usageSnippet,
-              code: tsxContent,
+              usage: usageSnippet,
             },
             null,
             2
@@ -253,7 +307,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   return {
     isError: true,
-    content: [{ type: 'text', text: `Unknown tool "${name}"` }],
+    content: [
+      {
+        type: 'text',
+        text: `Unknown tool: ${name}`,
+      },
+    ],
   };
 });
 
@@ -263,7 +322,6 @@ async function run() {
 }
 
 run().catch((error) => {
-  console.error('Fatal error in ZEURALABZ MCP server:', error);
+  console.error('Fatal MCP Server error:', error);
   process.exit(1);
 });
-

@@ -161,6 +161,16 @@ export function analyzeProject(targetDir = process.cwd()) {
   const pickSection = (category, sectionName, whyTemplate, fallbackSlug) => {
     // Filter components by category and matching bestFor
     const candidates = registry.filter(c => c.category === category);
+
+    // Prioritize React Bits first for rich visual motion (backgrounds, text, animations)
+    candidates.sort((a, b) => {
+      if (['backgrounds', 'text-animations', 'animations'].includes(category)) {
+        if (a.source === 'react-bits' && b.source !== 'react-bits') return -1;
+        if (a.source !== 'react-bits' && b.source === 'react-bits') return 1;
+      }
+      return 0;
+    });
+
     let matched = candidates.find(c => c.bestFor && c.bestFor.includes(result.projectType));
     if (!matched && fallbackSlug) {
       matched = candidates.find(c => c.slug === fallbackSlug);
@@ -174,6 +184,11 @@ export function analyzeProject(targetDir = process.cwd()) {
         category: matched.category,
         slug: matched.slug,
         name: matched.name,
+        source: matched.source || 'zeuralabz-original',
+        sourceLabel: matched.sourceLabel || (matched.source === 'react-bits' ? 'React Bits • MIT + Commons Clause' : 'ZEURALABZ Original'),
+        installCommand: matched.installCommand || matched.zeuralabzCommand || `npx zeuralabz add ${matched.slug}`,
+        zeuralabzCommand: matched.zeuralabzCommand || `npx zeuralabz add ${matched.slug} --source ${matched.source || 'react-bits'}`,
+        originalUrl: matched.originalUrl || matched.previewUrl,
         previewUrl: matched.previewUrl,
         why: whyTemplate(matched.name, result.projectType)
       };
