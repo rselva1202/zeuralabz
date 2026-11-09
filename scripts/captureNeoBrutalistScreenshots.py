@@ -35,19 +35,54 @@ async def main():
         await page.screenshot(path=catalog_shot)
         print(f"Captured: {catalog_shot}")
 
-        # Screenshot 4: Code Modal
-        code_btn = page.locator("button:has-text('CODE ➔')").first
-        await code_btn.click()
-        await page.wait_for_timeout(800)
-        modal_shot = f"{artifact_dir}/neo-brutalist-code-modal.png"
-        await page.screenshot(path=modal_shot)
-        print(f"Captured: {modal_shot}")
+        # Screenshot 4: Pagination Controls (Bottom of Catalog)
+        pagination_el = page.locator("button:has-text('NEXT ▶')")
+        if await pagination_el.count() > 0:
+            await pagination_el.scroll_into_view_if_needed()
+            await page.wait_for_timeout(800)
+            pagination_shot = f"{artifact_dir}/perf-pagination-grid.png"
+            await page.screenshot(path=pagination_shot)
+            print(f"Captured: {pagination_shot}")
 
-        # Close modal
-        close_btn = page.locator("button:has-text('CLOSE')")
-        if await close_btn.count() > 0:
-            await close_btn.click()
-            await page.wait_for_timeout(500)
+        # Screenshot 5: Magic UI Filter View
+        magic_ui_btn = page.locator("button:has-text('Magic UI • MIT')").first
+        if await magic_ui_btn.count() > 0:
+            await magic_ui_btn.click()
+            await page.wait_for_timeout(1000)
+            magic_shot = f"{artifact_dir}/magic-ui-catalog-view.png"
+            await page.screenshot(path=magic_shot)
+            print(f"Captured: {magic_shot}")
+
+            # Magic UI Modal
+            code_btn = page.locator("button:has-text('CODE ➔')").first
+            await code_btn.click()
+            await page.wait_for_timeout(800)
+            magic_modal_shot = f"{artifact_dir}/magic-ui-modal-view.png"
+            await page.screenshot(path=magic_modal_shot)
+            print(f"Captured: {magic_modal_shot}")
+
+            close_btn = page.locator("button:has-text('CLOSE')")
+            if await close_btn.count() > 0:
+                await close_btn.click()
+                await page.wait_for_timeout(500)
+
+        # Screenshot 6: React Bits Filter View
+        react_bits_btn = page.locator("button:has-text('React Bits • MIT')").first
+        if await react_bits_btn.count() > 0:
+            await react_bits_btn.click()
+            await page.wait_for_timeout(1000)
+            rb_shot = f"{artifact_dir}/react-bits-catalog-view.png"
+            await page.screenshot(path=rb_shot)
+            print(f"Captured: {rb_shot}")
+
+        # Screenshot 7: ZEURALABZ Original Filter View
+        orig_btn = page.locator("button:has-text('ZEURALABZ Original')").first
+        if await orig_btn.count() > 0:
+            await orig_btn.click()
+            await page.wait_for_timeout(1000)
+            orig_shot = f"{artifact_dir}/zeuralabz-original-catalog-view.png"
+            await page.screenshot(path=orig_shot)
+            print(f"Captured: {orig_shot}")
 
         # 2. Mobile Viewport (iPhone 14 / 390x844)
         mobile_page = await browser.new_page(viewport={"width": 390, "height": 844})

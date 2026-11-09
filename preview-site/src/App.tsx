@@ -46,6 +46,198 @@ const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string
 
 const ITEMS_PER_PAGE = 12;
 
+interface ComponentCardProps {
+  comp: ComponentItem;
+  isCopied: boolean;
+  animationMode: 'full' | 'lite' | 'off';
+  onCopy: (text: string) => void;
+  onOpenCode: (comp: ComponentItem) => void;
+}
+
+const ComponentCard = React.memo<ComponentCardProps>(({
+  comp,
+  isCopied,
+  animationMode,
+  onCopy,
+  onOpenCode,
+}) => {
+  const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#000' };
+
+  return (
+    <div className="group rounded-lg bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000] transition-all duration-150 flex flex-col overflow-hidden">
+      {/* Top Preview Area (Framed Box with 3px black bottom border) */}
+      <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-black">
+        {comp.source === 'react-bits' ? (
+          <div className="w-full h-full bg-[#E0F2FF] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+            <div className="relative z-10 flex flex-col items-center gap-2">
+              <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
+                ✨
+              </span>
+              <div>
+                <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
+                  Official React Bits Demo
+                </div>
+                <div className="text-[10px] text-zinc-700 font-mono font-bold">
+                  @react-bits/{comp.componentName || comp.name}-TS-TW
+                </div>
+              </div>
+              <a
+                href={comp.originalUrl || comp.previewUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="neo-btn bg-[#7FBCFF] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
+              >
+                VIEW LIVE DEMO ➔
+              </a>
+            </div>
+          </div>
+        ) : comp.source === 'magic-ui' ? (
+          <div className="w-full h-full bg-[#E6FFFA] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+            <div className="relative z-10 flex flex-col items-center gap-2">
+              <span className="w-10 h-10 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
+                🪄
+              </span>
+              <div>
+                <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
+                  Official Magic UI Demo
+                </div>
+                <div className="text-[10px] text-zinc-700 font-mono font-bold">
+                  @magic-ui/{comp.slug}
+                </div>
+              </div>
+              <a
+                href={comp.originalUrl || comp.previewUrl || `https://magicui.design/docs/components/${comp.slug}`}
+                target="_blank"
+                rel="noreferrer"
+                className="neo-btn bg-[#67E8F9] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
+              >
+                VIEW LIVE DEMO ➔
+              </a>
+            </div>
+          </div>
+        ) : (
+          <LiveComponentPreview
+            slug={comp.slug}
+            category={comp.category}
+            name={comp.name}
+            lite={animationMode !== 'full'}
+            animationMode={animationMode}
+          />
+        )}
+
+        {/* Source badge (Top-Left) */}
+        <span
+          className={`absolute top-3 left-3 px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
+            comp.source === 'react-bits'
+              ? 'bg-[#7FBCFF] text-black'
+              : comp.source === 'magic-ui'
+              ? 'bg-[#67E8F9] text-black'
+              : 'bg-[#FFDC58] text-black'
+          }`}
+        >
+          {comp.source === 'react-bits'
+            ? 'React Bits • MIT'
+            : comp.source === 'magic-ui'
+            ? 'Magic UI • MIT'
+            : 'ZEURALABZ Original'}
+        </span>
+
+        {/* Live Preview Indicator Badge (Top-Right) */}
+        <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#000]">
+          {comp.source === 'react-bits' || comp.source === 'magic-ui' ? (
+            <>
+              <span className="w-1.5 h-1.5 bg-[#67E8F9]" />
+              OFFICIAL
+            </>
+          ) : (
+            <>
+              <span className="w-1.5 h-1.5 bg-[#A3E635] animate-pulse" />
+              {animationMode === 'off' ? 'STATIC' : animationMode === 'lite' ? 'LITE' : '60 FPS'}
+            </>
+          )}
+        </span>
+      </div>
+
+      {/* Middle: Details */}
+      <div className="p-5 flex-1 flex flex-col justify-between bg-white">
+        <div>
+          <div className="flex items-center justify-between">
+            <h3 className="font-heading text-sm font-black text-black group-hover:text-indigo-700 transition">
+              {comp.name}
+            </h3>
+            <span className="text-[11px] text-zinc-600 font-mono font-bold bg-[#FFFDF5] border border-black px-1.5 py-0.5">
+              {comp.slug}
+            </span>
+          </div>
+          <p className="text-xs text-black font-medium mt-2 line-clamp-2 leading-relaxed">
+            {comp.description}
+          </p>
+
+          {/* Best for tags */}
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            <span
+              className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[1.5px] border-black shadow-[1.5px_1.5px_0px_#000]"
+              style={{ backgroundColor: catTheme.bg, color: catTheme.text }}
+            >
+              {comp.category}
+            </span>
+            {comp.bestFor?.slice(0, 2).map((b) => (
+              <span
+                key={b}
+                className="px-2 py-0.5 text-[10px] font-bold bg-[#FFFDF5] text-black border border-black"
+              >
+                ✓ {b}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Action Bar */}
+        <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between gap-2">
+          <button
+            onClick={() =>
+              onCopy(
+                comp.source === 'react-bits'
+                  ? `npx zeuralabz add ${comp.slug} --source react-bits`
+                  : comp.source === 'magic-ui'
+                  ? `npx zeuralabz add ${comp.slug} --source magic-ui`
+                  : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
+              )
+            }
+            className={`flex-1 py-2 px-3 text-xs font-mono font-black border-[2px] border-black shadow-[3px_3px_0px_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-1.5 ${
+              isCopied
+                ? 'bg-[#A3E635] text-black font-black'
+                : 'bg-black text-[#FFDC58] hover:bg-zinc-900'
+            }`}
+          >
+            {isCopied ? (
+              '✔ COPIED TO CLIPBOARD!'
+            ) : (
+              <>
+                <span>$</span> npx zeuralabz add {comp.slug}{' '}
+                {comp.source === 'react-bits'
+                  ? '--source react-bits'
+                  : comp.source === 'magic-ui'
+                  ? '--source magic-ui'
+                  : ''}
+              </>
+            )}
+          </button>
+
+          <button
+            onClick={() => onOpenCode(comp)}
+            className="neo-btn bg-[#FF90E8] text-black px-3 py-2 text-xs font-heading font-black"
+            title="View code & usage"
+          >
+            CODE ➔
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+});
+ComponentCard.displayName = 'ComponentCard';
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSource, setSelectedSource] = useState<string>('all');
@@ -53,14 +245,16 @@ export default function App() {
   const [rawSearchQuery, setRawSearchQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isAppendMode, setIsAppendMode] = useState<boolean>(false);
   const [animationMode, setAnimationMode] = useState<'full' | 'lite' | 'off'>('lite');
 
-  // Debounce search input to avoid lag during typing
+  // Debounce search input by 300ms to avoid lag during typing
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedQuery(rawSearchQuery);
       setCurrentPage(1);
-    }, 250);
+      setIsAppendMode(false);
+    }, 300);
     return () => clearTimeout(handler);
   }, [rawSearchQuery]);
 
@@ -106,8 +300,28 @@ export default function App() {
 
   const totalPages = Math.ceil(filteredComponents.length / ITEMS_PER_PAGE) || 1;
   const visibleComponents = useMemo(() => {
-    return filteredComponents.slice(0, currentPage * ITEMS_PER_PAGE);
-  }, [filteredComponents, currentPage]);
+    if (isAppendMode) {
+      return filteredComponents.slice(0, currentPage * ITEMS_PER_PAGE);
+    }
+    const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredComponents.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+  }, [filteredComponents, currentPage, isAppendMode]);
+
+  const pageNumbers = useMemo(() => {
+    const pages: (number | string)[] = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (currentPage > 3) pages.push('...');
+      const start = Math.max(2, currentPage - 1);
+      const end = Math.min(totalPages - 1, currentPage + 1);
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (currentPage < totalPages - 2) pages.push('...');
+      pages.push(totalPages);
+    }
+    return pages;
+  }, [totalPages, currentPage]);
 
   const totalReactBits = useMemo(
     () => (componentsData as ComponentItem[]).filter((c) => c.source === 'react-bits').length,
@@ -216,9 +430,9 @@ export default function Hero() {
 
           {/* Right Action Controls */}
           <div className="flex items-center gap-3">
-            {/* Chunky Neo-Brutalist Motion Mode Switcher */}
+            {/* Chunky Neo-Brutalist Animations Mode Switcher */}
             <div className="hidden lg:flex items-center gap-1 bg-white border-[2px] border-black p-1 shadow-[3px_3px_0px_#000]">
-              <span className="text-[10px] font-black uppercase px-1 text-black font-heading">⚡ MOTION:</span>
+              <span className="text-[10px] font-black uppercase px-1 text-black font-heading">⚡ ANIMATIONS:</span>
               {(['lite', 'full', 'off'] as const).map((m) => (
                 <button
                   key={m}
@@ -620,6 +834,7 @@ export default function Hero() {
                 onClick={() => {
                   setRawSearchQuery('');
                   setCurrentPage(1);
+                  setIsAppendMode(false);
                 }}
                 className="absolute right-3 top-3 text-black font-heading font-black text-xs hover:text-red-600"
               >
@@ -648,6 +863,7 @@ export default function Hero() {
                 if (!src.disabled) {
                   setSelectedSource(src.id);
                   setCurrentPage(1);
+                  setIsAppendMode(false);
                 }
               }}
               className={`px-3.5 py-1.5 text-xs font-heading font-black uppercase transition border-[3px] border-black ${
@@ -677,6 +893,7 @@ export default function Hero() {
               onClick={() => {
                 setSelectedCategory(cat);
                 setCurrentPage(1);
+                setIsAppendMode(false);
               }}
               className={`px-3 py-1.5 capitalize shrink-0 font-heading font-black text-xs transition border-[2px] border-black ${
                 selectedCategory === cat
@@ -730,6 +947,7 @@ export default function Hero() {
                 setSelectedCategory('all');
                 setSelectedSource('all');
                 setCurrentPage(1);
+                setIsAppendMode(false);
               }}
               className="mt-4 neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs"
             >
@@ -739,230 +957,154 @@ export default function Hero() {
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleComponents.map((comp) => {
-                const isCopied = copiedSlug === comp.slug;
-                const catTheme = CATEGORY_COLORS[comp.category] || { bg: '#FFDC58', text: '#000', border: '#000' };
-
-                return (
-                  <div
-                    key={comp.id}
-                    className="group rounded-lg bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_#000] transition-all duration-150 flex flex-col overflow-hidden"
-                  >
-                    {/* Top Preview Area (Framed Box with 3px black bottom border) */}
-                    <div className="h-48 bg-black relative flex items-center justify-center overflow-hidden border-b-[3px] border-black">
-                      {comp.source === 'react-bits' ? (
-                        <div className="w-full h-full bg-[#E0F2FF] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                          <div className="relative z-10 flex flex-col items-center gap-2">
-                            <span className="w-10 h-10 bg-[#7FBCFF] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
-                              ✨
-                            </span>
-                            <div>
-                              <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
-                                Official React Bits Demo
-                              </div>
-                              <div className="text-[10px] text-zinc-700 font-mono font-bold">
-                                @react-bits/{comp.componentName || comp.name}-TS-TW
-                              </div>
-                            </div>
-                            <a
-                              href={comp.originalUrl || comp.previewUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="neo-btn bg-[#7FBCFF] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
-                            >
-                              VIEW LIVE DEMO ➔
-                            </a>
-                          </div>
-                        </div>
-                      ) : comp.source === 'magic-ui' ? (
-                        <div className="w-full h-full bg-[#E6FFFA] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                          <div className="relative z-10 flex flex-col items-center gap-2">
-                            <span className="w-10 h-10 bg-[#67E8F9] border-[2px] border-black shadow-[3px_3px_0px_#000] flex items-center justify-center text-lg">
-                              🪄
-                            </span>
-                            <div>
-                              <div className="font-heading text-xs font-black text-black uppercase tracking-wide">
-                                Official Magic UI Demo
-                              </div>
-                              <div className="text-[10px] text-zinc-700 font-mono font-bold">
-                                @magic-ui/{comp.slug}
-                              </div>
-                            </div>
-                            <a
-                              href={comp.originalUrl || comp.previewUrl || `https://magicui.design/docs/components/${comp.slug}`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="neo-btn bg-[#67E8F9] text-black px-3 py-1.5 text-xs font-heading font-black mt-1"
-                            >
-                              VIEW LIVE DEMO ➔
-                            </a>
-                          </div>
-                        </div>
-                      ) : (
-                        <LiveComponentPreview
-                          slug={comp.slug}
-                          category={comp.category}
-                          name={comp.name}
-                          lite={animationMode !== 'full'}
-                          animationMode={animationMode}
-                        />
-                      )}
-
-                      {/* Source badge (Top-Left) */}
-                      <span
-                        className={`absolute top-3 left-3 px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] border-black shadow-[2px_2px_0px_#000] ${
-                          comp.source === 'react-bits'
-                            ? 'bg-[#7FBCFF] text-black'
-                            : comp.source === 'magic-ui'
-                            ? 'bg-[#67E8F9] text-black'
-                            : 'bg-[#FFDC58] text-black'
-                        }`}
-                      >
-                        {comp.source === 'react-bits'
-                          ? 'React Bits • MIT'
-                          : comp.source === 'magic-ui'
-                          ? 'Magic UI • MIT'
-                          : 'ZEURALABZ Original'}
-                      </span>
-
-                      {/* Live Preview Indicator Badge (Top-Right) */}
-                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase bg-black text-white border-[2px] border-black shadow-[2px_2px_0px_#000]">
-                        {comp.source === 'react-bits' || comp.source === 'magic-ui' ? (
-                          <>
-                            <span className="w-1.5 h-1.5 bg-[#67E8F9]" />
-                            OFFICIAL
-                          </>
-                        ) : (
-                          <>
-                            <span className="w-1.5 h-1.5 bg-[#A3E635] animate-pulse" />
-                            {animationMode === 'off' ? 'STATIC' : animationMode === 'lite' ? 'LITE' : '60 FPS'}
-                          </>
-                        )}
-                      </span>
-                    </div>
-
-                    {/* Middle: Details */}
-                    <div className="p-5 flex-1 flex flex-col justify-between bg-white">
-                      <div>
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-heading text-sm font-black text-black group-hover:text-indigo-700 transition">
-                            {comp.name}
-                          </h3>
-                          <span className="text-[11px] text-zinc-600 font-mono font-bold bg-[#FFFDF5] border border-black px-1.5 py-0.5">
-                            {comp.slug}
-                          </span>
-                        </div>
-                        <p className="text-xs text-black font-medium mt-2 line-clamp-2 leading-relaxed">
-                          {comp.description}
-                        </p>
-
-                        {/* Best for tags */}
-                        <div className="mt-3 flex flex-wrap gap-1.5">
-                          <span
-                            className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[1.5px] border-black shadow-[1.5px_1.5px_0px_#000]"
-                            style={{ backgroundColor: catTheme.bg, color: catTheme.text }}
-                          >
-                            {comp.category}
-                          </span>
-                          {comp.bestFor?.slice(0, 2).map((b) => (
-                            <span
-                              key={b}
-                              className="px-2 py-0.5 text-[10px] font-bold bg-[#FFFDF5] text-black border border-black"
-                            >
-                              ✓ {b}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Bottom Action Bar */}
-                      <div className="mt-4 pt-3 border-t-[2px] border-black flex items-center justify-between gap-2">
-                        <button
-                          onClick={() =>
-                            copyCommand(
-                              comp.source === 'react-bits'
-                                ? `npx zeuralabz add ${comp.slug} --source react-bits`
-                                : comp.source === 'magic-ui'
-                                ? `npx zeuralabz add ${comp.slug} --source magic-ui`
-                                : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
-                            )
-                          }
-                          className={`flex-1 py-2 px-3 text-xs font-mono font-black border-[2px] border-black shadow-[3px_3px_0px_#000] transition active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center gap-1.5 ${
-                            isCopied
-                              ? 'bg-[#A3E635] text-black font-black'
-                              : 'bg-black text-[#FFDC58] hover:bg-zinc-900'
-                          }`}
-                        >
-                          {isCopied ? (
-                            '✔ COPIED TO CLIPBOARD!'
-                          ) : (
-                            <>
-                              <span>$</span> npx zeuralabz add {comp.slug}{' '}
-                              {comp.source === 'react-bits'
-                                ? '--source react-bits'
-                                : comp.source === 'magic-ui'
-                                ? '--source magic-ui'
-                                : ''}
-                            </>
-                          )}
-                        </button>
-
-                        <button
-                          onClick={() => setSelectedComponent(comp)}
-                          className="neo-btn bg-[#FF90E8] text-black px-3 py-2 text-xs font-heading font-black"
-                          title="View code & usage"
-                        >
-                          CODE ➔
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {visibleComponents.map((comp) => (
+                <ComponentCard
+                  key={comp.id}
+                  comp={comp}
+                  isCopied={copiedSlug === comp.slug}
+                  animationMode={animationMode}
+                  onCopy={copyCommand}
+                  onOpenCode={setSelectedComponent}
+                />
+              ))}
             </div>
 
             {/* Pagination Controls */}
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000]">
-              <div className="text-xs text-black font-heading font-black uppercase">
-                SHOWING <span className="bg-[#FFDC58] px-1 border border-black">{visibleComponents.length}</span> OF{' '}
-                <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span> COMPONENTS
-                <span className="ml-2 text-zinc-600 font-sans">• PAGE {currentPage} OF {totalPages}</span>
+            <div className="mt-12 p-5 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-xs text-black font-heading font-black uppercase">
+                  {isAppendMode ? (
+                    <>
+                      SHOWING 1–
+                      <span className="bg-[#FFDC58] px-1 border border-black">
+                        {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
+                      </span>{' '}
+                      OF{' '}
+                      <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span>{' '}
+                      COMPONENTS (PAGES 1–{currentPage} OF {totalPages})
+                    </>
+                  ) : (
+                    <>
+                      SHOWING{' '}
+                      <span className="bg-[#FFDC58] px-1 border border-black">
+                        {filteredComponents.length === 0 ? 0 : (currentPage - 1) * ITEMS_PER_PAGE + 1}
+                      </span>
+                      –
+                      <span className="bg-[#FFDC58] px-1 border border-black">
+                        {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
+                      </span>{' '}
+                      OF{' '}
+                      <span className="bg-[#FFDC58] px-1 border border-black">{filteredComponents.length}</span>{' '}
+                      COMPONENTS (PAGE {currentPage} OF {totalPages})
+                    </>
+                  )}
+                </div>
+
+                {/* Progressive Load More & Load All buttons */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {((isAppendMode && currentPage < totalPages) || (!isAppendMode && currentPage * ITEMS_PER_PAGE < filteredComponents.length)) && (
+                    <button
+                      onClick={() => {
+                        setIsAppendMode(true);
+                        setCurrentPage((p) => Math.min(p + 1, totalPages));
+                      }}
+                      className="neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5"
+                    >
+                      <span>LOAD MORE (12 MORE)</span>
+                      <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-mono">
+                        +{Math.min(ITEMS_PER_PAGE, filteredComponents.length - (isAppendMode ? currentPage * ITEMS_PER_PAGE : currentPage * ITEMS_PER_PAGE))}
+                      </span>
+                    </button>
+                  )}
+
+                  {((isAppendMode && currentPage < totalPages) || (!isAppendMode && totalPages > 1)) && (
+                    <button
+                      onClick={() => {
+                        setIsAppendMode(true);
+                        setCurrentPage(totalPages);
+                      }}
+                      title="May lag on older devices"
+                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
+                    >
+                      LOAD ALL ({filteredComponents.length})
+                    </button>
+                  )}
+
+                  {(currentPage > 1 || isAppendMode) && (
+                    <button
+                      onClick={() => {
+                        setIsAppendMode(false);
+                        setCurrentPage(1);
+                        document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
+                    >
+                      BACK TO FIRST 12
+                    </button>
+                  )}
+                </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-2">
-                {visibleComponents.length < filteredComponents.length && (
+              {/* Numeric Page Buttons [PREV] [1] [2] [3] ... [NEXT] */}
+              {totalPages > 1 && (
+                <div className="pt-4 border-t-[2px] border-black flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
                   <button
-                    onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-                    className="neo-btn bg-[#FFDC58] text-black px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5"
-                  >
-                    <span>LOAD MORE (12 MORE)</span>
-                    <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-mono">
-                      +{Math.min(ITEMS_PER_PAGE, filteredComponents.length - visibleComponents.length)}
-                    </span>
-                  </button>
-                )}
-
-                {visibleComponents.length < filteredComponents.length && (
-                  <button
-                    onClick={() => setCurrentPage(totalPages)}
-                    className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
-                  >
-                    LOAD ALL ({filteredComponents.length})
-                  </button>
-                )}
-
-                {currentPage > 1 && (
-                  <button
+                    disabled={currentPage <= 1}
                     onClick={() => {
-                      setCurrentPage(1);
+                      setIsAppendMode(false);
+                      setCurrentPage((p) => Math.max(1, p - 1));
                       document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black"
+                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-black transition ${
+                      currentPage <= 1
+                        ? 'opacity-30 cursor-not-allowed bg-zinc-200 text-zinc-500'
+                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5'
+                    }`}
                   >
-                    BACK TO FIRST 12
+                    ◀ PREV
                   </button>
-                )}
-              </div>
+
+                  {pageNumbers.map((p, idx) =>
+                    p === '...' ? (
+                      <span key={`ellipsis-${idx}`} className="px-2 py-1 font-mono font-bold text-zinc-600">
+                        ...
+                      </span>
+                    ) : (
+                      <button
+                        key={`page-${p}`}
+                        onClick={() => {
+                          setIsAppendMode(false);
+                          setCurrentPage(Number(p));
+                          document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                        className={`w-9 h-9 text-xs font-heading font-black border-[2px] border-black flex items-center justify-center transition ${
+                          !isAppendMode && currentPage === p
+                            ? 'bg-[#FFDC58] text-black shadow-[3px_3px_0px_#000] -translate-x-0.5 -translate-y-0.5'
+                            : 'bg-white text-black hover:bg-zinc-100 shadow-[2px_2px_0px_#000]'
+                        }`}
+                      >
+                        {p}
+                      </button>
+                    )
+                  )}
+
+                  <button
+                    disabled={currentPage >= totalPages}
+                    onClick={() => {
+                      setIsAppendMode(false);
+                      setCurrentPage((p) => Math.min(totalPages, p + 1));
+                      document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-black transition ${
+                      currentPage >= totalPages
+                        ? 'opacity-30 cursor-not-allowed bg-zinc-200 text-zinc-500'
+                        : 'bg-white text-black hover:bg-[#FFDC58] shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5'
+                    }`}
+                  >
+                    NEXT ▶
+                  </button>
+                </div>
+              )}
             </div>
           </>
         )}
