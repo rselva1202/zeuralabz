@@ -8,13 +8,14 @@
   --color-neo-bg: #0E0E0E;
   --color-neo-surface: #1A1A1A;
   --color-neo-dark: #111111;
-  --color-neo-yellow: #FFDC58;
+  --color-neo-red: #E11D48;
+  --color-neo-red-bright: #FF2B2B;
+  --color-neo-red-deep: #9F1239;
   --color-neo-pink: #FF90E8;
   --color-neo-blue: #7FBCFF;
   --color-neo-green: #A3E635;
-  --color-neo-orange: #FF6B35;
+  --color-neo-orange: #C2410C;
   --color-neo-purple: #B388FF;
-  --color-neo-red: #FF4911;
   --color-neo-cyan: #67E8F9;
   --color-neo-lime: #BEF264;
 }
@@ -60,23 +61,23 @@
 
 /* Coloured Hard Neo Shadows (Visible on Dark Background) */
 .neo-shadow-sm {
-  box-shadow: 3px 3px 0px #FFDC58;
+  box-shadow: 3px 3px 0px #E11D48;
 }
 
 .neo-shadow {
-  box-shadow: 4px 4px 0px #FFDC58;
+  box-shadow: 4px 4px 0px #E11D48;
 }
 
 .neo-shadow-md {
-  box-shadow: 6px 6px 0px #FFDC58;
+  box-shadow: 6px 6px 0px #E11D48;
 }
 
 .neo-shadow-lg {
-  box-shadow: 8px 8px 0px #FF90E8;
+  box-shadow: 8px 8px 0px #FF2B2B;
 }
 
 .neo-shadow-xl {
-  box-shadow: 12px 12px 0px #FFDC58;
+  box-shadow: 12px 12px 0px #E11D48;
 }
 
 .neo-shadow-pink {
@@ -99,10 +100,10 @@
   box-shadow: 6px 6px 0px #7FBCFF;
 }
 
-/* Neo Button Physics with 3px White Border & Yellow Hard Shadow */
+/* Neo Button Physics with 3px White Border & Crimson Red Hard Shadow */
 .neo-btn {
   border: 3px solid #FFFFFF;
-  box-shadow: 4px 4px 0px #FFDC58;
+  box-shadow: 4px 4px 0px #E11D48;
   font-weight: 700;
   text-transform: uppercase;
   transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,7 +111,7 @@
 
 .neo-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #FFDC58;
+  box-shadow: 6px 6px 0px #FF2B2B;
 }
 
 .neo-btn:active {
@@ -118,10 +119,10 @@
   box-shadow: 0px 0px 0px transparent;
 }
 
-/* Neo Card Physics with 3px White Border & 6px Yellow Hard Shadow */
+/* Neo Card Physics with 3px White Border & 6px Crimson Red Hard Shadow */
 .neo-card {
   border: 3px solid #FFFFFF;
-  box-shadow: 6px 6px 0px #FFDC58;
+  box-shadow: 6px 6px 0px #E11D48;
   background-color: #1A1A1A;
   border-radius: 8px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -129,7 +130,7 @@
 
 .neo-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px #FFDC58;
+  box-shadow: 8px 8px 0px #FF2B2B;
 }
 
 /* Custom dark scrollbars */
@@ -142,9 +143,9 @@
   border-left: 3px solid #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FFDC58;
+  background: #E11D48;
   border: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF90E8;
+  background: #FF2B2B;
 }
