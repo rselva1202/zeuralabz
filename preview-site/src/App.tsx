@@ -238,6 +238,59 @@ export default function App() {
     );
   }
 
+  if (standalone === 'buttons-grid') {
+    const buttonsList = (componentsData as ComponentItem[]).filter(c => c.category === 'buttons');
+    return (
+      <div className="min-h-screen bg-[#070919] text-white p-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8 border-b border-zinc-800 pb-5">
+            <h1 className="text-3xl font-black text-white flex items-center gap-3">
+              <span className="text-indigo-400">ZEURALABZ</span> — Buttons Engine Matrix
+            </h1>
+            <p className="text-sm text-zinc-400 mt-1">
+              All 15 button archetypes powered by unified BaseButton (Framer Motion, tactile click physics, live interactive cards)
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {buttonsList.map((comp) => (
+              <div
+                key={comp.slug}
+                className="rounded-2xl bg-[#0d1024] border border-zinc-800/80 overflow-hidden flex flex-col shadow-2xl hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <div className="h-56 relative border-b border-zinc-800/70 overflow-hidden flex items-center justify-center bg-[#0a0e27]">
+                  <LiveComponentPreview slug={comp.slug} category={comp.category} name={comp.name} />
+                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md text-[10px] font-semibold tracking-wider uppercase bg-black/70 text-zinc-300 border border-zinc-700/80 backdrop-blur-md">
+                    {comp.category}
+                  </span>
+                  <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-mono uppercase bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 backdrop-blur-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    Interactive Click
+                  </span>
+                </div>
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-sm text-white">{comp.name}</h3>
+                      <span className="text-[11px] text-zinc-400 font-mono">{comp.slug}</span>
+                    </div>
+                    <p className="text-xs text-zinc-400 mt-1.5 line-clamp-2 leading-relaxed">
+                      {comp.description}
+                    </p>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-zinc-800/70 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                    <span>npx zeuralabz add {comp.slug}</span>
+                    <span className="text-emerald-400 font-sans text-xs">Live</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Fetch real GitHub star count
   useEffect(() => {
     fetch('https://api.github.com/repos/rselva1202/zeuralabz')

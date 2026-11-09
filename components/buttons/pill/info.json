@@ -1,0 +1,27 @@
+{
+  "name": "Ergonomic Capsule Pill Button",
+  "slug": "pill",
+  "componentName": "PillButton",
+  "category": "buttons",
+  "description": "Full border-radius ergonomic capsule with violet accent perimeter ring, refined typography, and subtle scale.",
+  "tags": [
+    "button",
+    "pill",
+    "capsule",
+    "rounded",
+    "minimal"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/pill",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

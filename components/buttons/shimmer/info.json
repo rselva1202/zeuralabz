@@ -1,24 +1,27 @@
 {
-  "name": "Angled Metallic Shimmer Button",
+  "name": "Specular Sweep Shimmer Button",
   "slug": "shimmer",
   "componentName": "ShimmerButton",
   "category": "buttons",
-  "description": "Luxurious button with an animated angled metallic shimmer gradient sweeping on hover.",
+  "description": "High-velocity 45° specular light beam sweeping across polished dark surface with metallic border highlights.",
   "tags": [
     "button",
     "shimmer",
-    "gradient",
+    "metallic",
+    "specular",
     "framer-motion"
   ],
   "bestFor": [
+    "hero",
     "landing",
-    "saas",
-    "hero"
+    "cta",
+    "interactive"
   ],
   "deps": [
     "framer-motion"
   ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shimmer",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

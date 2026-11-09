@@ -1,10 +1,17 @@
 import React from 'react';
+import { BaseButton, type BaseButtonProps } from './BaseButton';
 
-export const OutlineFillButton: React.FC<{ text?: string }> = ({ text = "Discover More" }) => {
+export interface OutlineFillButtonProps extends Partial<BaseButtonProps> {}
+
+export const OutlineFillButton: React.FC<OutlineFillButtonProps> = (props) => {
   return (
-    <button className="group relative overflow-hidden rounded-xl px-7 py-3 font-semibold text-emerald-400 border-2 border-emerald-500 transition-colors">
-      <span className="absolute inset-0 translate-y-full group-hover:translate-y-0 bg-emerald-500 transition-transform duration-300 ease-out" />
-      <span className="relative z-10 group-hover:text-black transition-colors">{text}</span>
-    </button>
+    <BaseButton
+      variant="outline-fill"
+      text="Prism Sweep"
+      {...props}
+    />
   );
 };
+
+export const OutlineFill = OutlineFillButton;
+export default OutlineFillButton;

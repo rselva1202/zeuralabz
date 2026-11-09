@@ -1,22 +1,27 @@
 {
-  "name": "Haptic Clipboard Verified Button",
-  "slug": "copy-snippet",
-  "componentName": "CopySnippetButton",
+  "name": "Kinetic Progress Download Button",
+  "slug": "download",
+  "componentName": "DownloadButton",
   "category": "buttons",
-  "description": "Utility button that copies token/code to clipboard and transforms into verified checkmark.",
+  "description": "Action-oriented download trigger featuring downward kinetic arrow, progress beam animation, and success checkmark.",
   "tags": [
     "button",
-    "copy",
-    "clipboard",
-    "utility"
+    "download",
+    "progress",
+    "action",
+    "stateful"
   ],
   "bestFor": [
-    "developer",
-    "docs",
-    "saas"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/copy-snippet",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/download",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

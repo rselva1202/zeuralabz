@@ -210,3 +210,4 @@ for slug in text_components:
     print(f"Generated {slug} previews (PNG + GIF) for: {dirs}")
 
 print("All 15 text animation previews generated successfully!")
+

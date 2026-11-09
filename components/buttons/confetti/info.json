@@ -1,24 +1,27 @@
 {
-  "name": "Celebration Particle Confetti Button",
-  "slug": "confetti",
-  "componentName": "ConfettiButton",
+  "name": "Pulsing Concentric Ripple Play Button",
+  "slug": "play",
+  "componentName": "PlayButton",
   "category": "buttons",
-  "description": "Milestone CTA button that shoots celebratory confetti particles on tap.",
+  "description": "Media playback button featuring expanding concentric ripple rings and toggleable play/pause status states.",
   "tags": [
     "button",
-    "confetti",
-    "celebration",
-    "interactive"
+    "play",
+    "media",
+    "ripple",
+    "pulse"
   ],
   "bestFor": [
+    "hero",
     "landing",
-    "checkout",
-    "onboarding"
+    "cta",
+    "interactive"
   ],
   "deps": [
-    "canvas-confetti"
+    "framer-motion"
   ],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/confetti",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/play",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

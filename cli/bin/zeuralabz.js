@@ -35,7 +35,7 @@ function getThemes() {
 // Find component by slug
 function findComponent(slug) {
   const registry = getRegistry();
-  return registry.find(c => c.slug.toLowerCase() === slug.toLowerCase() || c.id.toLowerCase() === slug.toLowerCase());
+  return registry.find(c => (c.slug && c.slug.toLowerCase() === slug.toLowerCase()) || (c.id && c.id.toLowerCase() === slug.toLowerCase()));
 }
 
 // Install a component to target project

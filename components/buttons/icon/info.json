@@ -1,0 +1,27 @@
+{
+  "name": "Dynamic Kinetic Icon Button",
+  "slug": "icon",
+  "componentName": "IconButton",
+  "category": "buttons",
+  "description": "Harmonious iconography with spring-loaded rotational micro-interactions and tactile scale rebound on hover.",
+  "tags": [
+    "button",
+    "icon",
+    "micro-interaction",
+    "spring",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

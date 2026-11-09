@@ -1,0 +1,27 @@
+{
+  "name": "Pulsing Concentric Ripple Play Button",
+  "slug": "play",
+  "componentName": "PlayButton",
+  "category": "buttons",
+  "description": "Media playback button featuring expanding concentric ripple rings and toggleable play/pause status states.",
+  "tags": [
+    "button",
+    "play",
+    "media",
+    "ripple",
+    "pulse"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/play",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

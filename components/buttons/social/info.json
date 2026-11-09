@@ -1,0 +1,27 @@
+{
+  "name": "Developer Social Connect Button",
+  "slug": "social",
+  "componentName": "SocialButton",
+  "category": "buttons",
+  "description": "Modern developer badge button with authentic brand iconography, live star counter badge, and levitation lift.",
+  "tags": [
+    "button",
+    "social",
+    "github",
+    "badge",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/social",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

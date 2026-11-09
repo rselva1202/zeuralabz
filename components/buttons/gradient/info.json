@@ -1,21 +1,27 @@
 {
-  "name": "Radiant Linear Gradient Button",
+  "name": "Iridescent Flow Gradient Button",
   "slug": "gradient",
   "componentName": "GradientButton",
   "category": "buttons",
-  "description": "Smooth multi-color gradient button with soft bloom shadow.",
+  "description": "Vibrant continuous chromatic animated gradient button with dynamic luminosity bloom and responsive hover physics.",
   "tags": [
     "button",
     "gradient",
-    "modern"
+    "iridescent",
+    "chromatic",
+    "framer-motion"
   ],
   "bestFor": [
-    "landing",
     "hero",
-    "saas"
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

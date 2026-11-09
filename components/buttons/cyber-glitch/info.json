@@ -1,22 +1,27 @@
 {
-  "name": "RGB Offset Cyberpunk Glitch Button",
-  "slug": "cyber-glitch",
-  "componentName": "CyberGlitchButton",
+  "name": "Developer Social Connect Button",
+  "slug": "social",
+  "componentName": "SocialButton",
   "category": "buttons",
-  "description": "RGB channel split chromatic aberration glitch button for futuristic cyber aesthetics.",
+  "description": "Modern developer badge button with authentic brand iconography, live star counter badge, and levitation lift.",
   "tags": [
     "button",
-    "glitch",
-    "cyberpunk",
-    "chromatic"
+    "social",
+    "github",
+    "badge",
+    "framer-motion"
   ],
   "bestFor": [
-    "gaming",
-    "crypto",
-    "developer"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/cyber-glitch",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/social",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

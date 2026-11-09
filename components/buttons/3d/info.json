@@ -1,24 +1,27 @@
 {
-  "name": "Tactile Depth 3D Mechanical Button",
+  "name": "Tactile Isometric 3D Push Button",
   "slug": "3d",
-  "componentName": "DepthButton",
+  "componentName": "ThreeDButton",
   "category": "buttons",
-  "description": "Satisfying mechanical tactile button with physical 3D elevation and realistic press depression.",
+  "description": "Physical mechanical switch feel with isometric bottom ledge bevel and spring-compressed downward displacement.",
   "tags": [
     "button",
     "3d",
     "tactile",
-    "retro"
+    "push",
+    "mechanical"
   ],
   "bestFor": [
+    "hero",
     "landing",
-    "gaming",
-    "dashboard"
+    "cta",
+    "interactive"
   ],
   "deps": [
     "framer-motion"
   ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/3d",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

@@ -1,24 +1,27 @@
 {
-  "name": "Cyberpunk Glowing Neon Button",
+  "name": "Cyberpunk Pulse Neon Button",
   "slug": "neon",
   "componentName": "NeonButton",
   "category": "buttons",
-  "description": "High-voltage electric neon button with radiating aura and border illumination.",
+  "description": "Electric neon perimeter glow with pulsing multi-stage ambient halos and high-contrast cyberpunk typography.",
   "tags": [
     "button",
     "neon",
+    "cyberpunk",
     "glow",
-    "cyberpunk"
+    "framer-motion"
   ],
   "bestFor": [
-    "gaming",
-    "crypto",
-    "landing"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
   "deps": [
     "framer-motion"
   ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

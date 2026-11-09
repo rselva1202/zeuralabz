@@ -1,22 +1,27 @@
 {
-  "name": "Infinite Conic Rotating Border Button",
-  "slug": "border-beam",
-  "componentName": "BorderBeamButton",
+  "name": "Ambient Radial Backlit Glow Button",
+  "slug": "glow",
+  "componentName": "GlowButton",
   "category": "buttons",
-  "description": "An elegant dark button framed by a continuous rotating conic gradient border beam.",
+  "description": "Diffused radial background bloom that softly breathes in the dark and bursts with chromatic intensity on hover.",
   "tags": [
     "button",
-    "border-beam",
-    "rainbow",
-    "animated-border"
+    "glow",
+    "ambient",
+    "backlit",
+    "framer-motion"
   ],
   "bestFor": [
-    "landing",
     "hero",
-    "saas"
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/border-beam",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

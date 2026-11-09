@@ -1,22 +1,27 @@
 {
-  "name": "Interactive Arrow Slide CTA Button",
-  "slug": "swipe-arrow",
-  "componentName": "SwipeArrowButton",
+  "name": "Kinetic Directional Arrow Button",
+  "slug": "arrow",
+  "componentName": "ArrowButton",
   "category": "buttons",
-  "description": "Action button where arrow icon slides across container on hover indicating progression.",
+  "description": "Kinetic conversion trigger with directional arrow gliding forward dynamically on hover with spring recovery.",
   "tags": [
     "button",
     "arrow",
-    "slide",
-    "cta"
+    "cta",
+    "kinetic",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
     "landing",
-    "checkout"
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/swipe-arrow",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/arrow",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

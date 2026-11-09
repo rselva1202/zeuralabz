@@ -1,22 +1,27 @@
 {
-  "name": "Expanding Liquid Wave Outline Button",
+  "name": "Prism Slide Outline Fill Button",
   "slug": "outline-fill",
   "componentName": "OutlineFillButton",
   "category": "buttons",
-  "description": "Clean outline button that expands a full liquid color wave to fill interior on hover.",
+  "description": "Sleek geometric wireframe border that dynamically flood-fills with vibrant linear gradient curtain on hover.",
   "tags": [
     "button",
     "outline",
+    "fill",
     "hover",
-    "fill"
+    "framer-motion"
   ],
   "bestFor": [
-    "saas",
-    "portfolio",
-    "minimal"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/outline-fill",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

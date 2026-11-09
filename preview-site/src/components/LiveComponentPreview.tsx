@@ -1,12 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { CanvasEngine, BackgroundType } from './engine/CanvasEngine';
 import { TextEngine, TextAnimationType } from './engine/TextEngine';
+import { BaseButton, type ButtonVariant } from './engine/BaseButton';
 
 interface LiveComponentPreviewProps {
   slug: string;
   category: string;
   name: string;
 }
+
+const buttonSlugToVariant: Record<string, ButtonVariant> = {
+  'gradient': 'gradient',
+  'neon': 'neon',
+  'magnetic': 'magnetic',
+  'shimmer': 'shimmer',
+  '3d': '3d',
+  'outline-fill': 'outline-fill',
+  'loading': 'loading',
+  'icon': 'icon',
+  'icon-morph': 'icon',
+  'social': 'social',
+  'cyber-glitch': 'social',
+  'glass-btn': 'glass-btn',
+  'glow': 'glow',
+  'border-beam': 'glow',
+  'pill': 'pill',
+  'ripple': 'pill',
+  'arrow': 'arrow',
+  'swipe-arrow': 'arrow',
+  'play': 'play',
+  'confetti': 'play',
+  'download': 'download',
+  'copy-snippet': 'download',
+};
 
 export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug, category, name }) => {
   const [toggleState, setToggleState] = useState(false);
@@ -119,50 +145,14 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
 
   // ==================== BUTTONS ====================
   if (category === 'buttons') {
-    if (slug === 'shimmer') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <button className="relative px-5 py-2.5 rounded-full bg-zinc-900 border border-zinc-700 text-white font-medium text-xs overflow-hidden group hover:border-zinc-500 transition shadow-lg">
-            <span className="relative z-10 flex items-center gap-1.5">
-              Shimmer Button <span className="text-cyan-400">➔</span>
-            </span>
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12" />
-          </button>
-        </div>
-      );
-    }
-    if (slug === 'neon') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <button className="px-5 py-2 rounded-xl bg-black border-2 border-emerald-400 text-emerald-400 font-bold text-xs shadow-[0_0_15px_rgba(52,211,153,0.5)] hover:bg-emerald-400 hover:text-black transition duration-300">
-            Cyber Neon
-          </button>
-        </div>
-      );
-    }
-    if (slug === 'magnetic' || slug === '3d') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <button className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-[0_5px_0_#3730a3] active:translate-y-1 active:shadow-[0_1px_0_#3730a3] transition-all">
-            3D Tactile Push
-          </button>
-        </div>
-      );
-    }
-    if (slug === 'glass-btn') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <button className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md font-medium text-xs transition">
-            Frosted Glass
-          </button>
-        </div>
-      );
-    }
+    const variant = buttonSlugToVariant[slug] || 'gradient';
     return (
-      <div className="w-full h-full bg-black flex items-center justify-center p-4">
-        <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold text-xs shadow-md">
-          {name}
-        </button>
+      <div className="w-full h-full min-h-[160px] flex items-center justify-center p-6 bg-gradient-to-b from-[#0f1433] to-[#0a0e27] overflow-hidden select-none">
+        <BaseButton
+          variant={variant}
+          size="md"
+          interactiveDemo={true}
+        />
       </div>
     );
   }

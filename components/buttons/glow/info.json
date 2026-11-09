@@ -1,0 +1,27 @@
+{
+  "name": "Ambient Radial Backlit Glow Button",
+  "slug": "glow",
+  "componentName": "GlowButton",
+  "category": "buttons",
+  "description": "Diffused radial background bloom that softly breathes in the dark and bursts with chromatic intensity on hover.",
+  "tags": [
+    "button",
+    "glow",
+    "ambient",
+    "backlit",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

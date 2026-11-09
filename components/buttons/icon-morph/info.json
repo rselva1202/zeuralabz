@@ -1,22 +1,27 @@
 {
-  "name": "Expanding Brand Social Icon Button",
-  "slug": "icon-morph",
-  "componentName": "IconMorphButton",
+  "name": "Dynamic Kinetic Icon Button",
+  "slug": "icon",
+  "componentName": "IconButton",
   "category": "buttons",
-  "description": "Icon button that dynamically expands to reveal brand title on hover.",
+  "description": "Harmonious iconography with spring-loaded rotational micro-interactions and tactile scale rebound on hover.",
   "tags": [
     "button",
     "icon",
-    "social",
-    "expand"
+    "micro-interaction",
+    "spring",
+    "framer-motion"
   ],
   "bestFor": [
-    "portfolio",
-    "header",
-    "social"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon-morph",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

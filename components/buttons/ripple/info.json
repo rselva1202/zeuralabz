@@ -1,22 +1,27 @@
 {
-  "name": "Material Water Splash Ripple Button",
-  "slug": "ripple",
-  "componentName": "RippleButton",
+  "name": "Ergonomic Capsule Pill Button",
+  "slug": "pill",
+  "componentName": "PillButton",
   "category": "buttons",
-  "description": "Material-inspired click button that sprouts a water ripple from the exact coordinate clicked.",
+  "description": "Full border-radius ergonomic capsule with violet accent perimeter ring, refined typography, and subtle scale.",
   "tags": [
     "button",
-    "ripple",
-    "material",
-    "interactive"
+    "pill",
+    "capsule",
+    "rounded",
+    "minimal"
   ],
   "bestFor": [
-    "mobile",
-    "dashboard",
-    "actions"
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/ripple",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/pill",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

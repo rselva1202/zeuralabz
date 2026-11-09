@@ -1007,452 +1007,6 @@
     "animation": "framer-motion"
   },
   {
-    "id": "buttons/shimmer",
-    "name": "Angled Metallic Shimmer Button",
-    "slug": "shimmer",
-    "componentName": "ShimmerButton",
-    "category": "buttons",
-    "description": "Luxurious button with an animated angled metallic shimmer gradient sweeping on hover.",
-    "tags": [
-      "button",
-      "shimmer",
-      "gradient",
-      "framer-motion"
-    ],
-    "bestFor": [
-      "landing",
-      "saas",
-      "hero"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/buttons/shimmer/ShimmerButton.tsx",
-      "components/buttons/shimmer/ShimmerButton.html",
-      "components/buttons/shimmer/ShimmerButton.css",
-      "components/buttons/shimmer/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shimmer",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "buttons/neon",
-    "name": "Cyberpunk Glowing Neon Button",
-    "slug": "neon",
-    "componentName": "NeonButton",
-    "category": "buttons",
-    "description": "High-voltage electric neon button with radiating aura and border illumination.",
-    "tags": [
-      "button",
-      "neon",
-      "glow",
-      "cyberpunk"
-    ],
-    "bestFor": [
-      "gaming",
-      "crypto",
-      "landing"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/buttons/neon/NeonButton.tsx",
-      "components/buttons/neon/NeonButton.html",
-      "components/buttons/neon/NeonButton.css",
-      "components/buttons/neon/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "buttons/magnetic",
-    "name": "Spring Physics Magnetic Button",
-    "slug": "magnetic",
-    "componentName": "MagneticButton",
-    "category": "buttons",
-    "description": "Interactive button that pulls towards cursor coordinates on proximity with spring physics.",
-    "tags": [
-      "button",
-      "magnetic",
-      "physics",
-      "interactive"
-    ],
-    "bestFor": [
-      "portfolio",
-      "hero",
-      "landing"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/buttons/magnetic/MagneticButton.tsx",
-      "components/buttons/magnetic/MagneticButton.html",
-      "components/buttons/magnetic/MagneticButton.css",
-      "components/buttons/magnetic/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/magnetic",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "buttons/3d",
-    "name": "Tactile Depth 3D Mechanical Button",
-    "slug": "3d",
-    "componentName": "DepthButton",
-    "category": "buttons",
-    "description": "Satisfying mechanical tactile button with physical 3D elevation and realistic press depression.",
-    "tags": [
-      "button",
-      "3d",
-      "tactile",
-      "retro"
-    ],
-    "bestFor": [
-      "landing",
-      "gaming",
-      "dashboard"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/buttons/3d/DepthButton.tsx",
-      "components/buttons/3d/DepthButton.html",
-      "components/buttons/3d/DepthButton.css",
-      "components/buttons/3d/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/3d",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "buttons/gradient",
-    "name": "Radiant Linear Gradient Button",
-    "slug": "gradient",
-    "componentName": "GradientButton",
-    "category": "buttons",
-    "description": "Smooth multi-color gradient button with soft bloom shadow.",
-    "tags": [
-      "button",
-      "gradient",
-      "modern"
-    ],
-    "bestFor": [
-      "landing",
-      "hero",
-      "saas"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/gradient/GradientButton.tsx",
-      "components/buttons/gradient/GradientButton.html",
-      "components/buttons/gradient/GradientButton.css",
-      "components/buttons/gradient/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/outline-fill",
-    "name": "Expanding Liquid Wave Outline Button",
-    "slug": "outline-fill",
-    "componentName": "OutlineFillButton",
-    "category": "buttons",
-    "description": "Clean outline button that expands a full liquid color wave to fill interior on hover.",
-    "tags": [
-      "button",
-      "outline",
-      "hover",
-      "fill"
-    ],
-    "bestFor": [
-      "saas",
-      "portfolio",
-      "minimal"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/outline-fill/OutlineFillButton.tsx",
-      "components/buttons/outline-fill/OutlineFillButton.html",
-      "components/buttons/outline-fill/OutlineFillButton.css",
-      "components/buttons/outline-fill/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/outline-fill",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/loading",
-    "name": "Stateful Morphing Spinner Button",
-    "slug": "loading",
-    "componentName": "LoadingSpinnerButton",
-    "category": "buttons",
-    "description": "Button that smoothly transforms into a spinning loader on click.",
-    "tags": [
-      "button",
-      "loading",
-      "spinner",
-      "stateful"
-    ],
-    "bestFor": [
-      "forms",
-      "checkout",
-      "dashboard"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/loading/LoadingSpinnerButton.tsx",
-      "components/buttons/loading/LoadingSpinnerButton.html",
-      "components/buttons/loading/LoadingSpinnerButton.css",
-      "components/buttons/loading/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/loading",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/icon-morph",
-    "name": "Expanding Brand Social Icon Button",
-    "slug": "icon-morph",
-    "componentName": "IconMorphButton",
-    "category": "buttons",
-    "description": "Icon button that dynamically expands to reveal brand title on hover.",
-    "tags": [
-      "button",
-      "icon",
-      "social",
-      "expand"
-    ],
-    "bestFor": [
-      "portfolio",
-      "header",
-      "social"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/icon-morph/IconMorphButton.tsx",
-      "components/buttons/icon-morph/IconMorphButton.html",
-      "components/buttons/icon-morph/IconMorphButton.css",
-      "components/buttons/icon-morph/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon-morph",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/confetti",
-    "name": "Celebration Particle Confetti Button",
-    "slug": "confetti",
-    "componentName": "ConfettiButton",
-    "category": "buttons",
-    "description": "Milestone CTA button that shoots celebratory confetti particles on tap.",
-    "tags": [
-      "button",
-      "confetti",
-      "celebration",
-      "interactive"
-    ],
-    "bestFor": [
-      "landing",
-      "checkout",
-      "onboarding"
-    ],
-    "deps": [
-      "canvas-confetti"
-    ],
-    "files": [
-      "components/buttons/confetti/ConfettiButton.tsx",
-      "components/buttons/confetti/ConfettiButton.html",
-      "components/buttons/confetti/ConfettiButton.css",
-      "components/buttons/confetti/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/confetti",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/glass-btn",
-    "name": "Frosted Acrylic Glass Button",
-    "slug": "glass-btn",
-    "componentName": "GlassButton",
-    "category": "buttons",
-    "description": "Frosted acrylic glass button with specular light refraction and crisp semi-transparent border.",
-    "tags": [
-      "button",
-      "glassmorphism",
-      "blur",
-      "minimal"
-    ],
-    "bestFor": [
-      "hero",
-      "landing",
-      "portfolio"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/buttons/glass-btn/GlassButton.tsx",
-      "components/buttons/glass-btn/GlassButton.html",
-      "components/buttons/glass-btn/GlassButton.css",
-      "components/buttons/glass-btn/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glass-btn",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "buttons/border-beam",
-    "name": "Infinite Conic Rotating Border Button",
-    "slug": "border-beam",
-    "componentName": "BorderBeamButton",
-    "category": "buttons",
-    "description": "An elegant dark button framed by a continuous rotating conic gradient border beam.",
-    "tags": [
-      "button",
-      "border-beam",
-      "rainbow",
-      "animated-border"
-    ],
-    "bestFor": [
-      "landing",
-      "hero",
-      "saas"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/border-beam/BorderBeamButton.tsx",
-      "components/buttons/border-beam/BorderBeamButton.html",
-      "components/buttons/border-beam/BorderBeamButton.css",
-      "components/buttons/border-beam/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/border-beam",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/swipe-arrow",
-    "name": "Interactive Arrow Slide CTA Button",
-    "slug": "swipe-arrow",
-    "componentName": "SwipeArrowButton",
-    "category": "buttons",
-    "description": "Action button where arrow icon slides across container on hover indicating progression.",
-    "tags": [
-      "button",
-      "arrow",
-      "slide",
-      "cta"
-    ],
-    "bestFor": [
-      "hero",
-      "landing",
-      "checkout"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/swipe-arrow/SwipeArrowButton.tsx",
-      "components/buttons/swipe-arrow/SwipeArrowButton.html",
-      "components/buttons/swipe-arrow/SwipeArrowButton.css",
-      "components/buttons/swipe-arrow/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/swipe-arrow",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/ripple",
-    "name": "Material Water Splash Ripple Button",
-    "slug": "ripple",
-    "componentName": "RippleButton",
-    "category": "buttons",
-    "description": "Material-inspired click button that sprouts a water ripple from the exact coordinate clicked.",
-    "tags": [
-      "button",
-      "ripple",
-      "material",
-      "interactive"
-    ],
-    "bestFor": [
-      "mobile",
-      "dashboard",
-      "actions"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/ripple/RippleButton.tsx",
-      "components/buttons/ripple/RippleButton.html",
-      "components/buttons/ripple/RippleButton.css",
-      "components/buttons/ripple/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/ripple",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/cyber-glitch",
-    "name": "RGB Offset Cyberpunk Glitch Button",
-    "slug": "cyber-glitch",
-    "componentName": "CyberGlitchButton",
-    "category": "buttons",
-    "description": "RGB channel split chromatic aberration glitch button for futuristic cyber aesthetics.",
-    "tags": [
-      "button",
-      "glitch",
-      "cyberpunk",
-      "chromatic"
-    ],
-    "bestFor": [
-      "gaming",
-      "crypto",
-      "developer"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/cyber-glitch/CyberGlitchButton.tsx",
-      "components/buttons/cyber-glitch/CyberGlitchButton.html",
-      "components/buttons/cyber-glitch/CyberGlitchButton.css",
-      "components/buttons/cyber-glitch/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/cyber-glitch",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "buttons/copy-snippet",
-    "name": "Haptic Clipboard Verified Button",
-    "slug": "copy-snippet",
-    "componentName": "CopySnippetButton",
-    "category": "buttons",
-    "description": "Utility button that copies token/code to clipboard and transforms into verified checkmark.",
-    "tags": [
-      "button",
-      "copy",
-      "clipboard",
-      "utility"
-    ],
-    "bestFor": [
-      "developer",
-      "docs",
-      "saas"
-    ],
-    "deps": [],
-    "files": [
-      "components/buttons/copy-snippet/CopySnippetButton.tsx",
-      "components/buttons/copy-snippet/CopySnippetButton.html",
-      "components/buttons/copy-snippet/CopySnippetButton.css",
-      "components/buttons/copy-snippet/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/copy-snippet",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
     "id": "cards/glass",
     "name": "Frosted Glassmorphism Card",
     "slug": "glass",
@@ -3550,5 +3104,515 @@
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mega-menu-nav",
     "theme": "dark-neon",
     "animation": "css-native"
+  },
+  {
+    "name": "Iridescent Flow Gradient Button",
+    "slug": "gradient",
+    "componentName": "GradientButton",
+    "category": "buttons",
+    "description": "Vibrant continuous chromatic animated gradient button with dynamic luminosity bloom and responsive hover physics.",
+    "tags": [
+      "button",
+      "gradient",
+      "iridescent",
+      "chromatic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/gradient/GradientButton.tsx",
+      "components/buttons/gradient/BaseButton.tsx",
+      "components/buttons/gradient/GradientButton.css",
+      "components/buttons/gradient/GradientButton.html",
+      "components/buttons/gradient/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient",
+    "previewPng": "/previews/gradient.png",
+    "previewGif": "/previews/gradient.gif",
+    "previewSvg": "/previews/gradient.svg"
+  },
+  {
+    "name": "Cyberpunk Pulse Neon Button",
+    "slug": "neon",
+    "componentName": "NeonButton",
+    "category": "buttons",
+    "description": "Electric neon perimeter glow with pulsing multi-stage ambient halos and high-contrast cyberpunk typography.",
+    "tags": [
+      "button",
+      "neon",
+      "cyberpunk",
+      "glow",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/neon/NeonButton.tsx",
+      "components/buttons/neon/BaseButton.tsx",
+      "components/buttons/neon/NeonButton.css",
+      "components/buttons/neon/NeonButton.html",
+      "components/buttons/neon/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon",
+    "previewPng": "/previews/neon.png",
+    "previewGif": "/previews/neon.gif",
+    "previewSvg": "/previews/neon.svg"
+  },
+  {
+    "name": "Cursor Gravity Magnetic Button",
+    "slug": "magnetic",
+    "componentName": "MagneticButton",
+    "category": "buttons",
+    "description": "Physics-based interactive cursor attractor using Framer Motion springs to dynamically pull toward pointer coordinates.",
+    "tags": [
+      "button",
+      "magnetic",
+      "cursor",
+      "spring",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/magnetic/MagneticButton.tsx",
+      "components/buttons/magnetic/BaseButton.tsx",
+      "components/buttons/magnetic/MagneticButton.css",
+      "components/buttons/magnetic/MagneticButton.html",
+      "components/buttons/magnetic/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/magnetic",
+    "previewPng": "/previews/magnetic.png",
+    "previewGif": "/previews/magnetic.gif",
+    "previewSvg": "/previews/magnetic.svg"
+  },
+  {
+    "name": "Specular Sweep Shimmer Button",
+    "slug": "shimmer",
+    "componentName": "ShimmerButton",
+    "category": "buttons",
+    "description": "High-velocity 45° specular light beam sweeping across polished dark surface with metallic border highlights.",
+    "tags": [
+      "button",
+      "shimmer",
+      "metallic",
+      "specular",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/shimmer/ShimmerButton.tsx",
+      "components/buttons/shimmer/BaseButton.tsx",
+      "components/buttons/shimmer/ShimmerButton.css",
+      "components/buttons/shimmer/ShimmerButton.html",
+      "components/buttons/shimmer/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shimmer",
+    "previewPng": "/previews/shimmer.png",
+    "previewGif": "/previews/shimmer.gif",
+    "previewSvg": "/previews/shimmer.svg"
+  },
+  {
+    "name": "Tactile Isometric 3D Push Button",
+    "slug": "3d",
+    "componentName": "ThreeDButton",
+    "category": "buttons",
+    "description": "Physical mechanical switch feel with isometric bottom ledge bevel and spring-compressed downward displacement.",
+    "tags": [
+      "button",
+      "3d",
+      "tactile",
+      "push",
+      "mechanical"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/3d/ThreeDButton.tsx",
+      "components/buttons/3d/BaseButton.tsx",
+      "components/buttons/3d/ThreeDButton.css",
+      "components/buttons/3d/ThreeDButton.html",
+      "components/buttons/3d/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/3d",
+    "previewPng": "/previews/3d.png",
+    "previewGif": "/previews/3d.gif",
+    "previewSvg": "/previews/3d.svg"
+  },
+  {
+    "name": "Prism Slide Outline Fill Button",
+    "slug": "outline-fill",
+    "componentName": "OutlineFillButton",
+    "category": "buttons",
+    "description": "Sleek geometric wireframe border that dynamically flood-fills with vibrant linear gradient curtain on hover.",
+    "tags": [
+      "button",
+      "outline",
+      "fill",
+      "hover",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/outline-fill/OutlineFillButton.tsx",
+      "components/buttons/outline-fill/BaseButton.tsx",
+      "components/buttons/outline-fill/OutlineFillButton.css",
+      "components/buttons/outline-fill/OutlineFillButton.html",
+      "components/buttons/outline-fill/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/outline-fill",
+    "previewPng": "/previews/outline-fill.png",
+    "previewGif": "/previews/outline-fill.gif",
+    "previewSvg": "/previews/outline-fill.svg"
+  },
+  {
+    "name": "Asynchronous State Loading Button",
+    "slug": "loading",
+    "componentName": "LoadingButton",
+    "category": "buttons",
+    "description": "Interactive stateful action button displaying animated SVG spinner, orbital progress ring, and state transitions.",
+    "tags": [
+      "button",
+      "loading",
+      "async",
+      "spinner",
+      "stateful"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/loading/LoadingButton.tsx",
+      "components/buttons/loading/BaseButton.tsx",
+      "components/buttons/loading/LoadingButton.css",
+      "components/buttons/loading/LoadingButton.html",
+      "components/buttons/loading/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/loading",
+    "previewPng": "/previews/loading.png",
+    "previewGif": "/previews/loading.gif",
+    "previewSvg": "/previews/loading.svg"
+  },
+  {
+    "name": "Dynamic Kinetic Icon Button",
+    "slug": "icon",
+    "componentName": "IconButton",
+    "category": "buttons",
+    "description": "Harmonious iconography with spring-loaded rotational micro-interactions and tactile scale rebound on hover.",
+    "tags": [
+      "button",
+      "icon",
+      "micro-interaction",
+      "spring",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/icon/IconButton.tsx",
+      "components/buttons/icon/BaseButton.tsx",
+      "components/buttons/icon/IconButton.css",
+      "components/buttons/icon/IconButton.html",
+      "components/buttons/icon/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/icon",
+    "previewPng": "/previews/icon.png",
+    "previewGif": "/previews/icon.gif",
+    "previewSvg": "/previews/icon.svg"
+  },
+  {
+    "name": "Developer Social Connect Button",
+    "slug": "social",
+    "componentName": "SocialButton",
+    "category": "buttons",
+    "description": "Modern developer badge button with authentic brand iconography, live star counter badge, and levitation lift.",
+    "tags": [
+      "button",
+      "social",
+      "github",
+      "badge",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/social/SocialButton.tsx",
+      "components/buttons/social/BaseButton.tsx",
+      "components/buttons/social/SocialButton.css",
+      "components/buttons/social/SocialButton.html",
+      "components/buttons/social/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/social",
+    "previewPng": "/previews/social.png",
+    "previewGif": "/previews/social.gif",
+    "previewSvg": "/previews/social.svg"
+  },
+  {
+    "name": "Frosted Refractive Glass Button",
+    "slug": "glass-btn",
+    "componentName": "GlassButton",
+    "category": "buttons",
+    "description": "Ultra-luxurious frosted glassmorphism with backdrop blur, specular border reflections, and inner lighting glow.",
+    "tags": [
+      "button",
+      "glass",
+      "glassmorphism",
+      "frosted",
+      "blur"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/glass-btn/GlassButton.tsx",
+      "components/buttons/glass-btn/BaseButton.tsx",
+      "components/buttons/glass-btn/GlassButton.css",
+      "components/buttons/glass-btn/GlassButton.html",
+      "components/buttons/glass-btn/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glass-btn",
+    "previewPng": "/previews/glass-btn.png",
+    "previewGif": "/previews/glass-btn.gif",
+    "previewSvg": "/previews/glass-btn.svg"
+  },
+  {
+    "name": "Ambient Radial Backlit Glow Button",
+    "slug": "glow",
+    "componentName": "GlowButton",
+    "category": "buttons",
+    "description": "Diffused radial background bloom that softly breathes in the dark and bursts with chromatic intensity on hover.",
+    "tags": [
+      "button",
+      "glow",
+      "ambient",
+      "backlit",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/glow/GlowButton.tsx",
+      "components/buttons/glow/BaseButton.tsx",
+      "components/buttons/glow/GlowButton.css",
+      "components/buttons/glow/GlowButton.html",
+      "components/buttons/glow/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow",
+    "previewPng": "/previews/glow.png",
+    "previewGif": "/previews/glow.gif",
+    "previewSvg": "/previews/glow.svg"
+  },
+  {
+    "name": "Ergonomic Capsule Pill Button",
+    "slug": "pill",
+    "componentName": "PillButton",
+    "category": "buttons",
+    "description": "Full border-radius ergonomic capsule with violet accent perimeter ring, refined typography, and subtle scale.",
+    "tags": [
+      "button",
+      "pill",
+      "capsule",
+      "rounded",
+      "minimal"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/pill/PillButton.tsx",
+      "components/buttons/pill/BaseButton.tsx",
+      "components/buttons/pill/PillButton.css",
+      "components/buttons/pill/PillButton.html",
+      "components/buttons/pill/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/pill",
+    "previewPng": "/previews/pill.png",
+    "previewGif": "/previews/pill.gif",
+    "previewSvg": "/previews/pill.svg"
+  },
+  {
+    "name": "Kinetic Directional Arrow Button",
+    "slug": "arrow",
+    "componentName": "ArrowButton",
+    "category": "buttons",
+    "description": "Kinetic conversion trigger with directional arrow gliding forward dynamically on hover with spring recovery.",
+    "tags": [
+      "button",
+      "arrow",
+      "cta",
+      "kinetic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/arrow/ArrowButton.tsx",
+      "components/buttons/arrow/BaseButton.tsx",
+      "components/buttons/arrow/ArrowButton.css",
+      "components/buttons/arrow/ArrowButton.html",
+      "components/buttons/arrow/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/arrow",
+    "previewPng": "/previews/arrow.png",
+    "previewGif": "/previews/arrow.gif",
+    "previewSvg": "/previews/arrow.svg"
+  },
+  {
+    "name": "Pulsing Concentric Ripple Play Button",
+    "slug": "play",
+    "componentName": "PlayButton",
+    "category": "buttons",
+    "description": "Media playback button featuring expanding concentric ripple rings and toggleable play/pause status states.",
+    "tags": [
+      "button",
+      "play",
+      "media",
+      "ripple",
+      "pulse"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/play/PlayButton.tsx",
+      "components/buttons/play/BaseButton.tsx",
+      "components/buttons/play/PlayButton.css",
+      "components/buttons/play/PlayButton.html",
+      "components/buttons/play/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/play",
+    "previewPng": "/previews/play.png",
+    "previewGif": "/previews/play.gif",
+    "previewSvg": "/previews/play.svg"
+  },
+  {
+    "name": "Kinetic Progress Download Button",
+    "slug": "download",
+    "componentName": "DownloadButton",
+    "category": "buttons",
+    "description": "Action-oriented download trigger featuring downward kinetic arrow, progress beam animation, and success checkmark.",
+    "tags": [
+      "button",
+      "download",
+      "progress",
+      "action",
+      "stateful"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/buttons/download/DownloadButton.tsx",
+      "components/buttons/download/BaseButton.tsx",
+      "components/buttons/download/DownloadButton.css",
+      "components/buttons/download/DownloadButton.html",
+      "components/buttons/download/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/download",
+    "previewPng": "/previews/download.png",
+    "previewGif": "/previews/download.gif",
+    "previewSvg": "/previews/download.svg"
   }
 ]

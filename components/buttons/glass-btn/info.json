@@ -1,24 +1,27 @@
 {
-  "name": "Frosted Acrylic Glass Button",
+  "name": "Frosted Refractive Glass Button",
   "slug": "glass-btn",
   "componentName": "GlassButton",
   "category": "buttons",
-  "description": "Frosted acrylic glass button with specular light refraction and crisp semi-transparent border.",
+  "description": "Ultra-luxurious frosted glassmorphism with backdrop blur, specular border reflections, and inner lighting glow.",
   "tags": [
     "button",
+    "glass",
     "glassmorphism",
-    "blur",
-    "minimal"
+    "frosted",
+    "blur"
   ],
   "bestFor": [
     "hero",
     "landing",
-    "portfolio"
+    "cta",
+    "interactive"
   ],
   "deps": [
     "framer-motion"
   ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glass-btn",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

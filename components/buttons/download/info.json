@@ -1,0 +1,27 @@
+{
+  "name": "Kinetic Progress Download Button",
+  "slug": "download",
+  "componentName": "DownloadButton",
+  "category": "buttons",
+  "description": "Action-oriented download trigger featuring downward kinetic arrow, progress beam animation, and success checkmark.",
+  "tags": [
+    "button",
+    "download",
+    "progress",
+    "action",
+    "stateful"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "cta",
+    "interactive"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/download",
+  "author": "R. Selva",
+  "license": "MIT",
+  "engine": "BaseButton"
+}

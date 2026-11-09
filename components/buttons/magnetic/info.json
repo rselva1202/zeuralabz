@@ -1,24 +1,27 @@
 {
-  "name": "Spring Physics Magnetic Button",
+  "name": "Cursor Gravity Magnetic Button",
   "slug": "magnetic",
   "componentName": "MagneticButton",
   "category": "buttons",
-  "description": "Interactive button that pulls towards cursor coordinates on proximity with spring physics.",
+  "description": "Physics-based interactive cursor attractor using Framer Motion springs to dynamically pull toward pointer coordinates.",
   "tags": [
     "button",
     "magnetic",
-    "physics",
-    "interactive"
+    "cursor",
+    "spring",
+    "framer-motion"
   ],
   "bestFor": [
-    "portfolio",
     "hero",
-    "landing"
+    "landing",
+    "cta",
+    "interactive"
   ],
   "deps": [
     "framer-motion"
   ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/magnetic",
   "author": "R. Selva",
-  "license": "MIT"
+  "license": "MIT",
+  "engine": "BaseButton"
 }

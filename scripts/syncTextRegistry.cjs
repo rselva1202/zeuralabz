@@ -155,3 +155,4 @@ const textComponents = [
   fs.writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf8');
   console.log(`Synced ${textItems.length} text animations in ${filePath}`);
 });
+
