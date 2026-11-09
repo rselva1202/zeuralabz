@@ -27,4 +27,5 @@ Thumbs.db
 scripts/*.bat
 scripts/deployGhPages.py
 scripts/pushMain.py
+scripts/checkRuns.py
 
