@@ -1,20 +1,27 @@
 {
-  "name": "Dynamic Crossfade Word Morph",
-  "slug": "word-swap",
-  "componentName": "WordSwapText",
+  "name": "Cinematic Fade Up Text",
+  "slug": "fade-up",
+  "componentName": "FadeUpText",
   "category": "text-animations",
-  "description": "Interactive button swapping contrasting design philosophies.",
+  "description": "Dramatic upward slide reveal through an invisible clipping plane with opacity ramping, letter-spacing expansion, and glow.",
   "tags": [
     "text",
-    "morph",
-    "swap"
+    "fade-up",
+    "cinematic",
+    "mask",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "creative"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/word-swap",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fade-up",
   "author": "R. Selva",
   "license": "MIT"
 }

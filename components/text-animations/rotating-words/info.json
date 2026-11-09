@@ -3,17 +3,21 @@
   "slug": "rotating-words",
   "componentName": "RotatingWordsText",
   "category": "text-animations",
-  "description": "Vertical flipping words cycler that dynamically swaps key marketing adjectives.",
+  "description": "Kinetic 3D perspective tumbling word carousel rotating between high-impact punchy adjectives with spring physics.",
   "tags": [
     "text",
+    "rotating",
+    "words",
+    "3d",
     "flip",
-    "rotate",
     "framer-motion"
   ],
   "bestFor": [
     "hero",
     "landing",
-    "saas"
+    "features",
+    "headlines",
+    "banner"
   ],
   "deps": [
     "framer-motion"

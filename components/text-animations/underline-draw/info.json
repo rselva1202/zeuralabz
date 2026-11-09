@@ -1,22 +1,27 @@
 {
-  "name": "Handcrafted SVG Underline Stroke",
-  "slug": "underline-draw",
-  "componentName": "UnderlineDrawText",
+  "name": "Elastic Bounce Letters",
+  "slug": "bounce-letters",
+  "componentName": "BounceLettersText",
   "category": "text-animations",
-  "description": "Hand-drawn SVG vector swoosh stroke that paints itself under emphasized words.",
+  "description": "Bold amber typography leaping along a sinusoidal trampoline wave with rhythmic elastic rebounding physics.",
   "tags": [
     "text",
-    "underline",
-    "svg",
-    "draw"
+    "bounce",
+    "elastic",
+    "wave",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "editorial",
-    "landing"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/underline-draw",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bounce-letters",
   "author": "R. Selva",
   "license": "MIT"
 }

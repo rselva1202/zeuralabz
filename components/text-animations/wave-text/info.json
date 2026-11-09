@@ -1,0 +1,27 @@
+{
+  "name": "Sinusoidal Harmonic Wave Text",
+  "slug": "wave-text",
+  "componentName": "WaveText",
+  "category": "text-animations",
+  "description": "Continuous sinusoidal undulating wave passing through individual letters like a smooth floating ribbon.",
+  "tags": [
+    "text",
+    "wave",
+    "sinusoidal",
+    "harmonic",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

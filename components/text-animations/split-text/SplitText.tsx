@@ -1,24 +1,20 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const SplitText: React.FC<{ text?: string }> = ({ text = "Make Any Website Look Pretty" }) => {
+export interface SplitTextProps extends Partial<TextEngineProps> {}
+
+export const SplitText: React.FC<SplitTextProps> = (props) => {
   return (
-    <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight flex flex-wrap gap-x-3 gap-y-1">
-      {text.split(' ').map((word, wordIndex) => (
-        <span key={wordIndex} className="inline-flex overflow-hidden">
-          {word.split('').map((char, charIndex) => (
-            <motion.span
-              key={charIndex}
-              initial={{ y: '100%', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: (wordIndex * 5 + charIndex) * 0.03, type: 'spring', stiffness: 140 }}
-              className="inline-block"
-            >
-              {char}
-            </motion.span>
-          ))}
-        </span>
-      ))}
-    </h1>
+    <TextEngine
+      type="split"
+      text="ZEURALABZ"
+      speed={1}
+      fontSize="2.5rem"
+      fontWeight="900"
+      
+      {...props}
+    />
   );
 };
+
+export default SplitText;

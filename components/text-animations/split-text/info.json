@@ -3,17 +3,21 @@
   "slug": "split-text",
   "componentName": "SplitText",
   "category": "text-animations",
-  "description": "Cinematic typography reveal where individual letters spring smoothly upward into place.",
+  "description": "Dynamic typography with individual letters staggering in with spring momentum, elastic bounce, and luminous drop-shadow.",
   "tags": [
     "text",
     "split-text",
+    "spring",
     "reveal",
-    "framer-motion"
+    "framer-motion",
+    "typography"
   ],
   "bestFor": [
     "hero",
     "landing",
-    "portfolio"
+    "features",
+    "headlines",
+    "banner"
   ],
   "deps": [
     "framer-motion"

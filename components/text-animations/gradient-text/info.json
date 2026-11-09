@@ -3,18 +3,24 @@
   "slug": "gradient-text",
   "componentName": "GradientText",
   "category": "text-animations",
-  "description": "High-visibility typography with continuous shifting multi-stop color gradient wave.",
+  "description": "Continuous multi-stop iridescent color gradient smoothly flowing across bold typography with 300% background displacement.",
   "tags": [
     "text",
     "gradient",
-    "animated-text"
+    "iridescent",
+    "chromatic",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
     "landing",
-    "saas"
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient-text",
   "author": "R. Selva",
   "license": "MIT"

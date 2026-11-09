@@ -3,19 +3,25 @@
   "slug": "counter-roll",
   "componentName": "CounterRollText",
   "category": "text-animations",
-  "description": "Animated statistical counter that spins up from 0 to target metrics smoothly.",
+  "description": "High-speed numeric odometer odometer roll counting smoothly upward with spring easing and emerald delta indicators.",
   "tags": [
     "text",
     "counter",
     "numbers",
-    "metrics"
+    "statistics",
+    "odometer",
+    "framer-motion"
   ],
   "bestFor": [
-    "saas",
-    "dashboard",
-    "landing"
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/counter-roll",
   "author": "R. Selva",
   "license": "MIT"

@@ -1,0 +1,27 @@
+{
+  "name": "Elastic Bounce Letters",
+  "slug": "bounce-letters",
+  "componentName": "BounceLettersText",
+  "category": "text-animations",
+  "description": "Bold amber typography leaping along a sinusoidal trampoline wave with rhythmic elastic rebounding physics.",
+  "tags": [
+    "text",
+    "bounce",
+    "elastic",
+    "wave",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bounce-letters",
+  "author": "R. Selva",
+  "license": "MIT"
+}

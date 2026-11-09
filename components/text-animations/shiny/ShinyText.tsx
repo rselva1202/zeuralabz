@@ -1,9 +1,21 @@
 import React from 'react';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const ShinyText: React.FC<{ text?: string }> = ({ text = "Ultra High Performance" }) => {
+export interface ShinyTextProps extends Partial<TextEngineProps> {}
+
+export const ShinyText: React.FC<ShinyTextProps> = (props) => {
   return (
-    <h2 className="text-4xl font-black bg-[linear-gradient(110deg,#71717a,45%,#ffffff,55%,#71717a)] bg-[length:250%_100%] bg-clip-text text-transparent animate-shimmer">
-      {text}
-    </h2>
+    <TextEngine
+      type="shiny"
+      text="METALLIC SHEEN"
+      speed={1}
+      fontSize="2.5rem"
+      fontWeight="900"
+      
+      {...props}
+    />
   );
 };
+
+export const Shiny = ShinyText;
+export default ShinyText;

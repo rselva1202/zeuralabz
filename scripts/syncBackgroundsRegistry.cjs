@@ -154,3 +154,4 @@ const backgrounds = [
   fs.writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf8');
   console.log(`Synced ${bgItems.length} backgrounds in ${filePath}`);
 });
+

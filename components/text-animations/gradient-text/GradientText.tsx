@@ -1,9 +1,20 @@
 import React from 'react';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const GradientText: React.FC<{ text?: string }> = ({ text = "Supercharged by AI" }) => {
+export interface GradientTextProps extends Partial<TextEngineProps> {}
+
+export const GradientText: React.FC<GradientTextProps> = (props) => {
   return (
-    <h2 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-500 bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-x">
-      {text}
-    </h2>
+    <TextEngine
+      type="gradient"
+      text="Fluid Chromatic Energy"
+      speed={1}
+      fontSize="2.5rem"
+      fontWeight="900"
+      
+      {...props}
+    />
   );
 };
+
+export default GradientText;

@@ -3,19 +3,25 @@
   "slug": "marquee-text",
   "componentName": "MarqueeTextRibbon",
   "category": "text-animations",
-  "description": "Endless horizontal scrolling brand text ticker across dark background.",
+  "description": "Infinite continuous horizontal ticker tape ribbon streaming smoothly at 60 FPS with gradient typography and dividers.",
   "tags": [
     "text",
     "marquee",
+    "ticker",
     "ribbon",
-    "infinite"
+    "infinite",
+    "framer-motion"
   ],
   "bestFor": [
+    "hero",
     "landing",
-    "footer",
-    "hero"
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/marquee-text",
   "author": "R. Selva",
   "license": "MIT"

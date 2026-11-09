@@ -3,18 +3,24 @@
   "slug": "typewriter",
   "componentName": "TypewriterText",
   "category": "text-animations",
-  "description": "Mechanical keyboard typewriter animation with dynamic word swapping and blinking cursor.",
+  "description": "Terminal mechanical typing cadence with blinking neon cyan cursor, variable typing speed, and smooth backspace cycling.",
   "tags": [
     "text",
     "typewriter",
-    "terminal"
+    "terminal",
+    "coding",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "developer",
-    "portfolio"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/typewriter",
   "author": "R. Selva",
   "license": "MIT"

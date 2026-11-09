@@ -1,21 +1,28 @@
 {
-  "name": "Atmospheric Pulse Glowing Headline",
-  "slug": "glow-headline",
-  "componentName": "GlowingHeadlineText",
+  "name": "High-Voltage Neon Text",
+  "slug": "neon-text",
+  "componentName": "NeonText",
   "category": "text-animations",
-  "description": "Subtle atmospheric glow breathing effect pulsing behind high-tech header text.",
+  "description": "Atmospheric gas-tube neon sign typography with multi-stage radiant glow halos, electric brightness flickers, and cyan intensity.",
   "tags": [
     "text",
+    "neon",
     "glow",
-    "pulse",
-    "gradient"
+    "electric",
+    "cyber",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "landing"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow-headline",
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon-text",
   "author": "R. Selva",
   "license": "MIT"
 }

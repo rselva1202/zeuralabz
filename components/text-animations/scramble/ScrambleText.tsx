@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const ScrambleText: React.FC<{ text?: string }> = ({ text = "INITIALIZE_SYSTEM" }) => {
-  const [displayText, setDisplayText] = useState(text);
-  const chars = "!<>-_\\/[]{}—=+*^?#________01";
+export interface ScrambleTextProps extends Partial<TextEngineProps> {}
 
-  const scramble = () => {
-    let iteration = 0;
-    const interval = setInterval(() => {
-      setDisplayText((prev) =>
-        text.split("").map((letter, index) => {
-          if (index < iteration) return text[index];
-          return chars[Math.floor(Math.random() * chars.length)];
-        }).join("")
-      );
-      if (iteration >= text.length) clearInterval(interval);
-      iteration += 1 / 2;
-    }, 30);
-  };
-
+export const ScrambleText: React.FC<ScrambleTextProps> = (props) => {
   return (
-    <h3 onMouseEnter={scramble} className="font-mono text-3xl font-bold text-emerald-400 cursor-pointer select-none">
-      {displayText}
-    </h3>
+    <TextEngine
+      type="scramble"
+      text="SYSTEM_OVERRIDE_01"
+      speed={1}
+      fontSize="1.85rem"
+      fontWeight="900"
+      
+      {...props}
+    />
   );
 };
+
+export const Scramble = ScrambleText;
+export default ScrambleText;

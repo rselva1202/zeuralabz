@@ -1,0 +1,27 @@
+{
+  "name": "Cinematic Fade Up Text",
+  "slug": "fade-up",
+  "componentName": "FadeUpText",
+  "category": "text-animations",
+  "description": "Dramatic upward slide reveal through an invisible clipping plane with opacity ramping, letter-spacing expansion, and glow.",
+  "tags": [
+    "text",
+    "fade-up",
+    "cinematic",
+    "mask",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fade-up",
+  "author": "R. Selva",
+  "license": "MIT"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Chromatic Aberration RGB Glitch Text",
+  "slug": "glitch",
+  "componentName": "GlitchText",
+  "category": "text-animations",
+  "description": "High-voltage cyberpunk glitch with split cyan/magenta chromatic aberration, horizontal micro-shearing, and digital jitter.",
+  "tags": [
+    "text",
+    "glitch",
+    "cyberpunk",
+    "rgb-split",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glitch",
+  "author": "R. Selva",
+  "license": "MIT"
+}

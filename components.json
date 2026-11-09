@@ -495,17 +495,21 @@
     "slug": "split-text",
     "componentName": "SplitText",
     "category": "text-animations",
-    "description": "Cinematic typography reveal where individual letters spring smoothly upward into place.",
+    "description": "Dynamic typography with individual letters staggering in with spring momentum, elastic bounce, and luminous drop-shadow.",
     "tags": [
       "text",
       "split-text",
+      "spring",
       "reveal",
-      "framer-motion"
+      "framer-motion",
+      "typography"
     ],
     "bestFor": [
       "hero",
       "landing",
-      "portfolio"
+      "features",
+      "headlines",
+      "banner"
     ],
     "deps": [
       "framer-motion"
@@ -526,18 +530,24 @@
     "slug": "typewriter",
     "componentName": "TypewriterText",
     "category": "text-animations",
-    "description": "Mechanical keyboard typewriter animation with dynamic word swapping and blinking cursor.",
+    "description": "Terminal mechanical typing cadence with blinking neon cyan cursor, variable typing speed, and smooth backspace cycling.",
     "tags": [
       "text",
       "typewriter",
-      "terminal"
+      "terminal",
+      "coding",
+      "framer-motion"
     ],
     "bestFor": [
       "hero",
-      "developer",
-      "portfolio"
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/typewriter/TypewriterText.tsx",
       "components/text-animations/typewriter/TypewriterText.html",
@@ -546,7 +556,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/typewriter",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
     "id": "text-animations/gradient-text",
@@ -554,18 +564,24 @@
     "slug": "gradient-text",
     "componentName": "GradientText",
     "category": "text-animations",
-    "description": "High-visibility typography with continuous shifting multi-stop color gradient wave.",
+    "description": "Continuous multi-stop iridescent color gradient smoothly flowing across bold typography with 300% background displacement.",
     "tags": [
       "text",
       "gradient",
-      "animated-text"
+      "iridescent",
+      "chromatic",
+      "framer-motion"
     ],
     "bestFor": [
       "hero",
       "landing",
-      "saas"
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/gradient-text/GradientText.tsx",
       "components/text-animations/gradient-text/GradientText.html",
@@ -574,7 +590,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/gradient-text",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
     "id": "text-animations/blur-text",
@@ -582,17 +598,20 @@
     "slug": "blur-text",
     "componentName": "BlurText",
     "category": "text-animations",
-    "description": "Words emerge from deep gaussian blur into crisp sharp focus sequentially.",
+    "description": "Cinematic typography emerging sequentially from heavy 20px Gaussian optical blur to razor-sharp 4K clarity.",
     "tags": [
       "text",
       "blur",
-      "fade-in",
+      "reveal",
+      "cinematic",
       "framer-motion"
     ],
     "bestFor": [
       "hero",
-      "editorial",
-      "portfolio"
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
     "deps": [
       "framer-motion"
@@ -613,19 +632,25 @@
     "slug": "scramble",
     "componentName": "ScrambleText",
     "category": "text-animations",
-    "description": "Text that rapidly decodes from random binary/hex digits into clear characters on hover.",
+    "description": "Cyberpunk cryptographic decoding effect cycling through high-frequency matrix glyphs and resolving left-to-right in glowing emerald.",
     "tags": [
       "text",
-      "matrix",
       "scramble",
-      "decoder"
+      "matrix",
+      "cyberpunk",
+      "decrypt",
+      "framer-motion"
     ],
     "bestFor": [
-      "developer",
-      "cyberpunk",
-      "saas"
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/scramble/ScrambleText.tsx",
       "components/text-animations/scramble/ScrambleText.html",
@@ -634,7 +659,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/scramble",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
     "id": "text-animations/shiny",
@@ -642,19 +667,25 @@
     "slug": "shiny",
     "componentName": "ShinyText",
     "category": "text-animations",
-    "description": "Smooth reflective light beam that constantly travels across high-contrast typography.",
+    "description": "Angled high-luminance specular light beam sweeping across metallic typography with continuous specular glint.",
     "tags": [
       "text",
-      "shimmer",
       "shiny",
-      "gradient"
+      "shimmer",
+      "metallic",
+      "light-beam",
+      "framer-motion"
     ],
     "bestFor": [
       "hero",
-      "cta",
-      "landing"
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/shiny/ShinyText.tsx",
       "components/text-animations/shiny/ShinyText.html",
@@ -663,7 +694,7 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shiny",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
     "id": "text-animations/rotating-words",
@@ -671,17 +702,21 @@
     "slug": "rotating-words",
     "componentName": "RotatingWordsText",
     "category": "text-animations",
-    "description": "Vertical flipping words cycler that dynamically swaps key marketing adjectives.",
+    "description": "Kinetic 3D perspective tumbling word carousel rotating between high-impact punchy adjectives with spring physics.",
     "tags": [
       "text",
+      "rotating",
+      "words",
+      "3d",
       "flip",
-      "rotate",
       "framer-motion"
     ],
     "bestFor": [
       "hero",
       "landing",
-      "saas"
+      "features",
+      "headlines",
+      "banner"
     ],
     "deps": [
       "framer-motion"
@@ -697,84 +732,30 @@
     "animation": "framer-motion"
   },
   {
-    "id": "text-animations/wave-motion",
-    "name": "Sinusoidal Stagger Wave Text",
-    "slug": "wave-motion",
-    "componentName": "WaveMotionText",
-    "category": "text-animations",
-    "description": "Letters bounce in a sinusoidal wave harmonic when mouse hovers over the sentence.",
-    "tags": [
-      "text",
-      "wave",
-      "bounce",
-      "framer-motion"
-    ],
-    "bestFor": [
-      "portfolio",
-      "creative",
-      "header"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/text-animations/wave-motion/WaveMotionText.tsx",
-      "components/text-animations/wave-motion/WaveMotionText.html",
-      "components/text-animations/wave-motion/WaveMotionText.css",
-      "components/text-animations/wave-motion/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-motion",
-    "theme": "dark-neon",
-    "animation": "framer-motion"
-  },
-  {
-    "id": "text-animations/glitch-text",
-    "name": "Chromatic Aberration RGB Glitch Text",
-    "slug": "glitch-text",
-    "componentName": "GlitchText",
-    "category": "text-animations",
-    "description": "Split RGB neon layers twitching on hover to create a cyberpunk video distortion.",
-    "tags": [
-      "text",
-      "glitch",
-      "cyberpunk",
-      "chromatic"
-    ],
-    "bestFor": [
-      "gaming",
-      "developer",
-      "crypto"
-    ],
-    "deps": [],
-    "files": [
-      "components/text-animations/glitch-text/GlitchText.tsx",
-      "components/text-animations/glitch-text/GlitchText.html",
-      "components/text-animations/glitch-text/GlitchText.css",
-      "components/text-animations/glitch-text/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glitch-text",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
     "id": "text-animations/counter-roll",
     "name": "Statistical Spring Counter Numbers",
     "slug": "counter-roll",
     "componentName": "CounterRollText",
     "category": "text-animations",
-    "description": "Animated statistical counter that spins up from 0 to target metrics smoothly.",
+    "description": "High-speed numeric odometer odometer roll counting smoothly upward with spring easing and emerald delta indicators.",
     "tags": [
       "text",
       "counter",
       "numbers",
-      "metrics"
+      "statistics",
+      "odometer",
+      "framer-motion"
     ],
     "bestFor": [
-      "saas",
-      "dashboard",
-      "landing"
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/counter-roll/CounterRollText.tsx",
       "components/text-animations/counter-roll/CounterRollText.html",
@@ -783,63 +764,212 @@
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/counter-roll",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
-    "id": "text-animations/underline-draw",
-    "name": "Handcrafted SVG Underline Stroke",
-    "slug": "underline-draw",
-    "componentName": "UnderlineDrawText",
+    "id": "text-animations/bounce-letters",
+    "name": "Elastic Bounce Letters",
+    "slug": "bounce-letters",
+    "componentName": "BounceLettersText",
     "category": "text-animations",
-    "description": "Hand-drawn SVG vector swoosh stroke that paints itself under emphasized words.",
+    "description": "Bold amber typography leaping along a sinusoidal trampoline wave with rhythmic elastic rebounding physics.",
     "tags": [
       "text",
-      "underline",
-      "svg",
-      "draw"
+      "bounce",
+      "elastic",
+      "wave",
+      "framer-motion"
     ],
     "bestFor": [
       "hero",
-      "editorial",
-      "landing"
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
-      "components/text-animations/underline-draw/UnderlineDrawText.tsx",
-      "components/text-animations/underline-draw/UnderlineDrawText.html",
-      "components/text-animations/underline-draw/UnderlineDrawText.css",
-      "components/text-animations/underline-draw/info.json"
+      "components/text-animations/bounce-letters/BounceLettersText.tsx",
+      "components/text-animations/bounce-letters/BounceLettersText.html",
+      "components/text-animations/bounce-letters/BounceLettersText.css",
+      "components/text-animations/bounce-letters/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/underline-draw",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/bounce-letters",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
   },
   {
-    "id": "text-animations/word-swap",
-    "name": "Dynamic Crossfade Word Morph",
-    "slug": "word-swap",
-    "componentName": "WordSwapText",
+    "id": "text-animations/fade-up",
+    "name": "Cinematic Fade Up Text",
+    "slug": "fade-up",
+    "componentName": "FadeUpText",
     "category": "text-animations",
-    "description": "Interactive button swapping contrasting design philosophies.",
+    "description": "Dramatic upward slide reveal through an invisible clipping plane with opacity ramping, letter-spacing expansion, and glow.",
     "tags": [
       "text",
-      "morph",
-      "swap"
+      "fade-up",
+      "cinematic",
+      "mask",
+      "framer-motion"
     ],
     "bestFor": [
       "hero",
-      "creative"
+      "landing",
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
-      "components/text-animations/word-swap/WordSwapText.tsx",
-      "components/text-animations/word-swap/WordSwapText.html",
-      "components/text-animations/word-swap/WordSwapText.css",
-      "components/text-animations/word-swap/info.json"
+      "components/text-animations/fade-up/FadeUpText.tsx",
+      "components/text-animations/fade-up/FadeUpText.html",
+      "components/text-animations/fade-up/FadeUpText.css",
+      "components/text-animations/fade-up/info.json"
     ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/word-swap",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/fade-up",
     "theme": "dark-neon",
-    "animation": "css-native"
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/glitch",
+    "name": "Chromatic Aberration RGB Glitch Text",
+    "slug": "glitch",
+    "componentName": "GlitchText",
+    "category": "text-animations",
+    "description": "High-voltage cyberpunk glitch with split cyan/magenta chromatic aberration, horizontal micro-shearing, and digital jitter.",
+    "tags": [
+      "text",
+      "glitch",
+      "cyberpunk",
+      "rgb-split",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/glitch/GlitchText.tsx",
+      "components/text-animations/glitch/GlitchText.html",
+      "components/text-animations/glitch/GlitchText.css",
+      "components/text-animations/glitch/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glitch",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/neon-text",
+    "name": "High-Voltage Neon Text",
+    "slug": "neon-text",
+    "componentName": "NeonText",
+    "category": "text-animations",
+    "description": "Atmospheric gas-tube neon sign typography with multi-stage radiant glow halos, electric brightness flickers, and cyan intensity.",
+    "tags": [
+      "text",
+      "neon",
+      "glow",
+      "electric",
+      "cyber",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/neon-text/NeonText.tsx",
+      "components/text-animations/neon-text/NeonText.html",
+      "components/text-animations/neon-text/NeonText.css",
+      "components/text-animations/neon-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/neon-text",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/wave-text",
+    "name": "Sinusoidal Harmonic Wave Text",
+    "slug": "wave-text",
+    "componentName": "WaveText",
+    "category": "text-animations",
+    "description": "Continuous sinusoidal undulating wave passing through individual letters like a smooth floating ribbon.",
+    "tags": [
+      "text",
+      "wave",
+      "sinusoidal",
+      "harmonic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/wave-text/WaveText.tsx",
+      "components/text-animations/wave-text/WaveText.html",
+      "components/text-animations/wave-text/WaveText.css",
+      "components/text-animations/wave-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-text",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
+  },
+  {
+    "id": "text-animations/reveal-text",
+    "name": "Color Bar Curtained Mask Reveal",
+    "slug": "reveal-text",
+    "componentName": "RevealText",
+    "category": "text-animations",
+    "description": "High-fashion accent color curtain sweeping horizontally across bold typography, unveiling crisp text from darkness.",
+    "tags": [
+      "text",
+      "reveal",
+      "curtain",
+      "mask",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "deps": [
+      "framer-motion"
+    ],
+    "files": [
+      "components/text-animations/reveal-text/RevealText.tsx",
+      "components/text-animations/reveal-text/RevealText.html",
+      "components/text-animations/reveal-text/RevealText.css",
+      "components/text-animations/reveal-text/info.json"
+    ],
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/reveal-text",
+    "theme": "dark-neon",
+    "animation": "framer-motion"
   },
   {
     "id": "text-animations/marquee-text",
@@ -847,19 +977,25 @@
     "slug": "marquee-text",
     "componentName": "MarqueeTextRibbon",
     "category": "text-animations",
-    "description": "Endless horizontal scrolling brand text ticker across dark background.",
+    "description": "Infinite continuous horizontal ticker tape ribbon streaming smoothly at 60 FPS with gradient typography and dividers.",
     "tags": [
       "text",
       "marquee",
+      "ticker",
       "ribbon",
-      "infinite"
+      "infinite",
+      "framer-motion"
     ],
     "bestFor": [
+      "hero",
       "landing",
-      "footer",
-      "hero"
+      "features",
+      "headlines",
+      "banner"
     ],
-    "deps": [],
+    "deps": [
+      "framer-motion"
+    ],
     "files": [
       "components/text-animations/marquee-text/MarqueeTextRibbon.tsx",
       "components/text-animations/marquee-text/MarqueeTextRibbon.html",
@@ -867,64 +1003,6 @@
       "components/text-animations/marquee-text/info.json"
     ],
     "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/marquee-text",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "text-animations/glow-headline",
-    "name": "Atmospheric Pulse Glowing Headline",
-    "slug": "glow-headline",
-    "componentName": "GlowingHeadlineText",
-    "category": "text-animations",
-    "description": "Subtle atmospheric glow breathing effect pulsing behind high-tech header text.",
-    "tags": [
-      "text",
-      "glow",
-      "pulse",
-      "gradient"
-    ],
-    "bestFor": [
-      "hero",
-      "landing"
-    ],
-    "deps": [],
-    "files": [
-      "components/text-animations/glow-headline/GlowingHeadlineText.tsx",
-      "components/text-animations/glow-headline/GlowingHeadlineText.html",
-      "components/text-animations/glow-headline/GlowingHeadlineText.css",
-      "components/text-animations/glow-headline/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/glow-headline",
-    "theme": "dark-neon",
-    "animation": "css-native"
-  },
-  {
-    "id": "text-animations/mask-reveal",
-    "name": "Curtained Mask Slide Reveal",
-    "slug": "mask-reveal",
-    "componentName": "MaskRevealText",
-    "category": "text-animations",
-    "description": "Vertical curtain slide unmasking typography cleanly from top to bottom.",
-    "tags": [
-      "text",
-      "mask",
-      "slide",
-      "reveal"
-    ],
-    "bestFor": [
-      "hero",
-      "editorial"
-    ],
-    "deps": [
-      "framer-motion"
-    ],
-    "files": [
-      "components/text-animations/mask-reveal/MaskRevealText.tsx",
-      "components/text-animations/mask-reveal/MaskRevealText.html",
-      "components/text-animations/mask-reveal/MaskRevealText.css",
-      "components/text-animations/mask-reveal/info.json"
-    ],
-    "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mask-reveal",
     "theme": "dark-neon",
     "animation": "framer-motion"
   },

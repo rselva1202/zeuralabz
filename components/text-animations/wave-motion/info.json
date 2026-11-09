@@ -1,24 +1,27 @@
 {
-  "name": "Sinusoidal Stagger Wave Text",
-  "slug": "wave-motion",
-  "componentName": "WaveMotionText",
+  "name": "Sinusoidal Harmonic Wave Text",
+  "slug": "wave-text",
+  "componentName": "WaveText",
   "category": "text-animations",
-  "description": "Letters bounce in a sinusoidal wave harmonic when mouse hovers over the sentence.",
+  "description": "Continuous sinusoidal undulating wave passing through individual letters like a smooth floating ribbon.",
   "tags": [
     "text",
     "wave",
-    "bounce",
+    "sinusoidal",
+    "harmonic",
     "framer-motion"
   ],
   "bestFor": [
-    "portfolio",
-    "creative",
-    "header"
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
   "deps": [
     "framer-motion"
   ],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-motion",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/wave-text",
   "author": "R. Selva",
   "license": "MIT"
 }

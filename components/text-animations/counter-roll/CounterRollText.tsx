@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const CounterRollText: React.FC<{ target?: number; suffix?: string }> = ({ target = 99.9, suffix = "%" }) => {
-  const [count, setCount] = useState(0);
+export interface CounterRollTextProps extends Partial<TextEngineProps> {}
 
-  useEffect(() => {
-    let start = 0;
-    const duration = 1200;
-    const stepTime = 20;
-    const steps = duration / stepTime;
-    const increment = target / steps;
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(parseFloat(start.toFixed(1)));
-      }
-    }, stepTime);
-    return () => clearInterval(timer);
-  }, [target]);
-
-  return <div className="font-mono text-5xl font-black text-emerald-400">{count}{suffix}</div>;
+export const CounterRollText: React.FC<CounterRollTextProps> = (props) => {
+  return (
+    <TextEngine
+      type="counter"
+      text="9,840"
+      speed={1}
+      fontSize="2.75rem"
+      fontWeight="900"
+      targetNumber={9840}
+      {...props}
+    />
+  );
 };
+
+export const CounterRoll = CounterRollText;
+export default CounterRollText;

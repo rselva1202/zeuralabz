@@ -1,23 +1,27 @@
 {
-  "name": "Curtained Mask Slide Reveal",
-  "slug": "mask-reveal",
-  "componentName": "MaskRevealText",
+  "name": "Color Bar Curtained Mask Reveal",
+  "slug": "reveal-text",
+  "componentName": "RevealText",
   "category": "text-animations",
-  "description": "Vertical curtain slide unmasking typography cleanly from top to bottom.",
+  "description": "High-fashion accent color curtain sweeping horizontally across bold typography, unveiling crisp text from darkness.",
   "tags": [
     "text",
+    "reveal",
+    "curtain",
     "mask",
-    "slide",
-    "reveal"
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "editorial"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
   "deps": [
     "framer-motion"
   ],
-  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/mask-reveal",
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/reveal-text",
   "author": "R. Selva",
   "license": "MIT"
 }

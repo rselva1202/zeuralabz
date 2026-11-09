@@ -1,16 +1,21 @@
 import React from 'react';
+import { TextEngine, type TextEngineProps } from './TextEngine';
 
-export const MarqueeTextRibbon: React.FC<{ words?: string[] }> = ({ words = ["ZEURA", "TAILWIND", "REACT", "FRAMER", "GSAP"] }) => {
+export interface MarqueeTextRibbonProps extends Partial<TextEngineProps> {}
+
+export const MarqueeTextRibbon: React.FC<MarqueeTextRibbonProps> = (props) => {
   return (
-    <div className="w-full overflow-hidden bg-zinc-950 py-3 border-y border-zinc-900">
-      <div className="flex gap-8 whitespace-nowrap animate-marquee font-mono text-sm font-bold text-zinc-400 tracking-widest">
-        {words.concat(words).map((w, i) => (
-          <span key={i} className="flex items-center gap-3">
-            <span>{w}</span>
-            <span className="text-emerald-400">✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
+    <TextEngine
+      type="marquee"
+      text="ZEURALABZ • DESIGN MATRIX"
+      speed={1}
+      fontSize="2rem"
+      fontWeight="900"
+      
+      {...props}
+    />
   );
 };
+
+export const MarqueeText = MarqueeTextRibbon;
+export default MarqueeTextRibbon;

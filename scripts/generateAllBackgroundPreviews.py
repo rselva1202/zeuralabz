@@ -262,3 +262,4 @@ for bg in backgrounds:
     print(f"Generated {bg} previews (PNG + GIF) for dirs: {dirs}")
 
 print("All 15 background previews generated successfully!")
+

@@ -3,17 +3,20 @@
   "slug": "blur-text",
   "componentName": "BlurText",
   "category": "text-animations",
-  "description": "Words emerge from deep gaussian blur into crisp sharp focus sequentially.",
+  "description": "Cinematic typography emerging sequentially from heavy 20px Gaussian optical blur to razor-sharp 4K clarity.",
   "tags": [
     "text",
     "blur",
-    "fade-in",
+    "reveal",
+    "cinematic",
     "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "editorial",
-    "portfolio"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
   "deps": [
     "framer-motion"

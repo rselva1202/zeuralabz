@@ -1,0 +1,27 @@
+{
+  "name": "Color Bar Curtained Mask Reveal",
+  "slug": "reveal-text",
+  "componentName": "RevealText",
+  "category": "text-animations",
+  "description": "High-fashion accent color curtain sweeping horizontally across bold typography, unveiling crisp text from darkness.",
+  "tags": [
+    "text",
+    "reveal",
+    "curtain",
+    "mask",
+    "framer-motion"
+  ],
+  "bestFor": [
+    "hero",
+    "landing",
+    "features",
+    "headlines",
+    "banner"
+  ],
+  "deps": [
+    "framer-motion"
+  ],
+  "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/reveal-text",
+  "author": "R. Selva",
+  "license": "MIT"
+}

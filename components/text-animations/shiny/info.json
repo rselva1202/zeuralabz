@@ -3,19 +3,25 @@
   "slug": "shiny",
   "componentName": "ShinyText",
   "category": "text-animations",
-  "description": "Smooth reflective light beam that constantly travels across high-contrast typography.",
+  "description": "Angled high-luminance specular light beam sweeping across metallic typography with continuous specular glint.",
   "tags": [
     "text",
-    "shimmer",
     "shiny",
-    "gradient"
+    "shimmer",
+    "metallic",
+    "light-beam",
+    "framer-motion"
   ],
   "bestFor": [
     "hero",
-    "cta",
-    "landing"
+    "landing",
+    "features",
+    "headlines",
+    "banner"
   ],
-  "deps": [],
+  "deps": [
+    "framer-motion"
+  ],
   "previewUrl": "https://rselva1202.github.io/zeuralabz/preview/shiny",
   "author": "R. Selva",
   "license": "MIT"

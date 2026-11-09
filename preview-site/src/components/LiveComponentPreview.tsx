@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CanvasEngine, BackgroundType } from './engine/CanvasEngine';
+import { TextEngine, TextAnimationType } from './engine/TextEngine';
 
 interface LiveComponentPreviewProps {
   slug: string;
@@ -76,75 +77,42 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({ slug
     );
   }
 
-  // ==================== TEXT ANIMATIONS ====================
+  // ==================== TEXT ANIMATIONS (Text Engine) ====================
   if (category === 'text-animations') {
-    if (slug === 'split-text') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <div className="flex gap-1">
-            {"ZEURALABZ".split('').map((char, i) => (
-              <span
-                key={i}
-                className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 inline-block animate-bounce"
-                style={{ animationDelay: `${i * 120}ms`, animationDuration: '1.4s' }}
-              >
-                {char}
-              </span>
-            ))}
-          </div>
-        </div>
-      );
-    }
-    if (slug === 'typewriter') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4 font-mono">
-          <span className="text-sm text-cyan-400 font-bold">
-            {fullText.slice(0, typedIndex)}
-            <span className="animate-pulse text-white">|</span>
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'gradient-text') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <span className="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 animate-pulse">
-            Fluid Radiance
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'shiny') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
-          <span className="relative text-xl font-bold text-zinc-400 overflow-hidden">
-            Luminescent Sheen
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent animate-[shimmer_2s_infinite] -skew-x-12" />
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'rotating-words' || slug === 'word-swap') {
-      return (
-        <div className="w-full h-full bg-black flex items-center justify-center p-4 font-mono">
-          <span className="text-xs text-zinc-500 mr-2">Architecture:</span>
-          <span className="text-sm font-bold text-indigo-400 px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800 transition-all duration-300">
-            {words[activeWordIndex]}
-          </span>
-        </div>
-      );
-    }
-    if (slug === 'counter-roll') {
-      return (
-        <div className="w-full h-full bg-black flex flex-col items-center justify-center p-4">
-          <span className="text-2xl font-black font-mono text-emerald-400">{counter.toLocaleString()}+</span>
-          <span className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1">Live Telemetry</span>
-        </div>
-      );
-    }
+    const validTextMap: Record<string, { type: TextAnimationType; text?: string; fontSize?: string }> = {
+      'split-text': { type: 'split', text: 'ZEURALABZ', fontSize: '2.4rem' },
+      typewriter: { type: 'typewriter', text: 'Next-Gen UI Systems', fontSize: '1.75rem' },
+      'gradient-text': { type: 'gradient', text: 'Fluid Chromatic Energy', fontSize: '2rem' },
+      'blur-text': { type: 'blur', text: 'Crystalline Focus', fontSize: '2.2rem' },
+      scramble: { type: 'scramble', text: 'SYSTEM_OVERRIDE_01', fontSize: '1.65rem' },
+      shiny: { type: 'shiny', text: 'METALLIC SHEEN', fontSize: '2.2rem' },
+      'rotating-words': { type: 'rotating', text: 'FUTURISTIC', fontSize: '2.2rem' },
+      'counter-roll': { type: 'counter', fontSize: '2.5rem' },
+      'bounce-letters': { type: 'bounce', text: 'BOUNCING ENERGY', fontSize: '2rem' },
+      'underline-draw': { type: 'bounce', text: 'BOUNCING ENERGY', fontSize: '2rem' },
+      'fade-up': { type: 'fade-up', text: 'CINEMATIC SCALE', fontSize: '2.2rem' },
+      'word-swap': { type: 'fade-up', text: 'CINEMATIC SCALE', fontSize: '2.2rem' },
+      glitch: { type: 'glitch', text: 'CYBER_ANOMALY', fontSize: '2.2rem' },
+      'glitch-text': { type: 'glitch', text: 'CYBER_ANOMALY', fontSize: '2.2rem' },
+      'neon-text': { type: 'neon', text: 'ELECTRIC GLOW', fontSize: '2.2rem' },
+      'glow-headline': { type: 'neon', text: 'ELECTRIC GLOW', fontSize: '2.2rem' },
+      'wave-text': { type: 'wave', text: 'OCEANIC RHYTHM', fontSize: '2rem' },
+      'wave-motion': { type: 'wave', text: 'OCEANIC RHYTHM', fontSize: '2rem' },
+      'reveal-text': { type: 'reveal', text: 'UNVEILED BEAUTY', fontSize: '2.2rem' },
+      'mask-reveal': { type: 'reveal', text: 'UNVEILED BEAUTY', fontSize: '2.2rem' },
+      'marquee-text': { type: 'marquee', text: 'ZEURALABZ • DESIGN MATRIX', fontSize: '1.75rem' },
+    };
+
+    const cfg = validTextMap[slug] || { type: 'split', text: name, fontSize: '2rem' };
+
     return (
-      <div className="w-full h-full bg-zinc-950 flex items-center justify-center p-4">
-        <span className="text-sm font-bold text-zinc-200 tracking-wide">{name}</span>
+      <div className="relative w-full h-full overflow-hidden">
+        <TextEngine
+          type={cfg.type}
+          text={cfg.text}
+          fontSize={cfg.fontSize}
+          speed={1.0}
+        />
       </div>
     );
   }
