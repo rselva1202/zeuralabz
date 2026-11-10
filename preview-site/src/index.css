@@ -8,19 +8,33 @@
   --color-neo-bg: #0E0E0E;
   --color-neo-surface: #1A1A1A;
   --color-neo-dark: #111111;
-  --color-neo-red: #E11D48;
-  --color-neo-red-bright: #FF2B2B;
-  --color-neo-red-deep: #9F1239;
-  --color-neo-pink: #FF90E8;
-  --color-neo-blue: #7FBCFF;
-  --color-neo-green: #A3E635;
-  --color-neo-orange: #C2410C;
-  --color-neo-purple: #B388FF;
-  --color-neo-cyan: #67E8F9;
-  --color-neo-lime: #BEF264;
+  --color-neo-blue: #2563EB;
+  --color-neo-blue-bright: #3B82F6;
+  --color-neo-blue-deep: #1D4ED8;
+  --color-neo-grey: #CCCCCC;
 }
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre, code {
+    max-width: 100%;
+  }
+
   body {
     background-color: #0E0E0E;
     color: #FFFFFF;
@@ -59,51 +73,39 @@
   );
 }
 
-/* Coloured Hard Neo Shadows (Visible on Dark Background) */
+/* Coloured Hard Neo Shadows (Electric Blue on Dark Background) */
 .neo-shadow-sm {
-  box-shadow: 3px 3px 0px #E11D48;
+  box-shadow: 3px 3px 0px #2563EB;
 }
 
 .neo-shadow {
-  box-shadow: 4px 4px 0px #E11D48;
+  box-shadow: 4px 4px 0px #2563EB;
 }
 
 .neo-shadow-md {
-  box-shadow: 6px 6px 0px #E11D48;
+  box-shadow: 6px 6px 0px #2563EB;
 }
 
 .neo-shadow-lg {
-  box-shadow: 8px 8px 0px #FF2B2B;
+  box-shadow: 8px 8px 0px #3B82F6;
 }
 
 .neo-shadow-xl {
-  box-shadow: 12px 12px 0px #E11D48;
+  box-shadow: 12px 12px 0px #2563EB;
 }
 
-.neo-shadow-pink {
-  box-shadow: 4px 4px 0px #FF90E8;
+.neo-shadow-white {
+  box-shadow: 4px 4px 0px #FFFFFF;
 }
 
-.neo-shadow-pink-md {
-  box-shadow: 6px 6px 0px #FF90E8;
+.neo-shadow-white-md {
+  box-shadow: 6px 6px 0px #FFFFFF;
 }
 
-.neo-shadow-pink-lg {
-  box-shadow: 8px 8px 0px #FF90E8;
-}
-
-.neo-shadow-blue {
-  box-shadow: 4px 4px 0px #7FBCFF;
-}
-
-.neo-shadow-blue-md {
-  box-shadow: 6px 6px 0px #7FBCFF;
-}
-
-/* Neo Button Physics with 3px White Border & Crimson Red Hard Shadow */
+/* Neo Button Physics with 3px White Border & Electric Blue Hard Shadow */
 .neo-btn {
   border: 3px solid #FFFFFF;
-  box-shadow: 4px 4px 0px #E11D48;
+  box-shadow: 4px 4px 0px #2563EB;
   font-weight: 700;
   text-transform: uppercase;
   transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
@@ -111,7 +113,7 @@
 
 .neo-btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #FF2B2B;
+  box-shadow: 6px 6px 0px #3B82F6;
 }
 
 .neo-btn:active {
@@ -119,10 +121,10 @@
   box-shadow: 0px 0px 0px transparent;
 }
 
-/* Neo Card Physics with 3px White Border & 6px Crimson Red Hard Shadow */
+/* Neo Card Physics with 3px White Border & 6px Electric Blue Hard Shadow */
 .neo-card {
   border: 3px solid #FFFFFF;
-  box-shadow: 6px 6px 0px #E11D48;
+  box-shadow: 6px 6px 0px #2563EB;
   background-color: #1A1A1A;
   border-radius: 8px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -130,22 +132,22 @@
 
 .neo-card:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px #FF2B2B;
+  box-shadow: 8px 8px 0px #3B82F6;
 }
 
-/* Custom dark scrollbars */
+/* Custom dark scrollbars with Electric Blue accent */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #111111;
-  border-left: 3px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E11D48;
+  background: #2563EB;
   border: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF2B2B;
+  background: #3B82F6;
 }

@@ -5,10 +5,10 @@ def generate_favicons():
     public_dir = r"D:\MY PROJECTS\ZEURALABZ\preview-site\public"
     os.makedirs(public_dir, exist_ok=True)
 
-    # 1. Generate SVG - Crimson Red #E11D48 with White "Z"
+    # 1. Generate SVG - Electric Blue #2563EB with White "Z"
     svg_content = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Neo-Brutalist Crimson Red Background with Solid Border -->
-  <rect x="3" y="3" width="58" height="58" fill="#E11D48" stroke="#FFFFFF" stroke-width="5" rx="0" />
+  <!-- Neo-Brutalist Electric Blue Background with Solid White Border -->
+  <rect x="3" y="3" width="58" height="58" fill="#2563EB" stroke="#FFFFFF" stroke-width="5" rx="0" />
   <!-- Bold Geometric "Z" Character in Pure White -->
   <polygon points="14,14 50,14 50,23 28,41 50,41 50,50 14,50 14,41 36,23 14,23" fill="#FFFFFF" />
 </svg>'''
@@ -25,7 +25,6 @@ def generate_favicons():
     print(f"Generated {logo_svg_path}")
 
     # 2. Render High-Resolution Raster Image for ICO and PNG
-    # Render at 512x512 with supersampling for crisp edges
     size = 512
     scale = size / 64.0
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
@@ -33,7 +32,7 @@ def generate_favicons():
 
     # Border thickness: 5 * scale
     b_width = 5 * scale
-    draw.rectangle([3 * scale, 3 * scale, 61 * scale, 61 * scale], fill="#E11D48", outline="#FFFFFF", width=int(b_width))
+    draw.rectangle([3 * scale, 3 * scale, 61 * scale, 61 * scale], fill="#2563EB", outline="#FFFFFF", width=int(b_width))
 
     # Polygon coords scaled for white "Z"
     poly_points = [
@@ -50,22 +49,21 @@ def generate_favicons():
     ]
     draw.polygon(poly_points, fill="#FFFFFF")
 
-    # 3. Generate apple-touch-icon.png (180x180)
+    # Generate Apple Touch Icon (180x180)
     apple_icon = img.resize((180, 180), Image.Resampling.LANCZOS)
     apple_icon_path = os.path.join(public_dir, "apple-touch-icon.png")
     apple_icon.save(apple_icon_path, format="PNG")
     print(f"Generated {apple_icon_path}")
 
-    # Also save as logo.png (180x180)
+    # Generate logo.png (512x512)
     logo_png_path = os.path.join(public_dir, "logo.png")
-    apple_icon.save(logo_png_path, format="PNG")
+    img.save(logo_png_path, format="PNG")
     print(f"Generated {logo_png_path}")
 
-    # 4. Generate favicon.ico (multi-resolution 16x16, 32x32, 48x48)
+    # Generate favicon.ico (multi-size: 16, 32, 48)
     ico_path = os.path.join(public_dir, "favicon.ico")
     img.save(ico_path, format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
     print(f"Generated {ico_path}")
 
 if __name__ == "__main__":
     generate_favicons()
-

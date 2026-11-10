@@ -280,7 +280,7 @@ export const ReactBitsPreview: React.FC<PreviewProps> = ({ slug, lite = true }) 
         }}
       />
       <div className="relative z-10 flex flex-col items-center gap-1.5 text-center">
-        <span className="w-9 h-9 rounded-md bg-[#7FBCFF] border-2 border-white shadow-[2px_2px_0px_#E11D48] flex items-center justify-center text-black text-sm font-black">
+        <span className="w-9 h-9 rounded-md bg-[#7FBCFF] border-2 border-white shadow-[2px_2px_0px_#2563EB] flex items-center justify-center text-black text-sm font-black">
           ✨
         </span>
         <div className="font-heading text-xs font-black uppercase text-white tracking-wide">

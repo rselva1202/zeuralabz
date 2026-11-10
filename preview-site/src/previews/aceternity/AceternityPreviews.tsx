@@ -51,21 +51,21 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
         style={{ perspective: '800px' }}
       >
         <div
-          className="w-44 h-28 rounded-xl bg-gradient-to-br from-zinc-900 to-black border-2 border-[#E11D48]/60 p-3 shadow-2xl transition-transform duration-75 flex flex-col justify-between"
+          className="w-44 h-28 rounded-xl bg-gradient-to-br from-zinc-900 to-black border-2 border-[#2563EB]/60 p-3 shadow-2xl transition-transform duration-75 flex flex-col justify-between"
           style={{
             transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`,
             transformStyle: 'preserve-3d',
           }}
         >
           <div style={{ transform: 'translateZ(20px)' }}>
-            <span className="text-[10px] font-heading font-black text-[#E11D48] uppercase tracking-wider">
+            <span className="text-[10px] font-heading font-black text-[#2563EB] uppercase tracking-wider">
               3D PERSPECTIVE
             </span>
             <div className="text-xs font-black text-white mt-0.5">ACETERNITY CARD</div>
           </div>
           <div className="flex items-center justify-between" style={{ transform: 'translateZ(30px)' }}>
             <span className="text-[8px] font-mono text-zinc-400">Hover to rotate</span>
-            <span className="px-2 py-0.5 rounded bg-[#E11D48] text-white font-mono text-[8px] font-bold">
+            <span className="px-2 py-0.5 rounded bg-[#2563EB] text-white font-mono text-[8px] font-bold">
               3D POP
             </span>
           </div>
@@ -95,18 +95,18 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
           return (
             <div
               key={b}
-              className="absolute w-[2px] bg-gradient-to-b from-transparent via-[#E11D48] to-white"
+              className="absolute w-[2px] bg-gradient-to-b from-transparent via-[#2563EB] to-white"
               style={{
                 left: `${left}%`,
                 top: `${y}%`,
                 height: '50px',
-                boxShadow: '0 0 10px #E11D48',
+                boxShadow: '0 0 10px #2563EB',
                 opacity: Math.sin(progress * Math.PI),
               }}
             />
           );
         })}
-        <span className="relative z-10 text-[9px] font-mono font-bold text-white bg-black/80 px-2.5 py-1 border border-[#E11D48]/70">
+        <span className="relative z-10 text-[9px] font-mono font-bold text-white bg-black/80 px-2.5 py-1 border border-[#2563EB]/70">
           BEAMS & COLLISIONS
         </span>
       </div>
@@ -132,15 +132,15 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
                 top: `${y}%`,
                 width: `${size}px`,
                 height: `${size}px`,
-                backgroundColor: i % 3 === 0 ? '#E11D48' : '#FFFFFF',
-                boxShadow: `0 0 8px ${i % 3 === 0 ? '#E11D48' : '#FFF'}`,
+                backgroundColor: i % 3 === 0 ? '#2563EB' : '#FFFFFF',
+                boxShadow: `0 0 8px ${i % 3 === 0 ? '#2563EB' : '#FFF'}`,
                 opacity: 0.2 + (flicker + 1) * 0.4,
               }}
             />
           );
         })}
         <div className="relative z-10 font-heading text-sm font-black text-white tracking-widest text-center">
-          <span className="text-[#E11D48]">✨</span> SPARKLES CANVAS
+          <span className="text-[#2563EB]">✨</span> SPARKLES CANVAS
         </div>
       </div>
     );
@@ -154,16 +154,16 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
         <div
           className="absolute -top-10 w-48 h-36 opacity-80"
           style={{
-            background: 'conic-gradient(from 135deg at 50% 0%, transparent 0deg, #E11D48 45deg, #FF2B2B 90deg, transparent 90deg)',
+            background: 'conic-gradient(from 135deg at 50% 0%, transparent 0deg, #2563EB 45deg, #3B82F6 90deg, transparent 90deg)',
             filter: 'blur(16px)',
           }}
         />
-        <div className="w-24 h-1 bg-[#E11D48] rounded-full shadow-[0_0_15px_#E11D48] absolute top-2" />
+        <div className="w-24 h-1 bg-[#2563EB] rounded-full shadow-[0_0_15px_#2563EB] absolute top-2" />
         <div className="relative z-10 text-center">
           <div className="font-heading text-xs font-black tracking-widest text-white uppercase">
             LAMP HEADLINE
           </div>
-          <div className="text-[9px] text-rose-300 font-mono">Conical Glow</div>
+          <div className="text-[9px] text-blue-300 font-mono">Conical Glow</div>
         </div>
       </div>
     );
@@ -180,7 +180,7 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
             const y2 = 100 + Math.cos(shift + 1) * 35;
             const y3 = 100 + Math.sin(shift + 2) * 35;
             const d = `M 0,${y1} Q 100,${y2} 200,${y1} T 400,${y3}`;
-            const stroke = idx === 0 ? '#E11D48' : idx === 1 ? '#FF90E8' : '#7FBCFF';
+            const stroke = idx === 0 ? '#2563EB' : idx === 1 ? '#FF90E8' : '#7FBCFF';
             return (
               <path
                 key={idx}
@@ -193,7 +193,7 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
             );
           })}
         </svg>
-        <span className="relative z-10 text-[9px] font-heading font-black tracking-widest text-white uppercase bg-black/80 px-2.5 py-1 border border-[#E11D48]/50">
+        <span className="relative z-10 text-[9px] font-heading font-black tracking-widest text-white uppercase bg-black/80 px-2.5 py-1 border border-[#2563EB]/50">
           WAVY SINES
         </span>
       </div>
@@ -207,8 +207,8 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
         <div
           className="absolute inset-[-20%] opacity-60 blur-3xl transition-transform"
           style={{
-            background: `radial-gradient(circle at ${40 + Math.sin(frame * 0.04) * 20}% 30%, #E11D48, transparent 40%),
-                         radial-gradient(circle at ${60 + Math.cos(frame * 0.03) * 20}% 60%, #9F1239, transparent 50%),
+            background: `radial-gradient(circle at ${40 + Math.sin(frame * 0.04) * 20}% 30%, #2563EB, transparent 40%),
+                         radial-gradient(circle at ${60 + Math.cos(frame * 0.03) * 20}% 60%, #1D4ED8, transparent 50%),
                          radial-gradient(circle at 50% 50%, #4338CA, transparent 60%)`,
             transform: `scale(${1 + Math.sin(frame * 0.05) * 0.1})`,
           }}
@@ -238,13 +238,13 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
                 top: `${y}%`,
                 width: '3px',
                 height: '3px',
-                backgroundColor: i % 2 === 0 ? '#E11D48' : '#FF90E8',
-                boxShadow: `0 0 6px ${i % 2 === 0 ? '#E11D48' : '#FF90E8'}`,
+                backgroundColor: i % 2 === 0 ? '#2563EB' : '#FF90E8',
+                boxShadow: `0 0 6px ${i % 2 === 0 ? '#2563EB' : '#FF90E8'}`,
               }}
             />
           );
         })}
-        <div className="w-3 h-3 rounded-full bg-white shadow-[0_0_15px_#E11D48] relative z-10" />
+        <div className="w-3 h-3 rounded-full bg-white shadow-[0_0_15px_#2563EB] relative z-10" />
       </div>
     );
   }
@@ -262,10 +262,10 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
         <div
           className="w-44 h-28 rounded-xl border border-white/10 relative p-3 flex flex-col justify-between overflow-hidden"
           style={{
-            background: `radial-gradient(150px circle at ${spotX}% ${spotY}%, rgba(225,29,72,0.4), rgba(10,10,15,0.95))`,
+            background: `radial-gradient(150px circle at ${spotX}% ${spotY}%, rgba(37,99,235,0.4), rgba(10,10,15,0.95))`,
           }}
         >
-          <span className="text-[10px] font-heading font-black text-[#E11D48] uppercase">SPOTLIGHT CARD</span>
+          <span className="text-[10px] font-heading font-black text-[#2563EB] uppercase">SPOTLIGHT CARD</span>
           <span className="text-[8px] font-mono text-zinc-400">Hover inside card</span>
         </div>
       </div>
@@ -281,7 +281,7 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
       <div className="w-full h-full bg-[#0A0D18] flex items-center justify-center p-4">
         <div className="font-heading text-xs font-black text-white tracking-wide flex items-center">
           {text.slice(0, charsToShow)}
-          <span className={`w-2 h-3.5 bg-[#E11D48] inline-block ml-0.5 ${isBlink ? 'opacity-100' : 'opacity-0'}`} />
+          <span className={`w-2 h-3.5 bg-[#2563EB] inline-block ml-0.5 ${isBlink ? 'opacity-100' : 'opacity-0'}`} />
         </div>
       </div>
     );
@@ -322,19 +322,19 @@ export const AceternityPreview: React.FC<PreviewProps> = ({ slug, lite = true })
       <div
         className="absolute w-40 h-40 rounded-full blur-2xl opacity-35 pointer-events-none"
         style={{
-          background: `radial-gradient(circle at center, #E11D48 0%, transparent 70%)`,
+          background: `radial-gradient(circle at center, #2563EB 0%, transparent 70%)`,
           left: `${spotX - 50}%`,
           top: `${spotY - 50}%`,
         }}
       />
       <div className="relative z-10 flex flex-col items-center gap-1.5 text-center">
-        <span className="w-9 h-9 rounded-md bg-[#E11D48] border-2 border-white shadow-[2px_2px_0px_#FF2B2B] flex items-center justify-center text-white text-sm font-black">
+        <span className="w-9 h-9 rounded-md bg-[#2563EB] border-2 border-white shadow-[2px_2px_0px_#3B82F6] flex items-center justify-center text-white text-sm font-black">
           🔺
         </span>
         <div className="font-heading text-xs font-black uppercase text-white tracking-wide">
           {slug.replace(/-/g, ' ')}
         </div>
-        <div className="text-[9px] text-rose-300 font-mono font-bold">
+        <div className="text-[9px] text-blue-300 font-mono font-bold">
           @aceternity • LIVE DEMO
         </div>
       </div>

@@ -52,15 +52,15 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
         <div
           className="w-44 h-28 rounded-xl border border-white/20 relative p-3 flex flex-col justify-between overflow-hidden shadow-2xl transition-all"
           style={{
-            background: `radial-gradient(180px circle at ${spotX}% ${spotY}%, rgba(225,29,72,0.35), rgba(15,23,42,0.95))`,
-            borderColor: `rgba(225,29,72,${0.3 + Math.sin(frame * 0.05) * 0.2})`,
+            background: `radial-gradient(180px circle at ${spotX}% ${spotY}%, rgba(37,99,235,0.35), rgba(15,23,42,0.95))`,
+            borderColor: `rgba(37,99,235,${0.3 + Math.sin(frame * 0.05) * 0.2})`,
           }}
         >
           <div className="flex items-center justify-between">
-            <span className="w-6 h-6 rounded-md bg-[#E11D48] text-white flex items-center justify-center text-xs font-black shadow-sm">
+            <span className="w-6 h-6 rounded-md bg-[#2563EB] text-white flex items-center justify-center text-xs font-black shadow-sm">
               M
             </span>
-            <span className="text-[9px] font-mono font-bold text-rose-300">HOVER ME</span>
+            <span className="text-[9px] font-mono font-bold text-blue-300">HOVER ME</span>
           </div>
           <div>
             <div className="text-xs font-heading font-black text-white">MAGIC CARD</div>
@@ -84,7 +84,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           {[...items, ...items, ...items].map((text, i) => (
             <span
               key={i}
-              className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono font-black text-rose-300 uppercase shadow-sm"
+              className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono font-black text-blue-300 uppercase shadow-sm"
             >
               {text}
             </span>
@@ -97,7 +97,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           {[...items, ...items, ...items].reverse().map((text, i) => (
             <span
               key={i}
-              className="px-3 py-1 rounded-md bg-[#E11D48]/15 border border-[#E11D48]/30 text-xs font-mono font-black text-white uppercase shadow-sm"
+              className="px-3 py-1 rounded-md bg-[#2563EB]/15 border border-[#2563EB]/30 text-xs font-mono font-black text-white uppercase shadow-sm"
             >
               {text}
             </span>
@@ -117,14 +117,14 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           <div
             className="absolute inset-[-100%] transition-transform"
             style={{
-              background: `conic-gradient(from ${angle}deg at 50% 50%, transparent 0deg, transparent 270deg, #E11D48 320deg, #FF90E8 360deg)`,
+              background: `conic-gradient(from ${angle}deg at 50% 50%, transparent 0deg, transparent 270deg, #2563EB 320deg, #FF90E8 360deg)`,
             }}
           />
           <div className="relative w-full h-full bg-[#0D111E] rounded-md flex flex-col items-center justify-center p-2 z-10 border border-white/10">
             <span className="text-[10px] font-heading font-black tracking-wider text-white">
               BORDER BEAM
             </span>
-            <span className="text-[8px] font-mono text-rose-400 mt-1">CONIC RAY</span>
+            <span className="text-[8px] font-mono text-blue-400 mt-1">CONIC RAY</span>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
     const sweep = (frame * 3) % 240;
     return (
       <div className="w-full h-full bg-[#070A12] flex items-center justify-center p-4">
-        <button className="relative px-6 py-2.5 rounded-full overflow-hidden border-2 border-[#E11D48] bg-black shadow-[0_0_20px_rgba(225,29,72,0.4)] group">
+        <button className="relative px-6 py-2.5 rounded-full overflow-hidden border-2 border-[#2563EB] bg-black shadow-[0_0_20px_rgba(37,99,235,0.4)] group">
           <div
             className="absolute inset-0 w-8 h-full bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-[-20deg]"
             style={{ left: `${sweep - 40}px` }}
@@ -158,14 +158,14 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           className="absolute inset-0 origin-bottom"
           style={{
             transform: 'rotateX(60deg)',
-            backgroundImage: `linear-gradient(to right, rgba(225,29,72,0.3) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(225,29,72,0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(to right, rgba(37,99,235,0.3) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(37,99,235,0.3) 1px, transparent 1px)`,
             backgroundSize: '30px 30px',
             backgroundPosition: `0px ${gridY}px`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#0A0614]/50 to-[#0A0614]" />
-        <span className="relative z-10 text-[10px] font-heading font-black tracking-widest text-rose-300 bg-black/80 px-2.5 py-1 border border-rose-500/50">
+        <span className="relative z-10 text-[10px] font-heading font-black tracking-widest text-blue-300 bg-black/80 px-2.5 py-1 border border-blue-500/50">
           RETRO GRID 80s
         </span>
       </div>
@@ -183,7 +183,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           return (
             <div
               key={i}
-              className="absolute w-[2px] bg-gradient-to-b from-white via-rose-400 to-transparent"
+              className="absolute w-[2px] bg-gradient-to-b from-white via-blue-400 to-transparent"
               style={{
                 left: `${left}%`,
                 top: `${top}%`,
@@ -194,7 +194,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
             />
           );
         })}
-        <span className="relative z-10 text-[10px] font-mono font-bold text-rose-200 bg-black/70 px-2 py-0.5 border border-rose-500/40">
+        <span className="relative z-10 text-[10px] font-mono font-bold text-blue-200 bg-black/70 px-2 py-0.5 border border-blue-500/40">
           ☄️ METEOR SHOWER
         </span>
       </div>
@@ -211,7 +211,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           return (
             <div
               key={r}
-              className="absolute rounded-full border border-[#E11D48] transition-all"
+              className="absolute rounded-full border border-[#2563EB] transition-all"
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
@@ -220,7 +220,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
             />
           );
         })}
-        <div className="w-3.5 h-3.5 rounded-full bg-[#E11D48] shadow-[0_0_12px_#E11D48] relative z-10" />
+        <div className="w-3.5 h-3.5 rounded-full bg-[#2563EB] shadow-[0_0_12px_#2563EB] relative z-10" />
       </div>
     );
   }
@@ -231,7 +231,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
     return (
       <div className="w-full h-full bg-[#080B14] flex flex-col items-center justify-center p-4">
         <div className="text-[10px] font-mono text-zinc-400 mb-1">TOTAL COMMITS</div>
-        <div className="text-2xl font-heading font-black text-[#E11D48] tracking-widest font-mono">
+        <div className="text-2xl font-heading font-black text-[#2563EB] tracking-widest font-mono">
           {val.toLocaleString()}
         </div>
       </div>
@@ -245,7 +245,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
     return (
       <div className="w-full h-full bg-[#080B14] flex flex-col items-center justify-center p-4">
         <div className="text-[10px] font-mono text-zinc-400 mb-1">ANIMATED COPY</div>
-        <div className="text-sm font-heading font-black text-rose-400 tracking-wider">
+        <div className="text-sm font-heading font-black text-blue-400 tracking-wider">
           {words[idx]}
         </div>
       </div>
@@ -263,7 +263,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           return (
             <div
               key={i}
-              className="absolute border border-rose-500 rounded-lg"
+              className="absolute border border-blue-500 rounded-lg"
               style={{
                 width: `${w}px`,
                 height: `${h}px`,
@@ -272,7 +272,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
             />
           );
         })}
-        <span className="relative z-10 text-[9px] font-mono font-bold text-white bg-black/80 px-2 py-0.5 border border-rose-500/60">
+        <span className="relative z-10 text-[9px] font-mono font-bold text-white bg-black/80 px-2 py-0.5 border border-blue-500/60">
           WARP TUNNEL
         </span>
       </div>
@@ -291,19 +291,19 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
       <div
         className="absolute w-40 h-40 rounded-full blur-2xl opacity-30 transition-all pointer-events-none"
         style={{
-          background: `radial-gradient(circle at center, #E11D48 0%, transparent 70%)`,
+          background: `radial-gradient(circle at center, #2563EB 0%, transparent 70%)`,
           left: `${spotX - 50}%`,
           top: `${spotY - 50}%`,
         }}
       />
       <div className="relative z-10 flex flex-col items-center gap-1.5 text-center">
-        <span className="w-9 h-9 rounded-md bg-[#E11D48] border-2 border-white shadow-[2px_2px_0px_#FF2B2B] flex items-center justify-center text-white text-sm font-black">
+        <span className="w-9 h-9 rounded-md bg-[#2563EB] border-2 border-white shadow-[2px_2px_0px_#3B82F6] flex items-center justify-center text-white text-sm font-black">
           ⚡
         </span>
         <div className="font-heading text-xs font-black uppercase text-white tracking-wide">
           {slug.replace(/-/g, ' ')}
         </div>
-        <div className="text-[9px] text-rose-300 font-mono font-bold">
+        <div className="text-[9px] text-blue-300 font-mono font-bold">
           @magic-ui • LIVE DEMO
         </div>
       </div>

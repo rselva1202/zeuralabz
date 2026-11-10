@@ -52,13 +52,13 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
   const getSourceBadge = () => {
     switch (source) {
       case 'react-bits':
-        return { label: '● LIVE • React Bits', bg: 'bg-[#7FBCFF]', text: 'text-black', border: 'border-white' };
+        return { label: '● LIVE • React Bits', bg: 'bg-[#1E293B]', text: 'text-[#93C5FD]', border: 'border-[#3B82F6]' };
       case 'magic-ui':
-        return { label: '● LIVE • Magic UI', bg: 'bg-[#FF90E8]', text: 'text-black', border: 'border-white' };
+        return { label: '● LIVE • Magic UI', bg: 'bg-[#1E293B]', text: 'text-[#93C5FD]', border: 'border-[#3B82F6]' };
       case 'aceternity':
-        return { label: '● LIVE • Aceternity UI', bg: 'bg-[#E11D48]', text: 'text-white', border: 'border-white' };
+        return { label: '● LIVE • Aceternity UI', bg: 'bg-[#2563EB]', text: 'text-white', border: 'border-white' };
       default:
-        return { label: '● LIVE • ZEURALABZ', bg: 'bg-[#00F5D4]', text: 'text-black', border: 'border-white' };
+        return { label: '● LIVE • ZEURALABZ', bg: 'bg-[#2563EB]', text: 'text-white', border: 'border-white' };
     }
   };
 
@@ -111,7 +111,7 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
         <Suspense
           fallback={
             <div className="w-full h-full bg-[#0A0D14] flex items-center justify-center">
-              <span className="w-4 h-4 rounded-full border-2 border-[#E11D48] border-t-transparent animate-spin" />
+              <span className="w-4 h-4 rounded-full border-2 border-[#2563EB] border-t-transparent animate-spin" />
             </div>
           }
         >
@@ -131,4 +131,3 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
 };
 
 export default PreviewRouter;
-
