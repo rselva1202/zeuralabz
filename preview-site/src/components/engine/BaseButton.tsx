@@ -326,7 +326,7 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
           {...rest}
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
-            <span className="text-amber-300">⚡</span>
+            <span className="text-amber-300">✦</span>
             <span className="tracking-wider uppercase text-xs">{displayText}</span>
             {clickCount > 0 && (
               <span className="bg-indigo-900/80 text-[10px] px-1.5 py-0.2 rounded-full border border-indigo-400/30">

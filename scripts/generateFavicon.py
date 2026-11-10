@@ -1,69 +1,77 @@
 import os
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
-def generate_favicons():
-    public_dir = r"D:\MY PROJECTS\ZEURALABZ\preview-site\public"
+def generate_assets():
+    public_dir = os.path.abspath(r"D:\MY PROJECTS\ZEURALABZ\preview-site\public")
     os.makedirs(public_dir, exist_ok=True)
-
-    # 1. Generate SVG - Electric Blue #2563EB with White "Z"
+    
+    # 1. Generate SVG - Pure Minimal Neo-Brutalist Mint Square with Black Z and 2px White Border
+    # Mint: #2DD4BF, Black: #000000, Border: #FFFFFF
+    # viewBox: 0 0 64 64, Z fills ~70% of square
     svg_content = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Neo-Brutalist Electric Blue Background with Solid White Border -->
-  <rect x="3" y="3" width="58" height="58" fill="#2563EB" stroke="#FFFFFF" stroke-width="5" rx="0" />
-  <!-- Bold Geometric "Z" Character in Pure White -->
-  <polygon points="14,14 50,14 50,23 28,41 50,41 50,50 14,50 14,41 36,23 14,23" fill="#FFFFFF" />
+  <!-- Minimal Neo-Brutalist Mint #2DD4BF Square with 2px White Border -->
+  <rect x="1" y="1" width="62" height="62" fill="#2DD4BF" stroke="#FFFFFF" stroke-width="2" />
+  <!-- Bold Geometric "Z" Character in Pure Black (#000000) -->
+  <polygon points="12,12 52,12 52,22 28,42 52,42 52,52 12,52 12,42 36,22 12,22" fill="#000000" />
 </svg>'''
-
-    svg_path = os.path.join(public_dir, "favicon.svg")
-    with open(svg_path, "w", encoding="utf-8") as f:
+    
+    with open(os.path.join(public_dir, "favicon.svg"), "w", encoding="utf-8") as f:
         f.write(svg_content)
-    print(f"Generated {svg_path}")
-
-    # Also save as logo.svg
-    logo_svg_path = os.path.join(public_dir, "logo.svg")
-    with open(logo_svg_path, "w", encoding="utf-8") as f:
+    with open(os.path.join(public_dir, "logo.svg"), "w", encoding="utf-8") as f:
         f.write(svg_content)
-    print(f"Generated {logo_svg_path}")
+    print("Created favicon.svg and logo.svg (Mint #2DD4BF + Black Z)")
 
-    # 2. Render High-Resolution Raster Image for ICO and PNG
-    size = 512
-    scale = size / 64.0
-    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(img)
+    # 2. Helper to draw raster Z
+    def create_raster_z(size):
+        img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        draw = ImageDraw.Draw(img)
+        
+        # Border thickness scaled
+        bw = max(2, int(size * (2 / 64)))
+        
+        # Mint background square
+        draw.rectangle([0, 0, size - 1, size - 1], fill="#2DD4BF")
+        
+        # White border
+        draw.rectangle([0, 0, size - 1, size - 1], outline="#FFFFFF", width=bw)
+        
+        # Black Z polygon scaled
+        scale = size / 64.0
+        points = [
+            (12 * scale, 12 * scale),
+            (52 * scale, 12 * scale),
+            (52 * scale, 22 * scale),
+            (28 * scale, 42 * scale),
+            (52 * scale, 42 * scale),
+            (52 * scale, 52 * scale),
+            (12 * scale, 52 * scale),
+            (12 * scale, 42 * scale),
+            (36 * scale, 22 * scale),
+            (12 * scale, 22 * scale)
+        ]
+        draw.polygon(points, fill="#000000")
+        return img
 
-    # Border thickness: 5 * scale
-    b_width = 5 * scale
-    draw.rectangle([3 * scale, 3 * scale, 61 * scale, 61 * scale], fill="#2563EB", outline="#FFFFFF", width=int(b_width))
+    # Apple Touch Icon (180x180)
+    icon_180 = create_raster_z(180)
+    icon_180.save(os.path.join(public_dir, "apple-touch-icon.png"), "PNG")
+    print("Created apple-touch-icon.png (180x180)")
 
-    # Polygon coords scaled for white "Z"
-    poly_points = [
-        (14 * scale, 14 * scale),
-        (50 * scale, 14 * scale),
-        (50 * scale, 23 * scale),
-        (28 * scale, 41 * scale),
-        (50 * scale, 41 * scale),
-        (50 * scale, 50 * scale),
-        (14 * scale, 50 * scale),
-        (14 * scale, 41 * scale),
-        (36 * scale, 23 * scale),
-        (14 * scale, 23 * scale)
-    ]
-    draw.polygon(poly_points, fill="#FFFFFF")
+    # Logo (512x512)
+    logo_512 = create_raster_z(512)
+    logo_512.save(os.path.join(public_dir, "logo.png"), "PNG")
+    print("Created logo.png (512x512)")
 
-    # Generate Apple Touch Icon (180x180)
-    apple_icon = img.resize((180, 180), Image.Resampling.LANCZOS)
-    apple_icon_path = os.path.join(public_dir, "apple-touch-icon.png")
-    apple_icon.save(apple_icon_path, format="PNG")
-    print(f"Generated {apple_icon_path}")
-
-    # Generate logo.png (512x512)
-    logo_png_path = os.path.join(public_dir, "logo.png")
-    img.save(logo_png_path, format="PNG")
-    print(f"Generated {logo_png_path}")
-
-    # Generate favicon.ico (multi-size: 16, 32, 48)
-    ico_path = os.path.join(public_dir, "favicon.ico")
-    img.save(ico_path, format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
-    print(f"Generated {ico_path}")
+    # Favicon.ico with 16x16, 32x32, 48x48
+    ico_16 = create_raster_z(16)
+    ico_32 = create_raster_z(32)
+    ico_48 = create_raster_z(48)
+    ico_48.save(
+        os.path.join(public_dir, "favicon.ico"),
+        format="ICO",
+        sizes=[(16, 16), (32, 32), (48, 48)]
+    )
+    print("Created favicon.ico (multi-res 16, 32, 48)")
 
 if __name__ == "__main__":
-    generate_favicons()
+    generate_assets()

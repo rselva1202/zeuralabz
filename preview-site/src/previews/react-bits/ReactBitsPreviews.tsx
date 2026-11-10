@@ -85,8 +85,8 @@ export const ReactBitsPreview: React.FC<PreviewProps> = ({ slug, lite = true }) 
                 top: `${py}%`,
                 width: `${size}px`,
                 height: `${size}px`,
-                backgroundColor: i % 2 === 0 ? '#00F5D4' : '#FF90E8',
-                boxShadow: `0 0 6px ${i % 2 === 0 ? '#00F5D4' : '#FF90E8'}`,
+                backgroundColor: i % 2 === 0 ? '#00F5D4' : '#14B8A6',
+                boxShadow: `0 0 6px ${i % 2 === 0 ? '#00F5D4' : '#14B8A6'}`,
                 opacity: 0.8,
               }}
             />
@@ -108,7 +108,7 @@ export const ReactBitsPreview: React.FC<PreviewProps> = ({ slug, lite = true }) 
           {letters.map((char, idx) => {
             const wave = Math.sin((frame * 0.15) - idx * 0.4);
             const translateY = wave * 8;
-            const color = wave > 0 ? '#7FBCFF' : '#FF90E8';
+            const color = wave > 0 ? '#2DD4BF' : '#14B8A6';
             return (
               <span
                 key={idx}
@@ -179,7 +179,7 @@ export const ReactBitsPreview: React.FC<PreviewProps> = ({ slug, lite = true }) 
         <div
           className="font-heading text-base font-black uppercase tracking-wider text-transparent bg-clip-text"
           style={{
-            backgroundImage: `linear-gradient(110deg, #64748B 0%, #FFFFFF ${shinePos - 50}%, #7FBCFF ${shinePos}%, #64748B ${shinePos + 50}%)`,
+            backgroundImage: `linear-gradient(110deg, #64748B 0%, #FFFFFF ${shinePos - 50}%, #2DD4BF ${shinePos}%, #64748B ${shinePos + 50}%)`,
           }}
         >
           METALLIC SHINE
@@ -280,7 +280,7 @@ export const ReactBitsPreview: React.FC<PreviewProps> = ({ slug, lite = true }) 
         }}
       />
       <div className="relative z-10 flex flex-col items-center gap-1.5 text-center">
-        <span className="w-9 h-9 rounded-md bg-[#7FBCFF] border-2 border-white shadow-[2px_2px_0px_#2563EB] flex items-center justify-center text-black text-sm font-black">
+        <span className="w-9 h-9 rounded-md bg-[#2DD4BF] border-2 border-white shadow-[2px_2px_0px_#2DD4BF] flex items-center justify-center text-black text-sm font-black">
           ✨
         </span>
         <div className="font-heading text-xs font-black uppercase text-white tracking-wide">

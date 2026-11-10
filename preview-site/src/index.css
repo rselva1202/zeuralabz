@@ -6,12 +6,13 @@
   --font-mono: 'Space Mono', monospace;
 
   --color-neo-bg: #0E0E0E;
-  --color-neo-surface: #1A1A1A;
+  --color-neo-surface: #161616;
   --color-neo-dark: #111111;
-  --color-neo-blue: #2563EB;
-  --color-neo-blue-bright: #3B82F6;
-  --color-neo-blue-deep: #1D4ED8;
+  --color-neo-mint: #2DD4BF;
+  --color-neo-mint-bright: #14B8A6;
+  --color-neo-mint-deep: #0F766E;
   --color-neo-grey: #CCCCCC;
+  --color-neo-muted: #9CA3AF;
 }
 
 @layer base {
@@ -50,104 +51,79 @@
   }
 }
 
-/* Dark Neo-Brutalist Dots & Grid Patterns */
+/* Minimal Neo-Brutalist Faint Dot Grid (Hero only) */
 .neo-dots {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.neo-grid-pattern {
-  background-size: 32px 32px;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-}
-
-.neo-stripes {
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.05) 10px,
-    transparent 10px,
-    transparent 20px
-  );
-}
-
-/* Coloured Hard Neo Shadows (Electric Blue on Dark Background) */
+/* Minimal Neo Shadows (Mint Teal #2DD4BF on Dark #0E0E0E) */
 .neo-shadow-sm {
-  box-shadow: 3px 3px 0px #2563EB;
+  box-shadow: 2px 2px 0px #2DD4BF;
 }
 
 .neo-shadow {
-  box-shadow: 4px 4px 0px #2563EB;
+  box-shadow: 3px 3px 0px #2DD4BF;
 }
 
 .neo-shadow-md {
-  box-shadow: 6px 6px 0px #2563EB;
-}
-
-.neo-shadow-lg {
-  box-shadow: 8px 8px 0px #3B82F6;
-}
-
-.neo-shadow-xl {
-  box-shadow: 12px 12px 0px #2563EB;
+  box-shadow: 4px 4px 0px #14B8A6;
 }
 
 .neo-shadow-white {
-  box-shadow: 4px 4px 0px #FFFFFF;
+  box-shadow: 2px 2px 0px #FFFFFF;
 }
 
 .neo-shadow-white-md {
-  box-shadow: 6px 6px 0px #FFFFFF;
+  box-shadow: 4px 4px 0px #FFFFFF;
 }
 
-/* Neo Button Physics with 3px White Border & Electric Blue Hard Shadow */
+/* Minimal Neo Button Physics with 2px White Border & 2px Mint Hard Shadow */
 .neo-btn {
-  border: 3px solid #FFFFFF;
-  box-shadow: 4px 4px 0px #2563EB;
+  border: 2px solid #FFFFFF;
+  box-shadow: 2px 2px 0px #2DD4BF;
   font-weight: 700;
   text-transform: uppercase;
-  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .neo-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #3B82F6;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #14B8A6;
 }
 
 .neo-btn:active {
-  transform: translate(3px, 3px);
+  transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px transparent;
 }
 
-/* Neo Card Physics with 3px White Border & 6px Electric Blue Hard Shadow */
+/* Minimal Neo Card Physics with 2px White Border & 3px Mint Hard Shadow */
 .neo-card {
-  border: 3px solid #FFFFFF;
-  box-shadow: 6px 6px 0px #2563EB;
-  background-color: #1A1A1A;
-  border-radius: 8px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid #FFFFFF;
+  box-shadow: 3px 3px 0px #2DD4BF;
+  background-color: #161616;
+  border-radius: 6px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .neo-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px #3B82F6;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #14B8A6;
 }
 
-/* Custom dark scrollbars with Electric Blue accent */
+/* Custom dark scrollbars with Mint Teal accent */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #111111;
-  border-left: 2px solid #FFFFFF;
+  border-left: 1px solid #2A2A2A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2563EB;
-  border: 2px solid #000000;
+  background: #2DD4BF;
+  border: 1px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: #14B8A6;
 }

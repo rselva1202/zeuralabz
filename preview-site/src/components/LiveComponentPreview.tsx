@@ -224,7 +224,7 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({
       return (
         <div className="w-full h-full bg-black flex items-center justify-center p-4">
           <div className="w-48 p-3 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-md shadow-xl text-left">
-            <div className="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mb-2">⚡</div>
+            <div className="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mb-2">✨</div>
             <div className="text-xs font-bold text-white">Glass Specular</div>
             <div className="text-[10px] text-zinc-400 mt-0.5">Frosted acrylic depth</div>
           </div>

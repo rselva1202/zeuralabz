@@ -74,7 +74,7 @@ const GLYPHS = '!<>-_\\/[]{}—=+*^?#________10101001';
 export const TextEngine: React.FC<TextEngineProps> = ({
   type = 'split',
   text = 'ZEURALABZ',
-  words = ['CREATIVE', 'POWERFUL', 'LIGHTNING', 'FUTURISTIC'],
+  words = ['CREATIVE', 'POWERFUL', 'DYNAMIC', 'FUTURISTIC'],
   targetNumber = 9840,
   speed = 1.0,
   delay = 0.04,

@@ -176,7 +176,7 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
 
     // Default color palettes per mode
     const defaultPalettes: Record<BackgroundType, string[]> = {
-      aurora: ['#06b6d4', '#3b82f6', '#6366f1', '#a855f7', '#ec4899', '#10b981'],
+      aurora: ['#06b6d4', '#2dd4bf', '#6366f1', '#a855f7', '#ec4899', '#10b981'],
       galaxy: ['#ffffff', '#fef08a', '#38bdf8', '#818cf8', '#c084fc', '#f472b6'],
       particles: ['#38bdf8', '#818cf8', '#c084fc', '#ffffff'],
       dots: ['#38bdf8', '#818cf8', '#6366f1'],
@@ -187,7 +187,7 @@ export const CanvasEngine: React.FC<CanvasEngineProps> = ({
       noise: ['#6366f1', '#8b5cf6', '#ec4899', '#06b6d4'],
       beam: ['#06b6d4', '#6366f1', '#ec4899'],
       hexagon: ['#06b6d4', '#38bdf8', '#818cf8', '#a855f7'],
-      waves: ['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899'],
+      waves: ['#06b6d4', '#2dd4bf', '#8b5cf6', '#ec4899'],
       gradient: ['#312e81', '#4c1d95', '#0c4a6e', '#701a75', '#1e1b4b'],
       nebula: ['#c084fc', '#f472b6', '#38bdf8', '#818cf8', '#fef08a'],
       fireflies: ['#fef08a', '#84cc16', '#22c55e', '#38bdf8', '#facc15'],

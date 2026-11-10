@@ -57,7 +57,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           }}
         >
           <div className="flex items-center justify-between">
-            <span className="w-6 h-6 rounded-md bg-[#2563EB] text-white flex items-center justify-center text-xs font-black shadow-sm">
+            <span className="w-6 h-6 rounded-md bg-[#2DD4BF] text-white flex items-center justify-center text-xs font-black shadow-sm">
               M
             </span>
             <span className="text-[9px] font-mono font-bold text-blue-300">HOVER ME</span>
@@ -73,7 +73,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
 
   // 2. MARQUEE
   if (slug === 'marquee' || slug.includes('marquee')) {
-    const items = ['✨ ANIMATION', '⚡ FAST', '🔥 SHADCN', '💎 BOLD', '🚀 REACT'];
+    const items = ['✨ ANIMATION', '✨ FAST', '🔥 SHADCN', '💎 BOLD', '🚀 REACT'];
     const offset = (frame * 1.5) % 300;
     return (
       <div className="w-full h-full bg-[#080B14] flex flex-col justify-center gap-2 overflow-hidden px-2">
@@ -97,7 +97,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           {[...items, ...items, ...items].reverse().map((text, i) => (
             <span
               key={i}
-              className="px-3 py-1 rounded-md bg-[#2563EB]/15 border border-[#2563EB]/30 text-xs font-mono font-black text-white uppercase shadow-sm"
+              className="px-3 py-1 rounded-md bg-[#2DD4BF]/15 border border-[#2DD4BF]/30 text-xs font-mono font-black text-white uppercase shadow-sm"
             >
               {text}
             </span>
@@ -117,7 +117,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           <div
             className="absolute inset-[-100%] transition-transform"
             style={{
-              background: `conic-gradient(from ${angle}deg at 50% 50%, transparent 0deg, transparent 270deg, #2563EB 320deg, #FF90E8 360deg)`,
+              background: `conic-gradient(from ${angle}deg at 50% 50%, transparent 0deg, transparent 270deg, #2DD4BF 320deg, #14B8A6 360deg)`,
             }}
           />
           <div className="relative w-full h-full bg-[#0D111E] rounded-md flex flex-col items-center justify-center p-2 z-10 border border-white/10">
@@ -136,7 +136,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
     const sweep = (frame * 3) % 240;
     return (
       <div className="w-full h-full bg-[#070A12] flex items-center justify-center p-4">
-        <button className="relative px-6 py-2.5 rounded-full overflow-hidden border-2 border-[#2563EB] bg-black shadow-[0_0_20px_rgba(37,99,235,0.4)] group">
+        <button className="relative px-6 py-2.5 rounded-full overflow-hidden border-2 border-[#2DD4BF] bg-black shadow-[0_0_20px_rgba(37,99,235,0.4)] group">
           <div
             className="absolute inset-0 w-8 h-full bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-[-20deg]"
             style={{ left: `${sweep - 40}px` }}
@@ -211,7 +211,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
           return (
             <div
               key={r}
-              className="absolute rounded-full border border-[#2563EB] transition-all"
+              className="absolute rounded-full border border-[#2DD4BF] transition-all"
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
@@ -220,7 +220,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
             />
           );
         })}
-        <div className="w-3.5 h-3.5 rounded-full bg-[#2563EB] shadow-[0_0_12px_#2563EB] relative z-10" />
+        <div className="w-3.5 h-3.5 rounded-full bg-[#2DD4BF] shadow-[0_0_12px_#2DD4BF] relative z-10" />
       </div>
     );
   }
@@ -231,7 +231,7 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
     return (
       <div className="w-full h-full bg-[#080B14] flex flex-col items-center justify-center p-4">
         <div className="text-[10px] font-mono text-zinc-400 mb-1">TOTAL COMMITS</div>
-        <div className="text-2xl font-heading font-black text-[#2563EB] tracking-widest font-mono">
+        <div className="text-2xl font-heading font-black text-[#2DD4BF] tracking-widest font-mono">
           {val.toLocaleString()}
         </div>
       </div>
@@ -291,14 +291,14 @@ export const MagicUIPreview: React.FC<PreviewProps> = ({ slug, lite = true }) =>
       <div
         className="absolute w-40 h-40 rounded-full blur-2xl opacity-30 transition-all pointer-events-none"
         style={{
-          background: `radial-gradient(circle at center, #2563EB 0%, transparent 70%)`,
+          background: `radial-gradient(circle at center, #2DD4BF 0%, transparent 70%)`,
           left: `${spotX - 50}%`,
           top: `${spotY - 50}%`,
         }}
       />
       <div className="relative z-10 flex flex-col items-center gap-1.5 text-center">
-        <span className="w-9 h-9 rounded-md bg-[#2563EB] border-2 border-white shadow-[2px_2px_0px_#3B82F6] flex items-center justify-center text-white text-sm font-black">
-          ⚡
+        <span className="w-9 h-9 rounded-md bg-[#2DD4BF] border-2 border-white shadow-[2px_2px_0px_#14B8A6] flex items-center justify-center text-white text-sm font-black">
+          ✨
         </span>
         <div className="font-heading text-xs font-black uppercase text-white tracking-wide">
           {slug.replace(/-/g, ' ')}

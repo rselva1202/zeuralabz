@@ -38,7 +38,7 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
         });
       },
       {
-        rootMargin: '100px', // Preload slightly before scrolling into view
+        rootMargin: '120px', // Preload slightly before scrolling into view
         threshold: 0.05,
       }
     );
@@ -49,48 +49,45 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
 
   const source = comp.source || 'zeuralabz-original';
 
-  const getSourceBadge = () => {
+  const getSourceDisplayName = () => {
     switch (source) {
       case 'react-bits':
-        return { label: '● LIVE • React Bits', bg: 'bg-[#1E293B]', text: 'text-[#93C5FD]', border: 'border-[#3B82F6]' };
+        return 'React Bits';
       case 'magic-ui':
-        return { label: '● LIVE • Magic UI', bg: 'bg-[#1E293B]', text: 'text-[#93C5FD]', border: 'border-[#3B82F6]' };
+        return 'Magic UI';
       case 'aceternity':
-        return { label: '● LIVE • Aceternity UI', bg: 'bg-[#2563EB]', text: 'text-white', border: 'border-white' };
+        return 'Aceternity';
       default:
-        return { label: '● LIVE • ZEURALABZ', bg: 'bg-[#2563EB]', text: 'text-white', border: 'border-white' };
+        return 'Original';
     }
   };
 
   const getAttribution = () => {
     switch (source) {
       case 'react-bits':
-        return 'Source: React Bits • MIT + Commons';
+        return 'React Bits • MIT + Commons';
       case 'magic-ui':
-        return 'Source: Magic UI • MIT';
+        return 'Magic UI • MIT';
       case 'aceternity':
-        return 'Source: Aceternity UI • MIT';
+        return 'Aceternity UI • MIT';
       default:
-        return 'Source: ZEURALABZ Original • MIT';
+        return 'ZEURALABZ Original • MIT';
     }
   };
 
-  const badge = getSourceBadge();
-
   return (
     <div ref={containerRef} className="w-full h-full relative overflow-hidden bg-[#0A0D14]">
-      {/* Top Live Badge */}
-      <div className="absolute top-2 left-2 z-20 pointer-events-none">
-        <span
-          className={`inline-flex items-center gap-1 px-2 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider ${badge.bg} ${badge.text} border border-white shadow-[2px_2px_0px_#000000]`}
-        >
-          {badge.label}
+      {/* Minimal Top Live Badge: ONE small badge per card in mint, plain text, no box */}
+      <div className="absolute top-2.5 left-2.5 z-20 pointer-events-none flex items-center gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-[#2DD4BF] animate-pulse inline-block" />
+        <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase tracking-wider">
+          LIVE • {getSourceDisplayName()}
         </span>
       </div>
 
-      {/* Bottom Attribution */}
-      <div className="absolute bottom-1 right-2 z-20 pointer-events-none">
-        <span className="text-[8px] font-mono font-bold text-white/50 bg-black/60 px-1.5 py-0.5 rounded backdrop-blur-sm border border-white/10">
+      {/* Subtle Bottom Attribution */}
+      <div className="absolute bottom-1.5 right-2 z-20 pointer-events-none">
+        <span className="text-[9px] font-mono font-medium text-zinc-400 bg-black/70 px-1.5 py-0.5 rounded border border-white/10">
           {getAttribution()}
         </span>
       </div>
@@ -100,29 +97,36 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
         <div className="w-full h-full flex flex-col items-center justify-center bg-[#11131F] text-zinc-400 p-4 text-center">
           <span className="text-xl mb-1">⏸️</span>
           <span className="text-xs font-mono font-bold text-zinc-300">ANIMATIONS PAUSED</span>
-          <span className="text-[10px] text-zinc-500 mt-0.5">Toggle animations ON in header</span>
+          <span className="text-[10px] text-zinc-500 mt-0.5">Toggle animations in header</span>
         </div>
       ) : !isVisible ? (
         // Off-screen placeholder to save CPU / GPU
         <div className="w-full h-full bg-[#0A0D14] flex items-center justify-center">
-          <span className="w-3 h-3 rounded-full bg-zinc-800 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-zinc-800 animate-pulse" />
         </div>
       ) : (
         <Suspense
           fallback={
             <div className="w-full h-full bg-[#0A0D14] flex items-center justify-center">
-              <span className="w-4 h-4 rounded-full border-2 border-[#2563EB] border-t-transparent animate-spin" />
+              <span className="w-4 h-4 rounded-full border-2 border-[#2DD4BF] border-t-transparent animate-spin" />
             </div>
           }
         >
           {source === 'react-bits' ? (
-            <ReactBitsPreview slug={comp.slug} lite={animationMode === 'lite'} />
+            <ReactBitsPreview key={`react-bits-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
           ) : source === 'magic-ui' ? (
-            <MagicUIPreview slug={comp.slug} lite={animationMode === 'lite'} />
+            <MagicUIPreview key={`magic-ui-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
           ) : source === 'aceternity' ? (
-            <AceternityPreview slug={comp.slug} lite={animationMode === 'lite'} />
+            <AceternityPreview key={`aceternity-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
           ) : (
-            <LiveComponentPreview comp={comp as any} animationMode={animationMode} />
+            <LiveComponentPreview
+              key={`zeuralabz-${comp.slug}`}
+              slug={comp.slug}
+              category={comp.category}
+              name={comp.name}
+              lite={animationMode === 'lite'}
+              animationMode={animationMode}
+            />
           )}
         </Suspense>
       )}
