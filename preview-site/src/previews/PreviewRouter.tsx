@@ -1,16 +1,12 @@
-import React, { Suspense, lazy, useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { LiveComponentPreview } from '../components/LiveComponentPreview';
-
-const ReactBitsPreview = lazy(() => import('./react-bits/ReactBitsPreviews'));
-const MagicUIPreview = lazy(() => import('./magic-ui/MagicUIPreviews'));
-const AceternityPreview = lazy(() => import('./aceternity/AceternityPreviews'));
 
 export interface PreviewItem {
   id: string;
   name: string;
   slug: string;
   category: string;
-  source?: 'zeuralabz-original' | 'react-bits' | 'magic-ui' | 'aceternity';
+  source?: 'zeuralabz-original';
   componentName?: string;
   originalUrl?: string;
   previewUrl?: string;
@@ -47,48 +43,20 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
     return () => observer.disconnect();
   }, []);
 
-  const source = comp.source || 'zeuralabz-original';
-
-  const getSourceDisplayName = () => {
-    switch (source) {
-      case 'react-bits':
-        return 'React Bits';
-      case 'magic-ui':
-        return 'Magic UI';
-      case 'aceternity':
-        return 'Aceternity';
-      default:
-        return 'Original';
-    }
-  };
-
-  const getAttribution = () => {
-    switch (source) {
-      case 'react-bits':
-        return 'React Bits • MIT + Commons';
-      case 'magic-ui':
-        return 'Magic UI • MIT';
-      case 'aceternity':
-        return 'Aceternity UI • MIT';
-      default:
-        return 'ZEURALABZ Original • MIT';
-    }
-  };
-
   return (
     <div ref={containerRef} className="w-full h-full relative overflow-hidden bg-[#0A0D14]">
-      {/* Minimal Top Live Badge: ONE small badge per card in mint, plain text, no box */}
+      {/* Minimal Top Live Badge */}
       <div className="absolute top-2.5 left-2.5 z-20 pointer-events-none flex items-center gap-1.5">
         <span className="w-2 h-2 rounded-full bg-[#2DD4BF] animate-pulse inline-block" />
         <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase tracking-wider">
-          LIVE • {getSourceDisplayName()}
+          LIVE • Original
         </span>
       </div>
 
       {/* Subtle Bottom Attribution */}
       <div className="absolute bottom-1.5 right-2 z-20 pointer-events-none">
         <span className="text-[9px] font-mono font-medium text-zinc-400 bg-black/70 px-1.5 py-0.5 rounded border border-white/10">
-          {getAttribution()}
+          ZEURALABZ Original • MIT
         </span>
       </div>
 
@@ -105,30 +73,14 @@ export const PreviewRouter: React.FC<PreviewRouterProps> = ({ comp, animationMod
           <span className="w-2 h-2 rounded-full bg-zinc-800 animate-pulse" />
         </div>
       ) : (
-        <Suspense
-          fallback={
-            <div className="w-full h-full bg-[#0A0D14] flex items-center justify-center">
-              <span className="w-4 h-4 rounded-full border-2 border-[#2DD4BF] border-t-transparent animate-spin" />
-            </div>
-          }
-        >
-          {source === 'react-bits' ? (
-            <ReactBitsPreview key={`react-bits-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
-          ) : source === 'magic-ui' ? (
-            <MagicUIPreview key={`magic-ui-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
-          ) : source === 'aceternity' ? (
-            <AceternityPreview key={`aceternity-${comp.slug}`} slug={comp.slug} lite={animationMode === 'lite'} />
-          ) : (
-            <LiveComponentPreview
-              key={`zeuralabz-${comp.slug}`}
-              slug={comp.slug}
-              category={comp.category}
-              name={comp.name}
-              lite={animationMode === 'lite'}
-              animationMode={animationMode}
-            />
-          )}
-        </Suspense>
+        <LiveComponentPreview
+          key={`zeuralabz-${comp.slug}`}
+          slug={comp.slug}
+          category={comp.category}
+          name={comp.name}
+          lite={animationMode === 'lite'}
+          animationMode={animationMode}
+        />
       )}
     </div>
   );

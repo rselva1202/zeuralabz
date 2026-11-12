@@ -311,3 +311,4 @@ export const LiveCanvas: React.FC<LiveCanvasProps> = ({
 };
 
 export default LiveCanvas;
+

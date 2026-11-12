@@ -1,156 +1,138 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import componentsData from './data/components.json';
-import { PreviewRouter } from './previews/PreviewRouter';
+import React, { useState, useEffect, useMemo } from 'react';
+import { PreviewRouter, PreviewItem } from './previews/PreviewRouter';
 import { LiveCanvas, CanvasEngineType } from './components/LiveCanvas';
 
-interface ComponentItem {
-  id: string;
-  name: string;
-  slug: string;
-  category: string;
-  description: string;
-  tags: string[];
-  bestFor: string[];
-  theme: string;
-  source?: 'zeuralabz-original' | 'react-bits' | 'magic-ui' | 'aceternity';
-  componentName?: string;
-  originalUrl?: string;
-  previewUrl?: string;
-  installCommand?: string;
-}
+// Top 12 ZEURALABZ Originals with 100% Real Interactive Previews
+const TOP_12_ORIGINALS: PreviewItem[] = [
+  {
+    id: 'zeura-aurora',
+    slug: 'aurora',
+    name: 'Aurora Glow',
+    category: 'backgrounds',
+    componentName: 'AuroraBackground',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-galaxy',
+    slug: 'galaxy',
+    name: 'Spiral Galaxy',
+    category: 'backgrounds',
+    componentName: 'GalaxyBackground',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-particles',
+    slug: 'particles',
+    name: 'Neural Particles',
+    category: 'backgrounds',
+    componentName: 'ParticlesBackground',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-split-text',
+    slug: 'split-text',
+    name: 'Split Text Kinetic',
+    category: 'text-animations',
+    componentName: 'SplitText',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-shimmer',
+    slug: 'shimmer',
+    name: 'Shimmer Button',
+    category: 'buttons',
+    componentName: 'ShimmerButton',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-tilt',
+    slug: 'tilt',
+    name: '3D Gyro Tilt',
+    category: 'cards',
+    componentName: 'TiltCard',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-spotlight',
+    slug: 'spotlight',
+    name: 'Spotlight Card',
+    category: 'cards',
+    componentName: 'SpotlightCard',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-gradient',
+    slug: 'gradient',
+    name: 'Mesh Gradient',
+    category: 'backgrounds',
+    componentName: 'GradientBackground',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-typewriter',
+    slug: 'typewriter',
+    name: 'Smooth Typewriter',
+    category: 'text-animations',
+    componentName: 'TypewriterText',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-neon',
+    slug: 'neon',
+    name: 'Cyberpunk Neon',
+    category: 'buttons',
+    componentName: 'NeonButton',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-starfield',
+    slug: 'starfield',
+    name: 'Warp Starfield',
+    category: 'backgrounds',
+    componentName: 'StarfieldBackground',
+    source: 'zeuralabz-original',
+  },
+  {
+    id: 'zeura-glitch',
+    slug: 'glitch',
+    name: 'Glitch Chromatic',
+    category: 'text-animations',
+    componentName: 'GlitchText',
+    source: 'zeuralabz-original',
+  },
+];
 
-const CATEGORIES = [
-  'all',
-  'backgrounds',
-  'text-animations',
-  'buttons',
-  'cards',
-  'heroes',
-  'layouts',
-  'forms',
-  'animations',
-  'loaders',
-] as const;
-
-const ITEMS_PER_PAGE = 12;
-
-interface ComponentCardProps {
-  comp: ComponentItem;
-  isCopied: boolean;
-  animationMode: 'full' | 'lite' | 'off';
-  onCopy: (text: string) => void;
-  onOpenCode: (comp: ComponentItem) => void;
-}
-
-const ComponentCard = React.memo<ComponentCardProps>(({
-  comp,
-  isCopied,
-  animationMode,
-  onCopy,
-  onOpenCode,
-}) => {
-  return (
-    <div
-      className="group rounded-[6px] bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:shadow-[4px_4px_0px_#14B8A6] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150 flex flex-col overflow-hidden w-full max-w-full min-w-0"
-    >
-      {/* Top Preview Area: 180px, no extra inner border, PreviewRouter filling top */}
-      <div className="h-44 sm:h-48 bg-[#0A0D14] relative flex items-center justify-center overflow-hidden border-b-[2px] border-white w-full max-w-full">
-        <PreviewRouter comp={comp} animationMode={animationMode} />
-      </div>
-
-      {/* Details Area: spacious, minimal, clean */}
-      <div className="p-5 flex-1 flex flex-col justify-between bg-[#161616] w-full max-w-full min-w-0">
-        <div>
-          <div className="flex items-center justify-between gap-2">
-            <h3 className="font-heading text-sm font-black text-white group-hover:text-[#2DD4BF] transition truncate">
-              {comp.name}
-            </h3>
-            <span className="text-[10px] text-[#2DD4BF] font-mono font-bold bg-black/60 border border-white/20 px-1.5 py-0.5 shrink-0">
-              {comp.slug}
-            </span>
-          </div>
-          <p className="text-xs text-[#CCCCCC] font-normal mt-2 line-clamp-2 leading-relaxed">
-            {comp.description}
-          </p>
-
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            <span className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase border border-white/30 bg-black/60 text-[#CCCCCC]">
-              {comp.category}
-            </span>
-            {comp.bestFor?.slice(0, 1).map((b) => (
-              <span key={b} className="px-2 py-0.5 text-[10px] font-mono text-zinc-400 bg-black/40 border border-white/10">
-                ✓ {b}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom Actions: 1 shadow only, mint install button */}
-        <div className="mt-5 pt-3 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
-          <button
-            onClick={() =>
-              onCopy(
-                comp.source === 'react-bits'
-                  ? `npx zeuralabz add ${comp.slug} --source react-bits`
-                  : comp.source === 'magic-ui'
-                  ? `npx zeuralabz add ${comp.slug} --source magic-ui`
-                  : comp.source === 'aceternity'
-                  ? `npx zeuralabz add ${comp.slug} --source aceternity`
-                  : `npx zeuralabz add ${comp.slug} --source zeuralabz-original`
-              )
-            }
-            className={`flex-1 py-2 px-3 text-[11px] font-mono font-bold border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] transition active:translate-x-0.5 active:translate-y-0.5 flex items-center justify-center gap-1.5 truncate ${
-              isCopied
-                ? 'bg-emerald-400 text-black font-black'
-                : 'bg-[#2DD4BF] text-black hover:bg-[#14B8A6] font-black'
-            }`}
-          >
-            {isCopied ? '✔ COPIED' : `$ npx zeuralabz add ${comp.slug}`}
-          </button>
-
-          <button
-            onClick={() => onOpenCode(comp)}
-            className="bg-white text-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] px-3 py-2 text-xs font-heading font-black hover:bg-zinc-200 transition shrink-0"
-            title="View code & usage"
-          >
-            CODE ➔
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-});
-ComponentCard.displayName = 'ComponentCard';
+const COMPONENT_DESCRIPTIONS: Record<string, string> = {
+  aurora: 'Dynamic canvas cosmic aurora wave with smooth multi-color mesh illumination.',
+  galaxy: 'Real-time 700+ star spiral galaxy simulation with logarithmic gravitational arms.',
+  particles: 'Interactive float particle field with spatial proximity line interconnects.',
+  'split-text': 'Character-staggered kinetic typography reveal with spring physics.',
+  shimmer: 'High-polish metallic button with sweeping diagonal light reflection.',
+  tilt: 'Perspective-aware card with cursor proximity tilt and specular highlight.',
+  spotlight: 'Radial cursor illumination card revealing subtle underlying mesh geometry.',
+  gradient: 'Harmonic 4-stop radial gradient canvas with fluid orbital velocity.',
+  typewriter: 'Dynamic typing effect with custom blink cursor and cadence variation.',
+  neon: 'Vibrant neon glow button with reactive hover state and electrical aura.',
+  starfield: 'Hyperspace starfield acceleration canvas with z-depth radial projection.',
+  glitch: 'Aggressive chromatic aberration glitch typography with random slice offset.',
+};
 
 export default function App() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedSource, setSelectedSource] = useState<string>('all');
-  const [selectedFormat, setSelectedFormat] = useState<string>('typescript');
-  const [rawSearchQuery, setRawSearchQuery] = useState('');
-  const [debouncedQuery, setDebouncedQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [isAppendMode, setIsAppendMode] = useState<boolean>(false);
   const [animationMode, setAnimationMode] = useState<'full' | 'lite' | 'off'>('lite');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
-  // Debounce search input by 300ms to avoid lag during typing
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedQuery(rawSearchQuery);
-      setCurrentPage(1);
-      setIsAppendMode(false);
-    }, 300);
-    return () => clearTimeout(handler);
-  }, [rawSearchQuery]);
-
-  const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
-  const [selectedComponent, setSelectedComponent] = useState<ComponentItem | null>(null);
-  const [activeTab, setActiveTab] = useState<'react' | 'html' | 'css'>('react');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [copiedText, setCopiedText] = useState<string | null>(null);
   const [activeEngine, setActiveEngine] = useState<CanvasEngineType>('aurora');
-  const [activePreset, setActivePreset] = useState<'dark-neon' | 'ocean' | 'dune'>('dark-neon');
   const [starCount, setStarCount] = useState<number>(48);
+  const [selectedCompForCode, setSelectedCompForCode] = useState<PreviewItem | null>(null);
+  const [activeCodeTab, setActiveCodeTab] = useState<'react' | 'html' | 'css'>('react');
 
-  const standalone = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('standalone') : null;
+  // Generator State
+  const [genComponent, setGenComponent] = useState('aurora');
+  const [genTheme, setGenTheme] = useState('ocean');
+  const [genAnimation, setGenAnimation] = useState('float');
+
+  // FAQ Accordion State
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Fetch real GitHub star count
   useEffect(() => {
@@ -164,209 +146,120 @@ export default function App() {
       .catch(() => {});
   }, []);
 
-  const filteredComponents = useMemo(() => {
-    const q = debouncedQuery.toLowerCase().trim();
-    return (componentsData as ComponentItem[]).filter((c) => {
-      const matchesSource =
-        selectedSource === 'all' ||
-        (selectedSource === 'react-bits' && c.source === 'react-bits') ||
-        (selectedSource === 'magic-ui' && c.source === 'magic-ui') ||
-        (selectedSource === 'aceternity' && c.source === 'aceternity') ||
-        (selectedSource === 'zeuralabz-original' && (c.source === 'zeuralabz-original' || !c.source));
-      const matchesCategory = selectedCategory === 'all' || c.category === selectedCategory;
-      const matchesSearch =
-        !q ||
-        c.name.toLowerCase().includes(q) ||
-        c.slug.toLowerCase().includes(q) ||
-        c.description.toLowerCase().includes(q) ||
-        c.tags.some((t) => t.toLowerCase().includes(q));
-      return matchesSource && matchesCategory && matchesSearch;
-    });
-  }, [selectedSource, selectedCategory, debouncedQuery]);
-
-  const totalPages = Math.ceil(filteredComponents.length / ITEMS_PER_PAGE) || 1;
-  const visibleComponents = useMemo(() => {
-    if (isAppendMode) {
-      return filteredComponents.slice(0, currentPage * ITEMS_PER_PAGE);
-    }
-    const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
-    return filteredComponents.slice(startIdx, startIdx + ITEMS_PER_PAGE);
-  }, [filteredComponents, currentPage, isAppendMode]);
-
-  const pageNumbers = useMemo(() => {
-    const pages: (number | string)[] = [];
-    if (totalPages <= 7) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-      if (currentPage > 3) pages.push('...');
-      const start = Math.max(2, currentPage - 1);
-      const end = Math.min(totalPages - 1, currentPage + 1);
-      for (let i = start; i <= end; i++) pages.push(i);
-      if (currentPage < totalPages - 2) pages.push('...');
-      pages.push(totalPages);
-    }
-    return pages;
-  }, [totalPages, currentPage]);
-
-  const totalReactBits = useMemo(
-    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'react-bits').length,
-    []
-  );
-  const totalMagicUI = useMemo(
-    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'magic-ui').length,
-    []
-  );
-  const totalAceternity = useMemo(
-    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'aceternity').length,
-    []
-  );
-  const totalZeura = useMemo(
-    () => (componentsData as ComponentItem[]).filter((c) => c.source === 'zeuralabz-original' || !c.source).length,
-    []
-  );
-  const totalAll = totalReactBits + totalMagicUI + totalAceternity + totalZeura;
-
-  const copyCommand = (text: string) => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    setCopiedSlug(text);
-    setTimeout(() => setCopiedSlug(null), 2000);
+    setCopiedText(text);
+    setTimeout(() => setCopiedText(null), 2000);
   };
 
-  const sampleHeroCode = `import { AuroraBackground } from '@/components/zeuralabz/aurora';
-import { SplitText } from '@/components/zeuralabz/split-text';
-import { ShimmerButton } from '@/components/zeuralabz/shimmer';
+  const generatedStyleName = useMemo(() => {
+    return `${genComponent}-${genTheme}-${genAnimation}`;
+  }, [genComponent, genTheme, genAnimation]);
 
-export default function Hero() {
-  return (
-    <AuroraBackground className="min-h-screen flex flex-col items-center justify-center">
-      <SplitText text="Websites that feel alive" className="text-6xl font-black" />
-      <p className="mt-4 text-[#CCCCCC] font-bold">531 components. 1M+ combinations.</p>
-      <ShimmerButton text="Explore Catalog ➔" className="mt-8 font-black uppercase" />
-    </AuroraBackground>
-  );
-}`;
+  const generatedCommand = useMemo(() => {
+    return `npx zeuralabz add ${genComponent} --theme ${genTheme} --animation ${genAnimation}`;
+  }, [genComponent, genTheme, genAnimation]);
 
-  // Standalone preview route handler for testing
-  if (standalone === 'galaxy' || standalone === 'galaxy-fullscreen' || standalone === 'galaxy-before') {
-    return (
-      <div className="w-screen h-screen bg-[#0E0E0E] flex items-center justify-center p-4 sm:p-8 max-w-full overflow-hidden">
-        <div className="w-full max-w-[460px] bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] overflow-hidden flex flex-col">
-          <div className="bg-[#111111] border-b-[2px] border-white px-4 py-2.5 flex items-center justify-between font-heading text-xs font-black text-white">
-            <span className="flex items-center gap-2">
-              <span className="w-5 h-5 bg-[#2DD4BF] text-black border border-white flex items-center justify-center text-[10px]">Z</span>
-              ZEURALABZ • STANDALONE
-            </span>
-            <span className="bg-[#2DD4BF] text-black px-2 py-0.5 text-[10px] font-mono font-bold">LIVE</span>
-          </div>
-          <div className="h-64 bg-[#0E0E0E] relative border-b-[2px] border-white overflow-hidden">
-            <LiveCanvas engine="galaxy" lite={false} />
-          </div>
-          <div className="p-5 space-y-3 bg-[#161616] text-white">
-            <h3 className="font-heading text-lg font-black text-white">Spiral Galaxy Cosmic Canvas</h3>
-            <p className="text-xs text-[#CCCCCC] font-normal">700+ stars, 3 logarithmic spiral arms, radiant purple stellar core.</p>
-            <div className="pt-2 border-t border-[#2A2A2A] flex justify-between items-center text-xs font-mono font-bold">
-              <span className="text-[#2DD4BF]">npx zeuralabz add galaxy</span>
-              <span className="bg-[#2DD4BF] text-black px-2 py-0.5 border border-white text-[10px]">READY</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const engineDescriptions: Record<CanvasEngineType, string> = {
+    aurora: 'Organic fluid wave illumination with dynamic multi-stop mint/cyan gradients.',
+    galaxy: '700+ particles orbiting in 3 logarithmic spiral arms with galactic core glow.',
+    particles: 'Floating neural particle network with real-time distance-based interconnects.',
+    gradient: 'Orbital chromatic mesh with fluid continuous canvas morphing.',
+  };
 
   return (
-    <div className="min-h-screen bg-[#0E0E0E] text-white flex flex-col font-sans selection:bg-[#2DD4BF] selection:text-black w-full max-w-full overflow-x-hidden">
+    <div className="min-h-screen bg-[#0E0E0E] text-white flex flex-col font-sans selection:bg-[#2DD4BF] selection:text-black overflow-x-hidden max-w-full">
       {/* ============================================================== */}
-      {/* 1. TOP NAVBAR (Sticky, Minimal Dark #111111, 2px solid white border) */}
+      {/* 1. NAVBAR (Sticky, Dark, 2px White Bottom Border) */}
       {/* ============================================================== */}
-      <header className="sticky top-0 z-50 w-full border-b-[2px] border-white bg-[#111111] shadow-[0px_2px_0px_#2DD4BF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
-          {/* Left Brand: Mint Square with Black Z + ZEURALABZ in ONE word */}
-          <div className="flex items-center gap-3">
-            <a href="#" className="flex items-center gap-2.5 group">
-              <span className="w-9 h-9 sm:w-10 sm:h-10 bg-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] flex items-center justify-center font-heading text-lg sm:text-xl font-black text-black transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 shrink-0">
-                Z
-              </span>
-              <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-white">
-                ZEURALABZ
-              </span>
-            </a>
-            <span className="hidden lg:inline-block px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider uppercase bg-black text-zinc-300 border border-white/40">
-              v1.2.0 • OPEN SOURCE
+      <header className="sticky top-0 z-40 bg-[#0E0E0E]/95 backdrop-blur-md border-b-[2px] border-white w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2.5 shrink-0 group">
+            <span className="w-8 h-8 bg-[#2DD4BF] text-black border border-white flex items-center justify-center font-heading text-sm font-black shadow-[2px_2px_0px_#FFFFFF] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition">
+              Z
             </span>
-          </div>
+            <span className="font-heading font-black text-white text-lg tracking-tight">
+              ZEURALABZ
+            </span>
+            <span className="hidden sm:inline-block px-2 py-0.5 text-[10px] font-mono font-bold uppercase bg-black text-[#2DD4BF] border border-white/20">
+              SKILL v1.2
+            </span>
+          </a>
 
-          {/* Center Navigation Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-xs font-heading font-black uppercase text-white">
-            <a href="#showcase" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#2DD4BF] hover:text-black transition">
-              Showcase
-            </a>
-            <a href="#components" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#2DD4BF] hover:text-black transition">
-              Components
-            </a>
-            <a href="#how-it-works" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#2DD4BF] hover:text-black transition">
-              How it Works
-            </a>
-            <a href="#mcp" className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#2DD4BF] hover:text-black transition">
-              MCP & Skill
-            </a>
-            <a
-              href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md"
-              target="_blank"
-              rel="noreferrer"
-              className="px-2 py-1 border-[2px] border-transparent hover:border-white hover:bg-[#2DD4BF] hover:text-black transition"
-            >
-              Docs
-            </a>
+          {/* Desktop Nav Links */}
+          <nav className="hidden xl:flex items-center gap-6 text-xs font-heading font-black uppercase tracking-wider text-zinc-300">
+            <a href="#what-is-it" className="hover:text-[#2DD4BF] transition">What is it?</a>
+            <a href="#how-it-works" className="hover:text-[#2DD4BF] transition">How it works</a>
+            <a href="#whats-it-for" className="hover:text-[#2DD4BF] transition">What's it for</a>
+            <a href="#connected-sources" className="hover:text-[#2DD4BF] transition">Connected Sources</a>
+            <a href="#showcase" className="hover:text-[#2DD4BF] transition">Showcase</a>
+            <a href="#install" className="hover:text-[#2DD4BF] transition">Install</a>
+            <a href="#faq" className="hover:text-[#2DD4BF] transition">FAQ</a>
           </nav>
 
-          {/* Right Action Controls */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Minimal Animations Mode Switcher (Desktop) */}
-            <div className="hidden lg:flex items-center gap-1 bg-[#161616] border-[2px] border-white p-1 shadow-[2px_2px_0px_#2DD4BF]">
-              <span className="text-[10px] font-mono font-bold uppercase px-1 text-zinc-300">ANIMATIONS:</span>
-              {(['lite', 'full', 'off'] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setAnimationMode(m)}
-                  className={`px-2 py-0.5 text-[10px] font-heading font-black uppercase transition border-[2px] ${
-                    animationMode === m
-                      ? 'bg-[#2DD4BF] text-black border-white shadow-[1px_1px_0px_#FFFFFF]'
-                      : 'bg-transparent text-white border-transparent hover:border-white hover:bg-zinc-800'
-                  }`}
-                  title={`Motion mode: ${m}`}
-                >
-                  {m === 'full' ? 'ON' : m.toUpperCase()}
-                </button>
-              ))}
+          {/* Right Action Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            {/* Animation Lite / Full / Off Selector */}
+            <div className="flex items-center border-[2px] border-white bg-[#161616] text-[10px] font-mono font-bold uppercase p-0.5 shadow-[2px_2px_0px_#2DD4BF]">
+              <span className="px-2 text-zinc-400">FX:</span>
+              <button
+                onClick={() => setAnimationMode('lite')}
+                className={`px-2 py-1 transition ${animationMode === 'lite' ? 'bg-[#2DD4BF] text-black font-black' : 'text-zinc-300 hover:text-white'}`}
+                title="Lite mode (efficient 30fps)"
+              >
+                LITE
+              </button>
+              <button
+                onClick={() => setAnimationMode('full')}
+                className={`px-2 py-1 transition ${animationMode === 'full' ? 'bg-[#2DD4BF] text-black font-black' : 'text-zinc-300 hover:text-white'}`}
+                title="Full 60fps animations"
+              >
+                ON
+              </button>
+              <button
+                onClick={() => setAnimationMode('off')}
+                className={`px-2 py-1 transition ${animationMode === 'off' ? 'bg-red-500 text-white font-black' : 'text-zinc-300 hover:text-white'}`}
+                title="Pause all animations"
+              >
+                OFF
+              </button>
             </div>
 
-            {/* GitHub Stars Button */}
+            {/* GitHub Star Button */}
             <a
               href="https://github.com/rselva1202/zeuralabz"
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-black text-white hover:bg-zinc-800 border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] text-xs font-heading font-black uppercase transition shrink-0"
+              className="px-3 py-1.5 bg-white text-black text-xs font-heading font-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] hover:bg-zinc-200 transition flex items-center gap-1.5"
             >
               <span>GITHUB</span>
-              <span className="text-amber-400">★</span>
-              <span className="font-mono text-[11px] text-[#2DD4BF]">{starCount}</span>
+              <span className="text-amber-500">★</span>
+              <span>{starCount}</span>
             </a>
 
-            {/* AI Suggest CLI button */}
-            <button
-              onClick={() => copyCommand('npx zeuralabz suggest')}
-              className="neo-btn bg-[#2DD4BF] text-black px-3 sm:px-4 py-1.5 text-xs font-heading font-black tracking-wide border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6] flex items-center gap-1 shrink-0"
-              title="Copy heuristic analyzer command"
+            {/* Install Skill CTA */}
+            <a
+              href="#install"
+              className="px-3.5 py-1.5 bg-[#2DD4BF] text-black text-xs font-heading font-black border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6] transition uppercase"
             >
-              <span>SUGGEST</span>
-            </button>
+              INSTALL SKILL →
+            </a>
+          </div>
 
-            {/* Mobile Hamburger Button */}
+          {/* Mobile Hamburger Toggle */}
+          <div className="flex items-center gap-2 xl:hidden">
+            <a
+              href="https://github.com/rselva1202/zeuralabz"
+              target="_blank"
+              rel="noreferrer"
+              className="px-2.5 py-1 bg-white text-black text-[11px] font-heading font-black border border-white"
+            >
+              ★ {starCount}
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-9 h-9 bg-[#161616] border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] flex items-center justify-center text-white hover:bg-zinc-800 text-lg font-black transition"
+              className="p-2 bg-[#161616] text-white border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] text-xs font-heading font-black"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? '✕' : '☰'}
@@ -374,66 +267,22 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Panel */}
+        {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t-[2px] border-white bg-[#111111] px-4 py-4 space-y-3">
-            <nav className="flex flex-col space-y-2 text-xs font-heading font-black uppercase">
-              <a
-                href="#showcase"
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 border-[2px] border-white/30 bg-[#161616] hover:bg-[#2DD4BF] hover:text-black transition"
-              >
-                Showcase
-              </a>
-              <a
-                href="#components"
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 border-[2px] border-white/30 bg-[#161616] hover:bg-[#2DD4BF] hover:text-black transition"
-              >
-                Components ({totalAll})
-              </a>
-              <a
-                href="#how-it-works"
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 border-[2px] border-white/30 bg-[#161616] hover:bg-[#2DD4BF] hover:text-black transition"
-              >
-                How it Works
-              </a>
-              <a
-                href="#mcp"
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 border-[2px] border-white/30 bg-[#161616] hover:bg-[#2DD4BF] hover:text-black transition"
-              >
-                MCP & AI Skills
-              </a>
-              <a
-                href="https://github.com/rselva1202/zeuralabz"
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 border-[2px] border-white/30 bg-[#161616] hover:bg-[#2DD4BF] hover:text-black transition flex items-center justify-between"
-              >
-                <span>Star on GitHub</span>
-                <span className="text-amber-400">★ {starCount}</span>
-              </a>
-            </nav>
-
-            {/* Mobile Animation Mode Selector */}
-            <div className="pt-2 border-t border-[#2A2A2A] flex items-center justify-between text-xs font-mono">
-              <span className="text-zinc-400 font-bold uppercase">ANIMATIONS:</span>
+          <div className="xl:hidden bg-[#111111] border-b-[2px] border-white p-4 space-y-3 font-heading font-black text-sm uppercase">
+            <a href="#what-is-it" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">What is it?</a>
+            <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">How it works</a>
+            <a href="#whats-it-for" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">What's it for</a>
+            <a href="#connected-sources" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">Connected Sources</a>
+            <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">Showcase (Top 12)</a>
+            <a href="#install" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[#2DD4BF]">Install Skill</a>
+            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">FAQ</a>
+            <div className="pt-2 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
+              <span className="text-zinc-400">ANIMATIONS:</span>
               <div className="flex gap-1">
-                {(['lite', 'full', 'off'] as const).map((m) => (
-                  <button
-                    key={m}
-                    onClick={() => setAnimationMode(m)}
-                    className={`px-2 py-0.5 text-[10px] font-heading font-black uppercase border-[2px] ${
-                      animationMode === m
-                        ? 'bg-[#2DD4BF] text-black border-white shadow-[1px_1px_0px_#FFFFFF]'
-                        : 'bg-black text-white border-zinc-700'
-                    }`}
-                  >
-                    {m === 'full' ? 'FULL' : m.toUpperCase()}
-                  </button>
-                ))}
+                <button onClick={() => setAnimationMode('lite')} className={`px-2 py-0.5 border ${animationMode === 'lite' ? 'bg-[#2DD4BF] text-black font-bold' : 'text-white'}`}>LITE</button>
+                <button onClick={() => setAnimationMode('full')} className={`px-2 py-0.5 border ${animationMode === 'full' ? 'bg-[#2DD4BF] text-black font-bold' : 'text-white'}`}>ON</button>
+                <button onClick={() => setAnimationMode('off')} className={`px-2 py-0.5 border ${animationMode === 'off' ? 'bg-red-500 text-white font-bold' : 'text-white'}`}>OFF</button>
               </div>
             </div>
           </div>
@@ -441,164 +290,230 @@ export default function Hero() {
       </header>
 
       {/* ============================================================== */}
-      {/* 2. HERO SECTION (Minimal Neo-Brutalist, Clean, Whitespace) */}
+      {/* 2. HERO SECTION */}
       {/* ============================================================== */}
-      <section className="relative py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white neo-dots overflow-hidden w-full max-w-full">
-        <div className="max-w-7xl mx-auto w-full max-w-full">
-          {/* Top Row: Hero Headline & Minimal Single Telemetry Box */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full max-w-full">
-            {/* Left Column: Headline, Subtitle, CTA Buttons (7 cols) */}
+      <section className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white neo-dots overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto w-full max-w-full space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full max-w-full">
+            {/* Left Headline Column (7 cols) */}
             <div className="lg:col-span-7 space-y-6 w-full max-w-full min-w-0">
-              {/* Plain Single Banner Line: NO floating stickers, NO rotated badges */}
+              {/* Badge */}
               <div className="inline-block bg-[#161616] border-[2px] border-white px-3 py-1 text-xs font-mono font-bold tracking-wider uppercase text-zinc-300 shadow-[2px_2px_0px_#2DD4BF]">
                 <span className="text-[#2DD4BF] mr-2">●</span>
-                NEW • ZEURALABZ 1.2 — 531 COMPONENTS
+                NEW • ZEURALABZ SKILL v1.2 — 1M+ STYLES
               </div>
 
-              {/* Minimal Neo-Brutalist Headline */}
-              <h1 className="font-heading text-[clamp(2.2rem,6vw,3.8rem)] leading-[1.08] font-black tracking-tight text-white uppercase break-words hyphens-auto">
-                BEAUTIFUL ANIMATED UI FOR WEBSITES THAT{' '}
+              {/* Big Headline in Archivo Black uppercase */}
+              <h1 className="font-heading text-[clamp(2.1rem,5.5vw,3.9rem)] leading-[1.06] font-black tracking-tight text-white uppercase break-words">
+                GIVE YOUR AI AGENT{' '}
                 <span className="inline-block bg-[#2DD4BF] text-black px-3 py-1 border-[2px] border-white shadow-[3px_3px_0px_#FFFFFF] mt-2">
-                  FEEL ALIVE.
+                  1 MILLION UI STYLES.
                 </span>
               </h1>
 
+              {/* Subtext in plain words */}
               <p className="text-sm sm:text-base text-[#CCCCCC] font-normal max-w-2xl leading-relaxed">
-                531 animated components and backgrounds for React across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals. Tune them yourself, or hand them to your AI agent.
+                ZEURALABZ is a Skill for Claude Code, Antigravity, Cursor and Windsurf. Install it once, then ask your AI to build your website — it scans your project and installs the best animated UI for every section.
               </p>
 
-              {/* Action Buttons */}
+              {/* Hero Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
                 <a
-                  href="#components"
-                  className="neo-btn bg-[#2DD4BF] text-black border-[2px] border-white shadow-[3px_3px_0px_#FFFFFF] hover:bg-[#14B8A6] px-6 py-3.5 text-xs sm:text-sm font-heading font-black tracking-wider text-center"
+                  href="#install"
+                  className="bg-[#2DD4BF] text-black border-[2px] border-white shadow-[3px_3px_0px_#FFFFFF] hover:bg-[#14B8A6] px-6 py-3.5 text-xs sm:text-sm font-heading font-black tracking-wider text-center uppercase"
                 >
-                  BROWSE COMPONENTS ➔
+                  INSTALL THE SKILL →
                 </a>
                 <a
-                  href="https://github.com/rselva1202/zeuralabz"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="neo-btn bg-[#161616] text-white border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:bg-zinc-800 px-6 py-3.5 text-xs sm:text-sm font-heading font-black tracking-wider text-center flex items-center justify-center gap-2"
+                  href="#how-it-works"
+                  className="bg-white text-black border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:bg-zinc-200 px-6 py-3.5 text-xs sm:text-sm font-heading font-black tracking-wider text-center uppercase"
                 >
-                  <span>STAR ON GITHUB</span>
-                  <span className="text-amber-400">★</span>
+                  SEE HOW IT WORKS ↓
                 </a>
               </div>
             </div>
 
-            {/* Right Column: ONE SINGLE Minimal Telemetry Box (5 cols) */}
+            {/* Right LiveCanvas Column (5 cols) */}
             <div className="lg:col-span-5 w-full max-w-full">
-              <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 sm:p-6 flex flex-col justify-between w-full max-w-full">
-                {/* Header */}
-                <div className="flex items-center justify-between pb-3.5 border-b border-[#2A2A2A]">
-                  <span className="font-heading text-xs font-black uppercase text-white tracking-wider">
-                    LIBRARY TELEMETRY
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#2DD4BF]">
-                    <span className="w-2 h-2 rounded-full bg-[#2DD4BF] animate-pulse" />
-                    ACTIVE
-                  </span>
-                </div>
-
-                {/* Total stat row */}
-                <div className="py-4 border-b border-[#2A2A2A] flex items-center justify-between">
-                  <div>
-                    <div className="font-heading text-4xl sm:text-5xl font-black text-white leading-none">
-                      {totalAll}
-                    </div>
-                    <div className="text-[11px] font-mono text-[#CCCCCC] mt-1 uppercase tracking-wider">
-                      TOTAL COMPONENTS CURATED
-                    </div>
+              <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] overflow-hidden flex flex-col w-full max-w-full">
+                {/* Canvas Top Bar */}
+                <div className="bg-[#111111] border-b-[2px] border-white px-4 py-2.5 flex items-center justify-between text-xs font-mono font-bold text-zinc-300">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
+                    <span className="ml-2 uppercase text-white font-heading font-black">
+                      ENGINE: <span className="text-[#2DD4BF]">{activeEngine.toUpperCase()}</span>
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 text-[10px] font-heading font-black uppercase bg-[#2DD4BF] text-black border border-white">
-                    4 SOURCES
+                  <span className="text-[10px] text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">
+                    LIVE CANVAS
                   </span>
                 </div>
 
-                {/* 4 source stats: clean 2x2 grid, NO nested cards, NO inner borders, thin 1px divider */}
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div>
-                    <div className="font-heading text-2xl font-black text-white">{totalReactBits}</div>
-                    <div className="text-[11px] font-mono text-[#CCCCCC] mt-0.5">React Bits (Linked)</div>
+                {/* Live Canvas Viewport (Guaranteed Switch + Cleanup) */}
+                <div className="h-56 sm:h-64 bg-[#0E0E0E] relative border-b-[2px] border-white overflow-hidden">
+                  <LiveCanvas
+                    key={activeEngine}
+                    engine={activeEngine}
+                    lite={animationMode === 'lite'}
+                  />
+                  <div className="absolute top-2.5 right-2.5 pointer-events-none">
+                    <span className="text-[10px] font-mono font-bold bg-black/80 text-[#2DD4BF] px-2 py-0.5 border border-[#2DD4BF]/40">
+                      ACTIVE • 60 FPS
+                    </span>
                   </div>
-                  <div>
-                    <div className="font-heading text-2xl font-black text-white">{totalMagicUI}</div>
-                    <div className="text-[11px] font-mono text-[#CCCCCC] mt-0.5">Magic UI (Linked)</div>
+                </div>
+
+                {/* Engine Switcher Controls */}
+                <div className="p-4 bg-[#141414] space-y-3">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
+                    <span className="text-[11px] font-mono text-zinc-400 uppercase font-bold">
+                      TRY ENGINE:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {(['aurora', 'galaxy', 'particles', 'gradient'] as const).map((eng) => (
+                        <button
+                          key={eng}
+                          onClick={() => setActiveEngine(eng)}
+                          className={`px-2.5 py-1 text-[11px] font-heading font-black uppercase transition border-[2px] border-white ${
+                            activeEngine === eng
+                              ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF] -translate-x-0.5 -translate-y-0.5'
+                              : 'bg-[#1C1C1C] text-zinc-300 hover:text-white shadow-[2px_2px_0px_#2DD4BF]'
+                          }`}
+                        >
+                          {eng}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-heading text-2xl font-black text-white">{totalAceternity}</div>
-                    <div className="text-[11px] font-mono text-[#CCCCCC] mt-0.5">Aceternity UI (Linked)</div>
-                  </div>
-                  <div>
-                    <div className="font-heading text-2xl font-black text-white">{totalZeura}</div>
-                    <div className="text-[11px] font-mono text-[#CCCCCC] mt-0.5">ZEURALABZ Original</div>
-                  </div>
+                  <p className="text-xs text-[#CCCCCC] font-normal leading-snug">
+                    {engineDescriptions[activeEngine]}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Minimal Live Canvas Engine Box: 2px white border, 3px mint shadow */}
-          <div className="mt-10 sm:mt-14 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] overflow-hidden w-full max-w-full">
-            {/* Top Control Header: thin 1px bottom border, clean dark bg, no colored chunky bar */}
-            <div className="border-b border-[#2A2A2A] bg-[#111111] px-4 sm:px-6 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80 inline-block" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-                </div>
-                <span className="font-heading text-xs font-black uppercase text-white tracking-wider">
-                  CANVAS ENGINE: <span className="text-[#2DD4BF]">{activeEngine.toUpperCase()}</span>
-                </span>
-              </div>
+          {/* Stats in ONE Plain Row (No nested boxes) */}
+          <div className="pt-6 border-t-[2px] border-white/20 flex flex-wrap items-center justify-center sm:justify-between gap-4 text-center sm:text-left font-mono text-xs sm:text-sm font-bold text-zinc-300">
+            <div className="flex items-center gap-2">
+              <span className="text-[#2DD4BF] text-base">✦</span>
+              <span><strong className="text-white font-heading font-black text-base sm:text-lg">531</strong> Base Components</span>
+            </div>
+            <div className="hidden sm:inline-block text-zinc-600">•</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#2DD4BF] text-base">✦</span>
+              <span><strong className="text-white font-heading font-black text-base sm:text-lg">4</strong> Open Sources</span>
+            </div>
+            <div className="hidden sm:inline-block text-zinc-600">•</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#2DD4BF] text-base">✦</span>
+              <span><strong className="text-white font-heading font-black text-base sm:text-lg">20</strong> Themes</span>
+            </div>
+            <div className="hidden sm:inline-block text-zinc-600">•</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#2DD4BF] text-base">✦</span>
+              <span><strong className="text-[#2DD4BF] font-heading font-black text-base sm:text-lg">1,000,000+</strong> Combinations</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Engine Switcher Buttons */}
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="text-[10px] font-mono text-zinc-400 uppercase mr-1">TRY ENGINE:</span>
-                {(['aurora', 'galaxy', 'particles', 'gradient'] as const).map((eng) => (
-                  <button
-                    key={eng}
-                    onClick={() => setActiveEngine(eng)}
-                    className={`px-3 py-1 text-xs font-heading font-black uppercase transition border-[2px] ${
-                      activeEngine === eng
-                        ? 'bg-[#2DD4BF] text-black border-white shadow-[2px_2px_0px_#FFFFFF]'
-                        : 'bg-[#161616] text-white border-white/60 hover:border-white hover:bg-zinc-800'
-                    }`}
-                  >
-                    {eng}
-                  </button>
-                ))}
+      {/* ============================================================== */}
+      {/* 3. WHAT IS THE ZEURALABZ SKILL? (3 Cards, 1 Layer Each) */}
+      {/* ============================================================== */}
+      <section id="what-is-it" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#0E0E0E]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // ARCHITECTURE
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              WHAT IS THE ZEURALABZ SKILL?
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              Three clean, interconnected pieces designed for modern AI pair programming — zero clutter, maximum leverage.
+            </p>
+          </div>
+
+          {/* 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1: SKILL.md */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-[#2DD4BF] text-black border border-white font-heading font-black text-sm flex items-center justify-center shadow-[2px_2px_0px_#FFFFFF]">
+                  📄
+                </div>
+                <h3 className="font-heading text-lg font-black text-white uppercase">
+                  SKILL.md
+                </h3>
+                <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                  A file your AI reads. It tells Claude, Antigravity, and Cursor what ZEURALABZ can do, its reasoning guidelines, and how to pick the 1 best component per section.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
+                <code className="text-[11px] font-mono text-[#2DD4BF] truncate">
+                  SKILL.md (Drop into skills/)
+                </code>
+                <button
+                  onClick={() => copyToClipboard('https://raw.githubusercontent.com/rselva1202/zeuralabz/main/SKILL.md')}
+                  className="px-2 py-1 bg-white text-black font-heading font-black text-[10px] hover:bg-zinc-200 shrink-0"
+                >
+                  {copiedText === 'https://raw.githubusercontent.com/rselva1202/zeuralabz/main/SKILL.md' ? '✔ COPIED' : 'COPY URL'}
+                </button>
               </div>
             </div>
 
-            {/* Framed Canvas Stage: Unobscured, responsive, 100% visible */}
-            <div className="h-64 sm:h-96 w-full relative bg-[#0E0E0E] overflow-hidden">
-              <LiveCanvas key={activeEngine} engine={activeEngine} lite={animationMode === 'lite'} />
-
-              {/* Sleek Minimal Info Tag in bottom corner - doesn't block the canvas! */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 bg-black/85 backdrop-blur-md border border-white/30 px-3 py-2 text-left">
-                <div className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase tracking-wider">
-                  ● LIVE • {activeEngine.toUpperCase()}
+            {/* Card 2: MCP Server */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-[#2DD4BF] text-black border border-white font-heading font-black text-sm flex items-center justify-center shadow-[2px_2px_0px_#FFFFFF]">
+                  ⚡
                 </div>
-                <div className="font-heading text-xs sm:text-sm font-black text-white mt-0.5">
-                  {activeEngine === 'aurora'
-                    ? 'Northern Aurora Wave'
-                    : activeEngine === 'galaxy'
-                    ? 'Spiral Cosmic Galaxy'
-                    : activeEngine === 'particles'
-                    ? 'Interactive Particle Web'
-                    : 'Mesh Gradient Drift'}
-                </div>
+                <h3 className="font-heading text-lg font-black text-white uppercase">
+                  MCP Server
+                </h3>
+                <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                  Native Model Context Protocol tools your AI can call directly: <span className="text-white font-mono">search_components</span>, <span className="text-white font-mono">suggest_ui_for_project</span>, <span className="text-white font-mono">install_component</span>, and <span className="text-white font-mono">list_themes</span>.
+                </p>
               </div>
-
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10">
+              <div className="mt-6 pt-4 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
+                <code className="text-[11px] font-mono text-[#2DD4BF] truncate">
+                  node mcp-server/index.js
+                </code>
                 <button
-                  onClick={() => copyCommand(`npx zeuralabz add ${activeEngine}`)}
-                  className="bg-[#2DD4BF] text-black border-[2px] border-white px-3 py-1.5 text-xs font-mono font-black shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6] transition"
+                  onClick={() => copyToClipboard('node mcp-server/index.js')}
+                  className="px-2 py-1 bg-white text-black font-heading font-black text-[10px] hover:bg-zinc-200 shrink-0"
                 >
-                  {copiedSlug === `npx zeuralabz add ${activeEngine}` ? '✔ COPIED' : `$ npx zeuralabz add ${activeEngine}`}
+                  {copiedText === 'node mcp-server/index.js' ? '✔ COPIED' : 'COPY'}
+                </button>
+              </div>
+            </div>
+
+            {/* Card 3: CLI */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-[#2DD4BF] text-black border border-white font-heading font-black text-sm flex items-center justify-center shadow-[2px_2px_0px_#FFFFFF]">
+                  ⌨️
+                </div>
+                <h3 className="font-heading text-lg font-black text-white uppercase">
+                  Terminal CLI
+                </h3>
+                <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                  Single-command execution for your terminal without needing AI: <span className="text-white font-mono">npx zeuralabz suggest / add / search / preview / list / themes</span>.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
+                <code className="text-[11px] font-mono text-[#2DD4BF] truncate">
+                  npx zeuralabz suggest
+                </code>
+                <button
+                  onClick={() => copyToClipboard('npx zeuralabz suggest')}
+                  className="px-2 py-1 bg-white text-black font-heading font-black text-[10px] hover:bg-zinc-200 shrink-0"
+                >
+                  {copiedText === 'npx zeuralabz suggest' ? '✔ COPIED' : 'COPY'}
                 </button>
               </div>
             </div>
@@ -607,805 +522,791 @@ export default function Hero() {
       </section>
 
       {/* ============================================================== */}
-      {/* 3. SHOWCASE PANEL (Hero.jsx + Terminal + Presets) */}
+      {/* 4. HOW IT WORKS (3 Steps + Terminal Demo & Hero Code) */}
       {/* ============================================================== */}
-      <section id="showcase" className="py-14 sm:py-20 border-b-[2px] border-white bg-[#111111] w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full">
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-            <span className="bg-[#2DD4BF] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[2px_2px_0px_#FFFFFF]">
-              LIVE CODE SYNTHESIS
+      <section id="how-it-works" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // 3-STEP PIPELINE
             </span>
-            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white mt-3">
-              ZERO BOILERPLATE. COPY & SHIP.
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              HOW IT WORKS
             </h2>
-            <p className="text-[#CCCCCC] font-normal text-xs sm:text-sm mt-2">
-              Every component works independently in standard React, Vite, or Next.js apps.
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              No hunting through 500 documentation pages. Your AI scans your code and installs the exact right component.
             </p>
           </div>
 
-          {/* Minimal Multi-Window Container: 2px white border, 3px mint shadow */}
-          <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] overflow-hidden w-full max-w-full">
-            {/* Window Topbar */}
-            <div className="py-2.5 px-4 bg-[#111111] border-b-[2px] border-white flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-white">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                <span className="font-heading text-xs font-black text-white ml-2">
-                  ZEURALABZ-SHOWCASE-MATRIX.JSX
-                </span>
+          {/* 3 Step Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 space-y-3">
+              <span className="font-heading text-3xl font-black text-[#2DD4BF]">01</span>
+              <h3 className="font-heading text-base font-black text-white uppercase">Install the Skill</h3>
+              <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                Drop <span className="text-white font-mono">SKILL.md</span> into your AI workspace or run <span className="text-white font-mono">npx zeuralabz init</span>. Takes under 1 minute.
+              </p>
+            </div>
+
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 space-y-3">
+              <span className="font-heading text-3xl font-black text-[#2DD4BF]">02</span>
+              <h3 className="font-heading text-base font-black text-white uppercase">Ask Your Agent</h3>
+              <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                Prompt naturally: <span className="text-white italic">"Build my landing page"</span> or <span className="text-white italic">"Make my hero section look animated and pretty"</span>.
+              </p>
+            </div>
+
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 space-y-3">
+              <span className="font-heading text-3xl font-black text-[#2DD4BF]">03</span>
+              <h3 className="font-heading text-base font-black text-white uppercase">Get The Best Pick</h3>
+              <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+                ZEURALABZ scans your <span className="text-white font-mono">package.json</span> and <span className="text-white font-mono">src/</span>, identifies your project type, and installs 1 best pick per section with full preview and zero lag.
+              </p>
+            </div>
+          </div>
+
+          {/* Side-by-Side Live Terminal & Code Demo */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
+            {/* Terminal Window (6 cols) */}
+            <div className="lg:col-span-6 bg-[#0E0E0E] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] overflow-hidden flex flex-col">
+              <div className="bg-[#161616] border-b-[2px] border-white px-4 py-2.5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />
+                  <span className="ml-2 font-mono text-xs font-bold text-zinc-300">bash — terminal</span>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF]">ANALYZER</span>
               </div>
-              <div className="text-[11px] font-mono font-bold text-white uppercase bg-black border border-white/40 px-2 py-0.5">
-                REACT 19 + TAILWIND V4
+              <div className="p-4 sm:p-5 font-mono text-xs space-y-2 text-zinc-300 leading-relaxed overflow-x-auto">
+                <div className="text-zinc-500">$ npx zeuralabz suggest</div>
+                <div className="text-[#2DD4BF]">✔ Project Analysis Complete!</div>
+                <div className="text-zinc-400 pt-1">
+                  • Framework: <span className="text-white font-bold">React (Next.js 14)</span><br />
+                  • Persona: <span className="text-white font-bold">SAAS LANDING</span> (high confidence)<br />
+                  • Styling: <span className="text-white font-bold">Tailwind CSS</span>
+                </div>
+                <div className="text-white font-bold pt-2 border-t border-zinc-800">
+                  Recommended UI Design Plan:
+                </div>
+                <div className="p-2.5 bg-black border border-white/20 text-[11px] space-y-1">
+                  <div>[1] BACKGROUND: <span className="text-[#2DD4BF] font-bold">Aurora Background</span> [Mint Accent]</div>
+                  <div>[2] HERO TEXT:  <span className="text-[#2DD4BF] font-bold">Split Text Kinetic</span></div>
+                  <div>[3] BUTTON:     <span className="text-[#2DD4BF] font-bold">Shimmer Button</span></div>
+                </div>
+                <div className="text-emerald-400 font-bold pt-1">
+                  ✔ Installed 3 components to src/components/zeuralabz/
+                </div>
               </div>
             </div>
 
-            {/* Window Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 w-full max-w-full min-w-0">
-              {/* Left Code Editor (Hero.jsx) - 7 cols */}
-              <div className="lg:col-span-7 p-4 sm:p-6 border-b-[2px] lg:border-b-0 lg:border-r-[2px] border-white font-mono text-xs flex flex-col justify-between bg-[#141414] min-w-0 max-w-full overflow-hidden">
-                <div className="w-full max-w-full min-w-0 overflow-hidden">
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#2A2A2A]">
-                    <span className="font-heading text-white font-black flex items-center gap-1.5 text-xs">
-                      <span className="text-[#2DD4BF]">⚛</span> Hero.jsx
-                    </span>
-                    <button
-                      onClick={() => copyCommand(sampleHeroCode)}
-                      className="neo-btn bg-[#2DD4BF] text-black border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] px-3 py-1 text-xs hover:bg-[#14B8A6]"
-                    >
-                      {copiedSlug === sampleHeroCode ? '✔ COPIED' : 'COPY CODE'}
-                    </button>
-                  </div>
-                  <pre className="text-white overflow-x-auto leading-relaxed space-y-1 font-mono text-xs bg-[#0A0A0A] p-3 sm:p-4 border border-[#2A2A2A] max-w-full min-w-0">
-                    {sampleHeroCode.split('\n').map((line, idx) => (
-                      <div key={idx} className="flex min-w-0">
-                        <span className="text-zinc-500 select-none w-6 sm:w-7 shrink-0 text-right pr-2 sm:pr-3 font-bold">{idx + 1}</span>
-                        <span
-                          className={
-                            line.startsWith('import')
-                              ? 'text-[#2DD4BF] font-bold'
-                              : line.includes('<AuroraBackground') || line.includes('<SplitText') || line.includes('<ShimmerButton')
-                              ? 'text-white font-black'
-                              : line.includes('return') || line.includes('export')
-                              ? 'text-cyan-400 font-bold'
-                              : 'text-[#CCCCCC] font-normal'
-                          }
-                        >
-                          {line}
-                        </span>
-                      </div>
-                    ))}
-                  </pre>
+            {/* Code Output Window (6 cols) */}
+            <div className="lg:col-span-6 bg-[#0E0E0E] border-[2px] border-white shadow-[3px_3px_0px_#FFFFFF] overflow-hidden flex flex-col">
+              <div className="bg-[#161616] border-b-[2px] border-white px-4 py-2.5 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-500 inline-block" />
+                  <span className="font-mono text-xs font-bold text-white">Hero.jsx</span>
                 </div>
+                <button
+                  onClick={() =>
+                    copyToClipboard(`import { AuroraBackground } from '@/components/zeuralabz/aurora';
+import { SplitText } from '@/components/zeuralabz/split-text';
+import { ShimmerButton } from '@/components/zeuralabz/shimmer';
+
+export default function Hero() {
+  return (
+    <AuroraBackground className="min-h-screen flex flex-col items-center justify-center p-8">
+      <SplitText text="Websites that feel alive." className="text-5xl font-black text-white" />
+      <p className="mt-4 text-[#CCCCCC]">AI-curated components ready in 1 click.</p>
+      <ShimmerButton text="Start Exploring ➔" className="mt-8 font-black uppercase" />
+    </AuroraBackground>
+  );
+}`)
+                  }
+                  className="px-2 py-0.5 bg-[#2DD4BF] text-black font-heading font-black text-[10px] hover:bg-[#14B8A6]"
+                >
+                  {copiedText?.includes('AuroraBackground') ? '✔ COPIED' : 'COPY CODE'}
+                </button>
               </div>
-
-              {/* Right Side: Terminal (top) + Presets (bottom) - 5 cols */}
-              <div className="lg:col-span-5 flex flex-col divide-y-[2px] divide-white bg-[#161616] min-w-0 max-w-full">
-                {/* Right Top: Terminal Window */}
-                <div className="p-4 sm:p-5 font-mono text-xs bg-black text-white w-full max-w-full overflow-hidden">
-                  <div className="font-heading text-[#2DD4BF] font-black mb-3 flex items-center gap-2 text-xs">
-                    <span className="text-emerald-400">❯</span> TERMINAL WORKFLOW
-                  </div>
-                  <div className="space-y-1.5 bg-[#0D0D0D] p-3 sm:p-3.5 border border-[#2A2A2A] text-[11px] font-mono overflow-x-auto max-w-full">
-                    <div className="text-[#2DD4BF] font-bold">$ npx zeuralabz suggest</div>
-                    <div className="text-zinc-400">✓ Scanning project structure...</div>
-                    <div className="text-emerald-400 font-bold">✓ Recommended 3 UI picks for your landing page:</div>
-                    <div className="text-white pl-2">• Aurora Background [Mint Accent]</div>
-                    <div className="text-white pl-2">• Split Text Stagger [White Accent]</div>
-                    <div className="text-white pl-2">• Shimmer Button [Teal Accent]</div>
-                    <div className="text-[#2DD4BF] mt-2 font-bold">$ npx zeuralabz add aurora</div>
-                    <div className="text-zinc-400">✔ Installed into src/components/zeuralabz/aurora</div>
-                  </div>
-                </div>
-
-                {/* Right Bottom: Presets Window */}
-                <div className="p-4 sm:p-5 bg-[#141414] w-full max-w-full">
-                  <div className="font-heading text-xs font-black text-white mb-3 flex items-center justify-between uppercase">
-                    <span>Aesthetic Tuning:</span>
-                    <span className="bg-[#2DD4BF] text-black px-1.5 py-0.5 border border-white text-[10px] font-bold">LIVE TUNE</span>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full max-w-full">
-                    {[
-                      { id: 'dark-neon', name: 'Dark Mint', colors: 'Mint + Teal' },
-                      { id: 'ocean', name: 'Ocean Surge', colors: 'Deep Aqua' },
-                      { id: 'dune', name: 'Cyber Indigo', colors: 'Night Sky' },
-                    ].map((preset) => (
-                      <button
-                        key={preset.id}
-                        onClick={() => setActivePreset(preset.id as any)}
-                        className={`p-2.5 text-left border-[2px] transition ${
-                          activePreset === preset.id
-                            ? 'bg-[#2DD4BF] text-black border-white shadow-[2px_2px_0px_#FFFFFF] font-black'
-                            : 'bg-[#161616] text-white border-white/60 hover:bg-zinc-800 font-bold'
-                        }`}
-                      >
-                        <div className="text-xs font-heading font-black uppercase">{preset.name}</div>
-                        <div className="text-[10px] text-[#CCCCCC] mt-1">{preset.colors}</div>
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Preset Values Panel */}
-                  <div className="mt-3 p-3 bg-[#0A0A0A] border border-[#2A2A2A] text-[11px] font-mono text-white font-bold space-y-1 shadow-[2px_2px_0px_#2DD4BF]">
-                    <div className="flex justify-between">
-                      <span className="text-zinc-400">Amplitude:</span>
-                      <span className="text-[#2DD4BF]">
-                        {activePreset === 'ocean' ? '0.82 (Deep Surge)' : activePreset === 'dune' ? '0.64 (Warm Drift)' : '0.95 (High Energy)'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-zinc-400">Cycle Speed:</span>
-                      <span className="text-white">
-                        {activePreset === 'ocean' ? '12s smooth' : activePreset === 'dune' ? '18s relaxed' : '15s kinetic'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <pre className="p-4 sm:p-5 font-mono text-[11px] text-zinc-300 leading-relaxed overflow-x-auto">
+                <code className="text-[#2DD4BF]">{`import { AuroraBackground } from '@/components/zeuralabz/aurora';\nimport { SplitText } from '@/components/zeuralabz/split-text';\nimport { ShimmerButton } from '@/components/zeuralabz/shimmer';\n\n`}</code>
+                <code>{`export default function Hero() {\n  return (\n    `}</code>
+                <code className="text-amber-300">{`<AuroraBackground className="min-h-screen flex flex-col items-center justify-center p-8">`}</code>
+                <code>{`\n      `}</code>
+                <code className="text-[#2DD4BF]">{`<SplitText text="Websites that feel alive." className="text-5xl font-black text-white" />`}</code>
+                <code>{`\n      <p className="mt-4 text-[#CCCCCC]">AI-curated components ready in 1 click.</p>\n      `}</code>
+                <code className="text-emerald-300">{`<ShimmerButton text="Start Exploring ➔" className="mt-8 font-black uppercase" />`}</code>
+                <code>{`\n    `}</code>
+                <code className="text-amber-300">{`</AuroraBackground>`}</code>
+                <code>{`\n  );\n}`}</code>
+              </pre>
             </div>
           </div>
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* 4. EXPLORE THE LIBRARY (Catalog, Filters, Search) */}
+      {/* 5. WHAT'S IT FOR? (Use Cases, 6 Small Cards, No Images) */}
       {/* ============================================================== */}
-      <section id="components" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full max-w-full overflow-hidden">
-        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 justify-between border-b-[2px] border-white pb-6 w-full max-w-full">
-          <div>
-            <h2 className="font-heading text-2xl sm:text-3xl font-black uppercase text-white">Component Catalog</h2>
-            <p className="text-xs text-[#CCCCCC] font-normal mt-1">
-              Every component rendered live with responsive code tabs and single-command installation.
+      <section id="whats-it-for" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#0E0E0E]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // PROJECT PROFILES
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              WHAT'S IT FOR?
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              Your AI knows the exact visual vocabulary for every industry and page type.
             </p>
           </div>
 
-          {/* Neo Search bar: 2px white border, 3px mint shadow */}
-          <div className="relative w-full md:w-80 lg:w-96">
-            <input
-              type="text"
-              placeholder="Search components (e.g. aurora, bento, button)..."
-              value={rawSearchQuery}
-              onChange={(e) => setRawSearchQuery(e.target.value)}
-              className="w-full px-4 py-2.5 sm:py-3 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] text-xs font-bold text-white placeholder:text-zinc-400 focus:outline-none focus:border-[#2DD4BF] transition max-w-full"
-            />
-            {rawSearchQuery && (
-              <button
-                onClick={() => {
-                  setRawSearchQuery('');
-                  setCurrentPage(1);
-                  setIsAppendMode(false);
-                }}
-                className="absolute right-3 top-2.5 sm:top-3 text-[#2DD4BF] font-heading font-black text-xs hover:text-white"
-              >
-                ✕ CLEAR
-              </button>
-            )}
+          {/* 6 Use Case Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 1. Landing Page */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">Landing Page</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">HIGH CONVERSION</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Aurora Background + Split Text + Shimmer Button
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                Harmonic multi-color cosmic mesh paired with kinetic hero typography and high-conversion light sheen actions.
+              </p>
+            </div>
+
+            {/* 2. Portfolio */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">Developer Portfolio</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">CREATIVE</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Spiral Galaxy + Glitch Text + 3D Tilt Card
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                Logarithmic star cluster canvas with responsive cursor gyroscope tilt cards to display featured engineering work.
+              </p>
+            </div>
+
+            {/* 3. Dashboard */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">Analytics Dashboard</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">DATA HEAVY</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Cyber Grid + Counter Roll + Bento Grid
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                High-density metric cockpit with live numeric rolling animations and structured modular Bento container layouts.
+              </p>
+            </div>
+
+            {/* 4. SaaS */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">SaaS Platform</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">B2B ENTERPRISE</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Warp Starfield + Smooth Typewriter + Border Beam
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                Deep tech product narrative with acceleration field effects and precision perimeter light-beam interaction.
+              </p>
+            </div>
+
+            {/* 5. Restaurant */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">Restaurant & Hospitality</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">CULINARY</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Warm Gradient + Blur In Text + Spotlight Card
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                Organic fluid warmth with atmospheric typography reveals and cursor radial lumen highlighting signature dishes.
+              </p>
+            </div>
+
+            {/* 6. Blog / E-commerce */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-sm font-black text-white uppercase">Blog & E-Commerce</span>
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-2 py-0.5 border border-white/20">EDITORIAL</span>
+              </div>
+              <div className="text-xs font-mono font-bold text-[#2DD4BF]">
+                Minimal Dots + Flip Text + Cyberpunk Neon
+              </div>
+              <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                Sleek dot matrix structure with dynamic word swap headers and high-contrast vibrant checkout triggers.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Source Filter Row */}
-        <div className="flex flex-wrap items-center gap-2 pt-4 sm:pt-6 pb-2 border-t border-[#2A2A2A] w-full max-w-full">
-          <span className="font-heading text-xs font-black text-white mr-2 uppercase tracking-wider">
-            SOURCE:
-          </span>
-          {[
-            { id: 'all', label: `All Sources (${totalAll})` },
-            { id: 'react-bits', label: `React Bits (${totalReactBits})` },
-            { id: 'magic-ui', label: `Magic UI (${totalMagicUI})` },
-            { id: 'aceternity', label: `Aceternity UI (${totalAceternity})` },
-            { id: 'zeuralabz-original', label: `ZEURALABZ Original (${totalZeura})` },
-          ].map((src) => (
-            <button
-              key={src.id}
-              onClick={() => {
-                setSelectedSource(src.id);
-                setCurrentPage(1);
-                setIsAppendMode(false);
-              }}
-              className={`px-3 py-1.5 text-xs font-heading font-black uppercase transition border-[2px] border-white ${
-                selectedSource === src.id
-                  ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF] -translate-x-0.5 -translate-y-0.5'
-                  : 'bg-[#161616] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#2DD4BF]'
-              }`}
-            >
-              {src.label}
-            </button>
-          ))}
-        </div>
+      {/* ============================================================== */}
+      {/* 6. SHOWCASE — TOP 12 ONLY (Real Previews Only, No Filters) */}
+      {/* ============================================================== */}
+      <section id="showcase" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-3">
+              <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+                // REAL LIVE RUNTIMES
+              </span>
+              <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                SEE IT LIVE — TOP 12 ORIGINALS
+              </h2>
+              <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+                The only component grid on this site. 12 ZEURALABZ Originals with 100% real interactive previews running in your browser.
+              </p>
+            </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto py-3 text-xs no-scrollbar w-full max-w-full">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setSelectedCategory(cat);
-                setCurrentPage(1);
-                setIsAppendMode(false);
-              }}
-              className={`px-3 py-1.5 capitalize shrink-0 font-heading font-black text-xs transition border-[2px] border-white ${
-                selectedCategory === cat
-                  ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                  : 'bg-[#161616] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#2DD4BF]'
-              }`}
-            >
-              {cat.replace('-', ' ')}
-            </button>
-          ))}
-          <span className="ml-auto shrink-0 font-heading text-xs font-black uppercase bg-black text-[#2DD4BF] px-2.5 py-1 border border-white/40 shadow-[2px_2px_0px_#2DD4BF]">
-            SHOWING {filteredComponents.length} OF {totalAll}
-          </span>
-        </div>
+            <div className="shrink-0">
+              <span className="px-3 py-1.5 bg-[#2DD4BF] text-black font-heading font-black text-xs uppercase border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF]">
+                12 / 12 REAL PREVIEWS
+              </span>
+            </div>
+          </div>
 
-        {/* Second Row: Format selector */}
-        <div className="mt-2 mb-6 sm:mb-8 p-3 sm:p-3.5 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs w-full max-w-full">
-          <span className="font-heading font-black text-white uppercase">Install format you need:</span>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { id: 'typescript', label: 'TypeScript', ext: '.tsx' },
-              { id: 'javascript', label: 'JavaScript', ext: '.jsx' },
-              { id: 'tailwind', label: 'Tailwind CSS', ext: 'v4' },
-              { id: 'html', label: 'HTML + Pure CSS', ext: '.html' },
-            ].map((fmt) => (
-              <button
-                key={fmt.id}
-                onClick={() => setSelectedFormat(fmt.id)}
-                className={`px-3 py-1 text-xs font-bold border-[2px] border-white transition ${
-                  selectedFormat === fmt.id
-                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF] font-black'
-                    : 'bg-[#111111] text-white hover:bg-zinc-800'
-                }`}
+          {/* 3-Column Desktop Grid / 1-Column Mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TOP_12_ORIGINALS.map((comp) => (
+              <div
+                key={comp.slug}
+                className="group rounded-[6px] bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:shadow-[4px_4px_0px_#14B8A6] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150 flex flex-col overflow-hidden w-full max-w-full min-w-0"
               >
-                {fmt.label} <span className="text-zinc-400 text-[10px]">({fmt.ext})</span>
+                {/* Live Preview Area (180px) */}
+                <div className="h-44 sm:h-48 bg-[#0A0D14] relative flex items-center justify-center overflow-hidden border-b-[2px] border-white w-full max-w-full">
+                  <PreviewRouter comp={comp} animationMode={animationMode} />
+                </div>
+
+                {/* Details Area */}
+                <div className="p-5 flex-1 flex flex-col justify-between bg-[#161616] space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="font-heading text-sm font-black text-white group-hover:text-[#2DD4BF] transition truncate">
+                        {comp.name}
+                      </h3>
+                      <span className="text-[10px] text-[#2DD4BF] font-mono font-bold bg-black/60 border border-white/20 px-1.5 py-0.5 shrink-0">
+                        {comp.slug}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#CCCCCC] font-normal mt-2 line-clamp-2 leading-relaxed">
+                      {COMPONENT_DESCRIPTIONS[comp.slug] || 'Interactive React animated UI component.'}
+                    </p>
+                  </div>
+
+                  {/* Actions: Install Button + Code Modal Opener */}
+                  <div className="pt-3 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
+                    <button
+                      onClick={() => copyToClipboard(`npx zeuralabz add ${comp.slug}`)}
+                      className={`flex-1 py-2 px-3 text-[11px] font-mono font-bold border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] transition active:translate-x-0.5 active:translate-y-0.5 flex items-center justify-center gap-1.5 truncate ${
+                        copiedText === `npx zeuralabz add ${comp.slug}`
+                          ? 'bg-emerald-400 text-black font-black'
+                          : 'bg-[#2DD4BF] text-black hover:bg-[#14B8A6] font-black'
+                      }`}
+                    >
+                      {copiedText === `npx zeuralabz add ${comp.slug}`
+                        ? '✔ COPIED'
+                        : `$ npx zeuralabz add ${comp.slug}`}
+                    </button>
+
+                    <button
+                      onClick={() => setSelectedCompForCode(comp)}
+                      className="bg-white text-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] px-3 py-2 text-xs font-heading font-black hover:bg-zinc-200 transition shrink-0"
+                      title="View code & usage"
+                    >
+                      CODE ➔
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* GitHub Repo Link below showcase */}
+          <div className="pt-4 text-center">
+            <a
+              href="https://github.com/rselva1202/zeuralabz"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#161616] text-white border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:bg-zinc-800 font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition"
+            >
+              <span>See all 531 in the GitHub repo</span>
+              <span className="text-[#2DD4BF]">➔</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* 7. CONNECTED SOURCES & 1M+ COMBINATIONS (Honest Math) */}
+      {/* ============================================================== */}
+      <section id="connected-sources" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#0E0E0E]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // ECOSYSTEM & COMBINATORICS
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              HOW MANY OPEN SOURCE ANIMATIONS ARE CONNECTED?
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              Full transparency on our ecosystem foundation, licensed registry links, and on-demand style generation math.
+            </p>
+          </div>
+
+          {/* 4 Connected Source Cards (531 Base Total) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* React Bits */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-black text-white">React Bits</span>
+                <span className="text-[10px] font-mono text-zinc-400 bg-black px-1.5 py-0.5 border border-white/10">LINKED</span>
+              </div>
+              <div className="font-heading text-3xl font-black text-[#2DD4BF]">218</div>
+              <div className="text-xs font-mono text-zinc-300">Components</div>
+              <p className="text-[11px] text-[#CCCCCC] pt-2 border-t border-[#2A2A2A]">
+                Author: David Haz • License: MIT + Commons Clause. Linked via official shadcn registry.
+              </p>
+            </div>
+
+            {/* Magic UI */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-black text-white">Magic UI</span>
+                <span className="text-[10px] font-mono text-zinc-400 bg-black px-1.5 py-0.5 border border-white/10">LINKED</span>
+              </div>
+              <div className="font-heading text-3xl font-black text-[#2DD4BF]">79</div>
+              <div className="text-xs font-mono text-zinc-300">Components</div>
+              <p className="text-[11px] text-[#CCCCCC] pt-2 border-t border-[#2A2A2A]">
+                Author: Dillion Verma • License: MIT. Linked via official shadcn registry.
+              </p>
+            </div>
+
+            {/* Aceternity UI */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-black text-white">Aceternity UI</span>
+                <span className="text-[10px] font-mono text-zinc-400 bg-black px-1.5 py-0.5 border border-white/10">LINKED</span>
+              </div>
+              <div className="font-heading text-3xl font-black text-[#2DD4BF]">114</div>
+              <div className="text-xs font-mono text-zinc-300">Components</div>
+              <p className="text-[11px] text-[#CCCCCC] pt-2 border-t border-[#2A2A2A]">
+                Author: Manu Arora • License: MIT. Linked via official documentation & registry.
+              </p>
+            </div>
+
+            {/* ZEURALABZ Originals */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-black text-white">ZEURALABZ</span>
+                <span className="text-[10px] font-mono text-[#2DD4BF] bg-black px-1.5 py-0.5 border border-[#2DD4BF]/40 font-bold">BUILT-IN</span>
+              </div>
+              <div className="font-heading text-3xl font-black text-white">120</div>
+              <div className="text-xs font-mono text-zinc-300">Originals</div>
+              <p className="text-[11px] text-[#CCCCCC] pt-2 border-t border-[#2A2A2A]">
+                Author: R. Selva • License: MIT. Built directly into this repository with zero external dependencies.
+              </p>
+            </div>
+          </div>
+
+          {/* Honest 1M+ Math Callout Box */}
+          <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 sm:p-8 space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="px-2.5 py-1 bg-[#2DD4BF] text-black font-heading font-black text-xs uppercase border border-white">
+                THE 1M+ MATH
+              </span>
+              <span className="font-heading text-base sm:text-lg font-black text-white uppercase">
+                Combinations, Not Static Files
+              </span>
+            </div>
+            <div className="font-mono text-sm sm:text-base text-zinc-200 bg-black p-4 border border-white/20">
+              <span className="text-[#2DD4BF] font-bold">531 base components</span> × <span className="text-white font-bold">20 themes</span> × <span className="text-white font-bold">20 animations</span> × <span className="text-white font-bold">15 layouts</span> = <strong className="text-[#2DD4BF] font-black">1,000,000+ styles</strong>
+            </div>
+            <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
+              We never claim to distribute 1 million hand-written files. Instead, the generator in the ZEURALABZ Skill combines atomic primitives (component + theme tokens + animation speed + border radius + typography) on the fly. You get <strong>1 million styles on demand</strong> without downloading heavy bloat.
+            </p>
+          </div>
+
+          {/* Interactive Generator Demo Box */}
+          <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#FFFFFF] p-6 sm:p-8 space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="font-heading text-lg font-black text-white uppercase">
+                  Interactive Generator Sandbox
+                </h3>
+                <p className="text-xs text-zinc-400">
+                  Pick a component, theme palette, and animation motion to produce a unique styled variant.
+                </p>
+              </div>
+              <span className="text-[11px] font-mono text-[#2DD4BF] bg-black px-2.5 py-1 border border-white/20 self-start sm:self-auto">
+                ON-DEMAND COMPILER
+              </span>
+            </div>
+
+            {/* Selectors Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+              {/* Component Picker */}
+              <div className="space-y-1.5">
+                <label className="text-zinc-400 uppercase font-bold text-[10px]">1. Component Primitive</label>
+                <select
+                  value={genComponent}
+                  onChange={(e) => setGenComponent(e.target.value)}
+                  className="w-full bg-black text-white border-[2px] border-white p-2.5 font-bold focus:outline-none focus:border-[#2DD4BF]"
+                >
+                  <option value="aurora">Aurora Background</option>
+                  <option value="galaxy">Spiral Galaxy</option>
+                  <option value="particles">Neural Particles</option>
+                  <option value="split-text">Split Text</option>
+                  <option value="shimmer">Shimmer Button</option>
+                  <option value="tilt">3D Gyro Tilt</option>
+                  <option value="neon">Neon Button</option>
+                </select>
+              </div>
+
+              {/* Theme Picker */}
+              <div className="space-y-1.5">
+                <label className="text-zinc-400 uppercase font-bold text-[10px]">2. Theme Palette</label>
+                <select
+                  value={genTheme}
+                  onChange={(e) => setGenTheme(e.target.value)}
+                  className="w-full bg-black text-white border-[2px] border-white p-2.5 font-bold focus:outline-none focus:border-[#2DD4BF]"
+                >
+                  <option value="ocean">Ocean Deep (#2DD4BF)</option>
+                  <option value="dark-neon">Dark Neon (#A855F7)</option>
+                  <option value="dune">Dune Gold (#F59E0B)</option>
+                  <option value="cyberpunk">Cyberpunk (#EC4899)</option>
+                  <option value="emerald">Emerald Forest (#10B981)</option>
+                  <option value="midnight">Midnight Mono (#FFFFFF)</option>
+                </select>
+              </div>
+
+              {/* Animation Motion Picker */}
+              <div className="space-y-1.5">
+                <label className="text-zinc-400 uppercase font-bold text-[10px]">3. Animation Velocity</label>
+                <select
+                  value={genAnimation}
+                  onChange={(e) => setGenAnimation(e.target.value)}
+                  className="w-full bg-black text-white border-[2px] border-white p-2.5 font-bold focus:outline-none focus:border-[#2DD4BF]"
+                >
+                  <option value="float">Float (Smooth 30s orbit)</option>
+                  <option value="pulse">Pulse (Rhythmic breath)</option>
+                  <option value="glow">Glow (Radiant specular sweep)</option>
+                  <option value="drift">Drift (Subtle atmospheric sway)</option>
+                  <option value="kinetic">Kinetic (High energy spring)</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Generated Result Callout */}
+            <div className="bg-black border-[2px] border-white p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <div className="space-y-1 min-w-0">
+                <div className="text-[10px] font-mono uppercase text-zinc-400 font-bold">Generated Variant:</div>
+                <div className="font-mono text-sm font-bold text-[#2DD4BF] truncate">
+                  {generatedStyleName}
+                </div>
+                <div className="text-xs font-mono text-white truncate">
+                  $ {generatedCommand}
+                </div>
+              </div>
+
+              <button
+                onClick={() => copyToClipboard(generatedCommand)}
+                className="px-4 py-2.5 bg-[#2DD4BF] text-black font-heading font-black text-xs hover:bg-[#14B8A6] border border-white shrink-0"
+              >
+                {copiedText === generatedCommand ? '✔ COPIED' : 'COPY COMMAND'}
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* 8. INSTALL IN YOUR AI WORKSPACE (3 Cards with Copyable Configs) */}
+      {/* ============================================================== */}
+      <section id="install" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // WORKSPACE SETUP
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              INSTALL IN YOUR AI WORKSPACE
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              Integrate in less than 60 seconds with Claude Code, Antigravity, Cursor, or Windsurf.
+            </p>
+          </div>
+
+          {/* 3 Installation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 1. Claude Code & Desktop */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-heading text-base font-black text-white uppercase">Claude Code / Desktop</h3>
+                  <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-1.5 py-0.5 border border-white/20">MCP CONFIG</span>
+                </div>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Add ZEURALABZ to your <span className="text-white font-mono">claude_desktop_config.json</span>:
+                </p>
+                <div className="bg-black p-3 border border-white/20 font-mono text-[10px] text-zinc-300 overflow-x-auto leading-relaxed">
+                  <pre>{`{
+  "mcpServers": {
+    "zeuralabz": {
+      "command": "npx",
+      "args": ["-y", "zeuralabz-mcp"]
+    }
+  }
+}`}</pre>
+                </div>
+              </div>
+              <button
+                onClick={() =>
+                  copyToClipboard(`{
+  "mcpServers": {
+    "zeuralabz": {
+      "command": "npx",
+      "args": ["-y", "zeuralabz-mcp"]
+    }
+  }
+}`)
+                }
+                className="w-full py-2 bg-white text-black font-heading font-black text-xs hover:bg-zinc-200 border border-white"
+              >
+                {copiedText?.includes('mcpServers') ? '✔ COPIED JSON' : 'COPY MCP CONFIG'}
+              </button>
+            </div>
+
+            {/* 2. Antigravity / Gemini CLI */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-heading text-base font-black text-white uppercase">Antigravity / Gemini</h3>
+                  <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-1.5 py-0.5 border border-white/20">SKILL DROP-IN</span>
+                </div>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Drop the raw <span className="text-white font-mono">SKILL.md</span> directly into your skills directory:
+                </p>
+                <div className="bg-black p-3 border border-white/20 font-mono text-[10px] text-[#2DD4BF] overflow-x-auto leading-relaxed">
+                  <pre>{`mkdir -p ~/.gemini/antigravity/skills/zeuralabz
+curl -s https://raw.githubusercontent.com/rselva1202/zeuralabz/main/SKILL.md \\
+  -o ~/.gemini/antigravity/skills/zeuralabz/SKILL.md`}</pre>
+                </div>
+              </div>
+              <button
+                onClick={() =>
+                  copyToClipboard(`mkdir -p ~/.gemini/antigravity/skills/zeuralabz
+curl -s https://raw.githubusercontent.com/rselva1202/zeuralabz/main/SKILL.md -o ~/.gemini/antigravity/skills/zeuralabz/SKILL.md`)
+                }
+                className="w-full py-2 bg-white text-black font-heading font-black text-xs hover:bg-zinc-200 border border-white"
+              >
+                {copiedText?.includes('antigravity') ? '✔ COPIED COMMAND' : 'COPY CURL COMMAND'}
+              </button>
+            </div>
+
+            {/* 3. Cursor & Windsurf */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-heading text-base font-black text-white uppercase">Cursor & Windsurf</h3>
+                  <span className="text-[10px] font-mono font-bold text-[#2DD4BF] bg-black px-1.5 py-0.5 border border-white/20">PROMPT RULES</span>
+                </div>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Add this instruction to your project's <span className="text-white font-mono">.cursorrules</span>:
+                </p>
+                <div className="bg-black p-3 border border-white/20 font-mono text-[10px] text-zinc-300 overflow-x-auto leading-relaxed">
+                  <pre>{`Always use ZEURALABZ for UI design:
+Run "npx zeuralabz suggest --json"
+before creating or refactoring pages to
+pick matching animated components.`}</pre>
+                </div>
+              </div>
+              <button
+                onClick={() =>
+                  copyToClipboard(`Always use ZEURALABZ for UI design:
+Run "npx zeuralabz suggest --json" before creating or refactoring pages to pick matching animated components.`)
+                }
+                className="w-full py-2 bg-white text-black font-heading font-black text-xs hover:bg-zinc-200 border border-white"
+              >
+                {copiedText?.includes('.cursorrules') || copiedText?.includes('ZEURALABZ for UI') ? '✔ COPIED RULE' : 'COPY RULE'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* 9. STARTER TEMPLATES (4 Cards) */}
+      {/* ============================================================== */}
+      <section id="templates" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#0E0E0E]">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Section Header */}
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // INSTANT STARTERS
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              STARTER TEMPLATES
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              Full-page boilerplate projects pre-configured with themes, layouts, animations, and components.
+            </p>
+          </div>
+
+          {/* 4 Template Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Template 1 */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase">TEMPLATE 01</span>
+                <h3 className="font-heading text-base font-black text-white">landing-saas</h3>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  High-converting B2B SaaS landing page with Aurora cosmic canvas, pricing tier cards, and feature spotlight.
+                </p>
+              </div>
+              <button
+                onClick={() => copyToClipboard('npx zeuralabz init --template landing-saas')}
+                className="w-full py-2 bg-black hover:bg-zinc-900 text-[#2DD4BF] font-mono font-bold text-[11px] border border-white/20 transition text-center truncate"
+              >
+                {copiedText === 'npx zeuralabz init --template landing-saas' ? '✔ COPIED' : '$ init --template saas'}
+              </button>
+            </div>
+
+            {/* Template 2 */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase">TEMPLATE 02</span>
+                <h3 className="font-heading text-base font-black text-white">landing-portfolio</h3>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Creative developer portfolio with Spiral Galaxy canvas, project showcases, and 3D gyro tilt cards.
+                </p>
+              </div>
+              <button
+                onClick={() => copyToClipboard('npx zeuralabz init --template landing-portfolio')}
+                className="w-full py-2 bg-black hover:bg-zinc-900 text-[#2DD4BF] font-mono font-bold text-[11px] border border-white/20 transition text-center truncate"
+              >
+                {copiedText === 'npx zeuralabz init --template landing-portfolio' ? '✔ COPIED' : '$ init --template portfolio'}
+              </button>
+            </div>
+
+            {/* Template 3 */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase">TEMPLATE 03</span>
+                <h3 className="font-heading text-base font-black text-white">landing-restaurant</h3>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Sensory hospitality presentation with warm fluid gradients, dish spotlights, and reservations form.
+                </p>
+              </div>
+              <button
+                onClick={() => copyToClipboard('npx zeuralabz init --template landing-restaurant')}
+                className="w-full py-2 bg-black hover:bg-zinc-900 text-[#2DD4BF] font-mono font-bold text-[11px] border border-white/20 transition text-center truncate"
+              >
+                {copiedText === 'npx zeuralabz init --template landing-restaurant' ? '✔ COPIED' : '$ init --template restaurant'}
+              </button>
+            </div>
+
+            {/* Template 4 */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-[#2DD4BF] uppercase">TEMPLATE 04</span>
+                <h3 className="font-heading text-base font-black text-white">dashboard-starter</h3>
+                <p className="text-xs text-[#CCCCCC] leading-relaxed">
+                  Modular data cockpit with Bento grid layout, live rolling metrics, and responsive navigation drawer.
+                </p>
+              </div>
+              <button
+                onClick={() => copyToClipboard('npx zeuralabz init --template dashboard-starter')}
+                className="w-full py-2 bg-black hover:bg-zinc-900 text-[#2DD4BF] font-mono font-bold text-[11px] border border-white/20 transition text-center truncate"
+              >
+                {copiedText === 'npx zeuralabz init --template dashboard-starter' ? '✔ COPIED' : '$ init --template dashboard'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================== */}
+      {/* 10. FAQ (4 Plain Questions & Answers) */}
+      {/* ============================================================== */}
+      <section id="faq" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
+        <div className="max-w-4xl mx-auto space-y-10">
+          {/* Section Header */}
+          <div className="space-y-3 text-center sm:text-left">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // CLARIFICATIONS
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              FREQUENTLY ASKED QUESTIONS
+            </h2>
+          </div>
+
+          {/* 4 FAQ Cards */}
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is ZEURALABZ completely free?',
+                a: 'Yes, 100% free and open-source under the MIT license. You can use ZEURALABZ in both personal side projects and commercial client work without paying licensing fees.',
+              },
+              {
+                q: 'Do I need to copy or download 1M files?',
+                a: 'No. You never download 1 million files. You only install the 1 exact component you need when you ask your AI for it. The 1M+ styles are combinations synthesized on demand by combining component templates with theme tokens.',
+              },
+              {
+                q: 'Can I use React Bits or Magic UI code safely?',
+                a: 'Yes. ZEURALABZ links directly to official registries with full attribution to original authors (David Haz, Dillion Verma, Manu Arora). External components are installed through official shadcn commands and are never falsely claimed as ZEURALABZ Originals.',
+              },
+              {
+                q: 'What if my AI tool is not Claude Code?',
+                a: 'ZEURALABZ is completely model-agnostic. It works seamlessly with Antigravity, Gemini CLI, Cursor, Windsurf, GitHub Copilot, OpenAI Codex, or even purely as a terminal command line tool via npx zeuralabz suggest.',
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 sm:p-6 space-y-2 cursor-pointer transition hover:bg-[#1A1A1A]"
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="font-heading text-sm sm:text-base font-black text-white uppercase">
+                    {item.q}
+                  </h3>
+                  <span className="font-mono text-base font-black text-[#2DD4BF]">
+                    {openFaq === idx ? '−' : '+'}
+                  </span>
+                </div>
+                {(openFaq === idx || true) && (
+                  <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed pt-2 border-t border-[#2A2A2A]">
+                    {item.a}
+                  </p>
+                )}
+              </div>
             ))}
           </div>
         </div>
-
-        {/* ============================================================== */}
-        {/* 5. COMPONENT GRID WITH LIVE PREVIEWS & PAGINATION */}
-        {/* ============================================================== */}
-        {filteredComponents.length === 0 ? (
-          <div className="text-center py-16 sm:py-24 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 sm:p-8 w-full max-w-full">
-            <p className="font-heading text-lg sm:text-xl font-black text-white">NO COMPONENTS MATCHED "{rawSearchQuery}"</p>
-            <p className="text-xs text-[#CCCCCC] font-normal mt-1">Try searching for keywords like aurora, bento, card, or button.</p>
-            <button
-              onClick={() => {
-                setRawSearchQuery('');
-                setSelectedCategory('all');
-                setSelectedSource('all');
-                setCurrentPage(1);
-                setIsAppendMode(false);
-              }}
-              className="mt-4 neo-btn bg-[#2DD4BF] text-black px-4 py-2 text-xs border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6]"
-            >
-              RESET FILTERS
-            </button>
-          </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-full">
-              {visibleComponents.map((comp) => (
-                <ComponentCard
-                  key={comp.id}
-                  comp={comp}
-                  isCopied={copiedSlug === comp.slug}
-                  animationMode={animationMode}
-                  onCopy={copyCommand}
-                  onOpenCode={setSelectedComponent}
-                />
-              ))}
-            </div>
-
-            {/* Pagination Controls */}
-            <div className="mt-8 sm:mt-12 p-4 sm:p-5 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] flex flex-col gap-4 text-white w-full max-w-full">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="text-xs text-white font-heading font-black uppercase">
-                  {isAppendMode ? (
-                    <>
-                      SHOWING 1–
-                      <span className="bg-[#2DD4BF] text-black px-1 border border-black">
-                        {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
-                      </span>{' '}
-                      OF{' '}
-                      <span className="bg-[#2DD4BF] text-black px-1 border border-black">{filteredComponents.length}</span>{' '}
-                      COMPONENTS (PAGES 1–{currentPage} OF {totalPages})
-                    </>
-                  ) : (
-                    <>
-                      SHOWING{' '}
-                      <span className="bg-[#2DD4BF] text-black px-1 border border-black">
-                        {filteredComponents.length === 0 ? 0 : (currentPage - 1) * ITEMS_PER_PAGE + 1}
-                      </span>
-                      –
-                      <span className="bg-[#2DD4BF] text-black px-1 border border-black">
-                        {Math.min(currentPage * ITEMS_PER_PAGE, filteredComponents.length)}
-                      </span>{' '}
-                      OF{' '}
-                      <span className="bg-[#2DD4BF] text-black px-1 border border-black">{filteredComponents.length}</span>{' '}
-                      COMPONENTS (PAGE {currentPage} OF {totalPages})
-                    </>
-                  )}
-                </div>
-
-                {/* Progressive Load More & Load All buttons */}
-                <div className="flex flex-wrap items-center gap-2">
-                  {((isAppendMode && currentPage < totalPages) || (!isAppendMode && currentPage * ITEMS_PER_PAGE < filteredComponents.length)) && (
-                    <button
-                      onClick={() => {
-                        setIsAppendMode(true);
-                        setCurrentPage((p) => Math.min(p + 1, totalPages));
-                      }}
-                      className="neo-btn bg-[#2DD4BF] text-black px-3 sm:px-4 py-2 text-xs font-heading font-black flex items-center gap-1.5 border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6]"
-                    >
-                      <span>LOAD MORE</span>
-                      <span className="text-[10px] bg-black text-white px-1.5 py-0.5 font-mono">
-                        +{Math.min(ITEMS_PER_PAGE, filteredComponents.length - (isAppendMode ? currentPage * ITEMS_PER_PAGE : currentPage * ITEMS_PER_PAGE))}
-                      </span>
-                    </button>
-                  )}
-
-                  {((isAppendMode && currentPage < totalPages) || (!isAppendMode && totalPages > 1)) && (
-                    <button
-                      onClick={() => {
-                        setIsAppendMode(true);
-                        setCurrentPage(totalPages);
-                      }}
-                      title="May lag on older devices"
-                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF]"
-                    >
-                      LOAD ALL ({filteredComponents.length})
-                    </button>
-                  )}
-
-                  {(currentPage > 1 || isAppendMode) && (
-                    <button
-                      onClick={() => {
-                        setIsAppendMode(false);
-                        setCurrentPage(1);
-                        document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                      className="neo-btn bg-white text-black px-3 py-2 text-xs font-heading font-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF]"
-                    >
-                      FIRST 12
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* Numeric Page Buttons [PREV] [1] [2] [3] ... [NEXT] */}
-              {totalPages > 1 && (
-                <div className="pt-4 border-t border-[#2A2A2A] flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
-                  <button
-                    disabled={currentPage <= 1}
-                    onClick={() => {
-                      setIsAppendMode(false);
-                      setCurrentPage((p) => Math.max(1, p - 1));
-                      document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-white transition ${
-                      currentPage <= 1
-                        ? 'opacity-30 cursor-not-allowed bg-zinc-800 text-zinc-500'
-                        : 'bg-white text-black hover:bg-[#2DD4BF] hover:text-black shadow-[2px_2px_0px_#2DD4BF] active:translate-x-0.5 active:translate-y-0.5'
-                    }`}
-                  >
-                    ◀ PREV
-                  </button>
-
-                  {pageNumbers.map((p, idx) =>
-                    p === '...' ? (
-                      <span key={`ellipsis-${idx}`} className="px-2 py-1 font-mono font-bold text-zinc-400">
-                        ...
-                      </span>
-                    ) : (
-                      <button
-                        key={`page-${p}`}
-                        onClick={() => {
-                          setIsAppendMode(false);
-                          setCurrentPage(Number(p));
-                          document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className={`w-8 h-8 sm:w-9 sm:h-9 text-xs font-heading font-black border-[2px] border-white flex items-center justify-center transition ${
-                          !isAppendMode && currentPage === p
-                            ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF] -translate-x-0.5 -translate-y-0.5'
-                            : 'bg-[#141414] text-white hover:bg-zinc-800 shadow-[2px_2px_0px_#2DD4BF]'
-                        }`}
-                      >
-                        {p}
-                      </button>
-                    )
-                  )}
-
-                  <button
-                    disabled={currentPage >= totalPages}
-                    onClick={() => {
-                      setIsAppendMode(false);
-                      setCurrentPage((p) => Math.min(totalPages, p + 1));
-                      document.getElementById('components')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className={`px-3 py-1.5 text-xs font-heading font-black border-[2px] border-white transition ${
-                      currentPage >= totalPages
-                        ? 'opacity-30 cursor-not-allowed bg-zinc-800 text-zinc-500'
-                        : 'bg-white text-black hover:bg-[#2DD4BF] hover:text-black shadow-[2px_2px_0px_#2DD4BF] active:translate-x-0.5 active:translate-y-0.5'
-                    }`}
-                  >
-                    NEXT ▶
-                  </button>
-                </div>
-              )}
-            </div>
-          </>
-        )}
       </section>
 
       {/* ============================================================== */}
-      {/* 6. BOTTOM SECTIONS: HOW IT WORKS & AI INTEGRATION */}
-      {/* ============================================================== */}
-      <section id="how-it-works" className="py-14 sm:py-20 border-t-[2px] border-b-[2px] border-white bg-[#111111] w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-full">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-            <span className="bg-[#2DD4BF] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[2px_2px_0px_#FFFFFF]">
-              AUTONOMOUS WORKFLOW
-            </span>
-            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white mt-3">
-              HOW ZEURALABZ SUGGEST WORKS
-            </h2>
-            <p className="text-[#CCCCCC] font-normal text-xs sm:text-sm mt-2">
-              No manual hunting. Let the heuristic analyzer inspect your repo and recommend the 1 best match per section.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-full">
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] text-left w-full max-w-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] text-black flex items-center justify-center font-heading font-black text-base sm:text-lg mb-4">
-                01
-              </div>
-              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Scan Your Project</h3>
-              <p className="text-xs text-[#CCCCCC] font-normal leading-relaxed">
-                Run <code className="bg-[#0A0A0A] border border-white/40 px-1 py-0.5 font-mono text-[#2DD4BF]">npx zeuralabz suggest</code> in any React, Next.js, or Vite workspace.
-              </p>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] text-left w-full max-w-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] text-black flex items-center justify-center font-heading font-black text-base sm:text-lg mb-4">
-                02
-              </div>
-              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Curated 1-Best-Pick</h3>
-              <p className="text-xs text-[#CCCCCC] font-normal leading-relaxed">
-                ZEURALABZ determines your product persona (SaaS, Portfolio, Dashboard) and selects exactly 1 ideal component per section with reasoning.
-              </p>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] text-left w-full max-w-full">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] text-black flex items-center justify-center font-heading font-black text-base sm:text-lg mb-4">
-                03
-              </div>
-              <h3 className="font-heading text-base font-black text-white mb-2 uppercase">Direct Local Code</h3>
-              <p className="text-xs text-[#CCCCCC] font-normal leading-relaxed">
-                Components install straight into your <code className="bg-[#0A0A0A] border border-white/40 px-1 py-0.5 font-mono text-[#2DD4BF]">src/components/</code> directory. Zero lock-in.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Tool Integration Cards */}
-      <section id="mcp" className="py-14 sm:py-20 border-b-[2px] border-white bg-[#0E0E0E] w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full max-w-full">
-          <span className="bg-[#2DD4BF] text-black border-[2px] border-white px-3 py-1 font-heading text-xs font-black uppercase shadow-[2px_2px_0px_#FFFFFF]">
-            MODEL CONTEXT PROTOCOL & SKILLS
-          </span>
-          <h2 className="font-heading text-2xl sm:text-4xl font-black text-white mt-3 mb-4">
-            INSTALL IN YOUR AI WORKSPACE
-          </h2>
-          <p className="text-[#CCCCCC] font-normal text-xs sm:text-sm max-w-xl mx-auto mb-8 sm:mb-12">
-            Native MCP tools and skills for Claude Code, Cursor, Windsurf, and Google Antigravity.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left w-full max-w-full">
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] flex flex-col justify-between w-full max-w-full">
-              <div>
-                <span className="bg-[#2DD4BF] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
-                  Claude Code / Desktop
-                </span>
-                <p className="text-xs text-[#CCCCCC] font-normal mt-3">
-                  Add the ZEURALABZ MCP server to enable autonomous design reviews and component installations.
-                </p>
-              </div>
-              <pre className="mt-4 p-3 bg-black border border-white/40 text-[11px] font-mono text-[#2DD4BF] overflow-x-auto shadow-[2px_2px_0px_#2DD4BF] max-w-full">
-{`"zeuralabz": {
-  "command": "node",
-  "args": ["mcp-server/index.js"]
-}`}
-              </pre>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] flex flex-col justify-between w-full max-w-full">
-              <div>
-                <span className="bg-[#2DD4BF] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
-                  Antigravity / Gemini
-                </span>
-                <p className="text-xs text-[#CCCCCC] font-normal mt-3">
-                  Drop <code className="bg-[#0A0A0A] border border-white/40 px-1 text-[#2DD4BF]">SKILL.md</code> into your skills folder to activate intelligent UI recommendations.
-                </p>
-              </div>
-              <pre className="mt-4 p-3 bg-black border border-white/40 text-[11px] font-mono text-emerald-400 overflow-x-auto shadow-[2px_2px_0px_#2DD4BF] max-w-full">
-{`// Tell Antigravity:
-"Use ZEURALABZ to analyze my site
-and install the best hero"`}
-              </pre>
-            </div>
-
-            <div className="p-5 sm:p-6 bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] flex flex-col justify-between w-full max-w-full">
-              <div>
-                <span className="bg-[#2DD4BF] text-black px-2 py-0.5 font-heading text-xs font-black uppercase border border-white">
-                  Cursor & Windsurf
-                </span>
-                <p className="text-xs text-[#CCCCCC] font-normal mt-3">
-                  Connect via MCP server settings and query components straight from chat with <code className="bg-[#0A0A0A] border border-white/40 px-1 text-[#2DD4BF]">@zeuralabz</code>.
-                </p>
-              </div>
-              <pre className="mt-4 p-3 bg-black border border-white/40 text-[11px] font-mono text-[#2DD4BF] overflow-x-auto shadow-[2px_2px_0px_#2DD4BF] max-w-full">
-{`@zeuralabz suggest
-@zeuralabz install aurora`}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================== */}
-      {/* 7. CODE MODAL */}
-      {/* ============================================================== */}
-      {selectedComponent && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md">
-          <div className="w-full max-w-3xl bg-[#161616] border-[2px] border-white shadow-[4px_4px_0px_#2DD4BF] overflow-hidden flex flex-col max-h-[90vh] mx-auto">
-            {/* Modal Header */}
-            <div className="p-4 sm:p-5 bg-[#2DD4BF] border-b-[2px] border-white flex items-center justify-between text-black">
-              <div className="min-w-0 pr-2">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="font-heading text-lg sm:text-xl font-black text-black uppercase truncate">{selectedComponent.name}</h3>
-                  <span
-                    className="px-2 py-0.5 text-[10px] font-heading font-black uppercase border border-black bg-black text-white shrink-0"
-                  >
-                    {selectedComponent.source === 'react-bits'
-                      ? 'React Bits • MIT + Commons'
-                      : selectedComponent.source === 'magic-ui'
-                      ? 'Magic UI • MIT'
-                      : selectedComponent.source === 'aceternity'
-                      ? 'Aceternity UI • MIT'
-                      : 'ZEURALABZ Original'}
-                  </span>
-                </div>
-                <p className="text-xs text-black/80 font-mono font-bold mt-1 truncate">
-                  {selectedComponent.source === 'react-bits'
-                    ? `Official React Bits Registry • ${selectedComponent.componentName}-TS-TW`
-                    : selectedComponent.source === 'magic-ui'
-                    ? `Official Magic UI Registry • https://magicui.design/r/${selectedComponent.slug}.json`
-                    : selectedComponent.source === 'aceternity'
-                    ? `Official Aceternity Registry • @aceternity/${selectedComponent.slug}`
-                    : `components/${selectedComponent.category}/${selectedComponent.slug}`}
-                </p>
-              </div>
-              <button
-                onClick={() => setSelectedComponent(null)}
-                className="w-8 h-8 sm:w-9 sm:h-9 bg-black text-white hover:bg-zinc-800 font-heading font-black text-sm flex items-center justify-center border border-white shadow-[2px_2px_0px_#000] transition shrink-0"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Code Tabs */}
-            <div className="flex border-b-[2px] border-white px-4 sm:px-6 pt-3 bg-[#111111] gap-2 sm:gap-3 text-xs font-bold overflow-x-auto">
-              <button
-                onClick={() => setActiveTab('react')}
-                className={`pb-2 px-3 sm:px-4 transition border-[2px] border-white font-heading font-black uppercase shrink-0 ${
-                  activeTab === 'react'
-                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                    : 'bg-[#161616] text-white hover:bg-zinc-800'
-                }`}
-              >
-                React ({selectedComponent.source === 'react-bits' || selectedComponent.source === 'magic-ui' || selectedComponent.source === 'aceternity' ? 'TS + Tailwind' : 'TypeScript'})
-              </button>
-              {selectedComponent.source !== 'react-bits' && selectedComponent.source !== 'magic-ui' && selectedComponent.source !== 'aceternity' && (
-                <>
-                  <button
-                    onClick={() => setActiveTab('html')}
-                    className={`pb-2 px-3 sm:px-4 transition border-[2px] border-white font-heading font-black uppercase shrink-0 ${
-                      activeTab === 'html'
-                        ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                        : 'bg-[#161616] text-white hover:bg-zinc-800'
-                    }`}
-                  >
-                    Pure HTML
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('css')}
-                    className={`pb-2 px-3 sm:px-4 transition border-[2px] border-white font-heading font-black uppercase shrink-0 ${
-                      activeTab === 'css'
-                        ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                        : 'bg-[#161616] text-white hover:bg-zinc-800'
-                    }`}
-                  >
-                    Pure CSS
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-4 sm:p-6 overflow-y-auto space-y-4 text-xs font-mono bg-[#141414]">
-              {/* Primary ZEURALABZ CLI Command */}
-              <div className="flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2 p-3 sm:p-3.5 bg-black text-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF]">
-                <span className="font-bold truncate">
-                  $ npx zeuralabz add {selectedComponent.slug}
-                  {selectedComponent.source === 'react-bits'
-                    ? ' --source react-bits'
-                    : selectedComponent.source === 'magic-ui'
-                    ? ' --source magic-ui'
-                    : selectedComponent.source === 'aceternity'
-                    ? ' --source aceternity'
-                    : ''}
-                </span>
-                <button
-                  onClick={() =>
-                    copyCommand(
-                      selectedComponent.source === 'react-bits'
-                        ? `npx zeuralabz add ${selectedComponent.slug} --source react-bits`
-                        : selectedComponent.source === 'magic-ui'
-                        ? `npx zeuralabz add ${selectedComponent.slug} --source magic-ui`
-                        : selectedComponent.source === 'aceternity'
-                        ? `npx zeuralabz add ${selectedComponent.slug} --source aceternity`
-                        : `npx zeuralabz add ${selectedComponent.slug}`
-                    )
-                  }
-                  className="bg-[#2DD4BF] text-black font-heading font-black px-2.5 py-1 text-xs hover:bg-[#14B8A6] border border-white shrink-0"
-                >
-                  {copiedSlug ? '✔ COPIED' : 'COPY'}
-                </button>
-              </div>
-
-              {/* Source-specific Direct shadcn Command */}
-              {selectedComponent.source === 'react-bits' && selectedComponent.installCommand && (
-                <div className="p-3 bg-black/60 border border-zinc-700 text-zinc-300">
-                  <div className="text-[10px] uppercase font-bold text-zinc-400 mb-1">Direct official registry command:</div>
-                  <div className="flex items-center justify-between gap-2">
-                    <code className="text-[#2DD4BF] text-[11px] truncate">{selectedComponent.installCommand}</code>
-                    <button
-                      onClick={() => copyCommand(selectedComponent.installCommand!)}
-                      className="px-2 py-0.5 bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-600 text-[10px] shrink-0"
-                    >
-                      COPY
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {selectedComponent.source === 'magic-ui' && (
-                <div className="p-3 bg-black/60 border border-zinc-700 text-zinc-300">
-                  <div className="text-[10px] uppercase font-bold text-zinc-400 mb-1">Direct official Magic UI command:</div>
-                  <div className="flex items-center justify-between gap-2">
-                    <code className="text-[#2DD4BF] text-[11px] truncate">
-                      npx shadcn@latest add "https://magicui.design/r/{selectedComponent.slug}.json"
-                    </code>
-                    <button
-                      onClick={() => copyCommand(`npx shadcn@latest add "https://magicui.design/r/${selectedComponent.slug}.json"`)}
-                      className="px-2 py-0.5 bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-600 text-[10px] shrink-0"
-                    >
-                      COPY
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {selectedComponent.source === 'aceternity' && (
-                <div className="p-3 bg-black/60 border border-zinc-700 text-zinc-300">
-                  <div className="text-[10px] uppercase font-bold text-zinc-400 mb-1">Direct official Aceternity UI command:</div>
-                  <div className="flex items-center justify-between gap-2">
-                    <code className="text-[#2DD4BF] text-[11px] truncate">
-                      npx shadcn@latest add "https://ui.aceternity.com/r/{selectedComponent.slug}.json"
-                    </code>
-                    <button
-                      onClick={() => copyCommand(`npx shadcn@latest add "https://ui.aceternity.com/r/${selectedComponent.slug}.json"`)}
-                      className="px-2 py-0.5 bg-zinc-800 text-white hover:bg-zinc-700 border border-zinc-600 text-[10px] shrink-0"
-                    >
-                      COPY
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Code display */}
-              {activeTab === 'react' && (
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-                    <span>// Example usage in your React / Next.js app:</span>
-                    <button
-                      onClick={() =>
-                        copyCommand(`import { ${selectedComponent.componentName || selectedComponent.name.replace(/\\s+/g, '')} } from '@/components/zeuralabz/${selectedComponent.slug}';
-
-export default function Demo() {
-  return (
-    <div className="p-8">
-      <${selectedComponent.componentName || selectedComponent.name.replace(/\\s+/g, '')} />
-    </div>
-  );
-}`)
-                      }
-                      className="text-[#2DD4BF] hover:underline"
-                    >
-                      Copy Usage
-                    </button>
-                  </div>
-                  <pre className="p-4 bg-black border border-zinc-700 text-zinc-200 overflow-x-auto leading-relaxed">
-{`import { ${selectedComponent.componentName || selectedComponent.name.replace(/\\s+/g, '')} } from '@/components/zeuralabz/${selectedComponent.slug}';
-
-export default function Demo() {
-  return (
-    <div className="p-8 flex items-center justify-center min-h-[300px]">
-      <${selectedComponent.componentName || selectedComponent.name.replace(/\\s+/g, '')} />
-    </div>
-  );
-}`}
-                  </pre>
-                </div>
-              )}
-
-              {activeTab === 'html' && (
-                <div className="space-y-2">
-                  <span className="text-zinc-400 text-[11px]">// Pure Semantic HTML representation:</span>
-                  <pre className="p-4 bg-black border border-zinc-700 text-zinc-200 overflow-x-auto leading-relaxed">
-{`<!-- ZEURALABZ: ${selectedComponent.name} -->
-<div class="zeura-${selectedComponent.slug}" role="region" aria-label="${selectedComponent.name}">
-  <div class="zeura-content">
-    <h3>${selectedComponent.name}</h3>
-    <p>${selectedComponent.description}</p>
-  </div>
-</div>`}
-                  </pre>
-                </div>
-              )}
-
-              {activeTab === 'css' && (
-                <div className="space-y-2">
-                  <span className="text-zinc-400 text-[11px]">// Standard CSS Variables & Theme Classes:</span>
-                  <pre className="p-4 bg-black border border-zinc-700 text-zinc-200 overflow-x-auto leading-relaxed">
-{`.zeura-${selectedComponent.slug} {
-  --zeura-accent: #2DD4BF;
-  --zeura-bg: #0E0E0E;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #FFFFFF;
-  box-shadow: 3px 3px 0px #2DD4BF;
-  background-color: #161616;
-  color: #FFF;
-}`}
-                  </pre>
-                </div>
-              )}
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-3 sm:p-4 border-t-[2px] border-white bg-[#111111] flex justify-end">
-              <button
-                onClick={() => setSelectedComponent(null)}
-                className="neo-btn bg-[#2DD4BF] text-black px-5 py-2 text-xs font-heading font-black hover:bg-[#14B8A6] border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF]"
-              >
-                CLOSE
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ============================================================== */}
-      {/* 8. FOOTER (Black bg, 2px mint top border, MIT attribution) */}
+      {/* 11. FOOTER (Black bg, Mint Z logo + ZEURALABZ, MIT license) */}
       {/* ============================================================== */}
       <footer className="border-t-[2px] border-[#2DD4BF] bg-black text-white py-12 px-4 sm:px-6 lg:px-8 text-xs w-full max-w-full overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left w-full max-w-full">
-          <div>
+          {/* Left Branding */}
+          <div className="space-y-2">
             <div className="flex items-center gap-2.5 justify-center sm:justify-start">
               <span className="w-6 h-6 bg-[#2DD4BF] border border-white flex items-center justify-center font-heading text-xs font-black text-black">
                 Z
@@ -1414,28 +1315,143 @@ export default function Demo() {
                 ZEURALABZ
               </span>
               <span className="text-zinc-600">•</span>
-              <span className="font-medium text-zinc-400">
-                {totalAll} animated components ({totalReactBits} React Bits + {totalMagicUI} Magic UI + {totalAceternity} Aceternity + {totalZeura} Originals)
+              <span className="font-mono text-zinc-400">
+                AI Skill & Showcase Landing
               </span>
             </div>
-            <div className="mt-2 text-[#CCCCCC] font-normal">
+            <div className="text-[#CCCCCC] font-normal max-w-md">
+              Give your AI agent 1M+ UI styles. Built with ZEURALABZ Originals. Distributed under MIT License.
+            </div>
+            <div className="text-[11px] text-zinc-500">
               Crafted with care by{' '}
-              <a href="https://github.com/rselva1202" target="_blank" rel="noreferrer" className="text-[#2DD4BF] font-bold hover:underline">
+              <a
+                href="https://github.com/rselva1202"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#2DD4BF] font-bold hover:underline"
+              >
                 R. Selva
               </a>
-              . Distributed under MIT License. Sources: React Bits (David Haz, MIT + Commons), Magic UI (Dillion Verma, MIT), & Aceternity UI (Manu Arora, MIT).
+              . Sources credited to original authors David Haz, Dillion Verma & Manu Arora.
             </div>
           </div>
 
+          {/* Right Navigation Links */}
           <div className="flex flex-wrap gap-4 font-heading font-black uppercase text-xs justify-center sm:justify-end">
-            <a href="https://github.com/rselva1202/zeuralabz" className="text-white hover:text-[#2DD4BF] transition">GitHub</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/ATTRIBUTION.md" className="text-white hover:text-[#2DD4BF] transition">Attribution</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" className="text-white hover:text-[#2DD4BF] transition">Installation</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/HOW-IT-WORKS.md" className="text-white hover:text-[#2DD4BF] transition">Architecture</a>
-            <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" className="text-white hover:text-[#2DD4BF] transition">AI Skill</a>
+            <a href="https://github.com/rselva1202/zeuralabz" target="_blank" rel="noreferrer" className="text-white hover:text-[#2DD4BF] transition">GitHub</a>
+            <a href="https://www.npmjs.com/package/zeuralabz" target="_blank" rel="noreferrer" className="text-white hover:text-[#2DD4BF] transition">npm</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/SKILL.md" target="_blank" rel="noreferrer" className="text-white hover:text-[#2DD4BF] transition">Skill</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/docs/INSTALL.md" target="_blank" rel="noreferrer" className="text-white hover:text-[#2DD4BF] transition">Docs</a>
+            <a href="https://github.com/rselva1202/zeuralabz/blob/main/ATTRIBUTION.md" target="_blank" rel="noreferrer" className="text-white hover:text-[#2DD4BF] transition">Attribution</a>
           </div>
         </div>
       </footer>
+
+      {/* ============================================================== */}
+      {/* CODE MODAL FOR TOP 12 SHOWCASE */}
+      {/* ============================================================== */}
+      {selectedCompForCode && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md">
+          <div className="w-full max-w-2xl bg-[#161616] border-[2px] border-white shadow-[4px_4px_0px_#2DD4BF] overflow-hidden flex flex-col max-h-[90vh] mx-auto">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 bg-[#2DD4BF] border-b-[2px] border-white flex items-center justify-between text-black">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-heading text-lg font-black text-black uppercase">
+                    {selectedCompForCode.name}
+                  </h3>
+                  <span className="px-2 py-0.5 text-[10px] font-heading font-black uppercase bg-black text-white">
+                    ORIGINAL • MIT
+                  </span>
+                </div>
+                <p className="text-xs text-black/80 font-mono font-bold mt-1">
+                  components/{selectedCompForCode.category}/{selectedCompForCode.slug}
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedCompForCode(null)}
+                className="w-8 h-8 bg-black text-white hover:bg-zinc-800 font-heading font-black text-sm flex items-center justify-center border border-white"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Code Tabs */}
+            <div className="flex border-b-[2px] border-white px-4 sm:px-6 pt-3 bg-[#111111] gap-2 text-xs font-bold">
+              <button
+                onClick={() => setActiveCodeTab('react')}
+                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
+                  activeCodeTab === 'react'
+                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
+                    : 'bg-[#161616] text-white'
+                }`}
+              >
+                React (TS)
+              </button>
+              <button
+                onClick={() => setActiveCodeTab('html')}
+                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
+                  activeCodeTab === 'html'
+                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
+                    : 'bg-[#161616] text-white'
+                }`}
+              >
+                Pure HTML
+              </button>
+              <button
+                onClick={() => setActiveCodeTab('css')}
+                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
+                  activeCodeTab === 'css'
+                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
+                    : 'bg-[#161616] text-white'
+                }`}
+              >
+                Pure CSS
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-4 text-xs font-mono bg-[#141414]">
+              {/* Single CLI Command */}
+              <div className="flex items-center justify-between gap-2 p-3 bg-black text-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF]">
+                <span className="font-bold truncate">$ npx zeuralabz add {selectedCompForCode.slug}</span>
+                <button
+                  onClick={() => copyToClipboard(`npx zeuralabz add ${selectedCompForCode.slug}`)}
+                  className="bg-[#2DD4BF] text-black font-heading font-black px-2.5 py-1 text-xs hover:bg-[#14B8A6] border border-white shrink-0"
+                >
+                  {copiedText === `npx zeuralabz add ${selectedCompForCode.slug}` ? '✔ COPIED' : 'COPY'}
+                </button>
+              </div>
+
+              {/* Code Snippet */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-zinc-400 text-[11px]">
+                  <span>// Usage Example:</span>
+                  <button
+                    onClick={() =>
+                      copyToClipboard(`import { ${selectedCompForCode.componentName} } from '@/components/zeuralabz/${selectedCompForCode.slug}';
+
+export default function Example() {
+  return (
+    <div className="p-8">
+      <${selectedCompForCode.componentName} />
+    </div>
+  );
+}`)
+                    }
+                    className="text-[#2DD4BF] hover:underline"
+                  >
+                    Copy Usage
+                  </button>
+                </div>
+                <pre className="p-3 bg-black border border-white/20 text-zinc-300 leading-relaxed overflow-x-auto text-[11px]">
+                  <code>{`import { ${selectedCompForCode.componentName} } from '@/components/zeuralabz/${selectedCompForCode.slug}';\n\nexport default function Example() {\n  return (\n    <div className="p-8">\n      <${selectedCompForCode.componentName} />\n    </div>\n  );\n}`}</code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

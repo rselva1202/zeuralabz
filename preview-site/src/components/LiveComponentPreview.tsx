@@ -252,6 +252,18 @@ export const LiveComponentPreview: React.FC<LiveComponentPreviewProps> = ({
         </div>
       );
     }
+    if (slug === 'spotlight') {
+      return (
+        <div className="w-full h-full bg-black flex items-center justify-center p-4 relative overflow-hidden">
+          <div className="w-44 p-3.5 rounded-xl bg-zinc-950 border border-white/20 relative overflow-hidden text-left shadow-lg">
+            <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-[#2DD4BF]/25 blur-xl pointer-events-none animate-pulse" />
+            <div className="w-6 h-6 rounded-lg bg-[#2DD4BF]/20 text-[#2DD4BF] flex items-center justify-center text-xs mb-2">🔦</div>
+            <div className="text-xs font-bold text-white relative z-10">Spotlight Focus</div>
+            <div className="text-[10px] text-zinc-400 mt-0.5 relative z-10">Radial lumen tracking</div>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="w-full h-full bg-black flex items-center justify-center p-4">
         <div className="w-44 p-3 rounded-xl bg-zinc-900/90 border border-zinc-800 text-left">
