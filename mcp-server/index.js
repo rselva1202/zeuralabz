@@ -77,24 +77,24 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
             },
           },
         },
       },
       {
         name: 'install_component',
-        description: 'Installs or generates installation code for a component from React Bits, Magic UI, Aceternity UI, or ZEURALABZ Original.',
+        description: 'Installs or generates installation code for a component from React Bits, Magic UI, Aceternity UI, Lightswind, or ZEURALABZ Original.',
         inputSchema: {
           type: 'object',
           properties: {
             slug: {
               type: 'string',
-              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, 3d-card-effect)',
+              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, noise-cloud-background, 3d-card-effect)',
             },
             source: {
               type: 'string',
-              description: 'Source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
+              description: 'Source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
             },
             targetDir: {
               type: 'string',
@@ -114,7 +114,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'list_components',
-        description: 'Lists all 531 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals.',
+        description: 'Lists all 755 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, Lightswind, and ZEURALABZ Originals.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -124,7 +124,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
             },
           },
         },
@@ -306,6 +306,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 originalUrl: comp.originalUrl,
                 usage: usageSnippet,
                 instructions: `Run "${installCmd}" inside your project or visit ${comp.originalUrl} to install from the official Aceternity registry.`,
+              },
+              null,
+              2
+            ),
+          },
+        ],
+      };
+    }
+
+    if (comp.source === 'lightswind') {
+      const installCmd = comp.installCommand || `npx lightswind add ${comp.slug}`;
+      const usageSnippet = `import { ${comp.componentName || 'Component'} } from '@/components/lightswind/${comp.slug}';\n\nexport default function Example() {\n  return <${comp.componentName || 'Component'} />;\n}`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                component: comp.name,
+                source: 'lightswind',
+                sourceLabel: 'Lightswind • MIT (linked, free only)',
+                installCommand: installCmd,
+                originalUrl: comp.originalUrl,
+                usage: usageSnippet,
+                instructions: `Run "${installCmd}" inside your project to install directly from the official Lightswind CLI.`,
               },
               null,
               2

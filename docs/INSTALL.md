@@ -46,9 +46,9 @@ npx zeuralabz themes
 
 ---
 
-## 2. Multi-Source Architecture (531 Base Components)
+## 2. Multi-Source Architecture (755 Base Components)
 
-ZEURALABZ indexes **531 base components** across four verified sources:
+ZEURALABZ indexes **755 base components** across five verified sources:
 
 - **React Bits (218 components)**: Linked official registry (`@react-bits/*`, [reactbits.dev](https://reactbits.dev)) • David Haz (MIT + Commons Clause)
   ```bash
@@ -64,6 +64,11 @@ ZEURALABZ indexes **531 base components** across four verified sources:
   ```bash
   npx zeuralabz add <slug> --source aceternity
   # Direct official: npx shadcn@latest add @aceternity/<slug>
+  ```
+- **Lightswind (224 components)**: Linked official CLI & registry (`https://lightswind.com/components/<slug>`, [lightswind.com](https://lightswind.com)) • Muhilan (MIT, linked, free only)
+  ```bash
+  npx zeuralabz add <slug> --source lightswind
+  # Direct official: npx lightswind add <slug>
   ```
 - **ZEURALABZ Originals (120 components)**: Native handwritten canvas engines and motion primitives (`components/<category>/<slug>`) • R. Selva (MIT)
   ```bash
@@ -135,10 +140,10 @@ The ZEURALABZ MCP server exposes 5 tools:
 | MCP Tool | Description |
 | :--- | :--- |
 | `suggest_ui_for_project` | Analyzes workspace stack and returns tailored 1-best-pick recommendations with preview links. |
-| `search_components` | Queries 531 base components across all 4 sources by keyword, category, or source. |
+| `search_components` | Queries 755 base components across all 5 sources by keyword, category, or source. |
 | `install_component` | Installs component code and usage snippets directly into the project. |
 | `list_themes` | Lists all 20 aesthetic themes with color palettes and styling rules. |
-| `list_components` | Lists all 531 components with optional category or source filters. |
+| `list_components` | Lists all 755 components with optional category or source filters. |
 
 ---
 

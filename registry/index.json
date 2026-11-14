@@ -1,8 +1,8 @@
 {
   "name": "ZEURALABZ Open Component Registry",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Connected open-source animated UI component registry for AI agents & modern web developers.",
-  "totalComponents": 531,
+  "totalComponents": 755,
   "sources": {
     "react-bits": {
       "count": 218,
@@ -28,6 +28,14 @@
       "license": "MIT",
       "distribution": "Official shadcn registry (@aceternity/* / ui.aceternity.com)"
     },
+    "lightswind": {
+      "count": 224,
+      "author": "Muhilan / Lightswind",
+      "repo": "https://github.com/codewithMUHILAN/Lightswind-UI-Library",
+      "website": "https://lightswind.com",
+      "license": "MIT (linked, free only)",
+      "distribution": "Official CLI (npx lightswind add <slug>)"
+    },
     "zeuralabz-original": {
       "count": 120,
       "author": "R. Selva / ZEURALABZ",
@@ -38,22 +46,22 @@
     }
   },
   "categories": {
-    "animations": 115,
-    "backgrounds": 132,
-    "text-animations": 81,
-    "layouts": 74,
-    "cards": 52,
-    "loaders": 9,
-    "buttons": 32,
-    "forms": 18,
-    "heroes": 18
+    "animations": 154,
+    "backgrounds": 208,
+    "text-animations": 97,
+    "layouts": 85,
+    "cards": 87,
+    "loaders": 13,
+    "buttons": 53,
+    "forms": 39,
+    "heroes": 19
   },
   "combinatorics": {
-    "baseComponents": 531,
+    "baseComponents": 755,
     "themes": 20,
     "animations": 20,
     "layouts": 15,
-    "totalCombinationsFormula": "531 base × 20 themes × 20 animations × 15 layouts",
-    "totalCombinations": "1,000,000+ styles on demand"
+    "totalCombinationsFormula": "755 base \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts",
+    "totalCombinations": "1,000,000+ styles on demand (4.5M+ total)"
   }
 }

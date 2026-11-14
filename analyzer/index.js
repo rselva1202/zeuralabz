@@ -254,6 +254,7 @@ export function analyzeProject(targetDir = process.cwd()) {
       src === 'react-bits' ? 'React Bits • MIT + Commons' :
       src === 'magic-ui' ? 'Magic UI • MIT' :
       src === 'aceternity' ? 'Aceternity • MIT' :
+      src === 'lightswind' ? 'Lightswind • MIT (linked, free only)' :
       'ZEURALABZ Original • MIT'
     );
 

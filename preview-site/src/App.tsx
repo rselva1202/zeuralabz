@@ -281,12 +281,12 @@ export default function App() {
           <div className="pt-6 border-t-[2px] border-white/20 flex flex-wrap items-center justify-center sm:justify-between gap-4 text-center sm:text-left font-mono text-xs sm:text-sm font-bold text-zinc-300">
             <div className="flex items-center gap-2">
               <span className="text-[#2DD4BF] text-base">✦</span>
-              <span><strong className="text-white font-heading font-black text-base sm:text-lg">531</strong> Base Components</span>
+              <span><strong className="text-white font-heading font-black text-base sm:text-lg">755</strong> Base Components</span>
             </div>
             <div className="hidden sm:inline-block text-zinc-600">•</div>
             <div className="flex items-center gap-2">
               <span className="text-[#2DD4BF] text-base">✦</span>
-              <span><strong className="text-white font-heading font-black text-base sm:text-lg">4</strong> Open Sources</span>
+              <span><strong className="text-white font-heading font-black text-base sm:text-lg">5</strong> Open Sources</span>
             </div>
             <div className="hidden sm:inline-block text-zinc-600">•</div>
             <div className="flex items-center gap-2">
@@ -648,7 +648,7 @@ export default function Hero() {
               SEE THE SKILL IN ACTION
             </h2>
             <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
-              The Skill holds 531 base components. See how it picks the best one for your project — no grid to scroll, no fake previews.
+              The Skill holds 755 base components across 5 open sources. See how it picks the best one for your project — no grid to scroll, no fake previews.
             </p>
           </div>
 
@@ -700,8 +700,8 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* 4 Connected Source Cards (531 Base Total) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 5 Connected Source Cards (755 Base Total) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* React Bits */}
             <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
               <div className="flex items-center justify-between">
@@ -741,6 +741,19 @@ export default function Hero() {
               </p>
             </div>
 
+            {/* Lightswind */}
+            <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-heading text-base font-black text-white">Lightswind</span>
+                <span className="text-[10px] font-mono text-zinc-400 bg-black px-1.5 py-0.5 border border-white/10">LINKED</span>
+              </div>
+              <div className="font-heading text-3xl font-black text-[#2DD4BF]">224</div>
+              <div className="text-xs font-mono text-zinc-300">Components (Free)</div>
+              <p className="text-[11px] text-[#CCCCCC] pt-2 border-t border-[#2A2A2A]">
+                Author: Muhilan • License: MIT. Linked via official documentation & CLI (free catalog only).
+              </p>
+            </div>
+
             {/* ZEURALABZ Originals */}
             <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-5 space-y-2">
               <div className="flex items-center justify-between">
@@ -766,7 +779,7 @@ export default function Hero() {
               </span>
             </div>
             <div className="font-mono text-sm sm:text-base text-zinc-200 bg-black p-4 border border-white/20">
-              <span className="text-[#2DD4BF] font-bold">531 base components</span> × <span className="text-white font-bold">20 themes</span> × <span className="text-white font-bold">20 animations</span> × <span className="text-white font-bold">15 layouts</span> = <strong className="text-[#2DD4BF] font-black">1,000,000+ styles</strong>
+              <span className="text-[#2DD4BF] font-bold">755 base components</span> × <span className="text-white font-bold">20 themes</span> × <span className="text-white font-bold">20 animations</span> × <span className="text-white font-bold">15 layouts</span> = <strong className="text-[#2DD4BF] font-black">4,530,000 styles (1M+)</strong>
             </div>
             <p className="text-xs sm:text-sm text-[#CCCCCC] leading-relaxed">
               We never claim to distribute 1 million hand-written files. Instead, the generator in the ZEURALABZ Skill combines atomic primitives (component + theme tokens + animation speed + border radius + typography) on the fly. You get <strong>1 million styles on demand</strong> without downloading heavy bloat.

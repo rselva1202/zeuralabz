@@ -10,15 +10,16 @@ ZEURALABZ was built to eliminate generic, boring websites without requiring deve
 
 ZEURALABZ achieves over 1,000,000 distinct visual outcomes through combinatorial permutations:
 
-$$\text{Styles} = 531 \text{ Base Components} \times 20 \text{ Themes} \times 20 \text{ Animation Presets} \times 15 \text{ Layout Structures} = 3,186,000 \ge 1,000,000+$$
+$$\text{Styles} = 755 \text{ Base Components} \times 20 \text{ Themes} \times 20 \text{ Animation Presets} \times 15 \text{ Layout Structures} = 4,530,000 \ge 1,000,000+$$
 
-With additional parametric adjustments for corner radiuses (`none`, `sm`, `md`, `lg`, `xl`, `full`) and typography pairings (`sans`, `serif`, `mono`, `display`), the total possible permutations exceed **19,000,000 unique styles**.
+With additional parametric adjustments for corner radiuses (`none`, `sm`, `md`, `lg`, `xl`, `full`) and typography pairings (`sans`, `serif`, `mono`, `display`), the total possible permutations exceed **27,000,000 unique styles**.
 
 ### The Layer Hierarchy:
-1. **Base Component Layer (531 Base Components)**:
+1. **Base Component Layer (755 Base Components)**:
    - **React Bits (218 components)**: Linked official registry (`@react-bits/*`) • David Haz (MIT + Commons Clause)
    - **Magic UI (79 components)**: Linked official registry (`magicui.design/r/<slug>.json`) • Dillion Verma (MIT)
    - **Aceternity UI (114 components)**: Linked official registry (`@aceternity/*`) • Manu Arora (MIT)
+   - **Lightswind (224 components)**: Linked official CLI & registry (`lightswind.com/components/<slug>`) • Muhilan (MIT, free only)
    - **ZEURALABZ Originals (120 components)**: Native handwritten canvas engines and motion primitives (`components/<category>/<slug>`) • R. Selva (MIT)
 2. **Design Theme Layer (20 Aesthetic Themes)**:
    - Carefully calibrated hex values, surfaces, borders, and glow reflections defined in `themes/themes.json`.
@@ -101,7 +102,13 @@ ZEURALABZ combines four distinct component origins under one unified index:
    - Licensed under MIT / Aceternity License Terms.
    - ZEURALABZ links directly to official components with zero local copy redistribution (`npx shadcn@latest add @aceternity/<slug>`).
 
-4. **ZEURALABZ Originals (`source: "zeuralabz-original"`, 120 components)**:
+4. **Official Lightswind Integration (`source: "lightswind"`, 224 components)**:
+   - Created by Muhilan ([lightswind.com](https://lightswind.com)).
+   - Licensed under MIT (linked, free only).
+   - ZEURALABZ strictly links to verified free components (and proof component Noise Cloud Background).
+   - Installed via official CLI: `npx lightswind add <slug>` or `npx zeuralabz add <slug> --source lightswind`.
+
+5. **ZEURALABZ Originals (`source: "zeuralabz-original"`, 120 components)**:
    - 120 custom base primitives authored under the MIT License and bundled locally within `components/`.
    - Installed via `npx zeuralabz add <slug>`.
 
@@ -110,4 +117,4 @@ ZEURALABZ combines four distinct component origins under one unified index:
 ## 4. Website vs Repo Skill Distinction
 
 - **Website (`https://rselva1202.github.io/zeuralabz`)**: Showcase only. It displays what the Skill is, how it works, what it is for, and how the 1M+ combinations matrix connects. There is NO component catalog grid on the website.
-- **GitHub Repo Skill & CLI**: The core product. The Skill, CLI (`npx zeuralabz`), MCP server, Analyzer, and Generator live in this repository, indexing all 531 base components and generating tailored animations on demand.
+- **GitHub Repo Skill & CLI**: The core product. The Skill, CLI (`npx zeuralabz`), MCP server, Analyzer, and Generator live in this repository, indexing all 755 base components and generating tailored animations on demand.

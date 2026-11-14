@@ -53,6 +53,8 @@ function findComponents(slug, sourceFilter = null) {
       matches = matches.filter((c) => c.source === 'magic-ui');
     } else if (sf === 'aceternity' || sf === 'ac' || sf === 'aceternity-ui') {
       matches = matches.filter((c) => c.source === 'aceternity');
+    } else if (sf === 'lightswind' || sf === 'ls') {
+      matches = matches.filter((c) => c.source === 'lightswind');
     } else if (sf === 'zeuralabz-original' || sf === 'original' || sf === 'zeura') {
       matches = matches.filter((c) => c.source === 'zeuralabz-original');
     }
@@ -91,6 +93,8 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
                 ? 'Magic UI • MIT'
                 : m.source === 'aceternity'
                 ? 'Aceternity UI • MIT'
+                : m.source === 'lightswind'
+                ? 'Lightswind • MIT (linked, free only)'
                 : 'ZEURALABZ Original • MIT'
             }]`,
             value: m,
@@ -99,19 +103,23 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
       ]);
       comp = answers.selected;
     } else {
-      // Priority default: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. ZEURALABZ Original
+      // Priority default: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. Lightswind, 5. ZEURALABZ Original
       const rb = matches.find((m) => m.source === 'react-bits');
       const mg = matches.find((m) => m.source === 'magic-ui');
       const ac = matches.find((m) => m.source === 'aceternity');
+      const ls = matches.find((m) => m.source === 'lightswind');
       if (rb) {
         comp = rb;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui, --source aceternity, or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui, --source aceternity, --source lightswind, or --source zeuralabz-original).`));
       } else if (mg) {
         comp = mg;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source aceternity or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source aceternity, --source lightswind, or --source zeuralabz-original).`));
       } else if (ac) {
         comp = ac;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Aceternity UI (use --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Aceternity UI (use --source lightswind or --source zeuralabz-original).`));
+      } else if (ls) {
+        comp = ls;
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Lightswind (use --source zeuralabz-original).`));
       }
     }
   }
@@ -303,7 +311,170 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
     return true;
   }
 
-  // 4. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
+  // 4. LIGHTSWIND INSTALLATION (via official lightswind CLI or direct fetch)
+  if (comp.source === 'lightswind') {
+    const cmd = comp.installCommand || `npx lightswind add ${comp.slug}`;
+    console.log(chalk.cyan(`\n📦 Installing official Lightswind component via CLI:`));
+    console.log(chalk.bold.white(`   ${cmd}\n`));
+
+    let cliSucceeded = false;
+    try {
+      execSync(cmd, { stdio: 'inherit', cwd: targetDir });
+      console.log(chalk.bold.green(`\n✔ Installed ${chalk.bold(comp.name)} from Lightswind`));
+      cliSucceeded = true;
+    } catch (err) {
+      console.log(chalk.yellow(`\n⚠️  Official CLI install command encountered an issue. Falling back to direct source installation.`));
+    }
+
+    if (!cliSucceeded) {
+      const lsDir = path.join(targetDir, 'src', 'components', 'lightswind', comp.slug);
+      fs.mkdirSync(lsDir, { recursive: true });
+
+      if (comp.slug === 'noise-cloud-background') {
+        const noiseCloudCode = `/**
+ * Lightswind — Noise Cloud Background
+ * Source: https://lightswind.com/components/noise-cloud-background
+ * Author: Muhilan / Lightswind (https://github.com/codewithMUHILAN/Lightswind-UI-Library)
+ * License: MIT (linked, free only)
+ */
+
+"use client";
+
+import React, { useEffect, useRef } from "react";
+
+export interface NoiseCloudBackgroundProps {
+  speed?: number;
+  colorA?: string;
+  colorB?: string;
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const NoiseCloudBackground: React.FC<NoiseCloudBackgroundProps> = ({
+  speed = 0.5,
+  colorA = "#1a0533",
+  colorB = "#0d1b4b",
+  className = "",
+  children
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let t = 0;
+
+    const resize = () => {
+      canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
+      canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const render = () => {
+      t += 0.01 * speed;
+      const w = canvas.width;
+      const h = canvas.height;
+
+      const grad = ctx.createRadialGradient(
+        w / 2 + Math.sin(t) * (w * 0.25),
+        h / 2 + Math.cos(t * 0.8) * (h * 0.25),
+        w * 0.1,
+        w / 2,
+        h / 2,
+        Math.max(w, h) * 0.8
+      );
+      grad.addColorStop(0, colorA);
+      grad.addColorStop(0.6, colorB);
+      grad.addColorStop(1, "#05050d");
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      for (let i = 0; i < 3; i++) {
+        const ox = w * 0.5 + Math.sin(t * 0.7 + i * 2.1) * (w * 0.3);
+        const oy = h * 0.5 + Math.cos(t * 0.5 + i * 1.7) * (h * 0.3);
+        const radius = Math.min(w, h) * (0.35 + i * 0.1);
+        const blobGrad = ctx.createRadialGradient(ox, oy, 0, ox, oy, radius);
+        blobGrad.addColorStop(0, colorA + "aa");
+        blobGrad.addColorStop(1, "transparent");
+        ctx.fillStyle = blobGrad;
+        ctx.beginPath();
+        ctx.arc(ox, oy, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [speed, colorA, colorB]);
+
+  return (
+    <div className={\`relative w-full h-full min-h-[400px] overflow-hidden \${className}\`}>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block pointer-events-none" />
+      {children && <div className="relative z-10 w-full h-full">{children}</div>}
+    </div>
+  );
+};
+
+export default NoiseCloudBackground;
+`;
+        fs.writeFileSync(path.join(lsDir, 'NoiseCloudBackground.tsx'), noiseCloudCode, 'utf8');
+        fs.writeFileSync(path.join(lsDir, 'index.ts'), `export * from './NoiseCloudBackground';\nexport { default } from './NoiseCloudBackground';\n`, 'utf8');
+      } else {
+        const registryUrl = `https://lightswind.com/r/${comp.slug}.json`;
+        let fetched = false;
+        try {
+          const fetchRes = await fetch(registryUrl);
+          if (fetchRes.ok) {
+            const itemData = await fetchRes.json();
+            if (itemData.files && itemData.files.length > 0) {
+              for (const file of itemData.files) {
+                const filename = path.basename(file.path || file.target || `${comp.slug}.tsx`);
+                const header = `/**\n * Lightswind — ${comp.name}\n * Source: ${comp.originalUrl}\n * Author: Muhilan / Lightswind (https://github.com/codewithMUHILAN/Lightswind-UI-Library)\n * License: MIT (linked, free only)\n */\n\n`;
+                fs.writeFileSync(path.join(lsDir, filename), header + file.content, 'utf8');
+              }
+              fetched = true;
+            }
+          }
+        } catch {}
+
+        if (!fetched) {
+          try {
+            const rawUrl = `https://raw.githubusercontent.com/codewithMUHILAN/Lightswind-UI-Library/Master/src/components/ui/${comp.slug}.tsx`;
+            const rawRes = await fetch(rawUrl);
+            if (rawRes.ok) {
+              const rawCode = await rawRes.text();
+              const header = `/**\n * Lightswind — ${comp.name}\n * Source: ${comp.originalUrl}\n * Author: Muhilan / Lightswind\n * License: MIT (linked, free only)\n */\n\n`;
+              fs.writeFileSync(path.join(lsDir, `${comp.componentName}.tsx`), header + rawCode, 'utf8');
+              fetched = true;
+            }
+          } catch {}
+        }
+      }
+
+      console.log(chalk.bold.green(`✔ Installed official ${chalk.bold(comp.name)} into src/components/lightswind/${comp.slug}/`));
+    }
+
+    console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+    console.log(chalk.gray(`--------------------------------------------------`));
+    console.log(chalk.white(`import { ${comp.componentName} } from './components/lightswind/${comp.slug}/${comp.componentName}';\n\nexport default function Example() {\n  return <${comp.componentName} />;\n}`));
+    console.log(chalk.gray(`--------------------------------------------------`));
+    console.log(chalk.blue(`🔗 Official Documentation & Live Demos: ${comp.originalUrl}\n`));
+    return true;
+  }
+
+  // 5. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
   let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
   const configPath = path.join(targetDir, 'zeuralabz.json');
   if (fs.existsSync(configPath)) {
@@ -476,7 +647,7 @@ program
 program
   .command('add <slug>')
   .description('Install a component into your project by its slug (e.g. aurora, magic-card, split-text, 3d-card-effect)')
-  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"')
   .action(async (slug, options) => {
     await installComponent(slug, process.cwd(), options);
   });
@@ -526,6 +697,8 @@ program
           ? chalk.cyan('[Magic UI • MIT]')
           : c.source === 'aceternity'
           ? chalk.blueBright('[Aceternity UI • MIT]')
+          : c.source === 'lightswind'
+          ? chalk.greenBright('[Lightswind • MIT]')
           : chalk.magenta('[ZEURALABZ Original • MIT]');
       console.log(`• ${chalk.bold.cyan(c.name)} (${chalk.yellow(c.slug)}) [${chalk.green(c.category)}] ${sourceBadge}`);
       console.log(`  ${chalk.gray(c.description)}`);
@@ -538,7 +711,7 @@ program
 program
   .command('preview <slug>')
   .description('Open the live web preview of a component in your browser')
-  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"')
   .action(async (slug, options) => {
     const matches = findComponents(slug, options.source);
     const comp = matches[0];
@@ -567,6 +740,8 @@ program
         items = items.filter((c) => c.source === 'magic-ui');
       } else if (sf === 'aceternity' || sf === 'ac' || sf === 'aceternity-ui') {
         items = items.filter((c) => c.source === 'aceternity');
+      } else if (sf === 'lightswind' || sf === 'ls') {
+        items = items.filter((c) => c.source === 'lightswind');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         items = items.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -587,6 +762,8 @@ program
           ? chalk.cyan('[Magic UI]')
           : c.source === 'aceternity'
           ? chalk.blueBright('[Aceternity UI]')
+          : c.source === 'lightswind'
+          ? chalk.greenBright('[Lightswind]')
           : chalk.magenta('[ZEURALABZ]');
       console.log(`• ${chalk.bold.cyan(c.slug.padEnd(24))} ${sourceBadge} ${chalk.gray('—')} ${chalk.white(c.name)} [${chalk.green(c.category)}]`);
     });
@@ -609,7 +786,7 @@ program
 // 8. GENERATE (On-Demand Style Synthesizer - 1M+ combinations)
 program
   .command('generate <slug>')
-  .description('Generate an on-demand customized component variant (531 base x 20 themes x 20 animations x 15 layouts = 1M+ combinations)')
+  .description('Generate an on-demand customized component variant (755 base x 20 themes x 20 animations x 15 layouts = 4.53M combinations)')
   .option('-t, --theme <theme>', 'Theme name (20 available, e.g. dark-neon, ocean, cyberpunk, brutalist)', 'dark-neon')
   .option('-a, --animation <animation>', 'Animation preset (float, pulse, bounce, shimmer, kinetic, drift, etc.)', 'float')
   .option('-l, --layout <layout>', 'Layout structure preset (hero-center, bento-3, card-grid-3, etc.)', 'hero-center')

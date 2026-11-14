@@ -2,14 +2,15 @@
 
 ZEURALABZ is an intelligent component indexer, CLI suggester, and design matrix that unifies modern UI engineering for developers and autonomous AI coding agents.
 
-The unified registry indexes **531 base components** across 4 premier open-source and original design systems:
+The unified registry indexes **755 base components** across 5 premier open-source and original design systems:
 - **React Bits (Linked)**: 218 components
 - **Magic UI (Linked)**: 79 components
 - **Aceternity UI (Linked)**: 114 components
+- **Lightswind (Linked, Free Only)**: 224 components
 - **ZEURALABZ Originals (Native)**: 120 components
 
 > **CRITICAL ARCHITECTURAL DISTINCTION**:
-> Linked components (`react-bits`, `magic-ui`, `aceternity`) are installed from their official registries and site endpoints. ZEURALABZ **never** clones, vendors, or re-licenses third-party components as its own. ZEURALABZ Originals are 100% original, handwritten motion primitives and canvas engines hosted natively in `components/`.
+> Linked components (`react-bits`, `magic-ui`, `aceternity`, `lightswind`) are installed from their official registries, site endpoints, and CLIs. ZEURALABZ **never** clones, vendors, or re-licenses third-party components as its own. ZEURALABZ Originals are 100% original, handwritten motion primitives and canvas engines hosted natively in `components/`.
 
 ---
 
@@ -55,6 +56,18 @@ The unified registry indexes **531 base components** across 4 premier open-sourc
   Source files and components may NOT be redistributed as a competing standalone component library, stock asset pack, or resold on template marketplaces.
 * **ZEURALABZ Integration**:
   Aceternity UI components are installed / copied directly from their official site (`https://ui.aceternity.com/components/<slug>`) or via their official shadcn registry (`@aceternity/<slug>`), NOT hosted in this repo. ZEURALABZ provides discovery, heuristic suggestions, and direct install workflows with full attribution.
+
+---
+
+## 5. Linked Source: Lightswind
+* **Author**: Muhilan / codewithMUHILAN (https://github.com/codewithMUHILAN)
+* **Official Website**: https://lightswind.com
+* **Repository**: https://github.com/codewithMUHILAN/Lightswind-UI-Library
+* **License**: MIT License (linked, free only)
+* **Terms of Use**:
+  The Lightswind repository code is open-source under the MIT License. The site license terms specify that components are for integration into user projects and forbid repackaging code as a competing standalone component library, UI kit, or registry.
+* **ZEURALABZ Integration**:
+  ZEURALABZ strictly enforces **LINKED ONLY, FREE components only**. Zero Pro components are redistributed, and zero code is copied into `components/` as originals. Components (224 free components including Noise Cloud Background proof) are discovered via ZEURALABZ and installed directly via the official Lightswind CLI (`npx lightswind add <slug>`) or linked official registry endpoints with full attribution.
 
 ---
 
