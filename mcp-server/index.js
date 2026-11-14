@@ -34,7 +34,7 @@ function loadThemes() {
 const server = new Server(
   {
     name: 'zeuralabz-mcp',
-    version: '1.2.0',
+    version: '1.3.0',
   },
   {
     capabilities: {
@@ -110,6 +110,23 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
         inputSchema: {
           type: 'object',
           properties: {},
+        },
+      },
+      {
+        name: 'list_components',
+        description: 'Lists all 531 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            category: {
+              type: 'string',
+              description: 'Optional category filter: backgrounds, text-animations, buttons, cards, heroes, layouts, forms, animations, loaders',
+            },
+            source: {
+              type: 'string',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"',
+            },
+          },
         },
       },
     ],
@@ -356,6 +373,47 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         {
           type: 'text',
           text: JSON.stringify(themes, null, 2),
+        },
+      ],
+    };
+  }
+
+  if (name === 'list_components') {
+    const category = (args?.category || '').toLowerCase();
+    const source = (args?.source || '').toLowerCase();
+    let results = registry;
+
+    if (source) {
+      results = results.filter((c) => c.source && c.source.toLowerCase() === source);
+    }
+    if (category) {
+      results = results.filter((c) => c.category && c.category.toLowerCase() === category);
+    }
+
+    return {
+      content: [
+        {
+          type: 'text',
+          text: JSON.stringify(
+            {
+              total: results.length,
+              sourceFilter: source || 'all',
+              categoryFilter: category || 'all',
+              components: results.map((c) => ({
+                id: c.id,
+                name: c.name,
+                slug: c.slug,
+                source: c.source,
+                sourceLabel: c.sourceLabel,
+                category: c.category,
+                description: c.description,
+                originalUrl: c.originalUrl || c.previewUrl,
+                installCommand: c.zeuralabzCommand || c.installCommand,
+              })),
+            },
+            null,
+            2
+          ),
         },
       ],
     };

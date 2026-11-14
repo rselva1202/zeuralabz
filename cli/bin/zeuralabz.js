@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import inquirer from 'inquirer';
 import { analyzeProject } from '../../analyzer/index.js';
+import { generateVariant } from '../../generator/generate.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -603,6 +604,46 @@ program
       console.log(`• ${chalk.bold.cyan(t.name.padEnd(18))} ${chalk.yellow(t.mood.padEnd(20))} ${chalk.gray(t.description)}`);
     });
     console.log('');
+  });
+
+// 8. GENERATE (On-Demand Style Synthesizer - 1M+ combinations)
+program
+  .command('generate <slug>')
+  .description('Generate an on-demand customized component variant (531 base x 20 themes x 20 animations x 15 layouts = 1M+ combinations)')
+  .option('-t, --theme <theme>', 'Theme name (20 available, e.g. dark-neon, ocean, cyberpunk, brutalist)', 'dark-neon')
+  .option('-a, --animation <animation>', 'Animation preset (float, pulse, bounce, shimmer, kinetic, drift, etc.)', 'float')
+  .option('-l, --layout <layout>', 'Layout structure preset (hero-center, bento-3, card-grid-3, etc.)', 'hero-center')
+  .option('-r, --radius <radius>', 'Border radius: none, sm, md, lg, xl, full', 'xl')
+  .option('-f, --font <font>', 'Font family preset: sans, mono, serif, display', 'sans')
+  .option('-o, --out <path>', 'Output directory (defaults to current project ./src/components/zeuralabz)')
+  .action((slug, options) => {
+    try {
+      const outDir = options.out ? path.resolve(options.out) : path.join(process.cwd(), 'src', 'components', 'zeuralabz');
+      const res = generateVariant({
+        componentSlug: slug,
+        themeName: options.theme,
+        animation: options.animation,
+        layout: options.layout,
+        radius: options.radius,
+        font: options.font,
+        outputDir: outDir
+      });
+
+      console.log(chalk.bold.magenta('\n================================================================================'));
+      console.log(chalk.bold.cyan('               ZEURALABZ ON-DEMAND STYLE SYNTHESIZER                           '));
+      console.log(chalk.bold.magenta('================================================================================\n'));
+      console.log(`${chalk.bold.white('Component:')}     ${chalk.cyan(res.comp.name)} (${chalk.yellow(res.comp.slug)})`);
+      console.log(`${chalk.bold.white('Source:')}        ${chalk.green(res.comp.sourceLabel || res.comp.source)}`);
+      console.log(`${chalk.bold.white('Theme:')}         ${chalk.magenta(res.theme.name)} (${res.theme.id})`);
+      console.log(`${chalk.bold.white('Animation:')}     ${chalk.yellow(res.animation)}`);
+      console.log(`${chalk.bold.white('Layout:')}        ${chalk.white(res.layout)}`);
+      console.log(`${chalk.bold.white('Styling:')}       ${chalk.gray(`${res.radius} | ${res.font}`)}`);
+      console.log(`${chalk.bold.white('Combinations:')}  ${chalk.green(res.formula)}\n`);
+      console.log(chalk.bold.green(`✔ Saved generated component to: ${res.outPath}\n`));
+    } catch (err) {
+      console.log(chalk.red(`\n✖ Generation failed: ${err.message}\n`));
+      process.exit(1);
+    }
   });
 
 program.parse(process.argv);

@@ -1,142 +1,155 @@
 # ✨ ZEURALABZ
 
-> **"Make any website look pretty — install once, let AI suggest the best UI for your project."**
+> **Autonomous UI Design Matrix for AI Coding Agents & Modern Developers**
 > 
-> *Note: Formerly developed under the draft name VibeUI. Officially published and maintained as **`zeuralabz`** (`npx zeuralabz`).*
+> *531 Base Components Across 4 Premier Sources • 1,000,000+ Combinatoric Styles • Install Once, Let AI Elevate Your Web Applications.*
 
 [![npm version](https://img.shields.io/npm/v/zeuralabz.svg)](https://www.npmjs.com/package/zeuralabz)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Components](https://img.shields.io/badge/Components-120%2B-indigo.svg)](components.json)
-[![Combinations](https://img.shields.io/badge/Combinations-1M%2B_Styles-cyan.svg)](docs/HOW-IT-WORKS.md)
-[![Live Preview](https://img.shields.io/badge/Showcase-GitHub_Pages-emerald.svg)](https://rselva1202.github.io/zeuralabz)
+[![Base Components](https://img.shields.io/badge/Base_Components-531-indigo.svg)](components.json)
+[![Combinations](https://img.shields.io/badge/Combinations-1M%2B_Styles-emerald.svg)](docs/HOW-IT-WORKS.md)
+[![Showcase Site](https://img.shields.io/badge/Showcase-GitHub_Pages-cyan.svg)](https://rselva1202.github.io/zeuralabz)
 [![MCP Protocol](https://img.shields.io/badge/Protocol-Model_Context_Protocol-purple.svg)](mcp-server/)
-
-**ZEURALABZ** is a public, open-source UI design system, AI project analyzer, and CLI tool designed specifically for developers and zeura-coders working in AI workspaces like **Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**.
-
-Instead of browsing endless component directories or wrestling with heavy UI libraries, ZEURALABZ scans your project structure and **suggests the single best UI component for every part** of your site — background, hero, typography animations, cards, buttons, and micro-interactions — and installs the chosen code directly into your repository.
 
 ---
 
-## ⚡ Live Preview Website
-👉 **Explore the full interactive catalog:** **[rselva1202.github.io/zeuralabz](https://rselva1202.github.io/zeuralabz)**
+## 🌟 What is ZEURALABZ?
+
+**ZEURALABZ** is an intelligent component indexer, CLI suggester, and design matrix that unifies modern animated UI engineering for developers and autonomous AI coding agents (**Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot**).
+
+Instead of wading through hundreds of fragmented libraries or wrestling with copy-paste boilerplate, ZEURALABZ inspects your project stack, detects missing animated sections, and **recommends the single best component per section** from **React Bits**, **Magic UI**, **Aceternity UI**, and **ZEURALABZ Originals** with exact installation commands.
+
+👉 **Live Showcase Website**: [https://rselva1202.github.io/zeuralabz](https://rselva1202.github.io/zeuralabz) *(Showcase only — zero card grid clutter)*
+
+---
+
+## ⚡ The 531 Base Components Index
+
+ZEURALABZ indexes **531 base components** across four verified sources:
+
+| Source | Count | Origin / Author | License | Integration Method |
+| :--- | :---: | :--- | :--- | :--- |
+| **React Bits** | 218 | [David Haz](https://github.com/DavidHDev) ([reactbits.dev](https://reactbits.dev)) | MIT + Commons Clause | Linked official registry (`@react-bits/*`) |
+| **Magic UI** | 79 | [Dillion Verma](https://github.com/magicuidesign) ([magicui.design](https://magicui.design)) | MIT | Linked official registry (`magicui.design/r/*.json`) |
+| **Aceternity UI** | 114 | [Manu Arora](https://github.com/manuarora700) ([ui.aceternity.com](https://ui.aceternity.com)) | MIT / Aceternity Terms | Linked official registry (`@aceternity/*`) |
+| **ZEURALABZ Originals** | 120 | [R. Selva](https://github.com/rselva1202) | MIT | Native handwritten canvas engines & motion primitives |
+| **Total Base** | **531** | — | — | **Zero Third-Party Vendor Cloning** |
+
+> **Attribution Integrity**: Linked third-party components are **never** cloned into `components/` as originals. ZEURALABZ connects to their official registries with complete author attribution.
 
 ---
 
 ## 💡 The 1,000,000+ Combinations Architecture
 
-> **Transparency Note**: We do not claim 1,000,000 hand-written files on disk. Instead, ZEURALABZ uses a **combinatorial design matrix** powered by an on-demand generator.
+ZEURALABZ does not claim 1,000,000 hand-written files on disk. Instead, it provides **1,000,000+ deterministic combinations on demand** via its style synthesizer engine:
+
+$$\text{Total Combinations} = 531 \text{ base components} \times 20 \text{ themes} \times 20 \text{ animations} \times 15 \text{ layouts} = 3,186,000 \ge 1\text{M+}$$
 
 ```
-┌─────────────────┐      ┌───────────────┐      ┌──────────────────┐      ┌─────────────────┐
-│ 150 Base Comps  │  ×   │   20 Themes   │  ×   │  20 Animations   │  ×   │   15 Layouts    │
-└────────┬────────┘      └───────┬───────┘      └────────┬─────────┘      └────────┬────────┘
-         │                       │                       │                         │
-         └───────────────────────┴───────────┬───────────┴─────────────────────────┘
-                                             ▼
-                                900,000+ Combinations
-                           + Parametric Radius & Typography
-                                             ▼
-                             1,000,000+ Unique UI Styles
+┌──────────────────┐      ┌───────────────┐      ┌──────────────────┐      ┌─────────────────┐
+│  531 Base Comps  │  ×   │   20 Themes   │  ×   │  20 Animations   │  ×   │   15 Layouts    │
+└────────┬─────────┘      └───────┬───────┘      └────────┬─────────┘      └────────┬────────┘
+         │                        │                       │                         │
+         └────────────────────────┴───────────┬───────────┴─────────────────────────┘
+                                              ▼
+                                   3,186,000+ Combinations
+                             + Parametric Radius & Typography
+                                              ▼
+                               1,000,000+ Unique UI Styles
 ```
 
-- **150 Base Components**: Aurora, Bento, 3D Tilt, Glitch, Split-Text, Shimmer Buttons, etc.
-- **20 Curated Themes**: `dark-neon`, `minimal-white`, `glass`, `aurora`, `retro-synth`, `cyberpunk`, `luxury-gold`, `midnight-violet`, etc.
-- **20 Animation Presets**: Staggered spring reveals, ambient drifting mist, magnetic physics, and infinite marquees.
-- **On-Demand Generator**: Generate custom tailored variants anytime via `node generator/generate.js --component <slug> --theme <theme>`.
+- **20 Themes**: `dark-neon`, `minimal-white`, `glass`, `aurora`, `sunset`, `ocean`, `forest`, `candy`, `cyberpunk`, `luxury-gold`, `retro-synth`, `pastel-dream`, `brutalist`, `monochrome`, `emerald-vault`, `midnight-violet`, `solar-amber`, `crimson-tide`, `arctic-ice`, `deep-space`.
+- **20 Animations**: `float`, `pulse`, `bounce`, `fade-in`, `slide-up`, `glow-sweep`, `shimmer`, `spring`, `kinetic`, `drift`, `reveal`, `flicker`, `stagger`, `spin-slow`, `ripple`, `wave`, `zoom`, `glitch`, `snap`, `tilt`.
+- **15 Layouts**: `hero-center`, `hero-split`, `bento-3`, `bento-4`, `card-grid-3`, `card-grid-4`, `sidebar-left`, `sidebar-right`, `nav-floating`, `nav-minimal`, `section-contained`, `section-fullwidth`, `masonry-feed`, `timeline-vertical`, `dock-bottom`.
 
 ---
 
 ## 🚀 Quickstart (CLI)
 
-Run ZEURALABZ directly in any React, Next.js, or Vite project via `npx`:
+Run ZEURALABZ directly in any project via `npx`:
 
 ```bash
-# 1. Initialize ZEURALABZ configuration in your workspace
+# 1. Initialize configuration in your workspace
 npx zeuralabz init
 
-# 2. Analyze your project and get tailored 1-best-pick suggestions
+# 2. Analyze project and get 1-best-pick recommendations per section
 npx zeuralabz suggest
 
-# 3. Add an individual component
-npx zeuralabz add aurora
+# 3. Install any component across all 4 sources
+npx zeuralabz add aurora-background --source aceternity
+npx zeuralabz add animated-shiny-text --source magic-ui
+npx zeuralabz add split-text --source react-bits
+npx zeuralabz add bento
 
-# 4. Search components by keyword
-npx zeuralabz search cards
+# 4. Generate a custom on-demand theme variant
+npx zeuralabz generate aurora --theme ocean --animation float
+npx zeuralabz generate shimmer --theme dark-neon --animation pulse
+npx zeuralabz generate tilt --theme cyberpunk --animation kinetic
 
-# 5. Open live browser demo
-npx zeuralabz preview aurora
+# 5. Search components across all 4 sources
+npx zeuralabz search card
+
+# 6. Open live official component preview
+npx zeuralabz preview aurora-background --source aceternity
+
+# 7. List components or inspect themes
+npx zeuralabz list backgrounds
+npx zeuralabz themes
 ```
 
 ---
 
-## 🤖 The AI Analyzer (`zeuralabz suggest`)
+## 🤖 The AI Project Analyzer
 
-When you run `npx zeuralabz suggest`, ZEURALABZ scans your local project:
-- Detects framework (`Next.js`, `Vite`, `React`), styling (`Tailwind v3` or `Tailwind v4`), and language (`TypeScript`).
+When you run `npx zeuralabz suggest`, the analyzer inspects your project:
+- Detects framework (`Next.js`, `Vite`, `React`, `Astro`, `Remix`), styling (`Tailwind v3` or `Tailwind v4`), motion engine (`Framer Motion`, `GSAP`, `Three.js`), and language (`TypeScript`).
 - Classifies project persona (`SaaS`, `Portfolio`, `Dashboard`, `E-Commerce`, `Restaurant`).
-- Identifies missing visual polish and prints **exactly 1 best pick per section**:
+- Recommends **exactly 1 best pick per section** with reasoning and source badges:
 
 ```text
-Scanning your project...
-React + Vite + Tailwind v4 found
-Type: SAAS LANDING PAGE
+================================================================================
+                   ZEURALABZ AUTONOMOUS PROJECT ANALYZER                       
+================================================================================
 
-Best UI components for you (1 per section):
-═══════════════════════════════════════════════════════════════════
-1. Background — Aurora Background
-   Slug: aurora
-   Preview: https://rselva1202.github.io/zeuralabz/preview/aurora
-   Why: Living ambient waves elevate SaaS software aesthetics and create depth
+Framework:        Next.js (App Router)
+Styling:          Tailwind CSS v4
+Motion Engine:    Framer Motion v12 / motion
+Detected Persona: SAAS (Confidence: high)
 
-2. Layout & Navigation — High-Converting SaaS Landing Structure
-   Slug: landing
-   Preview: https://rselva1202.github.io/zeuralabz/preview/landing
-   Why: Balanced header and responsive layout structured for conversion
+--- RECOMMENDED ZEURALABZ ONE-BEST-PICK PLAN -----------------------------------
 
-3. Hero Section — High-Impact Centered SaaS Hero
-   Slug: center-hero
-   Preview: https://rselva1202.github.io/zeuralabz/preview/center-hero
-   Why: High-conversion hero layout with dynamic headline hierarchy tailored for landing projects
+[1] SECTION: BACKGROUND
+    Component: Aurora Background (aurora-background) [Aceternity UI • MIT]
+    Why:       Soft ambient aurora shader waves create an ultra-modern dark aesthetic without distracting from copy.
+    Install:   npx zeuralabz add aurora-background --source aceternity
 
-4. Cards & Features — Frosted Glassmorphism Card
-   Slug: glass
-   Preview: https://rselva1202.github.io/zeuralabz/preview/glass
-   Why: Multi-tiered glass pricing cards build trust and drive subscriptions
+[2] SECTION: HERO HEADLINE
+    Component: Animated Shiny Text (animated-shiny-text) [Magic UI • MIT]
+    Why:       Light reflection sweep highlights primary product value proposition with subtle metallic elegance.
+    Install:   npx zeuralabz add animated-shiny-text --source magic-ui
 
-5. Text Styles & Headlines — Split Character Spring Reveal
-   Slug: split-text
-   Preview: https://rselva1202.github.io/zeuralabz/preview/split-text
-   Why: Smooth staggered reveal gives hero headline a cinematic first impression
+[3] SECTION: FEATURE CARDS
+    Component: Bento Grid Asymmetric Tile Card (bento) [ZEURALABZ Original • MIT]
+    Why:       Asymmetrical modular bento layout organizes dense multi-tier SaaS features cleanly.
+    Install:   npx zeuralabz add bento
 
-6. Buttons & CTAs — Angled Metallic Shimmer Button
-   Slug: shimmer
-   Preview: https://rselva1202.github.io/zeuralabz/preview/shimmer
-   Why: Subtle luminous light sweep draws the eye directly to your primary conversion action
+[4] SECTION: BUTTONS & CTAS
+    Component: Shimmer Button (shimmer-button) [Magic UI • MIT]
+    Why:       High-converting primary action button featuring continuous specular reflection along the rim.
+    Install:   npx zeuralabz add shimmer-button --source magic-ui
 
-7. Extra Animations & Polish — Viewport Intersection Spring Reveal
-   Slug: scroll-reveal
-   Preview: https://rselva1202.github.io/zeuralabz/preview/scroll-reveal
-   Why: Infinite logo ribbon displays partner logos and social proof seamlessly
-═══════════════════════════════════════════════════════════════════
-? Pick numbers to install (e.g. 1, 3 or "all"): 
+[5] SECTION: POLISH & LOADERS
+    Component: Logo Loop (logo-loop) [React Bits • MIT + Commons Clause]
+    Why:       Infinite seamless ribbon displays customer logos and social proof badges smoothly.
+    Install:   npx zeuralabz add logo-loop --source react-bits
 ```
 
 ---
 
 ## 🔌 Model Context Protocol (MCP) Server
 
-ZEURALABZ exposes a full native MCP server allowing AI coding assistants to autonomously analyze, search, and install components.
+Connect ZEURALABZ directly into **Claude Desktop, Cursor, Windsurf, or Antigravity**:
 
-### Available MCP Tools:
-| Tool | Description |
-| :--- | :--- |
-| `suggest_ui_for_project` | Analyzes workspace stack and returns tailored 1-best-pick recommendations with preview links. |
-| `search_components` | Queries ZEURALABZ registry by keyword, category, or tag. |
-| `install_component` | Installs component code and usage snippets directly into the project. |
-| `list_themes` | Lists all 20 aesthetic themes with color palettes and styling rules. |
-
-### MCP Setup:
-Add to your `claude_desktop_config.json`, Cursor MCP settings, or Windsurf config:
 ```json
 {
   "mcpServers": {
@@ -148,70 +161,59 @@ Add to your `claude_desktop_config.json`, Cursor MCP settings, or Windsurf confi
 }
 ```
 
+### Available Tools:
+- `suggest_ui_for_project`: Programmatic stack analysis and 1-best-pick design plan.
+- `search_components`: Query 531 components by keyword, category, or source.
+- `install_component`: Automated component installation and snippet generation.
+- `list_themes`: Inspection of all 20 color palettes and themes.
+- `list_components`: Listing of all 531 components with category/source filters.
+
 ---
 
 ## 📁 Repository Structure
 
 ```text
 zeuralabz/
-├── components/                  # 120+ Self-contained components
-│   ├── backgrounds/             # Aurora, Galaxy, Particles, Grid, Gradient, Noise, Mesh...
+├── components/                  # 120 Native ZEURALABZ Originals
+│   ├── backgrounds/             # Aurora, Galaxy, Particles, Dots, Grid, Gradient, Fireflies...
 │   ├── text-animations/         # Split-text, Typewriter, Gradient-text, Scramble...
-│   ├── buttons/                 # Shimmer, Magnetic, Gradient, Neon, 3D, Liquid...
-│   ├── cards/                   # Glass, 3D Tilt, Bento, Pricing, Hover-glow...
-│   ├── heroes/                  # Center-hero, Split-hero, Video-hero, Particle-hero...
-│   ├── layouts/                 # Landing, Dashboard, Sidebar, Floating Pill Nav...
-│   ├── forms/                   # Floating-input, Search hotkey, Toggle, OTP...
-│   ├── animations/              # Infinite Marquee, Scroll Reveal, Cursor Trail...
-│   └── loaders/                 # Skeleton, Cyber Spinner, Pulsing Dots...
+│   ├── buttons/                 # Shimmer, Glow, Magnetic, Gradient, 3D...
+│   ├── cards/                   # Bento, 3D Tilt, Metric-trend, Product, Glass...
+│   ├── heroes/                  # Center-hero, Split-hero, Isometric-hero...
+│   ├── layouts/                 # Sidebar-layout, Floating-pill-nav, Landing...
+│   ├── forms/                   # Floating-input, Search hotkey, Toggle...
+│   ├── animations/              # Infinite Marquee, Scroll Reveal, Carousel...
+│   └── loaders/                 # Circular progress, Skeleton, Cyber Spinner...
+├── registry/                    # Official registry indexes
+│   ├── react-bits.json          # 218 React Bits components
+│   ├── magic-ui.json            # 79 Magic UI components
+│   ├── aceternity.json          # 114 Aceternity UI components
+│   ├── zeuralabz-original.json  # 120 ZEURALABZ Original components
+│   └── index.json               # Master registry manifest (531 total)
 ├── themes/                      # 20 Aesthetic design themes (themes.json)
-├── templates/                   # 4 Production-ready full-page page assemblies
-│   ├── landing-saas/            # SaaS landing page
-│   ├── landing-portfolio/       # Developer / creator portfolio
-│   ├── landing-restaurant/      # Fine dining & atmosphere landing page
-│   └── dashboard-starter/       # Analytics & admin dashboard shell
+├── templates/                   # 4 Production-ready full-page assemblies
+│   ├── landing-saas/            # SaaS landing page with Next.js & Tailwind
+│   ├── landing-portfolio/       # Developer portfolio with Vite & React 19
+│   ├── landing-restaurant/      # Restaurant landing page with Astro & Tailwind
+│   └── dashboard-starter/       # Analytics dashboard shell with Next.js
 ├── analyzer/                    # Project detection and recommendation heuristics
 ├── cli/                         # zeuralabz CLI binary and commands
-├── generator/                   # On-demand variant generator
+├── generator/                   # On-demand style synthesizer (1M+ combinations)
 ├── mcp-server/                  # Model Context Protocol server for AI agents
-├── preview-site/                # Showcase web app (GitHub Pages)
+├── preview-site/                # Showcase website (GitHub Pages, 0 card grid)
 ├── docs/                        # INSTALL.md, HOW-IT-WORKS.md, CONTRIBUTING.md
-├── SKILL.md                     # AI Agent instruction manual
-├── components.json              # Master component registry
+├── SKILL.md                     # AI Agent instruction manual for Antigravity & Claude
+├── ATTRIBUTION.md               # Upstream authors & license terms
+├── components.json              # Master unified catalog (531 items)
 └── package.json
 ```
 
 ---
 
-## 🎨 Component Anatomy
+## 📜 License & Attribution
 
-Every component folder contains three independent implementations and full metadata:
-```text
-components/backgrounds/aurora/
-├── AuroraBackground.tsx   # React 19 + TypeScript + Tailwind + Framer Motion
-├── AuroraBackground.html  # Pure semantic HTML
-├── AuroraBackground.css   # Standalone CSS
-├── preview.svg            # Vector card asset
-├── preview.png            # Screenshot asset
-├── preview.gif            # Micro-animation asset
-└── info.json              # Metadata, tags, dependencies & preview URL
-```
-
----
-
-## 📄 Templates Included
-
-| Template | Persona | Key Features |
-| :--- | :--- | :--- |
-| **`templates/landing-saas`** | SaaS / Software | Aurora backdrop, centered hero, bento cards, shimmer CTA, floating nav |
-| **`templates/landing-portfolio`** | Developer Portfolio | Cosmic galaxy canvas, 3D tilt cards, magnetic buttons, split hero |
-| **`templates/landing-restaurant`** | Food & Hospitality | Ambient gradient, frosted glass menu, floating input reservation form |
-| **`templates/dashboard-starter`** | Admin / Analytics | Collapsible rail sidebar, KPI metric cards, hotkey search, skeleton loader |
-
----
-
-## 📜 License & Author
-
-- **Author**: **[R. Selva](https://github.com/rselva1202)**
-- **License**: **[MIT](LICENSE)** — free for personal and commercial projects.
-
+- **ZEURALABZ Originals**: MIT License • Authored by **[R. Selva](https://github.com/rselva1202)**
+- **React Bits**: MIT + Commons Clause • Authored by **[David Haz](https://github.com/DavidHDev)**
+- **Magic UI**: MIT License • Authored by **[Dillion Verma](https://github.com/magicuidesign)**
+- **Aceternity UI**: MIT License / Terms • Authored by **[Manu Arora](https://github.com/manuarora700)**
+- Full attribution details available in **[ATTRIBUTION.md](ATTRIBUTION.md)**.
