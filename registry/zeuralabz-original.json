@@ -1,0 +1,4203 @@
+[
+  {
+    "id": "zeuralabz-aurora",
+    "name": "Aurora Flowing Waves Canvas",
+    "componentName": "AuroraBackground",
+    "slug": "aurora",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Volumetric luminous aurora ribbons with dynamic flowing sinusoidal light waves and shimmering curtain folds.",
+    "tags": [
+      "background",
+      "aurora",
+      "waves",
+      "glow",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/aurora",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add aurora",
+    "zeuralabzCommand": "npx zeuralabz add aurora --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-galaxy",
+    "name": "Spiral Galaxy Cosmic Canvas",
+    "componentName": "GalaxyBackground",
+    "slug": "galaxy",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Deep cosmic spiral galaxy simulation with 800+ stars, 3 logarithmic spiral arms, radiant stellar core, and chromatic volumetric nebula dust clouds.",
+    "tags": [
+      "background",
+      "galaxy",
+      "cosmos",
+      "particles",
+      "spiral",
+      "canvas",
+      "space",
+      "stars"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/galaxy",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add galaxy",
+    "zeuralabzCommand": "npx zeuralabz add galaxy --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-particles",
+    "name": "Floating Particle Network",
+    "componentName": "ParticlesBackground",
+    "slug": "particles",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Interactive connected particle constellation with dynamic proximity links, pulsing nodes, and glowing momentum physics.",
+    "tags": [
+      "background",
+      "particles",
+      "network",
+      "constellation",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/particles",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add particles",
+    "zeuralabzCommand": "npx zeuralabz add particles --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-dots",
+    "name": "Reactive Dot Matrix Grid",
+    "componentName": "DotGridBackground",
+    "slug": "dots",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Pulsing 2D dot matrix grid with undulating radial energy ripples, luminous amplitude waves, and deep navy backdrop.",
+    "tags": [
+      "background",
+      "dots",
+      "matrix",
+      "grid",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/dots",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add dots",
+    "zeuralabzCommand": "npx zeuralabz add dots --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-starfield",
+    "name": "Deep Space Starfield",
+    "componentName": "StarfieldBackground",
+    "slug": "starfield",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Infinite deep space starfield with 700+ twinkling stars, multi-tier parallax Z-depth projection, and subtle cosmic drift on deep navy #0a0e27.",
+    "tags": [
+      "background",
+      "starfield",
+      "stars",
+      "cosmos",
+      "canvas",
+      "space"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/starfield",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add starfield",
+    "zeuralabzCommand": "npx zeuralabz add starfield --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-liquid",
+    "name": "Liquid Lava Metaballs",
+    "componentName": "LiquidLavaBackground",
+    "slug": "liquid",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Fluid organic lava metaballs drifting with smooth orbital harmonic blending, radiant core diffusion, and vibrant chromatic gradients.",
+    "tags": [
+      "background",
+      "liquid",
+      "lava",
+      "metaballs",
+      "fluid",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/liquid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add liquid",
+    "zeuralabzCommand": "npx zeuralabz add liquid --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-grid",
+    "name": "3D Perspective Retro Grid",
+    "componentName": "RetroGridBackground",
+    "slug": "grid",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Synthwave 3D perspective receding grid plane with radiant horizon neon glow, animated depth displacement, and electric cyan/indigo lines.",
+    "tags": [
+      "background",
+      "grid",
+      "retro",
+      "3d",
+      "synthwave",
+      "perspective"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add grid",
+    "zeuralabzCommand": "npx zeuralabz add grid --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-mesh",
+    "name": "Geometric Mesh Constellation",
+    "componentName": "MeshBackground",
+    "slug": "mesh",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Dynamic kinetic wireframe polygon mesh with shifting geometric tension, glowing vertices, and interconnected nodes.",
+    "tags": [
+      "background",
+      "mesh",
+      "geometry",
+      "network",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/mesh",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add mesh",
+    "zeuralabzCommand": "npx zeuralabz add mesh --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-noise",
+    "name": "Chromatic Ambient Noise",
+    "componentName": "NoiseBackground",
+    "slug": "noise",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Film grain perceptual micro-noise texture animated over deep iridescent cosmic violet and indigo gradients.",
+    "tags": [
+      "background",
+      "noise",
+      "texture",
+      "film-grain",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/noise",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add noise",
+    "zeuralabzCommand": "npx zeuralabz add noise --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-beam",
+    "name": "Conic Border Beam Spotlight",
+    "componentName": "BorderBeamBackground",
+    "slug": "beam",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Rotating perimeter border beam with continuous conic spotlight sweep, radiant corner blooms, and luminous chromatic edge glow.",
+    "tags": [
+      "background",
+      "beam",
+      "border-beam",
+      "glow",
+      "spotlight"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/beam",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add beam",
+    "zeuralabzCommand": "npx zeuralabz add beam --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-hexagon",
+    "name": "Cyber Hexagon Honeycomb",
+    "componentName": "HexagonBackground",
+    "slug": "hexagon",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Futuristic geometric hexagonal tessellation grid with rhythmic wave pulses, glowing outlines, and energy dispersion nodes.",
+    "tags": [
+      "background",
+      "hexagon",
+      "honeycomb",
+      "cyber",
+      "grid",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/hexagon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add hexagon",
+    "zeuralabzCommand": "npx zeuralabz add hexagon --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-waves",
+    "name": "Sinusoidal Neon Waves",
+    "componentName": "WavesBackground",
+    "slug": "waves",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Multi-layered neon sine waves with undulating harmonic phase shifts, vibrant luminous strokes, and translucent intersecting ribbons.",
+    "tags": [
+      "background",
+      "waves",
+      "neon",
+      "sinusoidal",
+      "lines",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/waves",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add waves",
+    "zeuralabzCommand": "npx zeuralabz add waves --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-gradient",
+    "name": "Animated Mesh Gradient",
+    "componentName": "MeshGradientBackground",
+    "slug": "gradient",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Ultra-smooth multi-focal fluid gradient mesh drifting across orbital paths with vivid color bleeding on deep navy #0a0e27.",
+    "tags": [
+      "background",
+      "gradient",
+      "mesh-gradient",
+      "colors",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/gradient",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add gradient",
+    "zeuralabzCommand": "npx zeuralabz add gradient --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-nebula",
+    "name": "Volumetric Cosmic Nebula",
+    "componentName": "NebulaBackground",
+    "slug": "nebula",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Drifting interstellar nebula dust cloud with chromatic magenta and cyan gas tendrils, stellar core radiance, and twinkling micro-stars.",
+    "tags": [
+      "background",
+      "nebula",
+      "clouds",
+      "cosmos",
+      "space",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/nebula",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add nebula",
+    "zeuralabzCommand": "npx zeuralabz add nebula --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-fireflies",
+    "name": "Bioluminescent Fireflies",
+    "componentName": "FirefliesBackground",
+    "slug": "fireflies",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "backgrounds",
+    "description": "Organic glowing bioluminescent motes drifting with soft Brownian motion, gentle light pulsation, and radiant emerald/cyan glow trails.",
+    "tags": [
+      "background",
+      "fireflies",
+      "particles",
+      "bioluminescence",
+      "vignette",
+      "canvas"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "web3",
+      "hero",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/backgrounds/fireflies",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add fireflies",
+    "zeuralabzCommand": "npx zeuralabz add fireflies --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-split-text",
+    "name": "Split Character Spring Reveal",
+    "componentName": "SplitText",
+    "slug": "split-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Dynamic typography with individual letters staggering in with spring momentum, elastic bounce, and luminous drop-shadow.",
+    "tags": [
+      "text",
+      "split-text",
+      "spring",
+      "reveal",
+      "framer-motion",
+      "typography"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/split-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add split-text",
+    "zeuralabzCommand": "npx zeuralabz add split-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-typewriter",
+    "name": "Typewriter Terminal Text",
+    "componentName": "TypewriterText",
+    "slug": "typewriter",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Terminal mechanical typing cadence with blinking neon cyan cursor, variable typing speed, and smooth backspace cycling.",
+    "tags": [
+      "text",
+      "typewriter",
+      "terminal",
+      "coding",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/typewriter",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add typewriter",
+    "zeuralabzCommand": "npx zeuralabz add typewriter --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-gradient-text",
+    "name": "Flowing Gradient Text",
+    "componentName": "GradientText",
+    "slug": "gradient-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Continuous multi-stop iridescent color gradient smoothly flowing across bold typography with 300% background displacement.",
+    "tags": [
+      "text",
+      "gradient",
+      "iridescent",
+      "chromatic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/gradient-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add gradient-text",
+    "zeuralabzCommand": "npx zeuralabz add gradient-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-blur-text",
+    "name": "Gaussian Blur-to-Clear Reveal",
+    "componentName": "BlurText",
+    "slug": "blur-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Cinematic typography emerging sequentially from heavy 20px Gaussian optical blur to razor-sharp 4K clarity.",
+    "tags": [
+      "text",
+      "blur",
+      "reveal",
+      "cinematic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/blur-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add blur-text",
+    "zeuralabzCommand": "npx zeuralabz add blur-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-scramble",
+    "name": "Matrix Code Scramble",
+    "componentName": "ScrambleText",
+    "slug": "scramble",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Cyberpunk cryptographic decoding effect cycling through high-frequency matrix glyphs and resolving left-to-right in glowing emerald.",
+    "tags": [
+      "text",
+      "scramble",
+      "matrix",
+      "cyberpunk",
+      "decrypt",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/scramble",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add scramble",
+    "zeuralabzCommand": "npx zeuralabz add scramble --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-shiny",
+    "name": "Continuous Shimmer Light Beam Text",
+    "componentName": "ShinyText",
+    "slug": "shiny",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Angled high-luminance specular light beam sweeping across metallic typography with continuous specular glint.",
+    "tags": [
+      "text",
+      "shiny",
+      "shimmer",
+      "metallic",
+      "light-beam",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/shiny",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add shiny",
+    "zeuralabzCommand": "npx zeuralabz add shiny --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-rotating-words",
+    "name": "3D Flipping Word Carousel",
+    "componentName": "RotatingWordsText",
+    "slug": "rotating-words",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Kinetic 3D perspective tumbling word carousel rotating between high-impact punchy adjectives with spring physics.",
+    "tags": [
+      "text",
+      "rotating",
+      "words",
+      "3d",
+      "flip",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/rotating-words",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add rotating-words",
+    "zeuralabzCommand": "npx zeuralabz add rotating-words --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-counter-roll",
+    "name": "Statistical Spring Counter Numbers",
+    "componentName": "CounterRollText",
+    "slug": "counter-roll",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "High-speed numeric odometer odometer roll counting smoothly upward with spring easing and emerald delta indicators.",
+    "tags": [
+      "text",
+      "counter",
+      "numbers",
+      "statistics",
+      "odometer",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/counter-roll",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add counter-roll",
+    "zeuralabzCommand": "npx zeuralabz add counter-roll --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-bounce-letters",
+    "name": "Elastic Bounce Letters",
+    "componentName": "BounceLettersText",
+    "slug": "bounce-letters",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Bold amber typography leaping along a sinusoidal trampoline wave with rhythmic elastic rebounding physics.",
+    "tags": [
+      "text",
+      "bounce",
+      "elastic",
+      "wave",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/bounce-letters",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add bounce-letters",
+    "zeuralabzCommand": "npx zeuralabz add bounce-letters --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-fade-up",
+    "name": "Cinematic Fade Up Text",
+    "componentName": "FadeUpText",
+    "slug": "fade-up",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Dramatic upward slide reveal through an invisible clipping plane with opacity ramping, letter-spacing expansion, and glow.",
+    "tags": [
+      "text",
+      "fade-up",
+      "cinematic",
+      "mask",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/fade-up",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add fade-up",
+    "zeuralabzCommand": "npx zeuralabz add fade-up --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-glitch",
+    "name": "Chromatic Aberration RGB Glitch Text",
+    "componentName": "GlitchText",
+    "slug": "glitch",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "High-voltage cyberpunk glitch with split cyan/magenta chromatic aberration, horizontal micro-shearing, and digital jitter.",
+    "tags": [
+      "text",
+      "glitch",
+      "cyberpunk",
+      "rgb-split",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/glitch",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add glitch",
+    "zeuralabzCommand": "npx zeuralabz add glitch --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-neon-text",
+    "name": "High-Voltage Neon Text",
+    "componentName": "NeonText",
+    "slug": "neon-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Atmospheric gas-tube neon sign typography with multi-stage radiant glow halos, electric brightness flickers, and cyan intensity.",
+    "tags": [
+      "text",
+      "neon",
+      "glow",
+      "electric",
+      "cyber",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/neon-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add neon-text",
+    "zeuralabzCommand": "npx zeuralabz add neon-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-wave-text",
+    "name": "Sinusoidal Harmonic Wave Text",
+    "componentName": "WaveText",
+    "slug": "wave-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Continuous sinusoidal undulating wave passing through individual letters like a smooth floating ribbon.",
+    "tags": [
+      "text",
+      "wave",
+      "sinusoidal",
+      "harmonic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/wave-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add wave-text",
+    "zeuralabzCommand": "npx zeuralabz add wave-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-reveal-text",
+    "name": "Color Bar Curtained Mask Reveal",
+    "componentName": "RevealText",
+    "slug": "reveal-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "High-fashion accent color curtain sweeping horizontally across bold typography, unveiling crisp text from darkness.",
+    "tags": [
+      "text",
+      "reveal",
+      "curtain",
+      "mask",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/reveal-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add reveal-text",
+    "zeuralabzCommand": "npx zeuralabz add reveal-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-marquee-text",
+    "name": "Infinite Seamless Text Ribbon",
+    "componentName": "MarqueeTextRibbon",
+    "slug": "marquee-text",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "text-animations",
+    "description": "Infinite continuous horizontal ticker tape ribbon streaming smoothly at 60 FPS with gradient typography and dividers.",
+    "tags": [
+      "text",
+      "marquee",
+      "ticker",
+      "ribbon",
+      "infinite",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "features",
+      "headlines",
+      "banner"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/text-animations/marquee-text",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add marquee-text",
+    "zeuralabzCommand": "npx zeuralabz add marquee-text --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-glass",
+    "name": "Frosted Glassmorphism Card",
+    "componentName": "GlassCard",
+    "slug": "glass",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Ultra-refined backdrop blurred translucent glass card with glowing specular linear border highlight.",
+    "tags": [
+      "card",
+      "glassmorphism",
+      "blur",
+      "minimal"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/glass",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add glass",
+    "zeuralabzCommand": "npx zeuralabz add glass --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-tilt",
+    "name": "3D Gyroscopic Cursor Tilt Card",
+    "componentName": "TiltCard",
+    "slug": "tilt",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Dynamic card that tilts in three-dimensional space following cursor with specular lighting.",
+    "tags": [
+      "card",
+      "3d",
+      "tilt",
+      "interactive"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/tilt",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add tilt",
+    "zeuralabzCommand": "npx zeuralabz add tilt --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-bento",
+    "name": "Bento Grid Asymmetric Tile Card",
+    "componentName": "BentoCard",
+    "slug": "bento",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Apple-inspired Bento Grid tile with integrated feature graphics and highlight border.",
+    "tags": [
+      "card",
+      "bento",
+      "grid",
+      "modern"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/bento",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add bento",
+    "zeuralabzCommand": "npx zeuralabz add bento --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-profile",
+    "name": "Team Member Avatar Badge Card",
+    "componentName": "ProfileCard",
+    "slug": "profile",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Team member profile card with circular avatar, role chip, and social action buttons.",
+    "tags": [
+      "card",
+      "profile",
+      "avatar",
+      "team"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio",
+      "about"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/profile",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add profile",
+    "zeuralabzCommand": "npx zeuralabz add profile --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-pricing",
+    "name": "SaaS High-Conversion Subscription Card",
+    "componentName": "PricingCard",
+    "slug": "pricing",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "High-conversion SaaS subscription pricing card with popular badge and highlight borders.",
+    "tags": [
+      "card",
+      "pricing",
+      "saas",
+      "tier"
+    ],
+    "bestFor": [
+      "landing",
+      "pricing",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/pricing",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add pricing",
+    "zeuralabzCommand": "npx zeuralabz add pricing --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-product",
+    "name": "E-Commerce Image Zoom Card",
+    "componentName": "ProductCard",
+    "slug": "product",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Product display card with smooth image scale on hover and stock badge.",
+    "tags": [
+      "card",
+      "product",
+      "ecommerce"
+    ],
+    "bestFor": [
+      "ecommerce",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/product",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add product",
+    "zeuralabzCommand": "npx zeuralabz add product --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-hover-glow",
+    "name": "Edge Highlight Luminescent Glow Card",
+    "componentName": "HoverGlowCard",
+    "slug": "hover-glow",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Card with glowing perimeter gradient border illuminating dynamically on mouse hover.",
+    "tags": [
+      "card",
+      "glow",
+      "gradient-border"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/hover-glow",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add hover-glow",
+    "zeuralabzCommand": "npx zeuralabz add hover-glow --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-spotlight",
+    "name": "Cursor Flashlight Radial Card",
+    "componentName": "SpotlightCard",
+    "slug": "spotlight",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Card illuminating a dynamic radial light beam wherever the cursor hovers.",
+    "tags": [
+      "card",
+      "spotlight",
+      "radial",
+      "interactive"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/spotlight",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add spotlight",
+    "zeuralabzCommand": "npx zeuralabz add spotlight --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-cyber-hud",
+    "name": "Sci-Fi Telemetry Bracket HUD Card",
+    "componentName": "CyberHudCard",
+    "slug": "cyber-hud",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Futuristic sci-fi heads-up display card with corner crosshairs, telemetry stats, and cyber cyan accents.",
+    "tags": [
+      "card",
+      "cyberpunk",
+      "hud",
+      "futuristic"
+    ],
+    "bestFor": [
+      "gaming",
+      "crypto",
+      "developer"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/cyber-hud",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add cyber-hud",
+    "zeuralabzCommand": "npx zeuralabz add cyber-hud --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-metric-trend",
+    "name": "Analytics KPI Sparkline Trend Card",
+    "componentName": "MetricTrendCard",
+    "slug": "metric-trend",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Analytics dashboard metric widget displaying realtime growth percentage and glowing sparkline indicator.",
+    "tags": [
+      "card",
+      "metric",
+      "stat",
+      "dashboard"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/metric-trend",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add metric-trend",
+    "zeuralabzCommand": "npx zeuralabz add metric-trend --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-stacked-deck",
+    "name": "Cascading Fanned Cards Deck",
+    "componentName": "StackedDeckCard",
+    "slug": "stacked-deck",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Cascading stacked cards deck that fans out slightly on hover mimicking physical playing cards.",
+    "tags": [
+      "card",
+      "stacked",
+      "deck",
+      "fan-out"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/stacked-deck",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add stacked-deck",
+    "zeuralabzCommand": "npx zeuralabz add stacked-deck --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-expandable-card",
+    "name": "Smooth Accordion Drawer Spec Card",
+    "componentName": "ExpandableCard",
+    "slug": "expandable-card",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "A collapsed summary card that smoothly unfolds to reveal deep technical specs when tapped.",
+    "tags": [
+      "card",
+      "expandable",
+      "drawer",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "dashboard",
+      "docs",
+      "pricing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/expandable-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add expandable-card",
+    "zeuralabzCommand": "npx zeuralabz add expandable-card --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-flip-card",
+    "name": "3D Double-Sided Rotary Card",
+    "componentName": "FlipCard",
+    "slug": "flip-card",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Two-sided card that rotates 180 degrees on mouse hover revealing backside specifications.",
+    "tags": [
+      "card",
+      "flip",
+      "3d",
+      "interactive"
+    ],
+    "bestFor": [
+      "portfolio",
+      "gaming",
+      "ecommerce"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/flip-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add flip-card",
+    "zeuralabzCommand": "npx zeuralabz add flip-card --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-testimonial-card",
+    "name": "Verified Client Quote Star Card",
+    "componentName": "TestimonialCard",
+    "slug": "testimonial-card",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Social proof quote card with 5 gold stars, client portrait, and verified badge.",
+    "tags": [
+      "card",
+      "testimonial",
+      "review",
+      "social-proof"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "ecommerce"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/testimonial-card",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add testimonial-card",
+    "zeuralabzCommand": "npx zeuralabz add testimonial-card --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-feature-icon",
+    "name": "Elevated Minimalist Feature Box Card",
+    "componentName": "FeatureIconCard",
+    "slug": "feature-icon",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "cards",
+    "description": "Clean minimalist card with top accent icon and high-contrast typography.",
+    "tags": [
+      "card",
+      "feature",
+      "minimalist"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/cards/feature-icon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add feature-icon",
+    "zeuralabzCommand": "npx zeuralabz add feature-icon --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-center-hero",
+    "name": "High-Impact Centered SaaS Hero",
+    "componentName": "CenterHero",
+    "slug": "center-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Centered SaaS headline with ambient glow orbs, dual CTAs, and community pill badge.",
+    "tags": [
+      "hero",
+      "centered",
+      "saas",
+      "landing"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "startup"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/center-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add center-hero",
+    "zeuralabzCommand": "npx zeuralabz add center-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-split-hero",
+    "name": "Dual Column Value Prop & Live Canvas Hero",
+    "componentName": "SplitHero",
+    "slug": "split-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Split layout hero with compelling value proposition on left and live preview stage on right.",
+    "tags": [
+      "hero",
+      "split",
+      "conversion",
+      "cta"
+    ],
+    "bestFor": [
+      "saas",
+      "landing",
+      "product"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/split-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add split-hero",
+    "zeuralabzCommand": "npx zeuralabz add split-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-video-hero",
+    "name": "Ambient Background Motion Loop Hero",
+    "componentName": "VideoHero",
+    "slug": "video-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Immersive dark hero container with video loop motion backdrop.",
+    "tags": [
+      "hero",
+      "video",
+      "cinematic"
+    ],
+    "bestFor": [
+      "landing",
+      "brand",
+      "agency"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/video-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add video-hero",
+    "zeuralabzCommand": "npx zeuralabz add video-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-particle-hero",
+    "name": "Interactive Constellation Cosmic Hero",
+    "componentName": "ParticleHero",
+    "slug": "particle-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Deep cosmos hero with floating stars and reactive nebula luminescence.",
+    "tags": [
+      "hero",
+      "particles",
+      "constellation"
+    ],
+    "bestFor": [
+      "web3",
+      "portfolio",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/particle-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add particle-hero",
+    "zeuralabzCommand": "npx zeuralabz add particle-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-terminal-hero",
+    "name": "Hacker CLI Command Stream Hero",
+    "componentName": "TerminalHero",
+    "slug": "terminal-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Terminal hero with live typing command line animation simulation.",
+    "tags": [
+      "hero",
+      "terminal",
+      "cyberpunk",
+      "code"
+    ],
+    "bestFor": [
+      "developer",
+      "cli",
+      "docs"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/terminal-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add terminal-hero",
+    "zeuralabzCommand": "npx zeuralabz add terminal-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-editorial-hero",
+    "name": "Giant Typography Bold Magazine Hero",
+    "componentName": "EditorialHero",
+    "slug": "editorial-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Editorial magazine layout dominated by huge, crisp typography and subtle micro-details.",
+    "tags": [
+      "hero",
+      "typography",
+      "editorial"
+    ],
+    "bestFor": [
+      "portfolio",
+      "creative",
+      "agency"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/editorial-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add editorial-hero",
+    "zeuralabzCommand": "npx zeuralabz add editorial-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-radial-spotlight-hero",
+    "name": "Subtle Atmospheric Flashlight Hero",
+    "componentName": "RadialSpotlightHero",
+    "slug": "radial-spotlight-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Silicon Valley style modern SaaS headline with dual gradient highlights.",
+    "tags": [
+      "hero",
+      "saas",
+      "spotlight"
+    ],
+    "bestFor": [
+      "saas",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/radial-spotlight-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add radial-spotlight-hero",
+    "zeuralabzCommand": "npx zeuralabz add radial-spotlight-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-bento-hero",
+    "name": "Multi-Tile Product Dashboard Hero",
+    "componentName": "BentoHero",
+    "slug": "bento-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Bento tile layout showcasing multiple product pillars inside hero section.",
+    "tags": [
+      "hero",
+      "bento",
+      "dashboard"
+    ],
+    "bestFor": [
+      "saas",
+      "product"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/bento-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add bento-hero",
+    "zeuralabzCommand": "npx zeuralabz add bento-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-isometric-hero",
+    "name": "3D Perspective Isometric Canvas Hero",
+    "componentName": "IsometricHero",
+    "slug": "isometric-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Hero section with floating 3D isometric plane depth.",
+    "tags": [
+      "hero",
+      "3d",
+      "isometric"
+    ],
+    "bestFor": [
+      "tech",
+      "gaming"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/isometric-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add isometric-hero",
+    "zeuralabzCommand": "npx zeuralabz add isometric-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-minimalist-hero",
+    "name": "Clean Monospace Single Headline Hero",
+    "componentName": "MinimalistHero",
+    "slug": "minimalist-hero",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "heroes",
+    "description": "Clean single headline with monospace accent and minimalist CTA.",
+    "tags": [
+      "hero",
+      "minimal",
+      "mono"
+    ],
+    "bestFor": [
+      "portfolio",
+      "developer"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/heroes/minimalist-hero",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add minimalist-hero",
+    "zeuralabzCommand": "npx zeuralabz add minimalist-hero --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-landing",
+    "name": "High-Converting SaaS Landing Structure",
+    "componentName": "LandingLayout",
+    "slug": "landing",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Complete high-converting SaaS landing page skeleton with header, hero, cards, and footer.",
+    "tags": [
+      "layout",
+      "landing",
+      "saas"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/landing",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add landing",
+    "zeuralabzCommand": "npx zeuralabz add landing --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-dashboard",
+    "name": "Responsive Admin Analytics Shell",
+    "componentName": "DashboardLayout",
+    "slug": "dashboard",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Full-featured dashboard layout with collapsible sidebar and top metric widgets.",
+    "tags": [
+      "layout",
+      "dashboard",
+      "admin"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/dashboard",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add dashboard",
+    "zeuralabzCommand": "npx zeuralabz add dashboard --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-bento-grid",
+    "name": "4-Column Asymmetric Bento Layout",
+    "componentName": "BentoGridLayout",
+    "slug": "bento-grid",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Dynamic responsive 4-column Bento layout with asymmetric spans.",
+    "tags": [
+      "layout",
+      "bento",
+      "grid"
+    ],
+    "bestFor": [
+      "landing",
+      "saas",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/bento-grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add bento-grid",
+    "zeuralabzCommand": "npx zeuralabz add bento-grid --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-sidebar-layout",
+    "name": "Collapsible Desktop Sidebar Shell",
+    "componentName": "SidebarLayout",
+    "slug": "sidebar-layout",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Sidebar navigation frame with quick collapsing controls.",
+    "tags": [
+      "layout",
+      "sidebar"
+    ],
+    "bestFor": [
+      "dashboard",
+      "docs"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/sidebar-layout",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add sidebar-layout",
+    "zeuralabzCommand": "npx zeuralabz add sidebar-layout --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-split-screen",
+    "name": "50/50 Dual Focus Brand Layout",
+    "componentName": "SplitScreenLayout",
+    "slug": "split-screen",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Split 50/50 layout ideal for login, onboarding, or product stories.",
+    "tags": [
+      "layout",
+      "split",
+      "onboarding"
+    ],
+    "bestFor": [
+      "login",
+      "onboarding"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/split-screen",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add split-screen",
+    "zeuralabzCommand": "npx zeuralabz add split-screen --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-centered-container",
+    "name": "Focused Reading & Onboarding Container",
+    "componentName": "CenteredContainerLayout",
+    "slug": "centered-container",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Narrow centered maximum width container for focused reading or checkout flows.",
+    "tags": [
+      "layout",
+      "centered",
+      "reading"
+    ],
+    "bestFor": [
+      "blog",
+      "checkout",
+      "onboarding"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/centered-container",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add centered-container",
+    "zeuralabzCommand": "npx zeuralabz add centered-container --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-multi-column",
+    "name": "3-Column Modern Grid Canvas",
+    "componentName": "MultiColumnLayout",
+    "slug": "multi-column",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Standard 3-column responsive card canvas.",
+    "tags": [
+      "layout",
+      "grid",
+      "columns"
+    ],
+    "bestFor": [
+      "landing",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/multi-column",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add multi-column",
+    "zeuralabzCommand": "npx zeuralabz add multi-column --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-sticky-split",
+    "name": "Sticky Scrolling Narrative Side-by-Side",
+    "componentName": "StickySplitLayout",
+    "slug": "sticky-split",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Side-by-side layout where one column sticks while the other scrolls narrative.",
+    "tags": [
+      "layout",
+      "sticky",
+      "narrative"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/sticky-split",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add sticky-split",
+    "zeuralabzCommand": "npx zeuralabz add sticky-split --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-masonry-grid",
+    "name": "Dynamic Tile Masonry Wall",
+    "componentName": "MasonryGridLayout",
+    "slug": "masonry-grid",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Pinterest-style masonry wall with staggered vertical card heights.",
+    "tags": [
+      "layout",
+      "masonry",
+      "gallery"
+    ],
+    "bestFor": [
+      "portfolio",
+      "gallery"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/masonry-grid",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add masonry-grid",
+    "zeuralabzCommand": "npx zeuralabz add masonry-grid --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-fullscreen-hero-layout",
+    "name": "Edge-to-Edge Cinematic Screen Shell",
+    "componentName": "FullscreenHeroLayout",
+    "slug": "fullscreen-hero-layout",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Full 100vh viewport immersive landing section shell.",
+    "tags": [
+      "layout",
+      "fullscreen",
+      "cinematic"
+    ],
+    "bestFor": [
+      "landing",
+      "agency"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/fullscreen-hero-layout",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add fullscreen-hero-layout",
+    "zeuralabzCommand": "npx zeuralabz add fullscreen-hero-layout --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-floating-input",
+    "name": "Floating Label Animated Input",
+    "componentName": "FloatingInput",
+    "slug": "floating-input",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Minimalist input field where the label floats upward and changes tint when focused.",
+    "tags": [
+      "form",
+      "input",
+      "floating-label"
+    ],
+    "bestFor": [
+      "login",
+      "forms",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/floating-input",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add floating-input",
+    "zeuralabzCommand": "npx zeuralabz add floating-input --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-search",
+    "name": "Expanding Morphing Search Input",
+    "componentName": "ExpandingSearch",
+    "slug": "search",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Icon that expands into a full search bar upon click with smooth width transition.",
+    "tags": [
+      "form",
+      "search",
+      "morph",
+      "animated-search"
+    ],
+    "bestFor": [
+      "header",
+      "navbar",
+      "dashboard"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/search",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add search",
+    "zeuralabzCommand": "npx zeuralabz add search --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-toggle",
+    "name": "Cyberpunk Glow Toggle Switch",
+    "componentName": "GlowToggle",
+    "slug": "toggle",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Mechanical switch that illuminates an emerald neon glow when activated.",
+    "tags": [
+      "form",
+      "switch",
+      "toggle",
+      "neon"
+    ],
+    "bestFor": [
+      "settings",
+      "dashboard"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/toggle",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add toggle",
+    "zeuralabzCommand": "npx zeuralabz add toggle --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-otp",
+    "name": "Split 6-Digit OTP Verification Field",
+    "componentName": "OtpInput",
+    "slug": "otp",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Auto-advancing 6-character authentication code input fields for two-factor verification.",
+    "tags": [
+      "form",
+      "otp",
+      "verification",
+      "auth"
+    ],
+    "bestFor": [
+      "auth",
+      "login"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/otp",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add otp",
+    "zeuralabzCommand": "npx zeuralabz add otp --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-newsletter",
+    "name": "Glassmorphism Newsletter Subscribe Box",
+    "componentName": "NewsletterBox",
+    "slug": "newsletter",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Inline email newsletter collector with frosted glass container and integrated CTA.",
+    "tags": [
+      "form",
+      "newsletter",
+      "subscribe",
+      "glass"
+    ],
+    "bestFor": [
+      "footer",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/newsletter",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add newsletter",
+    "zeuralabzCommand": "npx zeuralabz add newsletter --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-password-reveal",
+    "name": "Password Input with Reveal Toggle",
+    "componentName": "PasswordInput",
+    "slug": "password-reveal",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Secure password field featuring an interactive eye icon to toggle visibility.",
+    "tags": [
+      "form",
+      "password",
+      "toggle",
+      "security"
+    ],
+    "bestFor": [
+      "auth",
+      "login"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/password-reveal",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add password-reveal",
+    "zeuralabzCommand": "npx zeuralabz add password-reveal --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-checkbox",
+    "name": "Animated Spring Checkbox",
+    "componentName": "AnimatedCheckbox",
+    "slug": "checkbox",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Custom checkbox with smooth spring path drawing checkmark animation.",
+    "tags": [
+      "form",
+      "checkbox",
+      "checkmark"
+    ],
+    "bestFor": [
+      "forms",
+      "settings"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/checkbox",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add checkbox",
+    "zeuralabzCommand": "npx zeuralabz add checkbox --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-select",
+    "name": "Animated Dropdown Select Menu",
+    "componentName": "CustomSelect",
+    "slug": "select",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Select menu that smoothly springs open with highlighted keyboard navigation options.",
+    "tags": [
+      "form",
+      "select",
+      "dropdown"
+    ],
+    "bestFor": [
+      "dashboard",
+      "forms"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/select",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add select",
+    "zeuralabzCommand": "npx zeuralabz add select --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-upload",
+    "name": "Drag & Drop File Upload Zone",
+    "componentName": "FileUpload",
+    "slug": "upload",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Dotted upload area with pulse highlight on file dragover and file size validator.",
+    "tags": [
+      "form",
+      "upload",
+      "file"
+    ],
+    "bestFor": [
+      "dashboard",
+      "forms"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/upload",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add upload",
+    "zeuralabzCommand": "npx zeuralabz add upload --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-range",
+    "name": "Range Slider with Dynamic Tooltip",
+    "componentName": "RangeSlider",
+    "slug": "range",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "forms",
+    "description": "Smooth slider with floating value tooltip that tracks the thumb coordinate.",
+    "tags": [
+      "form",
+      "slider",
+      "range"
+    ],
+    "bestFor": [
+      "dashboard",
+      "settings"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/forms/range",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add range",
+    "zeuralabzCommand": "npx zeuralabz add range --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-scroll-reveal",
+    "name": "Viewport Intersection Spring Reveal",
+    "componentName": "ScrollReveal",
+    "slug": "scroll-reveal",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Element springs into view as soon as it enters the user viewport.",
+    "tags": [
+      "animation",
+      "scroll",
+      "reveal"
+    ],
+    "bestFor": [
+      "landing",
+      "cards",
+      "sections"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/scroll-reveal",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add scroll-reveal",
+    "zeuralabzCommand": "npx zeuralabz add scroll-reveal --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-marquee",
+    "name": "Infinite Seamless Marquee Logo Cloud",
+    "componentName": "MarqueeLogoCloud",
+    "slug": "marquee",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Endless smooth horizontal marquee loop showcasing tech partner logos.",
+    "tags": [
+      "animation",
+      "marquee",
+      "logos",
+      "infinite"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "social-proof"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/marquee",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add marquee",
+    "zeuralabzCommand": "npx zeuralabz add marquee --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-cursor-trail",
+    "name": "Velocity Mouse Trail Follower",
+    "componentName": "CursorTrail",
+    "slug": "cursor-trail",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Trailing glowing cursor ring that stretches based on cursor movement velocity.",
+    "tags": [
+      "animation",
+      "cursor",
+      "mouse-trail"
+    ],
+    "bestFor": [
+      "portfolio",
+      "creative"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/cursor-trail",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add cursor-trail",
+    "zeuralabzCommand": "npx zeuralabz add cursor-trail --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-magnetic",
+    "name": "Magnetic Orbit Floating Cluster",
+    "componentName": "MagneticOrbit",
+    "slug": "magnetic",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Floating icon clusters that gravitate smoothly towards cursor pointer.",
+    "tags": [
+      "animation",
+      "magnetic",
+      "orbit"
+    ],
+    "bestFor": [
+      "portfolio",
+      "social"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/magnetic",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add magnetic",
+    "zeuralabzCommand": "npx zeuralabz add magnetic --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-tilt",
+    "name": "3D Gyroscope Perspective Angle",
+    "componentName": "GyroTilt",
+    "slug": "tilt",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Interactive container that tilts dynamically on mouse move.",
+    "tags": [
+      "animation",
+      "3d",
+      "tilt"
+    ],
+    "bestFor": [
+      "cards",
+      "heroes"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/tilt",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add tilt",
+    "zeuralabzCommand": "npx zeuralabz add tilt --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-accordion",
+    "name": "Spring Physical FAQ Expansion",
+    "componentName": "SpringAccordion",
+    "slug": "accordion",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Spring animated accordion panel with rotational chevron indicator.",
+    "tags": [
+      "animation",
+      "accordion",
+      "faq"
+    ],
+    "bestFor": [
+      "pricing",
+      "faq",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/accordion",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add accordion",
+    "zeuralabzCommand": "npx zeuralabz add accordion --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-carousel",
+    "name": "Touch Swiper Carousel",
+    "componentName": "SwiperCarousel",
+    "slug": "carousel",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Component preview reel with previous/next controls.",
+    "tags": [
+      "animation",
+      "carousel",
+      "swiper"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/carousel",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add carousel",
+    "zeuralabzCommand": "npx zeuralabz add carousel --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-countdown",
+    "name": "Realtime Digital Milestone Timer",
+    "componentName": "CountdownTimer",
+    "slug": "countdown",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Digital countdown display showing Days, Hours, Minutes, and Seconds with dark neon blocks.",
+    "tags": [
+      "animation",
+      "countdown",
+      "timer"
+    ],
+    "bestFor": [
+      "landing",
+      "hero",
+      "ecommerce"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/countdown",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add countdown",
+    "zeuralabzCommand": "npx zeuralabz add countdown --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-star-rating",
+    "name": "Interactive 5-Star Feedback Review Bar",
+    "componentName": "StarRating",
+    "slug": "star-rating",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Gold star review rating component with hover preview feedback and instant score display.",
+    "tags": [
+      "animation",
+      "rating",
+      "stars"
+    ],
+    "bestFor": [
+      "ecommerce",
+      "social-proof"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/star-rating",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add star-rating",
+    "zeuralabzCommand": "npx zeuralabz add star-rating --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-parallax-box",
+    "name": "Viewport Coordinate Shifting Box",
+    "componentName": "ParallaxBox",
+    "slug": "parallax-box",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Parallax layer container shifting coordinate axes on viewport movement.",
+    "tags": [
+      "animation",
+      "parallax",
+      "scroll"
+    ],
+    "bestFor": [
+      "hero",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/parallax-box",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add parallax-box",
+    "zeuralabzCommand": "npx zeuralabz add parallax-box --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-stagger-fade",
+    "name": "Ordered Child Element Sequential Entrance",
+    "componentName": "StaggerFade",
+    "slug": "stagger-fade",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Orchestrates child element animations with sequential timing delays.",
+    "tags": [
+      "animation",
+      "stagger",
+      "fade"
+    ],
+    "bestFor": [
+      "lists",
+      "cards"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/stagger-fade",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add stagger-fade",
+    "zeuralabzCommand": "npx zeuralabz add stagger-fade --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-floating-orb",
+    "name": "Ambient Drifting Weightless Orb",
+    "componentName": "FloatingOrb",
+    "slug": "floating-orb",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Weightless floating sphere drifting with slow sine curve physics.",
+    "tags": [
+      "animation",
+      "floating",
+      "orb"
+    ],
+    "bestFor": [
+      "background",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/floating-orb",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add floating-orb",
+    "zeuralabzCommand": "npx zeuralabz add floating-orb --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-spotlight-beam",
+    "name": "Mouse Coordinate Radial Spotlight",
+    "componentName": "SpotlightBeam",
+    "slug": "spotlight-beam",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Radial gradient spotlight following exact cursor coordinates.",
+    "tags": [
+      "animation",
+      "spotlight",
+      "interactive"
+    ],
+    "bestFor": [
+      "cards",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/spotlight-beam",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add spotlight-beam",
+    "zeuralabzCommand": "npx zeuralabz add spotlight-beam --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-dock-magnify",
+    "name": "macOS Inspired Dock Magnification",
+    "componentName": "DockMagnify",
+    "slug": "dock-magnify",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Icon dock that magnifies proximity neighbors on mouse hover.",
+    "tags": [
+      "animation",
+      "dock",
+      "magnify"
+    ],
+    "bestFor": [
+      "navbar",
+      "dock"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/dock-magnify",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add dock-magnify",
+    "zeuralabzCommand": "npx zeuralabz add dock-magnify --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-shimmer-wave",
+    "name": "Surface Light Glint Travelling Wave",
+    "componentName": "ShimmerWave",
+    "slug": "shimmer-wave",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "animations",
+    "description": "Glint of light travelling across surface boundary.",
+    "tags": [
+      "animation",
+      "shimmer",
+      "glint"
+    ],
+    "bestFor": [
+      "cards",
+      "buttons"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/animations/shimmer-wave",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add shimmer-wave",
+    "zeuralabzCommand": "npx zeuralabz add shimmer-wave --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-spinner",
+    "name": "Concentric Dual Orbit Luminous Ring",
+    "componentName": "DualRingSpinner",
+    "slug": "spinner",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "loaders",
+    "description": "Two concentric luminous rings rotating in opposite directions with varied angular velocities.",
+    "tags": [
+      "loader",
+      "spinner",
+      "dual-ring"
+    ],
+    "bestFor": [
+      "saas",
+      "dashboard",
+      "actions"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/loaders/spinner",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add spinner",
+    "zeuralabzCommand": "npx zeuralabz add spinner --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-skeleton",
+    "name": "Asynchronous Content Shimmer Pulse Box",
+    "componentName": "SkeletonCard",
+    "slug": "skeleton",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "loaders",
+    "description": "Asynchronous content loading skeleton mock with shimmering pulse wave.",
+    "tags": [
+      "loader",
+      "skeleton",
+      "placeholder"
+    ],
+    "bestFor": [
+      "dashboard",
+      "lists"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/loaders/skeleton",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add skeleton",
+    "zeuralabzCommand": "npx zeuralabz add skeleton --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-progress",
+    "name": "Glowing Linear Gradient Track Loader",
+    "componentName": "LinearProgress",
+    "slug": "progress",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "loaders",
+    "description": "Linear loading bar with glowing tip advancing along track.",
+    "tags": [
+      "loader",
+      "progress",
+      "linear"
+    ],
+    "bestFor": [
+      "onboarding",
+      "upload"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/loaders/progress",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add progress",
+    "zeuralabzCommand": "npx zeuralabz add progress --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-dots",
+    "name": "Bouncing Harmonic Liquid Dots Wave",
+    "componentName": "BouncingDots",
+    "slug": "dots",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "loaders",
+    "description": "Three liquid dots bouncing in harmonic wave delay rhythm.",
+    "tags": [
+      "loader",
+      "dots",
+      "bounce"
+    ],
+    "bestFor": [
+      "chat",
+      "status"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/loaders/dots",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add dots",
+    "zeuralabzCommand": "npx zeuralabz add dots --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-circular",
+    "name": "Precision Radial SVG Percentage Ring",
+    "componentName": "CircularRingLoader",
+    "slug": "circular",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "loaders",
+    "description": "Radial SVG stroke ring displaying calculated download percentage.",
+    "tags": [
+      "loader",
+      "circular",
+      "svg",
+      "ring"
+    ],
+    "bestFor": [
+      "dashboard",
+      "stats"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/loaders/circular",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add circular",
+    "zeuralabzCommand": "npx zeuralabz add circular --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-floating-navbar",
+    "name": "Elevated Glass Pill Island Header",
+    "componentName": "FloatingNavbar",
+    "slug": "floating-navbar",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Elevated detached pill navbar with backdrop blur and fluid hover indicator.",
+    "tags": [
+      "navbar",
+      "glass",
+      "floating",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "landing",
+      "hero"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/floating-navbar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add floating-navbar",
+    "zeuralabzCommand": "npx zeuralabz add floating-navbar --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-sticky-navbar",
+    "name": "Sticky Header with Scroll Progress",
+    "componentName": "StickyNavbar",
+    "slug": "sticky-navbar",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Full-width top navigation header featuring integrated top progress line showing scroll percentage.",
+    "tags": [
+      "navbar",
+      "sticky",
+      "scroll-progress"
+    ],
+    "bestFor": [
+      "landing",
+      "docs"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/sticky-navbar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add sticky-navbar",
+    "zeuralabzCommand": "npx zeuralabz add sticky-navbar --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-mobile-drawer",
+    "name": "Staggered Slide-Out Mobile Navigation",
+    "componentName": "MobileDrawer",
+    "slug": "mobile-drawer",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Smooth sliding mobile navigation drawer with staggered link appearance animations.",
+    "tags": [
+      "navbar",
+      "mobile",
+      "drawer",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "mobile",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/mobile-drawer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add mobile-drawer",
+    "zeuralabzCommand": "npx zeuralabz add mobile-drawer --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-collapsible-sidebar",
+    "name": "Minimalist Desktop Icon Navigation",
+    "componentName": "CollapsibleSidebar",
+    "slug": "collapsible-sidebar",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Application sidebar with icon tooltips that collapses down to compact slim width.",
+    "tags": [
+      "navbar",
+      "sidebar",
+      "collapsible"
+    ],
+    "bestFor": [
+      "dashboard",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/collapsible-sidebar",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add collapsible-sidebar",
+    "zeuralabzCommand": "npx zeuralabz add collapsible-sidebar --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-pill-dock",
+    "name": "iOS Inspired Floating Segmented Dock",
+    "componentName": "PillDock",
+    "slug": "pill-dock",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Compact dock-style bottom bar with iOS inspired glass segments.",
+    "tags": [
+      "navbar",
+      "dock",
+      "segmented",
+      "pill"
+    ],
+    "bestFor": [
+      "landing",
+      "mobile",
+      "portfolio"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/pill-dock",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add pill-dock",
+    "zeuralabzCommand": "npx zeuralabz add pill-dock --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-command-nav",
+    "name": "Keyboard Shortcut ⌘K Quicknav Bar",
+    "componentName": "CommandNav",
+    "slug": "command-nav",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Keyboard centric navigation bar with ⌘K search bar trigger shortcut.",
+    "tags": [
+      "navbar",
+      "command-bar",
+      "shortcuts"
+    ],
+    "bestFor": [
+      "saas",
+      "docs",
+      "dashboard"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/command-nav",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add command-nav",
+    "zeuralabzCommand": "npx zeuralabz add command-nav --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-multi-column-footer",
+    "name": "Corporate Dark 4-Column Link Footer",
+    "componentName": "MultiColumnFooter",
+    "slug": "multi-column-footer",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Corporate dark footer with link columns, brand badge, and copyright disclaimer.",
+    "tags": [
+      "footer",
+      "multi-column",
+      "links"
+    ],
+    "bestFor": [
+      "landing",
+      "saas"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/multi-column-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add multi-column-footer",
+    "zeuralabzCommand": "npx zeuralabz add multi-column-footer --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-minimal-footer",
+    "name": "Clean Single-Row Status Indicator Footer",
+    "componentName": "MinimalFooter",
+    "slug": "minimal-footer",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Clean single-row developer footer with live system status indicator.",
+    "tags": [
+      "footer",
+      "minimalist",
+      "status"
+    ],
+    "bestFor": [
+      "portfolio",
+      "developer"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/minimal-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add minimal-footer",
+    "zeuralabzCommand": "npx zeuralabz add minimal-footer --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-social-pill-footer",
+    "name": "Centered Floating Social Ribbon",
+    "componentName": "SocialPillFooter",
+    "slug": "social-pill-footer",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Centered glass pill island footer with glowing social media links.",
+    "tags": [
+      "footer",
+      "social",
+      "pill"
+    ],
+    "bestFor": [
+      "portfolio",
+      "landing"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/social-pill-footer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add social-pill-footer",
+    "zeuralabzCommand": "npx zeuralabz add social-pill-footer --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-mega-menu-nav",
+    "name": "Rich Multi-Column Product Dropdown",
+    "componentName": "MegaMenuNav",
+    "slug": "mega-menu-nav",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "layouts",
+    "description": "Rich multi-column product mega menu that drops down smoothly with card previews.",
+    "tags": [
+      "navbar",
+      "mega-menu",
+      "dropdown"
+    ],
+    "bestFor": [
+      "saas",
+      "ecommerce"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/layouts/mega-menu-nav",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add mega-menu-nav",
+    "zeuralabzCommand": "npx zeuralabz add mega-menu-nav --source zeuralabz-original",
+    "deps": [],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-gradient",
+    "name": "Iridescent Flow Gradient Button",
+    "componentName": "GradientButton",
+    "slug": "gradient",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Vibrant continuous chromatic animated gradient button with dynamic luminosity bloom and responsive hover physics.",
+    "tags": [
+      "button",
+      "gradient",
+      "iridescent",
+      "chromatic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/gradient",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add gradient",
+    "zeuralabzCommand": "npx zeuralabz add gradient --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-neon",
+    "name": "Cyberpunk Pulse Neon Button",
+    "componentName": "NeonButton",
+    "slug": "neon",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Electric neon perimeter glow with pulsing multi-stage ambient halos and high-contrast cyberpunk typography.",
+    "tags": [
+      "button",
+      "neon",
+      "cyberpunk",
+      "glow",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/neon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add neon",
+    "zeuralabzCommand": "npx zeuralabz add neon --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-magnetic",
+    "name": "Cursor Gravity Magnetic Button",
+    "componentName": "MagneticButton",
+    "slug": "magnetic",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Physics-based interactive cursor attractor using Framer Motion springs to dynamically pull toward pointer coordinates.",
+    "tags": [
+      "button",
+      "magnetic",
+      "cursor",
+      "spring",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/magnetic",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add magnetic",
+    "zeuralabzCommand": "npx zeuralabz add magnetic --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-shimmer",
+    "name": "Specular Sweep Shimmer Button",
+    "componentName": "ShimmerButton",
+    "slug": "shimmer",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "High-velocity 45° specular light beam sweeping across polished dark surface with metallic border highlights.",
+    "tags": [
+      "button",
+      "shimmer",
+      "metallic",
+      "specular",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/shimmer",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add shimmer",
+    "zeuralabzCommand": "npx zeuralabz add shimmer --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-3d",
+    "name": "Tactile Isometric 3D Push Button",
+    "componentName": "ThreeDButton",
+    "slug": "3d",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Physical mechanical switch feel with isometric bottom ledge bevel and spring-compressed downward displacement.",
+    "tags": [
+      "button",
+      "3d",
+      "tactile",
+      "push",
+      "mechanical"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/3d",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add 3d",
+    "zeuralabzCommand": "npx zeuralabz add 3d --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-outline-fill",
+    "name": "Prism Slide Outline Fill Button",
+    "componentName": "OutlineFillButton",
+    "slug": "outline-fill",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Sleek geometric wireframe border that dynamically flood-fills with vibrant linear gradient curtain on hover.",
+    "tags": [
+      "button",
+      "outline",
+      "fill",
+      "hover",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/outline-fill",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add outline-fill",
+    "zeuralabzCommand": "npx zeuralabz add outline-fill --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-loading",
+    "name": "Asynchronous State Loading Button",
+    "componentName": "LoadingButton",
+    "slug": "loading",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Interactive stateful action button displaying animated SVG spinner, orbital progress ring, and state transitions.",
+    "tags": [
+      "button",
+      "loading",
+      "async",
+      "spinner",
+      "stateful"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/loading",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add loading",
+    "zeuralabzCommand": "npx zeuralabz add loading --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-icon",
+    "name": "Dynamic Kinetic Icon Button",
+    "componentName": "IconButton",
+    "slug": "icon",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Harmonious iconography with spring-loaded rotational micro-interactions and tactile scale rebound on hover.",
+    "tags": [
+      "button",
+      "icon",
+      "micro-interaction",
+      "spring",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/icon",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add icon",
+    "zeuralabzCommand": "npx zeuralabz add icon --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-social",
+    "name": "Developer Social Connect Button",
+    "componentName": "SocialButton",
+    "slug": "social",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Modern developer badge button with authentic brand iconography, live star counter badge, and levitation lift.",
+    "tags": [
+      "button",
+      "social",
+      "github",
+      "badge",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/social",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add social",
+    "zeuralabzCommand": "npx zeuralabz add social --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-glass-btn",
+    "name": "Frosted Refractive Glass Button",
+    "componentName": "GlassButton",
+    "slug": "glass-btn",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Ultra-luxurious frosted glassmorphism with backdrop blur, specular border reflections, and inner lighting glow.",
+    "tags": [
+      "button",
+      "glass",
+      "glassmorphism",
+      "frosted",
+      "blur"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/glass-btn",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add glass-btn",
+    "zeuralabzCommand": "npx zeuralabz add glass-btn --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-glow",
+    "name": "Ambient Radial Backlit Glow Button",
+    "componentName": "GlowButton",
+    "slug": "glow",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Diffused radial background bloom that softly breathes in the dark and bursts with chromatic intensity on hover.",
+    "tags": [
+      "button",
+      "glow",
+      "ambient",
+      "backlit",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/glow",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add glow",
+    "zeuralabzCommand": "npx zeuralabz add glow --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-pill",
+    "name": "Ergonomic Capsule Pill Button",
+    "componentName": "PillButton",
+    "slug": "pill",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Full border-radius ergonomic capsule with violet accent perimeter ring, refined typography, and subtle scale.",
+    "tags": [
+      "button",
+      "pill",
+      "capsule",
+      "rounded",
+      "minimal"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/pill",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add pill",
+    "zeuralabzCommand": "npx zeuralabz add pill --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-arrow",
+    "name": "Kinetic Directional Arrow Button",
+    "componentName": "ArrowButton",
+    "slug": "arrow",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Kinetic conversion trigger with directional arrow gliding forward dynamically on hover with spring recovery.",
+    "tags": [
+      "button",
+      "arrow",
+      "cta",
+      "kinetic",
+      "framer-motion"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/arrow",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add arrow",
+    "zeuralabzCommand": "npx zeuralabz add arrow --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-play",
+    "name": "Pulsing Concentric Ripple Play Button",
+    "componentName": "PlayButton",
+    "slug": "play",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Media playback button featuring expanding concentric ripple rings and toggleable play/pause status states.",
+    "tags": [
+      "button",
+      "play",
+      "media",
+      "ripple",
+      "pulse"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/play",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add play",
+    "zeuralabzCommand": "npx zeuralabz add play --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  },
+  {
+    "id": "zeuralabz-download",
+    "name": "Kinetic Progress Download Button",
+    "componentName": "DownloadButton",
+    "slug": "download",
+    "source": "zeuralabz-original",
+    "sourceLabel": "ZEURALABZ Original • MIT",
+    "author": "R. Selva / ZEURALABZ",
+    "category": "buttons",
+    "description": "Action-oriented download trigger featuring downward kinetic arrow, progress beam animation, and success checkmark.",
+    "tags": [
+      "button",
+      "download",
+      "progress",
+      "action",
+      "stateful"
+    ],
+    "bestFor": [
+      "hero",
+      "landing",
+      "cta",
+      "interactive"
+    ],
+    "theme": "dark-neon",
+    "license": "MIT",
+    "originalUrl": "https://github.com/rselva1202/zeuralabz/tree/main/components/buttons/download",
+    "previewUrl": "https://rselva1202.github.io/zeuralabz/#demo",
+    "installCommand": "npx zeuralabz add download",
+    "zeuralabzCommand": "npx zeuralabz add download --source zeuralabz-original",
+    "deps": [
+      "framer-motion"
+    ],
+    "variants": [
+      "TS-TW",
+      "HTML-CSS"
+    ],
+    "isOriginal": true
+  }
+]
