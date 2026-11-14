@@ -365,7 +365,7 @@ const program = new Command();
 program
   .name('zeuralabz')
   .description(chalk.cyan('✨ ZEURALABZ — Make any website look pretty with AI-curated UI components'))
-  .version('1.2.0');
+  .version('1.3.0');
 
 // 1. INIT
 program
