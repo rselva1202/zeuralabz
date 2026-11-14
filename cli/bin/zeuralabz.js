@@ -961,7 +961,7 @@ program
 // 8. GENERATE (On-Demand Style Synthesizer - 1M+ combinations)
 program
   .command('generate <slug>')
-  .description('Generate an on-demand customized component variant (10,134 base x 20 themes x 20 animations x 15 layouts = 60.8M combinations)')
+  .description('Generate an on-demand customized component variant (10,135 base x 20 themes x 20 animations x 15 layouts = 60.8M combinations)')
   .option('-t, --theme <theme>', 'Theme name (20 available, e.g. dark-neon, ocean, cyberpunk, brutalist)', 'dark-neon')
   .option('-a, --animation <animation>', 'Animation preset (float, pulse, bounce, shimmer, kinetic, drift, etc.)', 'float')
   .option('-l, --layout <layout>', 'Layout structure preset (hero-center, bento-3, card-grid-3, etc.)', 'hero-center')

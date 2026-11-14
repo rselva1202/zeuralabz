@@ -90,7 +90,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           properties: {
             slug: {
               type: 'string',
-              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, noise-cloud-background, starfield, 3d-card-effect)',
+              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, noise-cloud-background, starfield, fey-cards, 3d-card-effect)',
             },
             source: {
               type: 'string',
@@ -114,7 +114,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'list_components',
-        description: 'Lists all 10,134 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals.',
+        description: 'Lists all 10,135 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals.',
         inputSchema: {
           type: 'object',
           properties: {

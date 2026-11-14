@@ -1,6 +1,6 @@
 ---
 name: zeuralabz
-description: Autonomous UI design analyzer and component recommendation skill for Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot. Analyzes project stack, synthesizes 1M+ animated styles on demand, and recommends the best picks across 10,134 components from React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals with exact install commands.
+description: Autonomous UI design analyzer and component recommendation skill for Antigravity, Claude Code, Cursor, Windsurf, and VS Code Copilot. Analyzes project stack, synthesizes 1M+ animated styles on demand, and recommends the best picks across 10,135 components from React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals with exact install commands.
 ---
 
 # ZEURALABZ AI Skill — Autonomous UI Design Matrix (1M+ Styles)
@@ -18,17 +18,17 @@ Use this skill whenever the user is building or improving a web application, lan
 
 ZEURALABZ is an intelligent component indexer, CLI suggester, and design matrix that unifies modern animated UI engineering for developers and autonomous AI coding agents.
 
-### Unified 10,134 Base Components Across 6 Sources
+### Unified 10,135 Base Components Across 6 Sources
 1. **React Bits (218 components)**: Linked official registry (`@react-bits/*`, [reactbits.dev](https://reactbits.dev)) • David Haz (MIT + Commons Clause)
 2. **Magic UI (79 components)**: Linked official registry (`https://magicui.design/r/<slug>.json`, [magicui.design](https://magicui.design)) • Dillion Verma (MIT)
-3. **Aceternity UI (114 components)**: Linked official registry (`@aceternity/*`, [ui.aceternity.com](https://ui.aceternity.com)) • Manu Arora (MIT)
+3. **Aceternity UI (115 components)**: Linked official registry (`@aceternity/*`, [ui.aceternity.com](https://ui.aceternity.com)) • Manu Arora (MIT)
 4. **Lightswind (224 components)**: Linked official CLI & registry (`npx lightswind add <slug>`, [lightswind.com](https://lightswind.com)) • Muhilan (MIT, free only)
 5. **21st.dev (9,379 components)**: Linked community registry with per-author licensing (`npx shadcn@latest add "https://21st.dev/r/<author>/<slug>"`, [21st.dev](https://21st.dev)) • 1,045 Community Authors (Per-author — check original page)
 6. **ZEURALABZ Originals (120 components)**: Native handwritten canvas engines and motion primitives (`components/<category>/<slug>`) • R. Selva (MIT)
 
 ### The 1M+ Combinations Formula
 ZEURALABZ does not claim 1,000,000 hand-written files on disk. Instead, it provides **1,000,000+ deterministic combinations on demand** via its style synthesizer engine:
-$$\text{Total Combinations} = 10,134 \text{ base components} \times 20 \text{ aesthetic themes} \times 20 \text{ animation presets} \times 15 \text{ layout structures} = 60,804,000 \ge 1\text{M+}$$
+$$\text{Total Combinations} = 10,135 \text{ base components} \times 20 \text{ aesthetic themes} \times 20 \text{ animation presets} \times 15 \text{ layout structures} = 60,810,000 \ge 1\text{M+}$$
 
 Agents can instantiate any base component in any of the 20 verified color themes and motion styles instantly using `npx zeuralabz generate`.
 

@@ -336160,5 +336160,42 @@
       "lucide-react"
     ],
     "isOriginal": false
+  },
+  {
+    "id": "aceternity-fey-cards",
+    "name": "Fey Cards",
+    "componentName": "FeyCards",
+    "slug": "fey-cards",
+    "source": "aceternity",
+    "sourceLabel": "Aceternity UI Labs \u2022 MIT",
+    "author": "Manu Arora / Aceternity",
+    "category": "cards",
+    "description": "Card interaction motion from Aceternity Labs",
+    "tags": [
+      "cards",
+      "aceternity",
+      "labs",
+      "fey-cards",
+      "interaction",
+      "motion"
+    ],
+    "bestFor": [
+      "Cards",
+      "Landing pages",
+      "Interactive showcases",
+      "Features"
+    ],
+    "theme": "dark-neo",
+    "license": "MIT",
+    "originalUrl": "https://ui.aceternity.com/labs/fey-cards",
+    "previewUrl": "https://ui.aceternity.com/labs/fey-cards",
+    "installCommand": "Copy from https://ui.aceternity.com/labs/fey-cards",
+    "zeuralabzCommand": "npx zeuralabz add fey-cards --source aceternity",
+    "deps": [
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "isOriginal": false
   }
 ]

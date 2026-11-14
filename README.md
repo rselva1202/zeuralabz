@@ -2,11 +2,11 @@
 
 > **Autonomous UI Design Matrix for AI Coding Agents & Modern Developers**
 > 
-> *10,134 Base Components Across 6 Premier Sources • 1,000,000+ Combinatoric Styles • Install Once, Let AI Elevate Your Web Applications.*
+> *10,135 Base Components Across 6 Premier Sources • 1,000,000+ Combinatoric Styles • Install Once, Let AI Elevate Your Web Applications.*
 
 [![npm version](https://img.shields.io/npm/v/zeuralabz.svg)](https://www.npmjs.com/package/zeuralabz)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Base Components](https://img.shields.io/badge/Base_Components-10%2C134-indigo.svg)](components.json)
+[![Base Components](https://img.shields.io/badge/Base_Components-10%2C135-indigo.svg)](components.json)
 [![Combinations](https://img.shields.io/badge/Combinations-60.8M_Styles-emerald.svg)](docs/HOW-IT-WORKS.md)
 [![Showcase Site](https://img.shields.io/badge/Showcase-GitHub_Pages-cyan.svg)](https://rselva1202.github.io/zeuralabz)
 [![MCP Protocol](https://img.shields.io/badge/Protocol-Model_Context_Protocol-purple.svg)](mcp-server/)
@@ -23,19 +23,19 @@ Instead of wading through hundreds of fragmented libraries or wrestling with cop
 
 ---
 
-## ⚡ The 10,134 Base Components Index
+## ⚡ The 10,135 Base Components Index
 
-ZEURALABZ indexes **10,134 base components** across six verified sources:
+ZEURALABZ indexes **10,135 base components** across six verified sources:
 
 | Source | Count | Origin / Author | License | Integration Method |
 | :--- | :---: | :--- | :--- | :--- |
 | **React Bits** | 218 | [David Haz](https://github.com/DavidHDev) ([reactbits.dev](https://reactbits.dev)) | MIT + Commons Clause | Linked official registry (`@react-bits/*`) |
 | **Magic UI** | 79 | [Dillion Verma](https://github.com/magicuidesign) ([magicui.design](https://magicui.design)) | MIT | Linked official registry (`magicui.design/r/*.json`) |
-| **Aceternity UI** | 114 | [Manu Arora](https://github.com/manuarora700) ([ui.aceternity.com](https://ui.aceternity.com)) | MIT / Aceternity Terms | Linked official registry (`@aceternity/*`) |
+| **Aceternity UI** | 115 | [Manu Arora](https://github.com/manuarora700) ([ui.aceternity.com](https://ui.aceternity.com)) | MIT / Aceternity Terms | Linked official registry (`@aceternity/*`) |
 | **Lightswind** | 224 | [Muhilan](https://github.com/codewithMUHILAN) ([lightswind.com](https://lightswind.com)) | MIT (linked, free only) | Linked official CLI (`npx lightswind add <slug>`) |
 | **21st.dev** | 9,379 | [1,045 Community Authors](https://21st.dev) ([21st.dev](https://21st.dev)) | Per-author licensing | Linked official shadcn (`https://21st.dev/r/<author>/<slug>`) |
 | **ZEURALABZ Originals** | 120 | [R. Selva](https://github.com/rselva1202) | MIT | Native handwritten canvas engines & motion primitives |
-| **Total Base** | **10,134** | — | — | **Zero Third-Party Vendor Cloning** |
+| **Total Base** | **10,135** | — | — | **Zero Third-Party Vendor Cloning** |
 
 > **Attribution Integrity**: Linked third-party components are **never** cloned into `components/` as originals. ZEURALABZ connects to their official registries with complete author attribution.
 
@@ -45,16 +45,16 @@ ZEURALABZ indexes **10,134 base components** across six verified sources:
 
 ZEURALABZ does not claim 1,000,000 hand-written files on disk. Instead, it provides **1,000,000+ deterministic combinations on demand** via its style synthesizer engine:
 
-$$\text{Total Combinations} = 10,134 \text{ base components} \times 20 \text{ themes} \times 20 \text{ animations} \times 15 \text{ layouts} = 60,804,000 \ge 1\text{M+}$$
+$$\text{Total Combinations} = 10,135 \text{ base components} \times 20 \text{ themes} \times 20 \text{ animations} \times 15 \text{ layouts} = 60,810,000 \ge 1\text{M+}$$
 
 ```
 ┌──────────────────┐      ┌───────────────┐      ┌──────────────────┐      ┌─────────────────┐
-│ 10,134 Base Comps│  ×   │   20 Themes   │  ×   │  20 Animations   │  ×   │   15 Layouts    │
+│ 10,135 Base Comps│  ×   │   20 Themes   │  ×   │  20 Animations   │  ×   │   15 Layouts    │
 └────────┬─────────┘      └───────┬───────┘      └────────┬─────────┘      └────────┬────────┘
          │                        │                       │                         │
          └────────────────────────┴───────────┬───────────┴─────────────────────────┘
                                               ▼
-                                   60,804,000+ Combinations
+                                   60,810,000+ Combinations
                              + Parametric Radius & Typography
                                               ▼
                                1,000,000+ Unique UI Styles
@@ -165,10 +165,10 @@ Connect ZEURALABZ directly into **Claude Desktop, Cursor, Windsurf, or Antigravi
 
 ### Available Tools:
 - `suggest_ui_for_project`: Programmatic stack analysis and 1-best-pick design plan.
-- `search_components`: Query 10,134 components by keyword, category, or source across 6 sources.
+- `search_components`: Query 10,135 components by keyword, category, or source across 6 sources.
 - `install_component`: Automated component installation and snippet generation.
 - `list_themes`: Inspection of all 20 color palettes and themes.
-- `list_components`: Listing of all 10,134 components with category/source filters across 6 sources.
+- `list_components`: Listing of all 10,135 components with category/source filters across 6 sources.
 
 ---
 
@@ -189,11 +189,11 @@ zeuralabz/
 ├── registry/                    # Official registry indexes
 │   ├── react-bits.json          # 218 React Bits components
 │   ├── magic-ui.json            # 79 Magic UI components
-│   ├── aceternity.json          # 114 Aceternity UI components
+│   ├── aceternity.json          # 115 Aceternity UI components
 │   ├── lightswind.json          # 224 Lightswind components (free only)
 │   ├── 21st-dev.json            # 9,379 21st.dev components (per-author)
 │   ├── zeuralabz-original.json  # 120 ZEURALABZ Original components
-│   └── index.json               # Master registry manifest (10,134 total)
+│   └── index.json               # Master registry manifest (10,135 total)
 ├── themes/                      # 20 Aesthetic design themes (themes.json)
 ├── templates/                   # 4 Production-ready full-page assemblies
 │   ├── landing-saas/            # SaaS landing page with Next.js & Tailwind
@@ -208,7 +208,7 @@ zeuralabz/
 ├── docs/                        # INSTALL.md, HOW-IT-WORKS.md, CONTRIBUTING.md
 ├── SKILL.md                     # AI Agent instruction manual for Antigravity & Claude
 ├── ATTRIBUTION.md               # Upstream authors & license terms
-├── components.json              # Master unified catalog (10,134 items)
+├── components.json              # Master unified catalog (10,135 items)
 └── package.json
 ```
 

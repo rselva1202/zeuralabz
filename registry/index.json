@@ -2,7 +2,7 @@
   "name": "ZEURALABZ Open Component Registry",
   "version": "1.4.0",
   "description": "Connected open-source animated UI component registry for AI agents & modern web developers.",
-  "totalComponents": 10134,
+  "totalComponents": 10135,
   "sources": {
     "react-bits": {
       "count": 218,
@@ -26,7 +26,8 @@
       "repo": "https://github.com/aceternity-labs/aceternity-ui",
       "website": "https://ui.aceternity.com",
       "license": "MIT",
-      "distribution": "Official shadcn registry (@aceternity/* / ui.aceternity.com)"
+      "distribution": "Official shadcn registry (@aceternity/* / ui.aceternity.com)",
+      "total": 115
     },
     "lightswind": {
       "count": 224,
@@ -74,6 +75,6 @@
     "totalCombinationsFormula": "755 base \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts",
     "totalCombinations": "1,000,000+ styles on demand (4.5M+ total)"
   },
-  "totalCombinations": 60804000,
-  "combinationsFormula": "10134 base components \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts = 60,804,000 styles (1M+)"
+  "totalCombinations": 60810000,
+  "combinationsFormula": "10135 base components \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts = 60,810,000 styles (1M+)"
 }

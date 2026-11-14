@@ -15,10 +15,10 @@ $$\text{Styles} = 755 \text{ Base Components} \times 20 \text{ Themes} \times 20
 With additional parametric adjustments for corner radiuses (`none`, `sm`, `md`, `lg`, `xl`, `full`) and typography pairings (`sans`, `serif`, `mono`, `display`), the total possible permutations exceed **27,000,000 unique styles**.
 
 ### The Layer Hierarchy:
-1. **Base Component Layer (10,134 Base Components Across 6 Sources)**:
+1. **Base Component Layer (10,135 Base Components Across 6 Sources)**:
    - **React Bits (218 components)**: Linked official registry (`@react-bits/*`) • David Haz (MIT + Commons Clause)
    - **Magic UI (79 components)**: Linked official registry (`magicui.design/r/<slug>.json`) • Dillion Verma (MIT)
-   - **Aceternity UI (114 components)**: Linked official registry (`@aceternity/*`) • Manu Arora (MIT)
+   - **Aceternity UI (115 components)**: Linked official registry (`@aceternity/*`) • Manu Arora (MIT)
    - **Lightswind (224 components)**: Linked official CLI & registry (`lightswind.com/components/<slug>`) • Muhilan (MIT, free only)
    - **ZEURALABZ Originals (120 components)**: Native handwritten canvas engines and motion primitives (`components/<category>/<slug>`) • R. Selva (MIT)
 2. **Design Theme Layer (20 Aesthetic Themes)**:

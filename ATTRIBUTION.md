@@ -2,10 +2,10 @@
 
 ZEURALABZ is an intelligent component indexer, CLI suggester, and design matrix that unifies modern UI engineering for developers and autonomous AI coding agents.
 
-The unified registry indexes **10,134 base components** across 6 premier open-source and original design systems:
+The unified registry indexes **10,135 base components** across 6 premier open-source and original design systems:
 - **React Bits (Linked)**: 218 components
 - **Magic UI (Linked)**: 79 components
-- **Aceternity UI (Linked)**: 114 components
+- **Aceternity UI (Linked)**: 115 components
 - **Lightswind (Linked, Free Only)**: 224 components
 - **21st.dev (Linked, Per-Author)**: 9,379 components
 - **ZEURALABZ Originals (Native)**: 120 components
@@ -56,7 +56,7 @@ The unified registry indexes **10,134 base components** across 6 premier open-so
   Aceternity UI components are free to use in your personal or commercial websites, web apps, and commercial client projects.
   Source files and components may NOT be redistributed as a competing standalone component library, stock asset pack, or resold on template marketplaces.
 * **ZEURALABZ Integration**:
-  Aceternity UI components are installed / copied directly from their official site (`https://ui.aceternity.com/components/<slug>`) or via their official shadcn registry (`@aceternity/<slug>`), NOT hosted in this repo. ZEURALABZ provides discovery, heuristic suggestions, and direct install workflows with full attribution.
+  Aceternity UI components (including Aceternity Labs motion experiments like Fey Cards, `https://ui.aceternity.com/labs/fey-cards`) are installed / copied directly from their official site (`https://ui.aceternity.com/components/<slug>` or `/labs/<slug>`) or via their official shadcn registry (`@aceternity/<slug>`), NOT hosted in this repo. ZEURALABZ provides discovery, heuristic suggestions, and direct install workflows with full attribution.
 
 ---
 

@@ -46,9 +46,9 @@ npx zeuralabz themes
 
 ---
 
-## 2. Multi-Source Architecture (10,134 Base Components)
+## 2. Multi-Source Architecture (10,135 Base Components)
 
-ZEURALABZ indexes **10,134 base components** across six verified sources:
+ZEURALABZ indexes **10,135 base components** across six verified sources:
 
 - **React Bits (218 components)**: Linked official registry (`@react-bits/*`, [reactbits.dev](https://reactbits.dev)) • David Haz (MIT + Commons Clause)
   ```bash
@@ -60,7 +60,7 @@ ZEURALABZ indexes **10,134 base components** across six verified sources:
   npx zeuralabz add <slug> --source magic-ui
   # Direct official: npx shadcn@latest add https://magicui.design/r/<slug>.json
   ```
-- **Aceternity UI (114 components)**: Linked official registry (`@aceternity/*`, [ui.aceternity.com](https://ui.aceternity.com)) • Manu Arora (MIT)
+- **Aceternity UI (115 components)**: Linked official registry (`@aceternity/*`, [ui.aceternity.com](https://ui.aceternity.com)) • Manu Arora (MIT)
   ```bash
   npx zeuralabz add <slug> --source aceternity
   # Direct official: npx shadcn@latest add @aceternity/<slug>
@@ -140,10 +140,10 @@ The ZEURALABZ MCP server exposes 5 tools:
 | MCP Tool | Description |
 | :--- | :--- |
 | `suggest_ui_for_project` | Analyzes workspace stack and returns tailored 1-best-pick recommendations with preview links. |
-| `search_components` | Queries 10,134 base components across all 6 sources by keyword, category, or source. |
+| `search_components` | Queries 10,135 base components across all 6 sources by keyword, category, or source. |
 | `install_component` | Installs component code and usage snippets directly into the project. |
 | `list_themes` | Lists all 20 aesthetic themes with color palettes and styling rules. |
-| `list_components` | Lists all 10,134 components with optional category or source filters across 6 sources. |
+| `list_components` | Lists all 10,135 components with optional category or source filters across 6 sources. |
 
 ---
 
