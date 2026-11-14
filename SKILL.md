@@ -164,7 +164,7 @@ This generates a production-ready component file pre-configured with ocean teal/
 | **Hero Headline** | Animated Shiny Text (`animated-shiny-text`) | [Magic UI • MIT] | Sweeps subtle metallic light across the value proposition copy. | `npx zeuralabz add animated-shiny-text --source magic-ui` |
 | **Features** | Bento Grid (`bento`) | [ZEURALABZ Original • MIT] | High-density asymmetrical cards with subtle glowing borders for features. | `npx zeuralabz add bento` |
 | **Primary CTA** | Shimmer Button (`shimmer-button`) | [Magic UI • MIT] | High-converting button with infinite specular rim reflection. | `npx zeuralabz add shimmer-button --source magic-ui` |
-| **Social Proof** | Logo Wall (`logo-wall`) | [React Bits • MIT + Commons] | Infinite seamless scrolling ticker for investor and customer logos. | `npx zeuralabz add logo-wall --source react-bits` |
+| **Polish** | Logo Loop (`logo-loop`) | [React Bits • MIT + Commons] | Infinite seamless scrolling ticker for partner and customer logos. | `npx zeuralabz add logo-loop --source react-bits` |
 ```
 
 ---
@@ -215,7 +215,7 @@ This generates a production-ready component file pre-configured with ocean teal/
 
 | Section | Recommended Component | Source & License | Why It Fits | Install Command |
 | :--- | :--- | :--- | :--- | :--- |
-| **Backdrop** | Warm Ambient Glow (`ambient-glow`) | [ZEURALABZ Original • MIT] | Soft golden radial diffusion mimics atmospheric indoor ambient light. | `npx zeuralabz add ambient-glow` |
+| **Backdrop** | Bioluminescent Fireflies (`fireflies`) | [ZEURALABZ Original • MIT] | Warm atmospheric glowing light orbs mimic organic indoor ambient lighting. | `npx zeuralabz add fireflies` |
 | **Hero Story** | Word Rotate (`word-rotate`) | [Magic UI • MIT] | Smooth vertical rotation showcasing culinary pillars ("Organic", "Artisan"). | `npx zeuralabz add word-rotate --source magic-ui` |
 | **Menu Showcase** | E-Commerce Product Zoom (`product`) | [ZEURALABZ Original • MIT] | High-resolution image zoom on hover for signature culinary dishes. | `npx zeuralabz add product` |
 | **Reservation CTA** | Star Border Button (`star-border`) | [React Bits • MIT + Commons] | Elegant glowing perimeter stroke draws eyes to table booking. | `npx zeuralabz add star-border --source react-bits` |
