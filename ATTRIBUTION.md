@@ -2,15 +2,16 @@
 
 ZEURALABZ is an intelligent component indexer, CLI suggester, and design matrix that unifies modern UI engineering for developers and autonomous AI coding agents.
 
-The unified registry indexes **755 base components** across 5 premier open-source and original design systems:
+The unified registry indexes **10,134 base components** across 6 premier open-source and original design systems:
 - **React Bits (Linked)**: 218 components
 - **Magic UI (Linked)**: 79 components
 - **Aceternity UI (Linked)**: 114 components
 - **Lightswind (Linked, Free Only)**: 224 components
+- **21st.dev (Linked, Per-Author)**: 9,379 components
 - **ZEURALABZ Originals (Native)**: 120 components
 
 > **CRITICAL ARCHITECTURAL DISTINCTION**:
-> Linked components (`react-bits`, `magic-ui`, `aceternity`, `lightswind`) are installed from their official registries, site endpoints, and CLIs. ZEURALABZ **never** clones, vendors, or re-licenses third-party components as its own. ZEURALABZ Originals are 100% original, handwritten motion primitives and canvas engines hosted natively in `components/`.
+> Linked components (`react-bits`, `magic-ui`, `aceternity`, `lightswind`, `21st-dev`) are installed from their official registries, site endpoints, and CLIs. ZEURALABZ **never** clones, vendors, or re-licenses third-party components as its own. ZEURALABZ Originals are 100% original, handwritten motion primitives and canvas engines hosted natively in `components/`.
 
 ---
 
@@ -68,6 +69,18 @@ The unified registry indexes **755 base components** across 5 premier open-sourc
   The Lightswind repository code is open-source under the MIT License. The site license terms specify that components are for integration into user projects and forbid repackaging code as a competing standalone component library, UI kit, or registry.
 * **ZEURALABZ Integration**:
   ZEURALABZ strictly enforces **LINKED ONLY, FREE components only**. Zero Pro components are redistributed, and zero code is copied into `components/` as originals. Components (224 free components including Noise Cloud Background proof) are discovered via ZEURALABZ and installed directly via the official Lightswind CLI (`npx lightswind add <slug>`) or linked official registry endpoints with full attribution.
+
+---
+
+## 6. Linked Source: 21st.dev
+* **Platform**: 21st.dev (https://21st.dev)
+* **Community Authors**: 1,045 verified creator authors (including `@designali-in` for Starfield proof, `@21st`, `@ruixen.ui`, `@ravikatiyar162`, `@cnippet-dev`, `@sean0205`, etc.)
+* **Official Registry**: https://21st.dev/community/components
+* **License**: Per-author licensing — check original component page
+* **Terms of Use**:
+  Components on 21st.dev carry individual per-author licenses without a blanket grant. Free access allows browsing and discovery; individual authors retain rights and terms specified on their respective component pages.
+* **ZEURALABZ Integration**:
+  ZEURALABZ strictly enforces **LINKED ONLY, per-author attribution**. Zero components are claimed as ZEURALABZ Originals or copied into `components/`. Every single entry (9,379 components across 1,045 creators) maintains exact author username attribution (`author: "<username>"`), official source URL (`originalUrl`), and official preview URL. Installation runs via the official shadcn CLI endpoint (`npx shadcn@latest add "https://21st.dev/r/<author>/<slug>"`) or `@21st-dev/cli`. Starfield by `@designali-in` is indexed as proof with full props and documentation links.
 
 ---
 

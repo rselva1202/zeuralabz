@@ -255,6 +255,7 @@ export function analyzeProject(targetDir = process.cwd()) {
       src === 'magic-ui' ? 'Magic UI • MIT' :
       src === 'aceternity' ? 'Aceternity • MIT' :
       src === 'lightswind' ? 'Lightswind • MIT (linked, free only)' :
+      src === '21st-dev' ? `21st.dev • Per-author (@${item.author || 'community'})` :
       'ZEURALABZ Original • MIT'
     );
 

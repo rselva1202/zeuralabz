@@ -63,7 +63,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'search_components',
-        description: 'Search ZEURALABZ component library across React Bits, Magic UI, Aceternity UI, and ZEURALABZ Originals by keyword, tag, source, or category.',
+        description: 'Search ZEURALABZ component library across React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals by keyword, tag, source, or category.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -77,24 +77,24 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", "21st-dev", or "zeuralabz-original"',
             },
           },
         },
       },
       {
         name: 'install_component',
-        description: 'Installs or generates installation code for a component from React Bits, Magic UI, Aceternity UI, Lightswind, or ZEURALABZ Original.',
+        description: 'Installs or generates installation code for a component from React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, or ZEURALABZ Original.',
         inputSchema: {
           type: 'object',
           properties: {
             slug: {
               type: 'string',
-              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, noise-cloud-background, 3d-card-effect)',
+              description: 'Slug of the component to install (e.g. aurora, magic-card, split-text, shimmer, noise-cloud-background, starfield, 3d-card-effect)',
             },
             source: {
               type: 'string',
-              description: 'Source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
+              description: 'Source filter: "react-bits", "magic-ui", "aceternity", "lightswind", "21st-dev", or "zeuralabz-original"',
             },
             targetDir: {
               type: 'string',
@@ -114,7 +114,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       },
       {
         name: 'list_components',
-        description: 'Lists all 755 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, Lightswind, and ZEURALABZ Originals.',
+        description: 'Lists all 10,134 components with optional category and source filtering across React Bits, Magic UI, Aceternity UI, Lightswind, 21st.dev, and ZEURALABZ Originals.',
         inputSchema: {
           type: 'object',
           properties: {
@@ -124,7 +124,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             source: {
               type: 'string',
-              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"',
+              description: 'Optional source filter: "react-bits", "magic-ui", "aceternity", "lightswind", "21st-dev", or "zeuralabz-original"',
             },
           },
         },
@@ -230,11 +230,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       };
     }
 
-    // Default priority: React Bits -> Magic UI -> Aceternity -> ZEURALABZ Original
+    // Default priority: React Bits -> Magic UI -> Aceternity -> Lightswind -> 21st.dev -> ZEURALABZ Original
     const comp =
       matches.find((m) => m.source === 'react-bits') ||
       matches.find((m) => m.source === 'magic-ui') ||
       matches.find((m) => m.source === 'aceternity') ||
+      matches.find((m) => m.source === 'lightswind') ||
+      matches.find((m) => m.source === '21st-dev') ||
       matches[0];
 
     if (comp.source === 'react-bits') {
@@ -332,6 +334,36 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 originalUrl: comp.originalUrl,
                 usage: usageSnippet,
                 instructions: `Run "${installCmd}" inside your project to install directly from the official Lightswind CLI.`,
+              },
+              null,
+              2
+            ),
+          },
+        ],
+      };
+    }
+
+    if (comp.source === '21st-dev') {
+      const author = comp.author || 'community';
+      const installCmd = comp.installCommand || `npx shadcn@latest add "https://21st.dev/r/${author}/${comp.slug}"`;
+      const usageSnippet = `import { ${comp.componentName || 'Component'} } from '@/components/21st-dev/${comp.slug}/${comp.componentName || 'Component'}';\n\nexport default function Example() {\n  return <${comp.componentName || 'Component'} />;\n}`;
+      return {
+        content: [
+          {
+            type: 'text',
+            text: JSON.stringify(
+              {
+                success: true,
+                component: comp.name,
+                source: '21st-dev',
+                sourceLabel: `21st.dev • Per-author (@${author})`,
+                author: author,
+                license: comp.license || 'Per-author — check original page',
+                originalUrl: comp.originalUrl,
+                previewUrl: comp.previewUrl,
+                installCommand: installCmd,
+                usage: usageSnippet,
+                instructions: `Run "${installCmd}" inside your project to install directly via shadcn CLI. Visit ${comp.originalUrl} for per-author license details.`,
               },
               null,
               2

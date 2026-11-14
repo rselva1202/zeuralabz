@@ -54,7 +54,7 @@ export function loadRegistry() {
 
 /**
  * Generate an on-demand customized component variant
- * Total Combinations: 755 base x 20 themes x 20 animations x 15 layouts = 4,530,000 styles
+ * Total Combinations: 10,134 base x 20 themes x 20 animations x 15 layouts = 60,804,000 styles
  */
 export function generateVariant(options = {}) {
   const {
@@ -114,7 +114,7 @@ export function generateVariant(options = {}) {
  * Animation:   ${selectedAnim}
  * Layout:      ${selectedLayout}
  * Radius:      ${radiusClass} | Font: ${fontClass}
- * Combinations Formula: 755 base x 20 themes x 20 animations x 15 layouts = 4,530,000+
+ * Combinations Formula: 10,134 base x 20 themes x 20 animations x 15 layouts = 60,804,000+
  *
  * Install Base: ${installCmd}
  * ============================================================================
@@ -349,7 +349,7 @@ export const Themed${comp.componentName || 'TiltCard'}: React.FC<ThemedTiltCardP
 export default Themed${comp.componentName || 'TiltCard'};
 `;
   } else {
-    // General generator for any of the 755 components
+    // General generator for any of the 10,134 components
     const safeName = (comp.componentName || comp.name.replace(/[^a-zA-Z0-9]/g, '')) + 'Themed';
     componentCode = `${banner}
 ${cssVars}
@@ -429,7 +429,7 @@ export default ${safeName};
     radius: radiusClass,
     font: fontClass,
     comp,
-    formula: '755 base x 20 themes x 20 animations x 15 layouts = 4,530,000 combinations'
+    formula: '10,134 base x 20 themes x 20 animations x 15 layouts = 60,804,000 combinations'
   };
 }
 

@@ -2,7 +2,7 @@
   "name": "ZEURALABZ Open Component Registry",
   "version": "1.4.0",
   "description": "Connected open-source animated UI component registry for AI agents & modern web developers.",
-  "totalComponents": 755,
+  "totalComponents": 10134,
   "sources": {
     "react-bits": {
       "count": 218,
@@ -43,6 +43,16 @@
       "website": "https://rselva1202.github.io/zeuralabz/",
       "license": "MIT",
       "distribution": "Local file copy via npx zeuralabz add"
+    },
+    "21st-dev": {
+      "name": "21st.dev",
+      "total": 9379,
+      "type": "linked",
+      "license": "Per-author \u2014 check original page",
+      "description": "Ecosystem registry for community React and Tailwind components with per-author licensing. Linked via official shadcn CLI and community pages.",
+      "website": "https://21st.dev",
+      "registryFile": "registry/21st-dev.json",
+      "installPrefix": "npx shadcn@latest add \"https://21st.dev/r/<author>/<slug>\""
     }
   },
   "categories": {
@@ -63,5 +73,7 @@
     "layouts": 15,
     "totalCombinationsFormula": "755 base \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts",
     "totalCombinations": "1,000,000+ styles on demand (4.5M+ total)"
-  }
+  },
+  "totalCombinations": 60804000,
+  "combinationsFormula": "10134 base components \u00d7 20 themes \u00d7 20 animations \u00d7 15 layouts = 60,804,000 styles (1M+)"
 }

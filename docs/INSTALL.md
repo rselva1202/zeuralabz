@@ -46,9 +46,9 @@ npx zeuralabz themes
 
 ---
 
-## 2. Multi-Source Architecture (755 Base Components)
+## 2. Multi-Source Architecture (10,134 Base Components)
 
-ZEURALABZ indexes **755 base components** across five verified sources:
+ZEURALABZ indexes **10,134 base components** across six verified sources:
 
 - **React Bits (218 components)**: Linked official registry (`@react-bits/*`, [reactbits.dev](https://reactbits.dev)) • David Haz (MIT + Commons Clause)
   ```bash
@@ -140,10 +140,10 @@ The ZEURALABZ MCP server exposes 5 tools:
 | MCP Tool | Description |
 | :--- | :--- |
 | `suggest_ui_for_project` | Analyzes workspace stack and returns tailored 1-best-pick recommendations with preview links. |
-| `search_components` | Queries 755 base components across all 5 sources by keyword, category, or source. |
+| `search_components` | Queries 10,134 base components across all 6 sources by keyword, category, or source. |
 | `install_component` | Installs component code and usage snippets directly into the project. |
 | `list_themes` | Lists all 20 aesthetic themes with color palettes and styling rules. |
-| `list_components` | Lists all 755 components with optional category or source filters. |
+| `list_components` | Lists all 10,134 components with optional category or source filters across 6 sources. |
 
 ---
 

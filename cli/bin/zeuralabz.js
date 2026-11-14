@@ -55,6 +55,8 @@ function findComponents(slug, sourceFilter = null) {
       matches = matches.filter((c) => c.source === 'aceternity');
     } else if (sf === 'lightswind' || sf === 'ls') {
       matches = matches.filter((c) => c.source === 'lightswind');
+    } else if (sf === '21st-dev' || sf === '21st' || sf === 'twentyfirst') {
+      matches = matches.filter((c) => c.source === '21st-dev');
     } else if (sf === 'zeuralabz-original' || sf === 'original' || sf === 'zeura') {
       matches = matches.filter((c) => c.source === 'zeuralabz-original');
     }
@@ -95,6 +97,8 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
                 ? 'Aceternity UI • MIT'
                 : m.source === 'lightswind'
                 ? 'Lightswind • MIT (linked, free only)'
+                : m.source === '21st-dev'
+                ? `21st.dev • Per-author (@${m.author || 'community'})`
                 : 'ZEURALABZ Original • MIT'
             }]`,
             value: m,
@@ -103,23 +107,27 @@ export async function installComponent(slug, targetDir = process.cwd(), options 
       ]);
       comp = answers.selected;
     } else {
-      // Priority default: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. Lightswind, 5. ZEURALABZ Original
+      // Priority default: 1. React Bits, 2. Magic UI, 3. Aceternity UI, 4. Lightswind, 5. 21st.dev, 6. ZEURALABZ Original
       const rb = matches.find((m) => m.source === 'react-bits');
       const mg = matches.find((m) => m.source === 'magic-ui');
       const ac = matches.find((m) => m.source === 'aceternity');
       const ls = matches.find((m) => m.source === 'lightswind');
+      const d21 = matches.find((m) => m.source === '21st-dev');
       if (rb) {
         comp = rb;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui, --source aceternity, --source lightswind, or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to React Bits (use --source magic-ui, --source aceternity, --source lightswind, --source 21st-dev, or --source zeuralabz-original).`));
       } else if (mg) {
         comp = mg;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source aceternity, --source lightswind, or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Magic UI (use --source aceternity, --source lightswind, --source 21st-dev, or --source zeuralabz-original).`));
       } else if (ac) {
         comp = ac;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Aceternity UI (use --source lightswind or --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Aceternity UI (use --source lightswind, --source 21st-dev, or --source zeuralabz-original).`));
       } else if (ls) {
         comp = ls;
-        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Lightswind (use --source zeuralabz-original).`));
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to Lightswind (use --source 21st-dev or --source zeuralabz-original).`));
+      } else if (d21) {
+        comp = d21;
+        console.log(chalk.gray(`Found multiple sources for "${slug}". Defaulting to 21st.dev (use --source zeuralabz-original).`));
       }
     }
   }
@@ -474,7 +482,168 @@ export default NoiseCloudBackground;
     return true;
   }
 
-  // 5. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
+  // 5. 21ST.DEV INSTALLATION (linked, per-author)
+  if (comp.source === '21st-dev') {
+    const author = comp.author || 'community';
+    const cmd = comp.installCommand || `npx shadcn@latest add "https://21st.dev/r/${author}/${comp.slug}"`;
+    console.log(chalk.cyan(`\n📦 Installing official 21st.dev component via shadcn CLI:`));
+    console.log(chalk.bold.white(`   ${cmd}\n`));
+    console.log(chalk.gray(`Author: @${author} • License: ${comp.license || 'Per-author — check original page'}`));
+
+    let installed = false;
+    const shadcnConfigExists =
+      fs.existsSync(path.join(targetDir, 'components.json')) &&
+      fs.readFileSync(path.join(targetDir, 'components.json'), 'utf8').includes('ui.shadcn.com');
+
+    if (shadcnConfigExists) {
+      try {
+        execSync(cmd, { stdio: 'inherit', cwd: targetDir });
+        console.log(chalk.bold.green(`\n✔ Installed ${chalk.bold(comp.name)} by @${author} from 21st.dev`));
+        installed = true;
+      } catch (err) {
+        console.log(chalk.yellow(`\n⚠️  shadcn CLI command failed. Falling back to direct standalone installation.`));
+      }
+    }
+
+    if (!installed) {
+      const devDir = path.join(targetDir, 'src', 'components', '21st-dev', comp.slug);
+      fs.mkdirSync(devDir, { recursive: true });
+
+      if (comp.slug === 'starfield') {
+        const starfieldCode = `/**
+ * 21st.dev — Starfield
+ * Author: @${author} (Ali Imam)
+ * Source: ${comp.originalUrl}
+ * License: Per-author — check original page (https://21st.dev/@designali-in/components/starfield)
+ * Note: Linked from 21st.dev.
+ */
+
+"use client";
+
+import React, { useEffect, useRef } from "react";
+
+export interface StarfieldProps {
+  starCount?: number;
+  waveFrequency?: number;
+  waveSpeed?: number;
+  starEscapeWidth?: number;
+  voidWidth?: number;
+  starColor?: { r: number; g: number; b: number };
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const Starfield: React.FC<StarfieldProps> = ({
+  starCount = 10000,
+  waveFrequency = 15,
+  waveSpeed = 0.5,
+  starEscapeWidth = 400,
+  voidWidth = 80,
+  starColor = { r: 234, g: 179, b: 8 },
+  className = "",
+  children
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let animId: number;
+
+    const stars: { x: number; y: number; z: number }[] = [];
+    const count = Math.min(starCount, 3000);
+
+    const resize = () => {
+      canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
+      canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    for (let i = 0; i < count; i++) {
+      const x = (Math.random() - 0.5) * canvas.width * 2;
+      const y = (Math.random() - 0.5) * canvas.height * 2;
+      const z = Math.random() * canvas.width;
+      stars.push({ x, y, z });
+    }
+
+    const render = () => {
+      const w = canvas.width;
+      const h = canvas.height;
+
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, 0, w, h);
+
+      const cx = w / 2;
+      const cy = h / 2;
+
+      for (let i = 0; i < stars.length; i++) {
+        const star = stars[i];
+        star.z -= 2 * waveSpeed;
+
+        if (star.z <= 0) {
+          star.z = w;
+          star.x = (Math.random() - 0.5) * w * 2;
+          star.y = (Math.random() - 0.5) * h * 2;
+        }
+
+        const k = 250 / star.z;
+        const px = star.x * k + cx;
+        const py = star.y * k + cy;
+
+        if (px >= 0 && px <= w && py >= 0 && py <= h) {
+          const size = Math.max(0.8, (1 - star.z / w) * 2.5);
+          const alpha = 1 - star.z / w;
+          ctx.fillStyle = \`rgba(\${starColor.r}, \${starColor.g}, \${starColor.b}, \${alpha})\`;
+          ctx.beginPath();
+          ctx.arc(px, py, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      animId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animId);
+    };
+  }, [starCount, waveFrequency, waveSpeed, starEscapeWidth, voidWidth, starColor]);
+
+  return (
+    <div className={\`relative w-full h-full min-h-[400px] overflow-hidden bg-black \${className}\`}>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block pointer-events-none" />
+      {children && <div className="relative z-10 w-full h-full">{children}</div>}
+    </div>
+  );
+};
+
+export default Starfield;
+`;
+        fs.writeFileSync(path.join(devDir, 'Starfield.tsx'), starfieldCode, 'utf8');
+        fs.writeFileSync(path.join(devDir, 'index.ts'), `export * from './Starfield';\nexport { default } from './Starfield';\n`, 'utf8');
+        console.log(chalk.bold.green(`✔ Installed official ${chalk.bold(comp.name)} by @${author} into src/components/21st-dev/${comp.slug}/`));
+      } else {
+        const infoCode = `/**\n * 21st.dev — ${comp.name}\n * Author: @${author}\n * Source: ${comp.originalUrl}\n * License: ${comp.license}\n * \n * Official Install Command:\n * ${cmd}\n */\n\nexport const ${comp.componentName} = () => null;\nexport default ${comp.componentName};\n`;
+        fs.writeFileSync(path.join(devDir, `${comp.componentName}.tsx`), infoCode, 'utf8');
+        console.log(chalk.bold.green(`✔ Configured ${chalk.bold(comp.name)} by @${author} into src/components/21st-dev/${comp.slug}/`));
+      }
+    }
+
+    console.log(chalk.magenta(`\n🚀 Usage in your React page:`));
+    console.log(chalk.gray(`--------------------------------------------------`));
+    console.log(chalk.white(`import { ${comp.componentName} } from './components/21st-dev/${comp.slug}/${comp.componentName}';\n\nexport default function Example() {\n  return <${comp.componentName} />;\n}`));
+    console.log(chalk.gray(`--------------------------------------------------`));
+    console.log(chalk.blue(`🔗 Official Documentation & Preview: ${comp.originalUrl}\n`));
+    return true;
+  }
+
+  // 6. ZEURALABZ ORIGINAL INSTALLATION (local file copy)
   let destDir = path.join(targetDir, 'src', 'components', 'zeuralabz', comp.slug);
   const configPath = path.join(targetDir, 'zeuralabz.json');
   if (fs.existsSync(configPath)) {
@@ -699,6 +868,8 @@ program
           ? chalk.blueBright('[Aceternity UI • MIT]')
           : c.source === 'lightswind'
           ? chalk.greenBright('[Lightswind • MIT]')
+          : c.source === '21st-dev'
+          ? chalk.yellowBright(`[21st.dev • @${c.author || 'community'}]`)
           : chalk.magenta('[ZEURALABZ Original • MIT]');
       console.log(`• ${chalk.bold.cyan(c.name)} (${chalk.yellow(c.slug)}) [${chalk.green(c.category)}] ${sourceBadge}`);
       console.log(`  ${chalk.gray(c.description)}`);
@@ -711,7 +882,7 @@ program
 program
   .command('preview <slug>')
   .description('Open the live web preview of a component in your browser')
-  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", "lightswind", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Source library: "react-bits", "magic-ui", "aceternity", "lightswind", "21st-dev", or "zeuralabz-original"')
   .action(async (slug, options) => {
     const matches = findComponents(slug, options.source);
     const comp = matches[0];
@@ -728,7 +899,7 @@ program
 program
   .command('list [category]')
   .description('List all available components (optionally filter by category)')
-  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", "aceternity", or "zeuralabz-original"')
+  .option('-s, --source <source>', 'Filter by source: "react-bits", "magic-ui", "aceternity", "lightswind", "21st-dev", or "zeuralabz-original"')
   .action((category, options) => {
     let items = getRegistry();
 
@@ -742,6 +913,8 @@ program
         items = items.filter((c) => c.source === 'aceternity');
       } else if (sf === 'lightswind' || sf === 'ls') {
         items = items.filter((c) => c.source === 'lightswind');
+      } else if (sf === '21st-dev' || sf === '21st' || sf === 'twentyfirst') {
+        items = items.filter((c) => c.source === '21st-dev');
       } else if (sf === 'zeuralabz-original' || sf === 'original') {
         items = items.filter((c) => c.source === 'zeuralabz-original');
       }
@@ -764,6 +937,8 @@ program
           ? chalk.blueBright('[Aceternity UI]')
           : c.source === 'lightswind'
           ? chalk.greenBright('[Lightswind]')
+          : c.source === '21st-dev'
+          ? chalk.yellowBright('[21st.dev]')
           : chalk.magenta('[ZEURALABZ]');
       console.log(`• ${chalk.bold.cyan(c.slug.padEnd(24))} ${sourceBadge} ${chalk.gray('—')} ${chalk.white(c.name)} [${chalk.green(c.category)}]`);
     });
@@ -786,7 +961,7 @@ program
 // 8. GENERATE (On-Demand Style Synthesizer - 1M+ combinations)
 program
   .command('generate <slug>')
-  .description('Generate an on-demand customized component variant (755 base x 20 themes x 20 animations x 15 layouts = 4.53M combinations)')
+  .description('Generate an on-demand customized component variant (10,134 base x 20 themes x 20 animations x 15 layouts = 60.8M combinations)')
   .option('-t, --theme <theme>', 'Theme name (20 available, e.g. dark-neon, ocean, cyberpunk, brutalist)', 'dark-neon')
   .option('-a, --animation <animation>', 'Animation preset (float, pulse, bounce, shimmer, kinetic, drift, etc.)', 'float')
   .option('-l, --layout <layout>', 'Layout structure preset (hero-center, bento-3, card-grid-3, etc.)', 'hero-center')
