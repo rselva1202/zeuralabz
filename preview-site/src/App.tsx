@@ -1,121 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { PreviewRouter, PreviewItem } from './previews/PreviewRouter';
 import { LiveCanvas, CanvasEngineType } from './components/LiveCanvas';
-
-// Top 12 ZEURALABZ Originals with 100% Real Interactive Previews
-const TOP_12_ORIGINALS: PreviewItem[] = [
-  {
-    id: 'zeura-aurora',
-    slug: 'aurora',
-    name: 'Aurora Glow',
-    category: 'backgrounds',
-    componentName: 'AuroraBackground',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-galaxy',
-    slug: 'galaxy',
-    name: 'Spiral Galaxy',
-    category: 'backgrounds',
-    componentName: 'GalaxyBackground',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-particles',
-    slug: 'particles',
-    name: 'Neural Particles',
-    category: 'backgrounds',
-    componentName: 'ParticlesBackground',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-split-text',
-    slug: 'split-text',
-    name: 'Split Text Kinetic',
-    category: 'text-animations',
-    componentName: 'SplitText',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-shimmer',
-    slug: 'shimmer',
-    name: 'Shimmer Button',
-    category: 'buttons',
-    componentName: 'ShimmerButton',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-tilt',
-    slug: 'tilt',
-    name: '3D Gyro Tilt',
-    category: 'cards',
-    componentName: 'TiltCard',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-spotlight',
-    slug: 'spotlight',
-    name: 'Spotlight Card',
-    category: 'cards',
-    componentName: 'SpotlightCard',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-gradient',
-    slug: 'gradient',
-    name: 'Mesh Gradient',
-    category: 'backgrounds',
-    componentName: 'GradientBackground',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-typewriter',
-    slug: 'typewriter',
-    name: 'Smooth Typewriter',
-    category: 'text-animations',
-    componentName: 'TypewriterText',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-neon',
-    slug: 'neon',
-    name: 'Cyberpunk Neon',
-    category: 'buttons',
-    componentName: 'NeonButton',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-starfield',
-    slug: 'starfield',
-    name: 'Warp Starfield',
-    category: 'backgrounds',
-    componentName: 'StarfieldBackground',
-    source: 'zeuralabz-original',
-  },
-  {
-    id: 'zeura-glitch',
-    slug: 'glitch',
-    name: 'Glitch Chromatic',
-    category: 'text-animations',
-    componentName: 'GlitchText',
-    source: 'zeuralabz-original',
-  },
-];
-
-const COMPONENT_DESCRIPTIONS: Record<string, string> = {
-  aurora: 'Dynamic canvas cosmic aurora wave with smooth multi-color mesh illumination.',
-  galaxy: 'Real-time 700+ star spiral galaxy simulation with logarithmic gravitational arms.',
-  particles: 'Interactive float particle field with spatial proximity line interconnects.',
-  'split-text': 'Character-staggered kinetic typography reveal with spring physics.',
-  shimmer: 'High-polish metallic button with sweeping diagonal light reflection.',
-  tilt: 'Perspective-aware card with cursor proximity tilt and specular highlight.',
-  spotlight: 'Radial cursor illumination card revealing subtle underlying mesh geometry.',
-  gradient: 'Harmonic 4-stop radial gradient canvas with fluid orbital velocity.',
-  typewriter: 'Dynamic typing effect with custom blink cursor and cadence variation.',
-  neon: 'Vibrant neon glow button with reactive hover state and electrical aura.',
-  starfield: 'Hyperspace starfield acceleration canvas with z-depth radial projection.',
-  glitch: 'Aggressive chromatic aberration glitch typography with random slice offset.',
-};
 
 export default function App() {
   const [animationMode, setAnimationMode] = useState<'full' | 'lite' | 'off'>('lite');
@@ -123,8 +7,6 @@ export default function App() {
   const [copiedText, setCopiedText] = useState<string | null>(null);
   const [activeEngine, setActiveEngine] = useState<CanvasEngineType>('aurora');
   const [starCount, setStarCount] = useState<number>(48);
-  const [selectedCompForCode, setSelectedCompForCode] = useState<PreviewItem | null>(null);
-  const [activeCodeTab, setActiveCodeTab] = useState<'react' | 'html' | 'css'>('react');
 
   // Generator State
   const [genComponent, setGenComponent] = useState('aurora');
@@ -192,8 +74,8 @@ export default function App() {
             <a href="#what-is-it" className="hover:text-[#2DD4BF] transition">What is it?</a>
             <a href="#how-it-works" className="hover:text-[#2DD4BF] transition">How it works</a>
             <a href="#whats-it-for" className="hover:text-[#2DD4BF] transition">What's it for</a>
+            <a href="#demo" className="hover:text-[#2DD4BF] transition">Skill in Action</a>
             <a href="#connected-sources" className="hover:text-[#2DD4BF] transition">Connected Sources</a>
-            <a href="#showcase" className="hover:text-[#2DD4BF] transition">Showcase</a>
             <a href="#install" className="hover:text-[#2DD4BF] transition">Install</a>
             <a href="#faq" className="hover:text-[#2DD4BF] transition">FAQ</a>
           </nav>
@@ -273,8 +155,8 @@ export default function App() {
             <a href="#what-is-it" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">What is it?</a>
             <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">How it works</a>
             <a href="#whats-it-for" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">What's it for</a>
+            <a href="#demo" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">Skill in Action</a>
             <a href="#connected-sources" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">Connected Sources</a>
-            <a href="#showcase" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">Showcase (Top 12)</a>
             <a href="#install" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-[#2DD4BF]">Install Skill</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="block py-1 hover:text-[#2DD4BF]">FAQ</a>
             <div className="pt-2 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
@@ -754,98 +636,48 @@ export default function Hero() {
       </section>
 
       {/* ============================================================== */}
-      {/* 6. SHOWCASE — TOP 12 ONLY (Real Previews Only, No Filters) */}
+      {/* 6. SEE THE SKILL IN ACTION (Minimal Callout — Zero Component Cards) */}
       {/* ============================================================== */}
-      <section id="showcase" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="space-y-3">
-              <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
-                // REAL LIVE RUNTIMES
-              </span>
-              <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                SEE IT LIVE — TOP 12 ORIGINALS
-              </h2>
-              <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
-                The only component grid on this site. 12 ZEURALABZ Originals with 100% real interactive previews running in your browser.
+      <section id="demo" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b-[2px] border-white bg-[#111111]">
+        <div className="max-w-4xl mx-auto space-y-8 text-center sm:text-left">
+          <div className="space-y-3">
+            <span className="text-[#2DD4BF] font-mono text-xs uppercase tracking-widest font-bold">
+              // ZERO-BLOAT WORKFLOW
+            </span>
+            <h2 className="font-heading text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+              SEE THE SKILL IN ACTION
+            </h2>
+            <p className="text-sm sm:text-base text-[#CCCCCC] max-w-2xl leading-relaxed">
+              The Skill holds 531 base components. See how it picks the best one for your project — no grid to scroll, no fake previews.
+            </p>
+          </div>
+
+          <div className="bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] p-6 sm:p-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="font-heading text-base font-black text-white uppercase">
+                Ready to transform your UI?
+              </div>
+              <p className="text-xs text-zinc-400 font-mono">
+                Run the analyzer in your project terminal or trigger it from your AI agent.
               </p>
             </div>
 
-            <div className="shrink-0">
-              <span className="px-3 py-1.5 bg-[#2DD4BF] text-black font-heading font-black text-xs uppercase border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF]">
-                12 / 12 REAL PREVIEWS
-              </span>
-            </div>
-          </div>
-
-          {/* 3-Column Desktop Grid / 1-Column Mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TOP_12_ORIGINALS.map((comp) => (
-              <div
-                key={comp.slug}
-                className="group rounded-[6px] bg-[#161616] border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:shadow-[4px_4px_0px_#14B8A6] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-150 flex flex-col overflow-hidden w-full max-w-full min-w-0"
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+              <button
+                onClick={() => copyToClipboard('npx zeuralabz suggest')}
+                className="px-5 py-3 bg-[#2DD4BF] text-black font-heading font-black text-xs uppercase border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] hover:bg-[#14B8A6] transition tracking-wider text-center"
               >
-                {/* Live Preview Area (180px) */}
-                <div className="h-44 sm:h-48 bg-[#0A0D14] relative flex items-center justify-center overflow-hidden border-b-[2px] border-white w-full max-w-full">
-                  <PreviewRouter comp={comp} animationMode={animationMode} />
-                </div>
-
-                {/* Details Area */}
-                <div className="p-5 flex-1 flex flex-col justify-between bg-[#161616] space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-heading text-sm font-black text-white group-hover:text-[#2DD4BF] transition truncate">
-                        {comp.name}
-                      </h3>
-                      <span className="text-[10px] text-[#2DD4BF] font-mono font-bold bg-black/60 border border-white/20 px-1.5 py-0.5 shrink-0">
-                        {comp.slug}
-                      </span>
-                    </div>
-                    <p className="text-xs text-[#CCCCCC] font-normal mt-2 line-clamp-2 leading-relaxed">
-                      {COMPONENT_DESCRIPTIONS[comp.slug] || 'Interactive React animated UI component.'}
-                    </p>
-                  </div>
-
-                  {/* Actions: Install Button + Code Modal Opener */}
-                  <div className="pt-3 border-t border-[#2A2A2A] flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => copyToClipboard(`npx zeuralabz add ${comp.slug}`)}
-                      className={`flex-1 py-2 px-3 text-[11px] font-mono font-bold border-[2px] border-white shadow-[2px_2px_0px_#FFFFFF] transition active:translate-x-0.5 active:translate-y-0.5 flex items-center justify-center gap-1.5 truncate ${
-                        copiedText === `npx zeuralabz add ${comp.slug}`
-                          ? 'bg-emerald-400 text-black font-black'
-                          : 'bg-[#2DD4BF] text-black hover:bg-[#14B8A6] font-black'
-                      }`}
-                    >
-                      {copiedText === `npx zeuralabz add ${comp.slug}`
-                        ? '✔ COPIED'
-                        : `$ npx zeuralabz add ${comp.slug}`}
-                    </button>
-
-                    <button
-                      onClick={() => setSelectedCompForCode(comp)}
-                      className="bg-white text-black border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] px-3 py-2 text-xs font-heading font-black hover:bg-zinc-200 transition shrink-0"
-                      title="View code & usage"
-                    >
-                      CODE ➔
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* GitHub Repo Link below showcase */}
-          <div className="pt-4 text-center">
-            <a
-              href="https://github.com/rselva1202/zeuralabz"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#161616] text-white border-[2px] border-white shadow-[3px_3px_0px_#2DD4BF] hover:bg-zinc-800 font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition"
-            >
-              <span>See all 531 in the GitHub repo</span>
-              <span className="text-[#2DD4BF]">➔</span>
-            </a>
+                {copiedText === 'npx zeuralabz suggest' ? '✔ COPIED COMMAND' : 'TRY npx zeuralabz suggest →'}
+              </button>
+              <a
+                href="https://github.com/rselva1202/zeuralabz"
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-3 bg-white text-black font-heading font-black text-xs uppercase border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF] hover:bg-zinc-200 transition tracking-wider text-center"
+              >
+                VIEW ON GITHUB →
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -1346,112 +1178,6 @@ Run "npx zeuralabz suggest --json" before creating or refactoring pages to pick 
           </div>
         </div>
       </footer>
-
-      {/* ============================================================== */}
-      {/* CODE MODAL FOR TOP 12 SHOWCASE */}
-      {/* ============================================================== */}
-      {selectedCompForCode && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md">
-          <div className="w-full max-w-2xl bg-[#161616] border-[2px] border-white shadow-[4px_4px_0px_#2DD4BF] overflow-hidden flex flex-col max-h-[90vh] mx-auto">
-            {/* Modal Header */}
-            <div className="p-4 sm:p-5 bg-[#2DD4BF] border-b-[2px] border-white flex items-center justify-between text-black">
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="font-heading text-lg font-black text-black uppercase">
-                    {selectedCompForCode.name}
-                  </h3>
-                  <span className="px-2 py-0.5 text-[10px] font-heading font-black uppercase bg-black text-white">
-                    ORIGINAL • MIT
-                  </span>
-                </div>
-                <p className="text-xs text-black/80 font-mono font-bold mt-1">
-                  components/{selectedCompForCode.category}/{selectedCompForCode.slug}
-                </p>
-              </div>
-              <button
-                onClick={() => setSelectedCompForCode(null)}
-                className="w-8 h-8 bg-black text-white hover:bg-zinc-800 font-heading font-black text-sm flex items-center justify-center border border-white"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Code Tabs */}
-            <div className="flex border-b-[2px] border-white px-4 sm:px-6 pt-3 bg-[#111111] gap-2 text-xs font-bold">
-              <button
-                onClick={() => setActiveCodeTab('react')}
-                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
-                  activeCodeTab === 'react'
-                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                    : 'bg-[#161616] text-white'
-                }`}
-              >
-                React (TS)
-              </button>
-              <button
-                onClick={() => setActiveCodeTab('html')}
-                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
-                  activeCodeTab === 'html'
-                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                    : 'bg-[#161616] text-white'
-                }`}
-              >
-                Pure HTML
-              </button>
-              <button
-                onClick={() => setActiveCodeTab('css')}
-                className={`pb-2 px-3 transition border-[2px] border-white font-heading font-black uppercase ${
-                  activeCodeTab === 'css'
-                    ? 'bg-[#2DD4BF] text-black shadow-[2px_2px_0px_#FFFFFF]'
-                    : 'bg-[#161616] text-white'
-                }`}
-              >
-                Pure CSS
-              </button>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-4 sm:p-6 overflow-y-auto space-y-4 text-xs font-mono bg-[#141414]">
-              {/* Single CLI Command */}
-              <div className="flex items-center justify-between gap-2 p-3 bg-black text-[#2DD4BF] border-[2px] border-white shadow-[2px_2px_0px_#2DD4BF]">
-                <span className="font-bold truncate">$ npx zeuralabz add {selectedCompForCode.slug}</span>
-                <button
-                  onClick={() => copyToClipboard(`npx zeuralabz add ${selectedCompForCode.slug}`)}
-                  className="bg-[#2DD4BF] text-black font-heading font-black px-2.5 py-1 text-xs hover:bg-[#14B8A6] border border-white shrink-0"
-                >
-                  {copiedText === `npx zeuralabz add ${selectedCompForCode.slug}` ? '✔ COPIED' : 'COPY'}
-                </button>
-              </div>
-
-              {/* Code Snippet */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-zinc-400 text-[11px]">
-                  <span>// Usage Example:</span>
-                  <button
-                    onClick={() =>
-                      copyToClipboard(`import { ${selectedCompForCode.componentName} } from '@/components/zeuralabz/${selectedCompForCode.slug}';
-
-export default function Example() {
-  return (
-    <div className="p-8">
-      <${selectedCompForCode.componentName} />
-    </div>
-  );
-}`)
-                    }
-                    className="text-[#2DD4BF] hover:underline"
-                  >
-                    Copy Usage
-                  </button>
-                </div>
-                <pre className="p-3 bg-black border border-white/20 text-zinc-300 leading-relaxed overflow-x-auto text-[11px]">
-                  <code>{`import { ${selectedCompForCode.componentName} } from '@/components/zeuralabz/${selectedCompForCode.slug}';\n\nexport default function Example() {\n  return (\n    <div className="p-8">\n      <${selectedCompForCode.componentName} />\n    </div>\n  );\n}`}</code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

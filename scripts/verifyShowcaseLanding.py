@@ -39,19 +39,36 @@ def run_verification(target_url=None):
         results["title"] = title
         assert "Give Your AI Agent 1M+ UI Styles" in title, f"Unexpected title: {title}"
 
+        # 1. VERIFY NO COMPONENT CARDS OR GRIDS
+        top12_heading_count = page.locator("text=/SEE IT LIVE — TOP 12 ORIGINALS/i").count()
+        top12_sec_count = page.locator("#showcase").count()
+        component_cards = page.locator("button:has-text('npx zeuralabz add aurora')").count()
+        code_buttons = page.locator("button:has-text('CODE ➔')").count()
+
+        print(f"Top 12 Heading count: {top12_heading_count}")
+        print(f"Showcase section count: {top12_sec_count}")
+        print(f"Component add buttons: {component_cards}")
+        print(f"Component code buttons: {code_buttons}")
+
+        assert top12_heading_count == 0, "Top 12 heading still present!"
+        assert top12_sec_count == 0, "#showcase section still present!"
+        assert component_cards == 0, "Component add buttons still present!"
+        assert code_buttons == 0, "Component code buttons still present!"
+        print("✔ Verified: ZERO component cards, grids, or add buttons on homepage!")
+
         # Verify NO Catalog Search or Pagination
         search_inputs = page.locator("input[placeholder*='Search']").count()
         pagination_text = page.locator("text=/Showing \\d+–\\d+ of \\d+/i").count()
-        assert search_inputs == 0, "Catalog search bar still present on showcase page!"
-        assert pagination_text == 0, "Pagination text still present on showcase page!"
-        print("✔ Verified: No search bar or pagination on showcase landing page.")
+        assert search_inputs == 0, "Catalog search bar still present!"
+        assert pagination_text == 0, "Pagination text still present!"
+        print("✔ Verified: No search bar or pagination.")
 
         # Capture Desktop Hero
         hero_shot = os.path.join(ARTIFACT_DIR, "showcase-hero-desktop.png")
         page.screenshot(path=hero_shot)
         print(f"Saved: {hero_shot}")
 
-        # Test Engine Switcher
+        # Test Engine Switcher (Allowed Hero Feature)
         print("Testing Engine Switcher (Aurora / Galaxy / Particles / Gradient)...")
         for engine in ["galaxy", "particles", "gradient", "aurora"]:
             btn = page.locator(f"button:has-text('{engine}')").first
@@ -61,12 +78,12 @@ def run_verification(target_url=None):
             page.locator("canvas").first.screenshot(path=engine_shot)
             print(f"✔ Switched to {engine} and captured: {engine_shot}")
 
-        # Verify Sections in Order
+        # Verify Sections in Order: Hero -> What is it? -> How it works -> What's it for? -> Demo -> Connected Sources -> Install -> Templates -> FAQ -> Footer
         sections = [
             ("what-is-it", "WHAT IS THE ZEURALABZ SKILL?"),
             ("how-it-works", "HOW IT WORKS"),
             ("whats-it-for", "WHAT'S IT FOR?"),
-            ("showcase", "SEE IT LIVE — TOP 12 ORIGINALS"),
+            ("demo", "SEE THE SKILL IN ACTION"),
             ("connected-sources", "HOW MANY OPEN SOURCE ANIMATIONS ARE CONNECTED?"),
             ("install", "INSTALL IN YOUR AI WORKSPACE"),
             ("templates", "STARTER TEMPLATES"),
@@ -79,22 +96,23 @@ def run_verification(target_url=None):
             assert heading.lower() in sec.text_content().lower(), f"Heading '{heading}' not in section #{sec_id}"
             print(f"✔ Verified section #{sec_id}: '{heading}'")
 
-        # Capture What is it & How it works
-        page.locator("#what-is-it").screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-what-is-it.png"))
-        page.locator("#how-it-works").screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-how-it-works.png"))
+        # Capture #demo (SEE THE SKILL IN ACTION)
+        demo_sec = page.locator("#demo")
+        demo_shot = os.path.join(ARTIFACT_DIR, "showcase-skill-in-action.png")
+        demo_sec.screenshot(path=demo_shot)
+        print(f"Saved: {demo_shot}")
 
-        # Verify Showcase has EXACTLY 12 cards and 0 fake previews
-        showcase_cards = page.locator("#showcase .group")
-        card_count = showcase_cards.count()
-        print(f"Top 12 Showcase card count: {card_count}")
-        assert card_count == 12, f"Expected 12 showcase cards, found {card_count}!"
+        # Verify buttons in #demo
+        suggest_btn = demo_sec.locator("button:has-text('TRY npx zeuralabz suggest')")
+        github_btn = demo_sec.locator("a:has-text('VIEW ON GITHUB')")
+        assert suggest_btn.count() > 0, "Suggest button missing in #demo!"
+        assert github_btn.count() > 0, "GitHub button missing in #demo!"
+        print("✔ Verified: Both action buttons present in 'SEE THE SKILL IN ACTION'.")
 
-        # Check that no card has the old placeholder text
-        sparkle_matches = page.locator("text='@react-bits • LIVE DEMO'").count()
-        assert sparkle_matches == 0, "Fake placeholder badge '@react-bits • LIVE DEMO' found!"
-        print("✔ Verified: Exactly 12 real original cards in showcase, 0 fake placeholders.")
-
-        page.locator("#showcase").screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-top12.png"))
+        # Capture full desktop page top to bottom
+        full_desktop_shot = os.path.join(ARTIFACT_DIR, "showcase-full-desktop-no-grid.png")
+        page.screenshot(path=full_desktop_shot, full_page=True)
+        print(f"Saved full desktop screenshot: {full_desktop_shot}")
 
         # Verify Connected Sources numbers & 1M+ math
         sources_sec = page.locator("#connected-sources")
@@ -106,8 +124,6 @@ def run_verification(target_url=None):
         assert "1,000,000+ styles" in sec_text or "1,000,000+" in sec_text, "1M+ styles math not present!"
         print("✔ Verified connected sources counts: 218 + 79 + 114 + 120 = 531 base components and 1M+ math.")
 
-        sources_sec.screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-connected-sources-math.png"))
-
         # Test Interactive Generator
         print("Testing Generator on-demand combination...")
         selects = page.locator("#connected-sources select")
@@ -118,10 +134,6 @@ def run_verification(target_url=None):
         variant_text = page.locator("text='galaxy-cyberpunk-pulse'")
         assert variant_text.count() > 0, "Generator did not update variant name!"
         print("✔ Verified on-demand generator compilation: 'galaxy-cyberpunk-pulse'")
-
-        # Capture Install & Templates
-        page.locator("#install").screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-install.png"))
-        page.locator("#templates").screenshot(path=os.path.join(ARTIFACT_DIR, "showcase-templates.png"))
 
         # 2. Mobile Viewport (390x844 - iPhone 12/13/14)
         print("\n--- Mobile Testing (390px Viewport) ---")
@@ -147,18 +159,7 @@ def run_verification(target_url=None):
         mobile_page.set_viewport_size({"width": 390, "height": 844})
         mobile_page.wait_for_timeout(500)
 
-        mob_hero_shot = os.path.join(ARTIFACT_DIR, "showcase-mobile-390-hero.png")
-        mobile_page.screenshot(path=mob_hero_shot)
-        print(f"Saved: {mob_hero_shot}")
-
-        # Scroll down to Top 12 on mobile
-        mobile_page.locator("#showcase").scroll_into_view_if_needed()
-        mobile_page.wait_for_timeout(1000)
-        mob_top12_shot = os.path.join(ARTIFACT_DIR, "showcase-mobile-390-top12.png")
-        mobile_page.locator("#showcase").screenshot(path=mob_top12_shot)
-        print(f"Saved: {mob_top12_shot}")
-
-        # Capture full mobile page
+        # Capture full mobile page top to bottom
         mob_full_shot = os.path.join(ARTIFACT_DIR, "showcase-mobile-390-full.png")
         mobile_page.screenshot(path=mob_full_shot, full_page=True)
         print(f"Saved: {mob_full_shot}")
